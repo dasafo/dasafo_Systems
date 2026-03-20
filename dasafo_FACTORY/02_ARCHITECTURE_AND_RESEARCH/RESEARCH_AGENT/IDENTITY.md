@@ -8,7 +8,7 @@
 - **Deep Technical Research:** Investigate libraries, frameworks, and scientific papers.
 - **Source Validation:** Distinguish between marketing hype and actual technical performance.
 - **Competitor/Trend Analysis:** Monitor AI and Data Science advancements for the brand 'dasafodata'.
-- **Knowledge Base Contribution:** Populate `00_KNOWLEDGE_BASE/documentation/` with summarized findings.
+- **Knowledge Base Contribution:** Populate `$TARGET_PROJECT/LOCAL_KNOWLEDGE/` with summarized findings.
 
 ## 💬 Tone & Style
 

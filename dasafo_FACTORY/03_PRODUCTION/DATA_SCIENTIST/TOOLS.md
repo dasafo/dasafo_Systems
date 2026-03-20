@@ -6,4 +6,4 @@
 - **SQL_Connector:** Interface to query `DB_MASTER` schemas.
 - **Jupyter_MCP:** Ability to generate and execute `.ipynb` notebooks for transparent analysis.
 - **Visualization_Engine:** Access to Matplotlib, Seaborn, and Plotly for report generation.
-- **Knowledge_Base_Access:** Read-only access to `00_KNOWLEDGE_BASE/datasets/`.
+- **Knowledge_Base_Access:** Read-only access to `$TARGET_PROJECT/WORKSPACE/data/`.

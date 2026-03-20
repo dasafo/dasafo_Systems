@@ -28,7 +28,7 @@ Always summarize research into a coherent markdown file including:
 
 ## 📂 Output Management
 Research results must be saved as follows:
-- **Destination**: `/home/david/Documents/AI/AGENTES/dasafo_Systems/00_KNOWLEDGE_BASE/documentation/`
+- **Destination**: `$TARGET_PROJECT/LOCAL_KNOWLEDGE/`
 - **Filename**: `research-[topic_slug].md`
 
 ### Handoff Header Template

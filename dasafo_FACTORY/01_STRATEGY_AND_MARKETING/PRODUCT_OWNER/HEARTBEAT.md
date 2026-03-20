@@ -5,7 +5,7 @@
 ## ⏱️ Pulse Frequency
 
 - **Check Interval:** Every 1 hour (or upon external trigger).
-- **Target:** `00_KNOWLEDGE_BASE/clients/` and `PROJECT_STATE.json`.
+- **Target:** `$TARGET_PROJECT/LOCAL_KNOWLEDGE/` and `$TARGET_PROJECT/PROJECT_STATE.json`.
 
 ## 💓 Routine
 
