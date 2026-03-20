@@ -1,13 +1,13 @@
-# B2B Go-To-Market Strategy: Project AURA
-> **Target Audience:** Hardware Engineers, IoT SREs, and Physics Laboratories.
+# B2B Go-To-Market Strategy: [PROJECT_NAME]
+> **Target Audience:** [TARGET_NICHE]
 > **Developed by:** MARKETING_GROWTH
 > **Authorized by:** PRODUCT_OWNER
 
 ## 1. Value Proposition (Direct & Metric)
 
-AURA is not a generic "AI tool." It is an **industrial-grade Anomaly Detection Engine**.
-- **The Hook:** "Stop guessing if your sensor drifted. Let our Isolation Forest catch the 1Pa spike before the valve fails."
-- **Core Pillars:** Strict SI Unit adherence (Kelvin/Pascal natively supported), Zero-Latency Async ML processing, and Clean Architecture deployment.
+[PROJECT_NAME] is not a generic tool. It is an **[ENGINE_TYPE]**.
+- **The Hook:** "[COMPELLING_REASON_TO_USE]"
+- **Core Pillars:** [CORE_VALUE_1], [CORE_VALUE_2], [CORE_VALUE_3].
 
 ## 2. SEO Content Strategy (High Intent)
 

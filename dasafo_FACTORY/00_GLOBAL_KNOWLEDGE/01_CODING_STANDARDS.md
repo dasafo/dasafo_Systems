@@ -25,6 +25,6 @@ if (!anotherCondition) return;
 ```
 
 ## 4. UI Vibe & Atomic Design System
-- **Tokenization:** NEVER hardcode generic colors, spacing, or borders. Always use semantic tokens (e.g., `Colors.danger`, `var(--color-aura-bg)`).
+- **Tokenization:** NEVER hardcode generic colors, spacing, or borders. Always use semantic tokens (e.g., `Colors.danger`, `var(--color-brand-bg)`).
 - **Aesthetic Vibe:** The user must be amazed at first glance. Use curated palettes, elegant dark mode (Glassmorphism), fluid transitions, and dynamic micro-animations.
 - **Visual Resilience:** Every UI component must anticipate, design, and test for the following states: *Loading*, *Error*, *Empty State*, and *Data Overflow*.

@@ -1,11 +1,4 @@
 {
   "factory_status": "ONLINE",
-  "active_projects": [
-    {
-      "project_id": "AURA",
-      "path": "./PROJECTS/PROYECTO_AURA",
-      "owner": "PRODUCT_OWNER",
-      "status": "MAINTENANCE"
-    }
-  ]
+  "active_projects": []
 }
