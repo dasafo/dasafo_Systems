@@ -38,7 +38,7 @@ To ensure systematic integrity, all workflows must follow an immutable sequence:
 
 1. **Discovery (M1):** `PRODUCT_OWNER` defines state, `RESEARCH` gathers data.
 2. **Architecture (M2):** `ARCHITECT` creates system design. No code is written until this is approved.
-3. **Isolated Execution (M3):** Developers write code exclusively inside their `06_WORKSPACE` silos.
+3. **Isolated Execution (M3):** Developers write code exclusively inside their `$TARGET_PROJECT/WORKSPACE` silos.
 4. **The QA Gate (Crucial):**
    - A task in `03_COMPLETED` is NOT finished.
    - Only the `QA_TESTER` and `SECURITY_AUDITOR` have the clearance to move a task from `COMPLETED` to `04_ARCHIVE`.

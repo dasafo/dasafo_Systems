@@ -17,7 +17,7 @@ Targeting long-tail, hyper-niche engineering queries:
   - `FastAPI IoT time-series ingestion`
   - `Real-time sensor drift correction algorithms`
 - **Content Output:**
-  1. *Technical Case Study:* "How AURA caught a 15K thermal drift in an HVAC subsystem before failure."
+  1. *Technical Case Study:* "How [PROJECT_NAME] caught a 15K thermal drift in an HVAC subsystem before failure."
   2. *Open Source Highlight:* "Why we chose Plotly and Next.js for our Physics Dashboard."
 
 ## 3. Brand Aesthetic & Voice
