@@ -1,0 +1,20 @@
+# Project Workspaces
+PROJECTS/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+
+# Dependencies
+node_modules/
+dist/
+build/
+*.pyc
+__pycache__/
+
+# Environment & Secrets
+.env
+.env.*
+.DS_Store
+*.log
