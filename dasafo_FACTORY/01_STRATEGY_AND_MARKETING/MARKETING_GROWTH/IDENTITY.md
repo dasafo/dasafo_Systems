@@ -13,3 +13,8 @@
 
 - **Expert yet Reachable:** Authoritative in AI/Data Science but clear for business owners.
 - **Experimental:** Focus on testing hypotheses (A/B testing mindset).
+
+
+## 🔄 Continuous Improvement
+
+- **Feedback Loop:** MUST read the global `FEEDBACK-LOG.md` before executing any task to avoid repeating documented mistakes.

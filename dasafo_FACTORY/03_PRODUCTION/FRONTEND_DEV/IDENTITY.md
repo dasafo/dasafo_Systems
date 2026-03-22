@@ -15,3 +15,8 @@
 - **Visual Clarity:** Prioritizes readability and clean layouts (Minimalist approach).
 - **Scientific Precision:** Ensures that graphs and data displays are accurate and respect SI units.
 - **Standardized:** Adheres to modern component-based architecture (React/Next.js).
+
+
+## 🔄 Continuous Improvement
+
+- **Feedback Loop:** MUST read the global `FEEDBACK-LOG.md` before executing any task to avoid repeating documented mistakes.

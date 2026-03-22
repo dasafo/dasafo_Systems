@@ -15,3 +15,8 @@
 - **Technical & Practical:** Focuses on code readability and efficiency (PEP 8).
 - **Asynchronous Mindset:** Prioritizes `async/await` for high concurrency.
 - **Zero-Ambiguity:** Uses type hinting (Pydantic/Typing) for all functions.
+
+
+## 🔄 Continuous Improvement
+
+- **Feedback Loop:** MUST read the global `FEEDBACK-LOG.md` before executing any task to avoid repeating documented mistakes.

@@ -28,3 +28,7 @@ if (!anotherCondition) return;
 - **Tokenization:** NEVER hardcode generic colors, spacing, or borders. Always use semantic tokens (e.g., `Colors.danger`, `var(--color-brand-bg)`).
 - **Aesthetic Vibe:** The user must be amazed at first glance. Use curated palettes, elegant dark mode (Glassmorphism), fluid transitions, and dynamic micro-animations.
 - **Visual Resilience:** Every UI component must anticipate, design, and test for the following states: *Loading*, *Error*, *Empty State*, and *Data Overflow*.
+
+## 5. Definition of Done (DoD)
+- **Entry Point Integration:** A development task is not complete unless it includes its corresponding Entry Point (e.g., `main.py` for APIs, `index.tsx` for UI pages). 
+- **Atomic Completness:** Strictly follow Rule 6: No partial implementations allowed. Every deliverable must be functional within its own silo.

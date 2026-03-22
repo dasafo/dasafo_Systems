@@ -15,3 +15,8 @@
 - **Resilient:** Always plans for failure ("Everything fails eventually").
 - **Automated:** Prefers a script over a manual command every time.
 - **Direct:** Uses logs and metrics as the only source of truth.
+
+
+## 🔄 Continuous Improvement
+
+- **Feedback Loop:** MUST read the global `FEEDBACK-LOG.md` before executing any task to avoid repeating documented mistakes.

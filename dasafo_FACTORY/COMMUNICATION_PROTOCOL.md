@@ -17,20 +17,22 @@
 
 ## 3. Directory Lifecycle
 
-1. **PENDING:** New tasks created by managers.
-2. **IN_PROGRESS:** Tasks moved by workers when they begin execution.
-3. **COMPLETED:** Tasks moved by workers for QA review.
-4. **ARCHIVE:** Final destination after QA and Architect approval.
-5. **REJECTED:** Tasks returned by QA or SECURITY with feedback for the original worker.
+1. **`01_PENDING`:** New tasks created by managers.
+2. **`02_IN_PROGRESS`:** Tasks moved by workers when they begin execution.
+3. **`03_COMPLETED`:** Tasks moved by workers for QA review.
+4. **`04_ARCHIVE`:** Final destination after QA and Architect approval.
+5. **`05_REJECTED`:** Tasks returned by QA or SECURITY with feedback for the original worker.
 
-## 4. Code Output and Context Injection (Workspace)
+## 4. Code Output, The Workspace, and Context Injection
 
 - **Context Injection:** Agents operate on external projects via the `$TARGET_PROJECT` environment variable or injected parameter.
-- All production code MUST be written exclusively inside the `$TARGET_PROJECT/WORKSPACE/` directory, divided into:
-  - `$TARGET_PROJECT/WORKSPACE/backend/`: For API and server-side logic (Python/FastAPI).
-  - `$TARGET_PROJECT/WORKSPACE/frontend/`: For user interface (Next.js/React/Vite).
-  - `$TARGET_PROJECT/WORKSPACE/shared/`: For common schemas, types, and cross-departmental DTOs.
-- **Rule of Immutability:** Development agents have "Read-Only" access to the `dasafo_FACTORY`. They cannot modify their own identities or global logs. All state changes occur strictly in `$TARGET_PROJECT`.
+- The `$TARGET_PROJECT` MUST respect the following master skeleton architecture:
+  - `$TARGET_PROJECT/PROJECT_STATE.json`: Meta-status and core user requirements.
+  - `$TARGET_PROJECT/LOCAL_KNOWLEDGE/`: Research and architectural blueprints.
+  - `$TARGET_PROJECT/TASKS/`: The Kanban directories (`01_PENDING` through `05_REJECTED`).
+  - `$TARGET_PROJECT/LOGS/`: Agent-specific logs (`agents/`) and critical errors.
+  - `$TARGET_PROJECT/WORKSPACE/`: For production code, strictly subdivided into `backend/`, `frontend/`, `shared/`.
+- **Rule of Immutability:** Development agents have "Read-Only" access to the `dasafo_FACTORY`. They cannot modify their own identities or factory laws. All state changes occur strictly in `$TARGET_PROJECT`.
 
 ## 5. Universal Pipeline & The QA Gate
 
@@ -43,13 +45,16 @@ To ensure systematic integrity, all workflows must follow an immutable sequence:
    - A task in `03_COMPLETED` is NOT finished.
    - Only the `QA_TESTER` and `SECURITY_AUDITOR` have the clearance to move a task from `COMPLETED` to `04_ARCHIVE`.
    - If UI/UX, logic, or SI constraints fail, QA **must** reject the task and return it to `05_REJECTED` along with a QA feedback log.
+   - **QA Integration Rule:** The QA must verify that any new code includes its proper Entry Point (e.g., `main.py`, `index.tsx`) and is fully integrated into the existing workspace before promoting to `04_ARCHIVE`.
+   - **Docker Proof-of-Build:** For projects with containerization, the QA MUST execute a dry-run or full build of the `Dockerfile` in the workspace to catch missing dependencies (e.g., `package-lock.json`) before validation.
    - No task N can begin if its prerequisite N-1 is not in `04_ARCHIVE`.
 
-## 6. Error & Conflict Resolution
+## 6. Error, Conflict Resolution & Feedback Loop
 
 - If an agent detects a security flaw, it must stop execution and ping the SECURITY_AUDITOR.
 - If two agents provide conflicting technical solutions, the ARCHITECT has the final decision.
-- All errors must be logged in `LOGS/agents/[agent_name].log` before notifying the manager.
+- All errors must be logged in `$TARGET_PROJECT/LOGS/agents/[agent_name].log` before notifying the manager.
+- **The Feedback Log (`FEEDBACK-LOG.md`):** If an agent makes a mistake that is caught by QA, Security, or Architecture, the structural correction MUST be logged here. ALL agents must read `FEEDBACK-LOG.md` before taking action on tasks.
 
 ## 7. Technical Rigor
 

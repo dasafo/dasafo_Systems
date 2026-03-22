@@ -9,5 +9,6 @@
 | **[02_ARCHITECTURE_RULES.md](02_ARCHITECTURE_RULES.md)** | `Architect` | DTOs, Temporal decoupling, Clean boundaries, and SRP. |
 | **[03_SCIENTIFIC_RIGOR.md](03_SCIENTIFIC_RIGOR.md)** | `Research/DS` | International System of Units (SI) and model versioning. |
 | **[04_SECURITY_AND_OPS.md](04_SECURITY_AND_OPS.md)** | `QA/SRE` | Structured logging, Zero-Trust, IaC, and Chesterton's Law. |
+| **[../FEEDBACK-LOG.md](../FEEDBACK-LOG.md)** | `ALL` | Master registry of past errors and mandatory corrections for continuous improvement. |
 
 > Any agent violating these directives will see their Task immediately moved to `05_REJECTED` by the quality gate (`UNIVERSAL_PIPELINE.md`).
