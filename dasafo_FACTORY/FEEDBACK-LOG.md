@@ -12,4 +12,8 @@
 
 ## 📝 Error Log Entries
 
-*(No entries yet. Inaugurated 2026-03-22. First QA/SECURITY rejection must be logged here.)*
+| Timestamp | Context (Agent/Project) | The Error | The Correction | The Golden Rule |
+| :--- | :--- | :--- | :--- | :--- |
+| 2026-03-22 | SECURITY / Pulse-X | Hardcoded API KEY in `twitter_connect.py`. | Use `os.getenv` + `.env` file. | **"Never commit raw credentials."** |
+| 2026-03-22 | QA / Pulse-X | FastAPI Routing Conflict (Static vs Dynamic). | Move static routes BEFORE params. | **"FastAPI parses paths in order. Fixed routes go first."** |
+

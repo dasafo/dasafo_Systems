@@ -58,6 +58,17 @@ Tasks flow physically through the directory structure in `$TARGET_PROJECT/TASKS/
 4. ✅ **`04_ARCHIVE`**: Final destination after QA/Security/Architect approval.
 5. ❌ **`05_REJECTED`**: Tasks returned with a QA feedback log. Must be corrected by the original worker.
 
+## 🤖 Open Agent Manager (OAM) Integration
+
+The `dasafo_FACTORY` natively integrates with the **Antigravity Open Agent Manager**, transforming the raw folder-based protocol into a visual, interactive team:
+
+- **Agent Profiles (`.agents/`):** Core factory roles (`@orchestrator`, `@security_auditor`, `@backend_dev`) are mapped as native Antigravity AI profiles. You can select and command them directly from the OAM interface.
+- **Slash Commands (`.agents/workflows/`):** Trigger factory loops instantly from the chat:
+  - `/factory-orchestrate`: Commands the Orchestrator to assess project state and dispatch the next batch of `.json` tasks.
+  - `/factory-audit`: Commands the Security Auditor to aggressively scan all completed tasks for vulnerabilities.
+
+This creates a true **Hybrid Execution Model**: the factory runs autonomously based on the Kanban folders, but you remain the ultimate supervisor at the OAM Inbox.
+
 ---
 
 ## 💎 Core Values & Standards
