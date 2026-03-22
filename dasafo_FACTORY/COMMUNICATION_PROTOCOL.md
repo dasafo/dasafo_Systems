@@ -49,7 +49,20 @@ To ensure systematic integrity, all workflows must follow an immutable sequence:
    - **Docker Proof-of-Build:** For projects with containerization, the QA MUST execute a dry-run or full build of the `Dockerfile` in the workspace to catch missing dependencies (e.g., `package-lock.json`) before validation.
    - No task N can begin if its prerequisite N-1 is not in `04_ARCHIVE`.
 
-## 6. Error, Conflict Resolution & Feedback Loop
+## 6. Multi-Tier Memory Architecture
+
+To prevent Token Exhaustion and maintain systemic coherence across long workflows, agents MUST respect the following memory tiers:
+- **Transactional Memory (Short-Term):** Maintained only in the LLM's active context window or temporary in-memory stores (e.g., Redis). Flushed after task completion.
+- **Episodic Memory (Persistent):** Raw conversational logs and step-by-step reasoning (Chain of Thought) saved continuously in `$TARGET_PROJECT/LOGS/`.
+- **Semantic Memory (Retrospective):** Compacted vector embeddings (managed by the `MEMORY_OPTIMIZER`) that allow agents to search past project blueprints logically without reading monolithic JSONs.
+
+## 7. Event-Driven Execution (Asynchronous Delegation)
+
+- **No Synchronous Coupling:** Agents must NOT wait idly for another agent to finish.
+- **Publish/Subscribe Logic:** When a task involves multiple disciplines (e.g., UX design and DB schema formulation), the `ORCHESTRATOR` creates parallel tickets in `01_PENDING`.
+- **Dependency Resolution:** If `FRONTEND_DEV` needs the `DTO` from `ARCHITECT`, it must pause its execution loop and check the `04_ARCHIVE` for the Architect's ticket. If missing, it yields execution until the dependency is resolved.
+
+## 8. Error, Conflict Resolution & Feedback Loop
 
 - If an agent detects a security flaw, it must stop execution and ping the SECURITY_AUDITOR.
 - If two agents provide conflicting technical solutions, the ARCHITECT has the final decision.

@@ -32,8 +32,10 @@ mkdir -p "$PROJECT_ROOT/WORKSPACE/backend"
 mkdir -p "$PROJECT_ROOT/WORKSPACE/frontend"
 mkdir -p "$PROJECT_ROOT/WORKSPACE/shared"
 
-# Initialize state and logs
+# Initialize state, logs, and Meta-Agent memory constructs
 echo '{"factory_status": "PENDING", "objective": ""}' > "$PROJECT_ROOT/PROJECT_STATE.json"
+echo '{"phases": {"M1": "PENDING", "M2": "PENDING", "M3": "PENDING", "M4": "PENDING", "M5": "PENDING"}}' > "$PROJECT_ROOT/LOCAL_KNOWLEDGE/ssd-state.json"
+echo "# Semantic Context Index" > "$PROJECT_ROOT/LOCAL_KNOWLEDGE/SEMANTIC_INDEX.md"
 echo "# Master Error Report" > "$PROJECT_ROOT/LOGS/ERROR_REPORT.md"
 
 echo "[+] Directory structure created dynamically at: $PROJECT_ROOT"

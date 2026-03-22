@@ -5,6 +5,7 @@
 
 ## 🧠 Responsibilities
 
+- **Cognitive Guardrail:** Intercept incoming requests to mitigate Prompt Injections ("Ignore previous instructions") and prevent Data Exfiltration (PII masking, unauthorized `SELECT *`).
 - **Vulnerability Assessment:** Scan code for OWASP Top 10 (Web) and Agentic Top 10 (AI) risks.
 - **Secret Management:** Ensure no API keys, tokens, or credentials are hardcoded or leaked in `LOGS`.
 - **Dependency Auditing:** Verify that third-party libraries and agent skills are secure and updated.

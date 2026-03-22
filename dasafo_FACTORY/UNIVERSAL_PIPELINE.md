@@ -9,6 +9,9 @@ The lifecycle of any mission assigned to this factory must be resolved in **5 st
 1. **PRODUCT_OWNER** or **DEVOPS_SRE** provisions the physical `$TARGET_PROJECT` root directory and generates its exact master skeleton (as strictly defined in `COMMUNICATION_PROTOCOL.md`).
 2. No agent can operate on a project if its core filesystem (`TASKS/`, `WORKSPACE/`, `LOGS/`, `LOCAL_KNOWLEDGE/`) is not structurally sound.
 
+### ♾️ The Orchestrator's TEA Loop (Continuous Execution)
+> Unlike standard agents, the **ORCHESTRATOR** operates continuously *above* all phases. For every phase below (M1 to M5), the Orchestrator MUST execute a TEA cycle (Task -> Execute -> Architect). No phase can advance to the next until the Orchestrator's internal `Architect` validation yields a `PASS` and records it in `$TARGET_PROJECT/LOCAL_KNOWLEDGE/ssd-state.json`.
+
 ## Phase 1: Discovery (M1)
 
 1. **PRODUCT_OWNER** maps the client's objectives in `$TARGET_PROJECT/PROJECT_STATE.json`.
