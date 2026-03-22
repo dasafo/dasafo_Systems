@@ -9,9 +9,9 @@
 
 ## 🚀 Overview
 
-**dasafo_Systems** is a high-performance, stateless AI Multi-Agent Factory designed for mass-scaling software projects with surgical precision. Unlike traditional monolithic repositories, this infrastructure decouples the **Agency Intelligence** (immutable rules and roles) from the **Project Workspaces** (mutable code and data).
+**dasafo_Systems** is a high-performance, stateless AI Multi-Agent Factory designed for mass-scaling software projects with surgical precision. Unlike traditional monolithic repositories, this infrastructure decouples the **Agency Intelligence** (immutable rules, protocols, and roles) from the **Project Workspaces** (mutable code, Kanban boards, and data).
 
-Built on the pillars of **Rigor**, **Solidity**, and **Vibe**, the factory allows for parallelized execution of complex engineering missions while enforcing strict physical and architectural constraints.
+Built on the pillars of **Rigor**, **Solidity**, and **Vibe**, the factory allows for the parallelized execution of complex engineering missions by multiple AI agents, while enforcing strict physical isolation and architectural constraints.
 
 ---
 
@@ -20,66 +20,88 @@ Built on the pillars of **Rigor**, **Solidity**, and **Vibe**, the factory allow
 The ecosystem is strictly divided into two immiscible hemispheres:
 
 ### 1. The Factory Engine (`dasafo_FACTORY/`)
-The immutable "Brain" of the agency. It contains the identities, skills, and protocols that govern every agent.
-- **`00_GLOBAL_KNOWLEDGE`**: The Factory OS Brain. Holds universal laws (SI Units, Coding Standards, Security Policies).
-- **`01_STRATEGY` to `05_OPERATIONS`**: Departmental silos containing specialized agent identities.
-- **`UNIVERSAL_PIPELINE.md`**: The mandatory 5-phase lifecycle (Discovery to Go-Live) including the strict **QA Gate**.
+The immutable "Brain" of the agency. Agents have **Read-Only** access to these rules. It contains the identities, skills, and protocols that govern every agent.
+- **`00_GLOBAL_KNOWLEDGE`**: The Factory OS Brain. Holds universal laws (Coding Standards, Security Policies, Design Tokens).
+- **`01_STRATEGY` to `05_OPERATIONS`**: Departmental silos containing specialized agent identities (e.g., `PRODUCT_OWNER`, `ARCHITECT`, `FRONTEND_DEV`, `QA_TESTER`).
+- **`UNIVERSAL_PIPELINE.md`**: The mandatory lifecycle (Discovery to Go-Live).
+- **`COMMUNICATION_PROTOCOL.md`**: The laws of physics governing how agents interact, pass tasks, and validate code.
 
 ### 2. The Project Workshops (`PROJECTS/`)
-The mutable "Hands" of the agency. Each directory here represents a unique client or mission.
-- **`WORKSPACE/`**: The actual source code (React, FastAPI, etc.).
-- **`TASKS/`**: The live task board (`PENDING`, `COMPLETED`, `ARCHIVED`).
-- **`LOGS/`**: Persistent execution and server logs.
-- **`LOCAL_KNOWLEDGE/`**: Project-specific research and context files.
+The mutable "Hands" of the agency. Each directory here represents a unique client or mission. All state changes occur strictly here.
+- **`WORKSPACE/`**: The actual production code, strictly subdivided into `backend/`, `frontend/`, and `shared/`.
+- **`TASKS/`**: The live Kanban board directory system.
+- **`LOGS/`**: Persistent execution logs and error tracking separated by agent.
+- **`LOCAL_KNOWLEDGE/`**: Project-specific research, marketing strategies, and architectural blueprints.
+
+---
+
+## ⚙️ The Universal Pipeline (5 Phases)
+
+Every project must sequentially clear these phases without exception:
+
+1. **Phase 0 (Bootstrap):** `PRODUCT_OWNER` or `DEVOPS_SRE` creates the project skeleton. No agent operates if the directory structure (`TASKS/`, `WORKSPACE/`, `LOGS/`, `LOCAL_KNOWLEDGE/`) is not structurally sound.
+2. **Phase 1 (Discovery):** State mapping and feasibility research. Output stored in `LOCAL_KNOWLEDGE/`.
+3. **Phase 2 (Architecture):** System design (DTOs, schemas). **No code is written until this phase is approved.**
+4. **Phase 3 (Isolated Execution):** Production agents write code strictly inside their respective `WORKSPACE/` silos.
+5. **Phase 4 (QA Gate - Crucial):** Validation phase. No task is finished until `QA_TESTER` approves it. Includes Entry Point verification and **Docker Proof-of-Build** validation.
+6. **Phase 5 (Go-Live):** `DEVOPS_SRE` orchestrates deployment (`docker-compose.yml`) and automatically spins up the application.
+
+---
+
+## 📋 The Kanban System (Task Lifecycle)
+
+Tasks flow physically through the directory structure in `$TARGET_PROJECT/TASKS/`:
+
+1. 📥 **`01_PENDING`**: New tasks created by managers.
+2. 🔄 **`02_IN_PROGRESS`**: Tasks moved by workers when execution begins.
+3. 🔍 **`03_COMPLETED`**: Tasks awaiting QA review. *(A task here is NOT finished).*
+4. ✅ **`04_ARCHIVE`**: Final destination after QA/Security/Architect approval.
+5. ❌ **`05_REJECTED`**: Tasks returned with a QA feedback log. Must be corrected by the original worker.
+
+---
+
+## 💎 Core Values & Standards
+
+Every line of code generated by this factory adheres to the **Global Knowledge Base**:
+
+| Standard | Description |
+| :--- | :--- |
+| **Physics-Mindset** | Mandatory use of SI Units (Kelvin, Pascal, Meters) for all internal data processing. No imperial units. |
+| **Atomic Vibe** | UI must be responsive, minimal, and visually premium (Glassmorphism, Neon accents, dark mode defaults). |
+| **Tokenization** | No hardcoded colors/spacing. Semantic tokens (`Colors.danger`, `Spacing.large`) are mandatory. |
+| **Solidity** | Zero-Trust security, strict DTO discipline across boundaries, and avoidance of shared mutable state. |
+| **Atomic Completeness** | Code must compile and be fully integrated (Entry Points connected) before leaving Phase 3. No partial work. |
 
 ---
 
 ## 🛠️ Getting Started
 
 ### Prerequisites
-- Node.js (for Frontend/Vite environments)
+- Node.js (for Frontend/Vite/Next.js environments)
 - Python 3.10+ (for Backend/ML environments)
-- An AI Orchestrator with `$TARGET_PROJECT` context injection support.
+- Docker & Docker Compose (for Go-Live orchestration and QA checks)
 
 ### Running a Mission
-1. **Initialize a Project**: Create a new directory in `PROJECTS/NEW_CLIENT`.
-2. **Assign the Mission**: Define goals in `PROJECTS/NEW_CLIENT/PROJECT_STATE.json`.
-3. **Inject Context**: Execute agents by passing the absolute path to the project via the `$TARGET_PROJECT` environment variable.
 
+The fastest way to initialize a structurally sound project is to use the built-in factory script:
+
+**1. Generate the Skeleton:**
 ```bash
-export TARGET_PROJECT="./PROJECTS/NEW_CLIENT"
-# Instantiate agents...
+cd dasafo_FACTORY
+./init_project.sh NombreDelProyecto
 ```
 
----
-
-## 💎 Core Values & Standards
-
-Every line of code and every research report generated by this factory must adhere to the **Global Knowledge Base**:
-
-| Standard | Description |
-| :--- | :--- |
-| **Physics-Mindset** | Mandatory use of SI Units (Kelvin, Pascal, Meters) in all backend transmissions. |
-| **Stateless Agency** | Agents never store project data locally; they only operate on the injected workspace. |
-| **Atomic Vibe** | UI must be responsive, minimal, and visually premium (Glassmorphism & Neon). |
-| **Solidity** | Zero-Trust security, DTO discipline, and mandatory QA Sign-Off before archiving tasks. |
-
----
-
-## 📂 Project Structure
-
-```text
-.
-├── dasafo_FACTORY/          # Immutable Intelligence
-│   ├── 00_GLOBAL_KNOWLEDGE/ # Foundational Laws
-│   ├── 01_STRATEGY_...      # Agent Identities
-│   └── UNIVERSAL_PIPELINE.md# Factory Workflow
-├── PROJECTS/                # Project Workspaces
-│   └── PROYECTO_AURA/       # Mission AURA
-└── README.md                # System Documentation
+**2. Inject Context to the AI Agents:**
+Agent execution ALWAYS requires passing the absolute path to the project.
+```bash
+export TARGET_PROJECT="/absolute/path/to/PROJECTS/NombreDelProyecto"
 ```
 
+**3. Kick-Off Pipeline:**
+Instruct the `PRODUCT_OWNER` to begin Phase 1 (Discovery) inside `$TARGET_PROJECT/PROJECT_STATE.json`. The factory will handle the rest autonomously.
+
 ---
+
 <p align="center">
-  <i>"Move fast in a way that future agents can understand, extend, and trust."</i>
+  <i>"Move fast in a way that future agents can understand, extend, and trust. The system must remain stable under continuous multi-agent evolution."</i>
 </p>
