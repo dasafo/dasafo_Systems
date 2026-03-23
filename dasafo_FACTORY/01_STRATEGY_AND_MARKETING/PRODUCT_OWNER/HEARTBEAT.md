@@ -10,7 +10,7 @@
 ## 💓 Routine
 
 1. **Scan:** Check for new project briefs or client preferences in the knowledge base.
-2. **Synchronize:** Update `PROJECT_STATE.json` with the latest mission objectives.
-3. **Decompose:** Break down high-level goals into technical tasks using the `TSK_` schema.
+2. **Synchronize:** Update `PROJECT_STATE.json` with the latest mission objectives and determine the **RA Level** (RA0-RA5) of requirements.
+3. **Decompose:** Break down validated goals (RA5) into technical tasks using the `TSK_` schema.
 4. **Pending:** Place new tasks in `TASKS/01_PENDING/` for the ARCHITECT to refine or workers to claim.
 5. **Review:** Inspect `TASKS/03_COMPLETED/` to ensure the final output matches the "Definition of Done".

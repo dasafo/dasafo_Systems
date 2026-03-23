@@ -21,3 +21,4 @@ Before an agent proceeds to delete or drastically modify fully functional core l
 ## 4. Early Observability (Structured Logging)
 - `console.log("reached here")` is banned for production systems.
 - Use structured logs that provide context. Every backend error must include: `useCase`, `entityId`, `correlationId`, `errorDetails`. An SRE must be able to trace the full lifespan of a failing request.
+- **Concurrency Guard:** All writes to `EXECUTION_LOG.md` MUST be protected by the `EXECUTION_LOG.lock` mutex as defined in the Communication Protocol.

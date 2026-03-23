@@ -25,15 +25,18 @@ The lifecycle of any mission assigned to this factory must be resolved in **5 st
 ## Phase 3: Isolated Execution (M3)
 
 1. Production agents (`BACKEND_DEV`, `FRONTEND_DEV`, `DATA_SCIENTIST`, `DB_MASTER`) consume tasks from `$TARGET_PROJECT/TASKS/01_PENDING`.
-2. **Pre-requisite:** Before executing ANY task or writing code, every agent MUST check `dasafo_FACTORY/FEEDBACK-LOG.md` to avoid repeating known mistakes.
-3. Code is deposited EXCLUSIVELY in subdirectories within `$TARGET_PROJECT/WORKSPACE/`.
+2. **Lock Acquisition:** The agent MUST acquire the ticket by renaming it to `.lock` and registering its `owner_agent_id` and `timestamp`. Execution starts ONLY if the `task_id` check in `EXECUTION_LOG.md` passes (Idempotency).
+3. **Pre-requisite:** Before executing ANY task or writing code, every agent MUST check `dasafo_FACTORY/FEEDBACK-LOG.md` (obeying the latest semantic version) to avoid repeating known mistakes.
+4. Code is deposited EXCLUSIVELY in subdirectories within `$TARGET_PROJECT/WORKSPACE/`.
+5. **Heartbeat & Timeout Cleanup:** Agents SHOULD update a heartbeat timestamp. If a task is inside `02_IN_PROGRESS` or held as `.lock` longer than the global timeout without heartbeat updates, the Orchestrator will clean the orphan lock and abort the execution to unbrick the system.
 
 ## Phase 4: Quality Gate (QA Gate)
 
 1. A developer CANNOT mark a task as finished. They can only leave it in `03_COMPLETED`.
-2. The **QA_TESTER** and **SECURITY_AUDITOR** audit the task (e.g., executing a build, checking SI units, reviewing permissions).
-3. If it fails, it is returned to `05_REJECTED`. If it passes, it is promoted to `04_ARCHIVE`.
-4. **Feedback Loop Action:** If a task is rejected due to a structural, logical, or recurring error, QA/SECURITY MUST register this error and its correction in `dasafo_FACTORY/FEEDBACK-LOG.md` so the rest of the factory learns from it.
+2. The **QA_TESTER** and **SECURITY_AUDITOR** audit the task (e.g., executing a build, checking SI units, reviewing permissions, checking **semantic JSON validation**).
+3. Si falla, el `retry_count` se incrementa y se devuelve a `05_REJECTED`. Si sobrepasa el límite (ej. > 3 retries), se bloquea la tarea requiriendo rescate humano.
+4. Si pasa limpiamente, es promovida a `04_ARCHIVE`.
+5. **Feedback Loop Action:** If a task is rejected due to a structural, logical, or recurring error, QA/SECURITY MUST register this error and its correction in `dasafo_FACTORY/FEEDBACK-LOG.md` (via Human Approval prompt) so the rest of the factory learns from it.
 
 ## Phase 5: Go-Live
 

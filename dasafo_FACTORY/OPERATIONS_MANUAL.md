@@ -1,102 +1,82 @@
-# 🏭 MANUAL DE OPERACIONES DE LA FACTORÍA DE AGENTES (dasafo_FACTORY)
+# 🏭 dasafo_FACTORY Operations Manual
 
-Este documento es la **Constitución Técnica** de la Factoría. Define cómo se crean, ejecutan y validan proyectos de software de forma autónoma, no determinista y ultra-robusta.
-
----
-
-## 🏗️ 1. ARQUITECTURA DE DOS HEMISFERIOS
-La Factoría opera bajo el principio de **Separación Total entre Lógica y Estado**:
-
-1.  **Hemisferio de Control (`dasafo_FACTORY/`):**
-    *   **Inmutable:** Contiene las identidades, misiones, herramientas autorizadas y protocolos de comunicación. Es el "Software de la Factoría".
-    *   **Global:** Lo que el agente aprende aquí (vía `00_GLOBAL_KNOWLEDGE` o `FEEDBACK-LOG.md`) se aplica a TODOS los proyectos futuros.
-
-2.  **Hemisferio de Ejecución (`PROJECTS/$TARGET_PROJECT/`):**
-    *   **Mutable:** Es el espacio de trabajo del proyecto actual. Aquí vive el código, los logs, las tareas y la base de datos.
-    *   **Aislado:** Un agente trabajando en "Pulse-X" no tiene visibilidad de "OmniMarket" a menos que se inyecte explícitamente.
+This document is the **Technical Constitution** of the Factory. It defines how software projects are created, executed, and validated autonomously, non-deterministically, and ultra-robustly.
 
 ---
 
-## 👥 2. EL CONSEJO DE AGENTES (Roles y Especialidades)
+## 🏗️ 1. Two-Hemisphere Architecture
+The Factory operates under the principle of **Total Separation between Logic and State**:
 
-### 💎 Meta-Agentes (Capa de Orquestación y Memoria)
-*   **ORCHESTRATOR:** El cerebro gestor. Divide objetivos complejos en **Grafos Acíclicos Dirigidos (DAG)** de tareas. Implementa el **Ciclo TEA (Task-Execute-Architect)**: ninguna fase se cierra sin una validación de arquitectura interna.
-*   **MEMORY_OPTIMIZER:** Previene el colapso por tokens. Lee logs verbosos, extrae hechos inmutables (ej. "La DB usa el puerto 5432") y los inyecta en `SEMANTIC_INDEX.md`, truncando los diálogos innecesarios.
-
-### 🔭 Fase de Estrategia y Descubrimiento
-*   **PRODUCT_OWNER:** Define el éxito del negocio. Mantiene el `PROJECT_STATE.json` y el `BACKLOG` de usuario.
-*   **RESEARCH_AGENT:** El explorador científico. Antes de programar, investiga APIs externas, compatibilidad de librerías y documentación técnica, almacenando hallazgos en `LOCAL_KNOWLEDGE/`.
-
-### 🛡️ Fase de Seguridad y Calidad
-*   **ARCHITECT:** Diseña los contratos de datos (DTOs) y esquemas SQL. Es el "gatekeeper" del código: nada se programa sin su diseño previo.
-*   **SECURITY_AUDITOR:** El guardián paranoico. Escanea inyecciones de prompts, fugas de secretos y fallos en librerías. Implementa el **Cognitive Guardrail**.
-*   **QA_TESTER:** El juez de solidez. Ejecuta builds de Docker, valida unidades SI (pesos en kg, distancias en m) y asegura que el frontend sea responsive y siga el diseño atómico.
-
-### ⚙️ Fase de Construcción y DevOps
-*   **BACKEND_DEV / FRONTEND_DEV / DB_MASTER:** Los artesanos del código. Escriben software modular, comentado y tipado exclusivamente en la carpeta `WORKSPACE/`.
-*   **DEVOPS_SRE:** El arquitecto de infraestructura. Crea el `docker-compose.yml`, gestiona volúmenes y asegura que el proyecto levante con un solo comando.
+1.  **Control Hemisphere (`dasafo_FACTORY/`):**
+    *   **Immutable:** Contains identities, missions, authorized tools, and communication protocols. It is the "Factory Software."
+    *   **Global Knowledge:** Lessons recorded in `00_GLOBAL_KNOWLEDGE` or `FEEDBACK-LOG.md` apply to ALL future projects.
+2.  **Execution Hemisphere (`PROJECTS/$TARGET_PROJECT/`):**
+    *   **Mutable:** The working space for the current project. Contains code, logs, tasks, and local databases.
+    *   **Isolated:** An agent working on "Project A" has no visibility of "Project B" unless explicitly injected.
 
 ---
 
-## 🔄 3. EL PIPELINE UNIVERSAL (Ciclo de Vida M0-M5)
+## 👥 2. The Agent Council (Roles & Specialties)
 
-Un proyecto nunca se "salta" pasos. El Orquestador vigila este flujo:
+### 💎 Meta-Agents (Orchestration & Memory)
+*   **ORCHESTRATOR:** The managing brain. Breaks down complex goals into **Directed Acyclic Graphs (DAG)** of tasks. Implements the **TEA Cycle (Task-Execute-Architect)**: no phase closes without internal architecture validation. Manages **Deadlocks** by purging orphan locks.
+*   **MEMORY_OPTIMIZER:** Prevents token collapse. Summarizes verbose logs into immutable facts injected into `SEMANTIC_INDEX.md`.
 
-*   **M0 - Bootstrap:** Se ejecuta `init_project.sh` para crear el esqueleto físico.
-*   **M1 - Discovery:** El Product Owner y Research definen el "Qué" y el "Cómo técnico".
-*   **M2 - Architecture:** El Arquitecto crea los esquemas (`schema.sql`) y contratos de API.
-*   *GATILLO:* El Orquestador valida el diseño -> PASS.
-*   **M3 - Isolated Execution:** Los desarrolladores consumen tareas de `01_PENDING` y las mueven a `03_COMPLETED`.
-*   **M4 - Quality Gate:** El QA y el Auditor de Seguridad revisan el código. Si falla -> `05_REJECTED`. Si pasa -> `04_ARCHIVE`.
-*   **M5 - Go-Live:** El DevOps levanta el entorno real en Docker y el proyecto se entrega al usuario.
+### 🔭 Strategy & Discovery Phase
+*   **PRODUCT_OWNER:** Defines business success. Maintains `PROJECT_STATE.json` and the user BACKLOG.
+*   **RESEARCH_AGENT:** Scientific explorer. Investigates external APIs, library compatibility, and technical docs before coding.
 
----
+### 🛡️ Security & Quality Phase
+*   **ARCHITECT:** Designs data contracts (DTOs) and SQL schemas. The "gatekeeper" of code: nothing is programmed without their prior design.
+*   **SECURITY_AUDITOR:** Paranoid guardian. Scans for prompt injections, secret leaks, and library vulnerabilities. Implements the **Cognitive Guardrail** and semantic validation.
+*   **QA_TESTER:** Solidness judge. Executes Docker builds, validates SI units, and ensures UI responsiveness/atomic design.
 
-## 📝 4. PROTOCOLO DE CONTEXTO Y COMUNICACIÓN
-
-Los agentes no "hablan" por hablar; se comunican mediante **Archivos de Estado**:
-
-*   **Inyección de Contexto:** Cada agente recibe el path `$TARGET_PROJECT` como variable de entorno. Esto le permite saltar directamente a la carpeta del proyecto actual.
-*   **Tareas JSON:** Una tarea en `01_PENDING` tiene este formato:
-    ```json
-    { "task_id": "T-101", "assigned_to": "BACKEND_DEV", "depends_on": ["T-100"], "instructions": "..." }
-    ```
-*   **Memoria Episódica vs Semántica:**
-    *   *Episódica:* Logs RAW en `LOGS/agents/` (borrables).
-    *   *Semántica:* `SEMANTIC_INDEX.md` y `PROJECT_STATE.json` (permanentes).
+### ⚙️ Construction & DevOps Phase
+*   **BACKEND_DEV / FRONTEND_DEV / DB_MASTER:** Code artisans. Write modular, commented, and typed software inside the `WORKSPACE/` folder.
+*   **DEVOPS_SRE:** Infrastructure architect. Creates `docker-compose.yml`, manages volumes, and ensures one-click deployment.
 
 ---
 
-## 🛡️ 5. RIGOR TÉCNICO Y REGLAS DE ORO
+## 🔄 3. Universal Pipeline (Life Cycle M0-M5)
 
-1.  **Unidades SI:** Prohibido usar "libras" o "pulgadas". La factoría solo entiende Kilogramos, Metros, Segundos y Kelvins.
-2.  **Solidez Atómica:** Un componente de interfaz no puede tener lógica de negocio. Un servicio de backend no puede saber nada del HTML.
-3.  **Chesterton’s Fence:** Antes de refactorizar un código existente, el agente debe declarar por qué cree que se escribió así.
-4.  **Feedback Eterno (`FEEDBACK-LOG.md`):** Si un agente comete un error y QA lo detecta, la corrección estructural se graba en este log global. **Es obligatorio que TODO agente lea este archivo antes de empezar su jornada.**
+*   **M0 - Bootstrap:** `init_project.sh` creates the physical skeleton.
+*   **M1 - Discovery:** Product Owner and Research define the "What" and technical "How."
+*   **M2 - Architecture:** Architect creates schemas and API contracts.
+*   **M3 - Isolated Execution:** Developers consume tasks from `01_PENDING` using the **.lock protocol** and move them to `03_COMPLETED`.
+*   **M4 - Quality Gate:** QA and Security Auditor review code and perform **Semantic JSON validation**. If fail -> `05_REJECTED`. If pass -> `04_ARCHIVE`.
+*   **M5 - Go-Live:** DevOps deploys the environment.
 
 ---
 
-## 📂 6. ESTRUCTURA MAESTRA DEL PROYECTO (`$TARGET_PROJECT`)
+## 📝 4. Context & Communication Protocol
+
+*   **Context Injection:** Agents receive the `$TARGET_PROJECT` path as an environment variable.
+*   **Atomic State Transitions:** Task movements must be OS-level atomic operations (`mv`).
+*   **Idempotency:** Agents check `EXECUTION_LOG.md` before processing to prevent duplicate execution.
+
+---
+
+## 🛡️ 5. Technical Rigor & Golden Rules
+
+1.  **SI Units Only:** Use Kilograms, Meters, Seconds, and Kelvins.
+2.  **Atomic Solidity:** UI components must not contain business logic. Backend services must not know about HTML.
+3.  **Chesterton’s Fence:** Agents must declare the understood purpose of existing code before refactoring it.
+4.  **Feedback Loop & Versioning (`FEEDBACK-LOG.md`):** 
+    *   **Versioning:** Every new policy must include a version header (e.g., `## Version: v1.1`).
+    *   **Human-In-The-Loop:** Agents cannot write directly to the global `FEEDBACK-LOG.md`. They must prompt the user via OAM: `"Proposed entry for Core. Approve [Y/N]?"`.
+5.  **Retry Limits:** If a task `retry_count > 3`, it must be locked in `05_REJECTED` for human rescue.
+
+---
+
+## 📂 6. Project Master Structure (`$TARGET_PROJECT`)
 ```bash
-├── PROJECT_STATE.json     # Metas, estado actual y KPIs del proyecto.
-├── LOCAL_KNOWLEDGE/      # Hallazgos de Research, Arquitectura e Índices.
-├── TASKS/                # El tablero Kanban físico (01_PENDING a 05_REJECTED).
-├── LOGS/                 # Memoria flash de los agentes y reportes de errores.
-└── WORKSPACE/            # El código fuente real (Frontend, Backend, Shared).
+├── PROJECT_STATE.json     # Goals, status, and project KPIs.
+├── LOCAL_KNOWLEDGE/       # Research, architecture blueprints, and indices.
+├── TASKS/                 # Physical Kanban (01_PENDING to 05_REJECTED).
+├── LOGS/                  # Agent memory and execution logs.
+└── WORKSPACE/             # Source code (Frontend, Backend, Shared).
 ```
 
 ---
 
-## 🎛️ 7. EJECUCIÓN HÍBRIDA (Open Agent Manager)
-
-La Factoría cuenta con integración nativa para el **Open Agent Manager (OAM) de Antigravity**. En lugar de ser un mero sistema de carpetas pasivo, la factoría se instancia visualmente:
-
-*   **Perfiles Nativos (`.agents/`)**: Los agentes clave (`@orchestrator`, `@security_auditor`, `@backend_dev`) están mapeados como entidades seleccionables en tu panel de control.
-*   **Workflows Dirigidos (`.agents/workflows/`)**: Puedes inyectar energía al sistema directamente con comandos de chat:
-    *   `/factory-orchestrate`: Lanza al Orquestador a evaluar los JSONs y despachar la siguiente fase de desarrollo.
-    *   `/factory-audit`: Dispara un escaneo agresivo de seguridad sobre la carpeta `03_COMPLETED`.
-*   **Inbox Humano**: Cuando una tarea cae en `05_REJECTED` por violación de reglas, se levanta una alerta en el OAM para que el humano decida si deja al sistema auto-repararse iterando, o interviene.
-
----
-
-*La factoría no es solo un conjunto de scripts; es un organismo coordinado diseñado para que, incluso si yo (la IA principal) fallo, la estructura y los protocolos obliguen a la siguiente iteración a ser mejor.*
+*The Factory is a coordinated organism designed so that even if the primary AI fails, the structures and protocols force the next iteration to be better.*

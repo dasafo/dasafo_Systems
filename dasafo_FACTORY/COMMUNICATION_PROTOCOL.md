@@ -13,7 +13,9 @@
 
 - All task-related communication must be performed via `.json` files in the `/TASKS` directory.
 - **Internal Encoding:** UTF-8.
-- **Required Fields:** `task_id`, `sender`, `recipient`, `action_required`, `priority`, `context_files`.
+- **Required Fields:** `task_id`, `sender`, `recipient`, `action_required`, `priority`, `context_files`, `sequence_id` (MUST be a time-ordered UUID v7 or atomic counter), `qa_passed` (boolean, mandatory for ARCHIVE), and `retry_count` (starts at 0).
+- **Semantic Validation:** A JSON file is not considered valid just by parsing correctly. It MUST conform to a strict schema (required fields present, correct data types, no disguised nulls) before being moved to the next state directory.
+- **Atomic State Transitions:** File moves between directories (e.g., `01_PENDING` to `02_IN_PROGRESS`) MUST be OS-level atomic operations (`mv`). If the OS does not guarantee atomicity, fallback to `copy + checksum + delete`.
 
 ## 3. Directory Lifecycle
 
@@ -69,7 +71,19 @@ To prevent Token Exhaustion and maintain systemic coherence across long workflow
 - All errors must be logged in `$TARGET_PROJECT/LOGS/agents/[agent_name].log` before notifying the manager.
 - **The Feedback Log (`FEEDBACK-LOG.md`):** If an agent makes a mistake that is caught by QA, Security, or Architecture, the structural correction MUST be logged here. ALL agents must read `FEEDBACK-LOG.md` before taking action on tasks.
 
-## 7. Technical Rigor
+## 8. Concurrency, File Locking & Idempotency
+
+To prevent race conditions, infinite loops, and double execution, agents MUST adhere to these strict concurrency barriers:
+
+- **Idempotency & The Execution Log:** Before starting a task, agents must verify its `task_id` is not marked as `started` (and active) or `completed` in `$TARGET_PROJECT/LOGS/EXECUTION_LOG.md`. 
+  - *Global Log Lock:* Before writing to `EXECUTION_LOG.md`, the agent MUST acquire a global mutex lock (`$TARGET_PROJECT/LOGS/EXECUTION_LOG.lock`) to ensure atomic writes and prevent parallel execution clashes.
+- **Task Locking (Mutex):** When an agent picks up a task, it MUST immediately rename it to `[task_id].json.lock`.
+  - The `.lock` file MUST internally inject its `owner_agent_id` and a `timestamp`. 
+  - *Lock Expiration & System Recovery:* Only the owner agent or the Orchestrator (in case of a timeout or crash > 30 min) can release or remove this `.lock`. This includes stewardship of the `EXECUTION_LOG.lock`.
+- **Retry Count Limit:** Whenever a task is returned from QA to development, its `retry_count` increments. If `retry_count > 3`, the task is forced into `05_REJECTED` (acting as a FAILED state) and halts silently, requiring human/Orchestrator review.
+- **Ordering Consistency:** Sequence ordering decisions MUST prioritize `sequence_id` (Time-Ordered) over timestamps to bypass clock synchronization limits. Absolute task order is determined by $sequence\_id$.
+
+## 9. Technical Rigor
 
 - Use SI units in all technical specifications.
 - Avoid "fluff" or conversational fillers in task descriptions. Be technical and precise.

@@ -17,7 +17,8 @@ PROCESS:
 1. Deconstruct the intent into discrete logical tasks.
 2. Determine dependencies (e.g., Task B needs Task A's DB schema).
 3. Identify the specialized Agent from the `AGENT_REGISTRY.md` capable of solving each task.
-OUTPUT: A STRICT JSON Array of task objects targeting `TASKS/01_PENDING`.
+OUTPUT: A STRICT JSON Array of task objects targeting `TASKS/01_PENDING`. Ensure `sequence_id` is a Time-Ordered UUID v7 or atomic counter.
+STEWARDSHIP: You are responsible for clearing the `EXECUTION_LOG.lock` if it exceeds the 30-min global timeout.
 ```
 
 ### [PROMPT: Development_Node]
@@ -43,8 +44,8 @@ CHECKS:
 3. **Docker Proof-of-Build**: Does the Dockerfile successfully dry-run?
 4. Are all SI units (Physics-Mindset) respected?
 
-If YES: Move task to `04_ARCHIVE`.
-If NO: Move task to `05_REJECTED` and write a scathing but constructive actionable feedback log in `$TARGET_PROJECT/LOGS/agents/`.
+If YES: Inject `qa_passed: true` and current timestamp into the Task JSON, then move it to `04_ARCHIVE`.
+If NO: Increment `retry_count`. If > 3, force halt. Move task to `05_REJECTED` and write a scathing but constructive actionable feedback log in `$TARGET_PROJECT/LOGS/agents/`.
 ```
 
 ### [PROMPT: Security_Guardrail]
