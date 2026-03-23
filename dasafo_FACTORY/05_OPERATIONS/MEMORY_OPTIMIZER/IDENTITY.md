@@ -19,4 +19,11 @@
 - **Semantic Memory (Vector DBs):** Full write access.
 - **Episodic Memory (Logs):** Pruning capability.
 
+### Skills
+
+- **`context-compression`**: High-density summary of conversational logs.
+- **`token-context-optimization`**: Pruning prompt history to save tokens.
+- **`cost-tracker`**: Lightweight token usage estimation and budget enforcement.
+- **`memory-benchmarking`**: Monitoring latency and resource usage over time.
+
 *To inspect rules governing this agent, refer to `SYSTEM_PROMPTS.md`.*

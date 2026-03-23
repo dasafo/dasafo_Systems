@@ -1,3 +1,5 @@
+# 📂 05_OPERATIONS: Maintenance & Reliability
+
 El departamento de **`05_OPERATIONS`** es el "Equipo de Mantenimiento y Despliegue". Su misión es asegurar que el software no solo funcione en local, sino que pueda subirse a la nube, escalar y que la factoría no colapse por el exceso de información.
 
 Aquí tienes el desglose de sus agentes y archivos:
@@ -26,6 +28,7 @@ Es un agente interno de la factoría cuya misión es ahorrarte dinero y tiempo. 
 *   **`SKILLS/`**:
     *   **`context-compression`**: Toma una conversación de 50 páginas y la resume en 1 página con los "hechos inmutables".
     *   **`token-context-optimization`**: Limpia el chat de basura innecesaria para que las respuestas de la IA sigan siendo rápidas y precisas.
+    *   **`cost-tracker`**: El contador de gas. Calcula el coste de los tokens y frena la factoría si te pasas del presupuesto configurado.
     *   **`nblm-memory-bridge`**: Envía información importante a NotebookLM para crear una base de conocimiento permanente.
     *   **`clutch-resource-cleaner`**: Borra archivos temporales o copias de seguridad antiguas que ya no sirven.
 
@@ -38,6 +41,16 @@ Es el agente "Meta". Su función es observar cómo trabaja la factoría y mejora
 *   **`SKILLS/`**: 
     *   **`skill-optimization`**: Analiza el `FEEDBACK-LOG.md` y actualiza las instrucciones de otros agentes para que no repitan el mismo error dos veces.
     *   **`factory-audit-pro`**: Realiza auditorías periódicas de toda la estructura para asegurar que todo el conocimiento esté ordenado.
+
+---
+
+### 4. 🚨 DEPLOYMENT_MONITOR (El Vigilante Operacional)
+Es el agente de post-despliegue. Su misión es asegurar que lo que construimos siga funcionando después del Go-Live.
+
+*   **`IDENTITY.md`**: Perfil de guardián de estabilidad y uptime.
+*   **`SKILLS/`**:
+    *   **`healthcheck-poller`**: Realiza pings automáticos de salud para detectar caídas de servicio.
+    *   **`resource-monitor`**: Vigila el consumo de CPU y RAM de tus aplicaciones en vivo.
 
 ---
 
