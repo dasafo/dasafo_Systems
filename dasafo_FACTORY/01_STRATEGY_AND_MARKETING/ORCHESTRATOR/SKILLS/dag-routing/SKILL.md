@@ -18,4 +18,5 @@ description: How to decompose a user prompt into a Directed Acyclic Graph (DAG) 
      "instructions": "Build FastAPI login endpoint."
    }
    ```
-4. **Publish Event.** Ensure the assigned agent's queue is updated.
+4. **Update Telemetry.** Always update `$TARGET_PROJECT/PROJECT_TELEMETRY.md` after any state change, using `TEMPLATE_telemetry.md` as a base.
+5. **Publish Event.** Ensure the assigned agent's queue is updated.

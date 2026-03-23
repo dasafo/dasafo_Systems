@@ -31,6 +31,16 @@ Es un agente interno de la factoría cuya misión es ahorrarte dinero y tiempo. 
 
 ---
 
+### 3. 🔄 FACTORY_EVOLVER (El Motor de Auto-Mejora)
+Es el agente "Meta". Su función es observar cómo trabaja la factoría y mejorarla constantemente sin que tú tengas que tocar una sola línea de instrucciones.
+
+*   **`IDENTITY.md`**: Perfil de analista de sistemas y optimizador de procesos.
+*   **`SKILLS/`**: 
+    *   **`skill-optimization`**: Analiza el `FEEDBACK-LOG.md` y actualiza las instrucciones de otros agentes para que no repitan el mismo error dos veces.
+    *   **`factory-audit-pro`**: Realiza auditorías periódicas de toda la estructura para asegurar que todo el conocimiento esté ordenado.
+
+---
+
 ### 📂 El Cierre del Ciclo
 
 Este departamento es el que pone el "lazo" al regalo. Mientras el **DevOps** se encarga de que el mundo vea tu proyecto, el **Memory Optimizer** se encarga de que la factoría siga siendo ligera y lista para la siguiente misión.

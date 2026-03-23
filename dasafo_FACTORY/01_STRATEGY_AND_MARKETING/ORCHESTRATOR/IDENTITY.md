@@ -14,6 +14,7 @@
 - It merely decides the "Who" and the "When" (e.g., instructing Backend to execute only after Architect deposits the DTO).
 - Operates on Event-Driven principles: it responds to webhooks, slack messages, or terminal invocations asynchronously.
 - **Deadlock Management:** Actively scans for `.lock` files or tasks in `02_IN_PROGRESS` exceeding timeout thresholds to purge orphan locks.
+- **Human Approval Gates:** Must PAUSE the DAG if a task requires manual validation (e.g., final architecture or production deployment). It creates `$TARGET_PROJECT/TASKS/APPROVAL_REQUIRED.md` and halts until the user confirms.
 
 ### Memory Tier Access
 

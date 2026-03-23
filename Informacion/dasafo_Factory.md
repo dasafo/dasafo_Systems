@@ -24,8 +24,8 @@ La factoría está organizada como una empresa real dividida en **5 departamento
 | **`01_STRATEGY`** | `@orchestrator`, `@product_owner`. | Planificar, dividir el trabajo y mover el proyecto de fase en fase. |
 | **`02_ARCHITECTURE`** | `@architect`. | Diseñar los planos (SQL, APIs) antes de escribir una sola línea de código. |
 | **`03_DEVELOPMENT`** | `@backend_dev`, `@frontend_dev`, `@devops_sre`. | Los artesanos que construyen el software real y levantan contenedores Docker. |
-| **`04_COMPLIANCE`** | `@qa_tester`, `@security_auditor`. | Los "porteros de discoteca". Bloquean el código si tiene fallos o vulnerabilidades. |
-| **`05_MAINTENANCE`** | `@memory_optimizer`. | Limpiar logs innecesarios y guardar los "hechos clave" para ahorrar tokens. |
+| **`04_COMPLIANCE`** | `@qa_tester`, `@security_auditor`, `@docs_master`. | Los "porteros de discoteca" y el redactor técnico. Bloquean errores y crean manuales premium. |
+| **`05_MAINTENANCE`** | `@memory_optimizer`, `@factory_evolver`. | El equipo de auto-mejora. Optimizan el contexto y hacen que la factoría evolucione sola. |
 
 ---
 
@@ -42,6 +42,8 @@ Estos archivos ubicados en la raíz de `dasafo_FACTORY` controlan la lógica glo
 *   **`FEEDBACK-LOG.md`**: El alma de la factoría. Es el diario de errores corregidos. Cuando algo falla, se documenta aquí para que ningún agente lo repita.
 *   **`OPERATIONS_MANUAL.md`**: La "Constitución". Explica a cualquier IA o humano las reglas de oro y el funcionamiento técnico de la factoría.
 *   **`ACTIVE_MISSIONS.json`**: El registro de proyectos en curso. Permite al Orquestador saber qué misiones están activas y en qué fase se encuentra cada una.
+*   **`TEMPLATE_telemetry.md`**: La base para el dashboard dinámico de cada proyecto (progreso, costes y estado real).
+*   **`TEMPLATE_approval.md`**: El sistema de **Human Approval Gates**. Define los puntos de pausa obligatoria donde tú debes dar el visto bueno.
 *   **`factory-orchestrate.md` (Comando `/factory-orchestrate`)**:
     *   **¿Qué hace?**: Invoca al Orquestador para que analice el estado del proyecto, mueva las piezas del tablero Kanban (las carpetas `01_PENDING`, `02_IN_PROGRESS`, etc.) y genere la siguiente fase de desarrollo. 
     *   **Inyección Automática**: Al lanzar este comando, el sistema detecta tu ubicación y define el **`$TARGET_PROJECT`** correspondiente para que la IA actúe en el lugar correcto.

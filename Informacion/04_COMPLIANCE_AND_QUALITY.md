@@ -30,6 +30,17 @@ Su misión es proteger el sistema contra ataques externos y asegurar que no haya
 
 ---
 
+### 3. ✍️ DOCS_MASTER (El Redactor Técnico Premium)
+Transforma el "código sucio" en documentación limpia, manuales de usuario y referencias API de las que estar orgulloso.
+
+*   **`IDENTITY.md`**: Perfil de comunicador técnico con enfoque en claridad y elegancia.
+*   **`SKILLS/`**: 
+    *   **`api-docs-generator`**: Creación automática de Swagger/Markdown para las APIs del proyecto.
+    *   **`manual-builder`**: Generación de guías de usuario finales basadas en la funcionalidad real implementada.
+    *   **`changelog-automator`**: Mantenimiento del historial de cambios de cada proyecto.
+
+---
+
 ### 📂 El Filtro de la Factoría
 
 Este departamento es el que interactúa directamente con la carpeta **`05_REJECTED`**. Si el **QA Tester** o el **Security Auditor** encuentran un fallo, mueven la tarea a "Rechazado" y el desarrollador **DEBE** corregirlo antes de intentar moverlo a `04_ARCHIVE`.

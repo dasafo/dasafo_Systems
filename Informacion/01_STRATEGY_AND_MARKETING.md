@@ -10,8 +10,8 @@ Es el agente más crítico. Su misión es leer el estado del proyecto y decidir 
 *   **`IDENTITY.md`**: Define su personalidad de gestor eficiente y su capacidad para ver el proyecto de forma global. Es el que aplica el Ciclo TEA.
 *   **`TOOLS.md`**: Lista las herramientas permitidas para mover archivos entre carpetas de tareas y validar el pipeline.
 *   **`SKILLS/`**: 
-    *   **`dag-routing`**: Capacidad para crear grafos de tareas (que la tarea B no empiece hasta que la A esté lista).
-    *   **`structured-system-design`**: Habilidad para estructurar misiones complejas en pasos lógicos.
+    *   **`dag-routing`**: Capacidad para crear grafos de tareas, gestionando las **Human Approval Gates** (pausas de validación).
+    *   **`structured-system-design`**: Habilidad para estructurar misiones complejas y mantener la **PROJECT_TELEMETRY.md** actualizada con el progreso real.
 
 ---
 
