@@ -87,3 +87,17 @@ To prevent race conditions, infinite loops, and double execution, agents MUST ad
 
 - Use SI units in all technical specifications.
 - Avoid "fluff" or conversational fillers in task descriptions. Be technical and precise.
+
+## 10. Context Economy & Token Guardrails
+
+To ensure industrial-grade performance, agents MUST minimize context usage:
+- **Prohibited Reading:** Agents are FORBIDDEN from reading files in `dasafo_FACTORY` that are not strictly related to their specific task.
+- **RAG Mandatory:** All searches for global rules (00_GLOBAL_KNOWLEDGE) MUST be performed via the `global-knowledge-vectorizer` search interface provided by the `MEMORY_OPTIMIZER`.
+- **Snippet-Only Policy:** Do not read entire files if a specific line range or function is needed. Use `view_file` with line constraints.
+
+## 11. Factory Evolution & Guardrails
+
+The `dasafo_FACTORY` itself is a versioned product:
+- **Pre-mutation Backup:** Any modification to a `SKILL.md` or `IDENTITY.md` MUST follow the `checkpoint-manager` protocol: backup to `.archive/` before writing.
+- **Versioning:** All structural changes MUST be documented in `FACTORY_VERSION.md`.
+- **Immunity:** The `00_GLOBAL_KNOWLEDGE/01_CODING_STANDARDS.md` file is IMMUNE to automatic modification and requires explicit Human Approval Gate.

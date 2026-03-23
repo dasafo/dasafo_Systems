@@ -1,4 +1,27 @@
 {
-  "factory_status": "ONLINE",
-  "active_projects": []
+  "active_missions": [
+    {
+      "mission_id": "VIBE-CONNECT-001",
+      "project": "VibeBoard",
+      "objective": "Integrate Notion and Google Calendar APIs",
+      "agents_involved": [
+        {
+          "agent_id": "ARCHITECT",
+          "task": "Review integrations.py for pattern alignment",
+          "status": "QUEUED"
+        },
+        {
+          "agent_id": "BACKEND_DEV",
+          "task": "Implement OAuth2 flow for Google and Webhooks for Notion",
+          "status": "QUEUED"
+        },
+        {
+          "agent_id": "SECURITY_AUDITOR",
+          "task": "Perform ZEROTRUST audit on token storage in .env",
+          "status": "QUEUED"
+        }
+      ],
+      "started_at": "2026-03-23T18:43:00Z"
+    }
+  ]
 }

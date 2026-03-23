@@ -24,8 +24,8 @@ La factoría está organizada como una empresa real dividida en **5 departamento
 | **`01_STRATEGY`** | `@orchestrator`, `@product_owner`. | Planificar, dividir el trabajo y mover el proyecto de fase en fase. |
 | **`02_ARCHITECTURE`** | `@architect`. | Diseñar los planos (SQL, APIs) antes de escribir una sola línea de código. |
 | **`03_DEVELOPMENT`** | `@backend_dev`, `@frontend_dev`, `@devops_sre`. | Los artesanos que construyen el software real y levantan contenedores Docker. |
-| **`04_COMPLIANCE`** | `@qa_tester`, `@security_auditor`, `@docs_master`. | Los "porteros de discoteca" y el redactor técnico. Bloquean errores y crean manuales premium. |
-| **`05_MAINTENANCE`** | `@memory_optimizer`, `@factory_evolver`. | El equipo de auto-mejora. Optimizan el contexto y hacen que la factoría evolucione sola. |
+| **`04_COMPLIANCE`** | `@qa_tester`, `@security_auditor`, `@docs_master`. | Los "porteros de calidad" y el redactor técnico. Bloquean errores y crean manuales premium. |
+| **`05_OPERATIONS`** | `@devops_sre`, `@memory_optimizer`, `@factory_evolver`, `@deployment_monitor`. | El equipo de estabilidad y auto-mejora. Optimizan el coste y vigilan el uptime. |
 
 ---
 
@@ -51,6 +51,7 @@ Estos archivos ubicados en la raíz de `dasafo_FACTORY` controlan la lógica glo
 *   **`COMMUNICATION_PROTOCOL.md`**: Define el lenguaje y formato que deben usar los agentes para hablar entre ellos (ej. cómo estructurar una tarea JSON o un reporte de error).
 *   **`GLOBAL_SOUL.md`**: El archivo de "personalidad" de la factoría. Define los valores éticos, el "vibe" y la filosofía de trabajo que todos los agentes deben adoptar.
 *   **`GLOBAL_USER.md`**: Tu perfil como usuario. Contiene tus preferencias generales, tecnologías favoritas y cómo prefieres que te informen los agentes.
+*   **`FACTORY_VERSION.md`**: El registro de versiones de la factoría. Controla las mejoras industriales y asegura la trazabilidad.
 
 ---
 
@@ -253,29 +254,41 @@ dasafo_FACTORY
 │   │   │   │   └── SKILL.md
 │   │   │   ├── infra-as-code-terraform-pro
 │   │   │   │   └── SKILL.md
-│   │   │   ├── mlops-deployment-guard
-│   │   │   │   └── SKILL.md
-│   │   │   ├── server-management
-│   │   │   │   └── SKILL.md
-│   │   │   └── sre-engineer
+│   │   │   └── mlops-deployment-guard
 │   │   │       └── SKILL.md
 │   │   └── TOOLS.md
-│   └── MEMORY_OPTIMIZER
+│   ├── MEMORY_OPTIMIZER
+│   │   ├── IDENTITY.md
+│   │   ├── SKILLS
+│   │   │   ├── cost-tracker
+│   │   │   │   └── SKILL.md
+│   │   │   ├── context-compression
+│   │   │   │   └── SKILL.md
+│   │   │   ├── nblm-memory-bridge
+│   │   │   │   └── SKILL.md
+│   │   │   └── token-context-optimization
+│   │   │       └── SKILL.md
+│   │   └── TOOLS.md
+│   ├── FACTORY_EVOLVER
+│   │   ├── IDENTITY.md
+│   │   ├── SKILLS
+│   │   │   ├── skill-optimization
+│   │   │   │   └── SKILL.md
+│   │   │   ├── system-optimizer
+│   │   │   │   └── SKILL.md
+│   │   │   ├── autonomous-feedback-analyzer
+│   │   │   │   └── SKILL.md
+│   │   │   ├── reflective-learning-engine
+│   │   │   │   └── SKILL.md
+│   │   │   ├── pattern-recognition
+│   │   │   │   └── SKILL.md
+│   │   │   └── factory-audit-pro
+│   │   │       └── SKILL.md
+│   │   └── TOOLS.md
+│   └── DEPLOYMENT_MONITOR
 │       ├── IDENTITY.md
 │       ├── SKILLS
-│       │   ├── clutch-resource-cleaner
-│       │   │   └── SKILL.md
-│       │   ├── context-compression
-│       │   │   └── SKILL.md
-│       │   ├── ml-history-indexer
-│       │   │   └── SKILL.md
-│       │   ├── nblm-memory-bridge
-│       │   │   └── SKILL.md
-│       │   ├── runtime-perf-optimization
-│       │   │   └── SKILL.md
-│       │   ├── search-context-distillation-pro
-│       │   │   └── SKILL.md
-│       │   └── token-context-optimization
+│       │   └── healthcheck-poller
 │       │       └── SKILL.md
 │       └── TOOLS.md
 ├── ACTIVE_MISSIONS.json
