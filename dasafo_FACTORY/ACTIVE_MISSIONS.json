@@ -8,20 +8,22 @@
         {
           "agent_id": "ARCHITECT",
           "task": "Review integrations.py for pattern alignment",
-          "status": "QUEUED"
+          "status": "WORKING"
         },
         {
           "agent_id": "BACKEND_DEV",
           "task": "Implement OAuth2 flow for Google and Webhooks for Notion",
-          "status": "QUEUED"
+          "status": "WORKING"
         },
         {
           "agent_id": "SECURITY_AUDITOR",
           "task": "Perform ZEROTRUST audit on token storage in .env",
-          "status": "QUEUED"
+          "status": "COMPLETED"
         }
       ],
-      "started_at": "2026-03-23T18:43:00Z"
+      "started_at": "2026-03-23T18:43:00Z",
+      "mission_status": "IN_PROGRESS"
     }
   ]
+
 }

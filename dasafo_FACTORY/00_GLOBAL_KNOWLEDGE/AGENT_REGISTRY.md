@@ -78,6 +78,12 @@
 - **Authorized MCPs:** `snyk_mcp`, `gitleaks_tool`, `agent_guardrail_scanner`, `dependency_graph`.
 - **LLM Settings:** Security-optimized Models (Maximum Caution). Temperature: 0.0 (Strictly deterministic).
 
+### `DOCS_MASTER`
+- **Domain:** Technical documentation, API documentation (Swagger/Redoc), and user experience copywriting.
+- **Skills:** `api-docs-generator`, `senior-technical-writer`, `documentation-strategist`, `user-experience-copywriter`.
+- **Authorized MCPs:** `filesystem`, `github`.
+- **LLM Settings:** High Context. Temperature: 0.2 (Clear and professional).
+
 ---
 
 ## 🚀 Operations & Scaling (05)
@@ -99,3 +105,15 @@
 - **Skills:** `search-context-distillation-pro`, `ml-history-indexer`, `nblm-memory-bridge`, `clutch-resource-cleaner`.
 - **Authorized MCPs:** `filesystem`, `notebooklm`, `sql_engine` (Vector ops).
 - **LLM Settings:** Compression-specialized Models. Temperature: 0.1 (Precise summaries).
+
+### `DEPLOYMENT_MONITOR`
+- **Domain:** Uptime monitoring, health checks, and incident reporting.
+- **Skills:** `healthcheck-poller`, `resource-monitor`, `incident-reporter`.
+- **Authorized MCPs:** `system_monitor`, `browser_sandbox`, `web_poller`.
+- **LLM Settings:** Real-time analysis focus. Temperature: 0.0.
+
+### `FACTORY_EVOLVER`
+- **Domain:** Meta-optimization, factory self-improvement, and feedback loop analysis.
+- **Skills:** `skill-optimization`, `system-optimizer`, `autonomous-feedback-analyzer`, `reflective-learning-engine`, `pattern-recognition`, `factory-audit-pro`.
+- **Authorized MCPs:** `filesystem`, `communication_relay`.
+- **LLM Settings:** Reflection-heavy Models. Temperature: 0.2.

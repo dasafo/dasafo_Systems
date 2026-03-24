@@ -101,3 +101,5 @@ The `dasafo_FACTORY` itself is a versioned product:
 - **Pre-mutation Backup:** Any modification to a `SKILL.md` or `IDENTITY.md` MUST follow the `checkpoint-manager` protocol: backup to `.archive/` before writing.
 - **Versioning:** All structural changes MUST be documented in `FACTORY_VERSION.md`.
 - **Immunity:** The `00_GLOBAL_KNOWLEDGE/01_CODING_STANDARDS.md` file is IMMUNE to automatic modification and requires explicit Human Approval Gate.
+
+---

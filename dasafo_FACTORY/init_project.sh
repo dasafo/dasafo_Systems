@@ -15,7 +15,7 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-PROJECT_ROOT="../PROJECTS/$1"
+PROJECT_ROOT="../../PROJECTS/$1"
 
 echo "[*] Initializing factory skeleton for project: $1"
 
@@ -23,6 +23,7 @@ echo "[*] Initializing factory skeleton for project: $1"
 mkdir -p "$PROJECT_ROOT/LOCAL_KNOWLEDGE"
 mkdir -p "$PROJECT_ROOT/LOGS/agents"
 mkdir -p "$PROJECT_ROOT/LOGS/sessions"
+mkdir -p "$PROJECT_ROOT/LOGS/reports"
 mkdir -p "$PROJECT_ROOT/TASKS/01_PENDING"
 mkdir -p "$PROJECT_ROOT/TASKS/02_IN_PROGRESS"
 mkdir -p "$PROJECT_ROOT/TASKS/03_COMPLETED"
