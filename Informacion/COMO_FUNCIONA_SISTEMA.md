@@ -46,4 +46,17 @@ Tú eres el **Director de Orquesta**.
 - Los agentes te preguntarán solo en los puntos críticos de decisión (Decision Gates).
 
 ---
+
+### 🚀 Guía de Inicio Rápido: Puesta en Marcha (v2.1)
+
+Para iniciar una misión real en la factoría, sigue estos pasos:
+
+1.  **Inicialización**: Desde la carpeta `dasafo_FACTORY`, ejecuta `./init_project.sh NombreProyecto`. Esto crea el entorno aislado y seguro.
+2.  **Selección del Agente**: En tu IDE (Agent Manager), selecciona al **Orchestrator** (icono de router).
+3.  **Activación**: Envía el comando `/factory-orchestrate` o solicita: *"Inicia la misión del proyecto [NombreProyecto]"*.
+4.  **Validación del Contrato**: Abre el archivo `PROJECTS/NombreProyecto/PRP_CONTRACT.json`, revísalo y firma poniendo el campo `"user_approval": true`. 
+
+**¡Listo! La factoría comenzará a trabajar de forma autónoma siguiendo el Universal Pipeline.**
+
+---
 **dasafo_Systems: Construyendo el futuro de la ingeniería autónoma, un commit a la vez.**
