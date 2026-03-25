@@ -20,6 +20,14 @@ Es el enrutador semántico. Convierte intenciones en lenguage natural en grafos 
 Diseña estrategias de salida al mercado basadas en datos reales.
 *   **Habilidades:** Análisis de tendencias con Apify, redacción persuasiva basada en evidencia (Evidence-based copywriting) y estrategias de contenido social.
 
+### 🚀 Motor de Ejecución (Skills v2.1)
+
+Este departamento no solo piensa, sino que ejecuta a través de sus habilidades (`skills`):
+
+*   **`prp-generator` (PRODUCT_OWNER):** Genera automáticamente el borrador del contrato de visión basado en las primeras interacciones con el usuario.
+*   **`intent-to-dag` (ORCHESTRATOR):** El motor que desglosa una petición compleja en una lista de tareas técnica para el resto de la factoría.
+*   **`evidence-based-copywriting` (MARKETING_GROWTH):** Utiliza datos de mercado reales para redactar textos que no solo suenan bien, sino que están validados por tendencias actuales.
+
 ---
 
 ### 📜 Protocolos de Estrategia

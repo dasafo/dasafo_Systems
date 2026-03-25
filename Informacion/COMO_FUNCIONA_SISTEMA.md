@@ -7,9 +7,9 @@ El sistema funciona mediante la interacción de dos grandes motores: la **Factor
 ---
 
 ### 1. El Cerebro: `dasafo_FACTORY`
-Es el lugar donde residen las **reglas inmutables**. Aquí es donde los agentes (IA) "aprenden" quiénes son y qué deben hacer.
+Es el lugar donde residen las **reglas inmutables** y el **motor ejecutivo**.
 - **Identidades:** Define el "alma" y los valores de cada agente (ej. el Arquitecto es minimalista, el QA es implacable).
-- **Habilidades (Skills):** Son los "módulos de conocimiento" que los agentes cargan para realizar tareas específicas (ej. escanear secretos, diseñar bases de datos).
+- **Habilidades (Skills):** Son los "módulos de ejecución" funcionales. No son solo texto; contienen lógica real (`run.py`) para realizar tareas (ej. escanear secretos, generar APIs).
 - **Protocolos:** Las leyes de física del sistema. Cómo se habla (`COMMUNICATION_PROTOCOL`), cómo se escala (`UNIVERSAL_PIPELINE`) y cómo se aprende de los errores (`FEEDBACK-LOG`).
 
 ### 2. El Taller: `PROJECTS/`

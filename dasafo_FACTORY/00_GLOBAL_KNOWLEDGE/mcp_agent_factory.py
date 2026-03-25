@@ -1,7 +1,18 @@
+"""
+mcp_agent_factory.py — MCP Server (STDIO)
+Bridges Antigravity/MCP requests to the Factory's skills_runner.py.
+v2.1: Removed hardcoded absolute paths for project-agnostic execution.
+"""
+
 import sys
 import json
 import subprocess
 import os
+from pathlib import Path
+
+# Relative path resolution for portability
+BASE_DIR = Path(__file__).resolve().parent
+RUNNER_PATH = BASE_DIR / "skills_runner.py"
 
 def main():
     while True:
@@ -18,7 +29,7 @@ def main():
                     "result": {
                         "protocolVersion": "2024-11-05",
                         "capabilities": {"tools": {}},
-                        "serverInfo": {"name": "dasafo_factory", "version": "1.0.0"}
+                        "serverInfo": {"name": "dasafo_factory", "version": "2.1.0"}
                     }
                 }
                 sys.stdout.write(json.dumps(response) + "\n"); sys.stdout.flush()
@@ -56,14 +67,17 @@ def main():
                     skill = args.get("skill")
                     input_data = args.get("input_data", "")
                     
-                    runner_path = "/home/david/Documents/AI/AGENTES/dasafo_Systems/dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/skills_runner.py"
+                    # Target project strictly from environment variable
+                    target_project = os.environ.get("TARGET_PROJECT", ".")
+                    
                     cmd = [
-                        "python3", runner_path,
+                        "python3", str(RUNNER_PATH),
                         "--agent", agent,
                         "--skill", skill,
-                        "--target-project", "/home/david/Documents/AI/AGENTES"
+                        "--target-project", target_project
                     ]
-                    if input_data: cmd.extend(["--input", input_data])
+                    if input_data: 
+                        cmd.extend(["--input", input_data])
                     
                     result = subprocess.run(cmd, capture_output=True, text=True)
                     response = {
@@ -75,7 +89,9 @@ def main():
                     sys.stdout.write(json.dumps(response) + "\n"); sys.stdout.flush()
 
         except EOFError: break
-        except Exception: pass
+        except Exception as e:
+            # Silent error handling for JSON-RPC stability, but logged in dev if needed
+            pass
 
 if __name__ == "__main__":
     main()

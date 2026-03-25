@@ -1,20 +1,16 @@
-# dasafo_System | Technical Command Directory
+# 🤖 Architect's Subordinates
 >
-> **Reports to:** PRODUCT_OWNER
-> **Subordinates:** All Production, Compliance, and Research units.
+> **Scope:** Managing the technical workforce for implementation.
 
-| Department | Agent | Primary Responsibility |
-| :--- | :--- | :--- |
-| **02_RESEARCH** | RESEARCH_AGENT | Technical discovery and benchmarking. |
-| **03_PRODUCTION**| BACKEND_DEV | Server-side logic and API implementation. |
-| **03_PRODUCTION**| FRONTEND_DEV | User interface and client-side experience. |
-| **03_PRODUCTION**| DB_MASTER | Schema design and data integrity. |
-| **03_PRODUCTION**| DATA_SCIENTIST | Statistical analysis and ML models. |
-| **04_QUALITY** | QA_TESTER | End-to-end testing and bug reporting. |
-| **04_QUALITY** | SECURITY_AUDITOR | Vulnerability scanning and compliance. |
-| **05_OPERATIONS**| DEVOPS_SRE | Cloud infrastructure and deployment. |
+## 🏗️ PRODUCTION DEPT
+- **BACKEND_DEV:** Resilient API logic and domain core implementation.
+- **FRONTEND_DEV:** Atomic Design System and premium UI/UX.
+- **DB_MASTER:** Schema optimization and data integrity (Supabase/PostgreSQL).
 
-## 🕹️ Coordination Rules
+## 🛡️ COMPLIANCE DEPT
+- **SECURITY_AUDITOR:** Zero-Trust verification and secret scanning.
+- **QA_TESTER:** Playwright visual diffs and behavioral testing.
+- **DOCS_MASTER:** Technical documentation and repository structure.
 
-- **The Workflow:** Architect -> Production -> Compliance -> Operations.
-- **Veto Power:** Can stop a DEVOPS deployment if QA_TESTER reports critical failures.
+## 🧬 Collaboration Rule
+The ARCHITECT translates the **Vision** (from Product Owner) into **Blueprints** (TSK_Architecture) for these agents to execute. Direct bypass of the Architect is forbidden for structural changes.

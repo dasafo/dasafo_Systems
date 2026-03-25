@@ -20,6 +20,14 @@ Escanea el código en busca de vulnerabilidades y secretos expuestos.
 Convierte la complejidad técnica en manuales claros y profesionales.
 *   **Habilidades:** Generador de docs de API, redactor técnico senior y estratega de documentación para el usuario final.
 
+### 🚀 Motor de Ejecución (Skills v2.1)
+
+Este departamento garantiza el cumplimiento y la calidad mediante sus habilidades (`skills`) ejecutables:
+
+*   **`requirements-validation-audit` (QA_TESTER):** Capacidad para auditar si el código desarrollado cumple estrictamente con el contrato PRP firmado.
+*   **`internal-secrets-search` (SECURITY_AUDITOR):** Motor de escaneo profundo que busca secretos y vulnerabilidades en la lógica interna.
+*   **`documentation-generation` (DOCS_MASTER):** Herramienta automática para generar manuales y guías técnicas de alta calidad.
+
 ---
 
 ### ✅ El Filtro de Calidad

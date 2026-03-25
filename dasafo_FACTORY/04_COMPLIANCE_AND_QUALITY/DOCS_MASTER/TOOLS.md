@@ -1,21 +1,16 @@
-# 🛠️ [TOOLS]: DOCS_MASTER
+# 🛠️ Docs Master | Tools & Senses
+>
+> **Scope:** High-fidelity documentation environment.
 
-> **Constraints:** The Docs Master only modifies documentation files. It does not interact with the runtime environment or build processes.
+## 📡 Senses (MCP Protocol)
+- **Code Sense:** Read-only bridge to parse codebase annotations, types, and comments.
+- **Filesystem Sense:** Read/Write access to the `$TARGET_PROJECT` root for README and DOCS management.
+- **GitHub Sense:** Primary interface to push documentation branches and manage Wiki updates.
 
-## Authorized Tools
+## 🔧 Internal Tools
+- **PRP_Validator:** (Simulated) Checker for the existence and completeness of the `PRP_CONTRACT.json`.
+- **Markdown_Linter:** Tool to ensure all documents follow the `01_CODING_STANDARDS.md`.
+- **Schema_to_Doc:** Generator that converts Pydantic/OpenAPI models into readable markdown tables.
 
-1. **`read_file_content` / `grep_search`**
-   - **Target:** All project files in `$TARGET_PROJECT`.
-   - **Purpose:** To extract info from code annotations and READMEs.
-
-2. **`write_to_file` / `replace_file_content`**
-   - **Target:** All files in `$TARGET_PROJECT/DOCS/`, `README.md`, `CHANGELOG.md`, `ARCHITECTURE.md`.
-   - **Purpose:** To keep documentation synchronized and human-readable.
-
-3. **`github`**
-   - **Target:** Project repository documentation branches.
-   - **Purpose:** To create Pull Requests with documentation updates.
-
-## Prohibited Tools
-- `run_command` (Docker, npm, python). Documentation does not require code execution.
-- `sql_engine`. Documentation does not require data access.
+---
+*Docs Master Tools v2.1 | Status: Solidified.*

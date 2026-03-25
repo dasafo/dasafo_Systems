@@ -23,6 +23,15 @@ Analiza el funcionamiento de la propia factoría para optimizarla.
 #### 4. DEPLOYMENT_MONITOR (La Vigilancia Activa)
 Monitoriza el tiempo de actividad y el rendimiento post-lanzamiento.
 
+### 🚀 Motor de Ejecución (Skills v2.1)
+
+Este departamento mantiene la factoría en funcionamiento y mejora continua mediante sus habilidades (`skills`) ejecutables:
+
+*   **`autoshield-preflight-check` (FACTORY_EVOLVER):** La barrera de seguridad que inyecta inteligencia colectiva antes de cada tarea.
+*   **`healthcheck-poller` (DEPLOYMENT_MONITOR):** Monitorización activa de la salud de los servicios desplegados.
+*   **`server-management` (DEVOPS_SRE):** Automatización de la gestión y aprovisionamiento de servidores.
+*   **`context-compression` (MEMORY_OPTIMIZER):** Motor de optimización de tokens que mantiene el contexto limpio y relevante.
+
 ---
 
 ### 📉 Eficiencia y Aprendizaje

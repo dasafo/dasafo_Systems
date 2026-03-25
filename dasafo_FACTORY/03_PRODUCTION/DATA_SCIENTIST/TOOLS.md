@@ -1,9 +1,16 @@
-# dasafo_System | Data Science Tools
+# 🛠️ Data Scientist | Tools & Senses
 >
-> **Scope:** Computational environment and data access.
+> **Scope:** Computational and analytical environment.
 
-- **Python_Runtime (MCP):** Full access to Pandas, NumPy, Scikit-Learn, PyTorch, and TensorFlow.
-- **SQL_Connector:** Interface to query `DB_MASTER` schemas.
-- **Jupyter_MCP:** Ability to generate and execute `.ipynb` notebooks for transparent analysis.
-- **Visualization_Engine:** Access to Matplotlib, Seaborn, and Plotly for report generation.
-- **Knowledge_Base_Access:** Read-only access to `$TARGET_PROJECT/WORKSPACE/data/`.
+## 📡 Senses (MCP Protocol)
+- **Python Sense:** Full access to Pandas, NumPy, Scikit-Learn, and PyTorch.
+- **Notebook Sense:** Primary interface to `notebooklm-mcp` for research distillation.
+- **SQL Sense:** Direct read-only bridge to the Supabase/PostgreSQL schema.
+
+## 🔧 Internal Tools
+- **EDA_Pilot:** (Simulated) Automated generation of statistical charts and summaries.
+- **Model_Validator:** Tool to verify SI unit consistency in datasets.
+- **RAG_Analyzer:** Query experimental knowledge based on semantic intent.
+
+---
+*Data Scientist Tools v2.1 | Status: Solidified.*

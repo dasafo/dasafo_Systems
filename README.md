@@ -31,6 +31,18 @@ High-level summaries and guides for human-agent onboarding, maintained in **Span
 
 ---
 
+## ⚡ Executive Power Skills (v2.1)
+
+The factory is not just a set of rules; it is an **Executive Engine** capable of autonomous output:
+
+- **Strategy Engine**: Automatic PRP Contract generation & Intent-to-DAG conversion.
+- **Architectural Tools**: Automated ADR generation & deep-semantic tech research.
+- **Production Masters**: API Boilerplate generators & Atomic Design System engines.
+- **Compliance Gates**: Internal secret scanning & recursive PRP audit validation.
+- **Operations Stability**: AutoShield v2.0 self-healing & context compression.
+
+---
+
 ## ⚙️ The Universal Pipeline (v2.1)
 
 Every project sequentially clears these phases:

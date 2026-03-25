@@ -1,34 +1,20 @@
-# 01. Coding Standards & Vibe
-> **Objective:** Maximize development velocity (Vibe) without sacrificing structural integrity (Solidity).
+# 💎 01_CODING_STANDARDS
 
-## 1. Naming & Self-Documentation
-- Use explicit and descriptive names. The use of generic verbs like `getData()` is strictly prohibited.
-  - ✅ **Good:** `getSensorReadingById()`, `calculateIsolationForestScore()`
-  - ❌ **Bad:** `process()`, `handleData()`
-- Avoid unnecessary comments. Code must explain itself.
-- **Exceptions for comments:** Non-obvious business rules, temporary technical compromises, or explicit trade-offs.
+## 1. Principles
+- **Atomic Vibe**: UI components must be stunning, responsive, and tokenized.
+- **Structural Solidity**: Strict separation of concerns (SoC). Business logic is blind to the UI.
+- **Immutability**: Data is immutable by default. Pure functions are the gold standard.
 
-## 2. Immutability by Default
-- Treat all data as immutable unless mutation is strictly necessary.
-- Prefer pure functions and explicit state transitions.
-- Avoid shared mutable state to prevent hidden side effects during multi-agent collaboration.
+## 2. Global Mandates
+- **Language**: All internal code, comments, and logic strings MUST be in **English**. Human-facing overview docs in `Informacion/` may be in Spanish.
+- **SI Units**: Always use International System units (meters, kilograms, seconds, kWh). No imperial units allowed.
+- **Zero Hardcoding**: Never hardcode paths or secrets. Use relative paths or environment variables (`TARGET_PROJECT`).
 
-## 3. Early Return Pattern
-- Avoid deep code nesting.
-- It is mandatory to handle error cases or trivial conditions at the beginning of the function.
+## 3. Formatting
+- **Python**: PEP8 compliant. Explicit type hinting required.
+- **Markdown**: Lint-clean (MD022, MD032, MD040).
+- **CSS**: Vanilla CSS preferred for flexibility. Use semantic tokens (`var(--color-danger)`).
 
-```javascript
-// ✅ Good: Flat and predictable logic
-if (!condition) return;
-if (!anotherCondition) return;
-// happy path
-```
-
-## 4. UI Vibe & Atomic Design System
-- **Tokenization:** NEVER hardcode generic colors, spacing, or borders. Always use semantic tokens (e.g., `Colors.danger`, `var(--color-brand-bg)`).
-- **Aesthetic Vibe:** The user must be amazed at first glance. Use curated palettes, elegant dark mode (Glassmorphism), fluid transitions, and dynamic micro-animations.
-- **Visual Resilience:** Every UI component must anticipate, design, and test for the following states: *Loading*, *Error*, *Empty State*, and *Data Overflow*.
-
-## 5. Definition of Done (DoD)
-- **Entry Point Integration:** A development task is not complete unless it includes its corresponding Entry Point (e.g., `main.py` for APIs, `index.tsx` for UI pages). 
-- **Atomic Completness:** Strictly follow Rule 6: No partial implementations allowed. Every deliverable must be functional within its own silo.
+## 4. Documentation
+- Use GitHub Alerts (`> [!IMPORTANT]`) for critical implementations.
+- Every function must have a clear, descriptive name (e.g., `calculate_invoice_total` vs `process`).

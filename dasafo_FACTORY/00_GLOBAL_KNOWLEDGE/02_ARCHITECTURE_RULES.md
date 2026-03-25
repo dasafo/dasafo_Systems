@@ -1,20 +1,21 @@
-# 02. Architecture Rules
-> **Objective:** Preserve the Separation of Concerns (SoC) law so the agency can operate in parallel without colliding.
+# 🏗️ 02_ARCHITECTURE_RULES
 
-## 1. Strict Separation of Responsibilities
-Never mix Business Logic, Data Layer, and UI in the same module.
-- **UI (Interface):** Is *dumb*. It only draws data and emits events.
-- **Business Logic:** Is *blind*. It doesn't know if it's on the web, in a terminal, or on a mobile device.
-- **Data Layer:** Is *isolated*. It only handles persistence and relationships.
+## 1. The "Chasis Blindado" Architecture
+The Factory is divided into two strict zones:
+- **`dasafo_FACTORY/`**: The IMMUTABLE brain. Contains logic, skills, and global knowledge.
+- **`PROJECTS/`**: The MUTABLE workspace. Where specific implementations live.
 
-## 2. DTO (Data Transfer Object) Discipline
-- Internal domain models (SQLAlchemy, Prisma) MUST NEVER cross layer boundaries.
-- Any data going to the UI must pass through an explicit transformation (DTOs or Pydantic schemas).
+## 2. Boundary Enforcement
+- **Domain**: Depends on nothing. Core business rules.
+- **Application**: Orchestrates use cases.
+- **Infrastructure**: Implements interfaces (DBs, APIs).
+- **UI**: Purely visual. Communicates only with the Application layer.
 
-## 3. Dependency Agnosticism
-- Critical third-party libraries must be isolated using internal interfaces or wrappers. The core never depends directly on external APIs that could be deprecated.
+## 3. The PRP Validation Gate
+> [!IMPORTANT]
+> No production task can start without a signed `PRP_CONTRACT.json` in the project root. This contract defines the "What" before the agents decide the "How".
 
-## 4. Event-Driven Architecture (Temporal Decoupling)
-- Avoid synchronous coupling for long-running processes between agents.
-- Prefer publishing events (`AnomalyDetected`, `TaskCompleted`) instead of making prolonged blocking network calls. 
-- *If an agent fails, the chain should not collapse immediately.*
+## 4. Multi-Agent Orchestration
+- Use DAG (Directed Acyclic Graph) for task decomposition.
+- All inter-agent communication follows the `COMMUNICATION_PROTOCOL`.
+- Agents must never share mutable state; they pass serialized DTOs.

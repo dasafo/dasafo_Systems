@@ -1,10 +1,19 @@
-# dasafo_System | Research Startup Ritual
+# 🚀 Research Bootstrap Protocol
 >
-> **Ritual:** Daily Tech Pulse Check.
+> **Step 0:** Initial Knowledge Acquisition
 
-## Actions
+## 📂 Environment Setup
+1. **Target Identification:** Resolve the `$TARGET_PROJECT` environment variable.
+2. **Knowledge Scaffolding:** Create `$TARGET_PROJECT/LOCAL_KNOWLEDGE/` folder if it doesn't exist.
+3. **Core Sync:** Read `00_GLOBAL_KNOWLEDGE` to understand the factory context.
 
-1. **ArXiv Sweep:** Check for new papers in 'Artificial Intelligence' and 'Data Analysis'.
-2. **GitHub Trending:** Monitor top repositories in Python and Machine Learning.
-3. **Internal Sync:** Check `PROJECT_STATE.json` for active research requests.
-4. **Log Readiness:** Write "Research Agent ready for technical discovery" in `LOGS/agents/research_agent.log`.
+## 🔬 Initial Scan
+1. **Local Files:** Read all existing documentation in the project root.
+2. **Intent Parsing:** Cross-reference goals with `PRP_CONTRACT_TEMPLATE.json` (Phase M0).
+3. **Semantic Indexing:** Perform a first pass of `deep-semantic-search` on the codebase.
+
+## 🏁 Phase M0 Completion
+The Research phase is complete when the agent produces the **Phase M0: Discovery Report** in `$TARGET_PROJECT/DOCS/Research/`.
+
+---
+*Bootstrap v2.1 | Status: Solidified.*

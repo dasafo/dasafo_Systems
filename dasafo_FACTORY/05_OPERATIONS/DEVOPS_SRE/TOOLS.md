@@ -1,9 +1,16 @@
-# dasafo_System | DevOps Toolkit
+# 🛠️ DevOps SRE | Tools & Senses
 >
-> **Scope:** Cloud, Containers, and Automation.
+> **Scope:** Cloud infrastructure and automated environment lifecycle.
 
-- **Docker_Engine (MCP):** Build, run, and manage containerized applications.
-- **Terraform/Cloud_CLI:** Interface for infrastructure provisioning (AWS/GCP/Azure).
-- **Bash/Zsh_Runtime:** For complex automation scripting.
-- **GitHub_Actions_Runner:** To trigger and monitor CI/CD pipelines.
-- **System_Monitor:** Custom tool to read OS-level performance metrics.
+## 📡 Senses (MCP Protocol)
+- **Cloud Sense:** Full bridge to Docker, Terraform, and Kubernetes APIs for resource provisioning.
+- **Terminal Sense:** Root-level access (restricted) for system-level automation and tuning.
+- **Network Sense:** Access to ingress/egress configuration for `$TARGET_PROJECT` endpoints.
+
+## 🔧 Internal Tools
+- **Reprovision_Engine:** (Functional) Logic to rebuild or scale containers based on health metrics.
+- **CI_Automation:** (Simulated) Patterns for GitHub Actions and local Jenkins runners.
+- **Log_Aggregator:** (Simulated) Sensory bridge to ELK/Grafana for observability.
+
+---
+*DevOps Tools v2.1 | Status: Solidified.*

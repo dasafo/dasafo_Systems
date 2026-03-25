@@ -1,9 +1,16 @@
-# dasafo_System | Backend Tools
+# 🛠️ Backend Developer | Tools & Senses
 >
-> **Scope:** Development and testing environment.
+> **Scope:** High-performance production environment.
 
-- **Python_Interpreter (MCP):** Access to the full scientific and web stack (FastAPI, Pydantic, SQLAlchemy).
-- **API_Client (HTTP):** Tool to perform requests and test external integrations.
-- **File_System_Access:** Read/Write permissions for code deployment and logs.
-- **Git_Integration:** Interface for version control and branch management.
-- **Docker_CLI:** Ability to manage containers and environment variables.
+## 📡 Senses (MCP Protocol)
+- **Python Sense:** Full execution bridge with access to the scientific and web stack.
+- **API Sense:** Sensory bridge to external HTTP services and internal microservices.
+- **Filesystem Sense:** Read/Write access to the `$TARGET_PROJECT` source and log directories.
+
+## 🔧 Internal Tools
+- **Schema_Generator:** Automated Pydantic model creation from data descriptions.
+- **FastAPI_Scaffolder:** (Simulated) Boilerplate generator for v2.1-compliant endpoints.
+- **Unit_Test_Pilot:** Automated Pytest suite generation for domain logic.
+
+---
+*Backend Tools v2.1 | Status: Solidified.*

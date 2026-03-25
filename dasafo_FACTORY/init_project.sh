@@ -38,7 +38,7 @@ mkdir -p "$PROJECT_ROOT/WORKSPACE/shared"
 
 # 2. Initialize mandatory State & Memory constructs
 # Meta-Agent State
-echo '{"factory_version": "2.0.0-BLINDADO", "project_status": "DISCOVERY", "objective": "", "phases": {"M1": "PENDING", "M2": "PENDING", "M3": "PENDING", "M4": "PENDING", "M5": "PENDING"}}' > "$PROJECT_ROOT/PROJECT_STATE.json"
+echo '{"factory_version": "2.1.0-BLINDADO", "project_status": "DISCOVERY", "objective": "", "phases": {"M1": "PENDING", "M2": "PENDING", "M3": "PENDING", "M4": "PENDING", "M5": "PENDING"}}' > "$PROJECT_ROOT/PROJECT_STATE.json"
 
 # Semantic Memory Index (for MEMORY_OPTIMIZER)
 echo "# Semantic Context Index" > "$PROJECT_ROOT/LOCAL_KNOWLEDGE/SEMANTIC_INDEX.md"

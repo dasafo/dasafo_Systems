@@ -1,14 +1,20 @@
-# 📜 FACTORY_VERSION: 2.0.0-BLINDADO
+# 🏷️ dasafo_FACTORY | Versioning
+>
+> **Release:** v2.1.0 "Chasis Blindado"
+> **Status:** Solidified & Project-Agnostic
 
-## Current State: Chasis Blindado (Armored Chassis)
+## 📈 Changelog
 
-| Version | Date | Changes | Author |
-| :--- | :--- | :--- | :--- |
-| 2.0.0 | 2026-03-25 | **Chasis Blindado Upgrade:** PRP Contract System (M1.5 gate), AutoShield feedback loop (v2.0 FEEDBACK-LOG), MCP Senses Protocol (browser + Supabase validation). | Antigravity |
-| 1.1.0 | 2026-03-23 | Industrialization: Vectorizer, Versioning, Context Guard. | Antigravity |
-| 1.0.5 | 2026-03-23 | Added DOCS_MASTER, FACTORY_EVOLVER, TELEMETRY. | Antigravity |
-| 1.0.0 | 2026-03-20 | Initial Production Baseline. | david |
+### v2.1.0 — "Chasis Blindado" (March 2026)
+- **Zero-Hardcoding:** 100% of agents and skills now use dynamic path resolution via `$TARGET_PROJECT`.
+- **Sensory Bridge:** Every agent now has explicit "Senses" (MCP tools) and functional `run.py` logic.
+- **AutoShield v2.0:** Implemented `autoshield-preflight-check` and `autoshield-feedback-writer` for collective intelligence.
+- **English Mandate:** All internal technical documentation and code comments migrated to English.
+- **Structural Integrity:** Mandatory `PRP_CONTRACT.json` validation gate enforced by `DOCS_MASTER`.
+
+### v2.0.0 — "Multi-Agent Hub" (Legacy)
+- Initial multi-agent departmental structure.
+- Introduction of `FEEDBACK-LOG.md`.
 
 ---
-
-*Managed by @factory_evolver*
+*Factory Version v2.1 | Status: Solidified.*

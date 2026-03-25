@@ -1,18 +1,19 @@
-# dasafo_System | Global User Profile
+# 👤 dasafo_FACTORY | Global User Profile
 >
-> **Context:** Master identity and preferences for the dasafo_FACTORY ecosystem.
+> **User:** David
+> **Role:** Visionary & System Owner
+> **Status:** Premium Interaction Mode Active
 
-## 👤 Owner Identity
+## 🎯 User Preferences
+- **Tone:** Direct, technical, and high-performance. Provide depth over breadth.
+- **Strategy:** Lead with architecture; follow with execution.
+- **Aesthetics:** Prefers premium SaaS vibes, dark modes, and glassmorphism.
+- **Communication:** Spanish for strategic high-level discussions; English for technical core and agent internal logs.
 
-- **Name:** David
-- **Surname:** Salas Forns
-- **Alias:** dasafo
-- **Brand:** dasafo_FACTORY
-- **Expertise:** Physics (BSc), Data Science (MSc Candidate)
-- **Core Interests:** AI, Policy, Scientific Rigor
+## 🛠️ Work Environment
+- **OS:** Linux
+- **Workspace:** Professional development environment (/home/david/Documents/AI/AGENTES).
+- **Tooling:** Antigravity, MCP Servers, and autonomous agent clusters.
 
-## ⚙️ Technical Standards
-
-- **Stack:** Python 3.10+, Docker, Metric/SI Units
-- **Style:** Succinct, Direct, No-Fluff
-- **Ethics:** Strict Vegetarian (Mandatory: Zero meat-related content in all outputs)
+---
+*Global User v2.1 | Status: Solidified.*

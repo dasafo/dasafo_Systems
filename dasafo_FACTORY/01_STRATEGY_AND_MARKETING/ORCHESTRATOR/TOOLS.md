@@ -1,21 +1,18 @@
-# 🛠️ [TOOLS]: ORCHESTRATOR
+# 🛠️ Orchestrator | Tools & Senses
+>
+> **Scope:** Sensory bridge to the factory environment.
 
-> **Constraints:** The Orchestrator operates solely within the Factory Control Plane. It does not interact with external Git repositories or deployment servers directly.
+## 📡 Senses (MCP Protocol)
+- **Filesystem Sense:** Read/Write access to the `$TARGET_PROJECT` workspace for Kanban movement.
+- **Terminal Sense:** Execute shell commands as a proxy for the user.
+- **Memory Sense:** Query the `memory_optimizer` and `FACTORY_EVOLVER` logs for systemic patterns.
 
-## Authorized Tools
+## 🔧 Internal Tools
+- **DAG_Parser:** Decompose natural language intent into a task graph.
+- **PRP_Validator:** Cross-reference current progress against `PRP_CONTRACT.json`.
+- **Telemetry_Logger:** Record orchestration performance and "Vibe" metrics.
 
-1. **`read_file_content`**
-   - **Target:** `$TARGET_PROJECT/PROJECT_STATE.json` and `$TARGET_PROJECT/LOCAL_KNOWLEDGE/*`
-   - **Purpose:** To understand the client's request and the current architectural state.
-
-2. **`write_to_file`**
-   - **Target:** `$TARGET_PROJECT/TASKS/01_PENDING/*.json`
-   - **Purpose:** To dispatch segmented tasks (DAG) to specialized agents.
-
-3. **`list_dir`**
-   - **Target:** `$TARGET_PROJECT/TASKS/`
-   - **Purpose:** To monitor the Kanban board and resolve dependency bottlenecks (e.g., checking if `04_ARCHIVE` contains required DTOs).
-
-## Prohibited Tools
-- `run_command` (Docker, npm, python). The Orchestrator does not execute software; it orchestrates people.
-- `search_web`. Pure logic routing; external research is delegated to the `RESEARCH_AGENT`.
+## 🧬 Dependencies
+- **Product Owner:** For vision clarification.
+- **Architect:** For technical blueprint validation.
+- **QA Tester:** For deliverable sign-off.

@@ -1,10 +1,19 @@
-# dasafo_System | Database Initialization Ritual
+# 🚀 DB Master Bootstrap Protocol
 >
-> **Ritual:** Connectivity and Health Verification.
+> **Step 0:** Database Environment Provisioning
 
-## Actions
+## 📂 Project Integration
+1. **Target Identification:** Resolve the `$TARGET_PROJECT` environment variable.
+2. **Schema Discovery:** Scan `$TARGET_PROJECT/infrastructure/db/` for existing migrations or SQL scripts.
+3. **Supabase Sync:** If present, read the project's Supabase configuration and RLS policies.
 
-1. **Connection Check:** Verify active links to PostgreSQL/MongoDB/Redis via MCP.
-2. **Schema Audit:** Run `drift_check` to ensure the current database state matches the `PROJECT_STATE.json` definitions.
-3. **Log Check:** Inspect `LOGS/agents/db_master.log` for any deadlocks or slow query warnings from previous sessions.
-4. **Maintenance:** Execute routine VACUUM or Index Rebuilds if necessary.
+## 🔬 Initial Integrity Check
+1. **Normalization Audit:** Scan primary tables for redundant data or missing foreign keys.
+2. **Index Search:** Identify frequently queried columns missing optimization.
+3. **Security Audit:** Verify if critical tables have `RLS` enabled and proper policies.
+
+## 🏁 Milestone M2 Deliverable
+The DB Master's contribution is complete when the **Database Schema & RLS Policy** document is produced in `$TARGET_PROJECT/DOCS/Architecture/`.
+
+---
+*Bootstrap v2.1 | Status: Solidified.*

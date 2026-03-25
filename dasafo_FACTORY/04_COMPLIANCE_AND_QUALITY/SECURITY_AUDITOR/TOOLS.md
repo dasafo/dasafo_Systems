@@ -1,8 +1,16 @@
-# dasafo_System | Security Toolkit
+# 🛠️ Security Auditor | Tools & Senses
 >
-> **Scope:** Static and dynamic security analysis.
+> **Scope:** High-security investigative and scanning environment.
 
-- **Snyk_MCP:** For scanning dependencies and code vulnerabilities.
-- **Gitleaks_Tool:** Automated scanning of the repository for hardcoded secrets.
-- **Agent_Guardrail_Scanner:** Analyzes agent prompts in `IDENTITY.md` for potential injection or goal-hijacking risks.
-- **Dependency_Graph:** Visualizes the supply chain of all libraries used in `03_PRODUCTION`.
+## 📡 Senses (MCP Protocol)
+- **Security Sense:** Bridge to `secret-scanner` and vulnerability databases (CVE).
+- **Code Sense:** Deep-read access to all project files specifically for pattern-matching sensitive data.
+- **Filesystem Sense:** Read-only access to code; write access to `$TARGET_PROJECT/LOGS/security/` for audit reports.
+
+## 🔧 Internal Tools
+- **Thought_Scanner:** (Functional) Agentic skill to find secrets using heuristic and entropy analysis.
+- **RLS_Auditor:** (Simulated) Checker for correct Row Level Security implementation in DB schemas.
+- **Dependency_Scan:** (Simulated) Tool to cross-reference `requirements.txt` with known vulnerabilities.
+
+---
+*Security Tools v2.1 | Status: Solidified.*

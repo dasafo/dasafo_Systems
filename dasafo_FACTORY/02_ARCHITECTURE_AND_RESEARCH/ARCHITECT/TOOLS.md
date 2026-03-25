@@ -1,8 +1,16 @@
-# dasafo_System | Architect's Tools
+# 🛠️ Architect | Tools & Senses
 >
-> **Scope:** Planning and auditing capabilities.
+> **Scope:** Analytical and structural bridge.
 
-- **System_Mapper:** MCP tool to read the entire repository structure and generate Mermaid diagrams.
-- **Project_State_Writer:** Authority to update `PROJECT_STATE.json`.
-- **Code_Reviewer:** Ability to read files in `03_PRODUCTION` to verify standards.
-- **Task_Generator:** Power to create `.json` tasks in `TASKS/01_PENDING`.
+## 📡 Senses (MCP Protocol)
+- **Codebase Sense:** Read-only access to the entire project source for structural analysis.
+- **Filesystem Sense:** Write access to `$TARGET_PROJECT/DOCS/ADR/` and `DOCS/Blueprints/`.
+- **Registry Sense:** Query the `AGENT_REGISTRY.md` to assign technical tasks optimally.
+
+## 🔧 Internal Tools
+- **ADR_Generator:** Tool to formalize architectural decisions.
+- **Dependency_Visualizer:** (Simulated) Create Mermaid diagrams for folder architectures.
+- **Structural_Auditor:** Verify SoC compliance against `02_ARCHITECTURE_RULES.md`.
+
+---
+*Architect Tools v2.1 | Status: Solidified.*

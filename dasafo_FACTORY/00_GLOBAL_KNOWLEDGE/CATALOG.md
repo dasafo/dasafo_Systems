@@ -1,14 +1,28 @@
-# Knowledge Catalog: GLOBAL KNOWLEDGE
-*(The Factory Brain)*
+# 📖 SKILLS CATALOG
 
-## 📚 Universal Laws Index
+This catalog lists the high-vibe technical capabilities available to factory agents.
 
-| File | Level | Purpose |
-| :--- | :--- | :--- |
-| **[01_CODING_STANDARDS.md](01_CODING_STANDARDS.md)** | `Dev` | Directives on Vibe, Immutability, Atomic Design, and Clean Code. |
-| **[02_ARCHITECTURE_RULES.md](02_ARCHITECTURE_RULES.md)** | `Architect` | DTOs, Temporal decoupling, Clean boundaries, and SRP. |
-| **[03_SCIENTIFIC_RIGOR.md](03_SCIENTIFIC_RIGOR.md)** | `Research/DS` | International System of Units (SI) and model versioning. |
-| **[04_SECURITY_AND_OPS.md](04_SECURITY_AND_OPS.md)** | `QA/SRE` | Structured logging, Zero-Trust, IaC, and Chesterton's Law. |
-| **[../FEEDBACK-LOG.md](../FEEDBACK-LOG.md)** | `ALL` | Master registry of past errors and mandatory corrections for continuous improvement. |
+## 01 STRATEGY & MARKETING
+- `ra-agile-orchestration`: Multi-agent task distribution and DAG routing.
+- `prp-vision-alignment`: Analysis of client vision vs technical feasibility.
+- `trend-discovery-apify`: Web-scale market trend analysis.
 
-> Any agent violating these directives will see their Task immediately moved to `05_REJECTED` by the quality gate (`UNIVERSAL_PIPELINE.md`).
+## 02 ARCHITECTURE & RESEARCH
+- `adr-generator-pro`: Creation of Architectural Decision Records.
+- `deep-semantic-search`: RAG-based search across scientific and project data.
+- `arxiv-digest-scientist`: Automated retrieval of latest physics/CS papers.
+
+## 03 PRODUCTION
+- `supabase-logic-builder`: Automated schema and Edge Function scaffolding.
+- `vite-frontend-artisan`: High-performance React/Vite project setup.
+- `pandas-eda-engine`: Rigorous data cleaning and exploratory analysis.
+
+## 04 COMPLIANCE & QUALITY
+- `playwright-behave-test`: Behavioral E2E testing with visual proof.
+- `agentic-thought-secret-scanner`: Mandatory Zero-Trust security auditing.
+- `autoshield-feedback-writer`: Integration with the collective learning loop.
+
+## 05 OPERATIONS
+- `docker-devops-expert`: Multi-stage Dockerization and CI/CD automation.
+- `search-context-distillation-pro`: LLM-optimized context compression.
+- `autoshield-pattern-analysis`: Detective logic to find systemic failures.

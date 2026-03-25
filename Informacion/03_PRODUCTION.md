@@ -24,6 +24,15 @@ Diseña y optimiza la base de datos para que sea sólida y rápida.
 Implementa modelos de ML y realiza análisis estadístico riguroso.
 *   **Especialidad:** Scikit-learn, Pandas avanzado y integración con NotebookLM para análisis de conocimiento.
 
+### 🚀 Motor de Ejecución (Skills v2.1)
+
+Este departamento transforma los planos en realidad funcional mediante habilidades (`skills`) ejecutables:
+
+*   **`api-boilerplate-generator` (BACKEND_DEV):** Genera la estructura base de APIs siguiendo los estándares de seguridad y tipado.
+*   **`design-system-generator` (FRONTEND_DEV):** El motor que crea el sistema de diseño (Atomic Vibe) con todos los tokens visuales premium.
+*   **`schema-validation-check` (DB_MASTER):** Herramienta que valida y asegura la integridad de los esquemas de datos.
+*   **`model-distillation-audit` (DATA_SCIENTIST):** Capacidad para destilar y auditar modelos de datos complejos, asegurando su precisión.
+
 ---
 
 ### 🛠️ Reglas de Oro de Producción

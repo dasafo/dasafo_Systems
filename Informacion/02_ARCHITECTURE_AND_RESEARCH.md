@@ -16,6 +16,13 @@ Encargado de eliminar la incertidumbre. Investiga tecnologías, papers y documen
 *   **Habilidades:** Búsqueda semántica profunda, digestión de papers de ArXiv y protocolos contra alucinaciones de IA.
 *   **Output:** Crea el `research_nexus.md` dentro de la carpeta local del proyecto.
 
+### 🚀 Motor de Ejecución (Skills v2.1)
+
+Este departamento no solo diseña, sino que entrega resultados a través de sus habilidades (`skills`):
+
+*   **`architecture-decision-records` (ARCHITECT):** Automatiza la creación de ADRs para que cada decisión técnica importante quede documentada históricamente.
+*   **`deep-tech-research` (RESEARCH_AGENT):** Capacidad para buscar y digerir información técnica profunda, reduciendo la incertidumbre tecnológica.
+
 ---
 
 ### 🔬 Procesos Críticos

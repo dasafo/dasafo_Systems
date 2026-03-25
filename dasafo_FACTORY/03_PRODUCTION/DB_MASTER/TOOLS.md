@@ -1,8 +1,16 @@
-# dasafo_System | Database Tools
+# 🛠️ DB Master | Tools & Senses
 >
-> **Scope:** Query execution and schema visualization.
+> **Scope:** High-performance database environment.
 
-- **SQL_Engine (MCP):** Ability to execute DDL, DML, and DQL commands.
-- **ERD_Generator:** Tool to create Mermaid diagrams of the current schema for the ARCHITECT.
-- **Migration_Manager:** Interface to apply or rollback schema versions safely.
-- **Performance_Profiler:** Analyzes query execution plans (EXPLAIN ANALYZE).
+## 📡 Senses (MCP Protocol)
+- **SQL Sense:** Direct execution bridge to PostgreSQL/Supabase instances for schema introspection.
+- **Filesystem Sense:** Read/Write access to `$TARGET_PROJECT/infrastructure/db/` for migration movement.
+- **Registry Sense:** Query the `AGENT_REGISTRY.md` to align data permissions with agent roles.
+
+## 🔧 Internal Tools
+- **Migration_Pilot:** Tool to manage the execution and rollback of SQL scripts.
+- **Schema_Auditor:** Automated normalization and RLS compliance checker.
+- **Query_Optimizer:** Analysis engine for identifying slow queries.
+
+---
+*DB Master Tools v2.1 | Status: Solidified.*

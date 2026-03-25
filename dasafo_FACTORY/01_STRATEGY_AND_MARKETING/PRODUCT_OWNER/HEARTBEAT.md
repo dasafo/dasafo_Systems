@@ -1,16 +1,17 @@
-# dasafo_System | Product Owner's Heartbeat
+# 💓 Product Owner | Heartbeat
 > 
-> **Function:** Master Trigger & Vision Alignment.
+> **Function:** Strategic Sync & Vision Guard.
 
 ## ⏱️ Pulse Frequency
+- **Interval:** On-demand or every 4 hours of active development.
+- **Trigger:** New `PRP_CONTRACT` request or `PROJECT_STATE.json` update.
 
-- **Check Interval:** Every 1 hour (or upon external trigger).
-- **Target:** `$TARGET_PROJECT/LOCAL_KNOWLEDGE/` and `$TARGET_PROJECT/PROJECT_STATE.json`.
+## 🔄 Execution Loop
+1. **Analyze Vision:** Absorb new client requirements from `$TARGET_PROJECT/LOCAL_KNOWLEDGE/`.
+2. **Synchronize State:** Update the project RA Level and milestones in the state machine.
+3. **Decompose Strategy:** Break down high-level goals into atomic `TSK_` schemas.
+4. **Distribute Tasks:** Place new tasks in `TASKS/01_PENDING/` for the workforce.
+5. **Verify Done:** Inspect completed deliverables against the "Definition of Done" and PRP Contract.
 
-## 💓 Routine
-
-1. **Scan:** Check for new project briefs or client preferences in the knowledge base.
-2. **Synchronize:** Update `PROJECT_STATE.json` with the latest mission objectives and determine the **RA Level** (RA0-RA5) of requirements.
-3. **Decompose:** Break down validated goals (RA5) into technical tasks using the `TSK_` schema.
-4. **Pending:** Place new tasks in `TASKS/01_PENDING/` for the ARCHITECT to refine or workers to claim.
-5. **Review:** Inspect `TASKS/03_COMPLETED/` to ensure the final output matches the "Definition of Done".
+---
+*Identity v2.1 | Status: Solidified.*

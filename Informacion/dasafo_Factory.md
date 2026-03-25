@@ -32,13 +32,30 @@ La factoría está organizada en **5 departamentos especializados**:
 
 ---
 
-### 🕹️ Archivos Maestro de la Factoría
+### 🚀 Motor de Ejecución: Power Skills (v2.1)
 
-*   **`init_project.sh` (v2.1)**: Inicializa el esqueleto del proyecto, forzando la creación del primer `PRP_CONTRACT.json`.
-*   **`GLOBAL_SOUL.md`**: El "Alma" de la factoría. Consolida la ética, el minimalismo y el rigor de todos los agentes en un solo lugar.
+La factoría no solo piensa, sino que entrega resultados automáticos mediante habilidades críticas:
+
+*   **Estrategia Automática**: Generación de contratos PRP e inversión de intenciones a tareas (DAG).
+*   **Diseño de Ingeniería**: Creación de registros de decisión técnica (ADR) y búsqueda profunda de tecnología.
+*   **Producción Premium**: Generadores de Boilerplate de API y sistemas de diseño atómico visual.
+*   **Calidad Blindada**: Escaneo de seguridad interno y auditorías automáticas de cumplimiento.
+*   **Operaciones Autónomas**: AutoShield v2.0 para aprendizaje de errores y optimización de contexto.
+
+---
+
+### 🕹️ Archivos Maestro de la Factoría (v2.1)
+
+*   **`init_project.sh`**: Inicializa el esqueleto del proyecto, forzando la creación del primer `PRP_CONTRACT.json`.
+*   **`ACTIVE_MISSIONS.json`**: El registro en tiempo real de todos los proyectos activos en la factoría.
+*   **`FACTORY_VERSION.md`**: El historial de versiones. Actualmente en **v2.1 "Chasis Blindado"**.
+*   **`FEEDBACK-LOG.md`**: El motor de AutoShield. Consolida los errores aprendidos para evitar redundancias.
+*   **`GLOBAL_SOUL.md`**: El "Alma" de la factoría. Consolida la ética, el minimalismo y el rigor de todos los agentes.
+*   **`GLOBAL_USER.md`**: Define el perfil y las expectativas del usuario para que los agentes resuenen con sus necesidades.
 *   **`COMMUNICATION_PROTOCOL.md`**: Define cómo fluyen los mensajes y las tareas entre agentes (Discovery -> Architecture -> Execution -> QA).
-*   **`AGENT_REGISTRY.md`**: El libro de registro oficial que define qué habilidades (Skills) tiene cada agente y qué herramientas MCP puede usar.
-*   **`MCP_SENSES_PROTOCOL.md`**: El mapa sensorial de la factoría (qué agentes pueden "ver" la web o "tocar" la base de datos).
+*   **`MCP_SENSES_PROTOCOL.md`**: El mapa sensorial de la factoría (browsers, filesystem, bases de datos).
+*   **`OPERATIONS_MANUAL.md`**: La guía de mantenimiento técnico para administradores de la factoría.
+*   **`UNIVERSAL_PIPELINE.md`**: El mapa detallado de las 5 fases de vida de cualquier proyecto.
 
 ---
 
