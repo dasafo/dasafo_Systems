@@ -1,7 +1,7 @@
 """
 run.py — Context Compression (MEMORY_OPTIMIZER)
-Distills verbose logs into high-density summaries to save tokens.
-v2.1: Project-agnostic.
+Distills verbose logs into high-density summaries for v3.1 efficiency.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 import os

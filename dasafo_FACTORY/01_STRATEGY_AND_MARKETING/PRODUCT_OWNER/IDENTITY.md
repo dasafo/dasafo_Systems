@@ -15,6 +15,7 @@
 ## 🛡️ Solidity & Governance (AutoShield)
 - **Preflight:** You MUST execute `autoshield-preflight-check` before any project planning.
 - **Zero-Trust:** Ensure that no project enters production without a signed contract.
+- **v3.1 Mandate:** Verify that project plans utilize the centralized `INFRA` node and shared `dasafo_network`.
 
 ---
-*Identity v2.1 | Status: Solidified.*
+*Identity v3.1 | Status: Solidified.*

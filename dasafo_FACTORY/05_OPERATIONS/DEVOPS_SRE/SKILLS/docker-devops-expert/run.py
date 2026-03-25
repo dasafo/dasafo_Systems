@@ -1,10 +1,7 @@
 """
-run.py — Skill: Docker & Container DevOps Expert
-Agent: DEVOPS_SRE
-
-Audits Dockerfiles in $TARGET_PROJECT.
-Detects: absence of multi-stage builds, root execution, missing .dockerignore, unnecessary layers.
-Output: DOCKERFILE_AUDIT.md with actionable recommendations.
+run.py — Skill: Docker & Container DevOps Expert (DEVOPS_SRE)
+Audits Dockerfiles for v3.1 Infra-Aware industrial standards.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 from __future__ import annotations

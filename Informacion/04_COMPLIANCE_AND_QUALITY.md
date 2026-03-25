@@ -1,4 +1,4 @@
-# 🛡️ 04_COMPLIANCE_AND_QUALITY | Los Porteros de la Calidad
+# 🛡️ 04_COMPLIANCE_AND_QUALITY | Los Porteros de la Calidad (v3.1)
 
 Este departamento es el responsable de que nada salga de la factoría si no es **Seguro**, **Correcto** y está **Bien Documentado**.
 
@@ -8,7 +8,7 @@ Este departamento es el responsable de que nada salga de la factoría si no es *
 
 #### 1. QA_TESTER (El Validador de Requisitos)
 Asegura que el código hace lo que el Product Owner dijo que debía hacer.
-*   **Habilidades v2.1:** Tests automáticos con Playwright, auditorías de validación de requisitos y reportes de alucinaciones.
+*   **Habilidades v3.1:** Tests automáticos con Playwright, auditorías de validación de requisitos y reportes de alucinaciones.
 *   **Misión:** Si el QA no da el visto bueno, la tarea regresa a Producción (Phase 05_REJECTED).
 
 #### 2. SECURITY_AUDITOR (El Guardián Zero-Trust)
@@ -20,7 +20,7 @@ Escanea el código en busca de vulnerabilidades y secretos expuestos.
 Convierte la complejidad técnica en manuales claros y profesionales.
 *   **Habilidades:** Generador de docs de API, redactor técnico senior y estratega de documentación para el usuario final.
 
-### 🚀 Motor de Ejecución (Skills v2.1)
+### 🚀 Motor de Ejecución (Skills v3.1)
 
 Este departamento garantiza el cumplimiento y la calidad mediante sus habilidades (`skills`) ejecutables:
 

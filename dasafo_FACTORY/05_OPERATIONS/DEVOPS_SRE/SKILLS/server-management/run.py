@@ -1,7 +1,7 @@
 """
 run.py — Server Management / Reprovisioning (DEVOPS_SRE)
-Logic to ensure infrastructure state matches the desired configuration.
-v2.1: Project-agnostic.
+Logic to ensure infrastructure state matches the v3.1 industrial standard.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 import os

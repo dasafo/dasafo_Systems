@@ -1,7 +1,7 @@
 """
 run.py — Resilient Error Handling (BACKEND_DEV)
 Injects robust exception wrappers and retry logic.
-v2.1: Project-agnostic.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 from skill_schema import SkillInput, SkillOutput

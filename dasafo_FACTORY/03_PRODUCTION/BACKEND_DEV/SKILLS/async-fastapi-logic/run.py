@@ -1,7 +1,7 @@
 """
 run.py — Async FastAPI Logic (BACKEND_DEV)
 Generates high-performance route logic skeletons.
-v2.1: Project-agnostic.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 from skill_schema import SkillInput, SkillOutput

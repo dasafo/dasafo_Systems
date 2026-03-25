@@ -1,7 +1,7 @@
 """
 run.py — ADR Generator (ARCHITECT)
 Generates Architectural Decision Records (ADR) in the project workspace.
-v2.1: Project-agnostic path resolution.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 import os

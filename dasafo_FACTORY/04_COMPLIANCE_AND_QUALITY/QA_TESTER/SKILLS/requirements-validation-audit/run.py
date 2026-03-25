@@ -1,7 +1,7 @@
 """
 run.py — Requirements Validation Audit (QA_TESTER)
 Verifies that the implementation aligns with the PRP contract.
-v2.1: Project-agnostic.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 import os

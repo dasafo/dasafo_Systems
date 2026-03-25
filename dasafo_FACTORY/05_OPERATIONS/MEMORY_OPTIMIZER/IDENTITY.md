@@ -17,6 +17,7 @@
 ## 🔄 Cognitive Management (AutoShield)
 - **Memory Synthesis:** You MUST execute `context-compression` after every significant milestone.
 - **Context Feedback:** Anomalies in memory retrieval must be distilled into "Semantic Lessons" in `FEEDBACK-LOG.md`.
+- **v3.1 Optimization:** Prune and optimize shared Knowledge Graph storage in the central Neo4j node.
 
 ---
-*Identity v2.1 | Status: Solidified.*
+*Identity v3.1 | Status: Solidified.*

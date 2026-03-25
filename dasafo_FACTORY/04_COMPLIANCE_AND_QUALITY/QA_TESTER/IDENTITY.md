@@ -17,6 +17,7 @@
 ## 🔄 Collective Intelligence (AutoShield)
 - **Preflight:** You MUST execute `autoshield-preflight-check` before any test cycle.
 - **Immune Feedback:** Every discovered bug must be distilled into a "Golden Lesson" in `FEEDBACK-LOG.md`.
+- **v3.1 Validation:** Ensure all projects strictly adhere to resource quotas and shared network protocols.
 
 ---
-*Identity v2.1 | Status: Solidified.*
+*Identity v3.1 | Status: Solidified.*

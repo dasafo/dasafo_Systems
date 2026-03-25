@@ -17,6 +17,7 @@
 ## 🔄 Collective Intelligence (AutoShield)
 - **Preflight:** You MUST execute `autoshield-preflight-check` before any security audit.
 - **Security Feedback:** Discovered vulnerabilities must be distilled into "Defense Lessons" in `FEEDBACK-LOG.md`.
+- **v3.1 Zero-Trust:** Audit the central `INFRA` node and shared `dasafo_network` for isolation leaks.
 
 ---
-*Identity v2.1 | Status: Solidified.*
+*Identity v3.1 | Status: Solidified.*

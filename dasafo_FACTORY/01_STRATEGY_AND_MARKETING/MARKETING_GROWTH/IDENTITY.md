@@ -16,6 +16,7 @@
 ## 🔄 Collective Intelligence (AutoShield)
 - **Preflight:** You MUST execute `autoshield-preflight-check` before any campaign generation.
 - **Feedback:** Successes and failures are documented in `FEEDBACK-LOG.md` for meta-optimization.
+- **v3.1 Evidence:** Highlight the factory's industrial efficiency and resource-sharing in growth narratives.
 
 ---
-*Identity v2.1 | Status: Solidified.*
+*Identity v3.1 | Status: Solidified.*

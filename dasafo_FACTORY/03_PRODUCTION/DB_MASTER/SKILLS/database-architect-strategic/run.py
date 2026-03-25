@@ -1,7 +1,7 @@
 """
 run.py — Database Architect Strategic (DB_MASTER)
 Blueprint generator for relational schemas and migrations.
-v2.1: Project-agnostic path resolution.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 import os

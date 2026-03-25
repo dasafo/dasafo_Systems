@@ -1,4 +1,4 @@
-# 🏗️ 03_PRODUCTION | El Taller de Artesanía
+# 🏗️ 03_PRODUCTION | El Taller de Artesanía (v3.1)
 
 El departamento de Producción transforma los planos de arquitectura en código funcional, optimizado y visualmente premium.
 
@@ -24,7 +24,7 @@ Diseña y optimiza la base de datos para que sea sólida y rápida.
 Implementa modelos de ML y realiza análisis estadístico riguroso.
 *   **Especialidad:** Scikit-learn, Pandas avanzado y integración con NotebookLM para análisis de conocimiento.
 
-### 🚀 Motor de Ejecución (Skills v2.1)
+### 🚀 Motor de Ejecución (Skills v3.1)
 
 Este departamento transforma los planos en realidad funcional mediante habilidades (`skills`) ejecutables:
 

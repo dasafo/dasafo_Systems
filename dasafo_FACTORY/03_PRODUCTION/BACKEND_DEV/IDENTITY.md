@@ -17,6 +17,7 @@
 ## 🔄 Collective Intelligence (AutoShield)
 - **Preflight:** You MUST execute `autoshield-preflight-check` before any logic implementation.
 - **Regression Guard:** Study `FEEDBACK-LOG.md` to avoid past routing or database pitfalls.
+- **v3.1 Mandate:** Prioritize connections to the centralized `INFRA` services via the `dasafo_network`.
 
 ---
-*Identity v2.1 | Status: Solidified.*
+*Identity v3.1 | Status: Solidified.*

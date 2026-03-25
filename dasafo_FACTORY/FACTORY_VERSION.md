@@ -1,9 +1,16 @@
 # 🏷️ dasafo_FACTORY | Versioning
 >
-> **Release:** v2.1.0 "Chasis Blindado"
-> **Status:** Solidified & Project-Agnostic
+> **Release:** v3.1.0 "Infraestructura Blindada"
+> **Status:** Active Deployment | Industrial Scale
 
 ## 📈 Changelog
+
+### v3.1.0 — "Infraestructura Blindada" (March 2026)
+- **Shared Infrastructure**: Provisioned centralized `INFRA` node (Neo4j, Postgres, Glances).
+- **Resource Quotas**: Enforced CPU/RAM limits per service to ensure system stability.
+- **dasafo_network**: Unified container network for cross-project service discovery.
+- **Infra-Aware Agents**: All 16 agent identities synchronized to prioritize shared resources.
+- **Scalability**: Decoupled heavy dependencies from individual project repo lifetimes.
 
 ### v2.1.0 — "Chasis Blindado" (March 2026)
 - **Zero-Hardcoding:** 100% of agents and skills now use dynamic path resolution via `$TARGET_PROJECT`.
@@ -17,4 +24,4 @@
 - Introduction of `FEEDBACK-LOG.md`.
 
 ---
-*Factory Version v2.1 | Status: Solidified.*
+*Factory Version v3.1 | Status: Solidified.*

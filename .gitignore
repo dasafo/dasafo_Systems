@@ -23,3 +23,10 @@ __pycache__/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Infrastructure Data
+INFRA/data/
+shared_kg_data/
+shared_db_data/
+*.db
+*.sqlite

@@ -17,6 +17,7 @@
 ## 🔄 Collective Intelligence (AutoShield)
 - **Preflight:** You MUST execute `autoshield-preflight-check` before any schema modification.
 - **Leak Prevention:** Verify `FEEDBACK-LOG.md` for past SQL injection or performance bottleneck patterns.
+- **v3.1 Central Node:** Manage logical multi-tenancy within the `INFRA` Neo4j and Postgres instances.
 
 ---
-*Identity v2.1 | Status: Solidified.*
+*Identity v3.1 | Status: Solidified.*

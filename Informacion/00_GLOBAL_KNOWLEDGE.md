@@ -19,8 +19,9 @@ Aquí tienes el desglose de para qué sirve cada archivo:
 *   **`EVALUATION_METRICS.md` (El Juez de Éxito):** Define cómo medimos si una misión fue exitosa. Evalúa la eficiencia del código, la seguridad y el "Vibe" (la estética y rapidez de la solución).
 *   **`CATALOG.md` (Repositorio de Activos):** Un índice de qué proyectos se han hecho y qué "piezas de lego" de código (componentes reutilizables) tiene la factoría disponibles para no inventar la rueda en cada proyecto.
 
-### 🔌 Infraestructura Técnica (El Motor v2.1)
+### 🔌 Infraestructura Técnica (El Motor v3.1)
 
+*   **`INFRA/` (Nodo Central de Servicios):** Ubicado en `dasafo_Systems/INFRA`, este nodo centraliza las dependencias pesadas (Neo4j, Postgres, Glances) para toda la factoría. Permite que múltiples proyectos compartan infraestructura de alto rendimiento sin redundancia.
 *   **`mcp_agent_factory.py` (La Central MCP):** El servidor que conecta a los agentes con sus habilidades. Es el "cableado" que permite que la IA ejecute código real.
 *   **`skill_schema.py` & `skills_runner.md` (El Manual de Habilidades):** Definen cómo se construyen y ejecutan las habilidades (`skills`). Aseguran que cualquier nueva capacidad añadida a la factoría sea compatible con todos los agentes.
 *   **`PRP_CONTRACT_TEMPLATE.json` (El Molde de Contratos):** La plantilla maestra para el `PRP_CONTRACT.json`. Garantiza que cada proyecto empiece con objetivos bien definidos.

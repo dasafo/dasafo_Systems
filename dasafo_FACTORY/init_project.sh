@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==============================================================================
-# dasafo_FACTORY | Project Initializer (Bootstrap) v2.1
+# dasafo_FACTORY | Project Initializer (Bootstrap) v3.1
 # ==============================================================================
 # This script provisions the strict $TARGET_PROJECT skeleton mandated by the 
 # COMMUNICATION_PROTOCOL.md and UNIVERSAL_PIPELINE.md.
@@ -38,7 +38,20 @@ mkdir -p "$PROJECT_ROOT/WORKSPACE/shared"
 
 # 2. Initialize mandatory State & Memory constructs
 # Meta-Agent State
-echo '{"factory_version": "2.1.0-BLINDADO", "project_status": "DISCOVERY", "objective": "", "phases": {"M1": "PENDING", "M2": "PENDING", "M3": "PENDING", "M4": "PENDING", "M5": "PENDING"}}' > "$PROJECT_ROOT/PROJECT_STATE.json"
+cat <<EOF > "$PROJECT_ROOT/PROJECT_STATE.json"
+{
+  "factory_version": "3.1.0-INFRA",
+  "project_status": "DISCOVERY",
+  "objective": "",
+  "phases": {
+    "M1": "PENDING",
+    "M2": "PENDING",
+    "M3": "PENDING",
+    "M4": "PENDING",
+    "M5": "PENDING"
+  }
+}
+EOF
 
 # Semantic Memory Index (for MEMORY_OPTIMIZER)
 echo "# Semantic Context Index" > "$PROJECT_ROOT/LOCAL_KNOWLEDGE/SEMANTIC_INDEX.md"
@@ -67,6 +80,11 @@ cat <<EOF > "$PROJECT_ROOT/LOCAL_KNOWLEDGE/PRP_CONTRACT.json"
 }
 EOF
 
+# 4. Infrastructure Hint (v3.1)
+echo "DOCKER_NETWORK=dasafo_network" > "$PROJECT_ROOT/.env"
+echo "NEO4J_URI=bolt://dasafo-shared-kg:7687" >> "$PROJECT_ROOT/.env"
+
 echo "[+] Directory structure created dynamically at: $PROJECT_ROOT"
 echo "[+] PRP Contract seeded at: LOCAL_KNOWLEDGE/PRP_CONTRACT.json"
+echo "[+] Environment hints for Infrav3.1 added to .env"
 echo "[+] SUCCESS: Factory ready for Phase 1 (Discovery)"

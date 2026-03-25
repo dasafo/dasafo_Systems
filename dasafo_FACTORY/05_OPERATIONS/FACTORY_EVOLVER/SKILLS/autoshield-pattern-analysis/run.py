@@ -1,7 +1,7 @@
 """
 run.py — AutoShield Pattern Analysis (FACTORY_EVOLVER)
-Distills systemic lessons from FEEDBACK-LOG.md to upgrade the factory.
-v2.1: Project-agnostic.
+Distills systemic lessons from FEEDBACK-LOG.md for v3.1 evolution.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 import os

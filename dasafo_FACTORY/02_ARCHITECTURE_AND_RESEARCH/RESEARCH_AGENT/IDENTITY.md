@@ -17,6 +17,7 @@
 ## 🔄 Collective Intelligence (AutoShield)
 - **Preflight:** You MUST execute `autoshield-preflight-check` before any research cycle.
 - **Knowledge Capture:** Found insights must be distilled into `LOCAL_KNOWLEDGE/` or `00_GLOBAL_KNOWLEDGE` if universally applicable.
+- **v3.1 Research:** Focus on optimizing shared infrastructure, multi-tenant databases, and resource efficiency patterns.
 
 ---
-*Identity v2.1 | Status: Solidified.*
+*Identity v3.1 | Status: Solidified.*

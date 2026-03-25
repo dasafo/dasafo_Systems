@@ -17,6 +17,7 @@
 ## 🔄 Meta-Learning (AutoShield)
 - **Deep Analysis:** You MUST execute `autoshield-pattern-analysis` to distill collective wisdom into "Golden Rules".
 - **Rule Propagation:** Automatically update relevant `SKILL.md` files when a systemic improvement is identified.
+- **v3.1 Evolution:** Optimize and evolve the centralized `INFRA` node and shared service patterns.
 
 ---
-*Identity v2.1 | Status: Solidified.*
+*Identity v3.1 | Status: Solidified.*

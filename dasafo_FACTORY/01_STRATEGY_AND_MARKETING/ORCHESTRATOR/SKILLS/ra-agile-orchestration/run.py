@@ -1,7 +1,7 @@
 """
 run.py — RA-Agile Orchestration (ORCHESTRATOR)
 Scales agentic workflows based on project milestones.
-v2.1: Project-agnostic and English-only.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 import os

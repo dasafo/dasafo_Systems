@@ -1,4 +1,4 @@
-# 📐 02_ARCHITECTURE_AND_RESEARCH | Laboratorio de Ingeniería
+# 📐 02_ARCHITECTURE_AND_RESEARCH | Laboratorio de Ingeniería (v3.1)
 
 Aquí es donde se define la **Solidez** del sistema. Ninguna línea de código de producción se escribe sin antes haber validado la viabilidad y diseñado los contratos.
 
@@ -8,7 +8,7 @@ Aquí es donde se define la **Solidez** del sistema. Ninguna línea de código d
 
 #### 1. ARCHITECT (El Jefe de Diseño)
 El arquitecto diseña los esquemas, DTOs y la topología del sistema.
-*   **Habilidades v2.1:** Generación de contratos de API, definición de tokens de diseño (Atomic Design) y creación de ADRs (Architecture Decision Records) para documentar el "por qué" técnico.
+*   **Habilidades v3.1:** Generación de contratos de API, definición de tokens de diseño (Atomic Design), diseño de esquemas para el nodo `INFRA` compartido (Neo4j/Postgres) y creación de ADRs.
 *   **Misión:** Asegurar que el Backend y el Frontend hablen el mismo idioma desde el día 1.
 
 #### 2. RESEARCH_AGENT (El Científico de Datos)
@@ -16,7 +16,7 @@ Encargado de eliminar la incertidumbre. Investiga tecnologías, papers y documen
 *   **Habilidades:** Búsqueda semántica profunda, digestión de papers de ArXiv y protocolos contra alucinaciones de IA.
 *   **Output:** Crea el `research_nexus.md` dentro de la carpeta local del proyecto.
 
-### 🚀 Motor de Ejecución (Skills v2.1)
+### 🚀 Motor de Ejecución (Skills v3.1)
 
 Este departamento no solo diseña, sino que entrega resultados a través de sus habilidades (`skills`):
 

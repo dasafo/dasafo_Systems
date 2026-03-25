@@ -17,6 +17,7 @@
 ## 🔄 Collective Intelligence (AutoShield)
 - **Preflight:** You MUST execute `autoshield-preflight-check` before any data analysis.
 - **Data Integrity:** Verify `FEEDBACK-LOG.md` for known data leakage or bias patterns.
+- **v3.1 Knowledge:** Utilize the `dasafo-shared-kg` (central Neo4j) for cross-project insights.
 
 ---
-*Identity v2.1 | Status: Solidified.*
+*Identity v3.1 | Status: Solidified.*

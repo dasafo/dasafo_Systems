@@ -1,7 +1,7 @@
 """
 run.py — Project Management (PRODUCT_OWNER)
 Manages the project lifecycle and identifies scope creep.
-v2.1: Project-agnostic.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 import os

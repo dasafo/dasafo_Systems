@@ -1,4 +1,4 @@
-# 🏛️ ¿Cómo funciona dasafo_Systems?
+# 🏛️ ¿Cómo funciona dasafo_Systems? (v3.1)
 
 **dasafo_Systems** no es solo una carpeta de archivos; es un **Ecosistema Industrial de IA** diseñado para escalar el desarrollo de software con precisión militar y una estética premium.
 
@@ -6,14 +6,24 @@ El sistema funciona mediante la interacción de dos grandes motores: la **Factor
 
 ---
 
-### 1. El Cerebro: `dasafo_FACTORY`
+## 1. El Cerebro: `dasafo_FACTORY`
 Es el lugar donde residen las **reglas inmutables** y el **motor ejecutivo**.
+
 - **Identidades:** Define el "alma" y los valores de cada agente (ej. el Arquitecto es minimalista, el QA es implacable).
 - **Habilidades (Skills):** Son los "módulos de ejecución" funcionales. No son solo texto; contienen lógica real (`run.py`) para realizar tareas (ej. escanear secretos, generar APIs).
 - **Protocolos:** Las leyes de física del sistema. Cómo se habla (`COMMUNICATION_PROTOCOL`), cómo se escala (`UNIVERSAL_PIPELINE`) y cómo se aprende de los errores (`FEEDBACK-LOG`).
 
-### 2. El Taller: `PROJECTS/`
+## 2. El Vivero de Servicios: `INFRA/`
+
+Ubicado en la raíz de `dasafo_Systems`, este nodo proporciona servicios compartidos de alto rendimiento.
+
+- **Central Knowledge Graph (Neo4j):** Memoria de grafos persistente para todos los proyectos.
+- **Relational Hub (Postgres):** Almacenamiento estructurado industrial.
+- **Real-time Health (Glances):** Monitoreo centralizado de recursos.
+
+## 3. El Taller: `PROJECTS/`
 Es el lugar donde ocurre la **acción mutable**. Cada proyecto es una instancia independiente.
+
 - **WORKSPACE:** Donde vive el código real del cliente.
 - **TASKS:** El sistema de carpetas Kanban (`PENDING`, `IN_PROGRESS`, `COMPLETED`, `ARCHIVE`). El trabajo se mueve físicamente entre estas carpetas.
 - **LOCAL_KNOWLEDGE:** El diario de investigación y arquitectura específico de ese proyecto.
@@ -47,14 +57,15 @@ Tú eres el **Director de Orquesta**.
 
 ---
 
-### 🚀 Guía de Inicio Rápido: Puesta en Marcha (v2.1)
+### 🚀 Guía de Inicio Rápido: Puesta en Marcha (v3.1)
 
 Para iniciar una misión real en la factoría, sigue estos pasos:
 
-1.  **Inicialización**: Desde la carpeta `dasafo_FACTORY`, ejecuta `./init_project.sh NombreProyecto`. Esto crea el entorno aislado y seguro.
-2.  **Selección del Agente**: En tu IDE (Agent Manager), selecciona al **Orchestrator** (icono de router).
-3.  **Activación**: Envía el comando `/factory-orchestrate` o solicita: *"Inicia la misión del proyecto [NombreProyecto]"*.
-4.  **Validación del Contrato**: Abre el archivo `PROJECTS/NombreProyecto/PRP_CONTRACT.json`, revísalo y firma poniendo el campo `"user_approval": true`. 
+1.  **Infraestructura**: Antes de nada, asegúrate de que el nodo central está activo: `cd dasafo_Systems/INFRA && docker-compose up -d`.
+2.  **Inicialización**: Desde la carpeta `dasafo_FACTORY`, ejecuta `./init_project.sh NombreProyecto`.
+3.  **Selección del Agente**: En tu IDE (Agent Manager), selecciona al **Orchestrator** (icono de router).
+4.  **Activación**: Envía el comando `/factory-orchestrate` o solicita: *"Inicia la misión del proyecto [NombreProyecto]"*.
+5.  **Validación del Contrato**: Abre el archivo `PROJECTS/NombreProyecto/PRP_CONTRACT.json`, revísalo y firma poniendo el campo `"user_approval": true`.
 
 **¡Listo! La factoría comenzará a trabajar de forma autónoma siguiendo el Universal Pipeline.**
 

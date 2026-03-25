@@ -1,4 +1,4 @@
-# 🌉 Integración Antigravity: El Puente IDE
+# 🌉 Integración Antigravity: El Puente IDE (v3.1)
 
 Este documento explica cómo la **dasafo_FACTORY** se comunica con el entorno de desarrollo mediante las carpetas ocultas en la raíz del espacio de trabajo. Estas carpetas actúan como la "capa de presentación" y el "sistema de orquestación" para el usuario humano.
 

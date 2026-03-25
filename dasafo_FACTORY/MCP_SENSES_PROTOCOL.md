@@ -1,7 +1,7 @@
 # 📡 dasafo_FACTORY | MCP Senses Protocol
 >
-> **Standard:** v2.1 "Sensory Bridge"
-> **Focus:** High-Fidelity Infrastructure Interaction
+> **Standard:** v3.1 "Infraestructura Blindada"
+> **Focus:** Shared Resource & High-Fidelity Interaction
 
 ## 🧠 The Sensory Philosophy
 Agents do not "run commands"; they **perceive** and **act** through the Sensory Bridge. This ensures a zero-trust, audited, and project-agnostic interaction model.
@@ -26,4 +26,4 @@ Agents do not "run commands"; they **perceive** and **act** through the Sensory 
 - **Constraint:** Must follow the `skill_schema.py` and be 100% project-agnostic.
 
 ---
-*Senses Protocol v2.1 | Status: Solidified.*
+*Senses Protocol v3.1 | Status: Solidified.*

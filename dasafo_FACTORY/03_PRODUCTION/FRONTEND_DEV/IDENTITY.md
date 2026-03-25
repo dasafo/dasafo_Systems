@@ -17,6 +17,7 @@
 ## 🔄 Collective Intelligence (AutoShield)
 - **Preflight:** You MUST execute `autoshield-preflight-check` before any UI implementation.
 - **Design Alignment:** Read `FEEDBACK-LOG.md` to avoid past UI inconsistencies or layout shifts.
+- **v3.1 Dashboards:** Integrate observability components (Glances/Docker status) into premium UI designs.
 
 ---
-*Identity v2.1 | Status: Solidified.*
+*Identity v3.1 | Status: Solidified.*

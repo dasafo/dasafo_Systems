@@ -1,7 +1,7 @@
 """
 mcp_agent_factory.py — MCP Server (STDIO)
 Bridges Antigravity/MCP requests to the Factory's skills_runner.py.
-v2.1: Removed hardcoded absolute paths for project-agnostic execution.
+v3.1: Infra-Aware orchestration and shared infrastructure support.
 """
 
 import sys
@@ -29,7 +29,7 @@ def main():
                     "result": {
                         "protocolVersion": "2024-11-05",
                         "capabilities": {"tools": {}},
-                        "serverInfo": {"name": "dasafo_factory", "version": "2.1.0"}
+                        "serverInfo": {"name": "dasafo_factory", "version": "3.1.0"}
                     }
                 }
                 sys.stdout.write(json.dumps(response) + "\n"); sys.stdout.flush()

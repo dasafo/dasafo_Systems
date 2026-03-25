@@ -19,3 +19,8 @@ The Factory is divided into two strict zones:
 - Use DAG (Directed Acyclic Graph) for task decomposition.
 - All inter-agent communication follows the `COMMUNICATION_PROTOCOL`.
 - Agents must never share mutable state; they pass serialized DTOs.
+
+## 5. Industrial-Scale Infrastructure (v3.1)
+- **Central Node (`INFRA`)**: Heavy services (Neo4j, Postgres, Redis) must be hosted on the shared `INFRA` node to optimize RAM/Disk.
+- **`dasafo_network`**: All containers must communicate via the shared `dasafo_network` for secure but unified service access.
+- **Resource Quotas**: Every project must enforce RAM/CPU limits to prevent "noisy neighbor" effects on the central node.

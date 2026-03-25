@@ -1,7 +1,7 @@
 """
 run.py — Healthcheck Poller (DEPLOYMENT_MONITOR)
 Performs basic HTTP health checks on defined project endpoints.
-v2.1: Project-agnostic.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 import os

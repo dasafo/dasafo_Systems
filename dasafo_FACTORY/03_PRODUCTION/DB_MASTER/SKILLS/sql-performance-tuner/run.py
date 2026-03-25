@@ -1,7 +1,7 @@
 """
 run.py — SQL Performance Tuner (DB_MASTER)
 Analyzes queries and recommends indexing/optimization.
-v2.1: Project-agnostic path resolution.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 import os

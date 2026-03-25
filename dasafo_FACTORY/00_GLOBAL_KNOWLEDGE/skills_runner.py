@@ -1,5 +1,5 @@
 """
-skills_runner.py — CLI unificado para ejecutar cualquier skill de dasafo_FACTORY.
+skills_runner.py — CLI unificado para ejecutar cualquier skill de dasafo_FACTORY (v3.1).
 
 ADR: Se usa importlib para cargar run.py dinámicamente según agente+skill,
 evitando hardcodear rutas. Esto permite añadir nuevas skills sin modificar este archivo.

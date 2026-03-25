@@ -1,4 +1,4 @@
-# 🚀 05_OPERATIONS | DevOps, Memoria y Evolución
+# 🚀 05_OPERATIONS | DevOps, Memoria y Evolución (v3.1)
 
 El departamento de Operaciones garantiza que la factoría sea eficiente, escalable y que aprenda de su propia experiencia para mejorar cada día.
 
@@ -8,7 +8,7 @@ El departamento de Operaciones garantiza que la factoría sea eficiente, escalab
 
 #### 1. DEVOPS_SRE (El Ingeniero de Infraestructura)
 Responsable del despliegue, CI/CD y la "salud" de los servidores.
-*   **Especialidad:** Docker, Terraform, Github Actions y despliegues de MLOps.
+*   **Especialidad:** Docker Swarm/Compose, Terraform, Github Actions y gestión del nodo central `INFRA`.
 *   **Misión:** El comando "Go-Live" es su dominio. Si corre en su máquina, debe correr en la nube.
 
 #### 2. MEMORY_OPTIMIZER (El Bibliotecario Contextual)
@@ -23,7 +23,7 @@ Analiza el funcionamiento de la propia factoría para optimizarla.
 #### 4. DEPLOYMENT_MONITOR (La Vigilancia Activa)
 Monitoriza el tiempo de actividad y el rendimiento post-lanzamiento.
 
-### 🚀 Motor de Ejecución (Skills v2.1)
+### 🚀 Motor de Ejecución (Skills v3.1)
 
 Este departamento mantiene la factoría en funcionamiento y mejora continua mediante sus habilidades (`skills`) ejecutables:
 

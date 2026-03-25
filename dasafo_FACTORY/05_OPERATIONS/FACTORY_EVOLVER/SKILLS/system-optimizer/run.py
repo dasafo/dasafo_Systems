@@ -1,6 +1,7 @@
 """
-run.py — Skill: System Optimizer
-Agent: FACTORY_EVOLVER
+run.py — Skill: System Optimizer (FACTORY_EVOLVER)
+Optimizes factory-wide resource allocation for v3.1 industrial scale.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 from __future__ import annotations

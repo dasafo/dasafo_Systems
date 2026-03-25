@@ -1,9 +1,7 @@
 """
-run.py — Skill: Search Context Distillation Pro
-Agent: MEMORY_OPTIMIZER
-
+run.py — Skill: Search Context Distillation Pro (MEMORY_OPTIMIZER)
 Compresses a long conversation/context log into a minimum vital summary.
-Output: MEMORY_SNAPSHOT.md in the TARGET_PROJECT.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 from __future__ import annotations

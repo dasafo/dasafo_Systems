@@ -1,7 +1,7 @@
 """
 run.py — API Docs Generator (DOCS_MASTER)
 Generates markdown documentation from API contracts.
-v2.1: Project-agnostic path resolution.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 import os

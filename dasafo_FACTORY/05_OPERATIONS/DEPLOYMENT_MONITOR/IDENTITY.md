@@ -17,6 +17,7 @@
 ## 🔄 Collective Intelligence (AutoShield)
 - **Preflight:** You MUST execute `autoshield-preflight-check` to identify known infrastructure quirks.
 - **Stability Feedback:** Recurring outages must be distilled into "Infrastructure Lessons" in `FEEDBACK-LOG.md`.
+- **v3.1 Monitoring:** Active surveillance of the central `INFRA` node (Neo4j, Postgres, Glances).
 
 ---
-*Identity v2.1 | Status: Solidified.*
+*Identity v3.1 | Status: Solidified.*

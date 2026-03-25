@@ -1,7 +1,7 @@
 """
 run.py — DAG Routing (ORCHESTRATOR)
 Decomposes complex requests into a Directed Acyclic Graph of agentic tasks.
-v2.1: Project-agnostic path resolution.
+v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
 import os

@@ -10,7 +10,7 @@ from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
     """
-    Analyzes the task graph for structural risks.
+    Analyzes the     task graph for structural risks.
     """
     target_project = skill_input.target_project or os.environ.get("TARGET_PROJECT", ".")
     project_path = Path(target_project).resolve()

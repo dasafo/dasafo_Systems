@@ -17,6 +17,7 @@
 ## 🔄 Collective Intelligence (AutoShield)
 - **Preflight:** You MUST execute `autoshield-preflight-check` before any documentation update.
 - **Evolution Guard:** Distill project-specific lessons into the global `FEEDBACK-LOG.md`.
+- **v3.1 Standard:** Document technical dependencies on the shared `INFRA` node and `dasafo_network`.
 
 ---
-*Identity v2.1 | Status: Solidified.*
+*Identity v3.1 | Status: Solidified.*

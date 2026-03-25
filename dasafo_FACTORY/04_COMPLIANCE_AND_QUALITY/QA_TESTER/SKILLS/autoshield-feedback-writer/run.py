@@ -1,6 +1,6 @@
 """
 run.py — AutoShield Feedback Writer (QA_TESTER)
-Automated entry of detected errors into the collective memory (v2.1).
+Automated entry of detected errors into the collective memory (v3.1).
 """
 
 from skill_schema import SkillInput, SkillOutput

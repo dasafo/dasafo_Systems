@@ -1,4 +1,4 @@
-# 🧭 01_STRATEGY_AND_MARKETING | Departamento de Estrategia
+# 🧭 01_STRATEGY_AND_MARKETING | Departamento de Estrategia (v3.1)
 
 Este departamento es el **Timón** de la factoría. Se encarga de la captura de requisitos, la orquestación de tareas y el crecimiento estratégico del producto.
 
@@ -8,7 +8,7 @@ Este departamento es el **Timón** de la factoría. Se encarga de la captura de 
 
 #### 1. PRODUCT_OWNER (El Guardián del Valor)
 Su misión es traducir la visión del usuario en un backlog técnico ejecutable.
-*   **Responsabilidad v2.1:** Es el dueño del **PRP Validation Gate**. No permite que el proyecto pase a la fase de Arquitectura hasta que el contrato de visión esté firmado.
+*   **Responsabilidad v3.1:** Es el dueño del **PRP Validation Gate**. No permite que el proyecto pase a la fase de Arquitectura hasta que el contrato de visión esté firmado y se hayan validado las cuotas de infraestructura en el nodo compartido.
 *   **Habilidades:** Auditoría de valor, análisis de requisitos y gestión de stakeholders.
 
 #### 2. ORCHESTRATOR (El Motor de Ingesta)
@@ -20,7 +20,7 @@ Es el enrutador semántico. Convierte intenciones en lenguage natural en grafos 
 Diseña estrategias de salida al mercado basadas en datos reales.
 *   **Habilidades:** Análisis de tendencias con Apify, redacción persuasiva basada en evidencia (Evidence-based copywriting) y estrategias de contenido social.
 
-### 🚀 Motor de Ejecución (Skills v2.1)
+### 🚀 Motor de Ejecución (Skills v3.1)
 
 Este departamento no solo piensa, sino que ejecuta a través de sus habilidades (`skills`):
 
