@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "dasafo_factory/feedback_entry/v2.0",
+  "title": "Feedback Log Entry Schema",
+  "description": "Machine-parseable schema for FEEDBACK-LOG entries. Enables automated pre-flight checks and pattern analysis.",
+  "type": "object",
+  "required": ["id", "version", "timestamp", "context", "severity", "error_description", "correction", "golden_rule", "categories"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^FB-\\d{4}$",
+      "description": "Unique feedback entry ID (e.g., 'FB-0001')."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^v\\d+\\.\\d+$",
+      "description": "Semantic version of the feedback log when this entry was added."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date when the error was discovered."
+    },
+    "context": {
+      "type": "object",
+      "required": ["agent", "project"],
+      "properties": {
+        "agent": {
+          "type": "string",
+          "description": "Agent ID that committed the error (e.g., 'BACKEND_DEV')."
+        },
+        "project": {
+          "type": "string",
+          "description": "Project where the error occurred (e.g., 'Pulse-X')."
+        },
+        "file": {
+          "type": "string",
+          "description": "Optional. Specific file where the error was found."
+        }
+      }
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["critical", "high", "medium", "low"],
+      "description": "Impact severity. Critical = security/data-loss. High = broken functionality. Medium = degraded quality. Low = cosmetic."
+    },
+    "error_description": {
+      "type": "string",
+      "description": "Precise, technical description of the error."
+    },
+    "correction": {
+      "type": "string",
+      "description": "Exact correction applied to resolve the error."
+    },
+    "golden_rule": {
+      "type": "string",
+      "description": "Universal rule derived from this error. Must be quotable and actionable."
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "authentication",
+          "routing",
+          "database",
+          "deployment",
+          "security",
+          "ui-ux",
+          "api",
+          "configuration",
+          "testing",
+          "performance",
+          "data-integrity",
+          "dependency",
+          "infrastructure"
+        ]
+      },
+      "description": "Category tags for automated pre-flight filtering."
+    },
+    "affected_agents": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of agent IDs that should pay special attention to this rule."
+    }
+  }
+}

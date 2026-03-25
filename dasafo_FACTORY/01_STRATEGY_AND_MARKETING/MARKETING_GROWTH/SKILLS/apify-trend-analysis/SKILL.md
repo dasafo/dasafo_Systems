@@ -3,7 +3,7 @@
 > **Agent:** MARKETING_GROWTH
 
 ## Objective
-Enable real-time trend scraping across Google, Instagram, TikTok, and YouTube to identify market gaps for dasafodata projects.
+Enable real-time trend scraping across Google, Instagram, TikTok, and YouTube to identify market gaps for dasafo_FACTORY projects.
 
 ## Prerequisite
 - `APIFY_TOKEN` must be present in `$TARGET_PROJECT/.env`.

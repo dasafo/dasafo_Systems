@@ -2,9 +2,9 @@
 run.py — Skill: Docker & Container DevOps Expert
 Agent: DEVOPS_SRE
 
-Audita Dockerfiles en $TARGET_PROJECT.
-Detecta: ausencia de multi-stage builds, ejecución como root, sin .dockerignore, capas innecesarias.
-Output: DOCKERFILE_AUDIT.md con recomendaciones accionables.
+Audits Dockerfiles in $TARGET_PROJECT.
+Detects: absence of multi-stage builds, root execution, missing .dockerignore, unnecessary layers.
+Output: DOCKERFILE_AUDIT.md with actionable recommendations.
 """
 
 from __future__ import annotations
@@ -14,6 +14,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Add GLOBAL_KNOWLEDGE to path for skill_schema import
 sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "00_GLOBAL_KNOWLEDGE"))
 from skill_schema import SkillInput, SkillOutput  # noqa: E402
 
@@ -29,7 +30,7 @@ def _audit_dockerfile(dockerfile: Path) -> dict:
     try:
         content = dockerfile.read_text(encoding="utf-8", errors="ignore")
     except OSError:
-        return {"file": str(dockerfile), "error": "No se pudo leer el archivo."}
+        return {"file": str(dockerfile), "error": "Could not read file."}
 
     issues: list[dict] = []
     lines = content.splitlines()
@@ -39,9 +40,9 @@ def _audit_dockerfile(dockerfile: Path) -> dict:
     if len(from_lines) < 2:
         issues.append({
             "severity": "HIGH",
-            "issue": "Sin multi-stage build",
-            "detail": "Usar multi-stage reduce el tamaño de imagen final hasta 90%.",
-            "fix": "Separar build stage: FROM node:20 AS builder ... FROM node:20-alpine AS runtime ...",
+            "issue": "Missing multi-stage build",
+            "detail": "Using multi-stage reduces final image size by up to 90%.",
+            "fix": "Separate build stage: FROM node:20 AS builder ... FROM node:20-alpine AS runtime ...",
         })
 
     # Root user check
@@ -49,8 +50,8 @@ def _audit_dockerfile(dockerfile: Path) -> dict:
     if not user_lines:
         issues.append({
             "severity": "CRITICAL",
-            "issue": "Ejecución como root (sin USER instruction)",
-            "detail": "Nunca ejecutar la aplicación como root dentro de un container.",
+            "issue": "Running as root (missing USER instruction)",
+            "detail": "Never run the application as root inside a container.",
             "fix": "RUN addgroup -S appgroup && adduser -S appuser -G appgroup\nUSER appuser",
         })
     else:
@@ -58,9 +59,9 @@ def _audit_dockerfile(dockerfile: Path) -> dict:
             if re.search(r"\broot\b", ul, re.IGNORECASE):
                 issues.append({
                     "severity": "CRITICAL",
-                    "issue": "USER root explícito",
-                    "detail": "Se define explícitamente USER root.",
-                    "fix": "Cambiar a un usuario no privilegiado.",
+                    "issue": "Explicit USER root",
+                    "detail": "USER root is explicitly defined.",
+                    "fix": "Switch to a non-privileged user.",
                 })
 
     # .dockerignore check
@@ -68,35 +69,35 @@ def _audit_dockerfile(dockerfile: Path) -> dict:
     if not dockerignore.exists():
         issues.append({
             "severity": "MEDIUM",
-            "issue": "Sin .dockerignore",
-            "detail": "Sin .dockerignore, node_modules, .git y archivos sensibles se copian al contexto.",
-            "fix": "Crear .dockerignore con: node_modules/, .git/, .env, __pycache__/, *.pyc",
+            "issue": "Missing .dockerignore",
+            "detail": "Without .dockerignore, node_modules, .git, and sensitive files are copied to the context.",
+            "fix": "Create .dockerignore with: node_modules/, .git/, .env, __pycache__/, *.pyc",
         })
 
-    # Cache invalidation: COPY antes de instalar deps
+    # Cache invalidation: COPY before installing deps
     copy_lines = [(i, l) for i, l in enumerate(lines) if re.match(r"^COPY", l, re.IGNORECASE)]
     run_lines = [(i, l) for i, l in enumerate(lines) if re.match(r"^RUN", l, re.IGNORECASE)]
     if copy_lines and run_lines:
         first_copy = copy_lines[0][0]
         first_run = run_lines[0][0]
         if first_copy < first_run:
-            # Busca si copian todo (.) antes de instalar
+            # Check if they copy everything (.) before installing
             early_copies = [l for i, l in copy_lines if i < first_run and re.search(r"COPY\s+\.\s+", l)]
             if early_copies:
                 issues.append({
                     "severity": "MEDIUM",
-                    "issue": "COPY . antes de instalar dependencias",
-                    "detail": "Invalida caché de Docker con cada cambio de código. Copiar solo package.json/requirements.txt primero.",
+                    "issue": "COPY . before installing dependencies",
+                    "detail": "Invalidates Docker cache with every code change. Copy only package.json/requirements.txt first.",
                     "fix": "COPY package*.json ./\nRUN npm ci --only=production\nCOPY . .",
                 })
 
-    # apt-get sin cleanup
+    # apt-get without cleanup
     for _, line in run_lines:
         if "apt-get install" in line.lower() and "rm -rf /var/lib/apt/lists" not in content:
             issues.append({
                 "severity": "MEDIUM",
-                "issue": "apt-get sin limpieza de listas",
-                "detail": "Las listas de paquetes añaden capas innecesarias.",
+                "issue": "apt-get without list cleanup",
+                "detail": "Package lists add unnecessary layers.",
                 "fix": "RUN apt-get update && apt-get install -y pkg && rm -rf /var/lib/apt/lists/*",
             })
             break
@@ -148,11 +149,11 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
     target = skill_input.target_project or skill_input.params.get("target")
     if not target:
-        return SkillOutput.failure(agent, skill, "TARGET_PROJECT o param 'target' son requeridos.", cid)
+        return SkillOutput.failure(agent, skill, "TARGET_PROJECT or 'target' param is required.", cid)
 
     target_path = Path(target)
     if not target_path.exists():
-        return SkillOutput.failure(agent, skill, f"Directorio '{target}' no existe.", cid)
+        return SkillOutput.failure(agent, skill, f"Directory '{target}' does not exist.", cid)
 
     dockerfiles = _find_dockerfiles(target_path)
     if not dockerfiles:
@@ -160,8 +161,8 @@ def run(skill_input: SkillInput) -> SkillOutput:
             success=True,
             agent=agent,
             skill=skill,
-            result={"message": "No se encontraron Dockerfiles en el proyecto.", "dockerfiles_found": 0},
-            warnings=["No hay Dockerfiles que auditar."],
+            result={"message": "No Dockerfiles found in project.", "dockerfiles_found": 0},
+            warnings=["No Dockerfiles to audit."],
             correlation_id=cid,
         )
 
@@ -183,6 +184,6 @@ def run(skill_input: SkillInput) -> SkillOutput:
             "overall_compliance": "PASS" if failed == 0 else "FAIL",
         },
         artifacts=[str(report_path)],
-        warnings=[f"{failed} Dockerfile(s) con issues CRITICAL/HIGH."] if failed > 0 else [],
+        warnings=[f"{failed} Dockerfile(s) with CRITICAL/HIGH issues."] if failed > 0 else [],
         correlation_id=cid,
     )

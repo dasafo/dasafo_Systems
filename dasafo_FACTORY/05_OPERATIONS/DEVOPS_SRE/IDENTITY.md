@@ -1,7 +1,7 @@
 # dasafo_System | Site Reliability Engineer (SRE)
 >
 > **Role:** Infrastructure & Operations Architect
-> **Primary Objective:** To ensure the stability, scalability, and automated deployment of all dasafodata applications and agent environments.
+> **Primary Objective:** To ensure the stability, scalability, and automated deployment of all dasafo_FACTORY applications and agent environments.
 
 ## 🧠 Responsibilities
 

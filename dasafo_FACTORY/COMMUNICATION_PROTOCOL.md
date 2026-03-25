@@ -54,7 +54,9 @@ To ensure systematic integrity, all workflows must follow an immutable sequence:
 ## 6. Multi-Tier Memory Architecture
 
 To prevent Token Exhaustion and maintain systemic coherence across long workflows, agents MUST respect the following memory tiers:
+
 - **Transactional Memory (Short-Term):** Maintained only in the LLM's active context window or temporary in-memory stores (e.g., Redis). Flushed after task completion.
+
 - **Episodic Memory (Persistent):** Raw conversational logs and step-by-step reasoning (Chain of Thought) saved continuously in `$TARGET_PROJECT/LOGS/`.
 - **Semantic Memory (Retrospective):** Compacted vector embeddings (managed by the `MEMORY_OPTIMIZER`) that allow agents to search past project blueprints logically without reading monolithic JSONs.
 
@@ -71,35 +73,57 @@ To prevent Token Exhaustion and maintain systemic coherence across long workflow
 - All errors must be logged in `$TARGET_PROJECT/LOGS/agents/[agent_name].log` before notifying the manager.
 - **The Feedback Log (`FEEDBACK-LOG.md`):** If an agent makes a mistake that is caught by QA, Security, or Architecture, the structural correction MUST be logged here. ALL agents must read `FEEDBACK-LOG.md` before taking action on tasks.
 
-## 8. Concurrency, File Locking & Idempotency
+## 9. Concurrency, File Locking & Idempotency
 
 To prevent race conditions, infinite loops, and double execution, agents MUST adhere to these strict concurrency barriers:
 
-- **Idempotency & The Execution Log:** Before starting a task, agents must verify its `task_id` is not marked as `started` (and active) or `completed` in `$TARGET_PROJECT/LOGS/EXECUTION_LOG.md`. 
+- **Idempotency & The Execution Log:** Before starting a task, agents must verify its `task_id` is not marked as `started` (and active) or `completed` in `$TARGET_PROJECT/LOGS/EXECUTION_LOG.md`.
   - *Global Log Lock:* Before writing to `EXECUTION_LOG.md`, the agent MUST acquire a global mutex lock (`$TARGET_PROJECT/LOGS/EXECUTION_LOG.lock`) to ensure atomic writes and prevent parallel execution clashes.
+
 - **Task Locking (Mutex):** When an agent picks up a task, it MUST immediately rename it to `[task_id].json.lock`.
-  - The `.lock` file MUST internally inject its `owner_agent_id` and a `timestamp`. 
+  - The `.lock` file MUST internally inject its `owner_agent_id` and a `timestamp`.
   - *Lock Expiration & System Recovery:* Only the owner agent or the Orchestrator (in case of a timeout or crash > 30 min) can release or remove this `.lock`. This includes stewardship of the `EXECUTION_LOG.lock`.
 - **Retry Count Limit:** Whenever a task is returned from QA to development, its `retry_count` increments. If `retry_count > 3`, the task is forced into `05_REJECTED` (acting as a FAILED state) and halts silently, requiring human/Orchestrator review.
 - **Ordering Consistency:** Sequence ordering decisions MUST prioritize `sequence_id` (Time-Ordered) over timestamps to bypass clock synchronization limits. Absolute task order is determined by $sequence\_id$.
 
-## 9. Technical Rigor
+## 10. Technical Rigor
 
 - Use SI units in all technical specifications.
 - Avoid "fluff" or conversational fillers in task descriptions. Be technical and precise.
 
-## 10. Context Economy & Token Guardrails
+## 11. Context Economy & Token Guardrails
 
 To ensure industrial-grade performance, agents MUST minimize context usage:
+
 - **Prohibited Reading:** Agents are FORBIDDEN from reading files in `dasafo_FACTORY` that are not strictly related to their specific task.
 - **RAG Mandatory:** All searches for global rules (00_GLOBAL_KNOWLEDGE) MUST be performed via the `global-knowledge-vectorizer` search interface provided by the `MEMORY_OPTIMIZER`.
+
 - **Snippet-Only Policy:** Do not read entire files if a specific line range or function is needed. Use `view_file` with line constraints.
 
-## 11. Factory Evolution & Guardrails
+## 12. Factory Evolution & Guardrails
 
 The `dasafo_FACTORY` itself is a versioned product:
+
 - **Pre-mutation Backup:** Any modification to a `SKILL.md` or `IDENTITY.md` MUST follow the `checkpoint-manager` protocol: backup to `.archive/` before writing.
 - **Versioning:** All structural changes MUST be documented in `FACTORY_VERSION.md`.
+
 - **Immunity:** The `00_GLOBAL_KNOWLEDGE/01_CODING_STANDARDS.md` file is IMMUNE to automatic modification and requires explicit Human Approval Gate.
+
+---
+
+## 13. PRP Contract Protocol (Project Requirement Protocol)
+
+The PRP Contract is a **mandatory pre-condition** for any project entering the Architecture phase (M2). It ensures perfect alignment between the human's vision and the factory's execution.
+
+- **Mandatory for all projects:** No project may skip the PRP validation step.
+- **Location:** `$TARGET_PROJECT/LOCAL_KNOWLEDGE/PRP_CONTRACT.json`
+- **Schema:** Must conform to `dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/PRP_CONTRACT_TEMPLATE.json`.
+- **Lifecycle:** `draft` → `validated` (user confirmed) → `locked` (immutable, in production).
+- **Sole Authority:** Only the `PRODUCT_OWNER` agent may produce and validate PRP Contracts.
+- **Agent Obligations:**
+  - The **ORCHESTRATOR** MUST verify `prp_status: "validated"` before publishing any M2 tasks.
+  - The **ARCHITECT** MUST reference `success_criteria` from the PRP Contract when designing solutions. Every architectural decision must trace back to at least one success criterion.
+  - **All production agents** MUST read `success_criteria` and `constraints` before executing tasks to ensure scope alignment.
+- **Immutability:** Once `prp_status` transitions to `"validated"`, the contract is locked. Any scope change requires a new version (increment `contract_meta.version`) and a fresh validation cycle.
 
 ---

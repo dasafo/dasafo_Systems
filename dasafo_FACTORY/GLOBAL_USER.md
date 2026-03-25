@@ -1,13 +1,13 @@
 # dasafo_System | Global User Profile
 >
-> **Context:** Master identity and preferences for the dasafodata ecosystem.
+> **Context:** Master identity and preferences for the dasafo_FACTORY ecosystem.
 
 ## 👤 Owner Identity
 
 - **Name:** David
 - **Surname:** Salas Forns
 - **Alias:** dasafo
-- **Brand:** dasafodata
+- **Brand:** dasafo_FACTORY
 - **Expertise:** Physics (BSc), Data Science (MSc Candidate)
 - **Core Interests:** AI, Policy, Scientific Rigor
 

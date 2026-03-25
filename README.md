@@ -1,4 +1,4 @@
-# dasafo_Systems | Multi-Agent AI Factory
+# dasafo_Systems | Multi-Agent AI Factory v2.1
 
 <p align="center">
   <img src="https://img.shields.io/badge/Architecture-Stateless_Agents-0ea5e9?style=for-the-badge" alt="Architecture Badge">
@@ -9,9 +9,9 @@
 
 ## 🚀 Overview
 
-**dasafo_Systems** is a high-performance, stateless AI Multi-Agent Factory designed for mass-scaling software projects with surgical precision. Unlike traditional monolithic repositories, this infrastructure decouples the **Agency Intelligence** (immutable rules, protocols, and roles) from the **Project Workspaces** (mutable code, Kanban boards, and data).
+**dasafo_Systems** is a high-performance, stateless AI Multi-Agent Factory designed for mass-scaling software projects with surgical precision. This version (**v2.1 "Chasis Blindado"**) introduces absolute structural integrity, project agnosticism, and autonomous feedback loops.
 
-Built on the pillars of **Rigor**, **Solidity**, and **Vibe**, the factory allows for the parallelized execution of complex engineering missions by multiple AI agents, while enforcing strict physical isolation and architectural constraints.
+Built on the pillars of **Rigor**, **Solidity**, and **Vibe**, the factory allows for parallelized execution by multiple agents while enforcing strict isolation, mandatory **PRP Contract** validation, and **AutoShield v2.0** error prevention.
 
 ---
 
@@ -20,100 +20,56 @@ Built on the pillars of **Rigor**, **Solidity**, and **Vibe**, the factory allow
 The ecosystem is strictly divided into two immiscible hemispheres:
 
 ### 1. The Factory Engine (`dasafo_FACTORY/`)
-The immutable "Brain" of the agency. Agents have **Read-Only** access to these rules. It contains the identities, skills, and protocols that govern every agent.
-- **`00_GLOBAL_KNOWLEDGE`**: The Factory OS Brain. Holds universal laws (Coding Standards, Security Policies, Design Tokens).
-- **`01_STRATEGY` to `05_OPERATIONS`**: Departmental silos containing specialized agent identities (e.g., `ORCHESTRATOR`, `ARCHITECT`, `DOCS_MASTER`, `DEPLOYMENT_MONITOR`).
-- **`UNIVERSAL_PIPELINE.md`**: The mandatory lifecycle (Discovery to Go-Live).
-- **`COMMUNICATION_PROTOCOL.md`**: The laws of physics governing how agents interact, pass tasks, and validate code.
+The immutable "Brain" of the agency. It contains the identities, skills, and protocols that govern every agent.
+- **`00_GLOBAL_KNOWLEDGE`**: The Factory OS. Universal laws, coding standards, and the `skill_schema`.
+- **`01_STRATEGY` to `05_OPERATIONS`**: Departmental silos containing specialized agents (e.g., `ORCHESTRATOR`, `ARCHITECT`, `BACKEND_DEV`).
+- **`GLOBAL_SOUL.md`**: Centralized ethics and operational values.
+- **`COMMUNICATION_PROTOCOL.md`**: The laws of physics for agent interaction and task passing.
 
-### 2. The Project Workshops (`PROJECTS/`)
-The mutable "Hands" of the agency. Each directory here represents a unique client or mission. All state changes occur strictly here.
-- **`WORKSPACE/`**: The actual production code, strictly subdivided into `backend/`, `frontend/`, and `shared/`.
-- **`TASKS/`**: The live Kanban board directory system.
-- **`LOGS/`**: Persistent execution logs and error tracking separated by agent.
-- **`LOCAL_KNOWLEDGE/`**: Project-specific research, marketing strategies, and architectural blueprints.
+### 2. Information & Documentation (`Informacion/`)
+High-level summaries and guides for human-agent onboarding, maintained in **Spanish** for accessibility.
 
 ---
 
-## ⚙️ The Universal Pipeline (5 Phases)
+## ⚙️ The Universal Pipeline (v2.1)
 
-Every project must sequentially clear these phases without exception:
+Every project sequentially clears these phases:
 
-1. **Phase 0 (Bootstrap):** `PRODUCT_OWNER` or `DEVOPS_SRE` creates the project skeleton. No agent operates if the directory structure (`TASKS/`, `WORKSPACE/`, `LOGS/`, `LOCAL_KNOWLEDGE/`) is not structurally sound.
-2. **Phase 1 (Discovery):** State mapping and feasibility research. Output stored in `LOCAL_KNOWLEDGE/`.
-3. **Phase 2 (Architecture):** System design (DTOs, schemas). **No code is written until this phase is approved.**
-4. **Phase 3 (Isolated Execution):** Production agents write code strictly inside their respective `WORKSPACE/` silos.
-5. **Phase 4 (QA Gate - Crucial):** Validation phase. No task is finished until `QA_TESTER` approves it. Includes Entry Point verification and **Docker Proof-of-Build** validation.
-6. **Phase 5 (Go-Live):** `DEVOPS_SRE` orchestrates deployment (`docker-compose.yml`) and automatically spins up the application.
-
----
-
-## 📋 The Kanban System (Task Lifecycle)
-
-Tasks flow physically through the directory structure in `$TARGET_PROJECT/TASKS/`:
-
-1. 📥 **`01_PENDING`**: New tasks created by managers.
-2. 🔄 **`02_IN_PROGRESS`**: Tasks moved by workers when execution begins.
-3. 🔍 **`03_COMPLETED`**: Tasks awaiting QA review. *(A task here is NOT finished).*
-4. ✅ **`04_ARCHIVE`**: Final destination after QA/Security/Architect approval.
-5. ❌ **`05_REJECTED`**: Tasks returned with a QA feedback log. Must be corrected by the original worker.
-
-## 🤖 Open Agent Manager (OAM) Integration
-
-The `dasafo_FACTORY` natively integrates with the **Antigravity Open Agent Manager**, transforming the raw folder-based protocol into a visual, interactive team:
-
-- **Agent Profiles (`.agents/`):** Core factory roles (`@orchestrator`, `@security_auditor`, `@backend_dev`) are mapped as native Antigravity AI profiles. You can select and command them directly from the OAM interface.
-- **Slash Commands (`.agents/workflows/`):** Trigger factory loops instantly from the chat:
-  - `/factory-orchestrate`: Commands the Orchestrator to assess project state and dispatch the next batch of `.json` tasks.
-  - `/factory-audit`: Commands the Security Auditor to aggressively scan all completed tasks for vulnerabilities.
-
-This creates a true **Hybrid Execution Model**: the factory runs autonomously based on the Kanban folders, but you remain the ultimate supervisor at the OAM Inbox.
+1. **Phase 0 (Discovery & PRP):** Establishing the mission. No agent proceeds until the user signs the `PRP_CONTRACT.json` (Vision-What, not How).
+2. **Phase 1 (Architecture & Research):** Deep semantic research (ADRs, schemas). No code is written until the "Master Plan" is approved.
+3. **Phase 2 (Isolated Execution):** Production agents write code strictly inside `$TARGET_PROJECT/WORKSPACE/`.
+4. **Phase 3 (QA & Security Gate):** Mandatory Playwright tests and secret scanning. Errors are logged to **AutoShield v2.0** (YAML) for collective learning.
+5. **Phase 4 (Go-Live):** `DEVOPS_SRE` orchestrates the deployment via Docker.
 
 ---
 
-## 💎 Core Values & Standards
+## 💎 Core Values (v2.1)
 
-Every line of code generated by this factory adheres to the **Global Knowledge Base**:
-
-| Standard | Description |
-| :--- | :--- |
-| **Physics-Mindset** | Mandatory use of SI Units (Kelvin, Pascal, Meters) for all internal data processing. No imperial units. |
-| **Atomic Vibe** | UI must be responsive, minimal, and visually premium (Glassmorphism, Neon accents, dark mode defaults). |
-| **Tokenization** | No hardcoded colors/spacing. Semantic tokens (`Colors.danger`, `Spacing.large`) are mandatory. |
-| **Solidity** | Zero-Trust security, strict DTO discipline across boundaries, and avoidance of shared mutable state. |
-| **Atomic Completeness** | Code must compile and be fully integrated (Entry Points connected) before leaving Phase 3. No partial work. |
-| **Operational Guard** | Mandatory budget tracking via `COST_TRACKER` and post-deployment uptime surveillance via `DEPLOYMENT_MONITOR`. |
+- **Zero-Trust Security:** Secret scanning and prompt-injection guards are mandatory.
+- **Atomic Design:** UI must be premium (Dark mode, neon accents, glassmorphism).
+- **English-only Mandate:** All internal code, logic, and technical documentation are in English to ensure global engineering standards.
+- **Recursive Evolution:** `FACTORY_EVOLVER` continuously optimizes the system based on AutoShield feedback.
 
 ---
 
 ## 🛠️ Getting Started
 
-### Prerequisites
-- Node.js (for Frontend/Vite/Next.js environments)
-- Python 3.10+ (for Backend/ML environments)
-- Docker & Docker Compose (for Go-Live orchestration and QA checks)
-
-### Running a Mission
-
-The fastest way to initialize a structurally sound project is to use the built-in factory script:
-
-**1. Generate the Skeleton:**
+### 1. Initialize Project
 ```bash
 cd dasafo_FACTORY
-./init_project.sh NombreDelProyecto
+./init_project.sh ProjectName
 ```
 
-**2. Inject Context to the AI Agents:**
-Agent execution ALWAYS requires passing the absolute path to the project.
+### 2. Inject Context
 ```bash
-export TARGET_PROJECT="/home/david/Documents/AI/AGENTES/dasafo_Systems/PROJECTS/NombreDelProyecto"
+export TARGET_PROJECT="/absolute/path/to/ProjectName"
 ```
 
-**3. Kick-Off Pipeline:**
-Instruct the `ORCHESTRATOR` or `PRODUCT_OWNER` to begin Phase 1 (Discovery) inside `$TARGET_PROJECT/PROJECT_STATE.json`. The factory will handle the rest autonomously via the `/factory-orchestrate` command.
+### 3. Kick-Off
+Invoke the Orchestrator via the `/factory-orchestrate` command to start the Discovery phase.
 
 ---
 
 <p align="center">
-  <i>"Move fast in a way that future agents can understand, extend, and trust. The system must remain stable under continuous multi-agent evolution."</i>
+  <i>"Move fast in a way that future agents can understand, extend, and trust."</i>
 </p>

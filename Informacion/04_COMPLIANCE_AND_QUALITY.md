@@ -1,48 +1,32 @@
-El departamento de **`04_COMPLIANCE_AND_QUALITY`** es la "Aduana de Seguridad" de la factoría. Su misión es garantizar que nada salga a producción si no es 100% seguro, estable y fiel a los requisitos originales.
+# 🛡️ 04_COMPLIANCE_AND_QUALITY | Los Porteros de la Calidad
 
-Aquí tienes el desglose de sus agentes y archivos:
-
----
-
-### 1. 🧪 QA_TESTER (El Juez de Solidez)
-Es el responsable de verificar que el código no solo funcione, sino que cumpla con los estándares de calidad definidos.
-
-*   **`IDENTITY.md`**: Define su rol como un probador implacable, escéptico y orientado al detalle.
-*   **`HEARTBEAT.md`**: Un registro del estado de salud de las pruebas del sistema.
-*   **`SOUL.md`**: Su filosofía de "Cero Errores" y la importancia de la experiencia de usuario (UX) sin fallos.
-*   **`SKILLS/`**: 
-    *   **`scoutqa-automated-suites`**: Creación de pruebas automáticas que se ejecutan sin intervención humana.
-    *   **`playwright-visual-testing`**: Verificación de que la interfaz se ve bien en todos los navegadores y tamaños de pantalla.
-    *   **`hallucination-report-guardrail`**: Un filtro especial para detectar si el código generado incluye funciones que no existen o lógica inventada.
+Este departamento es el responsable de que nada salga de la factoría si no es **Seguro**, **Correcto** y está **Bien Documentado**.
 
 ---
 
-### 2. 🛡️ SECURITY_AUDITOR (El Guardián Implacable)
-Su misión es proteger el sistema contra ataques externos y asegurar que no haya fugas de información sensible.
+### 🤖 Agentes Clave
 
-*   **`IDENTITY.md`**: Define su personalidad de "Hacker Ético" interno, siempre buscando vulnerabilidades.
-*   **`SOUL.md`**: Su compromiso con la privacidad de los datos y la seguridad desde el diseño (Security by Design).
-*   **`TOOLS.md`**: Lista de herramientas MCP para escaneo de vulnerabilidades y revisión de dependencias.
-*   **`SKILLS/`**:
-    *   **`agentic-thought-secret-scanner`**: Capacidad para detectar si algún agente ha dejado una API Key o contraseña hardcodeada en el código.
-    *   **`owasp-llm-enforcement`**: Aplicación de los 10 estándares principales de seguridad para aplicaciones web y modelos de lenguaje.
-    *   **`nemo-llm-guardrails`**: Implementación de barreras de seguridad de NVIDIA para evitar respuestas o acciones peligrosas de los agentes.
+#### 1. QA_TESTER (El Validador de Requisitos)
+Asegura que el código hace lo que el Product Owner dijo que debía hacer.
+*   **Habilidades v2.1:** Tests automáticos con Playwright, auditorías de validación de requisitos y reportes de alucinaciones.
+*   **Misión:** Si el QA no da el visto bueno, la tarea regresa a Producción (Phase 05_REJECTED).
 
----
+#### 2. SECURITY_AUDITOR (El Guardián Zero-Trust)
+Escanea el código en busca de vulnerabilidades y secretos expuestos.
+*   **Herramientas:** Escaneo agresivo de secretos (`agentic-thought-secret-scanner`), cumplimiento de OWASP y mitigación de inyecciones de prompts.
+*   **Misión:** Cero tolerancia con API keys hardcodeadas o dependencias vulnerables.
 
-### 3. ✍️ DOCS_MASTER (El Redactor Técnico Premium)
-Transforma el "código sucio" en documentación limpia, manuales de usuario y referencias API de las que estar orgulloso.
-
-*   **`IDENTITY.md`**: Perfil de comunicador técnico con enfoque en claridad y elegancia.
-*   **`SKILLS/`**: 
-    *   **`api-docs-generator`**: Creación automática de Swagger/Markdown para las APIs del proyecto.
-    *   **`manual-builder`**: Generación de guías de usuario finales basadas en la funcionalidad real implementada.
-    *   **`changelog-automator`**: Mantenimiento del historial de cambios de cada proyecto.
+#### 3. DOCS_MASTER (El Traductor Técnico)
+Convierte la complejidad técnica en manuales claros y profesionales.
+*   **Habilidades:** Generador de docs de API, redactor técnico senior y estratega de documentación para el usuario final.
 
 ---
 
-### 📂 El Filtro de la Factoría
+### ✅ El Filtro de Calidad
 
-Este departamento es el que interactúa directamente con la carpeta **`05_REJECTED`**. Si el **QA Tester** o el **Security Auditor** encuentran un fallo, mueven la tarea a "Rechazado" y el desarrollador **DEBE** corregirlo antes de intentar moverlo a `04_ARCHIVE`.
+- **Validation Gate:** El QA Tester tiene el poder de bloquear el paso a "Go-Live" de cualquier componente.
+- **Security Checkpoints:** Cada tarea completada en `03_COMPLETED` es auditada por el Security Auditor antes de ser archivada.
+- **Documentación Viva:** El Docs Master asegura que cada cambio en la arquitectura se refleje instantáneamente en los manuales.
 
-**En resumen:** En este departamento, el software se pone a prueba bajo fuego. Sin este equipo, la factoría fabricaría software que podría fallar en manos del usuario o ser hackeado fácilmente. Es el seguro de vida de tu proyecto.
+---
+*La calidad no es un accidente, es el resultado de un filtrado implacable.*

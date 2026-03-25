@@ -2,8 +2,8 @@
 run.py — Skill: Search Context Distillation Pro
 Agent: MEMORY_OPTIMIZER
 
-Comprime un log de conversación/contexto largo en un resumen mínimo vital.
-Output: MEMORY_SNAPSHOT.md en el TARGET_PROJECT.
+Compresses a long conversation/context log into a minimum vital summary.
+Output: MEMORY_SNAPSHOT.md in the TARGET_PROJECT.
 """
 
 from __future__ import annotations
@@ -12,6 +12,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Add GLOBAL_KNOWLEDGE to path for skill_schema import
 sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "00_GLOBAL_KNOWLEDGE"))
 from skill_schema import SkillInput, SkillOutput  # noqa: E402
 
@@ -47,8 +48,8 @@ _SNAPSHOT_TEMPLATE = """# 🧠 Memory Snapshot
 
 def _extract_sections(text: str) -> dict:
     """
-    Extracción heurística de secciones clave del contexto.
-    En producción, esta función sería reemplazada por una llamada a un LLM de compresión.
+    Heuristic extraction of key context sections.
+    In production, this would be replaced by an LLM compression call.
     """
     lines = text.splitlines()
     decisions: list[str] = []
@@ -57,22 +58,22 @@ def _extract_sections(text: str) -> dict:
 
     for line in lines:
         stripped = line.strip()
-        # Decisiones: líneas que contienen palabras clave de decisión
-        if any(kw in stripped.lower() for kw in ["decided", "decision", "chosen", "approved", "agreed", "decidido", "aprobado"]):
+        # Decisions: lines containing decision keywords
+        if any(kw in stripped.lower() for kw in ["decided", "decision", "chosen", "approved", "agreed"]):
             decisions.append(f"- {stripped[:200]}")
 
-        # Tareas: líneas con marcadores de tarea
+        # Tasks: lines with task markers
         if any(kw in stripped for kw in ["[ ]", "[x]", "[/]", "TODO", "PENDING", "IN PROGRESS"]):
             tasks.append(f"- {stripped[:200]}")
 
-        # Entidades: palabras en MAYÚSCULAS (nombres de agentes, sistemas)
+        # Entities: UPPERCASE words (agent names, systems)
         import re
         caps_words = re.findall(r"\b[A-Z][A-Z_]{2,}\b", stripped)
-        entities.update(caps_words[:5])  # máx 5 por línea para no explotar
+        entities.update(caps_words[:5])  # max 5 per line
 
     return {
-        "key_decisions": "\n".join(decisions[:10]) or "- [Ninguna decisión explícita detectada]",
-        "open_tasks": "\n".join(tasks[:15]) or "- [Ninguna tarea pendiente detectada]",
+        "key_decisions": "\n".join(decisions[:10]) or "- [No explicit decisions detected]",
+        "open_tasks": "\n".join(tasks[:15]) or "- [No pending tasks detected]",
         "entities": ", ".join(sorted(entities)) or "N/A",
     }
 
@@ -83,11 +84,11 @@ def run(skill_input: SkillInput) -> SkillOutput:
     cid = skill_input.correlation_id
 
     content = skill_input.params.get("content")
-    source_label = skill_input.params.get("source_label", "Conversación sin etiquetar")
-    critical_context = skill_input.params.get("critical_context", "[Proveer manualmente en 'critical_context' param]")
+    source_label = skill_input.params.get("source_label", "Unlabeled Conversation")
+    critical_context = skill_input.params.get("critical_context", "[Provide manually in 'critical_context' param]")
 
     if not content:
-        # Intenta leer de un archivo si se provee ruta
+        # Try reading from file if path shared
         source_file = skill_input.params.get("source_file")
         if source_file and Path(source_file).exists():
             content = Path(source_file).read_text(encoding="utf-8", errors="ignore")
@@ -95,7 +96,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
         else:
             return SkillOutput.failure(
                 agent, skill,
-                "Se requiere 'content' (texto) o 'source_file' (ruta a archivo) en params.",
+                "Params 'content' (text) or 'source_file' (file path) required.",
                 cid,
             )
 
@@ -107,7 +108,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
         source_label=source_label,
         date=date,
         original_chars=original_chars,
-        snapshot_chars=0,  # placeholder, calculado abajo
+        snapshot_chars=0,  # placeholder
         compression_ratio=0,  # placeholder
         critical_context=critical_context,
         **sections,
@@ -116,7 +117,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
     snapshot_chars = len(snapshot_text)
     compression_ratio = round((1 - snapshot_chars / max(original_chars, 1)) * 100, 1)
 
-    # Reconstruir con valores reales
+    # Rebuild with real values
     snapshot_text = _SNAPSHOT_TEMPLATE.format(
         source_label=source_label,
         date=date,
@@ -137,7 +138,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
         snapshot_path.write_text(snapshot_text, encoding="utf-8")
         artifacts.append(str(snapshot_path))
     else:
-        warnings.append("TARGET_PROJECT no definido. El snapshot no fue persistido en disco.")
+        warnings.append("TARGET_PROJECT not defined. Snapshot not persisted to disk.")
 
     return SkillOutput(
         success=True,

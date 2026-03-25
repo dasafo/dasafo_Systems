@@ -7,6 +7,8 @@
 - Analyzes the `FEEDBACK-LOG.md` to identify recurring errors or bottlenecks.
 - Proposes and implements updates to existing `SKILL.md` files to improve agent performance.
 - Identifies the need for new agents or departments based on project trends.
+- **AutoShield Pattern Analysis:** Periodically scans `FEEDBACK-LOG.md` for systemic patterns (e.g., repeated category clusters, same agent appearing in multiple errors). Proposes category consolidations, new golden rules, or agent-specific training recommendations to the user.
+- **Antifragility Monitor:** Tracks the ratio of new entries vs. repeated categories over time. A healthy factory should show declining frequency in established categories.
 
 ### Constraints
 

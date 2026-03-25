@@ -1,49 +1,32 @@
-El departamento de **`01_STRATEGY_AND_MARKETING`** es el "Centro de Mando" de la factoría. Aquí no se escribe código, sino que se definen los objetivos, se planifican las tareas y se diseña la estrategia de crecimiento.
+# 🧭 01_STRATEGY_AND_MARKETING | Departamento de Estrategia
 
-Aquí tienes el desglose de lo que hace cada agente y sus archivos:
-
----
-
-### 1. 🏗️ ORCHESTRATOR (El Director de Operaciones)
-Es el agente más crítico. Su misión es leer el estado del proyecto y decidir qué agente debe trabajar a continuación, creando las tareas JSON necesarias.
-
-*   **`IDENTITY.md`**: Define su personalidad de gestor eficiente y su capacidad para ver el proyecto de forma global. Es el que aplica el Ciclo TEA.
-*   **`TOOLS.md`**: Lista las herramientas permitidas para mover archivos entre carpetas de tareas y validar el pipeline.
-*   **`SKILLS/`**: 
-    *   **`dag-routing`**: Capacidad para crear grafos de tareas, gestionando las **Human Approval Gates** (pausas de validación).
-    *   **`structured-system-design`**: Habilidad para estructurar misiones complejas y mantener la **PROJECT_TELEMETRY.md** actualizada con el progreso real.
+Este departamento es el **Timón** de la factoría. Se encarga de la captura de requisitos, la orquestación de tareas y el crecimiento estratégico del producto.
 
 ---
 
-### 2. 👑 PRODUCT_OWNER (El Dueño de la Visión)
-Es el puente entre tus deseos como usuario y la ejecución técnica. Se encarga de que el producto final sea realmente lo que necesitas.
+### 🤖 Agentes Clave
 
-*   **`IDENTITY.md`**: Define su enfoque en el valor de negocio y la experiencia de usuario (UX).
-*   **`SOUL.md`**: Contiene la "filosofía de producto" específica de este rol (calidad sobre cantidad).
-*   **`HEARTBEAT.md`**: Un registro de cómo evoluciona la visión del producto a lo largo del tiempo.
-*   **`SKILLS/`**:
-    *   **`requirements-analysis-framework`**: Metodología para desglosar tus ideas en requisitos técnicos claros.
+#### 1. PRODUCT_OWNER (El Guardián del Valor)
+Su misión es traducir la visión del usuario en un backlog técnico ejecutable.
+*   **Responsabilidad v2.1:** Es el dueño del **PRP Validation Gate**. No permite que el proyecto pase a la fase de Arquitectura hasta que el contrato de visión esté firmado.
+*   **Habilidades:** Auditoría de valor, análisis de requisitos y gestión de stakeholders.
 
----
+#### 2. ORCHESTRATOR (El Motor de Ingesta)
+Es el enrutador semántico. Convierte intenciones en lenguage natural en grafos de tareas (DAG).
+*   **Misión:** Analiza el estado del proyecto y dispara tareas a las carpetas `PENDING` correspondientes.
+*   **Comando Maestro:** Controla el flujo del comando `/factory-orchestrate`.
 
-### 3. 📈 MARKETING_GROWTH (El Estratega de Crecimiento)
-Este agente entra en juego para que el proyecto no solo funcione, sino que tenga éxito en el mercado.
-
-*   **`IDENTITY.md`**: Su perfil de experto en marketing digital, psicología del consumidor y analítica.
-*   **`USER.md`**: Información específica sobre el público objetivo al que se dirige el proyecto.
-*   **`TEMPLATE_growth_strategy.md`**: La estructura que sigue para crear planes de marketing coherentes.
-*   **`SKILLS/`**:
-    *   **`social-content-strategy`**: Planificación de contenido para redes sociales.
-    *   **`evidence-based-copywriting`**: Redacción de textos persuasivos basados en datos, no en suposiciones.
+#### 3. MARKETING_GROWTH (El Arquitecto de Crecimiento)
+Diseña estrategias de salida al mercado basadas en datos reales.
+*   **Habilidades:** Análisis de tendencias con Apify, redacción persuasiva basada en evidencia (Evidence-based copywriting) y estrategias de contenido social.
 
 ---
 
-### 📂 Estructura Común de Archivos en los Agentes
-Casi todos los agentes comparten estos archivos:
+### 📜 Protocolos de Estrategia
 
-1.  **`IDENTITY.md`**: El "Quién soy" de la IA.
-2.  **`TOOLS.md`**: El "Con qué trabajo" (herramientas MCP específicas).
-3.  **`SKILLS/`**: El "Qué sé hacer" (instrucciones detalladas de procedimientos específicos).
-4.  **`USER.md` / `SOUL.md`**: El "Para quién trabajo" y el "Bajo qué valores".
+- **Validación PRP:** El documento `PRP_CONTRACT.json` en el proyecto es la biblia. Si no está validado, el departamento bloquea la ejecución para evitar "Vibe Drift".
+- **Kanban Físico:** Las tareas se mueven físicamente entre las carpetas del proyecto (`01_PENDING` -> `02_IN_PROGRESS` -> `03_COMPLETED`).
+- **Feedback Loop:** La estrategia se ajusta si el `FEEDBACK-LOG.md` detecta que los requisitos originales eran técnicamente inviables.
 
-**En resumen:** En esta carpeta, el **Product Owner** define el "Qué", el **Marketing Growth** el "Para Quién" y el **Orchestrator** el "Cuándo y por Quién" se ejecuta cada paso. Es la capa pensante antes de la acción.
+---
+*Este departamento asegura que la factoría no solo construya cosas, sino que construya las cosas correctas.*

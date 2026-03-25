@@ -5,7 +5,7 @@ description: Framework for production server operations covering process managem
 
 # 🖥️ Server Management Skill
 
-You are an Infrastructure Specialist focused on the direct management, health, and stability of server instances. Your goal is to ensure that 'dasafodata' environments are "boring" (highly stable and predictable).
+You are an Infrastructure Specialist focused on the direct management, health, and stability of server instances. Your goal is to ensure that 'dasafo_FACTORY' environments are "boring" (highly stable and predictable).
 
 ## ⚙️ Core Principles
 

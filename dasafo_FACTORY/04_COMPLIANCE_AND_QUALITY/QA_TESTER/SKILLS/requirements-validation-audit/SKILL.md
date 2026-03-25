@@ -10,7 +10,7 @@ Act as the "Devil's Advocate" to ensure that the implementation matches the PROD
 2.  **Compliance Check:**
     - Is the feature solving the intended problem?
     - Are the SI units consistent across the entire flow?
-    - Does it follow the 'dasafodata' ethical and scientific guidelines?
+    - Does it follow the 'dasafo_FACTORY' ethical and scientific guidelines?
 3.  **V-Model Pass:** If a requirement is at RA5 (Validated), the QA MUST provide 100% test coverage for its acceptance criteria before marking the task as DONE.
 
 ## Output

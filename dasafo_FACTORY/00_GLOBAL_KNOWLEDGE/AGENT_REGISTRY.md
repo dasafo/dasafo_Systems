@@ -2,13 +2,15 @@
 
 > **Objective:** A centralized ledger defining the strict operational boundaries, authorized external capabilities (MCP Tools), and preferred LLM parameters for every agent within `dasafo_FACTORY`.
 
+> **Universal Pre-Hook:** ALL agents MUST execute `autoshield-preflight-check` (from `00_GLOBAL_KNOWLEDGE/SKILLS/`) before starting any task. This is a factory-wide mandatory skill.
+
 ---
 
 ## 🧭 C-Suite & Strategy (01)
 
 ### `PRODUCT_OWNER`
 - **Domain:** Requirement gathering, feasibility analysis, creating `PROJECT_STATE.json`.
-- **Skills:** `project-management`, `requirements-analysis-framework`, `stakeholder-value-audit`.
+- **Skills:** `project-management`, `requirements-analysis-framework`, `stakeholder-value-audit`, `prp-validation-gate`.
 - **Authorized MCPs:** `github` (read repo), `search_web` (market gap analysis).
 - **LLM Settings:** High Context Window (128k+), Temperature: 0.6 (Balanced creativity/structure).
 
@@ -58,7 +60,7 @@
 
 ### `DB_MASTER`
 - **Domain:** Database architecture, schema integrity, and performance tuning.
-- **Skills:** `supabase-stack-expert`, `database-architect-strategic`, `sql-performance-tuner`, `nblm-schema-nexus`.
+- **Skills:** `supabase-stack-expert`, `database-architect-strategic`, `sql-performance-tuner`, `nblm-schema-nexus`, `supabase-live-validation`.
 - **Authorized MCPs:** `sql_engine`, `erd_generator`, `migration_manager`, `performance_profiler`, `notebooklm`, `supabase`.
 - **LLM Settings:** Logic-focused (GPT-4o / Claude 3.5 Sonnet). Temperature: 0.0 (Strict).
 
@@ -68,7 +70,7 @@
 
 ### `QA_TESTER`
 - **Domain:** End-to-end integration testing and requirement validation.
-- **Skills:** `scoutqa-automated-suites`, `playwright-visual-testing`, `requirements-validation-audit`, `hallucination-report-guardrail`.
+- **Skills:** `scoutqa-automated-suites`, `playwright-visual-testing`, `requirements-validation-audit`, `hallucination-report-guardrail`, `autoshield-feedback-writer`, `browser-visual-validation`.
 - **Authorized MCPs:** `run_command` (docker-compose, pytest, npm run test), `browser_sandbox`, `filesystem`.
 - **LLM Settings:** Strict Code Review Models (e.g., Claude 3.5 Sonnet). Temperature: 0.0 (Strictly deterministic).
 
@@ -90,7 +92,7 @@
 
 ### `DEVOPS_SRE`
 - **Domain:** Infrastructure as Code (IaC), CI/CD, and MLOps deployment.
-- **Skills:** `docker-devops-expert`, `github-actions-cicd-patterns`, `infra-as-code-terraform-pro`, `mlops-deployment-guard`.
+- **Skills:** `docker-devops-expert`, `github-actions-cicd-patterns`, `infra-as-code-terraform-pro`, `mlops-deployment-guard`, `server-management`.
 - **Authorized MCPs:** `docker_engine`, `terraform_cloud`, `bash_runtime`, `github_actions_runner`, `system_monitor`.
 - **LLM Settings:** Logic-heavy Models. Temperature: 0.0 (High Reliability).
 
@@ -102,7 +104,7 @@
 
 ### `MEMORY_OPTIMIZER`
 - **Domain:** Context management, log distillation, and long-term memory curation.
-- **Skills:** `search-context-distillation-pro`, `ml-history-indexer`, `nblm-memory-bridge`, `clutch-resource-cleaner`.
+- **Skills:** `global-knowledge-vectorizer`, `token-context-optimization`, `context-compression`, `nblm-memory-bridge`, `search-context-distillation-pro`, `ml-history-indexer`, `clutch-resource-cleaner`, `cost-tracker`, `runtime-perf-optimization`.
 - **Authorized MCPs:** `filesystem`, `notebooklm`, `sql_engine` (Vector ops).
 - **LLM Settings:** Compression-specialized Models. Temperature: 0.1 (Precise summaries).
 
@@ -114,6 +116,6 @@
 
 ### `FACTORY_EVOLVER`
 - **Domain:** Meta-optimization, factory self-improvement, and feedback loop analysis.
-- **Skills:** `skill-optimization`, `system-optimizer`, `autonomous-feedback-analyzer`, `reflective-learning-engine`, `pattern-recognition`, `factory-audit-pro`.
+- **Skills:** `skill-optimization`, `system-optimizer`, `autonomous-feedback-analyzer`, `reflective-learning-engine`, `pattern-recognition`, `factory-audit-pro`, `autoshield-pattern-analysis`, `checkpoint-manager`.
 - **Authorized MCPs:** `filesystem`, `communication_relay`.
 - **LLM Settings:** Reflection-heavy Models. Temperature: 0.2.

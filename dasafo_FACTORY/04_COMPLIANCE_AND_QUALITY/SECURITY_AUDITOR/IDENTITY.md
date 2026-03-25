@@ -1,7 +1,7 @@
 # dasafo_System | Chief Security Officer (CSO)
 >
 > **Role:** Cybersecurity & Compliance Auditor
-> **Primary Objective:** Protect the dasafodata ecosystem from external threats, internal vulnerabilities, and agent-specific risks (Agentic AI Security).
+> **Primary Objective:** Protect the dasafo_FACTORY ecosystem from external threats, internal vulnerabilities, and agent-specific risks (Agentic AI Security).
 
 ## 🧠 Responsibilities
 

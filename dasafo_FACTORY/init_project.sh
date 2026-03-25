@@ -1,9 +1,11 @@
 #!/bin/bash
 
 # ==============================================================================
-# dasafo_FACTORY | Project Initializer (Bootstrap)
+# dasafo_FACTORY | Project Initializer (Bootstrap) v2.1
 # ==============================================================================
-# This script provisions the strict $TARGET_PROJECT skeleton mandated by the factory.
+# This script provisions the strict $TARGET_PROJECT skeleton mandated by the 
+# COMMUNICATION_PROTOCOL.md and UNIVERSAL_PIPELINE.md.
+#
 # Usage: ./init_project.sh <PROJECT_NAME>
 # ==============================================================================
 
@@ -19,11 +21,12 @@ PROJECT_ROOT="../../PROJECTS/$1"
 
 echo "[*] Initializing factory skeleton for project: $1"
 
-# Create core skeleton architecture
+# 1. Create CORE skeleton architecture
 mkdir -p "$PROJECT_ROOT/LOCAL_KNOWLEDGE"
 mkdir -p "$PROJECT_ROOT/LOGS/agents"
 mkdir -p "$PROJECT_ROOT/LOGS/sessions"
 mkdir -p "$PROJECT_ROOT/LOGS/reports"
+mkdir -p "$PROJECT_ROOT/LOGS/incidents"
 mkdir -p "$PROJECT_ROOT/TASKS/01_PENDING"
 mkdir -p "$PROJECT_ROOT/TASKS/02_IN_PROGRESS"
 mkdir -p "$PROJECT_ROOT/TASKS/03_COMPLETED"
@@ -33,11 +36,37 @@ mkdir -p "$PROJECT_ROOT/WORKSPACE/backend"
 mkdir -p "$PROJECT_ROOT/WORKSPACE/frontend"
 mkdir -p "$PROJECT_ROOT/WORKSPACE/shared"
 
-# Initialize consolidated project state and Meta-Agent memory constructs
-echo '{"factory_status": "PENDING", "objective": "", "phases": {"M1": "PENDING", "M2": "PENDING", "M3": "PENDING", "M4": "PENDING", "M5": "PENDING"}}' > "$PROJECT_ROOT/PROJECT_STATE.json"
+# 2. Initialize mandatory State & Memory constructs
+# Meta-Agent State
+echo '{"factory_version": "2.0.0-BLINDADO", "project_status": "DISCOVERY", "objective": "", "phases": {"M1": "PENDING", "M2": "PENDING", "M3": "PENDING", "M4": "PENDING", "M5": "PENDING"}}' > "$PROJECT_ROOT/PROJECT_STATE.json"
+
+# Semantic Memory Index (for MEMORY_OPTIMIZER)
 echo "# Semantic Context Index" > "$PROJECT_ROOT/LOCAL_KNOWLEDGE/SEMANTIC_INDEX.md"
+
+# Global Error & Execution Logs (with Lock placeholder)
 echo "# Master Error Report" > "$PROJECT_ROOT/LOGS/ERROR_REPORT.md"
-echo "task_id | status | timestamp" > "$PROJECT_ROOT/LOGS/EXECUTION_LOG.md"
+echo "task_id | status | timestamp | sequence_id | owner_agent_id" > "$PROJECT_ROOT/LOGS/EXECUTION_LOG.md"
+touch "$PROJECT_ROOT/LOGS/EXECUTION_LOG.lock"
+
+# 3. Seed the PRP_CONTRACT (Draft)
+cat <<EOF > "$PROJECT_ROOT/LOCAL_KNOWLEDGE/PRP_CONTRACT.json"
+{
+  "project": "$1",
+  "version": "1.0.0",
+  "prp_status": "draft",
+  "validated_at": null,
+  "validated_by": null,
+  "vision": {
+    "what": "TBD",
+    "why": "TBD",
+    "who": "TBD"
+  },
+  "success_criteria": [],
+  "constraints": [],
+  "non_goals": []
+}
+EOF
 
 echo "[+] Directory structure created dynamically at: $PROJECT_ROOT"
-echo "[+] SUCCESS: Ready for Phase 1 (Discovery)"
+echo "[+] PRP Contract seeded at: LOCAL_KNOWLEDGE/PRP_CONTRACT.json"
+echo "[+] SUCCESS: Factory ready for Phase 1 (Discovery)"

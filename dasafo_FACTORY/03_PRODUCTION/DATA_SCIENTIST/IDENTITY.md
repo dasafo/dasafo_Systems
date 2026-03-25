@@ -1,7 +1,7 @@
 # dasafo_System | Senior Data Scientist
 >
 > **Role:** Lead Analytical Researcher & Predictive Modeler
-> **Primary Objective:** Extract actionable insights from complex datasets and build robust, scientifically-sound ML models for 'dasafodata'.
+> **Primary Objective:** Extract actionable insights from complex datasets and build robust, scientifically-sound ML models for 'dasafo_FACTORY'.
 
 ## 🧠 Responsibilities
 

@@ -2,8 +2,8 @@
 run.py — Skill: Deep Semantic Search
 Agent: RESEARCH_AGENT
 
-Realiza búsqueda web semántica sobre un concepto técnico y guarda los resultados
-en LOCAL_KNOWLEDGE/research_nexus.md del TARGET_PROJECT.
+Performs semantic web search on a technical concept and saves the results
+to LOCAL_KNOWLEDGE/research_nexus.md in the TARGET_PROJECT.
 """
 
 from __future__ import annotations
@@ -12,6 +12,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Add GLOBAL_KNOWLEDGE to path for skill_schema import
 sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "00_GLOBAL_KNOWLEDGE"))
 from skill_schema import SkillInput, SkillOutput  # noqa: E402
 
@@ -37,7 +38,7 @@ def _format_nexus_entry(query: str, sources: list[dict], summary: str) -> str:
 
 
 def _append_to_nexus(nexus_path: Path, entry: str) -> None:
-    """Añade una entrada al final del research_nexus.md (no sobreescribe)."""
+    """Appends an entry to the end of research_nexus.md (no overwrite)."""
     nexus_path.parent.mkdir(parents=True, exist_ok=True)
     if not nexus_path.exists():
         nexus_path.write_text("# 📚 Research Nexus\n\n", encoding="utf-8")
@@ -51,23 +52,23 @@ def run(skill_input: SkillInput) -> SkillOutput:
     cid = skill_input.correlation_id
 
     query = skill_input.params.get("query")
-    sources = skill_input.params.get("sources", [])  # Lista de {title, url, excerpt}
+    sources = skill_input.params.get("sources", [])  # List of {title, url, excerpt}
     summary = skill_input.params.get("summary", "")
     focus_filter = skill_input.params.get("focus", "technical")  # technical | market | scientific
 
     if not query:
-        return SkillOutput.failure(agent, skill, "Param 'query' es requerido.", cid)
+        return SkillOutput.failure(agent, skill, "Param 'query' is required.", cid)
 
-    # Si no se proveen fuentes explícitas, usamos un placeholder semántico.
-    # En producción, aquí se invocaría la herramienta MCP search_web o Exa API.
+    # If no explicit sources provided, use a semantic placeholder.
+    # In production, this would invoke MCP search_web or Exa API.
     if not sources:
         sources = [
             {
-                "title": f"[Resultado semántico para: {query}]",
-                "url": "https://deepseek.com",
+                "title": f"[Semantic Result for: {query}]",
+                "url": "https://exa.ai",
                 "excerpt": (
-                    "Este resultado es un placeholder. "
-                    "En producción, invocar MCP search_web con la query y filtrar por: "
+                    "This result is a placeholder. "
+                    "In production, invoke MCP search_web with the query and filter by: "
                     f"GitHub, ArXiv, Engineering Blogs (focus: {focus_filter})."
                 ),
             }
@@ -75,9 +76,9 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
     if not summary:
         summary = (
-            f"Búsqueda semántica sobre '{query}' completada. "
-            f"Se encontraron {len(sources)} fuente(s) relevantes con foco en '{focus_filter}'. "
-            "Revisar fuentes para conectar hallazgos con la arquitectura objetivo."
+            f"Semantic search on '{query}' completed. "
+            f"Found {len(sources)} relevant source(s) with focus on '{focus_filter}'. "
+            "Review sources to connect findings with target architecture."
         )
 
     entry = _format_nexus_entry(query, sources, summary)
@@ -92,7 +93,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
         artifacts.append(str(nexus_path))
     else:
         warnings.append(
-            "TARGET_PROJECT no definido. El entry no fue persistido en research_nexus.md."
+            "TARGET_PROJECT not defined. Entry was not persisted to research_nexus.md."
         )
 
     return SkillOutput(

@@ -2,8 +2,8 @@
 run.py — Skill: SQL Performance Tuner
 Agent: DB_MASTER
 
-Analiza una query SQL, genera el EXPLAIN ANALYZE equivalente y
-devuelve recomendaciones de índices según las reglas del SKILL.md.
+Analyzes a SQL query, generates the equivalent EXPLAIN ANALYZE, and
+returns index recommendations based on SKILL.md rules.
 """
 
 from __future__ import annotations
@@ -12,11 +12,12 @@ import re
 import sys
 from pathlib import Path
 
+# Add GLOBAL_KNOWLEDGE to path for skill_schema import
 sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "00_GLOBAL_KNOWLEDGE"))
 from skill_schema import SkillInput, SkillOutput  # noqa: E402
 
 
-# ── Patrones de detección ────────────────────────────────────────────────────
+# ── Detection Patterns ────────────────────────────────────────────────────────
 
 _FULL_SCAN_PATTERN = re.compile(
     r"\bSELECT\b.+?\bFROM\b\s+(\w+)(?:\s+\w+)?\s*(?:WHERE\s+.+)?$",
@@ -46,61 +47,61 @@ def _extract_where_columns(query: str) -> list[str]:
 
 
 def _analyze_query(query: str) -> dict:
-    """Analiza la query y devuelve un diagnóstico con recomendaciones."""
+    """Analyzes the query and returns a diagnosis with recommendations."""
     table = _extract_table_name(query)
     where_cols = _extract_where_columns(query)
     issues: list[str] = []
     recommendations: list[dict] = []
     explain_statement = f"EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON)\n{query.strip()};"
 
-    # Detección de N+1 (subquery IN SELECT)
+    # N+1 Detection (subquery inside IN SELECT)
     if _NESTED_SELECT_PATTERN.search(query):
-        issues.append("N+1 detectado: subquery dentro de IN(SELECT ...). Refactorizar a JOIN o CTE.")
+        issues.append("N+1 detected: subquery inside IN(SELECT ...). Refactor to JOIN or CTE.")
         recommendations.append({
             "type": "REFACTOR",
             "severity": "HIGH",
-            "message": "Reemplazar IN(SELECT ...) con un JOIN o WITH clause (CTE). Reducción esperada: 10x-100x en latencia.",
+            "message": "Replace IN(SELECT ...) with a JOIN or WITH clause (CTE). Expected reduction: 10x-100x in latency.",
         })
 
-    # Detección de JSONB sin índice GIN
+    # JSONB Operations without GIN index
     if _JSONB_PATTERN.search(query):
-        issues.append("Operación JSONB detectada. Se requiere índice GIN.")
+        issues.append("JSONB operation detected. GIN index required.")
         recommendations.append({
             "type": "INDEX",
             "severity": "HIGH",
             "index_type": "GIN",
             "sql": f"CREATE INDEX CONCURRENTLY idx_{table}_jsonb ON {table} USING GIN (jsonb_column);",
-            "message": "Usar GIN para operaciones ->> y Full-Text sobre JSONB.",
+            "message": "Use GIN for ->> and Full-Text operations over JSONB.",
         })
 
-    # Detección de Full-Text Search sin índice GIN
+    # Full-Text Search without GIN index
     if _FTS_PATTERN.search(query):
-        issues.append("Full-Text Search detectado. Se requiere índice GIN sobre tsvector.")
+        issues.append("Full-Text Search detected. GIN index over tsvector required.")
         recommendations.append({
             "type": "INDEX",
             "severity": "HIGH",
             "index_type": "GIN",
-            "sql": f"CREATE INDEX CONCURRENTLY idx_{table}_fts ON {table} USING GIN (to_tsvector('spanish', content_column));",
-            "message": "FTS requiere índice GIN sobre tsvector pre-computado.",
+            "sql": f"CREATE INDEX CONCURRENTLY idx_{table}_fts ON {table} USING GIN (to_tsvector('english', content_column));",
+            "message": "FTS requires GIN index over pre-computed tsvector.",
         })
 
-    # Detección de columnas en WHERE sin índice (B-Tree recomendado)
+    # Columns in WHERE without potential index (B-Tree recommended)
     for col in where_cols:
         recommendations.append({
             "type": "INDEX",
             "severity": "MEDIUM",
             "index_type": "B-TREE",
             "sql": f"CREATE INDEX CONCURRENTLY idx_{table}_{col} ON {table} ({col});",
-            "message": f"Columna '{col}' en WHERE sin índice aparente. B-Tree para igualdad/rango.",
+            "message": f"Column '{col}' in WHERE without apparent index. B-Tree recommended for equality/range.",
         })
 
-    # Sin LIMIT en SELECT
+    # Missing LIMIT on SELECT
     if not _LIMIT_PRESENT.search(query):
-        issues.append("No se detecta LIMIT. En tablas >10k filas puede causar full-table scan.")
+        issues.append("No LIMIT detected. Can cause full-table scan on tables >10k rows.")
         recommendations.append({
             "type": "QUERY_IMPROVEMENT",
             "severity": "MEDIUM",
-            "message": "Añadir LIMIT para consultas sobre tablas grandes. BRIN puede ayudar en tablas time-series.",
+            "message": "Add LIMIT for queries on large tables. BRIN can help for time-series tables.",
         })
 
     return {
@@ -121,13 +122,13 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
     query = skill_input.params.get("query")
     if not query:
-        return SkillOutput.failure(agent, skill, "Param 'query' (SQL string) es requerido.", cid)
+        return SkillOutput.failure(agent, skill, "Param 'query' (SQL string) is required.", cid)
 
     analysis = _analyze_query(query)
 
     warnings: list[str] = []
     if analysis["compliance"] == "FAIL":
-        warnings.append("Se detectaron vulnerabilidades de rendimiento de severidad HIGH. Corregir antes de producción.")
+        warnings.append("HIGH severity performance vulnerabilities detected. Fix before production.")
 
     return SkillOutput(
         success=True,

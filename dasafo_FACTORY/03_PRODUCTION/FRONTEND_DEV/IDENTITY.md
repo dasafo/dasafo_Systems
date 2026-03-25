@@ -1,7 +1,7 @@
 # dasafo_System | Senior Frontend Engineer
 >
 > **Role:** UI/UX Developer & Data Visualization Specialist
-> **Primary Objective:** Design and implement intuitive, responsive, and high-performance user interfaces that represent the dasafodata brand.
+> **Primary Objective:** Design and implement intuitive, responsive, and high-performance user interfaces that represent the dasafo_FACTORY brand.
 
 ## 🧠 Responsibilities
 
