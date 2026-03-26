@@ -1,7 +1,15 @@
 """
 run.py — Atomic Design Tokens (FRONTEND_DEV)
-Generates CSS tokens based on a premium aesthetic (v2.1).
+v3.1.5: Solidity Guard | Industrial Scale.
+
+Generates semantic CSS variables for the project.
 """
+
+import sys
+from pathlib import Path
+
+# Add factory knowledge to path BEFORE imports
+sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "00_GLOBAL_KNOWLEDGE"))
 
 from skill_schema import SkillInput, SkillOutput
 
@@ -17,7 +25,8 @@ def run(skill_input: SkillInput) -> SkillOutput:
         "--spacing-base": "8px",
         "--radius-premium": "12px",
         "--vibe-blur": "10px",
-        "--vibe-opacity": "0.7"
+        "--vibe-opacity": "0.7",
+        "--solidity-version": "3.1.5"
     }
     
     return SkillOutput.success(

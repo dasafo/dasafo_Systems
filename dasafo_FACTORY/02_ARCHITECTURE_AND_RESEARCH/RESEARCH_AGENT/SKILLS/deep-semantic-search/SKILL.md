@@ -1,4 +1,5 @@
-# Skill: Deep Semantic Search (Exa)
+# 🔍 Skill | Deep Semantic Search
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/sundial-org/awesome-openclaw-skills/exa-web-search-free
 > **Agent:** RESEARCH_AGENT
 

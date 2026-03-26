@@ -1,12 +1,17 @@
 """
 run.py — Database Architect Strategic (DB_MASTER)
+v3.1.5: Solidity Guard | Industrial Scale.
+
 Blueprint generator for relational schemas and migrations.
-v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
+import sys
 import os
 from pathlib import Path
 from skill_schema import SkillInput, SkillOutput
+
+# Add factory knowledge to path
+sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "00_GLOBAL_KNOWLEDGE"))
 
 def run(skill_input: SkillInput) -> SkillOutput:
     """
@@ -17,7 +22,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
     
     table_name = skill_input.params.get("table", "new_table")
     
-    sql = f"-- Migration: Create {table_name}\n"
+    sql = f"-- Migration: Create {table_name} (Solidity v3.1.5)\n"
     sql += f"CREATE TABLE {table_name} (\n"
     sql += f"    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),\n"
     sql += f"    created_at TIMESTAMPTZ DEFAULT now(),\n"

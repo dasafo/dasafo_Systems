@@ -1,5 +1,5 @@
-# Skill: Supabase Stack Expert
-> **Source:** https://skills.sh/alinaqi/claude-bootstrap/supabase
+# ⚡ Skill | Supabase Stack Expert
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** DB_MASTER
 
 ## Objective

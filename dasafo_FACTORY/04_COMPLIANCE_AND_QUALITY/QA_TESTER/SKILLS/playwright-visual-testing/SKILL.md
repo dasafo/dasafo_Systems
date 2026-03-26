@@ -1,4 +1,5 @@
-# Skill: Playwright Visual & Interaction Testing
+# 🎭 Skill | Playwright Visual & Interaction Testing
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://playwright.dev/ (Adapted)
 > **Agent:** QA_TESTER
 

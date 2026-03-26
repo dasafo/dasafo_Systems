@@ -1,5 +1,5 @@
-# Skill: Scikit-Learn Pipeline Master
-> **Source:** https://skills.sh/davila7/claude-code-templates/scikit-learn
+# 🧪 Skill | Scikit-Learn Pipeline Master
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** DATA_SCIENTIST
 
 ## Objective

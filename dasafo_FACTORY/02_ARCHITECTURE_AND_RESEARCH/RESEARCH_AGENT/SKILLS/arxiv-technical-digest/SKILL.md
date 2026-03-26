@@ -1,4 +1,5 @@
-# Skill: ArXiv Technical Digest (Source-based)
+# 📚 Skill | ArXiv Technical Digest
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/karpathy/nanochat/read-arxiv-paper
 > **Agent:** RESEARCH_AGENT
 

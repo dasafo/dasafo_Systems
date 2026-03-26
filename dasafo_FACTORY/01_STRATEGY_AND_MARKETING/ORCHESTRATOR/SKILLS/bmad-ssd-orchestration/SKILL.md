@@ -1,5 +1,7 @@
-# Skill: BMAD Workflow Orchestration (SSD)
-> **Source:** https://skills.sh/supercent-io/skills-template/bmad-orchestrator
+# Skill:# 📐 BMAD SSD Orchestration
+>
+> **Standard:** v3.1.5 "Solidity Guard"
+https://skills.sh/supercent-io/skills-template/bmad-orchestrator
 > **Agent:** ORCHESTRATOR
 
 ## Objective

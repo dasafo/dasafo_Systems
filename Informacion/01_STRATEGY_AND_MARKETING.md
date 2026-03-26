@@ -1,4 +1,4 @@
-# 🧭 01_STRATEGY_AND_MARKETING | Departamento de Estrategia (v3.1)
+# 🧭 01_STRATEGY_AND_MARKETING | Departamento de Estrategia (v3.1.5)
 
 Este departamento es el **Timón** de la factoría. Se encarga de la captura de requisitos, la orquestación de tareas y el crecimiento estratégico del producto.
 
@@ -24,9 +24,10 @@ Diseña estrategias de salida al mercado basadas en datos reales.
 
 Este departamento no solo piensa, sino que ejecuta a través de sus habilidades (`skills`):
 
-*   **`prp-generator` (PRODUCT_OWNER):** Genera automáticamente el borrador del contrato de visión basado en las primeras interacciones con el usuario.
-*   **`intent-to-dag` (ORCHESTRATOR):** El motor que desglosa una petición compleja en una lista de tareas técnica para el resto de la factoría.
-*   **`evidence-based-copywriting` (MARKETING_GROWTH):** Utiliza datos de mercado reales para redactar textos que no solo suenan bien, sino que están validados por tendencias actuales.
+*   **`prp-generator` & `prp-validation-gate` (PRODUCT_OWNER):** El sistema de doble llave para la creación y validación de contratos de misión.
+*   **`dag-routing` & `task-dependency-diagnostic` (ORCHESTRATOR):** Motores de descomposición de tareas y diagnóstico de cuellos de botella semánticos.
+*   **`ra-agile-orchestration` (ORCHESTRATOR):** Sistema de escalado de agentes basado en hitos del proyecto.
+*   **`evidence-based-copywriting` (MARKETING_GROWTH):** Redacción persuasiva v3.1.5 validada por datos de mercado reales.
 
 ---
 

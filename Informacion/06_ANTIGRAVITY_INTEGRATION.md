@@ -1,4 +1,4 @@
-# 🌉 Integración Antigravity: El Puente IDE (v3.1)
+# 🌉 Integración Antigravity: El Puente IDE (v3.1.5)
 
 Este documento explica cómo la **dasafo_FACTORY** se comunica con el entorno de desarrollo mediante las carpetas ocultas en la raíz del espacio de trabajo. Estas carpetas actúan como la "capa de presentación" y el "sistema de orquestación" para el usuario humano.
 
@@ -25,9 +25,10 @@ Aquí reside la configuración maestra de la experiencia de usuario.
 
 ### 🔄 El Flujo de Conexión
 
-1.  **Factoría (Core)**: Define las reglas inmutables y las habilidades técnicas.
-2.  **Puente (.agents / .antigravity)**: Traduce esas habilidades en botones, iconos y comandos dentro de tu IDE.
-3.  **Usuario**: Interactúa con los "Avatares" sin necesidad de conocer la compleja estructura de rutas internas.
+1.  **Contexto ($TARGET_PROJECT)**: Antigravity inyecta la ruta del proyecto actual como variable de entorno, permitiendo que la factoría sepa exactamente dónde operar.
+2.  **Protocolo "Solidity Guard" (v3.1.5)**: Las habilidades de la factoría usan una interfaz estandarizada que garantiza que cada comando ejecutado desde el IDE sea rastreable, seguro y atómico.
+3.  **Puente (.agents / .antigravity)**: Traduce las habilidades técnicas en botones, iconos y flujos visuales.
+4.  **Usuario**: Orquesta la producción masiva interactuando con agentes inteligentes que entienden tanto el código como la visión de negocio.
 
 > [!TIP]
 > Si cambias un icono en `.antigravity/project-config.json`, se actualizará instantáneamente en tu dashboard. Si cambias una instrucción en `.agents/agent.md`, el agente cambiará su comportamiento en la siguiente interacción.

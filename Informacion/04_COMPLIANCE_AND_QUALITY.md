@@ -1,4 +1,4 @@
-# 🛡️ 04_COMPLIANCE_AND_QUALITY | Los Porteros de la Calidad (v3.1)
+# 🛡️ 04_COMPLIANCE_AND_QUALITY | Los Porteros de la Calidad (v3.1.5)
 
 Este departamento es el responsable de que nada salga de la factoría si no es **Seguro**, **Correcto** y está **Bien Documentado**.
 
@@ -24,9 +24,9 @@ Convierte la complejidad técnica en manuales claros y profesionales.
 
 Este departamento garantiza el cumplimiento y la calidad mediante sus habilidades (`skills`) ejecutables:
 
-*   **`requirements-validation-audit` (QA_TESTER):** Capacidad para auditar si el código desarrollado cumple estrictamente con el contrato PRP firmado.
-*   **`internal-secrets-search` (SECURITY_AUDITOR):** Motor de escaneo profundo que busca secretos y vulnerabilidades en la lógica interna.
-*   **`documentation-generation` (DOCS_MASTER):** Herramienta automática para generar manuales y guías técnicas de alta calidad.
+*   **`requirements-validation-audit` & `autoshield-feedback-writer` (QA_TESTER):** Auditoría de contratos PRP y escritura automática de lecciones aprendidas en `FEEDBACK-LOG.md`.
+*   **`agentic-thought-secret-scanner` (SECURITY_AUDITOR):** Motor de escaneo rudo con patrones regex v3.1.5 restaurados para detectar secretos y fugas de datos.
+*   **`api-docs-generator` (DOCS_MASTER):** Generación automática de documentación técnica estructurada.
 
 ---
 

@@ -2,7 +2,8 @@
 description: How to generate professional API documentation from backend contracts.
 ---
 
-# 📚 SKILL: API Docs Generator
+# 📚 Skill | API Docs Generator
+> **Version:** v3.1.5 "Solidity Guard"
 
 1. **Ingest API Contracts:** Read the generated DTOs or OpenAPI specs from the Architect.
 2. **Contextualize:** Understand the business purpose of each endpoint (provided by Product Owner).

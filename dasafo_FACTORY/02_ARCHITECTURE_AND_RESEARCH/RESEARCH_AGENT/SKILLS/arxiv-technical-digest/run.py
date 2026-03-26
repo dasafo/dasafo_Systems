@@ -1,82 +1,71 @@
-#!/usr/bin/env python3
 """
-ArXiv Technical Digest (v3.1)
-Part of Dasafo Factory Research Department.
+run.py — ArXiv Technical Digest (RESEARCH_AGENT)
+v3.1.5: Solidity Guard | Industrial Scale.
 
-Fetches and digests technical papers from ArXiv to provide 
-the Architect with actionable math and logic.
+Fetches and digests technical papers from ArXiv via API.
 """
 
-import os
+from __future__ import annotations
 import sys
-import argparse
-import urllib.request
-import re
+import os
+import requests
+import xml.etree.ElementTree as ET
+from pathlib import Path
 from datetime import datetime
 
-def fetch_arxiv_metadata(arxiv_id):
-    """Fetches paper metadata using the ArXiv API."""
+# Add factory knowledge to path
+sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "00_GLOBAL_KNOWLEDGE"))
+from skill_schema import SkillInput, SkillOutput
+
+def fetch_arxiv_metadata(arxiv_id: str):
+    """Fetches paper metadata from ArXiv."""
     url = f"http://export.arxiv.org/api/query?id_list={arxiv_id}"
     try:
-        with urllib.request.urlopen(url, timeout=10) as response:
-            content = response.read().decode()
-            title = re.search(r"<title>(.*?)</title>", content, re.DOTALL).group(1).strip()
-            summary = re.search(r"<summary>(.*?)</summary>", content, re.DOTALL).group(1).strip()
-            return {"title": title, "summary": summary}
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        root = ET.fromstring(response.content)
+        # XML parsing for Atom feed
+        namespace = {'atom': 'http://www.w3.org/2005/Atom'}
+        entry = root.find('atom:entry', namespace)
+        if entry is None:
+            return None
+        title = entry.find('atom:title', namespace).text.strip()
+        summary = entry.find('atom:summary', namespace).text.strip()
+        return {"title": title, "summary": summary}
     except Exception as e:
-        return None, f"Failed to fetch metadata: {str(e)}"
+        return {"error": str(e)}
 
-def generate_digest(paper_info, arxiv_id):
-    """Produces the industrial Paper Summary report."""
-    now = datetime.now().isoformat()
+def run(skill_input: SkillInput) -> SkillOutput:
+    """Standardized entry point for the skill."""
+    arxiv_id = skill_input.params.get("id", "2301.00001")
+    target = skill_input.target_project or os.environ.get("TARGET_PROJECT")
     
-    digest = f"""# 🧠 PAPER SUMMARY: {paper_info['title']} 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**ID:** {arxiv_id}
-**Source:** https://arxiv.org/abs/{arxiv_id}
-**Generated At:** {now}
-
-## 📊 Technical Core (Abstract)
-{paper_info['summary']}
-
-## 📐 Formulas & Algorithms (Extracted)
-- [PENDING: Deep Semantic Trace Required]
-
-## 🚧 Implementation Constraints
-- [ ] Hardware/Memory overhead: 
-- [ ] Computational complexity: 
-
-## 🎯 Architecture Impact
-- How does this change our current stack?
-- Scaling potential:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-*Industrial Research Digest v3.1*
-"""
-    return digest
-
-def main():
-    parser = argparse.ArgumentParser(description="Dasafo Research Digest Tool")
-    parser.add_argument("--id", required=True, help="ArXiv ID (e.g., 2301.00001)")
-    parser.add_argument("--output", help="Output path for the summary")
-
-    args = parser.parse_args()
-
-    # 1. Fetch Metadata
-    info = fetch_arxiv_metadata(args.id)
-    if isinstance(info, tuple): # Error case
-        print(f"❌ RESEARCH FAILURE: {info[1]}")
-        sys.exit(1)
+    metadata = fetch_arxiv_metadata(arxiv_id)
     
-    # 2. Generate Digest
-    digest = generate_digest(info, args.id)
+    if not metadata or "error" in metadata:
+        error_msg = metadata.get("error", "Paper not found.")
+        return SkillOutput.failure(
+            agent=skill_input.agent,
+            skill=skill_input.skill,
+            error=f"ArXiv Fetch Error: {error_msg}",
+            correlation_id=skill_input.correlation_id
+        )
+    
+    digest = f"# 🧠 ArXiv Digest: {metadata['title']} (v3.1.5)\n"
+    digest += f"**ID:** {arxiv_id} | **Status:** SOLIDIFIED\n\n"
+    digest += f"## Abstract\n{metadata['summary']}\n"
+    
+    artifact_paths = []
+    if target:
+        output_path = Path(target) / "LOCAL_KNOWLEDGE" / f"Digest-{arxiv_id}.md"
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(digest, encoding="utf-8")
+        artifact_paths.append(str(output_path))
 
-    if args.output:
-        with open(args.output, 'w') as f:
-            f.write(digest)
-        print(f"✅ Technical Digest saved to {args.output}")
-    else:
-        print(digest)
-
-if __name__ == "__main__":
-    main()
+    return SkillOutput.success(
+        agent=skill_input.agent,
+        skill=skill_input.skill,
+        data={"digest": digest, "metadata": metadata},
+        artifacts=artifact_paths,
+        correlation_id=skill_input.correlation_id
+    )

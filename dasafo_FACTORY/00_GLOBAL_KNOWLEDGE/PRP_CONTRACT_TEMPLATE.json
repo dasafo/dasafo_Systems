@@ -6,6 +6,12 @@
     "vibe": "Target aesthetic (e.g., Dark Glassmorphism, Industrial Minimalist)",
     "solidity": "Critical security/performance constraints"
   },
+  "gates": [
+    "PRP_SIGNATURE",
+    "SECURITY_SCAN",
+    "UNIT_TESTS",
+    "SOLIDITY_AUDIT"
+  ],
   "phases": [
     {
       "id": "M0_DISCOVERY",

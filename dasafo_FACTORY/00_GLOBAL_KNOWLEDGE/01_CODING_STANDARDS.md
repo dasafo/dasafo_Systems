@@ -1,4 +1,7 @@
 # 💎 01_CODING_STANDARDS
+## 💻 01. Coding Standards
+>
+> **Standard:** v3.1.5 "Solidity Guard"
 
 ## 1. Principles
 - **Atomic Vibe**: UI components must be stunning, responsive, and tokenized.

@@ -1,5 +1,5 @@
-# Skill: NotebookLM Knowledge Nexus (NBLM)
-> **Source:** https://skills.sh/magicseek/nblm/nblm
+# 🧠 Skill | NotebookLM Knowledge Nexus (NBLM)
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** DATA_SCIENTIST
 
 ## Objective

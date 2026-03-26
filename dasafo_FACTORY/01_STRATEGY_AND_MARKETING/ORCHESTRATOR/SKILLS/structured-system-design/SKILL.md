@@ -2,7 +2,9 @@
 description: Advanced workflow orchestration using the TEA (Task-Execute-Architect) meta-framework within each project phase.
 ---
 
-# 🧠 SKILL: Structured System Design (SSD) Orchestration
+# 🧠 SKILL:# 🏛️ Structured System Design (SSD)
+>
+> **Standard:** v3.1.5 "Solidity Guard"
 
 Based on the [bmad-orchestrator SSD](https://skills.sh/supercent-io/skills-template/bmad-orchestrator) standard.
 

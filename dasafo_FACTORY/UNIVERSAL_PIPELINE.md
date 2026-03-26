@@ -1,6 +1,6 @@
 # 🚀 dasafo_FACTORY | Universal Pipeline
 >
-> **Standard:** v3.1 "Infra-to-Value"
+> **Standard:** v3.1.5 "Solidity Guard"
 > **Structure:** M1-M5 Maturity Model (Infra-Aware)
 
 ## 🛣️ The Journey
@@ -24,7 +24,7 @@
 
 - **Owner:** `BACKEND_DEV` / `FRONTEND_DEV`
 - **Output:** Functional, project-agnostic code.
-- **Validation:** Unit tests and SoC compliance.
+- **Validation:** 100% Task Completion in `03_DONE`, Unit tests, and SoC compliance. No "Mocks" allowed for final M3 validation.
 
 
 ### 🧪 Phase M4: Compliance
@@ -42,4 +42,11 @@
 - **DEPLOY_OFFER:** Agents must proactively provide launch commands and ask: *"¿Deseas que levante los servicios ahora mismo?"*
 
 ---
-*Universal Pipeline v3.1 | Status: Solidified.*
+
+## 🏛️ Industrial Solidity v3.1.5 (The Guard)
+
+**The "Anti-Fraud" Rule**: Phase promotion (`M1` -> `M5`) requires an independent **Audit Signature** in the `task.md` file. 
+-   **Implementation agents** (DEV role) cannot sign their own phase transitions.
+-   **Validation format**: `- [x] AUDIT: [VERIFIER_AGENT_ID] | [TIMESTAMP] | [SOLIDITY_HASH]`
+
+*Universal Pipeline v3.1.5 | Status: Hardened & Audited.*

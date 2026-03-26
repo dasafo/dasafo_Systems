@@ -1,11 +1,16 @@
 """
 run.py — Requirements Validation Audit (QA_TESTER)
+v3.1.5: Solidity Guard | Industrial Scale.
+
 Verifies that the implementation aligns with the PRP contract.
-v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
+import sys
 import os
 from pathlib import Path
+
+# Add factory knowledge to path
+sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "00_GLOBAL_KNOWLEDGE"))
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
@@ -20,7 +25,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
     audit_results = {
         "project": str(project_path),
         "contract_exists": contract_path.exists(),
-        "status": "VALIDATED" if contract_path.exists() else "AUDIT_FAILED",
+        "status": "VALIDATED v3.1.5" if contract_path.exists() else "AUDIT_FAILED",
         "guidance": "If contract is missing, the agent must halt execution until PO approval."
     }
     

@@ -2,7 +2,8 @@
 description: How to safely compress episodic logs into semantic memory without losing critical technical facts.
 ---
 
-# 🧠 SKILL: Context Compression
+# 🧠 Context Compression
+> **Status:** v3.1.5 "Solidity Guard" | **Focus:** Industrial Semantic Memory
 
 1. **Sweep Episodic Logs:** Periodically scan `$TARGET_PROJECT/LOGS/agents/*.log`.
 2. **Extract Facts:** Ignore "conversational fluff", agent greetings, and repetitive error loops. Isolate:

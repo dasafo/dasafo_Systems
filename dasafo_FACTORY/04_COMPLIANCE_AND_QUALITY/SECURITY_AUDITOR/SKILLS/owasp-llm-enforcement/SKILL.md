@@ -1,4 +1,5 @@
-# Skill: OWASP LLM Top-10 Enforcement
+# 🛡️ Skill | OWASP LLM Top-10 Enforcement
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://owasp.org/www-project-top-10-for-llm-applications/ (Adapted)
 > **Agent:** SECURITY_AUDITOR
 

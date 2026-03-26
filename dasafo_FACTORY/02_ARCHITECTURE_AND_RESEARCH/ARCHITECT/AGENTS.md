@@ -12,5 +12,8 @@
 - **QA_TESTER:** Playwright visual diffs and behavioral testing.
 - **DOCS_MASTER:** Technical documentation and repository structure.
 
-## 🧬 Collaboration Rule
-The ARCHITECT translates the **Vision** (from Product Owner) into **Blueprints** (TSK_Architecture) for these agents to execute. Direct bypass of the Architect is forbidden for structural changes.
+## 🧬 Collaboration Rule (v3.1.5)
+The ARCHITECT translates the **Vision** (from Product Owner) into **Blueprints** (TSK_Architecture) for these agents to execute. Direct bypass of the Architect is forbidden for structural changes. Every blueprint requires a mandatory `SOLIDITY_AUDIT` signature.
+
+---
+*Architect Agents v3.1.5 | Status: Solidified.*

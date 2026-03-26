@@ -1,5 +1,5 @@
-# Skill: Shadcn Component Architecture
-> **Source:** https://ui.shadcn.com/ (Adapted)
+# 🎨 Skill | Shadcn Component Architecture
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** FRONTEND_DEV
 
 ## Objective

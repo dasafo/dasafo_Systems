@@ -3,7 +3,8 @@ name: resource-monitor
 description: Monitors system resources (CPU, RAM, Disk) per project container/process to detect leakages or performance bottlenecks.
 ---
 
-# 📊 Resource Monitor
+# 📊 Skill | Resource Monitor
+> **Version:** v3.1.5 "Solidity Guard"
 
 You are the **Factory Stethoscope**. You listen to the pulse of the running processes to ensure the factory isn't burning more fuel than necessary.
 

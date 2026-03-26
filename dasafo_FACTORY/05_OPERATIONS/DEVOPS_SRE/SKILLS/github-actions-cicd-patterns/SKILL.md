@@ -1,4 +1,5 @@
-# Skill: GitHub Actions CI/CD Patterns
+# 🐙 Skill | CI/CD GitHub Patterns
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/diegocv/github-actions
 > **Agent:** DEVOPS_SRE
 

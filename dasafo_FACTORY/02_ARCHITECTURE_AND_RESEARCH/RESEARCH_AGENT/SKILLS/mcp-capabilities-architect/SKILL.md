@@ -1,5 +1,6 @@
-# Skill: MCP Capabilities Architect
-> **Source:** https://skills.sh/anthropics/skills/mcp-builder
+# 🌉 Skill | MCP Capabilities Architect
+> **Version:** v3.1.5 "Solidity Guard"
+https://skills.sh/anthropics/skills/mcp-builder
 > **Agent:** RESEARCH_AGENT
 
 ## Objective

@@ -1,5 +1,7 @@
-# Skill: NotebookLM Factory Biographer
-> **Source:** https://skills.sh/magicseek/nblm/nblm (Adapted)
+# Skill: NotebookLM# 📚 nblm-factory-biographer
+>
+> **Standard:** v3.1.5 "Solidity Guard"
+https://skills.sh/magicseek/nblm/nblm (Adapted)
 > **Agent:** ORCHESTRATOR
 
 ## Objective

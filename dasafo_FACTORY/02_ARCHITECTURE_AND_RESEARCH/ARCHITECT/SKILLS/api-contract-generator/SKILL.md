@@ -1,4 +1,5 @@
-# Skill: API Contract Generator (OpenAPI/DTO)
+# 📡 Skill | API Contract Generator
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/sickn33/antigravity-awesome-skills/api-documentation-generator (Adapted)
 > **Agent:** ARCHITECT
 

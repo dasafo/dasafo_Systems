@@ -2,7 +2,8 @@
 description: Deep structural scan of the entire factory documentation and files.
 ---
 
-# 📁 SKILL: factory-audit-pro
+# 📁 Factory Audit Pro
+> **Status:** v3.1.5 "Solidity Guard" | **Focus:** Industrial Structural Consistency
 
 1. **Consistency Check:** Ensure all agents have `IDENTITY.md`, `TOOLS.md`, and `SKILLS/`.
 2. **Knowledge Drift:** Identify outdated instructions that no longer reflect current best practices.

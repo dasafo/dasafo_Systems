@@ -1,4 +1,4 @@
-# 🛠️ dasafo_FACTORY | Global Infrastructure Services
+# 🛠️ dasafo_FACTORY | Global Infrastructure Services (v3.1.5)
 
 ## 🌐 Central Node
 This directory hosts the shared services for the entire factory ecosystem.
@@ -14,4 +14,4 @@ This directory hosts the shared services for the entire factory ecosystem.
 3. Projects will automatically connect via `dasafo_network`.
 
 ---
-*Infrastructure v3.1 | Status: Initialized*
+*Infrastructure v3.1.5 | Status: Solidified*

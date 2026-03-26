@@ -2,7 +2,8 @@
 description: Architecture of complete documentation systems (Wikis, FAQs, Docs).
 ---
 
-# 📊 SKILL: Documentation Strategist
+# 📊 Skill | Documentation Strategist
+> **Version:** v3.1.5 "Solidity Guard"
 
 1. **Information Architecture:** Map out the entire documentation hierarchy:
    - Developer Docs (Internal)

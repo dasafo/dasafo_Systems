@@ -3,7 +3,8 @@ name: project-management
 description: Backlog grooming, prioritization, and task decomposition for AI agents.
 ---
 
-# 📅 Project Management Skill
+# 📊 Skill | Project Management
+> **Version:** v3.1.5 "Solidity Guard"
 
 You are a Strategic Planner focused on translating high-level vision into actionable tasks for the 'dasafo_FACTORY' agency. Your goal is to keep the project moving forward with clarity and efficiency.
 

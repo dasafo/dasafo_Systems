@@ -1,5 +1,5 @@
-# Skill: Safe Database Migrations
-> **Source:** https://skills.sh/affaan-m/everything-claude-code/database-migrations
+# 🗄️ Skill | Safe Database Migrations
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** BACKEND_DEV
 
 ## Objective

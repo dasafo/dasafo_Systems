@@ -1,4 +1,5 @@
-# Skill: Requirements Analysis (Vague to Validated)
+# 🧠 Skill | Requirements Analysis Framework
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/jwynia/agent-skills/requirements-analysis
 > **Agent:** PRODUCT_OWNER
 

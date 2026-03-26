@@ -1,4 +1,5 @@
-# Skill: NotebookLM Memory Bridge
+# 🧠 NotebookLM Memory Bridge
+> **Status:** v3.1.5 "Solidity Guard" | **Focus:** Industrial Knowledge Orchestration
 > **Source:** https://skills.sh/magicseek/nblm/nblm (Adapted)
 > **Agent:** MEMORY_OPTIMIZER
 

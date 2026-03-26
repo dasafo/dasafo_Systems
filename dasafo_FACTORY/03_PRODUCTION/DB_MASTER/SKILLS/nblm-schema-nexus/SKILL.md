@@ -1,5 +1,5 @@
-# Skill: NotebookLM Schema Nexus
-> **Source:** https://skills.sh/magicseek/nblm/nblm (Adapted)
+# 🧠 Skill | NotebookLM Schema Nexus (NBLM)
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** DB_MASTER
 
 ## Objective

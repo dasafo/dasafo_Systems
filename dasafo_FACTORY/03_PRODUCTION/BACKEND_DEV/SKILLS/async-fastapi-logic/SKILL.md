@@ -1,5 +1,5 @@
-# Skill: Async FastAPI & JWT Logic
-> **Source:** https://skills.sh/jeffallan/claude-skills/fastapi-expert
+# ⚡ Skill | Async FastAPI & JWT Logic
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** BACKEND_DEV
 
 ## Objective

@@ -1,8 +1,15 @@
 """
 run.py — Resilient Error Handling (BACKEND_DEV)
+v3.1.5: Solidity Guard | Industrial Scale.
+
 Injects robust exception wrappers and retry logic.
-v3.1: Infraestructura Blindada | Industrial Scale.
 """
+
+import sys
+from pathlib import Path
+
+# Add factory knowledge to path BEFORE imports
+sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "00_GLOBAL_KNOWLEDGE"))
 
 from skill_schema import SkillInput, SkillOutput
 
@@ -16,7 +23,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
     wrapper += f"    try:\n"
     wrapper += f"        return await self._call_with_retry(payload)\n"
     wrapper += f"    except ConnectionError as e:\n"
-    wrapper += f"        # v2.1: Log to AutoShield and propagate\n"
+    wrapper += f"        # v3.1.5: Log to AutoShield and propagate\n"
     wrapper += f"        raise ServiceUnavailable(f'{service_name} failed') from e\n"
     
     return SkillOutput.success(

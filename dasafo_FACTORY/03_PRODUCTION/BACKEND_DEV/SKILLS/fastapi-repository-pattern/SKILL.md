@@ -1,5 +1,5 @@
-# Skill: FastAPI Repository Pattern
-> **Source:** https://skills.sh/wshobson/agents/fastapi-templates
+# 🏗️ Skill | FastAPI Repository Pattern
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** BACKEND_DEV
 
 ## Objective

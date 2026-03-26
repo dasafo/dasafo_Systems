@@ -3,7 +3,8 @@ name: self-healing-deployment
 description: Ability to check and repair local environment dependencies (like Docker) before deployment.
 ---
 
-# 🛡️ self-healing-deployment
+# 🩹 Skill | Self-Healing Deployment
+> **Version:** v3.1.5 "Solidity Guard"
 
 ## 📐 Description
 This skill enables the `DEVOPS_SRE` agent to verify the sanity of the target environment before executing deployment commands. It specifically focus on "Pulse Checking" the Docker daemon.

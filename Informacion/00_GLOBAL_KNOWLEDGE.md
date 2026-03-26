@@ -1,3 +1,5 @@
+# 🧠 00_GLOBAL_KNOWLEDGE | Cerebro Colectivo (v3.1.5)
+
 La carpeta **`00_GLOBAL_KNOWLEDGE`** es el **"Cerebro Colectivo"** o la **Memoria Central** de la factoría. A diferencia del `FEEDBACK-LOG.md` (que registra errores puntuales), esta carpeta contiene las leyes, estándares y definiciones de identidad que son comunes a **TODOS** los proyectos que la factoría ejecute.
 
 Aquí tienes el desglose de para qué sirve cada archivo:
@@ -25,7 +27,7 @@ Aquí tienes el desglose de para qué sirve cada archivo:
 *   **`mcp_agent_factory.py` (La Central MCP):** El servidor que conecta a los agentes con sus habilidades. Es el "cableado" que permite que la IA ejecute código real.
 *   **`skill_schema.py` & `skills_runner.md` (El Manual de Habilidades):** Definen cómo se construyen y ejecutan las habilidades (`skills`). Aseguran que cualquier nueva capacidad añadida a la factoría sea compatible con todos los agentes.
 *   **`PRP_CONTRACT_TEMPLATE.json` (El Molde de Contratos):** La plantilla maestra para el `PRP_CONTRACT.json`. Garantiza que cada proyecto empiece con objetivos bien definidos.
-*   **`SKILLS/` (El Almacén de Habilidades):** Una carpeta que contiene la lógica ejecutable (`run.py`) que todos los agentes comparten, como el escaneo de secretos o el chequeo de salud del sistema.
+*   **`SKILLS/` (El Almacén de Habilidades):** Una carpeta que contiene la lógica ejecutable (`run.py`) que todos los agentes comparten. En la **v3.1.5**, todas las habilidades deben seguir el estándar `SkillInput/SkillOutput` y resolver sus rutas de forma dinámica para ser ejecutables desde cualquier punto de la factoría.
 
 ---
 

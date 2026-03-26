@@ -1,4 +1,5 @@
-# Skill: Requirements Validation Audit
+# 📋 Skill | Requirements Validation Audit
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/jwynia/agent-skills/requirements-analysis (Adapted)
 > **Agent:** QA_TESTER
 

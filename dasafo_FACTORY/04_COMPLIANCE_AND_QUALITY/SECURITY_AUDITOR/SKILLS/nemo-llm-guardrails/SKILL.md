@@ -1,4 +1,5 @@
-# Skill: NeMo LLM Guardrails Implementation
+# 🛡️ Skill | NeMo LLM Guardrails Implementation
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/davila7/claude-code-templates/nemo-guardrails
 > **Agent:** SECURITY_AUDITOR
 

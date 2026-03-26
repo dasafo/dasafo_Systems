@@ -1,4 +1,5 @@
-# Skill: Hallucination Report Guardrail
+# 🛡️ Skill | Hallucination Report Guardrail
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/davila7/claude-code-templates/nemo-guardrails (Adapted)
 > **Agent:** QA_TESTER
 

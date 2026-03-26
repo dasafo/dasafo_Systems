@@ -1,4 +1,4 @@
-# 🏗️ 03_PRODUCTION | El Taller de Artesanía (v3.1)
+# 🏗️ 03_PRODUCTION | El Taller de Artesanía (v3.1.5)
 
 El departamento de Producción transforma los planos de arquitectura en código funcional, optimizado y visualmente premium.
 
@@ -28,10 +28,10 @@ Implementa modelos de ML y realiza análisis estadístico riguroso.
 
 Este departamento transforma los planos en realidad funcional mediante habilidades (`skills`) ejecutables:
 
-*   **`api-boilerplate-generator` (BACKEND_DEV):** Genera la estructura base de APIs siguiendo los estándares de seguridad y tipado.
-*   **`design-system-generator` (FRONTEND_DEV):** El motor que crea el sistema de diseño (Atomic Vibe) con todos los tokens visuales premium.
-*   **`schema-validation-check` (DB_MASTER):** Herramienta que valida y asegura la integridad de los esquemas de datos.
-*   **`model-distillation-audit` (DATA_SCIENTIST):** Capacidad para destilar y auditar modelos de datos complejos, asegurando su precisión.
+*   **`async-fastapi-logic` & `resilient-error-handling` (BACKEND_DEV):** Generación de lógica asíncrona y envoltorios de reintento robustos.
+*   **`atomic-design-tokens` (FRONTEND_DEV):** Generador de variables CSS semánticas para el sistema de diseño premium.
+*   **`database-architect-strategic` & `sql-performance-tuner` (DB_MASTER):** Diseño de esquemas relacionales y auditoría de rendimiento SQL.
+*   **`research-data-analysis` (DATA_SCIENTIST):** Análisis estadístico y EDA automatizado usando el estándar `pandas` v3.1.5.
 
 ---
 

@@ -1,4 +1,4 @@
-# 🚀 05_OPERATIONS | DevOps, Memoria y Evolución (v3.1)
+# 🚀 05_OPERATIONS | DevOps, Memoria y Evolución (v3.1.5)
 
 El departamento de Operaciones garantiza que la factoría sea eficiente, escalable y que aprenda de su propia experiencia para mejorar cada día.
 
@@ -27,10 +27,11 @@ Monitoriza el tiempo de actividad y el rendimiento post-lanzamiento.
 
 Este departamento mantiene la factoría en funcionamiento y mejora continua mediante sus habilidades (`skills`) ejecutables:
 
-*   **`autoshield-preflight-check` (FACTORY_EVOLVER):** La barrera de seguridad que inyecta inteligencia colectiva antes de cada tarea.
-*   **`healthcheck-poller` (DEPLOYMENT_MONITOR):** Monitorización activa de la salud de los servicios desplegados.
-*   **`server-management` (DEVOPS_SRE):** Automatización de la gestión y aprovisionamiento de servidores.
-*   **`context-compression` (MEMORY_OPTIMIZER):** Motor de optimización de tokens que mantiene el contexto limpio y relevante.
+*   **`autoshield-preflight-check` & `autoshield-pattern-analysis` (FACTORY_EVOLVER):** La barrera de seguridad preventiva y el análisis de inteligencia colectiva.
+*   **`autonomous-feedback-analyzer` & `system-optimizer` (FACTORY_EVOLVER):** Extracción de patrones de fallo del `FEEDBACK-LOG.md` y auto-refactorización v3.1.5.
+*   **`healthcheck-poller` & `resource-monitor` (DEPLOYMENT_MONITOR):** Vigilancia activa de la salud y recursos del sistema.
+*   **`server-management` (DEVOPS_SRE):** Gestión automatizada de nodos `INFRA` y despliegues.
+*   **`context-compression` (MEMORY_OPTIMIZER):** Destilación de contexto para eficiencia de tokens.
 
 ---
 

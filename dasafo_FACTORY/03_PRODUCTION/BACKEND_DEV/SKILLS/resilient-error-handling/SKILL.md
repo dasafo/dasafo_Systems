@@ -1,5 +1,5 @@
-# Skill: Resilient Error Handling (Circuit Breaker)
-> **Source:** https://skills.sh/wshobson/agents/error-handling-patterns
+# 🛡️ Skill | Resilient Error Handling (Circuit Breaker)
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** BACKEND_DEV
 
 ## Objective

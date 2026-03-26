@@ -2,7 +2,8 @@
 description: Advanced skill to detect bottlenecks and optimize engine performance.
 ---
 
-# ⚙️ SKILL: System Optimizer
+# ⚙️ System Optimizer
+> **Status:** v3.1.5 "Solidity Guard" | **Focus:** Industrial Engine Efficiency
 
 1. **System Scan:** Monitor the orchestration logs to find delays or redundant task transitions.
 2. **Bottleneck Identification:** Flag agents that consistently take longer or produce lower-quality output.

@@ -1,4 +1,5 @@
-# Skill: Hallucination Guardrail (NeMo)
+# 🛡️ Skill | Hallucination Guardrail
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/davila7/claude-code-templates/nemo-guardrails
 > **Agent:** RESEARCH_AGENT
 

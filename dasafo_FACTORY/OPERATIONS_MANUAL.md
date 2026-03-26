@@ -1,6 +1,6 @@
 # 🛠️ dasafo_FACTORY | Operations Manual
 >
-> **Protocol:** v3.1 "Infraestructura Blindada"
+> **Protocol:** v3.1.5 "Solidity Guard"
 > **Objective:** Systemic synergy and shared-resource optimization.
 
 ## 🏢 Departmental Synergy
@@ -10,12 +10,19 @@
 
 - **Goal:** Market-fit and architectural solidity.
 - **Output:** Validated `PRP_CONTRACT.json` and system blueprints.
+- **Physical Skeleton Standard:** No project shall initiate Phase M2 unless it complies with the 01-05 Kanban directory structure and `/LOGS` as provided by `init_project.sh`. Non-compliance will trigger a hard stop of `/factory-orchestrate`.
 
 
 ### 2. Production (D3rd)
 
 - **Goal:** Atomic execution and data-driven logic.
 - **Output:** Functional codebase with 100% SoC compliance.
+
+
+### 4. Custom Skills (`run.py`)
+- **Capabilities:** Executable logic tailored for specific agent roles.
+- **Constraint:** Must follow the `skill_schema.py` and be 100% project-agnostic.
+- **Mandatory Sense:** The `kanban-solidity-gate` must be invoked before any Phase Transition.
 
 
 ### 3. Compliance & Operations (D4th, D5th)
@@ -33,4 +40,4 @@
 - **Shared Infra Launch:** Before Phase M3 (Production), agents MUST ensure the shared `INFRA` services are up and healthy via Glances (Port 61208).
 
 ---
-*Operations Manual v3.1 | Status: Solidified.*
+*Operations Manual v3.1.5 | Status: Solidified.*

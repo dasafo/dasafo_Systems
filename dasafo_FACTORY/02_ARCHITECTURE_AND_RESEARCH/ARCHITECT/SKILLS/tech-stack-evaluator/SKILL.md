@@ -1,4 +1,5 @@
-# Skill: Tech Stack Evaluator & TCO Analyzer
+# 🏗️ Skill | Tech Stack Evaluator
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/alirezarezvani/claude-skills/tech-stack-evaluator
 > **Agent:** ARCHITECT
 

@@ -1,6 +1,7 @@
 ---
-name: continuous-research
-description: Orchestrate multi-source technical research using documentation, web search, and scraping tools.
+name:# 🔄 Skill | Continuous Research
+> **Version:** v3.1.5 "Solidity Guard"
+Orchestrate multi-source technical research using documentation, web search, and scraping tools.
 ---
 
 # 🕵️ Research Agent Skill

@@ -10,4 +10,4 @@
 4. **Data Integrity:** A single unit mismatch (SI Mandate violation) is an immediate REJECT.
 
 ---
-*Soul v2.1 | Status: Solidified.*
+*Soul v3.1.5 | Status: Solidified.*

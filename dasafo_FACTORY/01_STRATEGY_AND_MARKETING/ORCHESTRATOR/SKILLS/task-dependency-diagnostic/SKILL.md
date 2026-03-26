@@ -1,5 +1,7 @@
-# Skill: Task Dependency Diagnostic
-> **Source:** https://skills.sh/softaworks/agent-toolkit/dependency-updater (Adapted)
+# Skill:# 🔍 Task Dependency Diagnostic
+>
+> **Standard:** v3.1.5 "Solidity Guard"
+https://skills.sh/softaworks/agent-toolkit/dependency-updater (Adapted)
 > **Agent:** ORCHESTRATOR
 
 ## Objective

@@ -1,4 +1,5 @@
-# Skill: Agentic Thought & Secret Scanner
+# 🔍 Skill | Agentic Thought & Secret Scanner
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/karpathy/nanochat/clutch-qa-security (Adapted)
 > **Agent:** SECURITY_AUDITOR
 

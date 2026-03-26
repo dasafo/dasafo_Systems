@@ -1,4 +1,4 @@
-# dasafo_Systems | Multi-Agent AI Factory v3.1
+# dasafo_Systems | Multi-Agent AI Factory v3.1.5
 
 <p align="center">
   <img src="https://img.shields.io/badge/Architecture-Stateless_Agents-0ea5e9?style=for-the-badge" alt="Architecture Badge">
@@ -37,37 +37,37 @@ High-level summaries and guides for human-agent onboarding, maintained in **Span
 
 ---
 
-## ⚡ Executive Power Skills (v2.1)
+## ⚡ Executive Power Skills (v3.1.5)
 
-The factory is not just a set of rules; it is an **Executive Engine** capable of autonomous output:
+The factory is an **Executive Engine** capable of autonomous, high-solidity output:
 
-- **Strategy Engine**: Automatic PRP Contract generation & Intent-to-DAG conversion.
-- **Architectural Tools**: Automated ADR generation & deep-semantic tech research.
-- **Production Masters**: API Boilerplate generators & Atomic Design System engines.
-- **Compliance Gates**: Internal secret scanning & recursive PRP audit validation.
-- **Operations Stability**: AutoShield v3.1 self-healing & centralized infra monitoring.
-
----
-
-## ⚙️ The Universal Pipeline (v2.1)
-
-Every project sequentially clears these phases:
-
-1. **Phase 0 (Discovery & PRP):** Establishing the mission. No agent proceeds until the user signs the `PRP_CONTRACT.json` (Vision-What, not How).
-2. **Phase 1 (Architecture & Research):** Deep semantic research (ADRs, schemas). No code is written until the "Master Plan" is approved.
-3. **Phase 2 (Isolated Execution):** Production agents write code strictly inside `$TARGET_PROJECT/WORKSPACE/`.
-4. **Phase 3 (QA & Security Gate):** Mandatory Playwright tests and secret scanning. Errors are logged to **AutoShield v3.1** (YAML) for collective learning.
-5. **Phase 4 (Go-Live):** `DEVOPS_SRE` orchestrates the deployment via Docker and monitors health via Glances.
+- **Strategy & Origo**: Automated PRP Contract generation, DAG routing, and agile agent orchestration.
+- **Architectural Solidification**: API contract generation, Design Token definitions, and ArXiv-based tech research.
+- **Production Crafts**: Resilient FastAPI logic, Atomic Design tokens, and automated SQL performance tuning.
+- **Compliance & Security**: v3.1.5 Regex-based secret scanning (`agentic-thought-secret-scanner`) and recursive PRP audits.
+- **Ops & Evolution**: Autonomous feedback analysis (learning from failure) and industrial-grade resource monitoring.
 
 ---
 
-## 💎 Core Values (v2.1)
+## ⚙️ The Universal Pipeline (v3.1.5)
 
-- **Zero-Trust Security:** Secret scanning and prompt-injection guards are mandatory.
+Every project sequentially clears these v3.1.5 checkpoints:
+
+1. **Discovery (PRP Gate):** Mission definition. No agent proceeds until the user signs the `PRP_CONTRACT.json` via the **PRP Validation Gate**.
+2. **Analysis (Research & ADR):** Deep semantic research and architectural design. Contracts are finalized before a single line of code is written.
+3. **Production (Isolated Sprints):** Agents operate in `$TARGET_PROJECT/WORKSPACE/` with strict type safety and design tokens.
+4. **Verification (Solidity Gate):** Mandatory `agentic-thought-secret-scanner` and requirement validation. Failures update the global `FEEDBACK-LOG.md`.
+5. **Go-Live (Ops Hub):** `DEVOPS_SRE` manages the node lifecycle and the `DEPLOYMENT_MONITOR` ensures 24/7 service health.
+
+---
+
+## 💎 Core Values (v3.1.5)
+
+- **Solidity Guard:** Strict path resolution and skill standardization across all departments.
+- **Zero-Trust Security:** Persistent regex scanning and input sanitization at every boundary.
 - **Atomic Design:** UI must be premium (Dark mode, neon accents, glassmorphism).
-- **English-only Mandate:** All internal code, logic, and technical documentation are in English.
-- **Shared Infrastructure:** Maximize efficiency by reusing the `INFRA` node while enforcing container isolation.
-- **Recursive Evolution:** `FACTORY_EVOLVER` continuously optimizes the system based on AutoShield feedback.
+- **English-only Logic:** All internal code and logic remain in English for global interoperability.
+- **Recursive Evolution:** `autonomous-feedback-analyzer` continuously optimizes the factory from historical failure patterns.
 
 ---
 

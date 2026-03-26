@@ -2,7 +2,8 @@
 description: How to refine SKILL.md files based on real-world feedback from the logs.
 ---
 
-# 🛠️ SKILL: Skill Optimization
+# 🛠️ Skill Optimization
+> **Status:** v3.1.5 "Solidity Guard" | **Focus:** Industrial Protocol Performance
 
 1. **Scan Feedback:** Read the last 10 entries in `dasafo_FACTORY/FEEDBACK-LOG.md`.
 2. **Isolate Root Cause:** Was the error due to a missing instruction in a `SKILL.md`?

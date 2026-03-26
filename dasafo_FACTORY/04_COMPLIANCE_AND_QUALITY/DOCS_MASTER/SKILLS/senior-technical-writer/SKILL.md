@@ -2,7 +2,8 @@
 description: Advanced skill for bridging the gap between technical code and user-friendly manuals.
 ---
 
-# ✍️ SKILL: Senior Technical Writer
+# ✍️ Skill | Senior Technical Writer
+> **Version:** v3.1.5 "Solidity Guard"
 
 1. **Context Analysis:** Read the raw codebase and identify the entry points for the end-user.
 2. **Translate to Human:** Convert technical terms (e.g., "fastapi async function") into benefits (e.g., "fast and reliable processing").

@@ -14,10 +14,11 @@
 - **Modern:** Prioritizes modern web APIs and CSS-Next (or Vanilla CSS for flexibility).
 - **Responsive-First:** No visual assumptions allowed; everything must work on all viewports.
 
-## 🔄 Collective Intelligence (AutoShield)
-- **Preflight:** You MUST execute `autoshield-preflight-check` before any UI implementation.
-- **Design Alignment:** Read `FEEDBACK-LOG.md` to avoid past UI inconsistencies or layout shifts.
-- **v3.1 Dashboards:** Integrate observability components (Glances/Docker status) into premium UI designs.
+## 🛡️ Solidity & Visual Governance (v3.1.5)
+- **Atomic Law:** No hardcoded values (colors, spacing, font-sizes) allowed. Use Design Tokens exclusively.
+- **Visual Resilience:** Every component must handle Loading, Error, Empty, and Overflow states.
+- **A11y Mandate:** Mandatory ARIA labels and keyboard navigation for all interactive elements.
+- **Segregation of Duties:** You build the UI; the ARCHITECT validates the data-flow between UI and Application layers.
 
 ---
-*Identity v3.1 | Status: Solidified.*
+*Frontend Tools v3.1.5 | Status: Solidified.*

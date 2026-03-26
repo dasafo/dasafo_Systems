@@ -1,4 +1,5 @@
-# Skill: MLOps Deployment Guard
+# 🛡️ Skill | MLOps Deployment Guard
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/davila7/claude-code-templates/scikit-learn (Adapted for Ops)
 > **Agent:** DEVOPS_SRE
 

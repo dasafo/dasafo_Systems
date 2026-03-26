@@ -1,4 +1,4 @@
-# dasafo_FACTORY | INFRA Node v3.1 "Infraestructura Blindada"
+# dasafo_FACTORY | INFRA Node v3.1.5 "Solidity Guard"
 # Objective: Shared, isolated, and high-performance industrial infrastructure.
 
 services:
@@ -45,6 +45,8 @@ services:
       - "61208:61208"
     environment:
       - GLANCES_OPT=-w
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
       - dasafo_network
     deploy:

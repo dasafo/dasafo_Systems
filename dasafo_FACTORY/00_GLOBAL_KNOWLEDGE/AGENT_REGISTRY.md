@@ -1,12 +1,16 @@
-# 🗂️ dasafo_FACTORY | Agent Registry
+# 🕵️ dasafo_FACTORY | Agent Registry
 >
-> **Standard:** v3.1 "Infraestructura Blindada"
+> **Standard:** v3.1.5 "Solidity Guard"
 > **Status:** All 16 Agents Infra-Aware & Production Ready
+>
+> **Key Roles for v3.1.5 "Solidity Guard":**
+> - **[Director] Orchestrator:** Master DAG router. Enforces `kanban-solidity-gate` at all phase transitions.
+> - **[Auditor] Security Auditor:** Zero-trust scanner. Provides the mandatory Audit Signature for Phase M4.
 
 ## 🏢 Department 01 | Strategy & Marketing
 | Agent ID | Icon | Role | Status |
 | :------- | :--- | :--- | :----- |
-| `ORCHESTRATOR` | 👑 | Mission Lead & Infra-Control | v3.1 Infra-Aware |
+| `ORCHESTRATOR` | 👑 | Mission Lead & Infra-Control | v3.1.5 Infra-Aware |
 | `PRODUCT_OWNER` | 📋 | Req. Analysis & v3.1 Vision | v3.1 Infra-Aware |
 | `MARKETING_GROWTH` | 🚀 | Copywriting & Evidence-Based | v3.1 Infra-Aware |
 

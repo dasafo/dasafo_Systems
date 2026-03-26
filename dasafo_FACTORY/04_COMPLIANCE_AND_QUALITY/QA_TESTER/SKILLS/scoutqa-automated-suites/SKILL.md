@@ -1,4 +1,5 @@
-# Skill: ScoutQA Automated Suite Generation
+# 🕵️‍♂️ Skill | ScoutQA Automated Suite Generation
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/karpathy/nanochat/scoutqa (Adapted)
 > **Agent:** QA_TESTER
 

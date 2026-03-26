@@ -1,5 +1,5 @@
-# Skill: Premium Dashboard Architecture
-> **Source:** https://skills.sh/supercent-io/skills-template/nextjs-premium-dashboard
+# 🏗️ Skill | Premium Dashboard Architecture
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** FRONTEND_DEV
 
 ## Objective

@@ -1,4 +1,5 @@
-# Skill: Clutch Resource Cleaner (Factory Sweep)
+# 🧹 Clutch Resource Cleaner
+> **Status:** v3.1.5 "Solidity Guard" | **Focus:** Industrial Workspace hygiene
 > **Source:** https://skills.sh/karpathy/nanochat/clutch-audit (Adapted)
 > **Agent:** MEMORY_OPTIMIZER
 

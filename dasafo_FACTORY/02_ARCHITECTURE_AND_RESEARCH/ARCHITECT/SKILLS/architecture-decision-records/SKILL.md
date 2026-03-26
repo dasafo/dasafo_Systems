@@ -1,5 +1,6 @@
-# Skill: Architecture Decision Records (ADR)
-> **Source:** https://skills.sh/wshobson/agents/architecture-decision-records
+# 📝 Skill | Architecture Decision Records (ADR)
+> **Version:** v3.1.5 "Solidity Guard"
+https://skills.sh/wshobson/agents/architecture-decision-records
 > **Agent:** ARCHITECT
 
 ## Objective

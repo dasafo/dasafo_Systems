@@ -1,9 +1,14 @@
 # 🏷️ dasafo_FACTORY | Versioning
 >
-> **Release:** v3.1.0 "Infraestructura Blindada"
+> **Release:** v3.1.5 "Solidity Guard"
 > **Status:** Active Deployment | Industrial Scale
 
 ## 📈 Changelog
+
+### v3.1.5 — "Solidity v3.1.5" (March 2026)
+- **Solidity Guard**: Implemented mandatory `kanban-solidity-gate` for all phase transitions.
+- **Segregation of Duties**: Decoupled 'Implementor' (DEV) from 'Verifier' (QA/ARCH) via independent Audit Signatures.
+- **Anti-Fraud Protocols**: Physical `task.md` now requires verified signatures to prevent agentic "cheating".
 
 ### v3.1.0 — "Infraestructura Blindada" (March 2026)
 - **Shared Infrastructure**: Provisioned centralized `INFRA` node (Neo4j, Postgres, Glances).
@@ -24,4 +29,4 @@
 - Introduction of `FEEDBACK-LOG.md`.
 
 ---
-*Factory Version v3.1 | Status: Solidified.*
+*Factory Version v3.1.5 | Status: Solidified.*

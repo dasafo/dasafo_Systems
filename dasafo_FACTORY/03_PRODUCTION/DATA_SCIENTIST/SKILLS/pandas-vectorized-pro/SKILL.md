@@ -1,5 +1,5 @@
-# Skill: Pandas Vectorized Pro
-> **Source:** https://skills.sh/jeffallan/claude-skills/pandas-pro
+# 🐼 Skill | Pandas Vectorized Pro
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** DATA_SCIENTIST
 
 ## Objective

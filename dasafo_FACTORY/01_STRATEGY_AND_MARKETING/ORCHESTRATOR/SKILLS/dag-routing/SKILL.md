@@ -2,7 +2,10 @@
 description: How to decompose a user prompt into a Directed Acyclic Graph (DAG) of parallel and sequential tasks.
 ---
 
-# 🧠 SKILL: DAG Routing & Task Decomposition
+# 🧠 SKILL:# 🕸️ DAG Routing Engine
+>
+> **Standard:** v3.1.5 "Solidity Guard"
+Decomposition
 
 1. **Ingest the `PROJECT_STATE.json` intent.**
 2. **Identify Parallel vs. Sequential Tasks.**

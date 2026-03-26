@@ -1,5 +1,5 @@
-# Skill: Atomic Design Tokens
-> **Source:** https://skills.sh/wshobson/agents/design-system-patterns
+# 💎 Skill | Atomic Design Tokens
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** FRONTEND_DEV
 
 ## Objective

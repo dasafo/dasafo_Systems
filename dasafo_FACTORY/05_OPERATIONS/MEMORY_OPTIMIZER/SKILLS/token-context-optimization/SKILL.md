@@ -2,7 +2,8 @@
 description: Optimizing the LLM context window by deduplicating and compressing episodic project data.
 ---
 
-# 🧠 SKILL: Token & Context Optimization
+# 🧠 Token & Context Optimization
+> **Status:** v3.1.5 "Solidity Guard" | **Focus:** Industrial Efficiency Synthesis
 
 Based on the [Claude-brewcode Memory Optimizer](https://skills.sh/kochetkov-ma/claude-brewcode/memory-optimize) standard.
 

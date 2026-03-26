@@ -1,5 +1,5 @@
-# Skill: SQL Performance Tuner
-> **Source:** https://skills.sh/wshobson/agents/sql-optimization-patterns
+# ⏱️ Skill | SQL Performance Tuner
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** DB_MASTER
 
 ## Objective

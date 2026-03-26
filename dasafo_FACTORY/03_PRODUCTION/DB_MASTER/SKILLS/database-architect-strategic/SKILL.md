@@ -1,5 +1,5 @@
-# Skill: Strategic Database Architect
-> **Source:** https://skills.sh/sickn33/antigravity-awesome-skills/database-architect
+# 🏗️ Skill | Strategic Database Architect
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** DB_MASTER
 
 ## Objective

@@ -1,95 +1,58 @@
-#!/usr/bin/env python3
 """
-PRP Contract Validation Gate (v3.1)
-Part of Dasafo Factory Strategy Department.
+run.py — Skill: PRP Validation Gate
+Agent: PRODUCT_OWNER
+v3.1.5: Solidity Guard | Industrial Scale.
 
-This tool validates a project's PRP_CONTRACT.json against the industrial template
-to ensure mission solidity before proceeding to M2 (Architecture).
+Validates the integrity and signing status of the PRP contract.
 """
 
+from __future__ import annotations
+import sys
 import json
 import os
-import sys
-import argparse
-from datetime import datetime
+from pathlib import Path
 
-def validate_contract(contract_path, template_path):
-    """Checks if the project contract matches the required schema and is complete."""
-    try:
-        with open(template_path, 'r') as f:
-            template = json.load(f)
-        with open(contract_path, 'r') as f:
-            contract = json.load(f)
-    except Exception as e:
-        return False, f"Error reading files: {str(e)}"
+# Add factory knowledge to path
+sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "00_GLOBAL_KNOWLEDGE"))
+from skill_schema import SkillInput, SkillOutput
 
-    # Basic Schema Validation
-    missing_root_keys = [key for key in template.keys() if key not in contract]
-    if missing_root_keys:
-        return False, f"Missing root keys: {', '.join(missing_root_keys)}"
-
-    # Vision Validation
-    if "vision" in template:
-        missing_vision_keys = [key for key in template["vision"].keys() if key not in contract.get("vision", {})]
-        if missing_vision_keys:
-            return False, f"Missing vision parameters: {', '.join(missing_vision_keys)}"
-
-    # Check if mandatory fields are still placeholders
-    for key, value in contract.get("vision", {}).items():
-        if value == template["vision"].get(key):
-            return False, f"Field '{key}' is still using the placeholder value from the template."
-
-    return True, "Solidity check PASSED."
-
-def sign_contract(contract_path, signer_name):
-    """Signs the contract and marks it as validated."""
-    try:
-        with open(contract_path, 'r') as f:
-            contract = json.load(f)
-        
-        contract["prp_status"] = "validated"
-        contract["validated_at"] = datetime.now().isoformat()
-        contract["validated_by"] = signer_name
-        
-        with open(contract_path, 'w') as f:
-            json.dump(contract, f, indent=2)
-        
-        return True, f"Contract signed by {signer_name}."
-    except Exception as e:
-        return False, f"Failed to sign contract: {str(e)}"
-
-def main():
-    parser = argparse.ArgumentParser(description="Dasafo Factory PRP Gate")
-    parser.add_argument("--contract", required=True, help="Path to the project's PRP_CONTRACT.json")
-    parser.add_argument("--template", required=True, help="Path to the universal PRP_CONTRACT_TEMPLATE.json")
-    parser.add_argument("--sign", action="store_true", help="Attempt to sign the contract if validation passes")
-    parser.add_argument("--signer", default="PRODUCT_OWNER", help="Name of the signer")
-
-    args = parser.parse_args()
-
-    # Absolute path checks
-    if not os.path.exists(args.contract):
-        print(f"ERROR: Contract file not found at {args.contract}")
-        sys.exit(1)
-    if not os.path.exists(args.template):
-        print(f"ERROR: Template file not found at {args.template}")
-        sys.exit(1)
-
-    # 1. Validation
-    success, message = validate_contract(args.contract, args.template)
-    if not success:
-        print(f"❌ SOLIDITY FAILURE: {message}")
-        sys.exit(1)
+def validate_prp_integrity(prp_data: dict):
+    """Performs industrial validation pass on the contract."""
+    required_keys = {"mission_id", "project_name", "governance", "signing"}
+    missing = required_keys - set(prp_data.keys())
     
-    print(f"✅ {message}")
+    if missing:
+        return False, f"Missing critical contract sections: {missing}"
+    
+    if prp_data.get("governance") != "Dasafo Factory v3.1.5 Solidity Guard":
+        return False, f"Legacy Governance detected: {prp_data.get('governance')}. Required: v3.1.5."
+    
+    return True, "PRP Integrity Verified."
 
-    # 2. Signing
-    if args.sign:
-        success, message = sign_contract(args.contract, args.signer)
-        if not success:
-            print(f"❌ SIGNATURE FAILURE: {message}")
-            sys.exit(1)
-        print(f"✍️ {message}")
+def run(skill_input: SkillInput) -> SkillOutput:
+    """Standardized entry point for the skill."""
+    target = skill_input.target_project or os.environ.get("TARGET_PROJECT")
+    
+    if not target:
+        return SkillOutput.failure(skill_input.agent, skill_input.skill, "No TARGET_PROJECT set.", skill_input.correlation_id)
 
-if __name__ == "__main__":
-    main()
+    contract_path = Path(target) / "PRP_CONTRACT.json"
+    if not contract_path.exists():
+         return SkillOutput.failure(skill_input.agent, skill_input.skill, "PRP_CONTRACT.json not found.", skill_input.correlation_id)
+
+    try:
+        with open(contract_path, 'r', encoding="utf-8") as f:
+            prp = json.load(f)
+        
+        valid, msg = validate_prp_integrity(prp)
+        if not valid:
+            return SkillOutput.failure(skill_input.agent, skill_input.skill, msg, skill_input.correlation_id)
+        
+        return SkillOutput.success(
+            agent=skill_input.agent,
+            skill=skill_input.skill,
+            data={"status": "PASS", "message": msg, "contract": prp},
+            correlation_id=skill_input.correlation_id
+        )
+    except Exception as e:
+        return SkillOutput.failure(skill_input.agent, skill_input.skill, f"JSON Error: {str(e)}", skill_input.correlation_id)

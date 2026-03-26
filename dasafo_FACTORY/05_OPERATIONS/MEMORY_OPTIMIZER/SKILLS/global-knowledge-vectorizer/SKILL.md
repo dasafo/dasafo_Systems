@@ -2,7 +2,8 @@
 description: Sychronizes static Markdown files from 00_GLOBAL_KNOWLEDGE to a Vector DB for RAG.
 ---
 
-# 🧠 SKILL: global-knowledge-vectorizer
+# 🧠 Global Knowledge Vectorizer
+> **Status:** v3.1.5 "Solidity Guard" | **Focus:** Industrial Global Awareness
 
 1. **Source Scanning:** Periodic scan of `00_GLOBAL_KNOWLEDGE/` for changes in MD files.
 2. **Knowledge Chunking:** Break down large files into semantic chunks to avoid token bloat.

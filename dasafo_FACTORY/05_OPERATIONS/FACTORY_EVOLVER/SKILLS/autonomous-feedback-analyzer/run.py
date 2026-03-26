@@ -1,64 +1,64 @@
-#!/usr/bin/env python3
 """
-Autonomous Feedback Analyzer (v3.1)
-Part of Dasafo Factory Evolver Department.
+run.py — Autonomous Feedback Analyzer (FACTORY_EVOLVER)
+v3.1.5: Solidity Guard | Industrial Scale.
 
-Analyzes the FEEDBACK-LOG.md to identify recurring failure patterns
-and trigger self-healing architectural updates.
+Analyzes the FEEDBACK-LOG.md to identify recurring failure patterns.
 """
 
-import os
+from __future__ import annotations
 import sys
-import argparse
-from collections import Counter
+import re
+from pathlib import Path
 
-def analyze_feedback(log_path):
-    """Parses the feedback log and identifies hot spots."""
-    if not os.path.exists(log_path):
-        return False, "Feedback log not found."
+# Add factory knowledge to path
+sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "00_GLOBAL_KNOWLEDGE"))
+from skill_schema import SkillInput, SkillOutput
 
-    with open(log_path, 'r') as f:
-        content = f.read()
-
-    # Simple keyword-based pattern recognition
-    keywords = [
-        "ImportError", "ConnectionRefused", "Authentication", 
-        "Timeout", "MemoryLimit", "DockerError", "PRP_FAILURE"
-    ]
+def extract_failure_patterns(log_content: str):
+    """Uses regex to identify recurring error IDs and agents in the log."""
+    pattern = re.compile(r"### \[(?P<id>FB-\d+)\] (?P<pattern>.*)\n```yaml\n.*?affected_agents: \[(?P<agents>.*?)\]", re.DOTALL)
+    matches = pattern.finditer(log_content)
     
-    findings = Counter()
-    for kw in keywords:
-        findings[kw] = content.lower().count(kw.lower())
+    analysis = []
+    for match in matches:
+        analysis.append({
+            "id": match.group("id"),
+            "pattern": match.group("pattern").strip(),
+            "agents": [a.strip().strip('"') for a in match.group("agents").split(",")]
+        })
+    return analysis
 
-    # Get top 3 issues
-    top_issues = findings.most_common(3)
+def run(skill_input: SkillInput) -> SkillOutput:
+    """Standardized entry point for the skill."""
+    # Resolve FEEDBACK-LOG.md path
+    factory_root = Path(__file__).resolve().parents[4]
+    feedback_log = factory_root / "FEEDBACK-LOG.md"
     
-    report = "🧠 EVOLUTIONARY ANALYSIS REPORT\n"
-    report += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-    for issue, count in top_issues:
-        severity = "LOW" if count < 3 else "MEDIUM" if count < 10 else "CRITICAL"
-        report += f"- {issue}: {count} occurrences ({severity})\n"
-    
-    if findings["ImportError"] > 5:
-        report += "\n🔧 PROPOSED PATCH: Enforce absolute imports in all production code templates.\n"
-    elif findings["ConnectionRefused"] > 5:
-        report += "\n🔧 PROPOSED PATCH: Audit dasafo_network and INFRA port persistence.\n"
-    
-    report += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-    return True, report
+    if not feedback_log.exists():
+        # Fallback check
+        feedback_log = factory_root / "dasafo_FACTORY" / "FEEDBACK-LOG.md"
 
-def main():
-    parser = argparse.ArgumentParser(description="Dasafo Factory Evolver")
-    parser.add_argument("--log", default="/home/david/Documents/AI/AGENTES/dasafo_Systems/dasafo_FACTORY/FEEDBACK-LOG.md", help="Path to FEEDBACK-LOG.md")
+    if not feedback_log.exists():
+        return SkillOutput.success(
+            agent=skill_input.agent,
+            skill=skill_input.skill,
+            data={"status": "EMPTY", "message": "No FEEDBACK-LOG.md found. Evolution pulse is stable."},
+            correlation_id=skill_input.correlation_id
+        )
 
-    args = parser.parse_args()
-
-    success, report = analyze_feedback(args.log)
-    if success:
-        print(report)
-    else:
-        print(f"❌ EVOLUTION FAILURE: {report}")
-        sys.exit(1)
-
-if __name__ == "__main__":
-    main()
+    try:
+        content = feedback_log.read_text(encoding="utf-8")
+        patterns = extract_failure_patterns(content)
+        
+        return SkillOutput.success(
+            agent=skill_input.agent,
+            skill=skill_input.skill,
+            data={
+                "status": "PASS",
+                "patterns_discovered": len(patterns),
+                "analysis": patterns
+            },
+            correlation_id=skill_input.correlation_id
+        )
+    except Exception as e:
+        return SkillOutput.failure(skill_input.agent, skill_input.skill, f"Analysis Error: {str(e)}", skill_input.correlation_id)

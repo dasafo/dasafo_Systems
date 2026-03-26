@@ -1,8 +1,8 @@
-# 🏭 dasafo_FACTORY | Infraestructura Blindada v3.1
+# 🏭 dasafo_FACTORY | Solidity Guard v3.1.5
 
 La carpeta **`dasafo_FACTORY`** es el "Motor de Inteligencia" (el cerebro) de todo tu ecosistema. Su función principal es separar **cómo se trabaja** (las reglas y roles) de **lo que se hace** (los proyectos específicos).
 
-En esta versión **v3.1 "Infraestructura Blindada"**, la factoría ha alcanzado un estado de madurez industrial, con una arquitectura de servicios compartidos y un sistema de aprendizaje continuo.
+En esta versión **v3.1.5 "Solidity Guard"**, la factoría ha alcanzado un estado de madurez industrial, con una arquitectura de servicios compartidos y un sistema de aprendizaje continuo.
 
 ---
 
@@ -27,8 +27,8 @@ La factoría está organizada en **5 departamentos especializados**:
 | **`01_STRATEGY`** | `ORCHESTRATOR`, `PRODUCT_OWNER`. | Validación estricta del contrato PRP antes de la fase de Arquitectura. |
 | **`02_ARCHITECTURE`** | `ARCHITECT`, `RESEARCH_AGENT`. | Búsqueda semántica profunda y registro de decisiones (ADR). |
 | **`03_PRODUCTION`** | `BACKEND`, `FRONTEND`, `DB`, `DATA`. | Código 100% tipado y alineado con el Diseño Atómico. |
-| **`04_COMPLIANCE`** | `QA_TESTER`, `SECURITY`, `DOCS`. | Auditoría de secretos (Gitleaks) y validación visual con Playwright. |
-| **`05_OPERATIONS`** | `DEVOPS`, `MEMORY`, `EVOLVER`. | Nodo `INFRA` compartido y monitorización Glances. |
+| **`04_COMPLIANCE`** | `QA_TESTER`, `SECURITY`, `DOCS`. | Auditoría de secretos (Gitleaks v3.1.5) y validación visual avanzada. |
+| **`05_OPERATIONS`** | `DEVOPS`, `MEMORY`, `EVOLVER`. | Nodo `INFRA` compartido y análisis de patrones AutoShield v3.1.5. |
 
 ---
 

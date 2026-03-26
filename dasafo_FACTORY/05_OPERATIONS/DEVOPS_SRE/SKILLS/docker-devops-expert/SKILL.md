@@ -1,4 +1,5 @@
-# Skill: Docker & Container DevOps Expert
+# 🐳 Skill | Docker DevOps Expert
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/alinaqi/claude-bootstrap/docker
 > **Agent:** DEVOPS_SRE
 

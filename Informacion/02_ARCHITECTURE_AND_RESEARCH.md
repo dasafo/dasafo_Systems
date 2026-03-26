@@ -1,4 +1,4 @@
-# 📐 02_ARCHITECTURE_AND_RESEARCH | Laboratorio de Ingeniería (v3.1)
+# 📐 02_ARCHITECTURE_AND_RESEARCH | Laboratorio de Ingeniería (v3.1.5)
 
 Aquí es donde se define la **Solidez** del sistema. Ninguna línea de código de producción se escribe sin antes haber validado la viabilidad y diseñado los contratos.
 
@@ -20,8 +20,9 @@ Encargado de eliminar la incertidumbre. Investiga tecnologías, papers y documen
 
 Este departamento no solo diseña, sino que entrega resultados a través de sus habilidades (`skills`):
 
-*   **`architecture-decision-records` (ARCHITECT):** Automatiza la creación de ADRs para que cada decisión técnica importante quede documentada históricamente.
-*   **`deep-tech-research` (RESEARCH_AGENT):** Capacidad para buscar y digerir información técnica profunda, reduciendo la incertidumbre tecnológica.
+*   **`architecture-decision-records` & `api-contract-generator` (ARCHITECT):** Automatización de ADRs y creación de esqueletos de API OpenAPI/DTO.
+*   **`design-token-definition` (ARCHITECT):** Definición estricta de variables visuales para el sistema de diseño.
+*   **`arxiv-technical-digest` & `deep-semantic-search` (RESEARCH_AGENT):** Búsqueda semántica profunda y digestión de papers técnicos con lógica v3.1.5 restaurada.
 
 ---
 

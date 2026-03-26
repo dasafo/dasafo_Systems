@@ -1,10 +1,16 @@
 """
 run.py — RA-Agile Orchestration (ORCHESTRATOR)
+v3.1.5: Solidity Guard | Industrial Scale.
+
 Scales agentic workflows based on project milestones.
-v3.1: Infraestructura Blindada | Industrial Scale.
 """
 
+import sys
 import os
+from pathlib import Path
+
+# Add factory knowledge to path
+sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "00_GLOBAL_KNOWLEDGE"))
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:

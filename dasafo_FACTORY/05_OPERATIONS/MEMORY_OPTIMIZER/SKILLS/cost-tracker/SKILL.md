@@ -2,7 +2,8 @@
 description: Lightweight token usage estimation and budget enforcement.
 ---
 
-# 💰 SKILL: cost-tracker
+# 💰 Cost Tracker
+> **Status:** v3.1.5 "Solidity Guard" | **Focus:** Industrial Resource Efficiency
 
 1. **Token Ingestion:** Extract "input_tokens" and "output_tokens" from every agent interaction.
 2. **Price Calculation:** Apply current model pricing (e.g., $xxx / 1M tokens) to the usage.

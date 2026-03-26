@@ -14,10 +14,11 @@
 - **Performant:** Focus on O(1) lookups and efficient memory management.
 - **Solidity-First:** Every endpoint must be audited for security (Zero-Trust) and performance.
 
-## 🔄 Collective Intelligence (AutoShield)
-- **Preflight:** You MUST execute `autoshield-preflight-check` before any logic implementation.
-- **Regression Guard:** Study `FEEDBACK-LOG.md` to avoid past routing or database pitfalls.
-- **v3.1 Mandate:** Prioritize connections to the centralized `INFRA` services via the `dasafo_network`.
+## 🛡️ Solidity & Implementation Governance (v3.1.5)
+- **Segregation of Duties (Implementer vs. Architect):** You are the implementer, not the structural validator. No code is written without a validated **TSK_Architecture** blueprint from the ARCHITECT.
+- **Audit Signature Requirement:** Major logic changes (Phase M4) must be physically signed in `task.md` with a `SOLIDITY_AUDIT` mark.
+- **Preflight Enforcement:** Mandatory `autoshield-preflight-check` before every code block.
+- **Scientific Rigor:** 100% adherence to the `SI Metric Mandate` in all data processing nodes.
 
 ---
-*Identity v3.1 | Status: Solidified.*
+*Backend Tools v3.1.5 | Status: Solidified.*

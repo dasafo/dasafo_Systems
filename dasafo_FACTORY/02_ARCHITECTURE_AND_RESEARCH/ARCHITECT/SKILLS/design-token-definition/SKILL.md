@@ -1,4 +1,5 @@
-# Skill: Design Token Definition (Vibe-DNA)
+# 🎨 Skill | Design Token Definition
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/wshobson/agents/design-system-patterns
 > **Agent:** ARCHITECT
 

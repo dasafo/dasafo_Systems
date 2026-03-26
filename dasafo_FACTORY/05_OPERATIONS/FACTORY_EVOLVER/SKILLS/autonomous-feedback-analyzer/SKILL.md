@@ -2,7 +2,8 @@
 description: Analyzes logs and feedback to proactively fix recurring system errors.
 ---
 
-# 🧠 SKILL: Autonomous Feedback Analyzer
+# 🧠 Autonomous Feedback Analyzer
+> **Status:** v3.1.5 "Solidity Guard" | **Focus:** Industrial Distillation
 
 1. **Log Ingestion:** Read `FEEDBACK-LOG.md` and standard error logs across all projects.
 2. **Error Categorization:** Label errors as "Minor", "Structural", or "Critical".

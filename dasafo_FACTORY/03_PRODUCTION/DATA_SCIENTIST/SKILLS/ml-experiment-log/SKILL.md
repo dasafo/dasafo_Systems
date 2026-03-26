@@ -1,5 +1,5 @@
-# Skill: ML Experiment Tracker
-> **Source:** https://skills.sh/supercent-io/skills-template/ml-experiment-tracking
+# 📊 Skill | ML Experiment Tracker
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** DATA_SCIENTIST
 
 ## Objective

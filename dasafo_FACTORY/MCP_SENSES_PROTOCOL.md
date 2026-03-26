@@ -1,6 +1,6 @@
 # 📡 dasafo_FACTORY | MCP Senses Protocol
 >
-> **Standard:** v3.1 "Infraestructura Blindada"
+> **Standard:** v3.1.5 "Solidity Guard"
 > **Focus:** Shared Resource & High-Fidelity Interaction
 
 ## 🧠 The Sensory Philosophy
@@ -23,7 +23,7 @@ Agents do not "run commands"; they **perceive** and **act** through the Sensory 
 
 ### 4. Custom Skills (`run.py`)
 - **Capabilities:** Executable logic tailored for specific agent roles.
-- **Constraint:** Must follow the `skill_schema.py` and be 100% project-agnostic.
+- **Constraint:** Must follow the `skill_schema.py` and be 100% project-agnostic. Mandatory execution of `kanban-solidity-gate` for phase transitions.
 
 ---
-*Senses Protocol v3.1 | Status: Solidified.*
+*Senses Protocol v3.1.5 | Status: Solidified.*

@@ -1,4 +1,5 @@
-# Skill: Search Context Distillation Pro
+# 🔍 Search Context Distillation Pro
+> **Status:** v3.1.5 "Solidity Guard" | **Focus:** Industrial Cognitive Density
 > **Source:** https://skills.sh/exa-awesome-skills/context-search (Adapted)
 > **Agent:** MEMORY_OPTIMIZER
 

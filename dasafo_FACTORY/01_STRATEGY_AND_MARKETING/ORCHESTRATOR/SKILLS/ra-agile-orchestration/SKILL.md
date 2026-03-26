@@ -1,5 +1,7 @@
-# Skill: RA level Agile Orchestration
-> **Agent:** ORCHESTRATOR
+# Skill: RA# 🏃 RA Agile Orchestration
+>
+> **Standard:** v3.1.5 "Solidity Guard"
+ORCHESTRATOR
 
 ## Objective
 Dynamically route and prioritize tasks based on their Requirement Analysis (RA) level (RA0-RA5).

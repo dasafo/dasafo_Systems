@@ -1,4 +1,5 @@
-# Skill: Stakeholder Value & Anti-Pattern Audit
+# 💎 Skill | Stakeholder Value Audit
+> **Version:** v3.1.5 "Solidity Guard"
 > **Source:** https://skills.sh/jwynia/agent-skills/requirements-analysis (Adapted)
 > **Agent:** PRODUCT_OWNER
 

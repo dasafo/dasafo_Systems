@@ -1,5 +1,5 @@
-# Skill: Framer Motion Transitions (UI Fluidity)
-> **Source:** https://framer.com/motion/ (Adapted)
+# 🌊 Skill | Framer Motion Transitions (UI Fluidity)
+> **Version:** v3.1.5 "Solidity Guard"
 > **Agent:** FRONTEND_DEV
 
 ## Objective

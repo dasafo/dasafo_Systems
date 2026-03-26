@@ -2,7 +2,8 @@
 description: Meta-cognition layer for self-improving the agent's own logic and strategies.
 ---
 
-# 🪞 SKILL: Reflective Learning Engine
+# 🪞 Reflective Learning Engine
+> **Status:** v3.1.5 "Solidity Guard" | **Focus:** Industrial Meta-Cognition
 
 1. **Self-Review:** Periodically analyze past successful and failed interventions.
 2. **Strategy Refinement:** Update internal heuristics for when to intervene and when to let the factory run.

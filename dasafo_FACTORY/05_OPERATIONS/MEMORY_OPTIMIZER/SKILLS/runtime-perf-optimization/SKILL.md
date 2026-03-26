@@ -2,7 +2,8 @@
 description: Detecting and fixing memory leaks and inefficient memory usage in Python-based agents and services.
 ---
 
-# 🧠 SKILL: Runtime Memory Optimization (Python)
+# 🧠 Runtime Memory Optimization
+> **Status:** v3.1.5 "Solidity Guard" | **Focus:** Industrial Performance Stability
 
 Based on the [Python Performance Optimization](https://skills.sh/wshobson/agents/python-performance-optimization) standard.
 
