@@ -20,55 +20,62 @@ The system is organized into three specialized nodes that ensure total isolation
 
 ```mermaid
 graph TD
-    User((User)) --> 👑[ORCHESTRATOR]
-    👑 --> Brain[dasafo_FACTORY]
-    Brain --> Departments[00-06 Departments]
-    Departments --> Skills[06_SKILL_LIBRARY]
-    Skills --> PROJECTS[PROJECTS / Mutable Workspace]
-    PROJECTS <--> INFRA[INFRA / Shared Services]
+    User((User)) --> Orch["👑 ORCHESTRATOR"]
+    Orch --> Brain["dasafo_FACTORY"]
+    Brain --> Depts["00-06 Departments"]
+    Depts --> Skills["06_SKILL_LIBRARY"]
+    Skills --> Projs["PROJECTS / Mutable Workspace"]
+    Projs <--> Infra["INFRA / Shared Services"]
     
-    subgraph Security & Quality
-        AutoShield[AutoShield / Feedback Loop]
-        SolidityGuard[Solidity Guard v3.2]
+    subgraph Security_Quality ["Security & Quality"]
+        AutoShield["AutoShield / Feedback Loop"]
+        SolidityGuard["Solidity Guard v3.2.0-S"]
     end
 ```
 
 ### 🧠 1. The Brain: `dasafo_FACTORY/`
+
 The immutable repository of identity, laws, and executive power.
-*   **`00_GLOBAL_KNOWLEDGE`**: The Factory Constitution. Coding standards, ADR laws, and scientific rigor.
-*   **`01-05 Departments`**: specialized agent silos (Strategy, Architecture, Production, Compliance, Ops).
-*   **`06_SKILL_LIBRARY`**: The **Modular Toolbox**. 80+ executable Python modules (`run.py`) invoked via the centralized `skill_engine.py`.
+
+* **`00_GLOBAL_KNOWLEDGE`**: The Factory Constitution. Coding standards, ADR laws, and scientific rigor.
+* **`01-05 Departments`**: specialized agent silos (Strategy, Architecture, Production, Compliance, Ops).
+* **`06_SKILL_LIBRARY`**: The **Modular Toolbox**. 80+ executable Python modules (`run.py`) invoked via the centralized `skill_engine.py`.
 
 ### 🧱 2. The Power Grid: `INFRA/`
+
 Centralized "Vivero" of high-performance shared services for all projects.
-*   **Neo4j (`kg-db`)**: Central Knowledge Graph (4GB RAM limit).
-*   **Postgres (`shared-db`)**: Relational operational storage (2G RAM limit).
-*   **Glances**: Real-time health and performance monitoring node.
-*   **Isolated Network**: All services communicate via the internal `dasafo_network`.
+
+* **Neo4j (`kg-db`)**: Central Knowledge Graph (4GB RAM limit).
+* **Postgres (`shared-db`)**: Relational operational storage (2G RAM limit).
+* **Glances**: Real-time health and performance monitoring node.
+* **Isolated Network**: All services communicate via the internal `dasafo_network`.
 
 ### 🛠️ 3. The Workshop: `PROJECTS/`
+
 The mutable workspace where projects are born and evolved.
-*   **WORKSPACE**: Production-ready code (Backend, Frontend, Shared).
-*   **TASKS (Industrial Kanban)**: Physical task mirroring (`01_PENDING` to `05_REJECTED`).
-*   **LOGS**: Granular telemetry of every agent session and incident.
+
+* **WORKSPACE**: Production-ready code (Backend, Frontend, Shared).
+* **TASKS (Industrial Kanban)**: Physical task mirroring (`01_PENDING` to `05_REJECTED`).
+* **LOGS**: Granular telemetry of every agent session and incident.
 
 ---
 
 ## ⚙️ The Modular Engine (v3.2.0-S)
 
 Unlike standard AI setups, dasafo_Systems uses a **Skill-Based Executive Engine**:
-*   **`factory_cli.py` (MCP Bridge)**: Seamless communication between the assistant and the factory.
-*   **`skill_engine.py`**: Dynamic module loading for total portability.
-*   **`skill_schema.py`**: Standardized contracts (`SkillInput`/`SkillOutput`) ensuring that actions are predictable and auditable.
+
+* **`factory_cli.py` (MCP Bridge)**: Seamless communication between the assistant and the factory.
+* **`skill_engine.py`**: Dynamic module loading for total portability.
+* **`skill_schema.py`**: Standardized contracts (`SkillInput`/`SkillOutput`) ensuring that actions are predictable and auditable.
 
 ---
 
 ## 🛡️ Solidity & Security Protocols
 
-*   **Customs Protocol (Aduana Universal)**: Zero phase-skipping. Transitions (M1-M5) are blocked until all tasks are physically verified.
-*   **AutoShield Loop**: Every project failure or hallucination is recorded in `FEEDBACK-LOG.md`. The system "learns" and prevents these errors in future runs.
-*   **Atomic Design**: Mandatory premium UI standards (Glassmorphism, Dark Mode, Micro-animations).
-*   **SI Unit Mandate**: 100% enforcement of metric standards for technical and scientific data.
+* **Customs Protocol (Aduana Universal)**: Zero phase-skipping. Transitions (M1-M5) are blocked until all tasks are physically verified.
+* **AutoShield Loop**: Every project failure or hallucination is recorded in `FEEDBACK-LOG.md`. The system "learns" and prevents these errors in future runs.
+* **Atomic Design**: Mandatory premium UI standards (Glassmorphism, Dark Mode, Micro-animations).
+* **SI Unit Mandate**: 100% enforcement of metric standards for technical and scientific data.
 
 ---
 
@@ -86,29 +93,25 @@ Unlike standard AI setups, dasafo_Systems uses a **Skill-Based Executive Engine*
 
 ## 🚀 Quick Start: Deployment
 
-1.  **Initialize Infrastructure**:
+1. **Initialize Infrastructure**:
+
     ```bash
     cd dasafo_Systems/INFRA
     cp .env.shared .env  # Configure your secure passwords
     docker-compose up -d
     ```
-2.  **Bootstrap a Project**:
+
+2. **Bootstrap a Project**:
+
     ```bash
     cd dasafo_FACTORY
     ./init_project.sh ProjectName
     ```
-3.  **Define Strategy**:
+
+3. **Define Strategy**:
     Invoke the **PRODUCT_OWNER** 📋 to draft the `PRP_CONTRACT.json` in `LOCAL_KNOWLEDGE/`.
-4.  **Execute Phase M1**:
+4. **Execute Phase M1**:
     Once the contract is signed by the human, use **`/factory-orchestrate`** to begin the mission.
-
----
-
-## 📚 Documentation
-Detailed departmental guides are available in the [Informacion/](file:///home/david/Documents/AI/AGENTES/dasafo_Systems/Informacion/) directory (In Spanish):
-- [Master Manual](file:///home/david/Documents/AI/AGENTES/dasafo_Systems/Informacion/MANUAL_SISTEMA_DASAFO.md)
-- [00 Global Knowledge](file:///home/david/Documents/AI/AGENTES/dasafo_Systems/Informacion/00_GLOBAL_KNOWLEDGE.md)
-- [06 Skill Library](file:///home/david/Documents/AI/AGENTES/dasafo_Systems/Informacion/06_SKILL_LIBRARY.md)
 
 ---
 
