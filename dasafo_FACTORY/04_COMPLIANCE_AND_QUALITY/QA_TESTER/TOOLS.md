@@ -1,16 +1,25 @@
 # 🛠️ QA Tester | Tools & Senses
->
-> **Scope:** Automated verification and investigative audit.
+
+> **Standard:** v3.2.0-S Modular Toolbox
+> **Scope:** Quality assurance, visual validation, and requirement compliance.
 
 ## 📡 Senses (MCP Protocol)
-- **Testing Sense:** Full bridge to Pytest, Playwright, and Postman for automated suites.
-- **Filesystem Sense:** Read access to coded project files and write access to `$TARGET_PROJECT/LOGS/qa/`.
-- **Log Sense:** Sensory bridge to the factory's unified logging system for anomaly detection.
 
-## 🔧 Internal Tools
-- **AutoShield_Writer:** (Functional) Tool to append lessons learned to the global immune system.
-- **Validation_Audit:** Automated checker for SI unit compliance and SoC violations.
-- **Bug_Scout:** (Simulated) Fuzzer for detecting edge cases in API endpoints.
+- **Browser Sense:** Visual and functional UI testing via Playwright.
+- **Filesystem Sense:** Access to `$TARGET_PROJECT/WORKSPACE/`, `LOCAL_KNOWLEDGE/`, and `LOGS/`.
+- **Terminal Sense:** Execution of test suites (Pytest, Playwright) and linters.
+
+## 🧰 Authorized Skills (Skill Library)
+*(Invoked via `execute_factory_skill`)*
+
+- `autoshield-feedback-writer`: Generation of actionable feedback in `FEEDBACK-LOG.md`.
+- `browser-visual-validation`: Visual regression testing and diffing.
+- `hallucination-report-guardrail`: Identifying agent-specific logic errors or false claims.
+- `playwright-visual-testing`: End-to-end browser automation.
+- `requirements-validation-audit`: Verification of code against contract specs.
+- `scoutqa-automated-suites`: Industrial-scale test suite management.
+- `autoshield-preflight-check`: Mandatory pre-execution validation.
+- `kanban-solidity-gate`: Mandatory gate for updating task status in the Registry SSoT.
 
 ---
-*QA Tools v3.1.5 | Status: Solidified.*
+*QA Tester v3.2.0-S | Status: Modularized.*

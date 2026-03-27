@@ -1,6 +1,6 @@
 # 🔬 03. Scientific Rigor
 >
-> **Standard:** v3.1.5 "Solidity Guard"
+> **Standard:** v3.2.0-S "Solidity Guard"
 
 ## 1. Zero Trust Policy
 Never trust input data. Sanitize and validate at every layer boundary using `skill_schema` or Zod/Pydantic.

@@ -1,16 +1,23 @@
 # 🛠️ Frontend Developer | Tools & Senses
->
-> **Scope:** High-fidelity UI development environment.
+
+> **Standard:** v3.2.0-S Modular Toolbox
+> **Scope:** High-fidelity UI development and premium aesthetic enforcement.
 
 ## 📡 Senses (MCP Protocol)
-- **Web Sense:** Deep research into modern UI patterns, framer-motion techniques, and accessibility standards.
-- **Python Sense:** Secondary bridge for asset processing or token generation.
-- **Filesystem Sense:** Read/Write access to the `$TARGET_PROJECT/ui/` or `src/` directories.
 
-## 🔧 Internal Tools
-- **Asset_Optimizer:** Tool to compress and optimize images/SVG for production.
-- **Token_Generator:** Automatic transformation of Figma-style variables into CSS/Sass tokens.
-- **Style_Auditor:** (Simulated) Checker for design token compliance and CSS hierarchy.
+- **Filesystem Sense:** Read/Write access strictly to `$TARGET_PROJECT/WORKSPACE/frontend/` and `shared/`.
+- **Web Sense:** Research into modern UI patterns and component documentation.
+- **Terminal Sense:** Execution of linters, formatters, and frontend build tools.
+
+## 🧰 Authorized Skills (Skill Library)
+*(Invoked via `execute_factory_skill`)*
+
+- `atomic-design-tokens`: Consistency in Colors, Spacing, and Typography.
+- `framer-motion-transitions`: Smooth micro-animations and transitions.
+- `premium-dashboard-architecture`: Structural design for SaaS interfaces.
+- `shadcn-component-library`: Implementation of premium accessible components.
+- `autoshield-preflight-check`: Mandatory pre-execution validation.
+- `kanban-solidity-gate`: Mandatory gate for updating task status in the Registry SSoT.
 
 ---
-*Frontend Tools v2.1 | Status: Solidified.*
+*Frontend Dev v3.2.0-S | Status: Modularized.*

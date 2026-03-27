@@ -1,16 +1,25 @@
 # 🛠️ DevOps SRE | Tools & Senses
->
-> **Scope:** Cloud infrastructure and automated environment lifecycle.
+
+> **Standard:** v3.2.0-S Modular Toolbox
+> **Scope:** Infrastructure as Code, CI/CD, and server management.
 
 ## 📡 Senses (MCP Protocol)
-- **Cloud Sense:** Full bridge to Docker, Terraform, and Kubernetes APIs for resource provisioning.
-- **Terminal Sense:** Root-level access (restricted) for system-level automation and tuning.
-- **Network Sense:** Access to ingress/egress configuration for `$TARGET_PROJECT` endpoints.
 
-## 🔧 Internal Tools
-- **Reprovision_Engine:** (Functional) Logic to rebuild or scale containers based on health metrics.
-- **CI_Automation:** (Simulated) Patterns for GitHub Actions and local Jenkins runners.
-- **Log_Aggregator:** (Simulated) Sensory bridge to ELK/Grafana for observability.
+- **Terminal Sense:** Full shell access for infrastructure orchestration and server management.
+- **Filesystem Sense:** Access to `Dockerfiles`, `docker-compose.yml`, `Terraform/`, and `PROJECT_STATE.json`.
+- **Python Sense:** Automation scripts for deployment and environment validation.
+
+## 🧰 Authorized Skills (Skill Library)
+*(Invoked via `execute_factory_skill`)*
+
+- `docker-devops-expert`: Containerization and orchestration patterns.
+- `github-actions-cicd-patterns`: Standardized pipeline design.
+- `infra-as-code-terraform-pro`: Cloud resource provisioning.
+- `mlops-deployment-guard`: Stability checks for AI model delivery.
+- `self-healing-deployment`: Automated recovery from service failure.
+- `server-management`: Linux administration and maintenance.
+- `autoshield-preflight-check`: Mandatory pre-execution environment validation.
+- `kanban-solidity-gate`: Mandatory gate for updating task status in the Registry SSoT.
 
 ---
-*DevOps Tools v3.1.5 | Status: Solidified.*
+*DevOps SRE v3.2.0-S | Status: Modularized.*

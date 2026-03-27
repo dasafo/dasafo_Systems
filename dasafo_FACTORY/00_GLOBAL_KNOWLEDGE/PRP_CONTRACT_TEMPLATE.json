@@ -1,47 +1,38 @@
 {
-  "version": "2.1.0",
-  "project_name": "TEMPLATE",
+  "project": "[PROJECT_NAME]",
+  "version": "1.0.0",
+  "factory_standard": "v3.2.0-S",
+  "prp_status": "draft",
+  "validated_at": null,
+  "validated_by": null,
   "vision": {
-    "goal": "Core objective of the project",
-    "vibe": "Target aesthetic (e.g., Dark Glassmorphism, Industrial Minimalist)",
-    "solidity": "Critical security/performance constraints"
+    "what": "[DESCRIPTION]",
+    "why": "[BENEFIT]",
+    "who": "[STAKEHOLDER]"
   },
-  "gates": [
-    "PRP_SIGNATURE",
-    "SECURITY_SCAN",
-    "UNIT_TESTS",
-    "SOLIDITY_AUDIT"
-  ],
-  "phases": [
-    {
-      "id": "M0_DISCOVERY",
-      "deliverable": "Comprehensive Research Report",
-      "owner": "research_agent"
+  "phases": {
+    "M1_DISCOVERY": {
+      "objective": "Vision alignment and signed PRP contract.",
+      "status": "PENDING"
     },
-    {
-      "id": "M1_CONTRACT",
-      "deliverable": "Signed PRP_CONTRACT.json",
-      "owner": "product_owner"
+    "M2_ARCHITECTURE": {
+      "objective": "Technical blueprint and task registry seeding.",
+      "status": "PENDING"
     },
-    {
-      "id": "M2_ARCHITECTURE",
-      "deliverable": "Blueprints & Schemas",
-      "owner": "architect"
+    "M3_PRODUCTION": {
+      "objective": "Core implementation and feature development.",
+      "status": "PENDING"
     },
-    {
-      "id": "M3_PRODUCTION",
-      "deliverable": "Atomic Components",
-      "owner": "backend_dev"
+    "M4_COMPLIANCE": {
+      "objective": "Industrial audit and behavioral verification.",
+      "status": "PENDING"
     },
-    {
-      "id": "M4_VERIFICATION",
-      "deliverable": "Audit Report",
-      "owner": "qa_tester"
+    "M5_OPERATIONS": {
+      "objective": "Deployment and global knowledge vectorization.",
+      "status": "PENDING"
     }
-  ],
-  "solidity_check": {
-    "zero_trust": true,
-    "si_units_mandate": true,
-    "docker_verified": false
-  }
+  },
+  "success_criteria": [],
+  "constraints": [],
+  "non_goals": []
 }

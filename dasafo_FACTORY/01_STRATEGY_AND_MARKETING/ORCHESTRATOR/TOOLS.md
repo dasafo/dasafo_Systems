@@ -1,18 +1,25 @@
 # 🛠️ Orchestrator | Tools & Senses
->
-> **Scope:** Sensory bridge to the factory environment.
+
+> **Standard:** v3.2.0-S Modular Toolbox
+> **Scope:** Sensory bridge to the factory environment and task routing.
 
 ## 📡 Senses (MCP Protocol)
-- **Filesystem Sense:** Read/Write access to the `$TARGET_PROJECT` workspace for Kanban movement.
+
+- **Filesystem Sense:** Read/Write access to `$TARGET_PROJECT` workspace.
 - **Terminal Sense:** Execute shell commands as a proxy for the user.
-- **Memory Sense:** Query the `memory_optimizer` and `FACTORY_EVOLVER` logs for systemic patterns.
+- **Memory Sense:** Query systemic patterns.
 
-## 🔧 Internal Tools
-- **DAG_Parser:** Decompose natural language intent into a task graph.
-- **PRP_Validator:** Cross-reference current progress against `PRP_CONTRACT.json`.
-- **Telemetry_Logger:** Record orchestration performance and "Vibe" metrics.
+## 🧰 Authorized Skills (Skill Library)
+*(Invoked via `execute_factory_skill`)*
 
-## 🧬 Dependencies
-- **Product Owner:** For vision clarification.
-- **Architect:** For technical blueprint validation.
-- **QA Tester:** For deliverable sign-off.
+- `bmad-ssd-orchestration`: SSD-based project orchestration.
+- `dag-routing`: Decompose natural language intent into a task graph.
+- `kanban-solidity-gate`: Mandatory gate for phase transitions (Registry SSoT).
+- `nblm-factory-biographer`: Multi-agent mission recording.
+- `ra-agile-orchestration`: Agile task management and sprint routing.
+- `structured-system-design`: Hierarchical decomposition of complex requirements.
+- `task-dependency-diagnostic`: Identify and resolve task blockers.
+- `autoshield-preflight-check`: Mandatory pre-execution validation.
+
+---
+*Orchestrator v3.2.0-S | Status: Modularized.*

@@ -1,16 +1,23 @@
 # 🛠️ Architect | Tools & Senses
->
-> **Scope:** Analytical and structural bridge.
+
+> **Standard:** v3.2.0-S Modular Toolbox
+> **Scope:** System design, technical stack evaluation, and architectural integrity.
 
 ## 📡 Senses (MCP Protocol)
-- **Codebase Sense:** Read-only access to the entire project source for structural analysis.
-- **Filesystem Sense:** Write access to `$TARGET_PROJECT/DOCS/ADR/` and `DOCS/Blueprints/`.
-- **Registry Sense:** Query the `AGENT_REGISTRY.md` to assign technical tasks optimally.
 
-## 🔧 Internal Tools
-- **ADR_Generator:** Tool to formalize architectural decisions.
-- **Dependency_Visualizer:** (Simulated) Create Mermaid diagrams for folder architectures.
-- **Structural_Auditor:** Verify SoC compliance against `02_ARCHITECTURE_RULES.md`.
+- **Filesystem Sense:** Full access to `$TARGET_PROJECT/WORKSPACE/` and `$TARGET_PROJECT/LOCAL_KNOWLEDGE/` for structural design.
+- **Python Sense:** Skill development and architectural scripting.
+- **Terminal Sense:** Sandbox execution for stack evaluation.
+
+## 🧰 Authorized Skills (Skill Library)
+*(Invoked via `execute_factory_skill`)*
+
+- `api-contract-generator`: Swagger/OpenAPI compliant design.
+- `architecture-decision-records`: ADR generation for systemic transparency.
+- `design-token-definition`: Atomic design system tokenization.
+- `tech-stack-evaluator`: Trade-off analysis for proposed technologies.
+- `autoshield-preflight-check`: Mandatory pre-execution validation.
+- `kanban-solidity-gate`: Mandatory gate for phase transitions and registry updates.
 
 ---
-*Architect Tools v2.1 | Status: Solidified.*
+*Architect v3.2.0-S | Status: Modularized.*

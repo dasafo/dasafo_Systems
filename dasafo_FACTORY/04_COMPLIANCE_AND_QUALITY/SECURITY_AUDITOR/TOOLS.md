@@ -1,16 +1,22 @@
 # 🛠️ Security Auditor | Tools & Senses
->
-> **Scope:** High-security investigative and scanning environment.
+
+> **Standard:** v3.2.0-S Modular Toolbox
+> **Scope:** Secret scanning, vulnerability assessment, and LLM guardrail enforcement.
 
 ## 📡 Senses (MCP Protocol)
-- **Security Sense:** Bridge to `secret-scanner` and vulnerability databases (CVE).
-- **Code Sense:** Deep-read access to all project files specifically for pattern-matching sensitive data.
-- **Filesystem Sense:** Read-only access to code; write access to `$TARGET_PROJECT/LOGS/security/` for audit reports.
 
-## 🔧 Internal Tools
-- **Thought_Scanner:** (Functional) Agentic skill to find secrets using heuristic and entropy analysis.
-- **RLS_Auditor:** (Simulated) Checker for correct Row Level Security implementation in DB schemas.
-- **Dependency_Scan:** (Simulated) Tool to cross-reference `requirements.txt` with known vulnerabilities.
+- **Filesystem Sense:** Full recursive access to `$TARGET_PROJECT` for deep secret scanning.
+- **Python Sense:** Security scripting, policy enforcement, and log analysis.
+- **Terminal Sense:** Execution of specialized security tools (Husky, Bandit, etc.).
+
+## 🧰 Authorized Skills (Skill Library)
+*(Invoked via `execute_factory_skill`)*
+
+- `agentic-thought-secret-scanner`: Mandatory detection of hardcoded credentials.
+- `nemo-llm-guardrails`: Enforcement of AI safety and prompt injection protection.
+- `owasp-llm-enforcement`: Compliance check against OWASP Top 10 for LLMs.
+- `autoshield-preflight-check`: Mandatory pre-execution environment validation.
+- `kanban-solidity-gate`: Mandatory gate for updating security task status in the Registry SSoT.
 
 ---
-*Security Tools v3.1.5 | Status: Solidified.*
+*Security Auditor v3.2.0-S | Status: Modularized.*

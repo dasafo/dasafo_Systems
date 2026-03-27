@@ -1,16 +1,23 @@
 # 🛠️ Docs Master | Tools & Senses
->
-> **Scope:** High-fidelity documentation environment.
+
+> **Standard:** v3.2.0-S Modular Toolbox
+> **Scope:** Technical documentation, API specifications, and User Experience writing.
 
 ## 📡 Senses (MCP Protocol)
-- **Code Sense:** Read-only bridge to parse codebase annotations, types, and comments.
-- **Filesystem Sense:** Read/Write access to the `$TARGET_PROJECT` root for README and DOCS management.
-- **GitHub Sense:** Primary interface to push documentation branches and manage Wiki updates.
 
-## 🔧 Internal Tools
-- **PRP_Validator:** (Simulated) Checker for the existence and completeness of the `PRP_CONTRACT.json`.
-- **Markdown_Linter:** Tool to ensure all documents follow the `01_CODING_STANDARDS.md`.
-- **Schema_to_Doc:** Generator that converts Pydantic/OpenAPI models into readable markdown tables.
+- **Filesystem Sense:** Read/Write access to root `README.md`, `LOCAL_KNOWLEDGE/`, and `TASKS/`.
+- **Python Sense:** Documentation generation and validation scripting.
+- **Web Sense:** Research into documentation best practices and technical standards.
+
+## 🧰 Authorized Skills (Skill Library)
+*(Invoked via `execute_factory_skill`)*
+
+- `api-docs-generator`: Automatic Swagger/OpenAPI doc generation.
+- `documentation-strategist`: Information architecture planning.
+- `senior-technical-writer`: High-clarity industrial-grade writing.
+- `user-experience-copywriter`: User-centric microcopy and onboarding.
+- `autoshield-preflight-check`: Mandatory pre-execution validation.
+- `kanban-solidity-gate`: Mandatory gate for updating task status in the Registry SSoT.
 
 ---
-*Docs Master Tools v2.1 | Status: Solidified.*
+*Docs Master v3.2.0-S | Status: Modularized.*

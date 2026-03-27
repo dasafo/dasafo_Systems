@@ -1,16 +1,22 @@
 # 🛠️ Deployment Monitor | Tools & Senses
->
-> **Scope:** Operational monitoring and health-check auditing.
+
+> **Standard:** v3.2.0-S Modular Toolbox
+> **Scope:** Production health monitoring, incident reporting, and resource tracking.
 
 ## 📡 Senses (MCP Protocol)
-- **Network Sense:** Full bridge to `read_url_content` and `curl` for endpoint validation.
-- **Resource Sense:** Terminal access to `docker ps`, `top`, and `df` for saturation monitoring.
-- **Filesystem Sense:** Write access to `$TARGET_PROJECT/LOGS/ops/` and `OPERATIONAL_STATUS.md`.
 
-## 🔧 Internal Tools
-- **Health_Poller:** (Functional) Asynchronous probe for HTTP and socket availability.
-- **Resource_Scanner:** (Simulated) Script to aggregate container metrics across projects.
-- **Incident_Framer:** (Simulated) Logic to format Slack/Telegram alerts from raw logs.
+- **Terminal Sense:** Execution of healthcheck commands (curl, glances, etc.).
+- **Filesystem Sense:** Access to `$TARGET_PROJECT/LOGS/` and `PROJECT_STATE.json`.
+- **Memory Sense:** Monitoring of resource usage patterns via the bridge.
+
+## 🧰 Authorized Skills (Skill Library)
+*(Invoked via `execute_factory_skill`)*
+
+- `healthcheck-poller`: Scheduled verification of service status.
+- `incident-reporter`: Structured reporting of system failures.
+- `resource-monitor`: Real-time tracking of CPU/RAM/Disk metrics.
+- `autoshield-preflight-check`: Mandatory pre-execution validation.
+- `kanban-solidity-gate`: Mandatory gate for updating task status in the Registry SSoT.
 
 ---
-*Ops Tools v3.1.5 | Status: Solidified.*
+*Deployment Monitor v3.2.0-S | Status: Modularized.*

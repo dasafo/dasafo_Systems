@@ -1,16 +1,27 @@
 # 🛠️ Factory Evolver | Tools & Senses
->
-> **Scope:** Meta-rule modification and systemic audit.
+
+> **Standard:** v3.2.0-S Modular Toolbox
+> **Scope:** Systemic self-improvement, pattern analysis, and factory maintenance.
 
 ## 📡 Senses (MCP Protocol)
-- **Insight Sense:** Bridge to the `FEEDBACK-LOG.md` and departmental audit logs.
-- **Code Sense:** Full-read access to the internal `dasafo_FACTORY/` ruleset and agent definitions.
-- **Filesystem Sense:** Write access to the factory's core configuration and skill definitions.
 
-## 🔧 Internal Tools
-- **Pattern_Analyzer:** (Functional) Engine to identify frequency clusters in the global feedback loop.
-- **Skill_Optimizer:** (Simulated) Logic to rewrite agent instructions for higher performance.
-- **Audit_Pro:** (Simulated) Checker for consistency across all agent identities and protocols.
+- **Memory Sense:** Deep analysis of the Global Semantic Index and Feedback Loops.
+- **Filesystem Sense:** Full R/W access to `00_GLOBAL_KNOWLEDGE/` and `06_SKILL_LIBRARY/`.
+- **Python Sense:** Refactoring, optimization scripting, and skill refinement.
+
+## 🧰 Authorized Skills (Skill Library)
+*(Invoked via `execute_factory_skill`)*
+
+- `autonomous-feedback-analyzer`: Distillation of `FEEDBACK-LOG.md` into actionable lessons.
+- `autoshield-pattern-analysis`: Identifying recurring systemic weaknesses.
+- `checkpoint-manager`: Verification of factory health after major updates.
+- `factory-audit-pro`: Industrial-grade audit of the entire factory structure.
+- `pattern-recognition`: Insight extraction from multi-project history.
+- `reflective-learning-engine`: Self-correction and improvement loop.
+- `skill-optimization`: Technical refinement of existing tools.
+- `system-optimizer`: Structural cleanup and legacy removal.
+- `autoshield-preflight-check`: Mandatory pre-execution validation before constitutional changes.
+- `kanban-solidity-gate`: Mandatory gate for updating task status in the Registry SSoT.
 
 ---
-*Factory Tools v3.1.5 | Status: Solidified.*
+*Factory Evolver v3.2.0-S | Status: Modularized.*

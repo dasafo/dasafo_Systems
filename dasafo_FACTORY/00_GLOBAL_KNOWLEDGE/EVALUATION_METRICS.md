@@ -20,7 +20,7 @@
 
 ## ⚖️ 05. Evaluation Metrics
 >
-> **Standard:** v3.1.5 "Solidity Guard"
+> **Standard:** v3.2.0-S "Solidity Guard"
 
 - **SI Compliance**: 100% enforcement of International System units.
 - **PRP Sync**: Alignment between initial `PRP_CONTRACT.json` and final `walkthrough.md`.

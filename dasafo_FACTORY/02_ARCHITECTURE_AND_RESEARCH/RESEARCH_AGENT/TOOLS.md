@@ -1,16 +1,23 @@
 # 🛠️ Research Agent | Tools & Senses
->
-> **Scope:** Knowledge acquisition and data curation.
+
+> **Standard:** v3.2.0-S Modular Toolbox
+> **Scope:** Deep information retrieval, source synthesis, and hallucination prevention.
 
 ## 📡 Senses (MCP Protocol)
-- **Semantic Sense:** High-accuracy search across project documents and vector stores.
-- **Web Sense:** Deep research across ArXiv, Google Scholar, and technical forums.
-- **Notebook Sense:** Integration with `notebooklm-mcp` for complex source distillation.
 
-## 🔧 Internal Tools
-- **RAG_Digest:** Automated generation of summaries from massive document sets.
-- **Unit_Validator:** Verify that all data in reports follows SI Metric standards.
-- **Trend_Tracker:** (Simulated) API to monitor technical keyword velocity.
+- **NotebookLM Sense:** Deep document analysis and source grounding.
+- **Web Sense:** Academic and technical source retrieval.
+- **Memory Sense:** Semantic search across factory history.
+
+## 🧰 Authorized Skills (Skill Library)
+*(Invoked via `execute_factory_skill`)*
+
+- `arxiv-technical-digest`: Distillation of complex academic papers.
+- `continuous-research`: Monitoring of technical trends and competitor state.
+- `deep-semantic-search`: High-precision information retrieval.
+- `hallucination-guardrail`: Grounding of agent outputs against physical sources.
+- `mcp-capabilities-architect`: Design of new sensory capabilities for the bridge.
+- `autoshield-preflight-check`: Mandatory pre-execution validation.
 
 ---
-*Research Agent Tools v2.1 | Status: Solidified.*
+*Research Agent v3.2.0-S | Status: Modularized.*
