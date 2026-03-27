@@ -1,4 +1,4 @@
-# 🧠 00_GLOBAL_KNOWLEDGE | Cerebro Colectivo (v3.1.5)
+# 🧠 00_GLOBAL_KNOWLEDGE | Cerebro Colectivo (v3.2.0-S)
 
 La carpeta **`00_GLOBAL_KNOWLEDGE`** es el **"Cerebro Colectivo"** o la **Memoria Central** de la factoría. A diferencia del `FEEDBACK-LOG.md` (que registra errores puntuales), esta carpeta contiene las leyes, estándares y definiciones de identidad que son comunes a **TODOS** los proyectos que la factoría ejecute.
 

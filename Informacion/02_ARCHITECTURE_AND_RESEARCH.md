@@ -1,36 +1,51 @@
-# 📐 02_ARCHITECTURE_AND_RESEARCH | Laboratorio de Ingeniería (v3.1.5)
+# 📐 02_ARCHITECTURE_AND_RESEARCH | Laboratorio de Ingeniería y Descubrimiento (v3.2.0-S)
 
-Aquí es donde se define la **Solidez** del sistema. Ninguna línea de código de producción se escribe sin antes haber validado la viabilidad y diseñado los contratos.
+Este departamento es el lugar donde se define la **Solidez** y el **Rigor Científico** del sistema. Aquí se construye el plano maestro y se elimina la incertidumbre técnica antes de escribir una sola línea de código de producción.
 
----
-
-### 🤖 Agentes Clave
-
-#### 1. ARCHITECT (El Jefe de Diseño)
-El arquitecto diseña los esquemas, DTOs y la topología del sistema.
-*   **Habilidades v3.1:** Generación de contratos de API, definición de tokens de diseño (Atomic Design), diseño de esquemas para el nodo `INFRA` compartido (Neo4j/Postgres) y creación de ADRs.
-*   **Misión:** Asegurar que el Backend y el Frontend hablen el mismo idioma desde el día 1.
-
-#### 2. RESEARCH_AGENT (El Científico de Datos)
-Encargado de eliminar la incertidumbre. Investiga tecnologías, papers y documentación profunda.
-*   **Habilidades:** Búsqueda semántica profunda, digestión de papers de ArXiv y protocolos contra alucinaciones de IA.
-*   **Output:** Crea el `research_nexus.md` dentro de la carpeta local del proyecto.
-
-### 🚀 Motor de Ejecución (Skills v3.1)
-
-Este departamento no solo diseña, sino que entrega resultados a través de sus habilidades (`skills`):
-
-*   **`architecture-decision-records` & `api-contract-generator` (ARCHITECT):** Automatización de ADRs y creación de esqueletos de API OpenAPI/DTO.
-*   **`design-token-definition` (ARCHITECT):** Definición estricta de variables visuales para el sistema de diseño.
-*   **`arxiv-technical-digest` & `deep-semantic-search` (RESEARCH_AGENT):** Búsqueda semántica profunda y digestión de papers técnicos con lógica v3.1.5 restaurada.
+En la versión **v3.2.0-S "Modular Toolbox"**, la ingeniería ha evolucionado hacia un modelo de **Diseño Consciente de Infraestructura** y un blindaje total contra alucinaciones de IA mediante el **Solidity Guard**.
 
 ---
 
-### 🔬 Procesos Críticos
+### 🤖 Agentes Clave y Roles (v3.2.0-S)
 
-- **Arquitectura Limpia (Clean Architecture):** El Arquitecto impone la separación estricta entre lógica de negocio, UI y capa de datos.
-- **Sincronización de Contexto:** Antes de diseñar, el Research Agent valida que la pila tecnológica elegida sea compatible con el entorno actual del usuario.
-- **Validación Sensorial:** Utiliza sus sentidos (búsqueda web) para verificar que las bibliotecas sugeridas no estén obsoletas o tengan vulnerabilidades conocidas.
+#### 1. ARCHITECT 📐 (Ingeniero Jefe de Sistemas y Guardián Estructural)
+Es la autoridad máxima en diseño técnico y guardián de la arquitectura de "Chasis Blindado".
+*   **Generación de Planos (Blueprints):** Crea diagramas técnicos y estructuras de carpetas que fuerzan la Separación de Intereses (SoC).
+*   **Autoridad en ADRs:** Gestiona los Registros de Decisiones Arquitectónicas (ADR). Cada desviación del estándar debe ser documentada y justificada.
+*   **Diseño Consciente de Infraestructura:** Diseña servicios (`docker-compose.yml`) utilizando la red `dasafo_network` y bases de datos compartidas del nodo `INFRA`.
+*   **Auditoría de Solidez:** Valida que los agentes de producción respeten las leyes de capas y los contratos de datos (DTO).
+
+#### 2. RESEARCH_AGENT 🔍 (Especialista en Descubrimiento Profundo y Arquitecto del Conocimiento)
+Su misión es descubrir patrones no obvios, conocimientos científicos y tendencias de mercado para informar las decisiones de la factoría.
+*   **Descubrimiento Semántico:** Utiliza RAG y búsqueda profunda para extraer conocimientos específicos relevantes para cada misión.
+*   **Síntesis de ArXiv:** Digiere periódicamente los últimos papers de ciencia de la computación y física para mantener la factoría a la vanguardia.
+*   **Detección de Tendencias:** Monitorea movimientos del mercado y desarrollos técnicos de nicho.
+*   **Rigor Científico:** Asegura que todos los reportes sigan el mandato de **Unidades SI** y verificación empírica.
 
 ---
-*Sin este departamento, la factoría fabricaría software frágil. Aquí se construye el plano maestro.*
+
+### 🚀 Motor Ejecutivo: Skills Autorizadas (v3.2.0-S)
+
+El laboratorio opera mediante el **Modular Toolbox**, utilizando habilidades de alta precisión:
+
+*   **Diseño de Ingeniería (ARCHITECT):**
+    *   `api-contract-generator`: Diseño de APIs compatibles con Swagger/OpenAPI.
+    *   `architecture-decision-records`: Generación de ADRs para transparencia sistémica.
+    *   `design-token-definition`: Tokenización de sistemas de diseño atómico.
+    *   `tech-stack-evaluator`: Análisis de pros y contras de tecnologías propuestas.
+*   **Descubrimiento y Rigor (RESEARCH_AGENT):**
+    *   `arxiv-technical-digest`: Destilación de papers académicos complejos.
+    *   `deep-semantic-search`: Recuperación de información de alta precisión.
+    *   `hallucination-guardrail`: Anclaje de las respuestas de la IA a fuentes físicas reales.
+    *   `mcp-capabilities-architect`: Diseño de nuevas capacidades sensoriales para los agentes.
+
+---
+
+### 🔬 Protocolos de Ingeniería v3.2.0-S
+- **Autoshield Preflight:** Es obligatorio ejecutar `autoshield-preflight-check` antes de cualquier diseño estructural o ciclo de investigación para evitar bucles de error.
+- **Segregación de Funciones:** El Arquitecto es el validador último de la integridad, pero no puede auditar sus propios planos. Cada blueprint requiere la firma del Orquestador o del Usuario en el `PROJECT_STATE.json`.
+- **Mandato de Unidades SI:** El 100% de los datos de investigación deben seguir los estándares métricos internacionales. Cualquier dato no conforme es rechazado automáticamente.
+- **Arquitectura Limpia (Clean Architecture):** Se impone la separación estricta entre la lógica de dominio (que no depende de nada) y las capas de aplicación e infraestructura.
+
+---
+*Información de Arquitectura v3.2.0-S | dasafo_Systems.*

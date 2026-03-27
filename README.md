@@ -1,100 +1,120 @@
-# dasafo_Systems | Multi-Agent AI Factory v3.1.5
+# 🏛️ dasafo_Systems | Multi-Agent AI Factory v3.2.0-S
 
 <p align="center">
   <img src="https://img.shields.io/badge/Architecture-Stateless_Agents-0ea5e9?style=for-the-badge" alt="Architecture Badge">
   <img src="https://img.shields.io/badge/Standards-SI_Units-emerald?style=for-the-badge" alt="Standards Badge">
   <img src="https://img.shields.io/badge/Design-Atomic_Vibe-purple?style=for-the-badge" alt="Design Badge">
   <img src="https://img.shields.io/badge/Security-Zero_Trust-red?style=for-the-badge" alt="Security Badge">
+  <img src="https://img.shields.io/badge/Version-v3.2.0--S-gold?style=for-the-badge" alt="Version Badge">
 </p>
 
-## 🚀 Overview
+## 🚀 Vision: Industrializing AI Excellence
 
-**dasafo_Systems** is a high-performance, stateless AI Multi-Agent Factory designed for mass-scaling software projects with surgical precision. This version (**v3.1 "Infraestructura Blindada"**) introduces a centralized services node, industrial-scale resource quotas, and enhanced observability.
-
-Built on the pillars of **Rigor**, **Solidity**, and **Vibe**, the factory allows for parallelized execution by multiple agents while enforcing strict isolation, mandatory **PRP Contract** validation, and **AutoShield v3.1** error prevention.
+**dasafo_Systems** is a high-performance, stateless AI Multi-Agent Factory designed to scale software engineering with surgical precision and premium aesthetics. The v3.2.0-S **"Modular Toolbox"** update transforms the ecosystem into a fully decoupled, skill-driven engine where agents operate under strict industrial laws (**Solidity Guard**) and continuous learning loops (**AutoShield**).
 
 ---
 
-## 🏛️ System Architecture
+## 🏗️ Ecosystem Architecture
 
-The ecosystem is strictly divided into two immiscible hemispheres:
+The system is organized into three specialized nodes that ensure total isolation and scalability:
 
-### 1. The Infrastructure Node (`INFRA/`) [NEW]
-The centralized "Vivero" of shared services.
-- **Neo4j**: Central Knowledge Graph for all projects.
-- **Postgres**: Relational operational storage.
-- **Glances**: Health and performance monitoring.
-
-### 2. The Factory Engine (`dasafo_FACTORY/`)
-The immutable "Brain" of the agency. It contains the identities, skills, and protocols that govern every agent.
-- **`00_GLOBAL_KNOWLEDGE`**: The Factory OS. Universal laws, coding standards, and the `skill_schema`.
-- **`01_STRATEGY` to `05_OPERATIONS`**: Departmental silos containing specialized agents (e.g., `ORCHESTRATOR`, `ARCHITECT`, `BACKEND_DEV`).
-- **`GLOBAL_SOUL.md`**: Centralized ethics and operational values.
-- **`COMMUNICATION_PROTOCOL.md`**: The laws of physics for agent interaction and task passing.
-
-### 3. Information & Documentation (`Informacion/`)
-High-level summaries and guides for human-agent onboarding, maintained in **Spanish** for accessibility.
-
----
-
-## ⚡ Executive Power Skills (v3.1.5)
-
-The factory is an **Executive Engine** capable of autonomous, high-solidity output:
-
-- **Strategy & Origo**: Automated PRP Contract generation, DAG routing, and agile agent orchestration.
-- **Architectural Solidification**: API contract generation, Design Token definitions, and ArXiv-based tech research.
-- **Production Crafts**: Resilient FastAPI logic, Atomic Design tokens, and automated SQL performance tuning.
-- **Compliance & Security**: v3.1.5 Regex-based secret scanning (`agentic-thought-secret-scanner`) and recursive PRP audits.
-- **Ops & Evolution**: Autonomous feedback analysis (learning from failure) and industrial-grade resource monitoring.
-
----
-
-## ⚙️ The Universal Pipeline (v3.1.5)
-
-Every project sequentially clears these v3.1.5 checkpoints:
-
-1. **Discovery (PRP Gate):** Mission definition. No agent proceeds until the user signs the `PRP_CONTRACT.json` via the **PRP Validation Gate**.
-2. **Analysis (Research & ADR):** Deep semantic research and architectural design. Contracts are finalized before a single line of code is written.
-3. **Production (Isolated Sprints):** Agents operate in `$TARGET_PROJECT/WORKSPACE/` with strict type safety and design tokens.
-4. **Verification (Solidity Gate):** Mandatory `agentic-thought-secret-scanner` and requirement validation. Failures update the global `FEEDBACK-LOG.md`.
-5. **Go-Live (Ops Hub):** `DEVOPS_SRE` manages the node lifecycle and the `DEPLOYMENT_MONITOR` ensures 24/7 service health.
-
----
-
-## 💎 Core Values (v3.1.5)
-
-- **Solidity Guard:** Strict path resolution and skill standardization across all departments.
-- **Zero-Trust Security:** Persistent regex scanning and input sanitization at every boundary.
-- **Atomic Design:** UI must be premium (Dark mode, neon accents, glassmorphism).
-- **English-only Logic:** All internal code and logic remain in English for global interoperability.
-- **Recursive Evolution:** `autonomous-feedback-analyzer` continuously optimizes the factory from historical failure patterns.
-
----
-
-## 🛠️ Getting Started
-
-### 1. Launch Infrastructure
-```bash
-cd dasafo_Systems/INFRA
-docker-compose up -d
+```mermaid
+graph TD
+    User((User)) --> 👑[ORCHESTRATOR]
+    👑 --> Brain[dasafo_FACTORY]
+    Brain --> Departments[00-06 Departments]
+    Departments --> Skills[06_SKILL_LIBRARY]
+    Skills --> PROJECTS[PROJECTS / Mutable Workspace]
+    PROJECTS <--> INFRA[INFRA / Shared Services]
+    
+    subgraph Security & Quality
+        AutoShield[AutoShield / Feedback Loop]
+        SolidityGuard[Solidity Guard v3.2]
+    end
 ```
 
-### 2. Initialize Project
-```bash
-cd dasafo_FACTORY
-./init_project.sh ProjectName
-```
+### 🧠 1. The Brain: `dasafo_FACTORY/`
+The immutable repository of identity, laws, and executive power.
+*   **`00_GLOBAL_KNOWLEDGE`**: The Factory Constitution. Coding standards, ADR laws, and scientific rigor.
+*   **`01-05 Departments`**: specialized agent silos (Strategy, Architecture, Production, Compliance, Ops).
+*   **`06_SKILL_LIBRARY`**: The **Modular Toolbox**. 80+ executable Python modules (`run.py`) invoked via the centralized `skill_engine.py`.
 
-### 3. Inject Context
-```bash
-export TARGET_PROJECT="/absolute/path/to/ProjectName"
-```
+### 🧱 2. The Power Grid: `INFRA/`
+Centralized "Vivero" of high-performance shared services for all projects.
+*   **Neo4j (`kg-db`)**: Central Knowledge Graph (4GB RAM limit).
+*   **Postgres (`shared-db`)**: Relational operational storage (2G RAM limit).
+*   **Glances**: Real-time health and performance monitoring node.
+*   **Isolated Network**: All services communicate via the internal `dasafo_network`.
 
-### 4. Kick-Off
-Invoke the Orchestrator via the `/factory-orchestrate` command to start the Discovery phase.
+### 🛠️ 3. The Workshop: `PROJECTS/`
+The mutable workspace where projects are born and evolved.
+*   **WORKSPACE**: Production-ready code (Backend, Frontend, Shared).
+*   **TASKS (Industrial Kanban)**: Physical task mirroring (`01_PENDING` to `05_REJECTED`).
+*   **LOGS**: Granular telemetry of every agent session and incident.
+
+---
+
+## ⚙️ The Modular Engine (v3.2.0-S)
+
+Unlike standard AI setups, dasafo_Systems uses a **Skill-Based Executive Engine**:
+*   **`factory_cli.py` (MCP Bridge)**: Seamless communication between the assistant and the factory.
+*   **`skill_engine.py`**: Dynamic module loading for total portability.
+*   **`skill_schema.py`**: Standardized contracts (`SkillInput`/`SkillOutput`) ensuring that actions are predictable and auditable.
+
+---
+
+## 🛡️ Solidity & Security Protocols
+
+*   **Customs Protocol (Aduana Universal)**: Zero phase-skipping. Transitions (M1-M5) are blocked until all tasks are physically verified.
+*   **AutoShield Loop**: Every project failure or hallucination is recorded in `FEEDBACK-LOG.md`. The system "learns" and prevents these errors in future runs.
+*   **Atomic Design**: Mandatory premium UI standards (Glassmorphism, Dark Mode, Micro-animations).
+*   **SI Unit Mandate**: 100% enforcement of metric standards for technical and scientific data.
+
+---
+
+## 🕹️ Power Commands (Slash Commands)
+
+| Command | Industrial Impact |
+| :--- | :--- |
+| **`/factory-orchestrate`** | Advances the industrial pipeline and assigns next-phase tasks. |
+| **`/scan`** | Executes the `agentic-thought-secret-scanner` and quality audits. |
+| **`/factory-status`** | Visual report of project progress and infrastructure health. |
+| **`/audit`** | Destructive requirement validation before final task closure. |
+| **`/arch-diagram`** | Generates real-time Mermaid architecture diagrams. |
+
+---
+
+## 🚀 Quick Start: Deployment
+
+1.  **Initialize Infrastructure**:
+    ```bash
+    cd dasafo_Systems/INFRA
+    cp .env.shared .env  # Configure your secure passwords
+    docker-compose up -d
+    ```
+2.  **Bootstrap a Project**:
+    ```bash
+    cd dasafo_FACTORY
+    ./init_project.sh ProjectName
+    ```
+3.  **Define Strategy**:
+    Invoke the **PRODUCT_OWNER** 📋 to draft the `PRP_CONTRACT.json` in `LOCAL_KNOWLEDGE/`.
+4.  **Execute Phase M1**:
+    Once the contract is signed by the human, use **`/factory-orchestrate`** to begin the mission.
+
+---
+
+## 📚 Documentation
+Detailed departmental guides are available in the [Informacion/](file:///home/david/Documents/AI/AGENTES/dasafo_Systems/Informacion/) directory (In Spanish):
+- [Master Manual](file:///home/david/Documents/AI/AGENTES/dasafo_Systems/Informacion/MANUAL_SISTEMA_DASAFO.md)
+- [00 Global Knowledge](file:///home/david/Documents/AI/AGENTES/dasafo_Systems/Informacion/00_GLOBAL_KNOWLEDGE.md)
+- [06 Skill Library](file:///home/david/Documents/AI/AGENTES/dasafo_Systems/Informacion/06_SKILL_LIBRARY.md)
 
 ---
 
 <p align="center">
-  <i>"Move fast in a way that future agents can understand, extend, and trust."</i>
+  <i>"Industrializing the Future of Autonomous Software Engineering"</i>
 </p>
+
+---
+*v3.2.0-S Modular Toolbox | dasafo_Systems — Solidity, Vibe, Industrialization.*

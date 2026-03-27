@@ -1,45 +1,56 @@
-# 🏗️ 03_PRODUCTION | El Taller de Artesanía (v3.1.5)
+# 🏗️ 03_PRODUCTION | El Taller de Artesanía y Ejecución (v3.2.0-S)
 
-El departamento de Producción transforma los planos de arquitectura en código funcional, optimizado y visualmente premium.
+El departamento de Producción transforma los planos de arquitectura en código funcional, optimizado y visualmente premium. Es el lugar donde la visión se convierte en realidad tangible mediante la excelencia técnica y el rigor industrial.
 
----
-
-### 🤖 Agentes Clave
-
-#### 1. BACKEND_DEV (El Ingeniero de Lógica)
-Construye el núcleo del sistema, APIs y integraciones.
-*   **Especialidad:** FastAPI, patrones de repositorio, concurrencia asíncrona y robustez en el manejo de errores.
-*   **Estándar:** Código 100% tipado y alineado con los DTOs definidos por el Arquitecto.
-
-#### 2. FRONTEND_DEV (El Maestro de la Interfaz)
-Crea interfaces que generan "Vibe". No hace MVPs simples, hace productos premium.
-*   **Especialidad:** React/Next.js, Framer Motion para transiciones fluidas, Shadcn UI y cumplimiento estricto de los Design Tokens.
-*   **Meta:** Estética de alto nivel (Dark mode, glassmorphism, micro-animaciones).
-
-#### 3. DB_MASTER (El Guardián de los Datos)
-Diseña y optimiza la base de datos para que sea sólida y rápida.
-*   **Especialidad:** PostgreSQL/Supabase, optimización de queries SQL, migraciones seguras y modelado de datos complejo.
-
-#### 4. DATA_SCIENTIST (El Analista Predictivo)
-Implementa modelos de ML y realiza análisis estadístico riguroso.
-*   **Especialidad:** Scikit-learn, Pandas avanzado y integración con NotebookLM para análisis de conocimiento.
-
-### 🚀 Motor de Ejecución (Skills v3.1)
-
-Este departamento transforma los planos en realidad funcional mediante habilidades (`skills`) ejecutables:
-
-*   **`async-fastapi-logic` & `resilient-error-handling` (BACKEND_DEV):** Generación de lógica asíncrona y envoltorios de reintento robustos.
-*   **`atomic-design-tokens` (FRONTEND_DEV):** Generador de variables CSS semánticas para el sistema de diseño premium.
-*   **`database-architect-strategic` & `sql-performance-tuner` (DB_MASTER):** Diseño de esquemas relacionales y auditoría de rendimiento SQL.
-*   **`research-data-analysis` (DATA_SCIENTIST):** Análisis estadístico y EDA automatizado usando el estándar `pandas` v3.1.5.
+En la versión **v3.2.0-S "Modular Toolbox"**, la producción se rige por la **Inmutabilidad**, el **Diseño Atómico** y el cumplimiento estricto de los contratos definidos por los departamentos de estrategia y arquitectura.
 
 ---
 
-### 🛠️ Reglas de Oro de Producción
+### 🤖 Agentes Clave y Especialidades (v3.2.0-S)
 
-- **Cero Código Huérfano:** Todo componente UI de más de 20 líneas debe ser extraído a un componente reutilizable.
-- **Inmutabilidad por Defecto:** Tratar los datos como inmutables para evitar efectos secundarios ocultos.
-- **Tipado Estricto:** Se prohíbe el uso de tipos genéricos; todo debe tener un contrato claro definido en los esquemas.
+#### 1. BACKEND_DEV ⚙️ (Ingeniero de Lógica Asíncrona)
+Construye el núcleo del sistema, APIs robustas e integraciones complejas.
+*   **Dominio Técnico:** FastAPI, patrones de repositorio, concurrencia asíncrona y robustez en el manejo de errores resilientes.
+*   **Mandato:** Código 100% tipado y alineado con los DTOs (Data Transfer Objects) definidos por el Arquitecto. No se permite lógica de negocio "huérfana" fuera de los servicios autorizados.
+
+#### 2. FRONTEND_DEV 🎨 (Maestro de la Interfaz Predictiva)
+Crea interfaces que generan "Vibe" y productos premium, no simples MVPs.
+*   **Dominio Técnico:** React/Next.js, Framer Motion para micro-animaciones fluidas y Shadcn UI para componentes accesibles.
+*   **Resiliencia Visual:** Cada componente debe manejar estados de Carga (Loading), Error, Vacío (Empty) y Desbordamiento (Data Overflow) mediante el uso estricto de **Design Tokens**.
+
+#### 3. DB_MASTER 🗄️ (Guardián de la Integridad de Datos)
+Diseña y optimiza el almacenamiento para que el sistema sea sólido, rápido y escalable.
+*   **Dominio Técnico:** PostgreSQL/Supabase, optimización de queries SQL, migraciones seguras y modelado de datos complejo compatible con el nodo `INFRA`.
+*   **Rendimiento:** Auditoría constante del rendimiento SQL para evitar cuellos de botella en producción.
+
+#### 4. DATA_SCIENTIST 🔬 (Analista Científico e Investigador Predictivo)
+Extrae insights experimentales y construye modelos científicamente rigurosos.
+*   **Dominio Técnico:** Modelos de ML con Scikit-learn, procesamiento de datos con Pandas avanzado e integración con **NotebookLM Nexus** para la destilación de conocimiento científico.
+*   **Rigor Métrico:** Cumplimiento total del mandato de **Unidades SI** y validación estadística de cada resultado.
 
 ---
-*Aquí la visión se convierte en realidad tangible mediante la excelencia técnica.*
+
+### 🚀 Motor Ejecutivo: Skills de Producción v3.2.0-S
+
+El taller opera mediante el **Modular Toolbox**, invocando habilidades de alto rendimiento:
+
+*   **Ingeniería de Lógica:**
+    *   `async-fastapi-logic`: Generación de lógica asíncrona y escalable.
+    *   `resilient-error-handling`: Envolturas de reintento y gestión de fallos.
+*   **Artesanía Visual:**
+    *   `atomic-design-tokens`: Generador de variables CSS semánticas para una estética premium consistente.
+    *   `premium-dashboard-architecture`: Diseño estructural de interfaces SaaS de alta gama.
+*   **Gestión de Datos:**
+    *   `database-architect-strategic`: Diseño de esquemas relacionales industriales.
+    *   `pandas-vectorized-pro`: Manipulación de datos de alta eficiencia.
+    *   `ml-experiment-log`: Registro sistemático de resultados de simulaciones y modelos.
+
+---
+
+### 🛠️ Reglas de Oro de Producción v3.2.0-S
+- **Cero Código Huérfano:** Cualquier elemento que supere las ~20 líneas visuales debe ser extraído a un componente o servicio reutilizable.
+- **Inmutabilidad por Defecto:** Los datos se tratan como inmutables para prevenir efectos secundarios en la evolución multi-agente.
+- **Preflight Mandatory:** Es obligatorio ejecutar `autoshield-preflight-check` antes de iniciar cualquier sprint de producción para asegurar la integridad de las rutas y dependencias.
+
+---
+*Información de Producción v3.2.0-S | dasafo_Systems.*
