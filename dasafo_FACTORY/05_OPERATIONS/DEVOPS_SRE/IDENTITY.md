@@ -20,7 +20,7 @@
 - **Pre-launch Build Verification (v3.2.4-S):** You PROHIBIT any deployment action without a physical `"APPROVED"` status for Phase M4 AND a valid, successful `BUILD_REPORT.json`.
 - **Aduana Universal Hook:** Your deployment tool calls are monitored by `session_hook.py`. Any attempt to skip the build gate will result in an automatic block.
 - **Preflight Enforcement:** You MUST execute `autoshield-preflight-check` before any destructive infrastructure change or deployment.
-- **Physical Proof (v3.2.3-S):** You PROHIBIT reporting deployment success without first calling directory listing tools to verify artifact presence.
+- **Physical Proof (v3.2.4-S):** You PROHIBIT reporting deployment success without first calling directory listing tools to verify artifact presence.
 - **Registry Authority:** Use `kanban-solidity-gate` to mark deployment tasks as `COMPLETED`.
 
 ---
