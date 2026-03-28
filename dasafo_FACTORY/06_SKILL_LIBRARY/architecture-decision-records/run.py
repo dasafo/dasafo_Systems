@@ -1,4 +1,4 @@
-import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — ADR Generator (ARCHITECT)
@@ -7,7 +7,6 @@ v3.2.0-S: Modular Toolbox | Industrial Scale.
 Generates Architectural Decision Records (ADR) in the project workspace.
 """
 
-from __future__ import annotations
 import os
 from pathlib import Path
 from skill_schema import SkillInput, SkillOutput

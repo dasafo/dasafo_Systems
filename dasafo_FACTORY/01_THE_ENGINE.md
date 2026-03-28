@@ -84,6 +84,11 @@ Agents do not "run commands"; they **perceive** and **act** through the Sensory 
 - **NotebookLM Sense:** Deep research and source synthesis (Phases M1/M2).
 - **Custom Skills (`run.py`):** Executable logic tailored for specific agent roles.
   - **Constraint:** All skills reside in **`06_SKILL_LIBRARY/`**. Agents invoke them modularly. Mandatory execution of `kanban-solidity-gate` for phase transitions (Checks **TASKS/registry.json** as SSoT) and state-gate (linked to **PROJECT_STATE.json**).
+  - **🚨 Human-in-the-Loop Mutation Gate (v3.2.5-S):** Direct modification of any `run.py` within `06_SKILL_LIBRARY/` is **STRICTLY PROHIBITED** without an explicit **Mutation Proposal**.
+    - **Step 1:** The agent MUST diagnose the error or improvement.
+    - **Step 2:** The agent MUST show the exact code diff to be applied.
+    - **Step 3:** The agent MUST wait for an explicit user approval (e.g., "@David, I approve the mutation for skill X"). 
+    - **Exception:** Only `FACTORY_EVOLVER` can propose mutations as part of its core identity. All other agents must justify the "Critical Fault" causing the need for change.
 
 ---
 

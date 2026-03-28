@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "dasafo_factory/feedback_entry/v2.0",
+  "$id": "dasafo_factory/feedback_entry/v3.3",
   "title": "Feedback Log Entry Schema",
-  "description": "Machine-parseable schema for FEEDBACK-LOG entries. Enables automated pre-flight checks and pattern analysis.",
+  "description": "Machine-parseable schema for FEEDBACK-LOG entries. Enables automated pre-flight checks and pattern analysis (Stark-Solidity Guard v3.3.0-S).",
   "type": "object",
   "required": ["id", "version", "timestamp", "context", "severity", "error_description", "correction", "golden_rule", "categories"],
   "properties": {
@@ -13,17 +13,17 @@
     },
     "version": {
       "type": "string",
-      "pattern": "^v\\d+\\.\\d+$",
-      "description": "Semantic version of the feedback log when this entry was added."
+      "pattern": "^v\\d+\\.\\d+\\.\\d+(-[A-Z]+)?$",
+      "description": "Semantic version of the factory standard (e.g., 'v3.3.0-S')."
     },
     "timestamp": {
       "type": "string",
-      "format": "date",
-      "description": "ISO 8601 date when the error was discovered."
+      "format": "date-time",
+      "description": "ISO 8601 date-time when the error was discovered."
     },
     "context": {
       "type": "object",
-      "required": ["agent", "project"],
+      "required": ["agent", "project", "phase"],
       "properties": {
         "agent": {
           "type": "string",
@@ -31,7 +31,17 @@
         },
         "project": {
           "type": "string",
-          "description": "Project where the error occurred (e.g., 'Pulse-X')."
+          "description": "Project where the error occurred (e.g., 'ContentRepurpose')."
+        },
+        "phase": {
+          "type": "string",
+          "enum": ["M1_DISCOVERY", "M2_ARCHITECTURE", "M3_PRODUCTION", "M4_COMPLIANCE", "M5_OPERATIONS"],
+          "description": "The exact lifecycle phase where the error occurred."
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^M[1-5]-\\d{3}$",
+          "description": "Optional. The specific Task ID associated with the error (e.g., 'M3-001')."
         },
         "file": {
           "type": "string",
@@ -74,7 +84,11 @@
           "performance",
           "data-integrity",
           "dependency",
-          "infrastructure"
+          "infrastructure",
+          "solidity-guard",
+          "zero-trust",
+          "containerization",
+          "mcp-bridge"
         ]
       },
       "description": "Category tags for automated pre-flight filtering."

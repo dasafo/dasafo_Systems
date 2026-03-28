@@ -1,10 +1,11 @@
 {
   "project": "[PROJECT_NAME]",
   "version": "1.0.0",
-  "factory_standard": "v3.2.0-S",
+  "factory_standard": "v3.3.0-S",
   "prp_status": "draft",
   "validated_at": null,
   "validated_by": null,
+  "zero_trust_clearance": null,
   "vision": {
     "what": "[DESCRIPTION]",
     "why": "[BENEFIT]",

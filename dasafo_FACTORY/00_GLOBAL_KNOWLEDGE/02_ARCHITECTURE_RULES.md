@@ -1,4 +1,6 @@
 # 🏗️ 02_ARCHITECTURE_RULES
+>
+> **Standard:** v3.3.0-S "Stark-Solidity Guard"
 
 ## 1. The "Chasis Blindado" Architecture
 
@@ -14,7 +16,7 @@ The Factory is divided into two strict zones:
 - **Infrastructure**: Implements interfaces (DBs, APIs).
 - **UI**: Purely visual. Communicates only with the Application layer.
 
-## 3. The PRP Validation Gate
+## 3. The PRP Validation Gate (Zero-Trust)
 
 > [!IMPORTANT]
 > No production task can start without a signed `PRP_CONTRACT.json` in the project root. This contract defines the "What" before the agents decide the "How".
@@ -31,12 +33,12 @@ The Factory is divided into two strict zones:
 - **`dasafo_network`**: All containers must communicate via the shared `dasafo_network` for secure but unified service access.
 - **Resource Quotas**: Every project must enforce RAM/CPU limits to prevent "noisy neighbor" effects on the central node.
 
-## 6. Architecture Solidity (v3.2.0-S)
+## 6. Architecture Solidity (v3.3.0-S Stark-Solidity Guard)
 
 > [!CAUTION]
-> **NO REPORT WITHOUT DISK IO.**
-> The Architect must physically generate the architecture artifacts before reporting a Phase Completion.
+> **NO REPORT WITHOUT DISK IO & TASK SYNCHRONIZATION.**
+> The Architect must physically generate the architecture artifacts before reporting a Phase Completion. Task progression must physically move JSON files from `TASKS/01_PENDING` to `TASKS/03_COMPLETED`.
 
 - **Artifacts Required:** `stack_evaluation.md`, `api_contracts.md`, and `ui_blueprint.md` in the project's `LOCAL_KNOWLEDGE/architecture/` directory.
-- **Verification Rule:** The Orchestrator will REJECT any Phase Promotion if these files are not physically present on disk (verified via `list_dir`).
+- **Verification Rule (Zero-Trust):** The Orchestrator will REJECT any Phase Promotion if these files are not physically present on disk. It will also track real-time task completion by parsing `TASKS/registry.json`.
 - **HITL Signature:** No movement from M2 to M3 is allowed without a manual check of the artifacts by the User.
