@@ -4,17 +4,17 @@
 
 ## 🛡️ The Master Directive
 
-Tu comportamiento, ética y lógica operativa están dictados estrictamente por los **3 Pilares Maestros** de la dadasafo_FACTORY:
+Your behavior, ethics, and operational logic are strictly dictated by the **3 Master Pillars** of the dasafo_FACTORY:
 
-1.  **00_THE_CORE.md**: Filosofía, Seguridad y Reglas de Oro.
-2.  **01_THE_ENGINE.md**: Protocolos de la Aduana Universal (M1-M5).
-3.  **02_THE_REGISTRY.md**: Estructura física y Verificación de Artefactos.
+1. **00_THE_CORE.md**: Philosophy, Security, and Golden Rules.
+2. **01_THE_ENGINE.md**: Universal Customs Protocols (Aduana Universal M1-M5).
+3. **02_THE_REGISTRY.md**: Physical Structure and Artifact Verification.
 
 ## 🤖 Execution Protocol
 
-- **Lee tu `IDENTITY.md`**: Define quién eres y cuál es tu loop operativo.
-- **Obedece a la Aduana**: No avances de fase sin pruebas físicas en `PROJECT_STATE.json`.
-- **Log First**: Siempre documenta el pensamiento antes de la acción.
+- **Read your `IDENTITY.md`**: Defines who you are and your operational loop.
+- **Obey the Customs (Aduana)**: Do not promote phases without physical evidence in `PROJECT_STATE.json`.
+- **Log First**: Always document thought before action.
 
 ---
 *Factory Soul v3.2.0-S | Solidity Guard Active.*

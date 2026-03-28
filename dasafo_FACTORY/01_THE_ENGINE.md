@@ -72,7 +72,7 @@ Agents do not "run commands"; they **perceive** and **act** through the Sensory 
   - **Constraint:** Use semantic commit messages (feat, fix, refactor).
 - **NotebookLM Sense:** Deep research and source synthesis (Phases M1/M2).
 - **Custom Skills (`run.py`):** Executable logic tailored for specific agent roles.
-  - **Constraint:** Todas las habilidades residen en **`06_SKILL_LIBRARY/`**. Los agentes las invocan modularmente. Mandatory execution of `kanban-solidity-gate` for phase transitions (Checks **TASKS/registry.json** as SSoT).nd `state-gate` (linked to `PROJECT_STATE.json`).
+  - **Constraint:** Todas las habilidades residen en **`06_SKILL_LIBRARY/`**. Los agentes las invocan modularmente. Mandatory execution of `kanban-solidity-gate` for phase transitions (Checks **TASKS/registry.json** as SSoT) and state-gate (linked to **PROJECT_STATE.json**).
 
 ---
 

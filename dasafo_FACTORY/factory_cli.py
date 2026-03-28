@@ -70,6 +70,30 @@ def main():
                     # Target project strictly from environment variable
                     target_project = os.environ.get("TARGET_PROJECT", ".")
                     
+                    # --- SESSION HOOK (ADUANA UNIVERSAL) ---
+                    try:
+                        from session_hook import verify_project_state
+                        is_allowed, reason = verify_project_state(target_project, skill)
+                        if not is_allowed:
+                            response = {
+                                "jsonrpc": "2.0", "id": msg_id,
+                                "result": {
+                                    "content": [{"type": "text", "text": f"Solidity Protocol Blocked: {reason}\nOnly authorized skills (stay passive if blocked) can be executed until state is valid."}]
+                                }
+                            }
+                            sys.stdout.write(json.dumps(response) + "\n"); sys.stdout.flush()
+                            continue
+                    except Exception as e:
+                        response = {
+                            "jsonrpc": "2.0", "id": msg_id,
+                            "result": {
+                                "content": [{"type": "text", "text": f"Solidity Protocol Fatal Error in Hook: {e}"}]
+                            }
+                        }
+                        sys.stdout.write(json.dumps(response) + "\n"); sys.stdout.flush()
+                        continue
+                    # ---------------------------------------
+                    
                     cmd = [
                         sys.executable, str(RUNNER_PATH),
                         "--agent", agent,

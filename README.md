@@ -22,14 +22,15 @@ The system is organized into three specialized nodes that ensure total isolation
 graph TD
     User((User)) --> Orch["👑 ORCHESTRATOR"]
     Orch --> Brain["dasafo_FACTORY"]
-    Brain --> Depts["00-06 Departments"]
+    Brain --> Depts["01-05 Specialized Departments"]
     Depts --> Skills["06_SKILL_LIBRARY"]
-    Skills --> Projs["PROJECTS / Mutable Workspace"]
+    Skills --> Gate["Aduana Universal (session_hook.py)"]
+    Gate --> Projs["PROJECTS / Mutable Workspace"]
     Projs <--> Infra["INFRA / Shared Services"]
-    
-    subgraph Security_Quality ["Security & Quality"]
+
+    subgraph Security_Quality ["Solidity Guard v3.2.0-S"]
         AutoShield["AutoShield / Feedback Loop"]
-        SolidityGuard["Solidity Guard v3.2.0-S"]
+        PhysicalGate["Phase Locking / Zero-Trust"]
     end
 ```
 
@@ -38,7 +39,11 @@ graph TD
 The immutable repository of identity, laws, and executive power.
 
 * **`00_GLOBAL_KNOWLEDGE`**: The Factory Constitution. Coding standards, ADR laws, and scientific rigor.
-* **`01-05 Departments`**: specialized agent silos (Strategy, Architecture, Production, Compliance, Ops).
+* **`01_STRATEGY_AND_MARKETING`**: Mission definition and growth strategy.
+* **`02_ARCHITECTURE_AND_RESEARCH`**: System design and semantic discovery.
+* **`03_PRODUCTION`**: Atomic development (Frontend, Backend, Data).
+* **`04_COMPLIANCE_AND_QUALITY`**: Guardians of Solidity (QA, Security, Docs).
+* **`05_OPERATIONS`**: Deployment, SRE, and Factory Evolution.
 * **`06_SKILL_LIBRARY`**: The **Modular Toolbox**. 80+ executable Python modules (`run.py`) invoked via the centralized `skill_engine.py`.
 
 ### 🧱 2. The Power Grid: `INFRA/`
@@ -67,6 +72,7 @@ Unlike standard AI setups, dasafo_Systems uses a **Skill-Based Executive Engine*
 * **`factory_cli.py` (MCP Bridge)**: Seamless communication between the assistant and the factory.
 * **`skill_engine.py`**: Dynamic module loading for total portability.
 * **`skill_schema.py`**: Standardized contracts (`SkillInput`/`SkillOutput`) ensuring that actions are predictable and auditable.
+* **`session_hook.py` (Aduana Universal)**: The **Physical Enforcement Layer**. Intercepts every tool call to verify project state before execution, ensuring zero phase-skipping.
 
 ---
 

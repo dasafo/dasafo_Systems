@@ -16,6 +16,7 @@
 - `architecture-decision-records`: ADR generation for systemic transparency.
 - `design-token-definition`: Atomic design system tokenization.
 - `tech-stack-evaluator`: Trade-off analysis for proposed technologies.
+- `project-management`: Task status updates in the registry.
 - `autoshield-preflight-check`: Mandatory pre-execution validation.
 - `kanban-solidity-gate`: Mandatory gate for phase transitions and registry updates.
 

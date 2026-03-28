@@ -31,7 +31,7 @@ The Factory is divided into two strict zones:
 - **`dasafo_network`**: All containers must communicate via the shared `dasafo_network` for secure but unified service access.
 - **Resource Quotas**: Every project must enforce RAM/CPU limits to prevent "noisy neighbor" effects on the central node.
 
-## 6. Architecture Solidity (v3.2.0-S-S)
+## 6. Architecture Solidity (v3.2.0-S)
 
 > [!CAUTION]
 > **NO REPORT WITHOUT DISK IO.**

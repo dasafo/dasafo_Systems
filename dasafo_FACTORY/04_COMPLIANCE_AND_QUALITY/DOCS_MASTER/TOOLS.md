@@ -16,6 +16,7 @@
 - `documentation-strategist`: Information architecture planning.
 - `senior-technical-writer`: High-clarity industrial-grade writing.
 - `user-experience-copywriter`: User-centric microcopy and onboarding.
+- `prp-validation-gate`: Verification against initial discovery contract.
 - `autoshield-preflight-check`: Mandatory pre-execution validation.
 - `kanban-solidity-gate`: Mandatory gate for updating task status in the Registry SSoT.
 

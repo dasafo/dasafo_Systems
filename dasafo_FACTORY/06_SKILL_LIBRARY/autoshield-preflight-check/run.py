@@ -22,21 +22,11 @@ def run(skill_input: SkillInput) -> SkillOutput:
         target = skill_input.target_project or os.environ.get("TARGET_PROJECT")
         
         if not target:
-            return SkillOutput.failure(
-                agent=agent,
-                skill=skill,
-                error="INDUSTRIAL LOCK: TARGET_PROJECT environment variable is missing.",
-                correlation_id=cid
-            )
+            return SkillOutput.failure(agent, skill, "INDUSTRIAL LOCK: TARGET_PROJECT environment variable is missing.", cid)
 
         project_path = Path(target).resolve()
         if not project_path.exists():
-            return SkillOutput.failure(
-                agent=agent,
-                skill=skill,
-                error=f"VALIDATION FAILED: Target path {project_path} does not exist.",
-                correlation_id=cid
-            )
+            return SkillOutput.failure(agent, skill, f"VALIDATION FAILED: Target path {project_path} does not exist.", cid)
 
         # 2. Log Execution (Cumpliendo la promesa del SKILL.md)
         log_dir = project_path / "LOGS" / "agents"
@@ -61,16 +51,10 @@ def run(skill_input: SkillInput) -> SkillOutput:
         return SkillOutput.success(
             agent=agent,
             skill=skill,
-            data=result_payload, # Estandarizado a v3.2.0-S result/data key
+            result=result_payload,
             correlation_id=cid,
-            artifacts=[str(agent_log_path)] # Trazabilidad física para el Solidity Guard
+            artifacts=[str(agent_log_path)]
         )
 
     except Exception as e:
-        # Manejo de Errores Resiliente v3.2.0-S
-        return SkillOutput.failure(
-            agent=agent, 
-            skill=skill, 
-            error=f"Critical Preflight Failure: {str(e)}", 
-            correlation_id=cid
-        )
+        return SkillOutput.failure(agent, skill, f"Critical Preflight Failure: {str(e)}", cid)
