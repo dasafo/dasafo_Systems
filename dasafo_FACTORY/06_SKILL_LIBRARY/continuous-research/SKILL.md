@@ -21,12 +21,19 @@ Orchestrate multi-source technical research using documentation, web search, and
 - `file_path`: (string) Absolute path where research was saved.
 
 ### ⚖️ Mandato SI (Sistema Internacional)
+
 Cualquier dato cuantitativo encontrado en la investigación (benchmarks, latencias, anchos de banda) debe verificarse y reportarse bajo el Sistema Internacional de Unidades.
 
+## 🛡️ Industrial Constraints (Zero-Trust)
+
+- **Research Engine Lock:** Requires `SERPAPI_API_KEY` or `TAVILY_API_KEY`. Mocking research results from internal training data is FORBIDDEN.
+- **Persistence:** Results must be physically persisted in `LOCAL_KNOWLEDGE/research/`.
+
 ## 🛠️ Research Process
-1.  **Identify Channels:** Documentation, Best Practices, Web Scraping.
-2.  **Execution:** Focus on patterns, implementation depth, and quantitative metrics.
-3.  **Synthesis:** Summarize into cohesive Markdown in `$TARGET_PROJECT/LOCAL_KNOWLEDGE/`.
+
+1. **Identify Channels:** Documentation, Best Practices, Web Scraping via physical APIs.
+2. **Execution:** Focus on patterns and quantitative physical metrics.
+3. **Synthesis:** Physically write Markdown findings to `$TARGET_PROJECT/LOCAL_KNOWLEDGE/`.
 
 ---
 *Skill v3.2.0-S | Status: Standardized.*

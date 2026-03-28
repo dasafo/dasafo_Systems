@@ -11,23 +11,29 @@ import subprocess
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Standardized entry point for the skill."""
+    """Industrialized entry point: Physical Diagnostic Node."""
     agent = "DEVOPS_SRE"
     skill = "self-healing-deployment"
     cid = skill_input.correlation_id
 
     try:
-        # 1. Logic (Pulse Check Simulation)
-        # In a real shell: subprocess.run(["docker", "info"], ...)
-        docker_status = "HEALTHY"
+        # 1. Logic (Physical Pulse Check)
+        docker_status = "CRITICAL"
         issues = []
         actions = []
         
-        # Simulated failure
-        if os.environ.get("DEBUG_TEST_FAILURE") == "true":
-             docker_status = "REPAIRED"
-             issues.append("Docker daemon was down.")
-             actions.append("sudo systemctl start docker")
+        try:
+            # Check docker
+            cmd = ["docker", "info"]
+            res = subprocess.run(cmd, capture_output=True, text=True, timeout=5)
+            if res.returncode == 0:
+                 docker_status = "HEALTHY"
+            else:
+                 issues.append("Docker daemon unreachable.")
+                 actions.append("sudo systemctl start docker")
+        except Exception:
+            issues.append("Docker binary omitted or unresolvable.")
+            actions.append("apt install docker.io")
 
         return SkillOutput.success(
             agent=agent,
@@ -35,7 +41,8 @@ def run(skill_input: SkillInput) -> SkillOutput:
             result={
                 "env_health": docker_status,
                 "diagnostics": issues,
-                "healing_actions": actions
+                "healing_actions": actions,
+                "industrial_verification": True
             },
             correlation_id=cid,
             artifacts=[]

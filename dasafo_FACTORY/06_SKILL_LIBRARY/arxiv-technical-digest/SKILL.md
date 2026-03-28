@@ -22,10 +22,14 @@ Fetch and digest the technical core of scientific papers by analyzing their LaTe
 ### ⚖️ Mandato SI (Sistema Internacional)
 Cualquier métrica numérica (frecuencias, latencias, tamaños de modelo, etc.) extraída del paper o generada durante el procesamiento debe expresarse en unidades del Sistema Internacional.
 
+## 🛡️ Industrial Constraints (Zero-Trust)
+- **Physical Fetch:** This skill MUST query the ArXiv API. Mocks are detected via missing Digest artifacts in `LOCAL_KNOWLEDGE`.
+- **Artifact Trace:** Every digest must be physically present on disk to be considered `SkillOutput.success`.
+
 ## Protocol
-1.  **Normalize:** Identify the ArXiv ID and point to the metadata API.
-2.  **Fetch Metadata:** Download entry details (title, summary, authors).
-3.  **Summary Generation:** Produce a technical breakdown in `$TARGET_PROJECT/LOCAL_KNOWLEDGE/research/PAPER_SUMMARY_{ID}.md`.
+1.  **Normalize:** Identify ID.
+2.  **Fetch Metadata:** Physically download entry details.
+3.  **Summary Generation:** Produce physical Breakdown in `$TARGET_PROJECT/LOCAL_KNOWLEDGE/research/`.
 4.  **Output Focus:** Focus on formulas, pseudocode, and limitations.
 
 ---

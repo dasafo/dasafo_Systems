@@ -21,14 +21,22 @@ Maintain the factory's workspace clean of temporary residues, dead caches, and s
 - `status`: (string) "CLEAN" | "MAINTENANCE_REQUIRED".
 
 ### ⚖️ Mandato SI (Sistema Internacional)
+
 Cualquier métrica de limpieza (tamaño de archivos eliminados, tiempo de ejecución de la limpieza) debe reportarse estrictamente en unidades del Sistema Internacional (bytes, segundos).
 
+## 🛡️ Industrial Constraints (Zero-Trust)
+
+- **Physical Recouperation:** This skill MUST physically calculate recovered bytes after `unlink` or `rmtree` operations.
+- **Hierarchy Safety:** Only targets specific cache/temp directories. Random deletions outside designated paths are forbidden.
+
 ## Protocol
-1.  **Daily:** Prune temporary files in `/tmp/`.
-2.  **Weekly:** Run `npm prune` and clean up dead Docker images.
-3.  **Monthly:** Archive and move logs older than 30 days to `04_ARCHIVE`.
+
+1. **Daily:** Physically prune temporary files in `/tmp/`.
+2. **Weekly:** Run `npm prune` and clean up dead physical Docker images.
+3. **Monthly:** Archive and move logs older than 30 days to `04_ARCHIVE`.
 
 ## Safety
+
 NEVER delete a file with a non-compressed counterpart unless it is a terminal-generated temporary file.
 
 ---

@@ -23,13 +23,20 @@ Establish a formal, immutable log of technical decisions, explaining the "Why" b
 - `status`: (string) "ACCEPTED" | "PROPOSED".
 
 ### ⚖️ Mandato SI (Sistema Internacional)
+
 Cualquier métrica técnica referenciada en el ADR (ej: tiempos de respuesta requeridos, límites de memoria, anchos de banda) debe utilizar obligatoriamente el Sistema Internacional.
 
+## 🛡️ Industrial Constraints (Zero-Trust)
+
+- **Immutable Persistence:** ADRs must be physically written to `DOCS/ADR/` within the `TARGET_PROJECT`. Failure to write a physical artifact results in skill failure.
+- **Sequential Integrity:** The skill verifies the current physical list of ADRs to suggest the next ID, avoiding collisions in a multi-agent environment.
+
 ## Workflow
-1.  **Draft:** Create an ADR when a significant tech stack or structural choice is made.
-2.  **Format:** Use the MADR format (Context, Alternatives, Decision, Consequences).
-3.  **Persist:** Save in `$TARGET_PROJECT/DOCS/ADR/ADR-XXX-title.md`.
-4.  **Index:** Maintain a `README.md` index in the same folder with the current status of each ADR (Accepted, Deprecated, Proposed).
+
+1. **Draft:** Create an ADR when a significant tech stack or structural choice is made.
+2. **Format:** Use the MADR format (Context, Alternatives, Decision, Consequences).
+3. **Persist:** Physically save in `$TARGET_PROJECT/DOCS/ADR/ADR-XXX-title.md`.
+4. **Index:** Maintain a physical `README.md` index in the same folder.
 
 ---
 *Skill v3.2.0-S | Status: Standardized.*

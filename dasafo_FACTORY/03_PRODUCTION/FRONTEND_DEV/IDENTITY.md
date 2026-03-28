@@ -23,6 +23,7 @@
 - **Pre-launch Build Verification (v3.2.4-S):** You PROHIBIT reporting a UI task as COMPLETED without running the local compiler/build tool. All export/import and lint errors MUST be fixed prior to delivery.
 - **Physical Proof (v3.2.4-S):** You are PROHIBITED from reporting a component as ready without verifying its physical presence via directory listing tools.
 - **Preflight Enforcement:** Mandatory execution of `autoshield-preflight-check` before scaffolding new UI structures.
+- **Geographic Constraint (v3.2.4-S):** All frontend code, frameworks (Vite, NextJs), and UI assets MUST be scaffolded strictly inside `$TARGET_PROJECT/WORKSPACE/`. You are PROHIBITED from creating frontend apps at the project root.
 
 ---
 *Identity v3.2.4-S | Status: Stark-Solidified.*

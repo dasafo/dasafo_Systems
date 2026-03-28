@@ -12,30 +12,35 @@ from datetime import datetime
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Standardized entry point for the skill."""
+    """Industrialized entry point: Standard Structure Scanner."""
     agent = "QA_TESTER"
     skill = "factory-audit-pro"
     cid = skill_input.correlation_id
 
     try:
         # 1. Resolve Paths
-        factory_root = Path(__file__).resolve().parents[4]
+        target = skill_input.target_project or os.environ.get("TARGET_PROJECT")
+        if not target:
+             return SkillOutput.failure(agent, skill, "Missing TARGET_PROJECT for audit.", cid)
         
-        # 2. Logic (Simulated Structural Audit)
+        project_path = Path(target).resolve()
+        
+        # 2. Logic: Physical Project Verification
         findings = []
-        # Check for essential factory files
-        essentials = ["AGENT_REGISTRY.md", "FEEDBACK-LOG.md"]
+        essentials = ["PRP_CONTRACT.json", "TASKS", "LOGS"]
+        
         for file in essentials:
-            if not (factory_root / file).exists():
-                 findings.append(f"CRITICAL: Missing {file}")
+            if not (project_path / file).exists():
+                 findings.append(f"CRITICAL: Missing required factory component '{file}' in project.")
 
         health_score = 100 if not findings else 80
 
         # 3. Report Persistence
         audit_id = f"AUDIT-{datetime.now().strftime('%Y%m%d')}"
-        report_file = factory_root / "LOGS" / "audits" / f"{audit_id}_{cid}.txt"
-        report_file.parent.mkdir(parents=True, exist_ok=True)
-        report_file.write_text(f"Factory Audit Score: {health_score}\nFindings: {findings}", encoding="utf-8")
+        logs_dir = project_path / "LOGS" / "audits"
+        logs_dir.mkdir(parents=True, exist_ok=True)
+        report_file = logs_dir / f"{audit_id}_{cid}.txt"
+        report_file.write_text(f"Project Audit Score: {health_score}\nFindings: {findings}", encoding="utf-8")
 
         return SkillOutput.success(
             agent=agent,
@@ -43,7 +48,9 @@ def run(skill_input: SkillInput) -> SkillOutput:
             result={
                 "health_score": health_score,
                 "findings": findings,
-                "audit_id": audit_id
+                "audit_id": audit_id,
+                "target_verified": str(project_path),
+                "industrial_verification": True
             },
             correlation_id=cid,
             artifacts=[str(report_file)]

@@ -5,13 +5,12 @@ v3.2.0-S: Modular Toolbox | Industrial Scale.
 Audits and maps the documentation architecture of the factory.
 """
 
-from __future__ import annotations
 import os
 from pathlib import Path
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Standardized entry point for the skill."""
+    """Industrialized entry point: Physical Markdown Validation."""
     agent = "TECHNICAL_WRITER"
     skill = "documentation-strategist"
     cid = skill_input.correlation_id
@@ -24,11 +23,27 @@ def run(skill_input: SkillInput) -> SkillOutput:
         
         project_path = Path(target).resolve()
         
-        # 2. Logic (Documentation Audit Simulation)
+        # 2. Physical File Scanning
+        required_docs = {"README.md", "CONTRIBUTING.md", "ARCHITECTURE.md"}
+        found_docs = set()
+        
+        # scan for standard markdown files in root
+        for f in project_path.iterdir():
+            if f.is_file() and f.name in required_docs:
+                found_docs.add(f.name)
+                
+        # scan DOCS folder if exists
+        docs_dir = project_path / "DOCS"
+        if docs_dir.exists():
+            for f in docs_dir.iterdir():
+                if f.is_file() and f.name in required_docs:
+                    found_docs.add(f.name)
+
+        missing_docs = list(required_docs - found_docs)
+        
         hierarchy = {
             "root": str(project_path),
-            "docs": str(project_path / "DOCS"),
-            "logs": str(project_path / "LOGS")
+            "docs_present": str(docs_dir.exists())
         }
 
         return SkillOutput.success(
@@ -36,8 +51,9 @@ def run(skill_input: SkillInput) -> SkillOutput:
             skill=skill,
             result={
                 "hierarchy": hierarchy,
-                "missing_docs": ["CONTRIBUTING.md"],
-                "health_status": "OK"
+                "missing_docs": missing_docs,
+                "health_status": "OK" if not missing_docs else "NEEDS_DOCUMENTATION",
+                "industrial_verification": True
             },
             correlation_id=cid,
             artifacts=[]

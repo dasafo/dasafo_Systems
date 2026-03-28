@@ -5,14 +5,15 @@ v3.2.0-S: Modular Toolbox | Industrial Scale.
 Acts as the 'Eyes of the Factory', validating UI flows via browser automation.
 """
 
-from __future__ import annotations
 import os
+import requests
+import time
 from pathlib import Path
 from datetime import datetime
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Standardized entry point for the skill."""
+    """Industrialized entry point: Physical HTTP/Timing Check."""
     agent = "QA_TESTER"
     skill = "browser-visual-validation"
     cid = skill_input.correlation_id
@@ -23,20 +24,29 @@ def run(skill_input: SkillInput) -> SkillOutput:
         project_name = skill_input.params.get("project", "FACTORY-UX")
         target = skill_input.target_project or os.environ.get("TARGET_PROJECT")
         
-        # 2. Simulation of Browser Logic
-        report = f"""👁️ VISUAL VALIDATION REPORT (v3.2.0-S)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Project: {project_name}
-URL: {url}
-Timestamp: {datetime.now().isoformat()}
+        # 2. Physics check (Actual HTTP Reachability and Timing)
+        start_time = time.time()
+        try:
+            res = requests.get(url, timeout=10)
+            status_code = res.status_code
+        except Exception as e:
+            return SkillOutput.failure(agent, skill, f"Visual Endpoint Unreachable: {url} -> {str(e)}", cid)
+            
+        elapsed_ms = int((time.time() - start_time) * 1000)
+        
+        if status_code >= 400:
+            return SkillOutput.failure(agent, skill, f"Visual Output Error. Status Code: {status_code}. Time: {elapsed_ms}ms.", cid)
 
-FLOWS TESTED:
-  ✅ First Impression: Page loads accurately in 1200ms
-  ✅ Navigation: All system routes functional
-  ✅ Vibe Check: Premium design tokens respected
-
-Result: PASS (Solidity v3.2.0-S)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━"""
+        report = f"👁️ VISUAL VALIDATION REPORT (v3.2.4-S)\n"
+        report += "━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        report += f"Project: {project_name}\n"
+        report += f"URL: {url}\n"
+        report += f"Timestamp: {datetime.now().isoformat()}Z\n\n"
+        report += "PHYSICAL METRICS:\n"
+        report += f"  ✅ Reachability: HTTP {status_code}\n"
+        report += f"  ✅ Performance: TTFB ~{elapsed_ms}ms\n"
+        report += "\nResult: PASS (Industrial Zero-Trust)\n"
+        report += "━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
         artifacts = []
         if target:
@@ -53,7 +63,9 @@ Result: PASS (Solidity v3.2.0-S)
             result={
                 "report": report,
                 "status": "PASS",
-                "url": url
+                "url": url,
+                "elapsed_ms": elapsed_ms,
+                "industrial_verification": True
             },
             correlation_id=cid,
             artifacts=artifacts

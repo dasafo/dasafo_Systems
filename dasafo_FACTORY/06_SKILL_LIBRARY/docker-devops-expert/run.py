@@ -5,39 +5,59 @@ v3.2.0-S: Modular Toolbox | Industrial Scale.
 Audits and optimizes containerized environments.
 """
 
-from __future__ import annotations
 import os
+import re
 from pathlib import Path
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Standardized entry point for the skill."""
+    """Industrialized entry point: Physical Parsing."""
     agent = "DEVOPS_SRE"
     skill = "docker-devops-expert"
     cid = skill_input.correlation_id
 
     try:
         # 1. Resolve Path
-        dockerfile = skill_input.params.get("dockerfile_path") or "Dockerfile"
         target = skill_input.target_project or os.environ.get("TARGET_PROJECT")
+        if not target:
+             return SkillOutput.failure(agent, skill, "Missing TARGET_PROJECT", cid)
+             
+        project_path = Path(target).resolve()
         
-        # 2. Logic (Audit Simulation)
-        # Check for multi-stage, rootless, etc.
-        recommendations = [
-            "Ensure multi-stage builds are used.",
-            "Verify image size is under 500MB (SI)."
-        ]
+        dockerfile_name = skill_input.params.get("dockerfile_path") or "Dockerfile"
+        dockerfile_path = project_path / dockerfile_name
+
+        if not dockerfile_path.exists():
+            return SkillOutput.failure(agent, skill, f"Docker file not found at {dockerfile_path}", cid)
+
+        # 2. Logic: Real parsing
+        content = dockerfile_path.read_text(encoding="utf-8")
+        
+        recommendations = []
+        status = "PASS"
+        
+        if len(re.findall(r"^FROM\s+", content, re.MULTILINE)) < 2:
+            recommendations.append("CRITICAL: Single-stage build detected. Use Multi-Stage builds (v3.2.4-S standard).")
+            status = "AUDIT_FAIL"
+            
+        if "USER" not in content:
+            recommendations.append("WARNING: Dockerfile does not enforce a non-root USER. Violation of Zero-Trust protocol.")
+            status = "AUDIT_FAIL"
+
+        if "HEALTHCHECK" not in content:
+            recommendations.append("INFO: No HTTP/Exec HEALTHCHECK directive embedded in standard image.")
 
         return SkillOutput.success(
             agent=agent,
             skill=skill,
             result={
-                "status": "PASS",
+                "status": status,
                 "recommendations": recommendations,
-                "message": "Docker industrial audit complete."
+                "lines_analyzed": len(content.splitlines()),
+                "industrial_verification": True
             },
             correlation_id=cid,
-            artifacts=[]
+            artifacts=[str(dockerfile_path)]
         )
 
     except Exception as e:

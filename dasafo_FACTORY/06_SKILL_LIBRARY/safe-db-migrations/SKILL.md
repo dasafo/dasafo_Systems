@@ -27,6 +27,11 @@ Execute database schema evolutions safely and without downtime, strictly enforci
 
 Los tiempos de ejecución de las migraciones deben registrarse en segundos (s) y el tamaño de los volcados en megabytes (MB).
 
+## 🛡️ Industrial Constraints (Zero-Trust)
+
+- **Unbreakable Rollback:** Every `upgrade` MUST have a pre-verified and physically tested `down` path before execution.
+- **Physical Audit:** Migration logs MUST be saved to `LOGS/database/` with the original SQL generated for manual audit if required.
+
 ## Logic & Safety Checklist
 
 1. **Read-Only First:** Ensure the migration does not block concurrent production reads.

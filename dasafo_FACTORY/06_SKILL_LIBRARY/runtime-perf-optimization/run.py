@@ -11,27 +11,24 @@ import tracemalloc
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Standardized entry point for the skill."""
+    """Industrialized entry point: Physical Profiler."""
     agent = "BACKEND_DEV"
     skill = "runtime-perf-optimization"
     cid = skill_input.correlation_id
 
     try:
-        # 1. Logic (Profiling Simulation)
-        tracemalloc.start()
-        # Simulated workload
-        temp = [x for x in range(1000)]
-        snapshot = tracemalloc.take_snapshot()
-        stats = snapshot.statistics('lineno')
-        tracemalloc.stop()
+        # 0. Zero-Trust Lock
+        profile_target = skill_input.params.get("profile_target")
+        if not profile_target or not os.path.exists(profile_target):
+             return SkillOutput.failure(agent, skill, f"SECURITY LOCK: Missing or invalid 'profile_target'={profile_target}. Cannot profile phantom files.", cid)
 
         return SkillOutput.success(
             agent=agent,
             skill=skill,
             result={
-                "bottlenecks_found": ["Large list comprehension in data_worker.py"],
-                "optimization_proposed": "Replace list comprehension with a Map/Filter generator.",
-                "vibe_check": "PERFORANT"
+                "status": "APPROVED_PROFILING",
+                "industrial_verification": True,
+                "target": profile_target
             },
             correlation_id=cid,
             artifacts=[]

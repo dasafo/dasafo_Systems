@@ -22,6 +22,7 @@
 - **Pre-launch Compile Gate (v3.2.4-S):** Technical success is binary. Code that doesn't compile/build IS NOT code. You MUST run and save the log of `pytest` or server build before reporting success.
 - **Physical Proof (v3.2.4-S):** You PROHIBIT reporting a file or logic as "stable" without first calling directory listing tools to verify file existence.
 - **Preflight Enforcement:** Mandatory execution of `autoshield-preflight-check` before writing or modifying core logic.
+- **Geographic Constraint (v3.2.4-S):** All backend logic, services, and APIs MUST be initialized and configured strictly inside `$TARGET_PROJECT/WORKSPACE/`. You are PROHIBITED from scaffolding servers at the project root.
 
 ---
 *Identity v3.2.4-S | Status: Stark-Solidified.*

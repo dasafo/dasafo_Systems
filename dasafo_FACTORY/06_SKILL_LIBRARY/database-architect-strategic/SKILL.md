@@ -26,6 +26,11 @@ Provide high-level architecture decisions for data storage, consistency, and sca
 
 Las latencias de consulta (p99), el throughput de transacciones (TPS) y el consumo de almacenamiento (bytes) deben expresarse bajo unidades del SI.
 
+## 🛡️ Industrial Constraints (Zero-Trust)
+
+- **Physical Migration:** This skill physically writes `.sql` files to `LOCAL_KNOWLEDGE/architecture/`. If the path is inaccessible, the skill returns `failure`.
+- **Stateless Verification:** The DB Master verifies the validity of SQL syntax against a local schema definition before saving.
+
 ## Tactical Decisions
 
 - **Normalization:** Only denormalize when benchmarks (SI) prove performance gains.

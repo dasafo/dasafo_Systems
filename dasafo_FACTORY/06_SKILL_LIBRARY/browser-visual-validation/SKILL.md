@@ -21,13 +21,20 @@ Opens the deployed application via browser automation and validates critical use
 - `screenshots`: (list) Paths to captured screenshots if errors found.
 
 ### ⚖️ Mandato SI (Sistema Internacional)
+
 Cualquier métrica de rendimiento visual (tiempo de carga de la página (LCP), tiempo de respuesta visual) debe expresarse estrictamente en milisegundos o segundos (unidades SI).
 
+## 🛡️ Industrial Constraints (Zero-Trust)
+
+- **Live Endpoint Verification:** This skill physically performs HTTP reachability and performance timing checks. Returning "mock visual reports" for unreachable URLs is FORBIDDEN.
+- **Traceability:** Reports must be physically persisted in `LOGS/visual/`.
+
 ## 🧠 Protocol
-1.  **Navigate:** Open the target URL using browser automation (Playwright/Puppeteer).
-2.  **Verify:** Check for console errors, broken assets, and layout stability.
-3.  **Flows:** Execute critical user flows (Auth, CRUD, Navigation).
-4.  **Report:** Generate a visual validation report against PRP criteria.
+
+1. **Navigate:** Open the target URL using physical HTTP probes.
+2. **Verify:** Check for status codes and performance (ms).
+3. **Flows:** Execute availability validation for critical endpoints.
+4. **Report:** Generate and persist a visual validation report against physical metrics.
 
 ---
 *Skill v3.2.0-S | Status: Standardized.*

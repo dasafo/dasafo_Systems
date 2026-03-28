@@ -23,12 +23,16 @@ Periodically scan the `FEEDBACK-LOG.md` to identify systemic patterns, recurring
 ### ⚖️ Mandato SI (Sistema Internacional)
 Cualquier métrica temporal (ventanas de tiempo, frecuencia de errores por hora) o de rendimiento del sistema debe reportarse bajo las unidades del SI.
 
+## 🛡️ Industrial Constraints (Zero-Trust)
+- **Cognitive Lock:** This skill is physically locked if `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` are missing. Mocking pattern intelligence from static strings is FORBIDDEN.
+- **Physical Source:** Requires a valid `FEEDBACK-LOG.md` on disk. If the file is missing, it must return a "NO_FEEDBACK_AVAILABLE" status, never dummy data.
+
 ## 🧠 Protocol
 1.  **Scan:** Parse the `FEEDBACK-LOG.md`.
-2.  **Cluster:** Group entries by category, agent, and severity.
+2.  **Cluster:** Group entries by category, agent, and severity using LLM semantics.
 3.  **Identify:** Find hotspots (>3 entries in 30 days) and repeat offenders.
-4.  **Evolve:** Propose new Golden Rules or Skill upgrades.
-5.  **Report:** Generate the "Antifragility Report" for human review.
+4.  **Evolve:** Propose new Golden Rules or Skill upgrades based on physical analysis.
+5.  **Report:** Generate the "Antifragility Report" (verified JSON/MD) for human review.
 
 ---
 *Skill v3.2.0-S | Status: Standardized.*

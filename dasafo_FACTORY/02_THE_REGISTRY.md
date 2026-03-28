@@ -49,7 +49,7 @@
   - `01_PENDING` to `05_REJECTED`: Manual task tracking.
   - **`registry.json`**: Programmatic task registry (**Single Source of Truth**).
   - `task.md`: Visual Kanban Mirror.
-- `WORKSPACE/`: `backend/`, `frontend/`, `shared/`.
+- `WORKSPACE/`: `backend/`, `frontend/`, `shared/`. **(MANDATORY RULE: ALL PROJECT SOURCE CODE AND APPS MUST RESIDE HERE. Root-level code is illegal).**
 
 ### 🛡️ Guardrails on Launch
 

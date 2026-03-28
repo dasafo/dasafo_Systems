@@ -23,13 +23,20 @@ Proactively analyze logs, rejections, and feedback patterns to improve the agent
   - `agents`: (list) Agents involved.
 
 ### ⚖️ Mandato SI (Sistema Internacional)
+
 Cualquier métrica de rendimiento analizada (tiempos medios entre fallos, tasas de error por segundo) debe expresarse según el SI.
 
+## 🛡️ Industrial Constraints (Zero-Trust)
+
+- **Log Verification:** Requires physical access to `FEEDBACK-LOG.md`. Failure to find the artifact returns a `SkillOutput.success` with empty findings, never hallucinations.
+- **Deterministic Clustering:** Pattern identification is based on physical string matching in logs.
+
 ## Protocol
-1.  **Log Ingestion:** Read `FEEDBACK-LOG.md` and standard error logs.
-2.  **Error Categorization:** Label errors as "Minor", "Structural", or "Critical".
-3.  **Causality Check:** Determine root cause (prompting, tools, architecture).
-4.  **Automated Fix:** Propose updates to corresponding `SKILL.md` or `IDENTITY.md`.
+
+1. **Log Ingestion:** Physically read `FEEDBACK-LOG.md` and standard error logs.
+2. **Error Categorization:** Label errors as "Minor", "Structural", or "Critical".
+3. **Causality Check:** Determine root cause (prompting, tools, architecture).
+4. **Automated Fix:** Propose updates to corresponding physical `SKILL.md` or `IDENTITY.md`.
 
 ---
 *Skill v3.2.0-S | Status: Standardized.*

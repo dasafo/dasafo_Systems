@@ -22,13 +22,20 @@ Transform rejected tasks and errors into structured collective intelligence asse
 - `path`: (string) Path to the updated FEEDBACK-LOG.md.
 
 ### ⚖️ Mandato SI (Sistema Internacional)
+
 Cualquier valor numérico relacionado con la severidad técnica o el impacto debe monitorizarse bajo métricas del Sistema Internacional.
 
+## 🛡️ Industrial Constraints (Zero-Trust)
+
+- **Append Integrity:** This skill physically appends to `FEEDBACK-LOG.md`. If the file is missing in the project root, it attempts to locate the central factory log.
+- **Standard Enforcement:** Every entry MUST include a `validated_standard: "v3.2.0-S"` field for auditability.
+
 ## 🧠 Protocol
-1.  **Capture:** Extract technical details of the failure.
-2.  **Classify:** Assign severity and category tags.
-3.  **Synthesize:** Formulate a **Golden Rule** (Universal, context-independent).
-4.  **Persist:** Append to `FEEDBACK-LOG.md` within the factory root or project.
+
+1. **Capture:** Extract technical details of the failure.
+2. **Classify:** Assign severity and category tags.
+3. **Synthesize:** Formulate a **Golden Rule** (Universal, context-independent).
+4. **Persist:** Physically append to `FEEDBACK-LOG.md` within the factory root or project.
 
 ---
 *Skill v3.2.0-S | Status: Standardized.*
