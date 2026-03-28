@@ -1,6 +1,6 @@
 # 🏛️ 00_THE_CORE | The Soul & Interaction
 
-> **Standard:** v3.2.0-S "Modular Toolbox" (March 2026)
+> **Standard:** v3.2.4-S "Stark-Solidity" (March 2026)
 > **Focus:** Philosophy, User Profile & Communication Protocols
 
 ---
@@ -23,6 +23,9 @@
   - **Physical Traceability:** If it isn't in the physical `TASKS/` folder, it doesn't exist.
 - **Segregation of Duties:**
   - **Anti-Fraud:** Implementors CANNOT verify their own work. Verification requires ARCH/QA or Human signature.
+- **Physical Stark-Proof (v3.2.4-S):**
+  - **The Rule of Physical Evidence (v3.2.3-S):** If an agent hasn't performed a physical directory listing (`list_dir`, `ls -R`), they ARE NOT PERMITTED to report a file's existence. "Thinking" it exists is a Hallucination.
+  - **The Pre-launch Compile Gate (v3.2.4-S):** Technical success is binary. Code that doesn't compile/build IS NOT code. Mandatory execution of `npm build`, `docker build`, or tests before success report.
 
 ---
 
@@ -53,6 +56,7 @@
 - **Zero-Pending Gate:** Phase promotion is strictly prohibited if the physical Kanban (`task.md` or `registry.json`) contains ANY open tasks.
 - **Human Sync-Points:** Every project milestone REQUIRES explicit user sign-off via Antigravity.
 - **Technical Mandate:** All implementation logs must be 100% in English.
+- **The Compile Mandate (v3.2.4-S):** Every technical task completion report MUST include the output of the compilation/build command as physical evidence of success.
 
 ### 📑 Telemetry Log Structure
 
@@ -64,4 +68,4 @@ Every project must maintain `$TARGET_PROJECT/LOGS/EXECUTION_LOG.md` with:
 
 ---
 
-*00_THE_CORE v3.2.0-S | Status: Solidified.*
+*00_THE_CORE v3.2.4-S | Status: Stark-Solidified.*

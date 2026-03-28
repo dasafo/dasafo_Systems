@@ -29,11 +29,12 @@ BYPASS_SKILLS = {
     "continuous-research"
 }
 
-def verify_project_state(target_project: str, requested_skill: str) -> tuple[bool, str]:
+def verify_project_state(target_project: str, requested_skill: str, agent: str = None) -> tuple[bool, str]:
     """
-    Protocol-Level Session Hook (Aduana Universal v3.2.0-S).
+    Protocol-Level Session Hook (Aduana Universal v3.2.4-S).
     Verifica que el agente no intente ejecutar código si el proyecto está
     en un estado secuencial inconsistente (Fallo Cerrado).
+    Añadido v3.2.4-S: Verificación automática de Stark-Solidity (Build Proof).
     """
     
     if requested_skill in BYPASS_SKILLS:
@@ -91,9 +92,26 @@ def verify_project_state(target_project: str, requested_skill: str) -> tuple[boo
             if phases[phase_keys[i]] != "PENDING":
                 return False, f"Solidity Guard: Inconsistencia detectada. Fase {phase_keys[first_pending_idx]} es PENDING, pero {phase_keys[i]} es {phases[phase_keys[i]]}."
                 
-    # Si todo es coherente, validamos que exista al menos una fase en progreso o todo aprobado
     if in_progress_count == 0 and first_pending_idx != -1:
          return False, "Solidity Guard: Ninguna fase está 'IN_PROGRESS', pero hay fases 'PENDING'. Por favor usa kanban-solidity-gate para abrir la siguiente fase."
+
+    # --- STARK-SOLIDITY ENFORCEMENT (v3.2.4-S) ---
+    # Si la skill es de gestión de tareas (cierre), validamos evidencia física de build.
+    if requested_skill in ["project-management", "kanban-solidity-gate"]:
+        current_phase = phase_keys[in_progress_idx] if in_progress_idx != -1 else None
+        
+        # Las fases técnicas (Producción/M3, Compliance/M4, Operations/M5) requieren proof.
+        if current_phase in ["M3", "M4", "M5"]:
+            build_proof = Path(target_project) / "LOGS" / "reports" / "BUILD_REPORT.json"
+            if not build_proof.exists():
+                # Intentamos buscar en LOGS/ directamente por si acaso
+                build_proof = Path(target_project) / "LOGS" / "BUILD_REPORT.json"
+            
+            if not build_proof.exists():
+                return False, f"Stark-Solidity Violation (v3.2.4-S): Estás intentando cerrar/gestionar una tarea en la fase {current_phase} sin evidencia técnica. SE REQUIERE un archivo 'BUILD_REPORT.json' con el log de éxito de compilación/test en LOGS/reports/. Operación Bloqueada automáticamente."
+            
+            # (Opcional) Podríamos validar la frescura del timestamp aquí.
+    # ---------------------------------------------
 
     return True, "State Validated"
 

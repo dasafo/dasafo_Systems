@@ -29,7 +29,7 @@ def main():
                     "result": {
                         "protocolVersion": "2024-11-05",
                         "capabilities": {"tools": {}},
-                        "serverInfo": {"name": "dasafo_factory", "version": "3.2.0-S"}
+                        "serverInfo": {"name": "dasafo_factory", "version": "3.2.4-S"}
                     }
                 }
                 sys.stdout.write(json.dumps(response) + "\n"); sys.stdout.flush()
@@ -73,7 +73,7 @@ def main():
                     # --- SESSION HOOK (ADUANA UNIVERSAL) ---
                     try:
                         from session_hook import verify_project_state
-                        is_allowed, reason = verify_project_state(target_project, skill)
+                        is_allowed, reason = verify_project_state(target_project, skill, agent)
                         if not is_allowed:
                             response = {
                                 "jsonrpc": "2.0", "id": msg_id,

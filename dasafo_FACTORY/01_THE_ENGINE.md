@@ -1,6 +1,6 @@
 # ⚙️ 01_THE_ENGINE | The Motor Executive
 
-> **Standard:** v3.2.0-S "Modular Toolbox"
+> **Standard:** v3.2.4-S "Stark-Solidity"
 > **Focus:** Operations, Pipeline & Phase-Gate Protocol (Aduana Universal)
 
 ---
@@ -24,7 +24,7 @@ The 5-phase journey mandated for every industrial project.
 ### ⚙️ M3: Production
 
 - **Owner:** `BACKEND_DEV` / `FRONTEND_DEV`
-- **Output:** Functional code (100% SoC) + Verified Tests.
+- **Output:** Functional code (100% SoC) + **SUCCESSFUL BUILD LOG**.
 - **Signature Gate:** `PROJECT_STATE.json -> "M3": "APPROVED"`.
 
 ### 🧪 M4: Compliance
@@ -51,7 +51,7 @@ Cualquier "OK" o aprobación en el historial de chat es **percibido** pero **no 
 
 ### 🛂 El Flujo de Aduana (Step-by-Step)
 
-1. **Cierre Técnico:** El agente de fase completa todas sus tareas en `TASKS/registry.json`.
+1. **Cierre Técnico:** El agente de fase completa todas sus tareas en `TASKS/registry.json`. **REQUISITO BLOQUEANTE:** Debe adjuntar prueba física del `build` exitoso (v3.2.4-S).
 2. **Petición de Firma:** El agente solicita formalmente al Humano la revisión de los artefactos generados.
 3. **Firma Física (Humano):** El usuario debe abrir físicamente **`PROJECT_STATE.json`** y cambiar el estado de la fase actual de `"PENDING"` a `"APPROVED"`.
 4. **Validación Sensorial (Agente):** El agente orquestador utiliza su sentido `filesystem` para leer el archivo. Solo si detecta físicamente `"APPROVED"`, se habilita la transición a la siguiente fase.
@@ -87,4 +87,4 @@ Agents do not "run commands"; they **perceive** and **act** through the Sensory 
 
 ---
 
-*01_THE_ENGINE v3.2.0-S | Status: Solidified.*
+*01_THE_ENGINE v3.2.4-S | Status: Stark-Solidified.*

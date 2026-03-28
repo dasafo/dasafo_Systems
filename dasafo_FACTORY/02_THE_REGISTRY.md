@@ -1,11 +1,11 @@
 # 🗺️ 02_THE_REGISTRY | The Inventory & Versioning
 
-> **Standard:** v3.2.0-S "Modular Toolbox"
+> **Standard:** v3.2.4-S "Stark-Solidity"
 > **Focus:** State, Missions, Version & Project Initialization
 
 ---
 
-## 🏷️ 1. Factory Version (v3.2.0-S "Modular Toolbox")
+## 🏷️ 1. Factory Version (v3.2.4-S "Stark-Solidity")
 
 **Status:** Active Deployment | Industrial Scale.
 
@@ -18,6 +18,7 @@
 - **Master Registry Rule:** Instead of moving Markdown files across directories, all task orchestration is handled through **`TASKS/registry.json`**. This is the **Logistical Source of Truth**.
 - **Phase-Gate Protocol (Aduana Universal):** El archivo **`PROJECT_STATE.json`** es la **Autoridad de Estado (SSoT)**. Ningún cambio de fase es válido sin la firma física del humano en este archivo.
 - **Infra-Aware Agents:** All 16 agent identities synchronized to prioritize shared resources.
+- **Stark-Solidity Gate (v3.2.4-S):** Implementation of **Automatic Technical Rejection** via `session_hook.py`. No technical task can be marked as `COMPLETED` without a fresh **`BUILD_REPORT.json`** artifact in the project logs.
 
 ---
 
@@ -42,6 +43,7 @@
   - `agents/`: Agent logs.
   - `sessions/`: Session data.
   - `reports/`, `incidents/`: Compliance data.
+  - **`BUILD_REPORT.json`**: Mandatory evidence for M3/M4 success (v3.2.4-S).
   - **`EXECUTION_LOG.md`**: Industrial chronicle.
 - `TASKS/`:
   - `01_PENDING` to `05_REJECTED`: Manual task tracking.
@@ -57,4 +59,4 @@
 
 ---
 
-*02_THE_REGISTRY v3.2.0-S | Status: Solidified.*
+*02_THE_REGISTRY v3.2.4-S | Status: Stark-Solidified.*
