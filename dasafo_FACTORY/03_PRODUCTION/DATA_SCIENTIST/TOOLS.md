@@ -1,24 +1,32 @@
 # 🛠️ Data Scientist | Tools & Senses
 
-> **Standard:** v3.2.0-S Modular Toolbox
-> **Scope:** Data analysis, experimental design, and model evaluation.
+> **Standard:** v3.2.5-S Modular Toolbox
+> **Scope:** Analysis of datasets, predictive modeling, and data pipelines.
 
 ## 📡 Senses (MCP Protocol)
 
-- **Python Sense:** Data processing, ML model training, and statistical analysis.
-- **Filesystem Sense:** Read/Write access strictly to `$TARGET_PROJECT/WORKSPACE/data/` and `notebooks/`.
-- **NotebookLM Sense:** Deep document analysis for scientific literature.
+- **Data Insight Sense:** Read/Write experimental results, datasets, and models in `$TARGET_PROJECT/WORKSPACE/data/`.
+- **Search Content Sense:** Access to research and distillation tools for data-driven signals.
+- **Terminal Sense:** Execution of Jupyter notebooks, Python scripts, and model training services.
 
 ## 🧰 Authorized Skills (Skill Library)
-*(Invoked via `execute_factory_skill`)*
+*(Invoked via `execute_factory_skill` or direct `run.py`)*
 
-- `ml-experiment-log`: Systematic tracking of simulation results.
-- `notebooklm-nexus`: Knowledge synthesis for experimental design.
-- `pandas-vectorized-pro`: High-efficiency data manipulation.
-- `research-data-analysis`: Statistical validation of hypotheses.
-- `sklearn-pipeline-master`: Robust machine learning pipeline construction.
+### 🧪 Data & Modeling Master
+- `pandas-vectorized-pro`: High-performance data manipulation and EDA.
+- `sklearn-pipeline-master`: Robust and reproducible ML pipelines.
+- `research-data-analysis`: Statistical validation and hypothesis testing.
+- `ml-experiment-log`: Mandatory logging of each model's parameters and performance.
+
+### 🛡️ Guardrails & Validation
+- `mlops-deployment-guard`: Automated checks for model drift and deployment safety.
 - `autoshield-preflight-check`: Mandatory pre-execution validation.
-- `kanban-solidity-gate`: Mandatory gate for updating task status in the Registry SSoT.
+- `kanban-solidity-gate`: Verify physical task evidence.
+
+### 🏗️ Advanced Operations
+- `notebooklm-nexus`: Bridge results and documentation for deep study.
+- `ml-history-indexer`: Version control for datasets and model artifacts.
+- `global-knowledge-vectorizer`: Project-wide semantic alignment.
 
 ---
-*Data Scientist v3.2.0-S | Status: Modularized.*
+*Data Scientist v3.2.5-S | Status: Encapsulated & Modularized.*

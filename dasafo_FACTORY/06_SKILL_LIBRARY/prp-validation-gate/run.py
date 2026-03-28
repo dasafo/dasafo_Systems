@@ -1,3 +1,4 @@
+from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — PRP Validation Gate (PRODUCT_OWNER)
@@ -6,7 +7,6 @@ v3.2.0-S: Modular Toolbox | Industrial Scale.
 Enforces the mandatory gate between Discovery and Production phases.
 """
 
-from __future__ import annotations
 import os
 import json
 from pathlib import Path
@@ -20,7 +20,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
     try:
         # 1. Resolve Target
-        target = skill_input.target_project or os.environ.get("TARGET_PROJECT")
+        target = skill_input.target_project or skill_input.params.get("project") or os.environ.get("TARGET_PROJECT")
         if not target:
              return SkillOutput.failure(agent, skill, "Missing TARGET_PROJECT", cid)
         
@@ -33,19 +33,21 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
         # 2. Logic (Gate Verification)
         if not contract_path.exists():
-             return SkillOutput.success(agent, skill, {"gate_status": "LOCKED", "signing_status": "MISSING", "reason": "No PRP contract found."}, cid)
+             return SkillOutput.success(agent, skill, {"gate_status": "LOCKED", "signing_status": "MISSING", "reason": f"No PRP contract found at {contract_path}"}, cid)
 
         prp = json.loads(contract_path.read_text(encoding="utf-8"))
-        status = prp.get("signing", {}).get("status", "DRAFT")
         
-        gate = "OPEN" if status == "VALIDATED" else "LOCKED"
+        # Check for both formats: prp_status AND signing.status
+        signing_status = prp.get("signing", {}).get("status") or prp.get("prp_status", "DRAFT")
+        
+        gate = "OPEN" if signing_status == "VALIDATED" else "LOCKED"
 
         return SkillOutput.success(
             agent=agent,
             skill=skill,
             result={
                 "gate_status": gate,
-                "signing_status": status,
+                "signing_status": signing_status,
                 "integrity_score": 1.0,
                 "contract_ref": str(contract_path)
             },
@@ -55,3 +57,20 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
     except Exception as e:
         return SkillOutput.failure(agent, skill, f"PRP Gate Audit Failed: {str(e)}", cid)
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Skill: PRP Validation Gate")
+    parser.add_argument("--project", required=True, help="Path to the target project")
+    args = parser.parse_args()
+    
+    skill_input = SkillInput(
+        agent="CLI_TOOL",
+        skill="prp-validation-gate",
+        params={"project": args.project},
+        target_project=args.project,
+        correlation_id="cli-gate-check"
+    )
+    
+    output = run(skill_input)
+    print(output.to_json())

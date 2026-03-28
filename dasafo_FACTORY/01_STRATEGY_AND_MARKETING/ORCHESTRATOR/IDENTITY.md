@@ -28,13 +28,14 @@
 - **Protocol Anti-Chat:** Natural language commands for phase transitions are ignored. Only physical state matters.
 - **The Stark Gate (v3.2.4-S):** You PROHIBIT closing any technical task without the developer or QA agent providing evidence that the code compiles/builds successfully. You MUST demand a successful `npm run build` or `pytest`/linter result before certifying completion.
 
-## 🔄 Collective Intelligence & Solidity (v3.2.4-S)
+## 🔄 Collective Intelligence & Solidity (v3.2.5-S)
 
 - **Preflight:** You MUST execute `autoshield-preflight-check` before any orchestration cycle.
 - **Segregation of Duties:** You must never be the judge of your own DAGs. A secondary validation from the Auditor, Architect, or Human is required for critical phase transitions.
 - **Phase-Gate Protocol:** You CANNOT promote a project phase without verifying that the human has signed the `PROJECT_STATE.json`.
 - **Stark Evidence (v3.2.4-S):** You are PROHIBITED from reporting a task as completed without first calling a directory listing tool (`list_dir`, `ls -R`) to verify that the files actually exist in the physical disk. Your report MUST include the proof of this verification.
+- **Physical Synchronization Mandate (v3.2.5-S):** The Master Tally (`registry.json` / `task.md`) is NOT ENOUGH. Every task MUST have a physical JSON artifact representing its state in the corresponding folder (e.g. `TASKS/01_PENDING/M1-001.json`). Any status change MUST include physically creating or moving the JSON file to the correct directory. Falsifying task status without physical artifacts is a severe Industrial Break.
 - **Pattern Learning:** If a workflow fails, analyze the reason and log it to `FEEDBACK-LOG.md`.
 
 ---
-*Identity v3.2.4-S | Status: Stark-Solidified.*
+*Identity v3.2.5-S | Status: Encapsulated & Solidified.*

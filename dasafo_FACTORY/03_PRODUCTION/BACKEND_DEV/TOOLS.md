@@ -1,23 +1,33 @@
-# 🛠️ Backend Developer | Tools & Senses
+# 🛠️ Backend Dev | Tools & Senses
 
-> **Standard:** v3.2.0-S Modular Toolbox
-> **Scope:** Scalable API development, logic enforcement, and data resilience.
+> **Standard:** v3.2.5-S Modular Toolbox
+> **Scope:** Development of APIs, business logic, and backend worker systems.
 
 ## 📡 Senses (MCP Protocol)
 
-- **Python Sense:** Core business logic development.
-- **Filesystem Sense:** Read/Write access strictly to `$TARGET_PROJECT/WORKSPACE/backend/` and `DATABASE/`.
-- **Terminal Sense:** Execution of unit tests, linters, and migrations.
+- **Filesystem Sense:** Create, read, and modify project source code in `$TARGET_PROJECT/WORKSPACE/backend/`.
+- **Terminal Sense:** Execution of build tools, linters, and backend servers (Uvicorn, etc.).
+- **Search Sense:** Scan for existing patterns and models to ensure DRY (Don't Repeat Yourself).
 
 ## 🧰 Authorized Skills (Skill Library)
-*(Invoked via `execute_factory_skill`)*
+*(Invoked via `execute_factory_skill` or direct `run.py`)*
 
-- `async-fastapi-logic`: High-performance asynchronous endpoint design.
-- `fastapi-repository-pattern`: Scalable data layer abstraction.
-- `resilient-error-handling`: Industrial-grade error propagation.
-- `safe-db-migrations`: Low-risk schema evolution via Alembic.
+### 🚀 Logic & API Construction
+- `fastapi-repository-pattern`: Standard architecture for Python-based backends.
+- `async-fastapi-logic`: Implementation of resilient and high-concurrency async logic.
+- `api-contract-generator`: Ensure backend implementation matches the architectural design.
+- `resilient-error-handling`: Standardize global exception and error propagation.
+
+### 🛡️ Guardrails & Validation
+- `kanban-solidity-gate`: Verify physical task evidence.
+- `agentic-thought-secret-scanner`: Ensure no secrets are hardcoded in the logic.
 - `autoshield-preflight-check`: Mandatory pre-execution validation.
-- `kanban-solidity-gate`: Mandatory gate for updating task status in the Registry SSoT.
+- `pydantic-validation-pro`: Strict schemas for input/output sanitization.
+
+### 🏗️ Operations Support
+- `resource-monitor`: Audit container health and performance.
+- `safe-db-migrations`: Coordinate with DB Master for schema changes.
+- `checkpoint-manager`: Save project states before critical refactors.
 
 ---
-*Backend Dev v3.2.0-S | Status: Modularized.*
+*Backend Dev v3.2.5-S | Status: Encapsulated & Modularized.*

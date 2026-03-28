@@ -1,4 +1,5 @@
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — ArXiv Technical Digest (RESEARCH_AGENT)
 v3.2.0-S: Modular Toolbox | Industrial Scale.

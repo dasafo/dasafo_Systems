@@ -1,28 +1,33 @@
 # 🛠️ Memory Optimizer | Tools & Senses
 
-> **Standard:** v3.2.0-S Modular Toolbox
-> **Scope:** Context optimization, cost tracking, and knowledge vectorization.
+> **Standard:** v3.2.5-S Modular Toolbox
+> **Scope:** Analysis of factory context, knowledge distillation, and cognitive load optimization.
 
 ## 📡 Senses (MCP Protocol)
 
-- **Memory Sense:** Full management of long-term memory bridges and vector indexes.
-- **Filesystem Sense:** Access to `$TARGET_PROJECT/LOGS/sessions/` for context distillation and `WORKSPACE/` for cleanup.
-- **Python Sense:** Vectorization, indexing, and compression scripting.
+- **Search Content Sense:** Access to research and distillation tools for context and data synthesis.
+- **Filesystem Sense:** Read and write Knowledge Items (KIs) to `Informacion/` and `LOCAL_KNOWLEDGE/`.
+- **Memory Query Sense:** Access to conversation logs and past state artifacts via search.
 
 ## 🧰 Authorized Skills (Skill Library)
-*(Invoked via `execute_factory_skill`)*
+*(Invoked via `execute_factory_skill` or direct `run.py`)*
 
-- `clutch-resource-cleaner`: Automated cleanup of temporary artifacts.
-- `context-compression`: Distilling 1000s of lines into actionable summaries.
-- `cost-tracker`: Monitoring API usage and compute costs.
-- `global-knowledge-vectorizer`: Preparing factory laws for semantic search.
-- `ml-history-indexer`: Tagging and search-optimization of history.
-- `nblm-memory-bridge`: Bridging factory context to NotebookLM.
-- `runtime-perf-optimization`: Reducing latency in agent perception.
-- `search-context-distillation-pro`: Semantic search refinement.
-- `token-context-optimization`: Reducing token waste in high-frequency agents.
+### 🧠 Context & Distillation
+- `context-compression`: Core skill for distilling text and logs into high-value facts.
+- `nblm-memory-bridge`: Semantic alignment between factory memory and current state.
+- `notebooklm-nexus`: High-level context orchestration and research synthesis.
+- `nblm-schema-nexus`: Formalization of knowledge into schemas and taxonomies.
+
+### 🛡️ Guardrails & Alignment
+- `global-knowledge-vectorizer`: Vectorize project knowledge for RAG systems.
 - `autoshield-preflight-check`: Mandatory pre-execution validation.
-- `kanban-solidity-gate`: Mandatory gate for updating task status in the Registry SSoT.
+- `kanban-solidity-gate`: Verify physical task evidence.
+- `hallucination-guardrail`: Audit distilled facts for accuracy and grounding.
+
+### 🏗️ Advanced Operations
+- `reflective-learning-engine`: Self-feedback on distillation precision.
+- `token-context-optimization`: Advanced strategies for minimizing token usage.
+- `nblm-factory-biographer`: Record the cognitive evolution of the project.
 
 ---
-*Memory Optimizer v3.2.0-S | Status: Modularized.*
+*Memory Optimizer v3.2.5-S | Status: Encapsulated & Modularized.*

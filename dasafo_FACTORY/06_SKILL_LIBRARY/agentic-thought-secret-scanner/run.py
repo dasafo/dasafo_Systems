@@ -1,3 +1,4 @@
+from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Skill: Agentic Thought & Secret Scanner (SECURITY_AUDITOR)
@@ -6,7 +7,6 @@ v3.2.0-S: Modular Toolbox | Industrial Scale.
 Recursively scans for exposed credential patterns (AI Keys, Secrets, etc.).
 """
 
-from __future__ import annotations
 import re
 import os
 import json
@@ -90,3 +90,23 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
     except Exception as e:
         return SkillOutput.failure(agent, skill, f"Critical Audit Failure: {str(e)}", cid)
+
+if __name__ == "__main__":
+    from skill_schema import SkillInput
+    import argparse
+    parser = argparse.ArgumentParser(description="Skill: Secret Scanner")
+    parser.add_argument("--project", required=True, help="Path to the target project")
+    
+    args = parser.parse_args()
+    
+    # Create a mock SkillInput for CLI usage
+    skill_input = SkillInput(
+        agent="CLI_TOOL",
+        skill="agentic-thought-secret-scanner",
+        params={"target": args.project},
+        target_project=args.project,
+        correlation_id="cli-run-manual"
+    )
+    
+    output = run(skill_input)
+    print(output.to_json())

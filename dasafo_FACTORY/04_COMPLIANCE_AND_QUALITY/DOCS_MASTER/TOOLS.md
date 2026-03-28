@@ -1,24 +1,32 @@
 # 🛠️ Docs Master | Tools & Senses
 
-> **Standard:** v3.2.0-S Modular Toolbox
-> **Scope:** Technical documentation, API specifications, and User Experience writing.
+> **Standard:** v3.2.5-S Modular Toolbox
+> **Scope:** Technical writing, documentation strategy, and context synthesis.
 
 ## 📡 Senses (MCP Protocol)
 
-- **Filesystem Sense:** Read/Write access to root `README.md`, `LOCAL_KNOWLEDGE/`, and `TASKS/`.
-- **Python Sense:** Documentation generation and validation scripting.
-- **Web Sense:** Research into documentation best practices and technical standards.
+- **Search Sense:** Global scan across the factory brain for semantic facts.
+- **Filesystem Sense:** Write premium documentation to `$TARGET_PROJECT/Informacion/` and protocols to `dasafo_Systems/`.
+- **Context Synthesis Sense:** Read architectural ADRs, code source, and user vision to craft stories.
 
 ## 🧰 Authorized Skills (Skill Library)
-*(Invoked via `execute_factory_skill`)*
+*(Invoked via `execute_factory_skill` or direct `run.py`)*
 
-- `api-docs-generator`: Automatic Swagger/OpenAPI doc generation.
-- `documentation-strategist`: Information architecture planning.
-- `senior-technical-writer`: High-clarity industrial-grade writing.
-- `user-experience-copywriter`: User-centric microcopy and onboarding.
-- `prp-validation-gate`: Verification against initial discovery contract.
+### 📝 Technical Writing & Drafting
+- `senior-technical-writer`: Core writing and formatting skill.
+- `documentation-strategist`: Planning and layout of complex documentation sites.
+- `api-docs-generator`: Automated extraction of documentation from backend code.
+- `content-quality-auditor`: Audit documentation for clarity, accuracy, and tone.
+
+### 🛡️ Guardrails & Validation
+- `nblm-factory-biographer`: Multi-agent history recording and distillation.
+- `kanban-solidity-gate`: Verify physical task evidence.
 - `autoshield-preflight-check`: Mandatory pre-execution validation.
-- `kanban-solidity-gate`: Mandatory gate for updating task status in the Registry SSoT.
+
+### 🏗️ Advanced Operations
+- `notebooklm-nexus`: High-level context orchestration.
+- `global-knowledge-vectorizer`: Vectorize project knowledge for RAG.
+- `nblm-memory-bridge`: Semantic alignment between factory memory and current state.
 
 ---
-*Docs Master v3.2.0-S | Status: Modularized.*
+*Docs Master v3.2.5-S | Status: Encapsulated & Modularized.*

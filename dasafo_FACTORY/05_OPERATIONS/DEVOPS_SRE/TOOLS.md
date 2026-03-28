@@ -1,25 +1,33 @@
 # 🛠️ DevOps SRE | Tools & Senses
 
-> **Standard:** v3.2.0-S Modular Toolbox
-> **Scope:** Infrastructure as Code, CI/CD, and server management.
+> **Standard:** v3.2.5-S Modular Toolbox
+> **Scope:** Infrastructure automation, deployment, and SRE operations.
 
 ## 📡 Senses (MCP Protocol)
 
-- **Terminal Sense:** Full shell access for infrastructure orchestration and server management.
-- **Filesystem Sense:** Access to `Dockerfiles`, `docker-compose.yml`, `Terraform/`, and `PROJECT_STATE.json`.
-- **Python Sense:** Automation scripts for deployment and environment validation.
+- **Infrastructure Sense:** Query Docker states, container health, and system resource distribution.
+- **Filesystem Sense:** Read/Write access to `docker-compose.yml`, `Dockerfile`, and CI/CD scripts.
+- **Terminal Sense:** Execution of deployment commands, log streaming, and service management.
 
 ## 🧰 Authorized Skills (Skill Library)
-*(Invoked via `execute_factory_skill`)*
+*(Invoked via `execute_factory_skill` or direct `run.py`)*
 
-- `docker-devops-expert`: Containerization and orchestration patterns.
-- `github-actions-cicd-patterns`: Standardized pipeline design.
-- `infra-as-code-terraform-pro`: Cloud resource provisioning.
-- `mlops-deployment-guard`: Stability checks for AI model delivery.
-- `self-healing-deployment`: Automated recovery from service failure.
-- `server-management`: Linux administration and maintenance.
-- `autoshield-preflight-check`: Mandatory pre-execution environment validation.
-- `kanban-solidity-gate`: Mandatory gate for updating task status in the Registry SSoT.
+### 🏗️ Infrastructure & Automation
+- `docker-devops-expert`: Build, optimize, and orchestrate containerized applications.
+- `github-actions-cicd-patterns`: Automate workflows and code delivery.
+- `infra-as-code-terraform-pro`: Define and manage cloud/host resources through code.
+- `server-management`: Direct OS-level optimization and security.
+
+### 🛡️ Guardrails & Stability
+- `self-healing-deployment`: Automation for service recovery and auto-restarts.
+- `autoshield-preflight-check`: Mandatory pre-execution validation.
+- `kanban-solidity-gate`: Verify physical task evidence.
+- `resource-monitor`: Monitor and enforce memory/CPU quotas.
+
+### 🏗️ Advanced Operations
+- `healthcheck-poller`: Continuous validation of live service integrity.
+- `clutch-resource-cleaner`: Reclaim resources from inactive or failed containers.
+- `incident-reporter`: Formalize tracking of production outages or degradations.
 
 ---
-*DevOps SRE v3.2.0-S | Status: Modularized.*
+*DevOps SRE v3.2.5-S | Status: Encapsulated & Modularized.*

@@ -1,7 +1,7 @@
 # ⚙️ 01_THE_ENGINE | The Motor Executive
 
-> **Standard:** v3.2.4-S "Stark-Solidity"
-> **Focus:** Operations, Pipeline & Phase-Gate Protocol (Aduana Universal)
+> **Standard:** v3.2.5-S "Stark-Solidity"
+> **Focus:** Operations, Pipeline & Phase-Gate Protocol (Universal Customs)
 
 ---
 
@@ -41,20 +41,31 @@ The 5-phase journey mandated for every industrial project.
 
 ---
 
-## 🛡️ 2. Phase-Gate Protocol (Aduana Universal)
+## 🛡️ 2. Phase-Gate Protocol (Universal Customs)
 
 ### 🚫 Anti-Chat Rule (No-Trust Policy)
 
-**El chat es para coordinar; el sistema de archivos es para autorizar.**
+**Chat is for coordination; the filesystem is for authorization.**
 
-Cualquier "OK" o aprobación en el historial de chat es **percibido** pero **no vinculante**. Los agentes tienen prohibido promocionar de fase sin una verificación física del metal.
+Any "OK" or approval in the chat history is **perceived** but **not binding**. Agents are prohibited from promoting a phase without physical verification of the disk state.
 
-### 🛂 El Flujo de Aduana (Step-by-Step)
+### 🗂️ Physical Synchronization Mandate (v3.2.5-S)
 
-1. **Cierre Técnico:** El agente de fase completa todas sus tareas en `TASKS/registry.json`. **REQUISITO BLOQUEANTE:** Debe adjuntar prueba física del `build` exitoso (v3.2.4-S).
-2. **Petición de Firma:** El agente solicita formalmente al Humano la revisión de los artefactos generados.
-3. **Firma Física (Humano):** El usuario debe abrir físicamente **`PROJECT_STATE.json`** y cambiar el estado de la fase actual de `"PENDING"` a `"APPROVED"`.
-4. **Validación Sensorial (Agente):** El agente orquestador utiliza su sentido `filesystem` para leer el archivo. Solo si detecta físicamente `"APPROVED"`, se habilita la transición a la siguiente fase.
+**The Master Tally (`registry.json` / `task.md`) is NOT ENOUGH.**
+Every task MUST have a physical JSON artifact representing its state in the corresponding folder:
+
+- `TASKS/01_PENDING/`
+- `TASKS/02_IN_PROGRESS/`
+- `TASKS/03_COMPLETED/`
+
+Any status change MUST include physically creating or moving the JSON file to the correct directory. Falsifying task status without physical artifacts is a severe Industrial Break.
+
+### 🛂 The Customs Flow (Step-by-Step)
+
+1. **Technical Closure:** The phase agent completes all tasks in `TASKS/registry.json` **AND** physically moves the JSON artifact to `TASKS/03_COMPLETED/`. **BLOCKING REQUIREMENT:** Must attach physical proof of a successful `build` (v3.2.4-S).
+2. **Signature Request:** The agent formally requests the Human to review the generated artifacts.
+3. **Physical Signature (Human):** The user must physically open **`PROJECT_STATE.json`** and change the current phase status from `"PENDING"` to `"APPROVED"`.
+4. **Sensory Validation (Agent):** The orchestrator agent uses its `filesystem` sense to read the file. Only if it physically detects `"APPROVED"`, is the transition to the next phase enabled.
 
 ---
 
@@ -72,19 +83,19 @@ Agents do not "run commands"; they **perceive** and **act** through the Sensory 
   - **Constraint:** Use semantic commit messages (feat, fix, refactor).
 - **NotebookLM Sense:** Deep research and source synthesis (Phases M1/M2).
 - **Custom Skills (`run.py`):** Executable logic tailored for specific agent roles.
-  - **Constraint:** Todas las habilidades residen en **`06_SKILL_LIBRARY/`**. Los agentes las invocan modularmente. Mandatory execution of `kanban-solidity-gate` for phase transitions (Checks **TASKS/registry.json** as SSoT) and state-gate (linked to **PROJECT_STATE.json**).
+  - **Constraint:** All skills reside in **`06_SKILL_LIBRARY/`**. Agents invoke them modularly. Mandatory execution of `kanban-solidity-gate` for phase transitions (Checks **TASKS/registry.json** as SSoT) and state-gate (linked to **PROJECT_STATE.json**).
 
 ---
 
-## 🏗️ 4. Operations Manual (Synergy & Synergy)
+## 🏗️ 4. Operations Manual (Synergy & Strategy)
 
 ### 🔄 Global Operational Events
 
-- **Atomic Reflection (❤️):** Agents update their operational performance in their internal `IDENTITY.md` every major task.
+- **Atomic Reflection (❤️):** Agents update their operational performance in their internal `IDENTITY.md` after every major task.
 - **Pre-Flight Check (🛸):** Mandatory `autoshield-preflight-check` before destructive actions.
 - **Shared Infra Health:** Verify `INFRA` via Glances (Port 61208) before Phase M3.
-- **Stateless Execution:** Los agentes deben ser capaces de reconstruir su intención actual leyendo `PROJECT_STATE.json`, sin depender del historial de chat previo.
+- **Stateless Execution:** Agents must be able to reconstruct their current intent by reading `PROJECT_STATE.json`, without depending on previous chat history.
 
 ---
 
-*01_THE_ENGINE v3.2.4-S | Status: Stark-Solidified.*
+*01_THE_ENGINE v3.2.5-S | Status: Stark-Solidified.*

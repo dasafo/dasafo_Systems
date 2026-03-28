@@ -90,6 +90,29 @@ cat <<EOF > "$PROJECT_ROOT/TASKS/registry.json"
 ]
 EOF
 
+# 9. Physical Kanban Seeding (v3.2.5-S Physical Sync Mandate)
+cat <<EOF > "$PROJECT_ROOT/TASKS/01_PENDING/M1-001.json"
+{
+  "id": "M1-001",
+  "title": "Draft PRP_CONTRACT.json",
+  "status": "PENDING",
+  "phase": "M1",
+  "assigned_to": "PRODUCT_OWNER",
+  "dependencies": []
+}
+EOF
+
+cat <<EOF > "$PROJECT_ROOT/TASKS/01_PENDING/M1-002.json"
+{
+  "id": "M1-002",
+  "title": "Define Project Vision & Scope",
+  "status": "PENDING",
+  "phase": "M1",
+  "assigned_to": "PRODUCT_OWNER",
+  "dependencies": []
+}
+EOF
+
 # 10. Add migration lesson to FEEDBACK-LOG.md
 cat <<EOF > "$PROJECT_ROOT/LOGS/FEEDBACK-LOG.md"
 ### [2026-03-27] - Constitution Unification (v3.1.5-S Unified)
