@@ -1,3 +1,4 @@
+import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 import os
 import subprocess
 import json
@@ -63,3 +64,20 @@ def run(skill_input: SkillInput) -> SkillOutput:
         return SkillOutput.failure(agent, skill, f"Docker Execution Error: {e.stderr}", cid)
     except Exception as e:
         return SkillOutput.failure(agent, skill, f"Resource Monitoring Failed: {str(e)}", cid)
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--project", default="ContentRepurpose")
+    args = parser.parse_args()
+    
+    # Mock input for direct CLI execution
+    test_input = SkillInput(
+        agent="CLI_TEST",
+        skill="resource-monitor",
+        params={},
+        target_project=args.project
+    )
+    
+    output = run(test_input)
+    print(output.to_json())

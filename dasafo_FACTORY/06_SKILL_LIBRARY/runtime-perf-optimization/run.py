@@ -1,3 +1,4 @@
+import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Runtime Perf Optimization (BACKEND_DEV)
 v3.2.0-S: Modular Toolbox | Industrial Scale.
