@@ -1,10 +1,9 @@
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
-import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
-run.py — Deep Semantic Search (RESEARCH_AGENT)
-v3.2.0-S: Modular Toolbox | Industrial Scale.
+run.py — Deep Semantic Search (RESEARCH_AGENT / MEMORY_OPTIMIZER)
+v3.3.0-S: Modular Toolbox | Industrial Scale.
 
-Performs semantic research and maintains the Research Nexus.
+Performs deep semantic research, connects context, and maintains the Research Nexus.
 """
 
 from __future__ import annotations
@@ -14,8 +13,8 @@ from datetime import datetime, timezone
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Standardized entry point for the skill."""
-    agent = "RESEARCH_AGENT"
+    """Industrialized entry point for deep semantic search."""
+    agent = skill_input.agent or "RESEARCH_AGENT"
     skill = "deep-semantic-search"
     cid = skill_input.correlation_id
 

@@ -1,6 +1,6 @@
 ---
-version: 3.2.0-S
-agent: ORCHESTRATOR
+version: 3.3.0-S
+agent: Multiple (ORCHESTRATOR / FACTORY_EVOLVER)
 ---
 
 # 🔍 Skill | Pattern Recognition
@@ -9,7 +9,7 @@ agent: ORCHESTRATOR
 
 Identify recurrent anomalies and fixes across the industrial ecosystem to abstract them into global standards, optimizing the factory's systemic flow.
 
-## 🛠️ Interface (v3.2.0-S)
+## 🛠️ Interface (v3.3.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -39,4 +39,5 @@ Cualquier métrica de frecuencia de errores o ahorro de tiempo proyectado por el
 4. **Evolution:** Update factory core instructions after human approval (RA-authorized).
 
 ---
-*Skill v3.2.0-S | Status: Standardized.*
+**ORIGIN:** [pattern-recognition by supercent-io](https://skills.sh/supercent-io/skills-template/pattern-recognition)
+*Skill v3.3.0-S | Status: Standardized & Industrialized.*

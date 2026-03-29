@@ -1,16 +1,19 @@
 ---
-version: 3.2.0-S
-agent: ARCHITECT
+version: 3.3.0-S
+agent: Multiple (ARCHITECT / DB_MASTER / BACKEND)
+source: https://skills.sh/supercent-io/skills-template/architecture-decision-records
 ---
 
 # 📝 Skill | Architecture Decision Records (ADR)
 
 ## Objective
+
 Establish a formal, immutable log of technical decisions, explaining the "Why" behind the "How" for every $TARGET_PROJECT.
 
-## 🛠️ Interface (v3.2.0-S)
+## 🛠️ Interface (v3.3.0-S)
 
 ### Input Schema (SkillInput.params)
+
 - `id` (string, optional): Target ADR ID (e.g., "0001").
 - `title` (string): Descriptive title of the decision.
 - `context` (string): Problem statement and technical context.
@@ -19,6 +22,7 @@ Establish a formal, immutable log of technical decisions, explaining the "Why" b
 - `consequences` (string, optional): Trade-offs and impact.
 
 ### Output Schema (SkillOutput.result)
+
 - `path`: (string) Absolute path to the created ADR file.
 - `status`: (string) "ACCEPTED" | "PROPOSED".
 
@@ -39,4 +43,5 @@ Cualquier métrica técnica referenciada en el ADR (ej: tiempos de respuesta req
 4. **Index:** Maintain a physical `README.md` index in the same folder.
 
 ---
-*Skill v3.2.0-S | Status: Standardized.*
+**ORIGIN:** [architecture-decision-records by supercent-io](https://skills.sh/supercent-io/skills-template/architecture-decision-records)
+*Skill v3.3.0-S | Status: Standardized & Industrialized.*

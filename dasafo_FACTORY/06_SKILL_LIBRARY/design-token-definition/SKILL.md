@@ -1,6 +1,7 @@
 ---
-version: 3.2.0-S
-agent: ARCHITECT
+version: 3.3.0-S
+agent: Multiple (ARCHITECT / FRONTEND_DEV)
+source: https://skills.sh/supercent-io/skills-template/design-token-definition
 ---
 
 # 🎨 Skill | Design Token Definition
@@ -9,7 +10,7 @@ agent: ARCHITECT
 
 Define the project's visual DNA (Tokens) to ensure the "Dasafo Vibe" (Glassmorphism, High-End Aesthetic) is consistent throughout the UI.
 
-## 🛠️ Interface (v3.2.0-S)
+## 🛠️ Interface (v3.3.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -42,4 +43,5 @@ Los valores de espaciado (grid, gap) y tamaños de fuente deben reportarse prefe
 Reject any "plain" styles. Aesthetics must be PREMIUM.
 
 ---
-*Skill v3.2.0-S | Status: Standardized.*
+**ORIGIN:** [design-token-definition by supercent-io](https://skills.sh/supercent-io/skills-template/design-token-definition)
+*Skill v3.3.0-S | Status: Standardized & Industrialized.*

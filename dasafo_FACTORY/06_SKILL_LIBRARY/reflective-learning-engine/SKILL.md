@@ -1,6 +1,7 @@
 ---
-version: 3.2.0-S
-agent: ORCHESTRATOR
+version: 3.3.0-S
+agent: Multiple (ORCHESTRATOR / FACTORY_EVOLVER)
+source: https://skills.sh/supercent-io/skills-template/reflective-learning-engine
 ---
 
 # 🪞 Skill | Reflective Learning Engine
@@ -9,7 +10,7 @@ agent: ORCHESTRATOR
 
 Implement an industrial meta-cognition layer to analyze project histories, refine agent heuristics, and distill systemic wisdom into global standards.
 
-## 🛠️ Interface (v3.2.0-S)
+## 🛠️ Interface (v3.3.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -39,4 +40,5 @@ Cualquier métrica de eficiencia ganada (reducción de latencia en %, tiempo aho
 4. **Knowledge Distillation:** Commit learnings to `00_GLOBAL_KNOWLEDGE/WISDOM.md`.
 
 ---
-*Skill v3.2.0-S | Status: Standardized.*
+**ORIGIN:** [reflective-learning-engine by supercent-io](https://skills.sh/supercent-io/skills-template/reflective-learning-engine)
+*Skill v3.3.0-S | Status: Standardized & Industrialized.*

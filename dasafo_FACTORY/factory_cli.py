@@ -27,9 +27,9 @@ def main():
                 response = {
                     "jsonrpc": "2.0", "id": msg_id,
                     "result": {
-                        "protocolVersion": "2024-11-05",
+                        "protocolVersion": "2026-03-29",
                         "capabilities": {"tools": {}},
-                        "serverInfo": {"name": "dasafo_factory", "version": "3.2.4-S"}
+                        "serverInfo": {"name": "dasafo_factory", "version": "3.3.0-S"}
                     }
                 }
                 sys.stdout.write(json.dumps(response) + "\n"); sys.stdout.flush()
@@ -41,13 +41,13 @@ def main():
                         "tools": [
                             {
                                 "name": "execute_factory_skill",
-                                "description": "Lanza una habilidad de la factoría (v3.2.0-S Modular Toolbox).",
+                                "description": "Launches a factory skill (v3.3.0-S Modular Toolbox).",
                                 "inputSchema": {
                                     "type": "object",
                                     "properties": {
-                                        "agent": {"type": "string", "description": "ID del agente que invoca (ej: orchestrator)"},
-                                        "skill": {"type": "string", "description": "Nombre de la habilidad (ej: kanban-solidity-gate)"},
-                                        "input_data": {"type": "string", "description": "Parámetros opcionales"}
+                                        "agent": {"type": "string", "description": "Invoking agent ID (e.g., orchestrator)"},
+                                        "skill": {"type": "string", "description": "Skill name (e.g., kanban-solidity-gate)"},
+                                        "input_data": {"type": "string", "description": "Optional parameters"}
                                     },
                                     "required": ["agent", "skill"]
                                 }

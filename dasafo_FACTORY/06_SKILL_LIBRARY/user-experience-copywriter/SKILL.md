@@ -1,6 +1,7 @@
 ---
-version: 3.2.0-S
-agent: DOCUMENTATION_STRATEGIST
+version: 3.3.0-S
+agent: Multiple (FRONTEND / COPYWRITER / DOCS_MASTER)
+source: https://skills.sh/supercent-io/skills-template/user-experience-copywriter
 ---
 
 # ✨ Skill | User Experience Copywriter
@@ -9,7 +10,7 @@ agent: DOCUMENTATION_STRATEGIST
 
 Apply advanced, persuasive, and premium copywriting to all product interfaces and manuals, ensuring industrial clarity and emotional alignment with the brand.
 
-## 🛠️ Interface (v3.2.0-S)
+## 🛠️ Interface (v3.3.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -39,4 +40,5 @@ Toda mención a rendimientos técnicos en el microcopy (ej: "400ms speed") debe 
 4. **Aesthetic Verification:** Ensure the "look and feel" of the copy matches a high-tier industrial SaaS.
 
 ---
-*Skill v3.2.0-S | Status: Standardized.*
+**ORIGIN:** [user-experience-copywriter by supercent-io](https://skills.sh/supercent-io/skills-template/user-experience-copywriter)
+*Skill v3.3.0-S | Status: Standardized & Industrialized.*

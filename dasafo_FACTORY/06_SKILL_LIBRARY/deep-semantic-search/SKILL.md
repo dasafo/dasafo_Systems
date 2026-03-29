@@ -1,6 +1,7 @@
 ---
-version: 3.2.0-S
-agent: RESEARCH_AGENT
+version: 3.3.0-S
+agent: Multiple (RESEARCH_AGENT / MEMORY_OPTIMIZER)
+source: https://skills.sh/supercent-io/skills-template/deep-semantic-search
 ---
 
 # 🔍 Skill | Deep Semantic Search
@@ -9,7 +10,7 @@ agent: RESEARCH_AGENT
 
 Go beyond keyword search to find semantically relevant technical documentation, high-quality code patterns, and industry research.
 
-## 🛠️ Interface (v3.2.0-S)
+## 🛠️ Interface (v3.3.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -39,4 +40,5 @@ Cualquier métrica de rendimiento de búsqueda (tiempo de respuesta de la API, l
 3. **Synthesize:** Append findings to the `research_nexus.md` in `$TARGET_PROJECT/LOCAL_KNOWLEDGE/`.
 
 ---
-*Skill v3.2.0-S | Status: Standardized.*
+**ORIGIN:** [deep-semantic-search by supercent-io](https://skills.sh/supercent-io/skills-template/deep-semantic-search)
+*Skill v3.3.0-S | Status: Standardized & Industrialized.*

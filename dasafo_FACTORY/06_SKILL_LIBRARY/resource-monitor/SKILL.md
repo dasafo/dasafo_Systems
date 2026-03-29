@@ -1,6 +1,7 @@
 ---
-version: 3.2.0-S
-agent: DEVOPS_SRE
+version: 3.3.0-S
+agent: Multiple (SECURITY / DEPLOYMENT / DEVOPS)
+source: https://skills.sh/supercent-io/skills-template/resource-monitor
 ---
 
 # 📊 Skill | Resource Monitor
@@ -9,7 +10,7 @@ agent: DEVOPS_SRE
 
 Monitor system-level resources (CPU, RAM, Disk, IO) at an industrial scale to detect bottlenecks, memory leaks, or unauthorized consumption.
 
-## 🛠️ Interface (v3.2.0-S)
+## 🛠️ Interface (v3.3.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -39,4 +40,5 @@ Toda métrica de consumo (RAM en Megabytes, disco en Gigabytes, tiempo de CPU en
 4. **Escalation:** Sustained CPU > 90% or RAM growth triggers SRE notification.
 
 ---
-*Skill v3.2.0-S | Status: Standardized.*
+**ORIGIN:** [resource-monitor by supercent-io](https://skills.sh/supercent-io/skills-template/resource-monitor)
+*Skill v3.3.0-S | Status: Standardized & Industrialized.*
