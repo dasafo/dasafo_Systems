@@ -1,6 +1,6 @@
 # 🛠️ QA Tester | Tools & Senses
 
-> **Standard:** v3.3.0-S Modular Toolbox
+> **Standard:** v3.3.1-S Industrial Core
 > **Scope:** Quality assurance, destructive testing, and contract validation.
 
 ## 📡 Senses (MCP Protocol)
@@ -13,27 +13,12 @@
 
 *(Invoked via `execute_factory_skill` or direct `run.py`)*
 
-### 🧪 Testing & Validation
-
-- `scoutqa-automated-suites`: Generation and orchestration of automated test beds.
-- `playwright-visual-testing`: Verifying UI flows and visual state regressions.
-- `browser-visual-validation`: Rapid screenshots and UI consistency checks.
-- `requirements-validation-audit`: Confirm that the implementation solves the signed contract.
-
 ### 🛡️ Guardrails & Certification
 
-- `agentic-thought-secret-scanner`: Ensure no secrets are leaked in test logs or documentation.
-- `hallucination-report-guardrail`: Meticulous fact-checking of audit reports against evidence.
-- `factory-audit-pro`: High-level quality certification for phase promotion.
-- `kanban-solidity-gate`: Verify physical task evidence on the disk.
+- `factory-audit-pro`: High-level quality certification for phase promotion and industrial health.
+- `hallucination-guardrail`: Mandatory safety and grounding checks for audit reports.
+- `kanban-solidity-gate`: Verify physical task evidence on the disk before state changes.
 - `autoshield-preflight-check`: Mandatory pre-execution validation.
-- `resilient-error-handling`: Audit for proper catch/propagate patterns.
-
-### 🏗️ Advanced Operations
-
-- `checkpoint-manager`: Restore stable states if a test cycle reveals a regression.
-- `runtime-perf-optimization`: Audit for memory leaks or high latency.
-- `incident-reporter`: Formally document bugs in the project's feedback log.
 
 ---
-*QA Tester v3.3.0-S | Status: Encapsulated & Modularized.*
+*QA Tester v3.3.1-S | Status: Standardized & Industrialized.*

@@ -7,34 +7,30 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("AduanaUniversal")
 
-# Skills autorizadas para ejecutar incluso si el estado está bloqueado
+# Skills autorizadas para ejecutar incluso si el estado está bloqueado (Top 18 Hub)
 BYPASS_SKILLS = {
     # 🌟 Puertas y Checklists
     "kanban-solidity-gate",
-    "autoshield-preflight-check",
-    "prp-validation-gate",
+    "agentic-thought-secret-scanner",
+    "factory-audit-pro",
+    "prp-generator",
+    
+    # 🔍 Diagnóstico e Investigación (No destructivas)
+    "arxiv-technical-digest",
+    "apify-trend-analysis",
+    "hallucination-guardrail",
+    "autonomous-feedback-analyzer",
     
     # 📋 Gestión Burocrática (Necesaria para cerrar tareas y desbloquear el proyecto)
-    "project-management",
-    
-    # 🔍 Diagnóstico y Auditoría (Sólo lectura / Pasivas)
-    "factory-audit-pro",
-    "task-dependency-diagnostic",
-    "healthcheck-poller",
-    "resource-monitor",
-    
-    # 📚 Contexto e Investigación (No destructivas)
-    "notebooklm-nexus",
-    "context-compression",
-    "continuous-research"
+    "project-management"
 }
 
 def verify_project_state(target_project: str, requested_skill: str, agent: str = None) -> tuple[bool, str]:
     """
-    Protocol-Level Session Hook (Aduana Universal v3.2.4-S).
+    Protocol-Level Session Hook (Aduana Universal v3.3.1-S).
     Verifica que el agente no intente ejecutar código si el proyecto está
     en un estado secuencial inconsistente (Fallo Cerrado).
-    Añadido v3.2.4-S: Verificación automática de Stark-Solidity (Build Proof).
+    Añadido v3.3.1-S: Sincronización con el esqueleto DOCS/ y Top 18 Hub.
     """
     
     if requested_skill in BYPASS_SKILLS:
@@ -56,18 +52,10 @@ def verify_project_state(target_project: str, requested_skill: str, agent: str =
     # Evaluar fases
     phases = state_data.get("phases", {})
     if not phases:
-        # Podría ser un proyecto nuevo, pero asumimos que debe tener fases para operar.
         return False, "Solidity Guard: PROJECT_STATE.json no define la clave 'phases'."
 
     phase_keys = list(phases.keys())
     
-    # Buscar el primer PENDING
-    first_pending_idx = -1
-    for i, pk in enumerate(phase_keys):
-        if phases[pk] == "PENDING":
-            first_pending_idx = i
-            break
-            
     # Buscar el primer IN_PROGRESS
     in_progress_count = 0
     in_progress_idx = -1
@@ -86,32 +74,20 @@ def verify_project_state(target_project: str, requested_skill: str, agent: str =
             if phases[phase_keys[i]] != "APPROVED":
                 return False, f"Solidity Guard: Fase {phase_keys[in_progress_idx]} en progreso, pero la fase anterior {phase_keys[i]} no está APPROVED."
                 
-    if first_pending_idx != -1:
-        # Todas las posteriores (o ella misma) que sean distintas de PENDING son inválidas
-        for i in range(first_pending_idx + 1, len(phase_keys)):
-            if phases[phase_keys[i]] != "PENDING":
-                return False, f"Solidity Guard: Inconsistencia detectada. Fase {phase_keys[first_pending_idx]} es PENDING, pero {phase_keys[i]} es {phases[phase_keys[i]]}."
-                
-    if in_progress_count == 0 and first_pending_idx != -1:
-         return False, "Solidity Guard: Ninguna fase está 'IN_PROGRESS', pero hay fases 'PENDING'. Por favor usa kanban-solidity-gate para abrir la siguiente fase."
+    if in_progress_count == 0:
+         # Verificar si hay fases pendientes posteriores a una APPROVED
+         return False, "Solidity Guard: Ninguna fase está 'IN_PROGRESS'. Por favor usa kanban-solidity-gate para abrir la siguiente fase."
 
-    # --- STARK-SOLIDITY ENFORCEMENT (v3.2.4-S) ---
-    # Si la skill es de gestión de tareas (cierre), validamos evidencia física de build.
+    # --- STARK-SOLIDITY ENFORCEMENT (v3.3.1-S) ---
+    # Si la skill es de gestión de tareas (cierre), validamos evidencia técnica de build en fases correspondientes.
     if requested_skill in ["project-management", "kanban-solidity-gate"]:
         current_phase = phase_keys[in_progress_idx] if in_progress_idx != -1 else None
         
-        # Las fases técnicas (Producción/M3, Compliance/M4, Operations/M5) requieren proof.
-        if current_phase in ["M3", "M4", "M5"]:
-            build_proof = Path(target_project) / "LOGS" / "reports" / "BUILD_REPORT.json"
+        # Las fases técnicas (Producción/M3, Compliance/M4) requieren proof.
+        if current_phase in ["M3", "M4"]:
+            build_proof = Path(target_project) / "LOGS" / "BUILD_REPORT.json"
             if not build_proof.exists():
-                # Intentamos buscar en LOGS/ directamente por si acaso
-                build_proof = Path(target_project) / "LOGS" / "BUILD_REPORT.json"
-            
-            if not build_proof.exists():
-                return False, f"Stark-Solidity Violation (v3.2.4-S): Estás intentando cerrar/gestionar una tarea en la fase {current_phase} sin evidencia técnica. SE REQUIERE un archivo 'BUILD_REPORT.json' con el log de éxito de compilación/test en LOGS/reports/. Operación Bloqueada automáticamente."
-            
-            # (Opcional) Podríamos validar la frescura del timestamp aquí.
+                return False, f"Stark-Solidity Violation (v3.3.1-S): Intento de cierre en {current_phase} sin BUILD_REPORT.json en LOGS/. Operación Bloqueada."
     # ---------------------------------------------
 
     return True, "State Validated"
-

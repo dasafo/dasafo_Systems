@@ -1,6 +1,6 @@
 # 🛠️ Security Auditor | Tools & Senses
 
-> **Standard:** v3.2.5-S Modular Toolbox
+> **Standard:** v3.3.1-S Industrial Core
 > **Scope:** Secret scanning, vulnerability detection, and boundary security.
 
 ## 📡 Senses (MCP Protocol)
@@ -10,23 +10,18 @@
 - **Security Insight Sense:** Access to known vulnerability databases (OWASP, CVE).
 
 ## 🧰 Authorized Skills (Skill Library)
+
 *(Invoked via `execute_factory_skill` or direct `run.py`)*
 
 ### 🛡️ Secret & Vuln Scanning
+
 - `agentic-thought-secret-scanner`: **[CRITICAL]** In-depth scanning for secrets and credentials.
-- `owasp-llm-enforcement`: Specific audit for LLM-integrated project vulnerabilities.
-- `nemo-llm-guardrails`: Validation of AI safety at the prompt-logic boundary.
+- `factory-audit-pro`: High-level security certification and industrial health scoring.
 
 ### 🛡️ Guardrails & Certification
-- `factory-audit-pro`: High-level security certification.
-- `kanban-solidity-gate`: Verify physical task evidence.
-- `autoshield-preflight-check`: Mandatory pre-execution validation.
-- `nemo-guardrails-safety`: Policy enforcement for AI behavior.
 
-### 🏗️ Advanced Operations
-- `resource-monitor`: Audit for suspicious infrastructure activity.
-- `skill-optimization`: Ensure factory skills remain secure and up-to-date.
-- `resilient-error-handling`: Audit for info leaks in error messages.
+- `kanban-solidity-gate`: Verify physical task evidence before state changes.
+- `autoshield-preflight-check`: Mandatory pre-execution validation.
 
 ---
-*Security Auditor v3.2.5-S | Status: Encapsulated & Modularized.*
+*Security Auditor v3.3.1-S | Status: Standardized & Industrialized.*

@@ -1,84 +1,145 @@
-import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
-import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
-"""
-run.py — Autonomous Feedback Analyzer (FACTORY_EVOLVER)
-v3.2.0-S: Modular Toolbox | Industrial Scale.
-
-Analyzes the FEEDBACK-LOG.md to identify recurring failure patterns.
-"""
-
 from __future__ import annotations
+import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+"""
+run.py — Autonomous Feedback Analyzer (FACTORY_EVOLVER / PRODUCT_ANALYST)
+v3.3.0-S: Modular Toolbox | Industrial Scale.
+
+Advanced module to analyze, score, and synthesize user feedback and logs.
+Based on eddiebe147/claude-settings/feedback-analyzer logic.
+"""
+
 import os
+import json
 import re
 from pathlib import Path
+from datetime import datetime
 from skill_schema import SkillInput, SkillOutput
 
-def extract_failure_patterns(log_content: str):
-    """Uses regex to identify recurring error IDs and agents in the log."""
-    pattern = re.compile(r"### \[(?P<id>FB-\d+)\] (?P<pattern>.*)\n```yaml\n.*?affected_agents: \[(?P<agents>.*?)\]", re.DOTALL)
-    matches = pattern.finditer(log_content)
+def classify_sentiment(text: str) -> str:
+    """Basic heuristic-based sentiment classification."""
+    text = text.lower()
+    if any(w in text for w in ["angry", "threat", "leave", "worst", "unacceptable"]):
+        return "VERY_NEGATIVE"
+    if any(w in text for w in ["frustrated", "complaint", "broken", "bug", "error"]):
+        return "NEGATIVE"
+    if any(w in text for w in ["great", "praise", "love", "thanks", "amazing"]):
+        return "POSITIVE"
+    if any(w in text for w in ["best", "perfect", "testimonial", "recommend"]):
+        return "VERY_POSITIVE"
+    return "NEUTRAL"
+
+def calculate_urgency(feedback: dict) -> int:
+    """Calculates urgency score (1-100)."""
+    score = 0
+    # Tier weight
+    tier = feedback.get("tier", "standard").lower()
+    if tier == "enterprise": score += 40
+    elif tier == "pro": score += 20
     
-    analysis = []
-    for match in matches:
-        analysis.append({
-            "id": match.group("id"),
-            "pattern": match.group("pattern").strip(),
-            "agents": [a.strip().strip('"') for a in match.group("agents").split(",")]
-        })
-    return analysis
+    # Frequency weight
+    score += min(feedback.get("frequency", 1) * 5, 30)
+    
+    # Sentiment weight
+    sentiment = feedback.get("sentiment", "NEUTRAL")
+    if sentiment == "VERY_NEGATIVE": score += 30
+    elif sentiment == "NEGATIVE": score += 15
+    
+    return min(score, 100)
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Standardized entry point for the skill."""
-    agent = "FACTORY_EVOLVER"
+    """Industrial Entry Point for Feedback Synthesis."""
+    agent = skill_input.agent or "FACTORY_EVOLVER"
     skill = "autonomous-feedback-analyzer"
     cid = skill_input.correlation_id
+    params = skill_input.params or {}
 
     try:
-        # 1. Path Resolution
-        target = skill_input.params.get("log_path") or os.environ.get("TARGET_PROJECT")
-        factory_root = Path(__file__).resolve().parents[4]
+        # 1. Path & Context Resolution
+        target = params.get("target_project") or skill_input.target_project or os.environ.get("TARGET_PROJECT")
+        if not target:
+             return SkillOutput.failure(agent, skill, "SECURITY LOCK: Missing TARGET_PROJECT path.", cid)
         
-        feedback_log = None
-        if target:
-            possible_path = Path(target).resolve() / "FEEDBACK-LOG.md"
-            if possible_path.exists():
-                feedback_log = possible_path
+        project_path = Path(target).resolve()
+        feedback_dir = project_path / "DOCS" / "feedback"
+        feedback_dir.mkdir(parents=True, exist_ok=True)
+        
+        action = params.get("action", "analyze")
+        raw_data = params.get("feedback_data", [])
+        if not raw_data:
+             return SkillOutput.failure(agent, skill, "INPUT_ERROR: No feedback_data provided.", cid)
 
-        if not feedback_log:
-            # Search in factory hierarchy
-            search_paths = [
-                factory_root / "FEEDBACK-LOG.md",
-                factory_root / "dasafo_FACTORY" / "FEEDBACK-LOG.md"
-            ]
-            for p in search_paths:
-                if p.exists():
-                    feedback_log = p
-                    break
+        # 2. Logic: Processing
+        processed = []
+        sentiment_stats = {"VERY_NEGATIVE": 0, "NEGATIVE": 0, "NEUTRAL": 0, "POSITIVE": 0, "VERY_POSITIVE": 0}
+        alerts = []
 
-        if not feedback_log:
-             return SkillOutput.success(
+        for item in raw_data:
+            if isinstance(item, str):
+                item = {"text": item}
+            
+            text = item.get("text", "")
+            sentiment = classify_sentiment(text)
+            item["sentiment"] = sentiment
+            sentiment_stats[sentiment] += 1
+            
+            urgency = calculate_urgency(item)
+            item["urgency_score"] = urgency
+            
+            if urgency >= 70:
+                alerts.append(f"[URGENT-{urgency}] {text[:50]}...")
+            
+            processed.append(item)
+
+        # 3. Action Logic
+        if action == "synthesize":
+            current_date = datetime.now().strftime("%Y-%m-%d")
+            report_path = feedback_dir / f"InsightsReport-{current_date}.md"
+            
+            report_md = f"# 🧠 Industrial Insights Report ({current_date})\n\n"
+            report_md += f"**Processed:** {len(processed)} items | **Correlation ID:** {cid}\n\n"
+            report_md += "## 📊 Sentiment Distribution\n"
+            for k, v in sentiment_stats.items():
+                report_md += f"- **{k}:** {v}\n"
+            
+            report_md += "\n## ⚠️ High Urgency Alerts\n"
+            for a in alerts:
+                report_md += f"- {a}\n"
+            
+            report_md += "\n## ⚡ Key Findings & Recommendations\n"
+            # Logic: Group by sentiment or keyword if available
+            report_md += "### FINDING: Identified recurring complaints (Placeholder RCA)\n"
+            report_md += "EVIDENCE: Multiple Negative/Very Negative indicators detected.\n"
+            report_md += "IMPACT: Churn risk for high-tier customers.\n"
+            report_md += "RECOMMENDATION: Address root cause in next sprint.\n\n"
+            
+            report_md += "*Generated by Autonomous Feedback Analyzer (v3.3.0-S)*\n"
+            report_path.write_text(report_md, encoding="utf-8")
+
+            return SkillOutput.success(
                 agent=agent,
                 skill=skill,
-                result={"status": "PASS", "message": "No FEEDBACK-LOG.md found."},
-                correlation_id=cid,
-                artifacts=[]
+                result={
+                    "status": "INSIGHTS_GENERATED",
+                    "report_path": str(report_path),
+                    "sentiment_distribution": sentiment_stats,
+                    "priority_alerts": alerts
+                },
+                artifacts=[str(report_path)],
+                correlation_id=cid
             )
 
-        # 2. Execution
-        content = feedback_log.read_text(encoding="utf-8")
-        patterns = extract_failure_patterns(content)
-        
+        # Default action: analyze (simple JSON output)
         return SkillOutput.success(
             agent=agent,
             skill=skill,
             result={
-                "status": "PASS" if not patterns else "EVOLUTION_REQUIRED",
-                "patterns_discovered": len(patterns),
-                "analysis": patterns
+                "status": "ANALYSIS_COMPLETE",
+                "processed_items": processed,
+                "sentiment_distribution": sentiment_stats
             },
-            correlation_id=cid,
-            artifacts=[]
+            artifacts=[],
+            correlation_id=cid
         )
 
     except Exception as e:
-        return SkillOutput.failure(agent, skill, f"Feedback Analysis Failed: {str(e)}", cid)
+        return SkillOutput.failure(agent, skill, f"CRITICAL Feedback Fault: {str(e)}", cid)

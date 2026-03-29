@@ -1,44 +1,52 @@
 ---
-version: 3.2.0-S
+version: 3.3.1-S
 agent: MARKETING_GROWTH
+source: https://skills.sh/coreyhaines31/marketingskills/social-content
 ---
 
-# 📣 Skill | Social Content Strategy
+# 🚀 Skill | Social Content Strategy (v3.3.1-S)
 
 ## Objective
 
-Transform high-intent technical breakthroughs from the `dasafo_FACTORY` into surgical, zero-noise social media content that reflects market leadership.
+Design and execute high-performance social media marketing strategies through content pillars, hook optimization, and multi-platform repurposing. This skill transforms "Pillar Content" (blogs, videos, podcasts) into a distributed ecosystem of social assets while maintaining brand voice and engagement loops.
 
-## 🛠️ Interface (v3.2.0-S)
+## 🛠️ Interface (v3.3.1-S)
 
 ### Input Schema (SkillInput.params)
 
-- `source_artifact` (string): Absolute path to research/architecture notes.
-- `platform` (string): "LinkedIn" | "Twitter" | "Web".
+- `action` (enum): `develop_pillars`, `generate_hooks`, `repurpose_system`, `plan_calendar`.
+- `target_project` (string, mandatory): Absolute path to the marketing workspace.
+- `source_content` (string, optional): Text, URL, or transcript of the pillar content.
+- `platforms` (array, optional): Default `["LinkedIn", "Twitter/X", "Instagram", "Threads"]`.
+- `brand_voice` (string, optional): Description of the required tone (e.g., "Professional & Provocative").
 
 ### Output Schema (SkillOutput.result)
 
-- `content_draft`: (string) The final translated copy.
-- `vibe_check`: (string) "SURGICAL".
-- `si_metric_density`: (integer) Count of empirical data points included.
+- `content_pillars`: (array) Core themes and topics identified.
+- `platforms_output`: (object) Adapted content for each platform (Hooks, Threads, Posts).
+- `batching_schedule`: (string) Proposed weekly distribution logic.
+- `repurposing_flow`: (array) List of assets extracted from the pillar.
+- `industrial_status`: (string) "SOLIDIFIED - CONTENT STRATEGY READY".
 
 ### ⚖️ Mandato SI (Sistema Internacional)
 
-Prohibido el uso de términos vagos. Cada post debe incluir al menos una métrica de avance (tiempo ahorro, eficiencia) en SI.
+Cualquier métrica de rendimiento (tiempos de lectura, latencia de publicación, tasas de engagement, cuotas de almacenamiento de assets) debe expresarse estrictamente en el SI (**segundos**, **bytes**).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 
-- **Source Integrity:** Generated content MUST reference a physical artifact saved in the repository. Fabricating benchmarks is a SEVERITY-1 breach.
-- **Tone Verification:** Copywriter MUST audit for "Meat/Analogies" and replace with "Scientific/Surgical" discourse.
+- **Hook-to-Pillar Alignment:** Every social post must be traceable back to a point in the source pillar content. Hallucinating marketing claims is PROHIBITED.
+- **Platform Specificity:** No cross-posting without adaptation. The skill must enforce specific formatting for each platform (e.g., Markdown for LinkedIn, Short Threads for X).
+- **Batching Mandate:** All proposed strategies must follow the "Batching Strategy" (targeting efficiency < 10,800s per week).
+- **Physical Metadata:** The content calendar and pillars must be saved as physical JSON/MD artifacts in `DOCS/MARKETING/`.
 
-## Repurposing Workflow
+## 🧠 Strategic Workflow (v3.3.1-S)
 
-1. **Fact Extraction:** Read `RESEARCH_NOTES.md` or `ADR.md` from `$TARGET_PROJECT`.
-2. **Surgical Tone:** Adopt the "Surgical & Empirical" voice. Zero fluff. Zero meat analogies.
-3. **Platform Adapting:**
-   - **LinkedIn:** Deep technical insights with benefit-driven focus.
-   - **Twitter:** Impactful threads tracing the journey from FAILURE to SOLIDITY.
-4. **Visual Alignment:** Request assets with Glassmorphism / Electric Blue aesthetic.
+1. **Pillar Analysis:** Extract 3-5 key insights from the source content.
+2. **Hook Generation:** Create curiosity, story, and value hooks for each insight.
+3. **Adaptation:** Transform insights into platform-native formats (LinkedIn posts, Twitter threads, etc.).
+4. **Calendar Distribution:** Schedule assets across the week to maximize distribution spread.
+5. **Engagement Planning:** Define a "Daily Engagement Routine" (< 1,800s) to support the content.
 
 ---
-*Skill v3.2.0-S | Status: Standardized.*
+**ORIGIN:** [social-content by coreyhaines31](https://skills.sh/coreyhaines31/marketingskills/social-content)
+*Skill v3.3.1-S | Status: Standardized & Industrialized (Dasafo Edition).*

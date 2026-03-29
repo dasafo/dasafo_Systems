@@ -1,32 +1,53 @@
 ---
-version: 3.2.0-S
-agent: RESEARCH_AGENT
+version: 3.3.1-S
+agent: MEMORY_OPTIMIZER / SECURITY_AUDITOR / MARKETING_GROWTH
+source: https://skills.sh/davila7/claude-code-templates/nemo-guardrails
 ---
 
-# 🛡️ Skill | Hallucination Guardrail
+# 🛡️ Skill | Hallucination Guardrail (v3.3.1-S)
 
 ## Objective
-Enforce fact-checking and consistency audits to ensure every research piece produced by the factory is 100% veracious and context-backed.
 
-## 🛠️ Interface (v3.2.0-S)
+Enforce programmable safety and factual integrity for LLM outputs. This skill prevents hallucinations, jailbreak attempts, and PII leaks using defined guardrails (NeMo style). It ensures that agent communications are grounded in physical project reality and follow industrial safety protocols.
+
+## 🛠️ Interface (v3.3.1-S)
 
 ### Input Schema (SkillInput.params)
-- `content` (string): The research text to audit.
-- `sources_path` (string, optional): Path to the `research_nexus.md` or similar.
+
+- `action` (enum): `check_fact`, `detect_jailbreak`, `sanitize_pii`, `self_check_output`.
+- `content` (string, mandatory): The text to be validated.
+- `context_path` (string, optional): Absolute path to the SSoT (Single Source of Truth) to verify facts against.
+- `strictness` (float, optional): 0.0 to 1.0 (default 0.8).
 
 ### Output Schema (SkillOutput.result)
-- `verdict`: (string) "TRUE" | "HIGH_RISK_HYPOTHESIS" | "HALLUCINATION".
-- `flags`: (list) Identified inconsistencies or unverified claims.
-- `confidence_score`: (integer) (0-100).
+
+- `is_safe`: (boolean)
+- `hallucination_detected`: (boolean)
+- `risk_score`: (float) 0-1 scale.
+- `corrected_content`: (string, optional) Content with sanitized PII or corrected facts.
+- `industrial_verdict`: (string) "SOLIDIFIED - CONTENT SAFE" | "BLOCKED - HALLUCINATION DETECTED"
 
 ### ⚖️ Mandato SI (Sistema Internacional)
-Cualquier desviación en benchmarks numéricos o métricas de sistema comparadas debe reportarse estrictamente bajo el SI.
 
-## Guardrail Checks
-1.  **Fact-Check:** Verify claims against retrieved industrial context.
-2.  **Safety Policy:** Ensure Zero-Trust (no PII or hardcoded secrets).
-3.  **Self-Correction:** Flag benchmark inconsistencies and suggest alternative verified sources.
-4.  **Tone:** Enforce Surgical & Academic voice.
+Cualquier métrica de rendimiento del modelo (tiempos de inferencia, latencia de respuesta, cuotas de tokens) debe expresarse estrictamente en el SI (**segundos**, (**bytes** para memoria de contexto).
+
+## 🛡️ Industrial Constraints (Zero-Trust)
+
+- **Grounding Required:** Fact-checking MUST be done against physical files (`PROJECT_STATE.json`, `ADRs`, etc.). If no file is provided, the check fails by default.
+- **Fail-Safe Mode:** If the risk score exceeds 0.5, the output is blocked from the project workspace.
+- **No Self-Correction:** The skill identifies issues but does not silently rewrite logic; it reports the violation for the `MEMORY_OPTIMIZER` to handle.
+
+## 🧠 Protection Workflow (v3.3.1-S)
+
+1. **Input Interception:** Catch the proposed content before it reaches the `PROJECTS/` workspace.
+2. **Context Retrieval:** Fetch the latest physical artifacts from the designated project root.
+3. **Verification:**
+   - **Jailbreak Detection:** Scan for prompt injection patterns.
+   - **Fact Verification:** Compare claims against the physical SSoT.
+   - **PII Masking:** Identity and mask sensitive data.
+4. **Scoring:** Assign a reliability/risk score.
+5. **Verdict:** Return an industrial PASS/FAIL signal.
 
 ---
-*Skill v3.2.0-S | Status: Standardized.*
+**ORIGIN:** [nemo-guardrails by davila7](https://skills.sh/davila7/claude-code-templates/nemo-guardrails)
+*Skill v3.3.1-S | Status: Standardized & Industrialized (Dasafo Edition).*

@@ -1,7 +1,7 @@
 """
 factory_cli.py — MCP Server (STDIO)
 Bridges Antigravity/MCP requests to the Factory's skill_engine.py.
-v3.2.0-S: Modular Toolbox v3.2 - Centralized Skill Library.
+v3.3.1-S: Industrial Core - Top 18 Hub Authorized.
 """
 
 import sys
@@ -29,7 +29,7 @@ def main():
                     "result": {
                         "protocolVersion": "2026-03-29",
                         "capabilities": {"tools": {}},
-                        "serverInfo": {"name": "dasafo_factory", "version": "3.3.0-S"}
+                        "serverInfo": {"name": "dasafo_factory", "version": "3.3.1-S"}
                     }
                 }
                 sys.stdout.write(json.dumps(response) + "\n"); sys.stdout.flush()
@@ -41,11 +41,11 @@ def main():
                         "tools": [
                             {
                                 "name": "execute_factory_skill",
-                                "description": "Launches a factory skill (v3.3.0-S Modular Toolbox).",
+                                "description": "Launches a factory skill (v3.3.1-S Industrial Core - Top 18 Hub).",
                                 "inputSchema": {
                                     "type": "object",
                                     "properties": {
-                                        "agent": {"type": "string", "description": "Invoking agent ID (e.g., orchestrator)"},
+                                        "agent": {"type": "string", "description": "Invoking agent ID (e.g., ORCHESTRATOR)"},
                                         "skill": {"type": "string", "description": "Skill name (e.g., kanban-solidity-gate)"},
                                         "input_data": {"type": "string", "description": "Optional parameters"}
                                     },
@@ -78,7 +78,7 @@ def main():
                             response = {
                                 "jsonrpc": "2.0", "id": msg_id,
                                 "result": {
-                                    "content": [{"type": "text", "text": f"Solidity Protocol Blocked: {reason}\nOnly authorized skills (stay passive if blocked) can be executed until state is valid."}]
+                                    "content": [{"type": "text", "text": f"Solidity Protocol Blocked: {reason}\nOnly authorized skills can be executed until state is valid."}]
                                 }
                             }
                             sys.stdout.write(json.dumps(response) + "\n"); sys.stdout.flush()
@@ -114,7 +114,6 @@ def main():
 
         except EOFError: break
         except Exception as e:
-            # Silent error handling for JSON-RPC stability, but logged in dev if needed
             pass
 
 if __name__ == "__main__":

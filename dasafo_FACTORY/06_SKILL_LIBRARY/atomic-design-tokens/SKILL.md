@@ -1,43 +1,57 @@
 ---
-version: 3.2.0-S
-agent: FRONTEND_DEV
+version: 3.3.0-S
+agent: FRONTEND_DEV / UI_ARCHITECT
+source: https://skills.sh/wshobson/agents/design-system-patterns
 ---
 
-# 💎 Skill | Atomic Design Tokens
+# 💎 Skill | Atomic Design Tokens & DS Patterns
 
 ## Objective
-Synchronize the UI implementation with the ARCHITECT's global design system using semantic tokens to ensure visual consistency.
 
-## 🛠️ Interface (v3.2.0-S)
+Synchronize the UI implementation with the ARCHITECT's global design system using a structured three-tier token hierarchy (Primitive, Semantic, Component). This skill ensures visual consistency, theme scalability, and automated UI synchronization across the project.
+
+## 🛠️ Interface (v3.3.0-S)
 
 ### Input Schema (SkillInput.params)
-- `theme` (string, optional): "dark" | "light". Default "dark".
+
+- `action` (string, optional): "init" (default) | "add_token" | "generate".
+  - `init`: Create the base token structure (Primitive, Semantic).
+  - `add_token`: Assign a raw value to a primitive or a primitive to a semantic/component token.
+  - `generate`: Export the design system to physical CSS/JSON artifacts.
+- `layer` (string, optional): "primitive" | "semantic" | "component".
+- `name` (string): The name of the token (e.g., `primary`, `button-bg`).
+- `value` (string): The value or reference (e.g., `#3b82f6` or `var(--blue-500)`).
+- `theme` (string, optional): "light" | "dark" | "all". Defaults to "all".
 - `target_project` (string, optional): Absolute path to the UI project.
 
 ### Output Schema (SkillOutput.result)
-- `tokens`: (object) Map of semantic CSS variables.
-- `theme`: (string) The applied theme.
-- `path`: (string, optional) Path where tokens were written (if applicable).
+
+- `status`: (string) "SYSTEM_INITIALIZED" | "TOKEN_LINKED" | "STYLE_GENERATED"
+- `artifacts`: (list) Paths to the generated `tokens.css` or `tokens.json`.
+- `hierarchy_report`:
+  - `primitive_count`: (integer) Count of raw values.
+  - `semantic_count`: (integer) Count of contextual aliases.
+- `si_alignment`: (boolean) TRUE if all spacing/sizing follows SI units.
 
 ### ⚖️ Mandato SI (Sistema Internacional)
 
-Cualquier unidad de medida en el sistema de diseño (espaciado en milímetros/pixels, tiempos de animación en milisegundos) debe estar alineada con el SI para escalabilidad global.
+Cualquier métrica dimensional (espaciado, radios, anchos) debe expresarse estrictamente en el SI (usando metros/milímetros, típicamente convertidos a unidades relativas `rem` en CSS). Las duraciones deben expresarse en segundos (s).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 
-- **Token Sync:** This skill physically writes `tokens.json` to the UI project. Mocks are detected via missing theme artifacts.
-- **Theme Guard:** Requires a valid `TARGET_PROJECT` mapping to verify visual persistence.
+- **Tier Integrity:** Component tokens MUST refer only to Semantic or Primitive tokens. Direct hardcoding of hex/pixel values in Components is FORBIDDEN.
+- **Physical Output:** Style artifacts must be physically written to `ui/styles/`. Mocks are invalid.
+- **Naming Protocol:** Enforce consistent naming conventions (e.g., `--color-brand-primary`).
 
-## Protocol
+## 🧠 Design Patterns (v3.3.0-S)
 
-1. **Ingest:** Read the latest `DESIGN_TOKENS.json` from the Architecture folder.
-2. **Translate:** Map tokens to `tailwind.config.js` or CSS variables.
-3. **Implement:** Physically write semantic classes to the stylesheet artifacts.
-
-## Constraints
-
-- **NO HARDCODED COLORS:** Every hex code or spacing unit must be a token.
-- **Theme Support:** Native support for Dark/Light modes.
+1. **Token Hierarchy:**
+   - **Primitive:** Raw colors, scales, and values.
+   - **Semantic:** Abstract definitions (e.g., `text-primary`, `surface-elevated`).
+   - **Component:** Usage-specific tokens (e.g., `button-primary-bg`).
+2. **Theming Infrastructure:** Use CSS custom properties for effortless Light/Dark switching.
+3. **Responsive Variants:** Integrate breakpoint tokens into the core system.
 
 ---
-*Skill v3.2.0-S | Status: Standardized.*
+**ORIGIN:** [design-system-patterns by wshobson](https://skills.sh/wshobson/agents/design-system-patterns)
+*Skill v3.3.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

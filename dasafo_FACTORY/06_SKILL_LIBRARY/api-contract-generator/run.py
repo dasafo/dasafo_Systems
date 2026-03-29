@@ -1,104 +1,144 @@
 from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
-run.py — API Contract Generator (ARCHITECT)
-v3.2.0-S: Modular Toolbox | Industrial Scale.
+run.py — API Designer & Contract Generator (ARCHITECT / BACKEND_DEV)
+v3.3.0-S: Modular Toolbox | Industrial Scale.
 
-Automates the creation and validation of OpenAPI/DTO contracts.
+Advanced module to design resource-oriented OpenAPI 3.1 contracts with RFC 7807 support.
+Based on jeffallan/claude-skills/api-designer logic.
 """
 
-import yaml
 import os
+import re
+import yaml
 from pathlib import Path
 from skill_schema import SkillInput, SkillOutput
 
-def create_base_openapi(title: str, version: str, description: str) -> dict:
-    """Generates a skeleton OpenAPI 3.0.0 structure."""
+def create_pro_openapi(resource: str, version: str) -> dict:
+    """Generates a professional OpenAPI 3.1.0 resource structure."""
+    res_plural = f"{resource}s"
+    res_title = resource.capitalize()
+    
     return {
-        "openapi": "3.0.0",
+        "openapi": "3.1.0",
         "info": {
-            "title": title,
+            "title": f"Industrial {res_title} API",
             "version": version,
-            "description": description
+            "description": f"Design-First API Contract (v3.3.0-S) for {resource} management.",
+            "contact": {"name": "Architect Unit", "email": "architect@dasafo.factory"}
         },
+        "servers": [{"url": "http://api.local/v1", "description": "Local Dev Server"}],
         "paths": {
-            "/health": {
+            f"/{res_plural}": {
                 "get": {
-                    "summary": "Health Check",
+                    "summary": f"List {res_plural}",
+                    "tags": [res_title],
+                    "parameters": [
+                        {"name": "offset", "in": "query", "schema": {"type": "integer", "default": 0}},
+                        {"name": "limit", "in": "query", "schema": {"type": "integer", "default": 10}}
+                    ],
                     "responses": {
-                        "200": {
-                            "description": "System is operational",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
-                                        "properties": {
-                                            "status": {"type": "string"},
-                                            "version": {"type": "string"}
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        "200": {"description": "Successful retrieval", "content": {"application/json": {"schema": {"$ref": f"#/components/schemas/{res_title}Collection"}}}},
+                        "401": {"$ref": "#/components/responses/Unauthorized"}
+                    }
+                },
+                "post": {
+                    "summary": f"Create {resource}",
+                    "tags": [res_title],
+                    "requestBody": {"required": True, "content": {"application/json": {"schema": {"$ref": f"#/components/schemas/{res_title}Input"}}}},
+                    "responses": {
+                        "201": {"description": "Created", "content": {"application/json": {"schema": {"$ref": f"#/components/schemas/{res_title}"}}}},
+                        "400": {"$ref": "#/components/responses/BadRequest"}
                     }
                 }
+            },
+            f"/{res_plural}/{{id}}": {
+                "parameters": [{"name": "id", "in": "path", "required": True, "schema": {"type": "string", "format": "uuid"}}],
+                "get": {"summary": f"Get {resource}", "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"$ref": f"#/components/schemas/{res_title}"}}}}, "404": {"$ref": "#/components/responses/NotFound"}}},
+                "put": {"summary": f"Update {resource}", "requestBody": {"required": True, "content": {"application/json": {"schema": {"$ref": f"#/components/schemas/{res_title}Input"}}}}, "responses": {"200": {"description": "OK"}, "404": {"$ref": "#/components/responses/NotFound"}}},
+                "delete": {"summary": f"Delete {resource}", "responses": {"204": {"description": "No Content"}}}
             }
         },
         "components": {
-            "schemas": {}
+            "schemas": {
+                res_title: {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "created_at": {"type": "string", "format": "date-time"}}},
+                f"{res_title}Input": {"type": "object", "required": ["name"], "properties": {"name": {"type": "string"}}},
+                f"{res_title}Collection": {"type": "object", "properties": {"items": {"type": "array", "items": {"$ref": f"#/components/schemas/{res_title}"}}, "total": {"type": "integer"}}},
+                "Error": {
+                    "type": "object",
+                    "description": "RFC 7807 Problem Details",
+                    "properties": {
+                        "type": {"type": "string", "format": "uri", "default": "about:blank"},
+                        "title": {"type": "string"},
+                        "status": {"type": "integer"},
+                        "detail": {"type": "string"},
+                        "instance": {"type": "string", "format": "uri"}
+                    }
+                }
+            },
+            "responses": {
+                "BadRequest": {"description": "Bad Request", "content": {"application/problem+json": {"schema": {"$ref": "#/components/schemas/Error"}}}},
+                "Unauthorized": {"description": "Unauthorized", "content": {"application/problem+json": {"schema": {"$ref": "#/components/schemas/Error"}}}},
+                "NotFound": {"description": "Not Found", "content": {"application/problem+json": {"schema": {"$ref": "#/components/schemas/Error"}}}}
+            }
         }
     }
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Standardized entry point for the skill."""
-    # Dinamicidad v3.2.0-S: Usar los valores del input para trazabilidad
+    """Dasafo Factory Entry Point for API Designer."""
     agent = skill_input.agent or "ARCHITECT"
-    skill = skill_input.skill or "api-contract-generator"
+    skill = "api-contract-generator"
     cid = skill_input.correlation_id
+    params = skill_input.params or {}
 
     try:
-        # 1. Input Resolution
-        params = skill_input.params
-        action = params.get("action", "generate")
-        title = params.get("title", "Dasafo Project API")
-        api_version = params.get("version", "0.1.0")
+        # 1. Path & Context Resolution
+        target = params.get("target_project") or skill_input.target_project or os.environ.get("TARGET_PROJECT")
+        if not target:
+             return SkillOutput.failure(agent, skill, "SECURITY LOCK: Missing TARGET_PROJECT path.", cid)
         
-        target = skill_input.target_project or os.environ.get("TARGET_PROJECT")
+        project_path = Path(target).resolve()
+        action = params.get("action", "design")
+        resource = params.get("resource", "generic_resource")
+        version = params.get("version", "1.0.0")
+
+        # 2. Logic: Create Spec (OpenAPI 3.1)
+        spec = create_pro_openapi(resource, version)
+
+        # 3. Persistence
+        docs_dir = project_path / "DOCS"
+        docs_dir.mkdir(parents=True, exist_ok=True)
         
-        if not target and action == "generate":
-             return SkillOutput.failure(agent, skill, "Mission Blocked: TARGET_PROJECT is missing.", cid)
+        yaml_path = docs_dir / "API-CONTRACT.yaml"
+        with open(yaml_path, 'w', encoding='utf-8') as f:
+            yaml.dump(spec, f, sort_keys=False, allow_unicode=True)
+            
+        # 4. Result Metrics (SI Compliance)
+        endpoints_count = sum(len(methods) for methods in spec.get("paths", {}).values())
+        
+        result_payload = {
+            "status": "SOLIDIFIED - PRO DESIGN",
+            "contract_path": str(yaml_path),
+            "design_summary": {
+                "resource_entity": resource,
+                "endpoints_count": endpoints_count,
+                "standards_compliance": "OpenAPI 3.1 + RFC 7807"
+            },
+            "recommendations": [
+                "Always use snake_case for resources and field names.",
+                "Implement pagination for list endpoints (supported by default in this spec).",
+                "Use RFC 7807 (Problem Details) for all error responses (schemas included).",
+                "Verify this spec with 'npx @redocly/cli lint' for best results."
+            ]
+        }
 
-        spec = create_base_openapi(title, api_version, "Auto-generated by Dasafo Architect v3.2.0-S.")
-
-        if action == "generate":
-            project_path = Path(target).resolve()
-            # Aseguramos que DOCS exista según el contrato de la skill
-            output_dir = project_path / "DOCS"
-            output_dir.mkdir(parents=True, exist_ok=True)
-            
-            output_path = output_dir / "API-CONTRACT.yaml"
-            
-            with open(output_path, 'w', encoding='utf-8') as f:
-                yaml.dump(spec, f, sort_keys=False)
-            
-            return SkillOutput.success(
-                agent=agent,
-                skill=skill,
-                result={
-                    "message": f"Industrial Contract generated successfully.",
-                    "path": str(output_path)
-                },
-                correlation_id=cid,
-                artifacts=[str(output_path)] # Vital para Solidity Guard
-            )
-        else:
-             return SkillOutput.success(
-                agent=agent,
-                skill=skill,
-                result={"spec": spec},
-                correlation_id=cid,
-                artifacts=[]
-            )
+        return SkillOutput.success(
+            agent=agent,
+            skill=skill,
+            result=result_payload,
+            correlation_id=cid,
+            artifacts=[str(yaml_path)]
+        )
 
     except Exception as e:
-        return SkillOutput.failure(agent, skill, f"Critical Contract Failure: {str(e)}", cid)
+        return SkillOutput.failure(agent, skill, f"CRITICAL Design Error: {str(e)}", cid)

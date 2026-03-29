@@ -1,39 +1,36 @@
 {
   "project": "[PROJECT_NAME]",
   "version": "1.0.0",
-  "factory_standard": "v3.3.0-S",
+  "factory_standard": "v3.3.1-S",
   "prp_status": "draft",
-  "validated_at": null,
-  "validated_by": null,
-  "zero_trust_clearance": null,
+  "industrial_mandate": "12-SECTIONS",
   "vision": {
-    "what": "[DESCRIPTION]",
+    "what": "[1. Vision & Strategy Description]",
     "why": "[BENEFIT]",
-    "who": "[STAKEHOLDER]"
+    "who": "[2. Stakeholders & Personas]"
   },
-  "phases": {
-    "M1_DISCOVERY": {
-      "objective": "Vision alignment and signed PRP contract.",
-      "status": "PENDING"
-    },
-    "M2_ARCHITECTURE": {
-      "objective": "Technical blueprint and task registry seeding.",
-      "status": "PENDING"
-    },
-    "M3_PRODUCTION": {
-      "objective": "Core implementation and feature development.",
-      "status": "PENDING"
-    },
-    "M4_COMPLIANCE": {
-      "objective": "Industrial audit and behavioral verification.",
-      "status": "PENDING"
-    },
-    "M5_OPERATIONS": {
-      "objective": "Deployment and global knowledge vectorization.",
-      "status": "PENDING"
-    }
+  "architecture": {
+    "core_logic": "[3. Core Business Logic Definitions]",
+    "stack": "[4. Technical Stack v3.3.1-S]",
+    "ui_vibe": "[5. UI/UX Atomic Designer Rules]",
+    "contracts": "[6. API & Data Contracts]",
+    "infra": "[7. Infrastructure & DevOps Setup]"
   },
-  "success_criteria": [],
+  "governance": {
+    "security": "[8. Security & Zero-Trust Enforcement]",
+    "quality": "[9. Quality & Testing Protocols]"
+  },
+  "lifecycle": {
+    "phases": {
+      "M1_DISCOVERY": { "objective": "[10. Vision alignment and signed PRP contract]", "status": "PENDING" },
+      "M2_ARCHITECTURE": { "objective": "[Technical blueprint and task registry seeding]", "status": "PENDING" },
+      "M3_PRODUCTION": { "objective": "[Core implementation and feature development]", "status": "PENDING" },
+      "M4_COMPLIANCE": { "objective": "[Industrial audit and behavioral verification]", "status": "PENDING" },
+      "M5_OPERATIONS": { "objective": "[Deployment and global knowledge vectorization]", "status": "PENDING" }
+    },
+    "success_metrics": "[11. Success Metrics in SI Units (Seconds/Bytes)]",
+    "risk_mitigation": "[12. Risk & Mitigations]"
+  },
   "constraints": [],
   "non_goals": []
 }

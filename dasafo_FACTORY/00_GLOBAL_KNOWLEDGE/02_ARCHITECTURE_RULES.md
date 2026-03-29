@@ -1,6 +1,6 @@
 # 🏗️ 02_ARCHITECTURE_RULES
 >
-> **Standard:** v3.3.0-S "Stark-Solidity Guard"
+> **Standard:** v3.3.1-S "Industrial Core"
 
 ## 1. The "Chasis Blindado" Architecture
 
@@ -13,32 +13,34 @@ The Factory is divided into two strict zones:
 
 - **Domain**: Depends on nothing. Core business rules.
 - **Application**: Orchestrates use cases.
-- **Infrastructure**: Implements interfaces (DBs, APIs).
-- **UI**: Purely visual. Communicates only with the Application layer.
+- **Infrastructure**: Implements interfaces (DBs, APIs, Storage).
+- **UI**: Purely visual. Communicates only with the Application layer via DTOs.
 
-## 3. The PRP Validation Gate (Zero-Trust)
+## 3. The PRP Generator & Gate (12-Section Mandate)
 
 > [!IMPORTANT]
-> No production task can start without a signed `PRP_CONTRACT.json` in the project root. This contract defines the "What" before the agents decide the "How".
+> No production task can start without a signed `PRP_CONTRACT.json` generated using the industrial 12-section mandate. This contract defines the "What" before the agents decide the "How".
 
 ## 4. Multi-Agent Orchestration
 
 - Use DAG (Directed Acyclic Graph) for task decomposition.
-- All inter-agent communication follows the `COMMUNICATION_PROTOCOL`.
-- Agents must never share mutable state; they pass serialized DTOs.
+- All inter-agent communication follows the industrialized Top 18 Hub mapping.
+- Agents must never share mutable state; they pass serialized DTOs through the aduana.
 
-## 5. Industrial-Scale Infrastructure (v3.1)
+## 5. Industrial-Scale Infrastructure
 
-- **Central Node (`INFRA`)**: Heavy services (Neo4j, Postgres, Redis) must be hosted on the shared `INFRA` node to optimize RAM/Disk.
-- **`dasafo_network`**: All containers must communicate via the shared `dasafo_network` for secure but unified service access.
-- **Resource Quotas**: Every project must enforce RAM/CPU limits to prevent "noisy neighbor" effects on the central node.
+- **Central Node (`INFRA`)**: Heavy services (Supabase, Postgres, Redis, Neo4j) must be hosted on the shared `INFRA` node to optimize resource consumption.
+- **Resource Quotas**: Every project must enforce RAM/CPU limits via `docker-compose` to prevent noise.
 
-## 6. Architecture Solidity (v3.3.0-S Stark-Solidity Guard)
+## 6. Architecture Solidity (Zero-Trust)
 
 > [!CAUTION]
 > **NO REPORT WITHOUT DISK IO & TASK SYNCHRONIZATION.**
-> The Architect must physically generate the architecture artifacts before reporting a Phase Completion. Task progression must physically move JSON files from `TASKS/01_PENDING` to `TASKS/03_COMPLETED`.
+> Task progression must move JSON files from `TASKS/01_PENDING` to `TASKS/03_COMPLETED` via `kanban-solidity-gate`.
 
-- **Artifacts Required:** `stack_evaluation.md`, `api_contracts.md`, and `ui_blueprint.md` in the project's `LOCAL_KNOWLEDGE/architecture/` directory.
-- **Verification Rule (Zero-Trust):** The Orchestrator will REJECT any Phase Promotion if these files are not physically present on disk. It will also track real-time task completion by parsing `TASKS/registry.json`.
-- **HITL Signature:** No movement from M2 to M3 is allowed without a manual check of the artifacts by the User.
+- **Artifacts Required:** ADRs, API Contracts, and UI Blueprints in the project's `DOCS/ARCH/` or `LOCAL_KNOWLEDGE/architecture/` directory.
+- **Verification Rule (Zero-Trust):** The Orchestrator will REJECT any Phase Promotion if these physical proofs are not present on disk.
+- **HITL Signature:** No movement to Phase M3 (Production) is allowed without a manual signature of the `PRP_CONTRACT.json`.
+
+---
+*Architecture Rules v3.3.1-S | dasafo_FACTORY.*

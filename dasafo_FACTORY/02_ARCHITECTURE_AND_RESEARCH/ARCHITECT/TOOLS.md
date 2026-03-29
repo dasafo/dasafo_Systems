@@ -1,6 +1,6 @@
 # 🛠️ Architect | Tools & Senses
 
-> **Standard:** v3.3.0-S Modular Toolbox
+> **Standard:** v3.3.1-S Industrial Core
 > **Scope:** High-level blueprinting, ADR synthesis, and structural governance.
 
 ## 📡 Senses (MCP Protocol)
@@ -15,20 +15,14 @@
 
 ### 🏗️ Blueprinting & Design
 
-- `structured-system-design`: Core architecture blueprinting.
 - `api-contract-generator`: Definition of cross-layer communication protocols.
 - `database-architect-strategic`: High-level data modeling and schema layout.
-- `premium-dashboard-architecture`: Layout and state management patterns.
-- `design-token-definition`: Authority for global visual identity and premium "Vibe".
 
 ### 🛡️ Guardrails & Governance
 
 - `architecture-decision-records`: Formal documentation of trade-offs and decisions.
-- `kanban-solidity-gate`: Verify physical task evidence.
+- `kanban-solidity-gate`: Verify physical task evidence before state changes.
 - `autoshield-preflight-check`: Mandatory pre-execution validation.
-- `mcp-capabilities-architect`: Sensory expansion for complex integrations.
-- `safe-db-migrations`: Coordinate with DB Master for schema evolution.
-- `fastapi-repository-pattern`: Enforcement of backend structural standards.
 
 ---
-*Architect v3.3.0-S | Status: Encapsulated & Modularized.*
+*Architect v3.3.1-S | Status: Standardized & Industrialized.*

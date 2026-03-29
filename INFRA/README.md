@@ -1,20 +1,22 @@
-# 🛠️ dasafo_FACTORY | Global Infrastructure Services (v3.2.0-S)
+# 🛠️ dasafo_FACTORY | Global Infrastructure Services (v3.3.1-S)
 
-## 🌐 Central Node
-This directory hosts the shared services for the entire factory ecosystem under the **Modular Toolbox** standard.
+## 🌐 Central Node (The Power Grid)
+This directory hosts the shared services for the entire factory ecosystem under the **Industrial Core** standard.
 
-### Services:
-- **Neo4j**: Graph Database (Central Knowledge Graph)
-- **Postgres**: Relational Database (Operational Data)
-- **Glances**: Health Monitoring Dashboard
+### 🍱 Main Services Stack:
+- **Supabase (Industrial Hub)**: Managed through cloud (Standard) or self-hosted (Custom).
+- **Neo4j (`kg-db`)**: Central Knowledge Graph (Graph-based orchestration).
+- **Postgres (`shared-db`)**: Relational Storage for operational metadata.
+- **Redis (`cache-node`)**: Fast session and task state caching.
+- **Glances**: Real-time performance and health monitoring node (Port 61208).
 
-### Usage:
+### 🚀 Usage:
 1. `cd dasafo_Systems/INFRA`
-2. **Security Gate:** Copy `.env.shared` to `.env` and configure your secure passwords.
+2. **Security Gate:** Copy `.env.shared` to `.env` and configure your secure credentials.
    `cp .env.shared .env`
 3. Launch the mainframe:
    `docker-compose up -d`
-4. Projects will automatically connect via `dasafo_network`.
+4. Projects will automatically connect via the internal `dasafo_network`.
 
 ---
-*Infrastructure v3.2.0-S | Status: Solidified.*
+*Infrastructure v3.3.1-S | Status: Industrial Core Active.*

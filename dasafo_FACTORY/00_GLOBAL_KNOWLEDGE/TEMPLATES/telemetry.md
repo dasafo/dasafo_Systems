@@ -1,24 +1,24 @@
 # 📊 MISSION TELEMETRY | [MISSION_NAME]
 
-> **Standard:** v3.2.0-S "Modular Toolbox"
+> **Standard:** v3.3.1-S "Industrial Core"
 > **Project:** [PROJECT_NAME]
 > **Correlation ID:** [CORRELATION_ID]
 
-## 📉 1. Resource Consumption
+## 📉 1. Resource Consumption (SI Units)
 - **API Tokens:** [Total]
-- **Memory Overhead:** [MB]
-- **Storage Delta:** [MB]
+- **Storage Delta:** [B] (Bytes)
+- **Network Overhead:** [B] (Bytes)
 
-## 🚀 2. Performance Metrics
+## 🚀 2. Performance Metrics (SI Units)
 - **Success Rate:** [%]
-- **Latency average:** [ms]
+- **Execution Time:** [s] (Seconds)
 - **DAG Depth:** [VALUE] nodes
 
 ## 🧬 3. Systemic Health
 - **Solidity Score:** [1-10]
 - **Agent Hallucination Rate:** [Target: 0%]
-- **Learning Points:** [N] entries added to FEEDBACK-LOG.
+- **Learning Points:** [N] entries added to `FEEDBACK-LOG`.
+- **Disk IO Truth:** Artifacts confirmed in `DOCS/` (YES/NO).
 
 ---
-
-*v3.2.0-S Template*
+*v3.3.1-S Industrial Telemetry | Dasafo Factory.*

@@ -1,6 +1,6 @@
 # 🛠️ Backend Dev | Tools & Senses
 
-> **Standard:** v3.3.0-S Modular Toolbox
+> **Standard:** v3.3.1-S Industrial Core
 > **Scope:** Development of APIs, business logic, and backend worker systems.
 
 ## 📡 Senses (MCP Protocol)
@@ -15,22 +15,14 @@
 
 ### 🚀 Logic & API Construction
 
-- `fastapi-repository-pattern`: Standard architecture for Python-based backends.
 - `async-fastapi-logic`: Implementation of resilient and high-concurrency async logic.
 - `api-contract-generator`: Ensure backend implementation matches the architectural design.
-- `resilient-error-handling`: Standardize global exception and error propagation.
 
 ### 🛡️ Guardrails & Validation
 
-- `kanban-solidity-gate`: Verify physical task evidence.
+- `kanban-solidity-gate`: Verify physical task evidence before state changes.
 - `agentic-thought-secret-scanner`: Ensure no secrets are hardcoded in the logic.
 - `autoshield-preflight-check`: Mandatory pre-execution validation.
-- `pydantic-validation-pro`: Strict schemas for input/output sanitization.
-
-### 🏗️ Advanced Operations
-
-- `safe-db-migrations`: Coordinate with DB Master for schema changes.
-- `checkpoint-manager`: Save project states before critical refactors.
 
 ---
-*Backend Dev v3.3.0-S | Status: Encapsulated & Modularized.*
+*Backend Dev v3.3.1-S | Status: Standardized & Industrialized.*

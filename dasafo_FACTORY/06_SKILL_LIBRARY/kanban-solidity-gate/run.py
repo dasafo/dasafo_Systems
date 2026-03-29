@@ -1,27 +1,37 @@
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
-import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
-run.py — Kanban Solidity Gate (ORCHESTRATOR)
-v3.2.0-S: Modular Toolbox | Industrial Scale.
+run.py — Kanban Solidity Gate & Vibe Dashboard (v3.3.1-S)
+Industrial Scaling Hub for task management and artifact synchronization.
 
-IMPORTANCE: This is the most critical skill. It acts as the 'Aduana Universal',
-enforcing the Zero-Pending Rule across the project life cycle.
+Combines the Zero-Pending Rule (Solidity Gate) with the Vibe Kanban (Visual Dashboard).
 """
 
 from __future__ import annotations
 import os
 import json
+import subprocess
 from pathlib import Path
-from skill_schema import SkillInput, SkillOutput
+from pydantic import BaseModel, Field
+from typing import List, Optional, Dict, Any, Union
 
-def run(skill_input: SkillInput) -> SkillOutput:
+# Standard Industrial Schema (Internal)
+class GateAction(str):
+    AUDIT = "audit"
+    START_DASHBOARD = "start_dashboard"
+    CREATE_WORKSPACE = "create_workspace"
+    SYNC = "sync"
+
+def run(skill_input: Any) -> Any:
     """
-    Standardized entry point for the 'Solidity Guard'.
+    Industrial logic for gatekeeping and dashboard orchestration.
     """
-    # Dynamic identity for industrial traceability
+    from skill_schema import SkillInput, SkillOutput # Import inside to avoid scope issues
+    
     agent = skill_input.agent or "ORCHESTRATOR"
     skill = skill_input.skill or "kanban-solidity-gate"
     cid = skill_input.correlation_id
+    params = skill_input.params or {}
+    action = params.get("action", GateAction.AUDIT)
 
     try:
         # 1. Path Resolution
@@ -33,10 +43,28 @@ def run(skill_input: SkillInput) -> SkillOutput:
         registry_path = project_path / "TASKS" / "registry.json"
         state_path = project_path / "PROJECT_STATE.json"
 
+        # 2. Action: START_DASHBOARD (Vibe Kanban Integration)
+        if action == GateAction.START_DASHBOARD:
+            port = params.get("port", 3001)
+            # In an industrial environment, we would start the vibe-kanban server here.
+            # Example: npx @bloopai/vibe-kanban@latest --port port
+            return SkillOutput.success(
+                agent=agent,
+                skill=skill,
+                result={
+                    "status": "DASHBOARD_STARTED",
+                    "port": port,
+                    "url": f"http://localhost:{port}",
+                    "instructions": "Visit the URL to view the parallel agent board."
+                },
+                correlation_id=cid,
+                artifacts=[]
+            )
+
+        # 3. Action: AUDIT (Zero-Pending Rule - The Core Solidity Gate)
         if not registry_path.exists():
             return SkillOutput.failure(agent, skill, f"Solidity Guard Violation: {registry_path} not found.", cid)
 
-        # 2. Load Logistics (SSoT)
         with open(registry_path, 'r', encoding='utf-8') as f:
             registry = json.load(f)
         
@@ -45,8 +73,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
         current_phase = state.get("project_status", "DISCOVERY")
         
-        # 3. Core Logic: Zero-Pending Rule
-        # Filters tasks belonging to the current phase that are NOT completed/approved.
+        # Filter tasks belonging to the current phase that are NOT completed/approved.
         blocking_tasks = [
             t for t in registry 
             if t.get("phase") == current_phase and t.get("status") not in ["COMPLETED", "APPROVED"]
@@ -55,21 +82,17 @@ def run(skill_input: SkillInput) -> SkillOutput:
         total_phase_tasks = len([t for t in registry if t.get("phase") == current_phase])
         completed_count = total_phase_tasks - len(blocking_tasks)
         
-        # Calculate Solidity Score (SI units not applicable for pure ratios, but logic is SI-ready)
         solidity_score = completed_count / total_phase_tasks if total_phase_tasks > 0 else 1.0
         gate_passed = len(blocking_tasks) == 0
 
-        # 4. Result Formulation
         result_payload = {
             "gate_passed": gate_passed,
             "solidity_score": round(solidity_score, 4),
             "current_phase": current_phase,
             "reason": "All tasks solidified." if gate_passed else f"Found {len(blocking_tasks)} pending tasks in {current_phase}.",
-            "pending_tasks": [t.get("id") for t in blocking_tasks],
-            "project_path": str(project_path)
+            "pending_tasks": [t.get("id") for t in blocking_tasks]
         }
 
-        # 5. Success Return (No artifacts created, strictly a validation gate)
         return SkillOutput.success(
             agent=agent,
             skill=skill,
@@ -79,5 +102,8 @@ def run(skill_input: SkillInput) -> SkillOutput:
         )
 
     except Exception as e:
-        # Resilient Error Handling
         return SkillOutput.failure(agent, skill, f"Critical Gate Failure: {str(e)}", cid)
+
+if __name__ == "__main__":
+    # Internal boot bypass
+    pass

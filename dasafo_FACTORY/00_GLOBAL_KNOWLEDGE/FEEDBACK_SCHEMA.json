@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "dasafo_factory/feedback_entry/v3.3",
+  "$id": "dasafo_factory/feedback_entry/v3.3.1",
   "title": "Feedback Log Entry Schema",
-  "description": "Machine-parseable schema for FEEDBACK-LOG entries. Enables automated pre-flight checks and pattern analysis (Stark-Solidity Guard v3.3.0-S).",
+  "description": "Machine-parseable schema for FEEDBACK-LOG entries. Enables automated pre-flight checks and pattern analysis (Industrial Core v3.3.1-S).",
   "type": "object",
   "required": ["id", "version", "timestamp", "context", "severity", "error_description", "correction", "golden_rule", "categories"],
   "properties": {
@@ -14,7 +14,7 @@
     "version": {
       "type": "string",
       "pattern": "^v\\d+\\.\\d+\\.\\d+(-[A-Z]+)?$",
-      "description": "Semantic version of the factory standard (e.g., 'v3.3.0-S')."
+      "description": "Semantic version of the factory standard (e.g., 'v3.3.1-S')."
     },
     "timestamp": {
       "type": "string",
@@ -27,7 +27,14 @@
       "properties": {
         "agent": {
           "type": "string",
-          "description": "Agent ID that committed the error (e.g., 'BACKEND_DEV')."
+          "enum": [
+            "ORCHESTRATOR", "MARKETING_GROWTH", "PRODUCT_OWNER",
+            "ARCHITECT", "RESEARCH_AGENT",
+            "BACKEND_DEV", "DB_MASTER", "FRONTEND_DEV",
+            "DOCS_MASTER", "QA_TESTER", "SECURITY_AUDITOR",
+            "FACTORY_EVOLVER", "MEMORY_OPTIMIZER"
+          ],
+          "description": "Authorized Agent ID from v3.3.1-S Industrial Mapping."
         },
         "project": {
           "type": "string",
@@ -41,11 +48,11 @@
         "task_id": {
           "type": "string",
           "pattern": "^M[1-5]-\\d{3}$",
-          "description": "Optional. The specific Task ID associated with the error (e.g., 'M3-001')."
+          "description": "Specific Task ID associated with the error (e.g., 'M3-001')."
         },
         "file": {
           "type": "string",
-          "description": "Optional. Specific file where the error was found."
+          "description": "Specific file where the error was found."
         }
       }
     },
@@ -64,7 +71,7 @@
     },
     "golden_rule": {
       "type": "string",
-      "description": "Universal rule derived from this error. Must be quotable and actionable."
+      "description": "Universal rule derived from this error."
     },
     "categories": {
       "type": "array",
@@ -72,31 +79,14 @@
       "items": {
         "type": "string",
         "enum": [
-          "authentication",
-          "routing",
-          "database",
-          "deployment",
-          "security",
-          "ui-ux",
-          "api",
-          "configuration",
-          "testing",
-          "performance",
-          "data-integrity",
-          "dependency",
-          "infrastructure",
-          "solidity-guard",
-          "zero-trust",
-          "containerization",
-          "mcp-bridge"
+          "authentication", "routing", "database", "deployment", "security",
+          "ui-ux", "api", "configuration", "testing", "performance",
+          "data-integrity", "dependency", "infrastructure", "solidity-guard",
+          "zero-trust", "containerization", "mcp-bridge", "hallucination",
+          "atomic-vibe", "secret-leak"
         ]
       },
-      "description": "Category tags for automated pre-flight filtering."
-    },
-    "affected_agents": {
-      "type": "array",
-      "items": { "type": "string" },
-      "description": "List of agent IDs that should pay special attention to this rule."
+      "description": "Category tags for automated pattern analysis."
     }
   }
 }

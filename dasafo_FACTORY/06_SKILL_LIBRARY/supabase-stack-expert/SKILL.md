@@ -1,42 +1,51 @@
 ---
-version: 3.2.0-S
+version: 3.3.1-S
 agent: DB_MASTER
+source: https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices
 ---
 
-# ⚡ Skill | Supabase Stack Expert
+# 🐘 Skill | Supabase Stack Expert (v3.3.1-S)
 
 ## Objective
 
-Architect and manage high-velocity full-stack database ecosystems using Supabase, enforcing RLS-only policies and strict migration-driven version control.
+Operate as a high-performance database engineer specialized in the Supabase/Postgres ecosystem. This skill enforces 8 priority categories of Postgres best practices (Query Performance, Connection Management, Security/RLS, Schema Design, Concurrency, Data Access, Monitoring, and Advanced Features) to ensure scalability, security, and industrial-grade reliability.
 
-## 🛠️ Interface (v3.2.0-S)
+## 🛠️ Interface (v3.3.1-S)
 
 ### Input Schema (SkillInput.params)
 
-- `action` (string): "init" | "generate_migration" | "test_rls".
-- `table_design` (object, optional): Schematic for the new table.
+- `action` (enum): `tune_query`, `audit_schema`, `enforce_rls`, `monitor_performance`.
+- `target_project` (string, mandatory): Absolute path to the backend/database workspace.
+- `sql_script` (string, optional): The SQL script or schema definition to analyze.
+- `audit_scope` (array, optional): Default `["query", "security", "schema"]`.
 
 ### Output Schema (SkillOutput.result)
 
-- `migration_path`: (string) Absolute path to the new SQL file.
-- `rls_verification`: (string) "CONFIRMED".
-- `auth_ready`: (boolean) True.
+- `optimization_report`: (string) Detailed analysis based on the 8 priority categories.
+- `suggested_indexes`: (array) List of missing or partial indexes identified.
+- `rls_verification`: (object) Status of Row-Level Security policies.
+- `performance_metrics`: (object) Estimated time (s) and impact of changes.
+- `industrial_status`: (string) "SOLIDIFIED - DATABASE OPTIMIZED".
 
 ### ⚖️ Mandato SI (Sistema Internacional)
 
-Métricas de rendimiento de consulta y almacenamiento (Cloud storage en GB) deben reportarse en el SI.
+Cualquier métrica de rendimiento (latencia de consulta, tiempo de ejecución de EXPLAIN, tiempos de recuperación ante fallos, tamaños de tabla e índices) debe expresarse estrictamente en el SI (**segundos**, **bytes**).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 
-- **RLS Mandatory:** Table creation without Row Level Security is FORBIDDEN. Hallucinating unprotected tables results in immediate task rejection.
-- **Physical Migration:** All database changes MUST be persisted in a physical `.sql` migration file before execution.
+- **RLS by Default:** No table can exist in the public schema without a defined and verified Row-Level Security policy.
+- **Index Guardrail:** Every table over 1,000,000 bytes (1MB) must have verified indexes for common query patterns.
+- **Explain-Before-Commit:** Substantial query changes must include a simulated or actual `EXPLAIN ANALYZE` output in seconds (s).
+- **Physical Migrations:** All database changes must be saved as physical migration files (`.sql`) in `INFRASTRUCTURE/DATABASE/`.
 
-## Workflow Rules
+## 🧠 Database Workflow (v3.3.1-S)
 
-1. **RLS Mandatory:** Table creation is FORBIDDEN without explicit Row Level Security policies.
-2. **Migration-Driven:** Hand-patching live data is forbidden. Every change must be in a versioned migration file.
-3. **Auth Integration:** Every feature must bridge directly to `auth.users` for multi-tenancy security.
-4. **Local Isolation:** Docker-based local testing of RLS policies is a prerequisite for production push.
+1. **Pre-Audit:** Analyze the schema or query using the 8 priority categories (Query, Conn, Security, Schema, Lock, Data, Monitor, Advanced).
+2. **Indexing Strategy:** Implement partial or covering indexes to reduce execution time (< 0.1s for OLTP).
+3. **Security Lockdown:** Configure RLS using `auth.uid()` or similar patterns for shared multi-tenant environments.
+4. **Optimization:** Apply connection pooling and tuning for Postgres-specific features (JSONB indexing, Full-text search).
+5. **Physical Record:** Document the EXPLAIN analysis and performance metrics in the project's architecture folder.
 
 ---
-*Skill v3.2.0-S | Status: Standardized.*
+**ORIGIN:** [supabase-postgres-best-practices by supabase](https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices)
+*Skill v3.3.1-S | Status: Standardized & Industrialized (Dasafo Edition).*

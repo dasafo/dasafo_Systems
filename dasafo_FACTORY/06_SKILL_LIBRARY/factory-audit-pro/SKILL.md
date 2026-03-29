@@ -1,42 +1,51 @@
 ---
-version: 3.2.0-S
-agent: QA_TESTER
+version: 3.3.1-S
+agent: MARKETING_GROWTH / QA_TESTER / SECURITY_AUDITOR
+source: https://skills.sh/pbakaus/impeccable/audit
 ---
 
-# 📁 Skill | Factory Audit Pro
+# 🔍 Skill | Factory Audit Pro (v3.3.1-S)
 
 ## Objective
 
-Perform a deep structural scan of the entire factory documentation, files, and agent identities to ensure industrial consistency and eliminate technical debt.
+Perform an industrial-grade diagnostic scan and quality audit of project artifacts. This skill evaluates 5 key dimensions: Accessibility (A11y), Performance, Theming, Responsive Design, and Anti-Patterns. It produces a comprehensive **Audit Health Score** and a prioritized list of findings (P0-P3).
 
-## 🛠️ Interface (v3.2.0-S)
+## 🛠️ Interface (v3.3.1-S)
 
 ### Input Schema (SkillInput.params)
 
-- `scope` (string, optional): "all" | "agents" | "docs". Default "all".
-- `fix_mode` (boolean, optional): If true, attempt to fix missing folders. Default `false`.
+- `target_path` (string, mandatory): Absolute path to the directory or file to audit.
+- `dimensions` (array, optional): Default `["A11y", "Perf", "Theme", "Resp", "AntiPattern"]`.
+- `severity_threshold` (enum, optional): Only report issues above this level (`P0`, `P1`, `P2`, `P3`).
+- `strict_mode` (boolean, optional): Default `true`. Fails the audit if any P0 issues are found.
 
 ### Output Schema (SkillOutput.result)
 
-- `health_score`: (integer) Health percentage (0-100).
-- `findings`: (list) List of inconsistencies or dead links.
-- `audit_id`: (string) Unique ID for the audit artifact.
+- `health_score`: (integer) Total score (0-20) based on diagnostic criteria.
+- `verdict`: (string) "PASS" | "FAIL" | "PASS_WITH_WARNINGS".
+- `executive_summary`: (string) High-level overview of findings and health rating.
+- `detailed_findings`: (array of objects) Issues with severity, category, location, and fix recommendation.
+- `industrial_status`: (string) "AUDITED - SOLIDITY VERIFIED".
 
 ### ⚖️ Mandato SI (Sistema Internacional)
 
-Cualquier métrica de rendimiento estructural (densidad de archivos, latencia de búsqueda de conocimiento) debe reportarse en el SI.
+Cualquier métrica técnica en el informe (tiempos de carga, latencia de renderizado, tamaños de bundle, cuotas de memoria) debe expresarse estrictamente en unidades del SI (**segundos**, **bytes**).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 
-- **Component Check:** Physically verifies the existence of `PRP_CONTRACT.json`, `TASKS/`, and `LOGS/`. Returns **CRITICAL** if any basic infrastructure is missing.
-- **Audit Persistence:** Failure to physically write the report to `LOGS/audits/` results in skill failure.
+- **Physical Evidence:** Audits must be based on physical file analysis. Generic or "hallucinated" reports are strictly FORBIDDEN.
+- **Brutal Honesty:** The "Anti-Patterns Verdict" must explicitly state if the code looks like low-quality AI generation.
+- **Traceability:** Every finding must point to a specific file and line number.
+- **No Direct Fixes:** This skill documents issues for specialized agents to fix; it does not modify the source code.
 
-## The Audit Protocol
+## 🧠 Audit Workflow (v3.3.1-S)
 
-1. **Structural Scan:** Physically verify factory folders.
-2. **Protocol Validation:** Check for v3.2.0-S header compliance in MDs.
-3. **Artifact Analysis:** Measure project health based on physical completion.
-4. **Persistence:** Physically save the report with timestamp and audit ID.
+1. **Diagnostic Scan:** Run systematic checks across the 5 dimensions.
+2. **Scoring:** Assign a score (0-4) to each dimension.
+3. **P0 Detection:** Identify "Blocking" issues that prevent phase transition (Gate Lockdown).
+4. **Report Generation:** Assemble findings into a structured audit report (`DOCS/AUDIT/`).
+5. **Verdict:** Issue the final industrial verdict based on the health score and severity of issues.
 
 ---
-*Skill v3.2.0-S | Status: Standardized.*
+**ORIGIN:** [audit by pbakaus](https://skills.sh/pbakaus/impeccable/audit)
+*Skill v3.3.1-S | Status: Standardized & Industrialized (Dasafo Edition).*

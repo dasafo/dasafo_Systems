@@ -1,8 +1,8 @@
-# dasafo_FACTORY | INFRA Node v3.2.0-S "Modular Toolbox"
-# Objective: Shared, isolated, and high-performance industrial infrastructure.
+# ⚙️ dasafo_FACTORY | INFRA Node v3.3.1-S "Industrial Core"
+# 🎯 Objective: Shared, high-performance, and autoshielded industrial infrastructure.
 
 services:
-  # 🧠 Central Knowledge Graph
+  # 🧠 Central Knowledge Graph (Neo4j)
   kg-db:
     image: neo4j:latest
     container_name: dasafo-shared-kg
@@ -12,20 +12,20 @@ services:
     environment:
       - NEO4J_AUTH=${NEO4J_USER:-neo4j}/${NEO4J_PASSWORD}
     volumes:
-      - shared_kg_data:/data
+      - ./data/shared_kg_data:/data
     networks:
       - dasafo_network
     deploy:
       resources:
         limits:
-          memory: 4G # Anti-Noisy-Neighbor armor
+          memory: 4G # Graph traversal armor
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:7474/"]
       interval: 10s
       timeout: 5s
       retries: 5
 
-  # 🐘 Central Operational DB
+  # 🐘 Central Operational DB (Postgres)
   shared-db:
     image: postgres:15-alpine
     container_name: dasafo-shared-db
@@ -35,20 +35,33 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_USER=${POSTGRES_USER:-postgres}
     volumes:
-      - shared_db_data:/var/lib/postgresql/data
+      - ./data/shared_db_data:/var/lib/postgresql/data
     networks:
       - dasafo_network
     deploy:
       resources:
         limits:
-          memory: 2G # Industrial scale quota
+          memory: 2G # Relational quota
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres}"]
       interval: 10s
       timeout: 5s
       retries: 5
 
-  # 📊 Observability Node
+  # ⚡ Fast Orchestration Cache (Redis)
+  cache-node:
+    image: redis:alpine
+    container_name: dasafo-cache-node
+    ports:
+      - "6379:6379"
+    networks:
+      - dasafo_network
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+
+  # 📊 Observability Node (Glances)
   health-monitor:
     image: nicolargo/glances:latest
     container_name: dasafo-health-monitor
@@ -63,7 +76,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 512M # Monitoring quota
+          memory: 512M
 
 networks:
   dasafo_network:
@@ -71,5 +84,6 @@ networks:
     driver: bridge
 
 volumes:
+  # Internal named volumes preserved for data persistence
   shared_kg_data:
   shared_db_data:

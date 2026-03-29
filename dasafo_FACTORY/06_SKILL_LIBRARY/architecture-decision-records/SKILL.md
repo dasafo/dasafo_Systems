@@ -1,47 +1,55 @@
 ---
 version: 3.3.0-S
-agent: Multiple (ARCHITECT / DB_MASTER / BACKEND)
-source: https://skills.sh/supercent-io/skills-template/architecture-decision-records
+agent: ARCHITECT / LEAD_DEV
+source: https://skills.sh/wshobson/agents/architecture-decision-records
 ---
 
 # 📝 Skill | Architecture Decision Records (ADR)
 
 ## Objective
 
-Establish a formal, immutable log of technical decisions, explaining the "Why" behind the "How" for every $TARGET_PROJECT.
+Capture and manage technical decisions in a formal, searchable, and persistent log. This skill ensures that the "Why" behind every architectural choice is documented, enabling future agents and humans to understand the system's evolution and trade-offs.
 
 ## 🛠️ Interface (v3.3.0-S)
 
 ### Input Schema (SkillInput.params)
 
-- `id` (string, optional): Target ADR ID (e.g., "0001").
-- `title` (string): Descriptive title of the decision.
-- `context` (string): Problem statement and technical context.
-- `decision` (string): The chosen solution and rationale.
-- `alternatives` (string, optional): Other options considered.
-- `consequences` (string, optional): Trade-offs and impact.
+- `action` (string, optional): "new" (default) | "init" | "list" | "supersede".
+  - `init`: Initialize the ADR directory and index.
+  - `new`: Create a new ADR entry.
+  - `list`: Show all current ADRs and their status.
+  - `supersede`: Mark an old ADR as superseded by a new one.
+- `title` (string, required for "new"): Short, descriptive title.
+- `context` (string, optional): The problem background and constraints.
+- `decision` (string, optional): The chosen solution and its rationale.
+- `consequences` (string, optional): Trade-offs (positive/negative) resulting from the choice.
+- `target_id` (string, required for "supersede"): The ID of the ADR being replaced (e.g., "0003").
 
 ### Output Schema (SkillOutput.result)
 
-- `path`: (string) Absolute path to the created ADR file.
-- `status`: (string) "ACCEPTED" | "PROPOSED".
+- `status`: (string) "SOLIDIFIED - ADR RECORDED" | "ADR_INDEX_UPDATED"
+- `adr_path`: (string, optional) Path to the newly created ADR file.
+- `adr_id`: (string, optional) Assigned sequential ID (e.g., "0021").
+- `summary`: (list) Brief recap of the decision and its impact.
 
 ### ⚖️ Mandato SI (Sistema Internacional)
 
-Cualquier métrica técnica referenciada en el ADR (ej: tiempos de respuesta requeridos, límites de memoria, anchos de banda) debe utilizar obligatoriamente el Sistema Internacional.
+Cualquier métrica técnica mencionada en el ADR (ej: latencias < 200ms, almacenamiento > 50GB, ancho de banda > 1Gbps) debe expresarse estrictamente en unidades del SI (segundos, bytes).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 
-- **Immutable Persistence:** ADRs must be physically written to `DOCS/ADR/` within the `TARGET_PROJECT`. Failure to write a physical artifact results in skill failure.
-- **Sequential Integrity:** The skill verifies the current physical list of ADRs to suggest the next ID, avoiding collisions in a multi-agent environment.
+- **Sequential Integrity:** ADR IDs must be strictly sequential (0001, 0002...).
+- **Physical Immutability:** Once an ADR is "ACCEPTED", it should only be changed via a "SUPERSEDE" action in a new ADR.
+- **Index Sync:** Every new or updated ADR must trigger a physical update of the `DOCS/ADR/README.md` index.
 
-## Workflow
+## 🧠 Core Lifecycle (v3.3.0-S)
 
-1. **Draft:** Create an ADR when a significant tech stack or structural choice is made.
-2. **Format:** Use the MADR format (Context, Alternatives, Decision, Consequences).
-3. **Persist:** Physically save in `$TARGET_PROJECT/DOCS/ADR/ADR-XXX-title.md`.
-4. **Index:** Maintain a physical `README.md` index in the same folder.
+1. **Identify Decision:** Recognize a strategic choice (Pattern, Library, Infrastructure).
+2. **Standard Format:** Use the MADR (Markdown Architecture Decision Record) template.
+3. **Capture Rationale:** Document context, decision, and consequences.
+4. **Lifecycle Management:** Transition states: `Proposed → Accepted → Deprecated → Superseded`.
+5. **Update Index:** Ensure the central README reflects the current architectural state.
 
 ---
-**ORIGIN:** [architecture-decision-records by supercent-io](https://skills.sh/supercent-io/skills-template/architecture-decision-records)
-*Skill v3.3.0-S | Status: Standardized & Industrialized.*
+**ORIGIN:** [architecture-decision-records by wshobson](https://skills.sh/wshobson/agents/architecture-decision-records)
+*Skill v3.3.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

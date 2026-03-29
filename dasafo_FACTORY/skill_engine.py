@@ -1,9 +1,8 @@
 """
-skill_engine.py — CLI unificado para ejecutar cualquier skill de dasafo_FACTORY (v3.2.0-S).
+skill_engine.py — CLI unificado para ejecutar cualquier skill de dasafo_FACTORY (v3.3.1-S).
 
-ADR: Modular Toolbox v3.2. Todas las skills residen en 06_SKILL_LIBRARY/.
-El motor carga run.py dinámicamente basándose en el nombre de la skill,
-ignorando la ubicación física del agente (desacoplamiento total).
+ADR: Industrial Core v3.3.1-S. Todas las skills residen en 06_SKILL_LIBRARY/.
+El motor carga run.py dinámicamente basándose en el nombre de la skill del Top 18 Hub.
 """
 
 from __future__ import annotations
@@ -17,11 +16,11 @@ import uuid
 from pathlib import Path
 from typing import Optional
 
-# Path resolution for v3.2 (Modular Toolbox)
+# Path resolution for v3.3.1-S (Modular Toolbox)
 FACTORY_ROOT = Path(__file__).resolve().parent
 SKILL_LIBRARY_DIR = FACTORY_ROOT / "06_SKILL_LIBRARY"
 
-# Inject root in sys.path for skill_schema imports (Previene duplicados)
+# Inject root in sys.path for skill_schema imports
 if str(FACTORY_ROOT) not in sys.path:
     sys.path.insert(0, str(FACTORY_ROOT))
 
@@ -30,7 +29,7 @@ try:
 except ImportError:
     from .skill_schema import SkillInput, SkillOutput
 
-# Caché en memoria para evitar I/O de disco excesivo en llamadas recurrentes
+# Caché en memoria para evitar I/O de disco
 _MODULE_CACHE = {}
 
 def _resolve_run_module(skill: str) -> Path:
@@ -38,7 +37,7 @@ def _resolve_run_module(skill: str) -> Path:
     run_path = SKILL_LIBRARY_DIR / skill / "run.py"
     if not run_path.exists():
         raise FileNotFoundError(
-            f"Error Modular Toolbox: No se encontró run.py para la skill '{skill}'.\n"
+            f"Error Industrial Core: No se encontró run.py para la skill '{skill}'.\n"
             f"Ruta esperada en la librería: {run_path}"
         )
     return run_path
@@ -100,14 +99,14 @@ def execute(
                 with open(state_path) as f:
                     before_phases = json.load(f).get("phases", {})
             except json.JSONDecodeError as e:
-                return SkillOutput.failure(agent, skill, f"Solidity Guard Fatal: PROJECT_STATE.json corrupto antes de ejecución. {e}", correlation_id)
+                return SkillOutput.failure(agent, skill, f"Solidity Guard Fatal: PROJECT_STATE.json corrupto. {e}", correlation_id)
             except Exception as e:
-                return SkillOutput.failure(agent, skill, f"Solidity Guard Fatal: No se pudo leer PROJECT_STATE.json. {e}", correlation_id)
+                return SkillOutput.failure(agent, skill, f"Solidity Guard Fatal: Error leyendo estado. {e}", correlation_id)
 
-        # Ejecución del módulo cacheado
+        # Ejecución
         output = _load_and_run(run_path, skill_input)
 
-        # 🧬 Solidity Guard v3.2-S: Post-Execution Verification
+        # 🧬 Solidity Guard v3.3.1-S: Post-Execution Verification
         if output.success:
             # 1. Physical Artifact Verification
             if output.artifacts:
@@ -120,10 +119,10 @@ def execute(
                         missing.append(str(art_path))
                 if missing:
                     output.success = False
-                    output.error = f"Solidity Guard Violation: Artifacts missing: {', '.join(missing)}"
+                    output.error = f"Solidity Guard Violation: Artifacts missing from disk: {', '.join(missing)}"
                     return output
 
-            # 2. Phase-Gate Enforcement (HITL) - Evaluación Estricta
+            # 2. Phase-Gate Enforcement (Aduana Universal)
             if state_path and state_path.exists():
                 try:
                     with open(state_path) as f:
@@ -135,15 +134,12 @@ def execute(
                     if after_done > before_done + 1:
                         output.success = False
                         output.error = (
-                            f"HITL Solidity Breach: Phase jump detected ({before_done} -> {after_done}). "
+                            f"Aduana Solidity Breach: Phase jump detected ({before_done} -> {after_done}). "
                             "Authorization must be physical and sequential in PROJECT_STATE.json."
                         )
-                except json.JSONDecodeError as e:
-                    output.success = False
-                    output.error = f"Solidity Guard Fatal: PROJECT_STATE.json fue corrompido durante la ejecución de la skill. {e}"
                 except Exception as e:
                     output.success = False
-                    output.error = f"Solidity Guard Fatal: Error leyendo el estado post-ejecución. {e}"
+                    output.error = f"Solidity Guard Fatal: Post-execution check failed. {e}"
         
         return output
         
@@ -158,28 +154,19 @@ def execute(
         return SkillOutput.failure(
             agent=agent,
             skill=skill,
-            error=f"Error inesperado v3.2: {type(exc).__name__}: {exc}",
+            error=f"Unexpected Error v3.3.1-S: {exc}",
             correlation_id=correlation_id,
         )
-
 
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog="skill_engine",
-        description="Modular Toolbox Engine - dasafo_FACTORY v3.2.0-S",
+        description="Industrial Core Engine - dasafo_FACTORY v3.3.1-S",
     )
     parser.add_argument("--agent", required=True, help="ID del agente que invoca")
     parser.add_argument("--skill", required=True, help="Nombre de la skill en 06_SKILL_LIBRARY")
-    parser.add_argument(
-        "--input",
-        default="{}",
-        help="Parámetros como JSON string.",
-    )
-    parser.add_argument(
-        "--target-project",
-        default=None,
-        help="Ruta al proyecto activo.",
-    )
+    parser.add_argument("--input", default="{}", help="Parámetros como JSON string.")
+    parser.add_argument("--target-project", default=None, help="Ruta al proyecto activo.")
     parser.add_argument("--correlation-id", default=None, help="ID de correlación.")
     return parser.parse_args()
 
