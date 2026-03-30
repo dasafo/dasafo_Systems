@@ -83,7 +83,7 @@ Ningún proyecto avanza a M3 (Producción) sin un **PRP_MASTER** firmado. Debe i
 
 ## 🍱 6. GESTIÓN DE INFRAESTRUCTURA (Ops)
 
-1. **Setup:** `cd dasafo_Systems/INFRA`.
+1. **Setup:** `cd INFRA`.
 2. **Config:** `cp .env.shared .env` y configurar secretos reales.
 3. **Boot:** `docker-compose up -d`.
 4. **Resilience:** Los servicios corren sobre `dasafo_network` y son accesibles por las skills mediante inyección dinámica de entorno.

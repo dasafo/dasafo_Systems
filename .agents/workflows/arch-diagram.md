@@ -11,7 +11,7 @@ This flow activates the Architect to visualize the technical architecture under 
 2. **Execution Protocol:** // turbo
 
 3. **Run Blueprint Generation:** Execute the following command to map the architecture:
-`python3 dasafo_Systems/dasafo_FACTORY/skill_engine.py --agent ARCHITECT --skill architecture-decision-records --target-project $TARGET_PROJECT`
+`python3 dasafo_FACTORY/skill_engine.py --agent ARCHITECT --skill architecture-decision-records --target-project $TARGET_PROJECT`
 
 4. **Result Reporting:** Verify that the generated Markdown/Mermaid files are physically present in `DOCS/ARCH/`.
 

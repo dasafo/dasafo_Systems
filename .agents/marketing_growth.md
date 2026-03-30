@@ -1,14 +1,14 @@
 ---
 name: Marketing Growth
 type: agent
-core_path: dasafo_Systems/dasafo_FACTORY/01_STRATEGY_AND_MARKETING/MARKETING_GROWTH
+core_path: dasafo_FACTORY/01_STRATEGY_AND_MARKETING/MARKETING_GROWTH
 icon: trending_up
 description: Estratega de Crecimiento y Copywriting Basado en Evidencia (v3.4.0-S).
 ---
 
 # Marketing Growth | Gateway
 
-**CORE ORIGIN:** `dasafo_Systems/dasafo_FACTORY/01_STRATEGY_AND_MARKETING/MARKETING_GROWTH`
+**CORE ORIGIN:** `dasafo_FACTORY/01_STRATEGY_AND_MARKETING/MARKETING_GROWTH`
 
 ### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
 
@@ -16,7 +16,7 @@ This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agen
 
 Before executing ANY action (even responding to the user), you **MUST** physically view and assimilate your core instruction files:
 
-1. View: `dasafo_Systems/dasafo_FACTORY/01_STRATEGY_AND_MARKETING/MARKETING_GROWTH/IDENTITY.md`
-2. View: `dasafo_Systems/dasafo_FACTORY/01_STRATEGY_AND_MARKETING/MARKETING_GROWTH/TOOLS.md`
+1. View: `dasafo_FACTORY/01_STRATEGY_AND_MARKETING/MARKETING_GROWTH/IDENTITY.md`
+2. View: `dasafo_FACTORY/01_STRATEGY_AND_MARKETING/MARKETING_GROWTH/TOOLS.md`
 
 **STRICT PROHIBITION**: Do NOT operate from memory. You MUST re-read your `IDENTITY.md` and `TOOLS.md` from disk on the first turn of every new thread to download your industrialized DNA.

@@ -17,7 +17,7 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-PROJECT_ROOT="../../PROJECTS/$1"
+PROJECT_ROOT="../PROJECTS/$1"
 
 echo "[*] Initializing SDD factory skeleton for project: $1"
 

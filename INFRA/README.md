@@ -16,7 +16,7 @@ This directory hosts the shared services for the entire factory ecosystem under 
 
 ### 🚀 Usage
 
-1. `cd dasafo_Systems/INFRA`
+1. `cd INFRA`
 2. **Security Gate:** Copy `.env.shared` to `.env` and configure your secure credentials.
    `cp .env.shared .env`
 3. Launch the mainframe:

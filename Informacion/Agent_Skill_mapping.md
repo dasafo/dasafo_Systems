@@ -48,7 +48,7 @@ Este documento define la matriz de autoridad entre los Agentes de la Factoría y
 
 | Agente | Skills Autorizadas | Propósito Principal |
 | :--- | :--- | :--- |
-| **DEVOPS_SRE** | `docker-stack-provisioner`, `terraform-iac-builder`, `agentic-thought-secret-scanner`, `hallucination-guardrail`, `build-test-executor` | Provisión de infra (IaC), contenedores, seguridad y ejecución de pipeline de build. |
+| **DEVOPS_SRE** | `docker-stack-provisioner`, `terraform-iac-builder`, `agentic-thought-secret-scanner`, `hallucination-guardrail`, `build-test-executor`, `telemetry-analyzer` | Provisión de infra (IaC), contenedores, seguridad y monitoreo de salud. |
 | **DEPLOYMENT_MONITOR** | `telemetry-analyzer`, `playwright-ui-tester`, `hallucination-guardrail` | Análisis de latencia (s/B) y monitoreo de salud en tiempo real. |
 | **FACTORY_EVOLVER** | `autonomous-feedback-analyzer`, `skill-refactor-pro`, `autoshield-preflight-check`, `hallucination-guardrail` | Evolución del framework, refactorización de skills y mejora de tokens. |
 | **MEMORY_OPTIMIZER** | `context-pruning-sieve`, `hallucination-guardrail` | Poda de contexto y optimización de memoria de sesión. |
@@ -93,7 +93,7 @@ Skills que pueden ser invocadas por cualquier agente en modo auditoría:
 | `playwright-ui-tester` | `FRONTEND_DEV`, `DEPLOYMENT_MONITOR` |
 | `autonomous-feedback-analyzer` | `DATA_SCIENTIST`, `FACTORY_EVOLVER` |
 | `dependency-vulnerability-scanner` | `SECURITY_AUDITOR` |
-| `telemetry-analyzer` | `DEPLOYMENT_MONITOR` |
+| `telemetry-analyzer` | `DEPLOYMENT_MONITOR`, `DEVOPS_SRE` |
 | `docker-stack-provisioner` | `DEVOPS_SRE` |
 | `terraform-iac-builder` | `DEVOPS_SRE` |
 | `skill-refactor-pro` | `FACTORY_EVOLVER` |

@@ -6,7 +6,7 @@
 ## 📡 Senses (Context-Limited)
 
 - **Search Sense:** Deep scanning of factory history to identify repetitive patterns or "token leaks".
-- **Filesystem Sense:** Read and write access restricted strictly to `dasafo_Systems/` (protocols) and `06_SKILL_LIBRARY/`.
+- **Filesystem Sense:** Read and write access restricted strictly to `dasafo_FACTORY/` (protocols) and `06_SKILL_LIBRARY/`.
 - **System Insight Sense:** Access to `FEEDBACK-LOG.md` and performance metrics to drive data-based refactors.
 
 ## 🧰 Authorized Skills (Skill Library)
