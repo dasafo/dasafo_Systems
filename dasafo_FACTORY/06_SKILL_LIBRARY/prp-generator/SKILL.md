@@ -4,20 +4,22 @@ agent: PRODUCT_OWNER
 source: https://skills.sh/daffy0208/ai-dev-standards/prp-generator
 ---
 
-# 📝 Skill | PRP Generator (v3.3.1-S)
+# 📝 Skill | PRP & Spec Generator (v3.4.0-S)
 
 ## Objective
 
-Generate a high-solidity **Product Requirements Prompt (PRP)** that defines the "What" of a project before any code is written. This skill enforces a 12-section structure to eliminate scope creep and ensure measurable success criteria, technical grounding, and pattern classification (A, B, or C).
+Generate industrial-grade requirements artifacts. Supports the dual-track contract system:
+- **PRP_MASTER:** 12-section full contract for project discovery (M1).
+- **SPEC_LITE:** 4-section atomic specification for isolated task execution.
 
-## 🛠️ Interface (v3.3.1-S)
+## 🛠️ Interface (v3.4.0-S)
 
 ### Input Schema (SkillInput.params)
 
-- `action` (enum): `init`, `generate`, `update`, `validate`.
-- `project_name` (string, mandatory): Short name of the project.
-- `problem_description` (string, mandatory): The core problem to solve.
-- `pattern` (enum): `A` (Simple Feature), `B` (New Product), `C` (AI-Native System).
+- `action` (enum): `generate_master`, `generate_lite`, `update`, `validate`.
+- `project_name` (string, mandatory): Project name or Task ID.
+- `problem_description` (string, mandatory): Core goal or task objective.
+- `pattern` (enum): `A` (Simple), `B` (New Product), `C` (AI-Native).
 - `target_project` (string, mandatory): Absolute path to the project root.
 
 ### Output Schema (SkillOutput.result)

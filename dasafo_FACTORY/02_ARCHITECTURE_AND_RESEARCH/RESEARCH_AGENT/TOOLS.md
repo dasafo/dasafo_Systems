@@ -1,13 +1,13 @@
-# 🛠️ Research Agent | Tools & Senses
+# 🛠️ Research Agent (The Scientist Auditor) | Tools & Senses
 
-> **Standard:** v3.3.1-S Industrial Core
+> **Standard:** v3.4.0-S "SDD Implementation"
 > **Scope:** Scientific investigation and technical feasibility analysis.
 
-## 📡 Senses (MCP Protocol)
+## 📡 Senses (Context-Limited)
 
-- **Search Content Sense:** Access to research and distillation tools for context and data synthesis.
+- **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
+- **Knowledge Digestion Sense:** Access to research and distillation tools for context and data synthesis.
 - **Filesystem Sense:** Read architectural ADRs and write research logs to `DOCS/RESEARCH/`.
-- **Memory Sense:** Query systemic patterns across past conversations and knowledge bases.
 
 ## 🧰 Authorized Skills (Skill Library)
 
@@ -20,8 +20,8 @@
 
 ### 🛡️ Guardrails & Governance
 
+- `hallucination-guardrail`: Mandatory verification of scientific claims.
 - `kanban-solidity-gate`: Verify physical task evidence before state changes.
-- `autoshield-preflight-check`: Mandatory pre-execution validation.
 
 ---
-*Research Agent v3.3.1-S | Status: Standardized & Industrialized.*
+*Research Agent v3.4.0-S | Status: Standardized & Industrialized.*

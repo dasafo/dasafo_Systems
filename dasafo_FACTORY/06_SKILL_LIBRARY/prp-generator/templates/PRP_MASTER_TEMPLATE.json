@@ -1,0 +1,48 @@
+{
+  "v3_code": "STARK-SOLIDITY-v3.4.0-S-MASTER",
+  "metadata": {
+    "project_name": "Required",
+    "pattern": "B",
+    "created_at": "ISO_TIMESTAMP",
+    "author": "PRODUCT_OWNER"
+  },
+  "requirements": {
+    "01_overview": "One-sentence high-level description.",
+    "02_problem": "Detailed problem statement and context.",
+    "03_success_criteria": {
+      "north_star": "Main metric to move (e.g., Conversion > 20%)",
+      "measurable": true,
+      "verification_method": "Disk Artifact Verification"
+    },
+    "04_user_stories": [
+      { "id": "US1", "story": "As a [role], I want [action] so that [benefit]." }
+    ],
+    "05_functional": [
+      { "id": "F1", "feature": "Specific capability the system must have." }
+    ],
+    "06_non_functional": {
+      "latency": "Seconds",
+      "storage": "Bytes",
+      "compliance": "Standardized"
+    },
+    "07_constraints": [
+      "No Hardcoding",
+      "Zero-Trust Architecture"
+    ],
+    "08_data": {
+      "entities": [],
+      "persistence": "Required"
+    },
+    "09_ui_ux": {
+      "design_language": "Atomic Logic",
+      "key_flows": []
+    },
+    "10_risks": [
+      { "risk": "Token Decay", "mitigation": "Clean Sessions" }
+    ],
+    "11_out_of_scope": [
+      "Anything not in this contract"
+    ],
+    "12_open_questions": []
+  }
+}

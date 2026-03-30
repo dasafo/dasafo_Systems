@@ -1,7 +1,7 @@
 """
-skill_engine.py — CLI unificado para ejecutar cualquier skill de dasafo_FACTORY (v3.3.1-S).
+skill_engine.py — CLI unificado para ejecutar cualquier skill de dasafo_FACTORY (v3.4.0-S).
 
-ADR: Industrial Core v3.3.1-S. Todas las skills residen en 06_SKILL_LIBRARY/.
+ADR: Industrial Core v3.4.0-S. Todas las skills residen en 06_SKILL_LIBRARY/.
 El motor carga run.py dinámicamente basándose en el nombre de la skill del Top 18 Hub.
 """
 
@@ -16,7 +16,7 @@ import uuid
 from pathlib import Path
 from typing import Optional
 
-# Path resolution for v3.3.1-S (Modular Toolbox)
+# Path resolution for v3.4.0-S (Modular Toolbox)
 FACTORY_ROOT = Path(__file__).resolve().parent
 SKILL_LIBRARY_DIR = FACTORY_ROOT / "06_SKILL_LIBRARY"
 
@@ -71,8 +71,11 @@ def execute(
     params: dict,
     target_project: Optional[str] = None,
     correlation_id: Optional[str] = None,
+    isolate: bool = False,
 ) -> SkillOutput:
-    """Punto de entrada programático."""
+    """Punto de entrada programático. v3.4.0-S compatible."""
+    if isolate:
+        os.environ["CLEAN_SESSION"] = "True"
     if correlation_id is None:
         correlation_id = str(uuid.uuid4())[:8]
 
@@ -85,6 +88,7 @@ def execute(
         params=params,
         target_project=target_project,
         correlation_id=correlation_id,
+        isolation_guard=bool(os.environ.get("CLEAN_SESSION", False))
     )
 
     try:
@@ -106,7 +110,7 @@ def execute(
         # Ejecución
         output = _load_and_run(run_path, skill_input)
 
-        # 🧬 Solidity Guard v3.3.1-S: Post-Execution Verification
+        # 🧬 Solidity Guard v3.4.0-S: Post-Execution Verification
         if output.success:
             # 1. Physical Artifact Verification
             if output.artifacts:
@@ -154,20 +158,21 @@ def execute(
         return SkillOutput.failure(
             agent=agent,
             skill=skill,
-            error=f"Unexpected Error v3.3.1-S: {exc}",
+            error=f"Unexpected Error v3.4.0-S: {exc}",
             correlation_id=correlation_id,
         )
 
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog="skill_engine",
-        description="Industrial Core Engine - dasafo_FACTORY v3.3.1-S",
+        description="Industrial Core Engine - dasafo_FACTORY v3.4.0-S",
     )
     parser.add_argument("--agent", required=True, help="ID del agente que invoca")
     parser.add_argument("--skill", required=True, help="Nombre de la skill en 06_SKILL_LIBRARY")
     parser.add_argument("--input", default="{}", help="Parámetros como JSON string.")
     parser.add_argument("--target-project", default=None, help="Ruta al proyecto activo.")
     parser.add_argument("--correlation-id", default=None, help="ID de correlación.")
+    parser.add_argument("--isolate", action="store_true", help="Activar isolation_guard (Clean Session)")
     return parser.parse_args()
 
 if __name__ == "__main__":
@@ -184,6 +189,7 @@ if __name__ == "__main__":
         params=params,
         target_project=args.target_project,
         correlation_id=args.correlation_id,
+        isolate=args.isolate,
     )
     print(output.to_json())
     sys.exit(0 if output.success else 1)

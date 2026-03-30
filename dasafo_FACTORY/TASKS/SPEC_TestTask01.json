@@ -1,0 +1,19 @@
+{
+  "v3_code": "STARK-SOLIDITY-v3.4.0-S-LITE",
+  "metadata": {
+    "task_id": "TestTask01",
+    "parent_prp": "PRP_CONTRACT.json",
+    "assigned_agent": "Required",
+    "context_pointers": []
+  },
+  "specification": {
+    "01_objective": "Implement a simple health check API.",
+    "02_success_evidence": [],
+    "03_constraints": [
+      "No-Code Persistence",
+      "English Code",
+      "SI Units"
+    ],
+    "04_execution_context": []
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "v3_code": "STARK-SOLIDITY-v3.4.0-S-LITE",
+  "metadata": {
+    "task_id": "Required",
+    "parent_prp": "PRP_PATH",
+    "assigned_agent": "(FRONTEND|BACKEND|QA|RESEARCH)",
+    "context_pointers": []
+  },
+  "specification": {
+    "01_objective": "Single, absolute technical goal.",
+    "02_success_evidence": [
+      { "location": "Relative path to disk check", "type": "JSON|File|Build" }
+    ],
+    "03_constraints": [
+      "No-Code Persistence",
+      "English Code / Spanish Docs",
+      "SI Units (s, B)"
+    ],
+    "04_execution_context": [
+      "Access limited to specific files in context_pointers."
+    ]
+  }
+}

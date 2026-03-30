@@ -1,28 +1,27 @@
-# 🛠️ Backend Dev | Tools & Senses
+# 🛠️ Backend Dev (The Logical Builder) | Tools & Senses
 
-> **Standard:** v3.3.1-S Industrial Core
-> **Scope:** Development of APIs, business logic, and backend worker systems.
+> **Standard:** v3.4.0-S "SDD Implementation"
+> **Scope:** Development of robust APIs, databases, and microservices.
 
-## 📡 Senses (MCP Protocol)
+## 📡 Senses (Context-Limited)
 
-- **Filesystem Sense:** Create, read, and modify project source code in `$TARGET_PROJECT/WORKSPACE/backend/`.
-- **Terminal Sense:** Execution of build tools, linters, and backend servers (Uvicorn, etc.).
-- **Search Sense:** Scan for existing patterns and models to ensure DRY (Don't Repeat Yourself).
+- **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
+- **Targeted File Sense:** Read/Write access restricted to `WORKSPACE/backend` and `context_pointers`.
+- **Terminal Sense:** Execution of Python, Pytest, and Server commands.
 
-## 🧰 Authorized Skills (Skill Library)
+## 🧰 Authorized Skills (Top 18 Hub)
 
 *(Invoked via `execute_factory_skill` or direct `run.py`)*
 
-### 🚀 Logic & API Construction
+### ⚙️ Logic & Data
 
-- `async-fastapi-logic`: Implementation of resilient and high-concurrency async logic.
-- `api-contract-generator`: Ensure backend implementation matches the architectural design.
+- `async-fastapi-logic`: Performance-optimized asynchronous backend logic.
+- `database-architect-strategic`: SQL/NoSQL schema design and optimization.
 
-### 🛡️ Guardrails & Validation
+### 🛡️ Guardrails & Security
 
+- `agentic-thought-secret-scanner`: Proactive leak prevention.
 - `kanban-solidity-gate`: Verify physical task evidence before state changes.
-- `agentic-thought-secret-scanner`: Ensure no secrets are hardcoded in the logic.
-- `autoshield-preflight-check`: Mandatory pre-execution validation.
 
 ---
-*Backend Dev v3.3.1-S | Status: Standardized & Industrialized.*
+*Backend Dev v3.4.0-S | Status: Standardized & Industrialized.*

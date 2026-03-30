@@ -1,7 +1,7 @@
 """
 factory_cli.py — MCP Server (STDIO)
 Bridges Antigravity/MCP requests to the Factory's skill_engine.py.
-v3.3.1-S: Industrial Core - Top 18 Hub Authorized.
+v3.4.0-S: Industrial Core - Top 18 Hub Authorized.
 """
 
 import sys
@@ -41,7 +41,7 @@ def main():
                         "tools": [
                             {
                                 "name": "execute_factory_skill",
-                                "description": "Launches a factory skill (v3.3.1-S Industrial Core - Top 18 Hub).",
+                                "description": "Launches a factory skill (v3.4.0-S Industrial Core - Top 18 Hub).",
                                 "inputSchema": {
                                     "type": "object",
                                     "properties": {

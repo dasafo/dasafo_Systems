@@ -27,10 +27,10 @@ BYPASS_SKILLS = {
 
 def verify_project_state(target_project: str, requested_skill: str, agent: str = None) -> tuple[bool, str]:
     """
-    Protocol-Level Session Hook (Aduana Universal v3.3.1-S).
+    Protocol-Level Session Hook (Aduana Universal v3.4.0-S).
     Verifica que el agente no intente ejecutar código si el proyecto está
     en un estado secuencial inconsistente (Fallo Cerrado).
-    Añadido v3.3.1-S: Sincronización con el esqueleto DOCS/ y Top 18 Hub.
+    Añadido v3.4.0-S: Sincronización con el esqueleto DOCS/ y Top 18 Hub.
     """
     
     if requested_skill in BYPASS_SKILLS:
@@ -78,7 +78,7 @@ def verify_project_state(target_project: str, requested_skill: str, agent: str =
          # Verificar si hay fases pendientes posteriores a una APPROVED
          return False, "Solidity Guard: Ninguna fase está 'IN_PROGRESS'. Por favor usa kanban-solidity-gate para abrir la siguiente fase."
 
-    # --- STARK-SOLIDITY ENFORCEMENT (v3.3.1-S) ---
+    # --- STARK-SOLIDITY ENFORCEMENT (v3.4.0-S) ---
     # Si la skill es de gestión de tareas (cierre), validamos evidencia técnica de build en fases correspondientes.
     if requested_skill in ["project-management", "kanban-solidity-gate"]:
         current_phase = phase_keys[in_progress_idx] if in_progress_idx != -1 else None
@@ -87,7 +87,7 @@ def verify_project_state(target_project: str, requested_skill: str, agent: str =
         if current_phase in ["M3", "M4"]:
             build_proof = Path(target_project) / "LOGS" / "BUILD_REPORT.json"
             if not build_proof.exists():
-                return False, f"Stark-Solidity Violation (v3.3.1-S): Intento de cierre en {current_phase} sin BUILD_REPORT.json en LOGS/. Operación Bloqueada."
+                return False, f"Stark-Solidity Violation (v3.4.0-S): Intento de cierre en {current_phase} sin BUILD_REPORT.json en LOGS/. Operación Bloqueada."
     # ---------------------------------------------
 
     return True, "State Validated"

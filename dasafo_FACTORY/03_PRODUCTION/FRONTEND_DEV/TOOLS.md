@@ -1,27 +1,27 @@
-# 🛠️ Frontend Dev | Tools & Senses
+# 🛠️ Frontend Dev (The Atomic Builder) | Tools & Senses
 
-> **Standard:** v3.3.1-S Industrial Core
+> **Standard:** v3.4.0-S "SDD Implementation"
 > **Scope:** Development of modern UIs, design tokens, and web interfaces.
 
-## 📡 Senses (MCP Protocol)
+## 📡 Senses (Context-Limited)
 
-- **Filesystem Sense:** Create, read, and modify frontend source code in `$TARGET_PROJECT/WORKSPACE/frontend/`.
+- **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
+- **Targeted File Sense:** Read/Write access restricted to `WORKSPACE/frontend` and `context_pointers`.
 - **Terminal Sense:** Execution of Vite, NPM, and Build-system commands.
-- **Search Sense:** Scan for existing components and assets.
 
-## 🧰 Authorized Skills (Skill Library)
+## 🧰 Authorized Skills (Top 18 Hub)
 
 *(Invoked via `execute_factory_skill` or direct `run.py`)*
 
 ### 🎨 Visual & UI Design
 
-- `atomic-design-tokens`: Systemic definition and implementation of visual identity tokens.
 - `shadcn-component-library`: Standardized, accessible, and premium UI components.
+- `atomic-design-tokens`: Styling and theme alignment via Design Tokens.
 
 ### 🛡️ Guardrails & Validation
 
+- `playwright-ui-tester`: Mandatory evidence generation for UI tasks.
 - `kanban-solidity-gate`: Verify physical task evidence before state changes.
-- `autoshield-preflight-check`: Mandatory pre-execution validation.
 
 ---
-*Frontend Dev v3.3.1-S | Status: Standardized & Industrialized.*
+*Frontend Dev v3.4.0-S | Status: Standardized & Industrialized.*

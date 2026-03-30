@@ -1,5 +1,5 @@
 """
-skill_schema.py — Definición de contratos para Skills (v3.3.1-S).
+skill_schema.py — Definición de contratos para Skills (v3.4.0-S).
 Define las estructuras de entrada y salida obligatorias para todas las skills industriales.
 """
 
@@ -16,6 +16,7 @@ class SkillInput:
     params: Dict[str, Any] = field(default_factory=dict)
     target_project: Optional[str] = None
     correlation_id: Optional[str] = None
+    isolation_guard: bool = False
 
     @classmethod
     def from_json(cls, raw: str) -> "SkillInput":
@@ -26,6 +27,7 @@ class SkillInput:
             params=data.get("params", {}),
             target_project=data.get("target_project"),
             correlation_id=data.get("correlation_id"),
+            isolation_guard=data.get("isolation_guard", False),
         )
 
     def to_dict(self) -> Dict[str, Any]:

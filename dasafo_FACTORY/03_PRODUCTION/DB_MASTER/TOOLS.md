@@ -1,28 +1,26 @@
-# 🛠️ DB Master | Tools & Senses
+# 🛠️ DB Master (The Schema Architect) | Tools & Senses
 
-> **Standard:** v3.3.1-S Industrial Core
-> **Scope:** Data modeling, SQL optimization, and migration management.
+> **Standard:** v3.4.0-S "SDD Implementation"
+> **Scope:** Schema design, SQL generation, and database optimization.
 
-## 📡 Senses (MCP Protocol)
+## 📡 Senses (Context-Limited)
 
-- **SQL Sense:** Direct interaction with Supabase/PostgreSQL clusters for live validation.
-- **Filesystem Sense:** Create and modify SQL migration files in `$TARGET_PROJECT/INFRASTRUCTURE/DATABASE/`.
-- **Search Sense:** Scan for performance bottlenecks and query anti-patterns.
+- **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
+- **Targeted File Sense:** Read/Write access restricted to `WORKSPACE/database` and `context_pointers`.
+- **Schema Sense:** Direct introspection of the database structure.
 
 ## 🧰 Authorized Skills (Skill Library)
 
 *(Invoked via `execute_factory_skill` or direct `run.py`)*
 
-### 🏗️ Modeling & Schema
+### ⚙️ Database Ops
 
-- `database-architect-strategic`: Expert level schema design and relational modeling.
-- `supabase-stack-expert`: Deep integration with Auth, Storage, and Postgres best practices.
+- `database-architect-strategic`: SQL/NoSQL schema migrations and design.
 
 ### 🛡️ Guardrails & Governance
 
-- `architecture-decision-records`: Formal documentation of schema trade-offs and structural choices.
 - `kanban-solidity-gate`: Verify physical task evidence before state changes.
 - `autoshield-preflight-check`: Mandatory pre-execution validation.
 
 ---
-*DB Master v3.3.1-S | Status: Standardized & Industrialized.*
+*DB Master v3.4.0-S | Status: Standardized & Industrialized.*
