@@ -16,6 +16,8 @@ import uuid
 from pathlib import Path
 from typing import Optional
 
+from dotenv import load_dotenv
+
 # Path resolution for v3.4.0-S (Modular Toolbox)
 FACTORY_ROOT = Path(__file__).resolve().parent
 SKILL_LIBRARY_DIR = FACTORY_ROOT / "06_SKILL_LIBRARY"
@@ -31,6 +33,19 @@ except ImportError:
 
 # Caché en memoria para evitar I/O de disco
 _MODULE_CACHE = {}
+
+def inject_infra_env() -> bool:
+    """
+    Carga las variables del CORE INDUSTRIAL (INFRA) y las inyecta 
+    en el proceso actual para que todas las Skills tengan conectividad.
+    """
+    # Buscamos el .env en la carpeta INFRA adyacente a la factoría
+    infra_env = FACTORY_ROOT.parent / "INFRA" / ".env"
+    
+    if infra_env.exists():
+        load_dotenv(infra_env)
+        return True
+    return False
 
 def _resolve_run_module(skill: str) -> Path:
     """Devuelve la ruta absoluta al run.py de la skill en la librería central."""
@@ -74,6 +89,9 @@ def execute(
     isolate: bool = False,
 ) -> SkillOutput:
     """Punto de entrada programático. v3.4.0-S compatible."""
+    # 🔌 Inyectar conectividad INFRA (Aduana Universal | Industrial Core)
+    inject_infra_env()
+
     if isolate:
         os.environ["CLEAN_SESSION"] = "True"
     if correlation_id is None:

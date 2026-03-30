@@ -1,10 +1,20 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "dasafo_factory/feedback_entry/v3.3.1",
+  "$id": "dasafo_factory/feedback_entry/v3.4.0-S",
   "title": "Feedback Log Entry Schema",
   "description": "Machine-parseable schema for FEEDBACK-LOG entries. Enables automated pre-flight checks and pattern analysis (Industrial Core v3.4.0-S).",
   "type": "object",
-  "required": ["id", "version", "timestamp", "context", "severity", "error_description", "correction", "golden_rule", "categories"],
+  "required": [
+    "id",
+    "version",
+    "timestamp",
+    "context",
+    "severity",
+    "error_description",
+    "correction",
+    "golden_rule",
+    "categories"
+  ],
   "properties": {
     "id": {
       "type": "string",
@@ -23,16 +33,28 @@
     },
     "context": {
       "type": "object",
-      "required": ["agent", "project", "phase"],
+      "required": [
+        "agent",
+        "project",
+        "phase"
+      ],
       "properties": {
         "agent": {
           "type": "string",
           "enum": [
-            "ORCHESTRATOR", "MARKETING_GROWTH", "PRODUCT_OWNER",
-            "ARCHITECT", "RESEARCH_AGENT",
-            "BACKEND_DEV", "DB_MASTER", "FRONTEND_DEV",
-            "DOCS_MASTER", "QA_TESTER", "SECURITY_AUDITOR",
-            "FACTORY_EVOLVER", "MEMORY_OPTIMIZER"
+            "ORCHESTRATOR",
+            "MARKETING_GROWTH",
+            "PRODUCT_OWNER",
+            "ARCHITECT",
+            "RESEARCH_AGENT",
+            "BACKEND_DEV",
+            "DB_MASTER",
+            "FRONTEND_DEV",
+            "DOCS_MASTER",
+            "QA_TESTER",
+            "SECURITY_AUDITOR",
+            "FACTORY_EVOLVER",
+            "MEMORY_OPTIMIZER"
           ],
           "description": "Authorized Agent ID from v3.4.0-S Industrial Mapping."
         },
@@ -42,7 +64,13 @@
         },
         "phase": {
           "type": "string",
-          "enum": ["M1_DISCOVERY", "M2_ARCHITECTURE", "M3_PRODUCTION", "M4_COMPLIANCE", "M5_OPERATIONS"],
+          "enum": [
+            "M1_DISCOVERY",
+            "M2_ARCHITECTURE",
+            "M3_PRODUCTION",
+            "M4_COMPLIANCE",
+            "M5_OPERATIONS"
+          ],
           "description": "The exact lifecycle phase where the error occurred."
         },
         "task_id": {
@@ -58,7 +86,12 @@
     },
     "severity": {
       "type": "string",
-      "enum": ["critical", "high", "medium", "low"],
+      "enum": [
+        "critical",
+        "high",
+        "medium",
+        "low"
+      ],
       "description": "Impact severity. Critical = security/data-loss. High = broken functionality. Medium = degraded quality. Low = cosmetic."
     },
     "error_description": {
@@ -79,11 +112,26 @@
       "items": {
         "type": "string",
         "enum": [
-          "authentication", "routing", "database", "deployment", "security",
-          "ui-ux", "api", "configuration", "testing", "performance",
-          "data-integrity", "dependency", "infrastructure", "solidity-guard",
-          "zero-trust", "containerization", "mcp-bridge", "hallucination",
-          "atomic-vibe", "secret-leak"
+          "authentication",
+          "routing",
+          "database",
+          "deployment",
+          "security",
+          "ui-ux",
+          "api",
+          "configuration",
+          "testing",
+          "performance",
+          "data-integrity",
+          "dependency",
+          "infrastructure",
+          "solidity-guard",
+          "zero-trust",
+          "containerization",
+          "mcp-bridge",
+          "hallucination",
+          "atomic-vibe",
+          "secret-leak"
         ]
       },
       "description": "Category tags for automated pattern analysis."

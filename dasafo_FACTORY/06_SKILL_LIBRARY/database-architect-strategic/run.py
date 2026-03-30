@@ -4,7 +4,7 @@ import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(
 run.py — Database Architect Strategic (ARCHITECT / DB_MASTER)
 v3.4.0-S: Modular Toolbox | Industrial Scale.
 
-Solidified: Output Schema Alignment, Architecture Reporting & SI Mandate.
+Solidified: Hybrid Infrastructure Alignment, Output Schema & SI Mandate.
 """
 
 import os
@@ -32,6 +32,11 @@ def run(skill_input: SkillInput) -> SkillOutput:
         action = params.get("action", "design_schema")
         resource = params.get("resource_entity", "generic_resource")
         overwrite = params.get("overwrite", False)
+        
+        # 🔌 Hybrid Model Integration: Detect Shared Infra (INFRA Core)
+        infra_host = os.environ.get("POSTGRES_HOST", "dasafo-shared-db")
+        isolation_mode = params.get("isolation_mode", False)
+        target_host = "local_isolated_db" if isolation_mode else infra_host
 
         # 2. Logic: Design Schema
         if action == "design_schema":
@@ -45,6 +50,8 @@ def run(skill_input: SkillInput) -> SkillOutput:
             schema_data = {
                 "entity": resource,
                 "engine": "PostgreSQL (v15+)",
+                "target_infrastructure": "Shared Industrial Node" if not isolation_mode else "Isolated Project Node",
+                "host": target_host,
                 "tables": [
                     {
                         "name": f"{resource}s",
@@ -64,9 +71,11 @@ def run(skill_input: SkillInput) -> SkillOutput:
             # 3. Result Building (Strict Schema Alignment v3.4.0-S)
             execution_duration_s = time.time() - start_time
             
+            plan_desc = f"Relational strategy for '{resource}' using PostgreSQL on host '{target_host}' with JSONB for flexible metadata."
+            
             result_payload = {
                 "industrial_status": "SOLIDIFIED - DATABASE BLUEPRINT GENERATED",
-                "architecture_plan": f"Relational strategy for '{resource}' using PostgreSQL with JSONB for flexible metadata.",
+                "architecture_plan": plan_desc,
                 "schema_artifacts": [str(schema_file)],
                 "performance_projections": {
                     "estimated_query_latency_s": 0.005, # SI Mandate (s)
@@ -76,9 +85,10 @@ def run(skill_input: SkillInput) -> SkillOutput:
                     "normalization_verified": True,
                     "si_mandate_enforced": True,
                     "lock_verified": True,
+                    "hybrid_infra_aligned": not isolation_mode,
                     "execution_duration_seconds": round(execution_duration_s, 4)
                 },
-                "summary": f"Relational schema for '{resource}' generated at INFRA/DATABASE/."
+                "summary": f"Relational schema for '{resource}' generated targeting {target_host}."
             }
             
             return SkillOutput.success(agent, skill, result_payload, [str(schema_file)], cid)

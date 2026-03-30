@@ -16,16 +16,20 @@ Provide expert-level database architecture, technology selection, and strategic 
 
 - `action` (enum): One of `evaluate_tech`, `design_schema`, `plan_migration`, `optimize_indexing`.
 - `target_project` (string, mandatory): Absolute path to the project workspace.
+- `resource_entity` (string, optional): The name of the table or resource (default: "generic_resource").
+- `overwrite` (boolean, optional): Whether to overwrite existing schema files.
+- `isolation_mode` (boolean, optional): If `True`, targets a local/isolated database instead of the shared INFRA node (`dasafo-shared-db`).
 - `requirements` (object, optional): Data volume, read/write ratios, latency targets, and compliance needs.
 - `current_schema_path` (string, optional): Path to existing SQL/Schema for re-architecture.
 
 ### Output Schema (SkillOutput.result)
 
+- `industrial_status`: (string) "SOLIDIFIED - DATABASE BLUEPRINT GENERATED"
 - `architecture_plan`: (string) Detailed strategy for technology selection and modeling.
 - `schema_artifacts`: (array) List of generated SQL/JSON schema files.
-- `migration_roadmap`: (string, optional) Step-by-step plan for data transition.
-- `performance_projections`: (object) Estimated latency and throughput based on design.
-- `industrial_status`: (string) "SOLIDIFIED - DATABASE BLUEPRINT GENERATED"
+- `performance_projections`: (object) Estimated latency (s) and throughput (B/s).
+- `compliance_report`: (object) Verification of SI mandates and Hybrid Infra alignment.
+- `summary`: (string) Human-readable outcome of the specific action.
 
 ### ⚖️ Mandato SI (Sistema Internacional)
 

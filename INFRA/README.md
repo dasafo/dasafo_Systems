@@ -1,16 +1,21 @@
-# 🛠️ dasafo_FACTORY | Global Infrastructure Services (v3.3.1-S)
+# 🛠️ dasafo_FACTORY | Global Infrastructure Services (v3.4.0-S)
 
 ## 🌐 Central Node (The Power Grid)
+
+...
+
 This directory hosts the shared services for the entire factory ecosystem under the **Industrial Core** standard.
 
-### 🍱 Main Services Stack:
+### 🍱 Main Services Stack
+
 - **Supabase (Industrial Hub)**: Managed through cloud (Standard) or self-hosted (Custom).
 - **Neo4j (`kg-db`)**: Central Knowledge Graph (Graph-based orchestration).
 - **Postgres (`shared-db`)**: Relational Storage for operational metadata.
 - **Redis (`cache-node`)**: Fast session and task state caching.
 - **Glances**: Real-time performance and health monitoring node (Port 61208).
 
-### 🚀 Usage:
+### 🚀 Usage
+
 1. `cd dasafo_Systems/INFRA`
 2. **Security Gate:** Copy `.env.shared` to `.env` and configure your secure credentials.
    `cp .env.shared .env`
@@ -19,4 +24,4 @@ This directory hosts the shared services for the entire factory ecosystem under 
 4. Projects will automatically connect via the internal `dasafo_network`.
 
 ---
-*Infrastructure v3.3.1-S | Status: Industrial Core Active.*
+*Infrastructure v3.4.0-S | Status: Industrial Core Active.*

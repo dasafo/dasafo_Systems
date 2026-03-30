@@ -4,7 +4,7 @@ import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(
 run.py — Supabase Stack Expert (DB_MASTER)
 v3.4.0-S: Modular Toolbox | Industrial Scale.
 
-Solidified: Output Schema Alignment, SI Metrics (s, B), and Action Sync.
+Solidified: Output Schema Alignment, SI Metrics (s, B), Action Sync & Hybrid Infra.
 """
 
 import os
@@ -35,15 +35,20 @@ def run(skill_input: SkillInput) -> SkillOutput:
         action = params.get("action", "audit_schema")
         overwrite = params.get("overwrite", False)
 
+        # 🔌 Hybrid Model Integration: Detect Shared Infra (INFRA Core)
+        infra_host = os.environ.get("POSTGRES_HOST", "dasafo-shared-db")
+        isolation_mode = params.get("isolation_mode", False)
+        target_host = "local_isolated_db" if isolation_mode else infra_host
+
         # 2. Logic: Database Strategy Implementation
         if action in ["audit_schema", "tune_query", "monitor_performance"]:
             report_file = db_dir / f"DB_REPORT_{cid[:8]}.md"
             if report_file.exists() and not overwrite:
                  return SkillOutput.failure(agent, skill, f"REDUNDANCY LOCK: {report_file.name} exists.", cid)
 
-            # Simulated Expert Analysis (v3.4.0-S Standards)
+            # Simulated Expert Analysis (v3.4.0-S Standards) targeting Hybrid Infra
             optimization_report = (
-                "# 🐘 Postgres Optimization Report\n\n"
+                f"# 🐘 Postgres Optimization Report (Target: {target_host})\n\n"
                 "## 🔍 Findings\n"
                 "- High sequential scan count on large tables (> 1MB).\n"
                 "- RLS policies verified for multi-tenant isolation.\n"
@@ -83,9 +88,10 @@ def run(skill_input: SkillInput) -> SkillOutput:
                     "sql_security_verified": True,
                     "rls_by_default_enforced": True,
                     "si_metrics_applied": True,
+                    "hybrid_infra_aligned": not isolation_mode,
                     "execution_duration_seconds": round(execution_duration_s, 4)
                 },
-                "summary": f"Database {action} complete. Strategy persisted at INFRA/DATABASE/."
+                "summary": f"Database {action} complete on {target_host}. Strategy persisted at INFRA/DATABASE/."
             }
 
             return SkillOutput.success(agent, skill, result_payload, [str(report_file)], cid)

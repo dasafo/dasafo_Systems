@@ -104,8 +104,8 @@ cat <<EOF > "$PROJECT_ROOT/PROJECT_STATE.json"
 }
 EOF
 
-# 6. Seed the PRP_CONTRACT (Placeholder for Generator)
-cat <<EOF > "$PROJECT_ROOT/DOCS/ARCH/PRP_CONTRACT.json"
+# 6. Seed the PRP_CONTRACT (En la Raíz según Mandato Industrial v3.4.0-S)
+cat <<EOF > "$PROJECT_ROOT/PRP_CONTRACT.json"
 {
   "project": "$1",
   "factory_standard": "v3.4.0-S",
@@ -124,10 +124,10 @@ cat <<EOF > "$PROJECT_ROOT/LOGS/FEEDBACK-LOG.md"
 *Memory Status: Pristine.*
 EOF
 
-# 8. Infrastructure Hint (v3.4.0-S Industrial Core)
+# 8. Infrastructure Hint (v3.4.0-S Industrial Core / Hybrid Infra)
 echo "DOCKER_NETWORK=dasafo_network" > "$PROJECT_ROOT/.env"
 echo "SUPABASE_PROJECT_URL=https://[PROJECT_ID].supabase.co" >> "$PROJECT_ROOT/.env"
-echo "SUPABASE_SERVICE_ROLE_KEY=[HIDDEN]" >> "$PROJECT_ROLE_KEY=[HIDDEN]" >> "$PROJECT_ROOT/.env"
+echo "SUPABASE_SERVICE_ROLE_KEY=[HIDDEN]" >> "$PROJECT_ROOT/.env"
 
 # 9. Local Privacy & Solidification
 cat <<EOF > "$PROJECT_ROOT/.gitignore"

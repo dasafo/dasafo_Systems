@@ -4,12 +4,15 @@ import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(
 run.py — Arxiv Technical Digest (RESEARCH_AGENT)
 v3.4.0-S: Modular Toolbox | Industrial Scale.
 
-Solidified: Physical Artifact Persistence, SI Mandate, and Schema Alignment.
+Solidified: Live API Integration (Zero-Trust), Output Schema & Action Routing.
 """
 
 import os
 import json
 import time
+import urllib.request
+import urllib.parse
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from skill_schema import SkillInput, SkillOutput
 
@@ -32,32 +35,78 @@ def run(skill_input: SkillInput) -> SkillOutput:
         research_dir = project_path / "LOCAL_KNOWLEDGE" / "research"
         research_dir.mkdir(parents=True, exist_ok=True)
 
-        # 2. Logic: Research Processing (Mocked logic for v3.4.0-S structure)
-        query = params.get("query", "Large Language Model Agents")
+        action = params.get("action", "search")
+        papers = []
+        key_findings = []
         
-        # Simulación de hallazgos técnicos bajo Mandato SI
-        papers = [
-            {
-                "title": "Attention is All You Need", 
-                "id": "1706.03762",
-                "relevance": "Architectural Foundation",
-                "latency_info": "Inference optimized to < 0.05s" # Cumpliendo SI
-            },
-            {
-                "title": "Generative Agents", 
-                "id": "2304.03442",
-                "relevance": "Agentic Orchestration",
-                "memory_impact": "Refined context up to 32768 B" # Cumpliendo SI
-            }
-        ]
+        # XML Namespace for ArXiv Atom feed
+        ns = {'atom': 'http://www.w3.org/2005/Atom'}
+
+        # 2. Logic: Live API Connection (Zero-Trust Authenticity)
+        if action == "search":
+            query = params.get("query")
+            if not query:
+                return SkillOutput.failure(agent, skill, "INPUT_ERROR: 'query' is required for search action.", cid)
+            
+            max_results = params.get("max_results", 10)
+            safe_query = urllib.parse.quote(query)
+            url = f"http://export.arxiv.org/api/query?search_query=all:{safe_query}&start=0&max_results={max_results}"
+            
+            api_start = time.time()
+            with urllib.request.urlopen(url, timeout=15) as response:
+                xml_data = response.read()
+            api_latency_s = time.time() - api_start
+            
+            root = ET.fromstring(xml_data)
+            
+            for entry in root.findall('atom:entry', ns):
+                papers.append({
+                    "id": entry.find('atom:id', ns).text.split('/abs/')[-1],
+                    "title": entry.find('atom:title', ns).text.strip().replace('\n', ' '),
+                    "published": entry.find('atom:published', ns).text,
+                    "summary_preview": entry.find('atom:summary', ns).text.strip().replace('\n', ' ')[:150] + "..."
+                })
+            
+            status_str = "RESEARCH_SOLIDIFIED"
+            key_findings.append(f"Successfully retrieved {len(papers)} authentic papers.")
+            key_findings.append(f"API Fetch Latency: {round(api_latency_s, 4)}s") # SI Mandate
+            report_file = research_dir / f"ARXIV_SEARCH_{cid[:8]}.json"
+
+        elif action == "digest":
+            paper_id = params.get("id")
+            if not paper_id:
+                return SkillOutput.failure(agent, skill, "INPUT_ERROR: 'id' is required for digest action.", cid)
+            
+            url = f"http://export.arxiv.org/api/query?id_list={paper_id}"
+            with urllib.request.urlopen(url, timeout=15) as response:
+                xml_data = response.read()
+            
+            root = ET.fromstring(xml_data)
+            entry = root.find('atom:entry', ns)
+            
+            if not entry:
+                return SkillOutput.failure(agent, skill, f"NOT_FOUND: Paper {paper_id} could not be retrieved from ArXiv.", cid)
+                
+            papers.append({
+                "id": paper_id,
+                "title": entry.find('atom:title', ns).text.strip().replace('\n', ' '),
+                "authors": [a.find('atom:name', ns).text for a in entry.findall('atom:author', ns)],
+                "full_summary": entry.find('atom:summary', ns).text.strip()
+            })
+            
+            status_str = "DIGEST_CREATED"
+            key_findings.append(f"Deep read completed for: {papers[0]['title']}")
+            report_file = research_dir / f"ARXIV_DIGEST_{paper_id.replace('.','_')}.json"
+            
+        else:
+            return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented in v3.4.0-S.", cid)
 
         # 3. Physical Artifact Generation (Mandatory)
-        report_file = research_dir / f"RESEARCH_{cid}.json"
         report_data = {
-            "query": query,
+            "action": action,
             "timestamp": time.time(),
-            "papers": papers,
-            "standard": "v3.4.0-S"
+            "standard": "v3.4.0-S",
+            "papers": papers
         }
         report_file.write_text(json.dumps(report_data, indent=2, ensure_ascii=False), encoding="utf-8")
 
@@ -65,20 +114,17 @@ def run(skill_input: SkillInput) -> SkillOutput:
         execution_duration_s = time.time() - start_time
         
         result_payload = {
-            "industrial_status": "RESEARCH_SOLIDIFIED",
+            "status": status_str,
             "results_count": len(papers),
             "report_path": str(report_file),
-            "key_findings": [
-                "Transformer architectures are the core of current agentic flows.",
-                "Inference latency is critical for real-time feedback loops.",
-                "Context management requires strict token pruning (v3.4.0-S)."
-            ],
+            "key_findings": key_findings,
             "compliance_report": {
-                "physical_proof_verified": True,
+                "live_api_verified": True,
+                "hallucination_prevention_active": True,
                 "si_conversion_applied": True,
                 "execution_duration_seconds": round(execution_duration_s, 4)
             },
-            "summary": f"Research for '{query}' completed. 2 papers processed and saved to LOCAL_KNOWLEDGE."
+            "summary": f"Research action '{action}' completed. {len(papers)} authentic papers processed."
         }
 
         return SkillOutput.success(

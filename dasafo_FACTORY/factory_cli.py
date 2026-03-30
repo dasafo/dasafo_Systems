@@ -29,7 +29,7 @@ def main():
                     "result": {
                         "protocolVersion": "2026-03-29",
                         "capabilities": {"tools": {}},
-                        "serverInfo": {"name": "dasafo_factory", "version": "3.3.1-S"}
+                        "serverInfo": {"name": "dasafo_factory", "version": "3.4.0-S"} # Update to v3.4.0-S
                     }
                 }
                 sys.stdout.write(json.dumps(response) + "\n"); sys.stdout.flush()

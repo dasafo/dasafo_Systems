@@ -17,15 +17,19 @@ Operate as a high-performance database engineer specialized in the Supabase/Post
 - `action` (enum): `tune_query`, `audit_schema`, `enforce_rls`, `monitor_performance`.
 - `target_project` (string, mandatory): Absolute path to the backend/database workspace.
 - `sql_script` (string, optional): The SQL script or schema definition to analyze.
+- `overwrite` (boolean, optional): Whether to overwrite existing report files.
+- `isolation_mode` (boolean, optional): If `True`, targets a local/isolated database instead of the shared INFRA node (`dasafo-shared-db`).
 - `audit_scope` (array, optional): Default `["query", "security", "schema"]`.
 
 ### Output Schema (SkillOutput.result)
 
+- `industrial_status`: (string) "SOLIDIFIED - DATABASE OPTIMIZED".
 - `optimization_report`: (string) Detailed analysis based on the 8 priority categories.
 - `suggested_indexes`: (array) List of missing or partial indexes identified.
 - `rls_verification`: (object) Status of Row-Level Security policies.
 - `performance_metrics`: (object) Estimated time (s) and impact of changes.
-- `industrial_status`: (string) "SOLIDIFIED - DATABASE OPTIMIZED".
+- `compliance_report`: (object) Verification of SI mandates and Hybrid Infra alignment.
+- `summary`: (string) Human-readable outcome of the specific database action.
 
 ### ⚖️ Mandato SI (Sistema Internacional)
 

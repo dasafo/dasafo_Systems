@@ -1,0 +1,113 @@
+{
+  "project_name": "dasafo_FACTORY",
+  "version": "3.4.0-S",
+  "agent_manager_v2": true,
+  "orchestrator_id": "@orchestrator",
+  "agents_path": ".agents/",
+  "workflows_path": ".agents/workflows/",
+  "mcp_enabled": true,
+  "mcp_server_path": "dasafo_FACTORY/factory_cli.py",
+  "identities": [
+    {
+      "id": "orchestrator",
+      "name": "Orchestrator",
+      "instruction_file": ".agents/orchestrator.md",
+      "icon": "router"
+    },
+    {
+      "id": "marketing_growth",
+      "name": "Marketing Growth",
+      "instruction_file": ".agents/marketing_growth.md",
+      "icon": "trending_up"
+    },
+    {
+      "id": "product_owner",
+      "name": "Product Owner",
+      "instruction_file": ".agents/product_owner.md",
+      "icon": "psychology"
+    },
+    {
+      "id": "architect",
+      "name": "Architect",
+      "instruction_file": ".agents/architect.md",
+      "icon": "architecture"
+    },
+    {
+      "id": "research_agent",
+      "name": "Research Agent",
+      "instruction_file": ".agents/research_agent.md",
+      "icon": "travel_explore"
+    },
+    {
+      "id": "backend_dev",
+      "name": "Backend Developer",
+      "instruction_file": ".agents/backend_dev.md",
+      "icon": "dns"
+    },
+    {
+      "id": "frontend_dev",
+      "name": "Frontend Developer",
+      "instruction_file": ".agents/frontend_dev.md",
+      "icon": "brush"
+    },
+    {
+      "id": "data_scientist",
+      "name": "Data Scientist",
+      "instruction_file": ".agents/data_scientist.md",
+      "icon": "insights"
+    },
+    {
+      "id": "db_master",
+      "name": "Database Master",
+      "instruction_file": ".agents/db_master.md",
+      "icon": "storage"
+    },
+    {
+      "id": "docs_master",
+      "name": "Docs Master",
+      "instruction_file": ".agents/docs_master.md",
+      "icon": "description"
+    },
+    {
+      "id": "qa_tester",
+      "name": "QA Tester",
+      "instruction_file": ".agents/qa_tester.md",
+      "icon": "check_circle"
+    },
+    {
+      "id": "security_auditor",
+      "name": "Security Auditor",
+      "instruction_file": ".agents/security_auditor.md",
+      "icon": "security"
+    },
+    {
+      "id": "deployment_monitor",
+      "name": "Deployment Monitor",
+      "instruction_file": ".agents/deployment_monitor.md",
+      "icon": "monitoring"
+    },
+    {
+      "id": "devops_sre",
+      "name": "DevOps SRE",
+      "instruction_file": ".agents/devops_sre.md",
+      "icon": "settings_input_component"
+    },
+    {
+      "id": "factory_evolver",
+      "name": "Factory Evolver",
+      "instruction_file": ".agents/factory_evolver.md",
+      "icon": "auto_awesome"
+    },
+    {
+      "id": "memory_optimizer",
+      "name": "Memory Optimizer",
+      "instruction_file": ".agents/memory_optimizer.md",
+      "icon": "brain"
+    }
+  ],
+  "capabilities": {
+    "parallel_execution": true,
+    "artifact_preview": "live",
+    "auto_plan": true
+  }
+}
