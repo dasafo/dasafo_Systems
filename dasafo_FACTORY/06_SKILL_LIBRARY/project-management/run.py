@@ -1,5 +1,5 @@
 """
-Project Management (v3.3.1-S) - Industrial Implementation.
+Project Management (v3.4.0-S) - Industrial Implementation.
 Project coordination, task tracking, and milestone reporting.
 """
 from __future__ import annotations
@@ -38,7 +38,7 @@ def execute_project_management_skill(request: PMRequest) -> PMResponse:
         # Simplified standup generation from registry (Normally calls an LLM)
         standup_file = mgmt_dir / "standup_latest.md"
         report_content = (
-            "# Stark-Standup (v3.3.1-S)\n"
+            "# Stark-Standup (v3.4.0-S)\n"
             f"**Project:** {request.target_project.name}\n"
             "**Status:** Analysis of task registry pending...\n"
         )

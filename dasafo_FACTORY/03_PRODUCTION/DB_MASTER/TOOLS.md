@@ -1,26 +1,19 @@
-# 🛠️ DB Master (The Schema Architect) | Tools & Senses
+# 🛠️ DB_MASTER | Tools & Senses
 
 > **Standard:** v3.4.0-S "SDD Implementation"
-> **Scope:** Schema design, SQL generation, and database optimization.
+> **Scope:** Schema execution, SQL generation, and Supabase integration.
 
 ## 📡 Senses (Context-Limited)
-
 - **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
-- **Targeted File Sense:** Read/Write access restricted to `WORKSPACE/database` and `context_pointers`.
-- **Schema Sense:** Direct introspection of the database structure.
+- **Targeted File Sense:** Read/Write access strictly restricted to `WORKSPACE/database/` and specific `context_pointers`.
+- **Schema X-Ray:** Read access to `DOCS/ARCH/` to strictly follow the DTOs dictated by the Architect.
 
 ## 🧰 Authorized Skills (Skill Library)
+*(Lazy loaded only when mandated by the Spec)*
 
-*(Invoked via `execute_factory_skill` or direct `run.py`)*
-
-### ⚙️ Database Ops
-
-- `database-architect-strategic`: SQL/NoSQL schema migrations and design.
-
-### 🛡️ Guardrails & Governance
-
-- `kanban-solidity-gate`: Verify physical task evidence before state changes.
-- `autoshield-preflight-check`: Mandatory pre-execution validation.
+- `database-architect-strategic`: tactical execution of SQL/NoSQL schema migrations based on M2 blueprints.
+- `supabase-stack-expert`: Direct interaction with Postgres, RLS (Row Level Security), and Edge Functions.
+- `agentic-thought-secret-scanner`: Mandatory check to ensure no database URLs or passwords leak into the migration scripts.
 
 ---
 *DB Master v3.4.0-S | Status: Standardized & Industrialized.*

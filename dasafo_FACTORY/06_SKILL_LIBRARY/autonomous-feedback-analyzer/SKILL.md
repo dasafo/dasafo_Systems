@@ -10,7 +10,7 @@ source: https://skills.sh/eddiebe147/claude-settings/feedback-analyzer
 
 Proactively automate the collection, categorization, and deep analysis of user and system feedback. This skill identifies emotional context, urgency, and recurring patterns to drive the evolution of the agentic factory, ensuring continuous performance optimization and user satisfaction.
 
-## 🛠️ Interface (v3.3.0-S)
+## 🛠️ Interface (v3.4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -39,7 +39,7 @@ Cualquier métrica técnica analizada (tiempos medios de respuesta, latencias de
 - **Physical Archiving:** Analysis results must be physically saved to `DOCS/feedback/` or `LOCAL_KNOWLEDGE/evolution/`.
 - **SI Only:** Ensure all time-to-address estimates follow the SI (e.g., using prefix `s`).
 
-## 🧠 Analysis Frameworks (v3.3.0-S)
+## 🧠 Analysis Frameworks (v3.4.0-S)
 
 1. **Sentiment & Urgency:** Map emotional indicators to Action Levels (Urgent Escalation → Sprint Address → Standard Review).
 2. **Pattern Recognition:** Use qualitative analysis to discover pain points and unmet needs.
@@ -48,4 +48,4 @@ Cualquier métrica técnica analizada (tiempos medios de respuesta, latencias de
 
 ---
 **ORIGIN:** [feedback-analyzer by eddiebe147](https://skills.sh/eddiebe147/claude-settings/feedback-analyzer)
-*Skill v3.3.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v3.4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

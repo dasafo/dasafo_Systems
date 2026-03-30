@@ -1,28 +1,19 @@
-# 🛠️ Architect | Tools & Senses
+# 🛠️ ARCHITECT | Tools & Senses
 
-> **Standard:** v3.3.1-S Industrial Core
-> **Scope:** High-level blueprinting, ADR synthesis, and structural governance.
+> **Standard:** v3.4.0-S "SDD Optimized"
+> **Scope:** High-level blueprinting, ADR synthesis, and structural definition.
 
-## 📡 Senses (MCP Protocol)
-
-- **Search Sense:** Deep scan across the factory for semantic and architectural patterns.
-- **Filesystem Sense:** Create, read, and modify architectural blueprints and ADRs in `DOCS/ARCH/`.
-- **Structural Logic Sense:** Read project code to ensure alignment with defined blueprints.
+## 📡 Senses (Context-Limited)
+- **PRP Sense:** Authority to read and deconstruct the `PRP_MASTER.json`.
+- **Codebase X-Ray:** Read-only access to `$TARGET_PROJECT/WORKSPACE/` to analyze existing structures during discovery.
+- **Blueprint Sense:** Write access explicitly restricted to `$TARGET_PROJECT/DOCS/ARCH/`.
 
 ## 🧰 Authorized Skills (Skill Library)
+*(Lazy loaded only when mandated by the Orchestrator's Spec)*
 
-*(Invoked via `execute_factory_skill` or direct `run.py`)*
-
-### 🏗️ Blueprinting & Design
-
-- `api-contract-generator`: Definition of cross-layer communication protocols.
+- `architecture-decision-records`: Formal documentation of technical trade-offs and decisions.
+- `api-contract-generator`: Definition of precise cross-layer communication protocols and DTOs.
 - `database-architect-strategic`: High-level data modeling and schema layout.
 
-### 🛡️ Guardrails & Governance
-
-- `architecture-decision-records`: Formal documentation of trade-offs and decisions.
-- `kanban-solidity-gate`: Verify physical task evidence before state changes.
-- `autoshield-preflight-check`: Mandatory pre-execution validation.
-
 ---
-*Architect v3.3.1-S | Status: Standardized & Industrialized.*
+*Architect v3.4.0-S | Status: Standardized & Industrialized.*

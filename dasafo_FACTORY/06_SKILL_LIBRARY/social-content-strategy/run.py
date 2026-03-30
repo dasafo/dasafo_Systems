@@ -1,5 +1,5 @@
 """
-Social Content Strategy (v3.3.1-S) - Industrial Implementation.
+Social Content Strategy (v3.4.0-S) - Industrial Implementation.
 Content pillar development, hook generation, and platform repurposing.
 """
 from __future__ import annotations

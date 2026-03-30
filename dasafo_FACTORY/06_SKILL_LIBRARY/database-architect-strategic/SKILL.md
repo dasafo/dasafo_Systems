@@ -4,13 +4,13 @@ agent: ARCHITECT / DB_MASTER
 source: https://skills.sh/sickn33/antigravity-awesome-skills/database-architect
 ---
 
-# 🗄️ Skill | Database Architect Strategic (v3.3.1-S)
+# 🗄️ Skill | Database Architect Strategic (v3.4.0-S)
 
 ## Objective
 
 Provide expert-level database architecture, technology selection, and strategic data modeling. This skill spans from conceptual ERD design to physical schema optimization across relational (Postgres/Supabase), NoSQL, Graph, and Time-series models.
 
-## 🛠️ Interface (v3.3.1-S)
+## 🛠️ Interface (v3.4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -38,7 +38,7 @@ Cualquier métrica técnica mencionada (latencias de consulta, tamaños de tabla
 - **No Data Loss:** Every migration plan must include a verified rollback strategy.
 - **Pattern Alignment:** All schemas must follow the `02_ARCHITECTURE_RULES.md` regarding SoC and DTOs.
 
-## 🧠 Strategic Workflow (v3.3.1-S)
+## 🧠 Strategic Workflow (v3.4.0-S)
 
 1. **Tech Selection:** Evaluate trade-offs (CAP theorem, cost, operational complexity) to choose the optimal storage engine.
 2. **Conceptual Modeling:** Map business entities to a logical data domain (Normalization/Denormalization strategies).
@@ -48,4 +48,4 @@ Cualquier métrica técnica mencionada (latencias de consulta, tamaños de tabla
 
 ---
 **ORIGIN:** [database-architect by sickn33](https://skills.sh/sickn33/antigravity-awesome-skills/database-architect)
-*Skill v3.3.1-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v3.4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

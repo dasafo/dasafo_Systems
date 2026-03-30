@@ -1,27 +1,22 @@
-# 🛠️ Docs Master | Tools & Senses
+# 🛠️ DOCS_MASTER | Tools & Senses
 
-> **Standard:** v3.3.1-S Industrial Core
-> **Scope:** Technical writing, documentation strategy, and context synthesis.
+> **Standard:** v3.4.0-S "SDD Implementation"
+> **Scope:** Technical writing, automated docs extraction, and context synthesis.
 
-## 📡 Senses (MCP Protocol)
-
-- **Search Sense:** Global scan across the factory brain for semantic facts.
-- **Filesystem Sense:** Write premium documentation to `$TARGET_PROJECT/DOCS/` and protocols to `dasafo_Systems/`.
-- **Context Synthesis Sense:** Read architectural ADRs, code source, and user vision to craft stories.
+## 📡 Senses (Context-Limited)
+- **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
+- **Targeted File Sense:** Read access to code in `WORKSPACE/` and write access restricted strictly to `$TARGET_PROJECT/DOCS/`.
+- **Context Synthesis:** Read architectural ADRs and user vision to craft technical stories.
 
 ## 🧰 Authorized Skills (Skill Library)
+*(Lazy loaded only when mandated by the Spec)*
 
-*(Invoked via `execute_factory_skill` or direct `run.py`)*
+### 📝 Drafting & Analysis
+- `api-docs-generator`: Automated extraction of documentation from backend codebases.
+- `arxiv-technical-digest`: Retrieve state-of-the-art papers to enrich technical context or standards.
 
-### 📝 Technical Writing & Drafting
-
-- `api-docs-generator`: Automated extraction of documentation from backend code.
-- `arxiv-technical-digest`: Retrieve state-of-the-art academic and technical papers for context.
-
-### 🛡️ Guardrails & Governance
-
-- `kanban-solidity-gate`: Verify physical task evidence before state changes.
-- `autoshield-preflight-check`: Mandatory pre-execution validation.
+### 🛡️ Guardrails
+- `hallucination-guardrail`: Mandatory verification of technical claims against the project's source of truth.
 
 ---
-*Docs Master v3.3.1-S | Status: Standardized & Industrialized.*
+*Docs Master v3.4.0-S | Status: Standardized & Industrialized.*

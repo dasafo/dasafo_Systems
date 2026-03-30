@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Apify Trend Analysis (MARKETING_GROWTH / RESEARCH_AGENT)
-v3.3.0-S: Modular Toolbox | Industrial Scale.
+v3.4.0-S: Modular Toolbox | Industrial Scale.
 
 Executes and manages Apify Actors for market trend analysis.
 Based on apify-trend-analysis/agent-skills logic.

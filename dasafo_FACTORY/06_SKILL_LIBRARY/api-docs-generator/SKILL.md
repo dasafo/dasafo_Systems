@@ -4,13 +4,13 @@ agent: ARCHITECT / DOCS_MASTER
 source: https://skills.sh/sickn33/antigravity-awesome-skills/api-documentation-generator
 ---
 
-# 📚 Skill | API Documentation Generator (v3.3.0-S)
+# 📚 Skill | API Documentation Generator (v3.4.0-S)
 
 ## Objective
 
 Transform physical API contracts (OpenAPI) into professional, user-friendly, and actionable Markdown documentation. This skill ensures that all stakeholders (Frontend, Mobile, QA, Clients) have clear, up-to-date guidance on how to consume the system's APIs.
 
-## 🛠️ Interface (v3.3.0-S)
+## 🛠️ Interface (v3.4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -37,7 +37,7 @@ Cualquier métrica mencionada en la documentación (límites de tiempo de respue
 - **Physical Parsing:** Must read and parse the physical YAML on disk. Mocking documentation from non-existent contracts is FORBIDDEN.
 - **Reference Integrity:** All generated documentation must include a reference to the source contract and its version.
 
-## 🧠 Documentation Workflow (v3.3.0-S)
+## 🧠 Documentation Workflow (v3.4.0-S)
 
 1. **Ingest Specs:** Parse the OpenAPI 3.x contract from the Architect.
 2. **Endpoint Specification:** Detail HTTP methods, URL paths, and authentication requirements.
@@ -47,4 +47,4 @@ Cualquier métrica mencionada en la documentación (límites de tiempo de respue
 
 ---
 **ORIGIN:** [api-documentation-generator by sickn33](https://skills.sh/sickn33/antigravity-awesome-skills/api-documentation-generator)
-*Skill v3.3.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v3.4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

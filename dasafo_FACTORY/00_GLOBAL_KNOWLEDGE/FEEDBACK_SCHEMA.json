@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "dasafo_factory/feedback_entry/v3.3.1",
   "title": "Feedback Log Entry Schema",
-  "description": "Machine-parseable schema for FEEDBACK-LOG entries. Enables automated pre-flight checks and pattern analysis (Industrial Core v3.3.1-S).",
+  "description": "Machine-parseable schema for FEEDBACK-LOG entries. Enables automated pre-flight checks and pattern analysis (Industrial Core v3.4.0-S).",
   "type": "object",
   "required": ["id", "version", "timestamp", "context", "severity", "error_description", "correction", "golden_rule", "categories"],
   "properties": {
@@ -14,7 +14,7 @@
     "version": {
       "type": "string",
       "pattern": "^v\\d+\\.\\d+\\.\\d+(-[A-Z]+)?$",
-      "description": "Semantic version of the factory standard (e.g., 'v3.3.1-S')."
+      "description": "Semantic version of the factory standard (e.g., 'v3.4.0-S')."
     },
     "timestamp": {
       "type": "string",
@@ -34,7 +34,7 @@
             "DOCS_MASTER", "QA_TESTER", "SECURITY_AUDITOR",
             "FACTORY_EVOLVER", "MEMORY_OPTIMIZER"
           ],
-          "description": "Authorized Agent ID from v3.3.1-S Industrial Mapping."
+          "description": "Authorized Agent ID from v3.4.0-S Industrial Mapping."
         },
         "project": {
           "type": "string",

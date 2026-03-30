@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — API Designer & Contract Generator (ARCHITECT / BACKEND_DEV)
-v3.3.0-S: Modular Toolbox | Industrial Scale.
+v3.4.0-S: Modular Toolbox | Industrial Scale.
 
 Advanced module to design resource-oriented OpenAPI 3.1 contracts with RFC 7807 support.
 Based on jeffallan/claude-skills/api-designer logic.
@@ -24,7 +24,7 @@ def create_pro_openapi(resource: str, version: str) -> dict:
         "info": {
             "title": f"Industrial {res_title} API",
             "version": version,
-            "description": f"Design-First API Contract (v3.3.0-S) for {resource} management.",
+            "description": f"Design-First API Contract (v3.4.0-S) for {resource} management.",
             "contact": {"name": "Architect Unit", "email": "architect@dasafo.factory"}
         },
         "servers": [{"url": "http://api.local/v1", "description": "Local Dev Server"}],

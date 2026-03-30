@@ -4,13 +4,13 @@ agent: MARKETING_GROWTH / QA_TESTER / SECURITY_AUDITOR
 source: https://skills.sh/pbakaus/impeccable/audit
 ---
 
-# 🔍 Skill | Factory Audit Pro (v3.3.1-S)
+# 🔍 Skill | Factory Audit Pro (v3.4.0-S)
 
 ## Objective
 
 Perform an industrial-grade diagnostic scan and quality audit of project artifacts. This skill evaluates 5 key dimensions: Accessibility (A11y), Performance, Theming, Responsive Design, and Anti-Patterns. It produces a comprehensive **Audit Health Score** and a prioritized list of findings (P0-P3).
 
-## 🛠️ Interface (v3.3.1-S)
+## 🛠️ Interface (v3.4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -38,7 +38,7 @@ Cualquier métrica técnica en el informe (tiempos de carga, latencia de renderi
 - **Traceability:** Every finding must point to a specific file and line number.
 - **No Direct Fixes:** This skill documents issues for specialized agents to fix; it does not modify the source code.
 
-## 🧠 Audit Workflow (v3.3.1-S)
+## 🧠 Audit Workflow (v3.4.0-S)
 
 1. **Diagnostic Scan:** Run systematic checks across the 5 dimensions.
 2. **Scoring:** Assign a score (0-4) to each dimension.
@@ -48,4 +48,4 @@ Cualquier métrica técnica en el informe (tiempos de carga, latencia de renderi
 
 ---
 **ORIGIN:** [audit by pbakaus](https://skills.sh/pbakaus/impeccable/audit)
-*Skill v3.3.1-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v3.4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

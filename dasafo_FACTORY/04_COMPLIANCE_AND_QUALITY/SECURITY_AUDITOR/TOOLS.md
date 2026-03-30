@@ -1,27 +1,19 @@
-# 🛠️ Security Auditor | Tools & Senses
+# 🛠️ SECURITY_AUDITOR | Tools & Senses
 
-> **Standard:** v3.3.1-S Industrial Core
-> **Scope:** Secret scanning, vulnerability detection, and boundary security.
+> **Standard:** v3.4.0-S "SDD Implementation"
+> **Scope:** Static analysis (SAST), secret scanning, and dependency auditing.
 
-## 📡 Senses (MCP Protocol)
+## 📡 Senses (Context-Limited)
 
-- **Search Sense:** Deep scanning of codebase for secrets, keys, and dangerous patterns.
-- **Terminal Sense:** Execution of vulnerability scanners (Talisman, Gitleaks, safety) and static analysis.
-- **Security Insight Sense:** Access to known vulnerability databases (OWASP, CVE).
+- **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
+- **Zero-Trust Sense:** Read-only access to all files in `WORKSPACE/`. No write access allowed except to `$TARGET_PROJECT/DOCS/SECURITY/`.
+- **Secret X-Ray:** Deep scan access to file contents and environment variable templates.
 
-## 🧰 Authorized Skills (Skill Library)
+## 🧰 Authorized Skills
 
-*(Invoked via `execute_factory_skill` or direct `run.py`)*
-
-### 🛡️ Secret & Vuln Scanning
-
-- `agentic-thought-secret-scanner`: **[CRITICAL]** In-depth scanning for secrets and credentials.
-- `factory-audit-pro`: High-level security certification and industrial health scoring.
-
-### 🛡️ Guardrails & Certification
-
-- `kanban-solidity-gate`: Verify physical task evidence before state changes.
-- `autoshield-preflight-check`: Mandatory pre-execution validation.
+- `agentic-thought-secret-scanner`: **[CRITICAL]** Deep scanning for secrets, keys, and credentials.
+- `factory-audit-pro`: Security scoring and health report generation.
+- `dependency-vulnerability-scanner`: Scan `package.json`, `requirements.txt`, etc., for known CVEs.
 
 ---
-*Security Auditor v3.3.1-S | Status: Standardized & Industrialized.*
+*Security Auditor v3.4.0-S | Status: Standardized & Industrialized.*

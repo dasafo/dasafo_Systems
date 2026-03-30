@@ -1,5 +1,5 @@
 """
-Supabase Stack Expert (v3.3.1-S) - Industrial Implementation.
+Supabase Stack Expert (v3.4.0-S) - Industrial Implementation.
 Postgres performance optimization and schema orchestration.
 """
 from __future__ import annotations
@@ -41,7 +41,7 @@ def execute_db_expert(request: DBRequest) -> DBResponse:
         logs.append(f"Auditing schema for {request.audit_scope}...")
         
         report = (
-            "# Postgres Audit Report (v3.3.1-S)\n"
+            "# Postgres Audit Report (v3.4.0-S)\n"
             "- CRITICAL: 0 tables missing RLS.\n"
             "- OPTIMIZATION: Missing index on 'created_at' for table 'events'.\n"
         )

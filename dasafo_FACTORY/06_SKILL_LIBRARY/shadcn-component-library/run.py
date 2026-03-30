@@ -1,5 +1,5 @@
 """
-Shadcn Component Library (v3.3.1-S) - Industrial Implementation.
+Shadcn Component Library (v3.4.0-S) - Industrial Implementation.
 Professional UI component management and scaffolding using Shadcn/UI CLI.
 """
 from __future__ import annotations

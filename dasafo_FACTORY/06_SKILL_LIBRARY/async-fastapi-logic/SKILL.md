@@ -10,7 +10,7 @@ source: https://skills.sh/jezweb/claude-skills/fastapi
 
 Design, scaffold, and implement high-performance, maintainable asynchronous microservices using FastAPI. This skill enforces Domain-Driven Design (DDD), strict Pydantic validation, and efficient async I/O patterns to ensure production-grade reliability.
 
-## 🛠️ Interface (v3.3.0-S)
+## 🛠️ Interface (v3.4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -43,7 +43,7 @@ Cualquier métrica técnica definida (timeouts, cuotas de almacenamiento, límit
 - **Secret Zero-Leak:** Secrets must never be hardcoded. Use `pydantic-settings` or environment variables exclusively.
 - **Redundancy Lock:** Skill fails if it tries to overwrite established domain structures without `overwrite: true`.
 
-## 🧠 Core Patterns (v3.3.0-S)
+## 🧠 Core Patterns (v3.4.0-S)
 
 1. **Scaffold Structure:** Organize by domain (`src/domain/`), not by file type.
 2. **Async Database:** Use SQLAlchemy 2.0 with `AsyncSession` for all relational persistence.
@@ -52,4 +52,4 @@ Cualquier métrica técnica definida (timeouts, cuotas de almacenamiento, límit
 
 ---
 **ORIGIN:** [fastapi by jezweb](https://skills.sh/jezweb/claude-skills/fastapi)
-*Skill v3.3.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v3.4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

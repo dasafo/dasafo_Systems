@@ -10,7 +10,7 @@ source: https://skills.sh/apify/agent-skills/apify-trend-analysis
 
 Identify and analyze market trends, consumer behavior, and niche opportunities across global platforms (Google Trends, Instagram, TikTok, YouTube, etc.) using Apify Actors. This skill provides a structured framework for data-driven strategic decision-making.
 
-## 🛠️ Interface (v3.3.0-S)
+## 🛠️ Interface (v3.4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -39,7 +39,7 @@ Cualquier métrica temporal (intervalos, crecimiento) o de volumen de datos debe
 - **Physical Proof:** Raw data must be persisted to `LOCAL_KNOWLEDGE/trends/` before success is returned.
 - **Schema-Driven:** Before execution, agents are encouraged to fetch the actor's schema for parameter accuracy.
 
-## 🧠 Strategic Workflow (v3.3.0-S)
+## 🧠 Strategic Workflow (v3.4.0-S)
 
 1. **Identify Trend Type:** Select a specialized actor (Google Trends, Instagram Search, etc.).
 2. **Fetch Schema:** Retrieve the actor's input requirements dynamically to ensure valid parameters.
@@ -48,4 +48,4 @@ Cualquier métrica temporal (intervalos, crecimiento) o de volumen de datos debe
 
 ---
 **ORIGIN:** [apify-trend-analysis by apify](https://skills.sh/apify/agent-skills/apify-trend-analysis)
-*Skill v3.3.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v3.4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

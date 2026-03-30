@@ -1,6 +1,6 @@
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
-run.py — Kanban Solidity Gate & Vibe Dashboard (v3.3.1-S)
+run.py — Kanban Solidity Gate & Vibe Dashboard (v3.4.0-S)
 Industrial Scaling Hub for task management and artifact synchronization.
 
 Combines the Zero-Pending Rule (Solidity Gate) with the Vibe Kanban (Visual Dashboard).

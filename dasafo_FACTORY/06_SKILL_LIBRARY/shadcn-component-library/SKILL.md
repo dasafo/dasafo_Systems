@@ -4,13 +4,13 @@ agent: FRONTEND_DEV
 source: https://skills.sh/shadcn/ui/shadcn
 ---
 
-# 🎨 Skill | Shadcn Component Library (v3.3.1-S)
+# 🎨 Skill | Shadcn Component Library (v3.4.0-S)
 
 ## Objective
 
 Systematically implement and manage professional, accessible, and premium UI components using the Shadcn/UI framework. This skill enforces the "Compose, Don't Reinvent" principle, utilizing the Shadcn CLI to scaffold components and maintain a consistent, token-based design system.
 
-## 🛠️ Interface (v3.3.1-S)
+## 🛠️ Interface (v3.4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -38,7 +38,7 @@ Cualquier métrica técnica en el frontend (tiempos de renderizado, latencia de 
 - **Icons Policy:** Pass icons as React objects, not string keys. Use `data-icon="inline-start"` for positioning inside buttons.
 - **No Custom Pulse:** Use the `Skeleton` component for all loading states. Custom `animate-pulse` divs are disallowed.
 
-## 🧠 Frontend Workflow (v3.3.1-S)
+## 🧠 Frontend Workflow (v3.4.0-S)
 
 1. **Information Gathering:** Detect the project context using `npx shadcn@latest info`.
 2. **Component Retrieval:** Add necessary components using the CLI: `npx shadcn@latest add <component>`.
@@ -48,4 +48,4 @@ Cualquier métrica técnica en el frontend (tiempos de renderizado, latencia de 
 
 ---
 **ORIGIN:** [shadcn by shadcn/ui](https://skills.sh/shadcn/ui/shadcn)
-*Skill v3.3.1-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v3.4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

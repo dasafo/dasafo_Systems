@@ -1,13 +1,13 @@
 # 🛠️ Factory Evolver | Tools & Senses
 
-> **Standard:** v3.3.1-S Industrial Core
-> **Scope:** Analysis of systemic patterns and autonomous feedback loop management.
+> **Standard:** v3.4.0-S "SDD Optimized"
+> **Scope:** Optimization of systemic patterns and skill refactoring.
 
-## 📡 Senses (MCP Protocol)
+## 📡 Senses (Context-Limited)
 
-- **Search Sense:** Access to deep scanning and history retrieval for pattern identification.
-- **Filesystem Sense:** Read and write access to `dasafo_Systems/` protocols and `06_SKILL_LIBRARY/`.
-- **System Insight Sense:** Access to `FEEDBACK-LOG.md` and performance metrics across the factory.
+- **Search Sense:** Deep scanning of factory history to identify repetitive patterns or "token leaks".
+- **Filesystem Sense:** Read and write access restricted strictly to `dasafo_Systems/` (protocols) and `06_SKILL_LIBRARY/`.
+- **System Insight Sense:** Access to `FEEDBACK-LOG.md` and performance metrics to drive data-based refactors.
 
 ## 🧰 Authorized Skills (Skill Library)
 
@@ -15,12 +15,13 @@
 
 ### 🧬 Evolution & Patterns
 
-- `autonomous-feedback-analyzer`: Automatic extraction of "Lesson Learned" artifacts and performance metrics.
+- `autonomous-feedback-analyzer`: Automatic extraction of "Lesson Learned" and performance metrics.
+- `skill-refactor-pro`: Specialized tool for modularizing monolithic Python scripts into atomic skills.
 
 ### 🛡️ Guardrails & Alignment
 
-- `kanban-solidity-gate`: Verify physical task evidence before state changes.
-- `autoshield-preflight-check`: Mandatory pre-execution validation.
+- `autoshield-preflight-check`: Mandatory pre-execution validation to ensure the refactor won't break the `skill_engine`.
+- `hallucination-guardrail`: Mandatory check to ensure that "optimized" templates still contain all mandatory SDD sections.
 
 ---
-*Factory Evolver v3.3.1-S | Status: Standardized & Industrialized.*
+*Factory Evolver v3.4.0-S | Status: Standardized & Industrialized.*

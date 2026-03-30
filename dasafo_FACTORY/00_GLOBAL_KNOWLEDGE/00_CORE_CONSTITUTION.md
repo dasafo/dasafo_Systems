@@ -1,35 +1,26 @@
-# 🏛️ 00_CORE_CONSTITUTION
+# 📜 Dasafo Factory | Core Constitution
 >
-> **Version:** v3.4.0-S "SDD Optimized Core"
-> **Scope:** The ONLY global context injected into all Factory Agents.
-> **Mandate:** Read once, execute flawlessly.
+> **Standard:** v3.4.0-S "SDD Optimized Core"
+> **Governance:** Zero-Trust / Spec Driven Development / Clean Sessions.
 
-## I. THE PRIME DIRECTIVES (Zero-Trust & Disk IO)
+## 🏗️ I. The Law of the Spec (SDD)
+1. **Spec Over Everything:** No work is initiated without a physical `PRP_MASTER.json` (Phase M1) or `SPEC_LITE.json` (Execution).
+2. **Phase Isolation:** Transition between M1-M5 is physically gated by artifact presence in the file system.
+3. **Outcome Mandate:** Every task must end with a 3-point "Zero Fluff" Outcome Report detailing `status`, `artifacts`, and `summary`.
 
-1. **Words are Wind, Disk IO is Truth:** No agent can claim task completion without physical JSON artifacts moved via `kanban-solidity-gate`. Progression through M1-M5 phases requires strict physical synchronization.
-2. **The "Clean Session" Mandate:** The `ORCHESTRATOR` is blind to source code. Code generation, inspection, and debugging MUST be delegated to sub-agents executing in isolated, fresh context windows.
-3. **Lazy Loading:** Agents must ONLY load the specific skills from the Top 18 Hub required for their immediate task. Loading unnecessary skills is a breach of token economy.
-4. **No Code Without Spec (SDD):** Implementation agents are forbidden from writing production code without a pre-approved `PRP_CONTRACT.json` or Specification document outlining the exact contract and architecture.
+## 🧠 II. Context Isolation (Clean Sessions)
+1. **Memory Sovereignty:** Implementation agents operate under `CLEAN_SESSION=True`. They only read the `context_pointers` authorized by the Orchestrator.
+2. **No-Noise Policy:** The global `FEEDBACK-LOG` is a technical substrate, not a conversation history. It must be pruned by the `MEMORY_OPTIMIZER`.
+3. **Artifact-First:** Agents communicate via changes in the file system, not through long conversational threads.
 
-## II. ARCHITECTURE: CHASIS BLINDADO
+## 🛡️ III. Zero-Trust & Solidity
+1. **Surgical Access:** Agents have no write permissions outside their technical domain or the project's logic layers.
+2. **Solidity Gate:** No phase is considered complete without a verified `kanban-solidity-gate` check and a `SECURITY_AUDITOR` clearance.
+3. **Chesterton's Fence:** No legacy code is deleted without an ADR (Architecture Decision Record) explaining the "Why".
 
-The Factory operates under a strict two-zone physical boundary:
-
-- **`dasafo_FACTORY/` (Immutable):** Contains this constitution, skills, and logic. Modifying `06_SKILL_LIBRARY/` requires explicit Human-In-The-Loop (HITL) approval.
-- **`PROJECTS/` (Mutable Workspace):** Strict 4-layer separation (Domain, Application, Infrastructure, UI). Domain models NEVER cross boundaries. Cross-layer communication mandates explicit **DTOs** and zero-trust data sanitization.
-
-## III. UNIVERSAL STANDARDS
-
-1. **Language:** Code logic, variables, and technical logs MUST be in **English**. Documentation in `DOCS/` may be in Spanish if requested by the USER.
-2. **SI Units:** All telemetry, resource reporting, and performance metrics MUST use **Seconds (s)** and **Bytes (B)**.
-3. **Zero Hardcoding:** Absolute paths and hardcoded secrets are strictly forbidden. Use environment variables and relative paths anchored to `$TARGET_PROJECT`.
-4. **DOCS Protocol:** All architectural blueprints, user manuals, and specifications must strictly reside within the `DOCS/` hierarchy. Root-level documentation is an architectural breach.
-5. **Containerization Strictness:** "Works on my machine" is an invalid state. All implementations must be strictly containerized and defined in a `docker-compose.yml` file. Use multi-stage builds for minimal image size.
-6. **Destructive Mutation Guard (Chesterton's Fence):** Agents are strictly FORBIDDEN from deleting, refactoring, or modifying legacy code/configurations unless explicitly instructed by the current Spec and documenting the exact dependency chain affected.
-
-## IV. ERROR HANDLING & MEMORY (Engram Protocol)
-
-Failures are data. Do not pollute the active context window with historical errors. All project errors must be serialized using `FEEDBACK_SCHEMA.json` and delegated to the `MEMORY_OPTIMIZER` for rare-pattern indexing (Engram sorting).
+## 📊 IV. Industrial Metrics (SI Standards)
+1. **Temporal Precision:** All time-based metrics must be expressed in Seconds (s).
+2. **Resource Precision:** All size-based metrics must be expressed in Bytes (B).
 
 ---
-*Constitution v3.4.0-S | dS_FACTORY: Optimized for Spec Driven Development.*
+*Ratified: 2026-03-30 | Dasafo Factory v3.4.0-S.*

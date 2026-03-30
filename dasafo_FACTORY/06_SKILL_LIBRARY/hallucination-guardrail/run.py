@@ -1,5 +1,5 @@
 """
-Hallucination Guardrail (v3.3.1-S) - Industrial Implementation.
+Hallucination Guardrail (v3.4.0-S) - Industrial Implementation.
 Programmable safety and factual grounding for LLM outputs.
 """
 from __future__ import annotations

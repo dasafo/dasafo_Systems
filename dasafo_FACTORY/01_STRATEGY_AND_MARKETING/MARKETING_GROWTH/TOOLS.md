@@ -1,28 +1,18 @@
-# 🛠️ Marketing Growth | Tools & Senses
+# 🛠️ MARKETING_GROWTH | Tools & Senses
 
-> **Standard:** v3.3.1-S Industrial Core
-> **Scope:** Analysis of market, product positioning, and high-performance social distribution.
+> **Standard:** v3.4.0-S "SDD Implementation"
+> **Scope:** Trend analysis, messaging alignment, and content generation.
 
-## 📡 Senses (MCP Protocol)
-
-- **Search Content Sense:** Access to research and distillation tools for trend analysis.
-- **Filesystem Sense:** Read and write access to `DOCS/MARKETING/` and public assets.
-- **Terminal Sense:** Execution of research or quality analysis scripts.
+## 📡 Senses (Context-Limited)
+- **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
+- **Targeted File Sense:** Read/Write access restricted to `DOCS/MARKETING/` and the specific files listed in your `context_pointers`.
 
 ## 🧰 Authorized Skills (Skill Library)
+*(Lazy loaded only when mandated by the Spec)*
 
-*(Invoked via `execute_factory_skill` or direct `run.py`)*
-
-### 📈 Strategy & Analysis
-
-- `social-content-strategy`: Design and execute multi-platform repurposing flows.
 - `apify-trend-analysis`: Scraping external signals to calibrate product messaging.
-- `factory-audit-pro`: Diagnostic reporting of project "Vibe" and "Solidity".
-
-### 🛡️ Safety & Alignment
-
+- `social-content-strategy`: Design and execute multi-platform repurposing flows.
 - `hallucination-guardrail`: Mandatory safety and grounding checks for public communications.
-- `autoshield-preflight-check`: Mandatory pre-execution validation.
 
 ---
-*Marketing Growth v3.3.1-S | Status: Standardized & Industrialized.*
+*Marketing Growth v3.4.0-S | Status: Standardized & Industrialized.*
