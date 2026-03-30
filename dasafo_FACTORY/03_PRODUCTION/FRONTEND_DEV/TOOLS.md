@@ -20,7 +20,7 @@
 
 ### 🛡️ Guardrails & Validation
 
-- `playwright-ui-tester`: Mandatory evidence generation for UI tasks. No component is finished without a passing test report saved to disk.
+- `playwright-e2e-tester`: Mandatory evidence generation for UI tasks. No component is finished without a passing test report saved to disk.
 
 ---
 *Frontend Dev v3.4.0-S | Status: Standardized & Industrialized.*

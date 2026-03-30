@@ -22,7 +22,9 @@ BYPASS_SKILLS = {
     "autonomous-feedback-analyzer",
     
     # 📋 Gestión Burocrática (Necesaria para cerrar tareas y desbloquear el proyecto)
-    "project-management"
+    "project-management",
+    "registry-manager",
+    "context-pruning-sieve"
 }
 
 def verify_project_state(target_project: str, requested_skill: str, agent: str = None) -> tuple[bool, str]:

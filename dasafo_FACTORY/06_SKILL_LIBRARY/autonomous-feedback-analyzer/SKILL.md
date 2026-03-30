@@ -1,51 +1,38 @@
 ---
 version: 3.4.0-S
-agent: FACTORY_EVOLVER / PRODUCT_ANALYST
-source: https://skills.sh/eddiebe147/claude-settings/feedback-analyzer
+agent: FACTORY_EVOLVER / DATA_SCIENTIST
+source: https://skills.sh/phuryn/pm-skills/sentiment-analysis
 ---
 
-# 🧠 Skill | Autonomous Feedback Analyzer
+# 🧠 Skill | Autonomous Feedback Analyzer (v3.4.0-S)
 
 ## Objective
 
-Proactively automate the collection, categorization, and deep analysis of user and system feedback. This skill identifies emotional context, urgency, and recurring patterns to drive the evolution of the agentic factory, ensuring continuous performance optimization and user satisfaction.
+Perform sentiment analysis, segment insights, and extract actionable "Golden Rules" from user feedback or factory engram logs to drive continuous systemic improvement.
 
 ## 🛠️ Interface (v3.4.0-S)
 
 ### Input Schema (SkillInput.params)
 
-- `action` (string, optional): "analyze" (default) | "score_urgency" | "synthesize".
-  - `analyze`: Classify feedback into themes and sentiment categories.
-  - `score_urgency`: Calculate priority based on risk, frequency, and customer tier.
-  - `synthesize`: Generate a structured "Insight Report" with actionable recommendations.
-- `feedback_data` (list, required): List of raw feedback objects or text strings.
-- `target_project` (string, optional): Absolute path for saving analysis reports.
+- `action` (enum): `analyze_file`, `analyze_text`.
+- `target_project` (string, mandatory): Absolute path to the project workspace.
+- `file_path` (string, optional): Path to the feedback log (Default: `LOGS/FEEDBACK-LOG.md`).
+- `raw_text` (string, optional): Direct string input if analyzing isolated feedback.
 
 ### Output Schema (SkillOutput.result)
 
-- `status`: (string) "ANALYSIS_COMPLETE" | "INSIGHTS_GENERATED"
-- `report_path`: (string, optional) Path to the physical Markdown report.
-- `sentiment_distribution`: (dict) Mapping of sentiment levels (v_neg, neg, neutral, pos, v_pos).
-- `priority_alerts`: (list) High-urgency issues that triggered immediate flags.
-- `si_metrics`: (dict) Performance metrics (e.g., `avg_response_time_seconds`).
+- `sentiment_score`: (string) `POSITIVE`, `NEGATIVE`, or `MIXED`.
+- `key_insights`: (array) Processed bullet points of user friction or delight.
+- `golden_rules`: (array) Universal rules extracted to update agent instructions.
+- `report_path`: (string) Physical path to the generated JSON analysis artifact.
+- `industrial_status`: (string) "SOLIDIFIED - FEEDBACK ANALYZED".
 
 ### ⚖️ Mandato SI (Sistema Internacional)
 
-Cualquier métrica técnica analizada (tiempos medios de respuesta, latencias de procesamiento de tickets, tamaños de logs) debe expresarse estrictamente en el SI (segundos, bytes).
+El peso de los datos analizados (`source_payload_bytes`) debe reportarse en **bytes** (B), y el tiempo de computación del análisis semántico en **segundos** (s).
 
-## 🛡️ Industrial Constraints (Zero-Trust)
+## 🛡️ Industrial Constraints (Zero-Trust & Empirical Analysis)
 
-- **Evidence-Based:** Insights must be backed by representative quotes or physical log data. Hallucinated feedback patterns are FORBIDDEN.
-- **Physical Archiving:** Analysis results must be physically saved to `DOCS/feedback/` or `LOCAL_KNOWLEDGE/evolution/`.
-- **SI Only:** Ensure all time-to-address estimates follow the SI (e.g., using prefix `s`).
-
-## 🧠 Analysis Frameworks (v3.4.0-S)
-
-1. **Sentiment & Urgency:** Map emotional indicators to Action Levels (Urgent Escalation → Sprint Address → Standard Review).
-2. **Pattern Recognition:** Use qualitative analysis to discover pain points and unmet needs.
-3. **Insight Synthesis:** Structure findings using the (FINDING → EVIDENCE → IMPACT → RECOMMENDATION) template.
-4. **Root Cause Analysis (RCA):** Distinguish between symptoms and causes by mapping feedback to user journey stages.
-
----
-**ORIGIN:** [feedback-analyzer by eddiebe147](https://skills.sh/eddiebe147/claude-settings/feedback-analyzer)
-*Skill v3.4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+- **No Hallucination:** Insights MUST be directly traceable to the source text. Do not invent user complaints or feature requests.
+- **Physical Sandboxing:** The analysis results MUST be saved to a physical artifact (`LOGS/FEEDBACK_ANALYSIS_*.json`) for the Orchestrator to review.
+- **Schema Alignment:** Golden Rules extracted should align with the structure defined in `FEEDBACK_SCHEMA.json`.

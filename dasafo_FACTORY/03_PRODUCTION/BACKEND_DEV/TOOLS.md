@@ -17,6 +17,7 @@
 
 - `async-fastapi-logic`: Performance-optimized asynchronous backend logic generation.
 - `supabase-stack-expert`: Execution of queries, migrations, and edge functions based on pre-approved architectural schemas.
+- `pytest-logic-verifier`: Programmatic backend logic testing via Pytest.
 
 ### 🛡️ Guardrails & Security
 
