@@ -5,13 +5,13 @@
 [![Governance](https://img.shields.io/badge/Governance-Aduana_Universal-purple?style=for-the-badge)](#)
 [![Security](https://img.shields.io/badge/Security-Zero_Trust_Solidity-red?style=for-the-badge)](#)
 
-**dasafo_Systems** es un ecosistema de ingeniería autónoma diseñado para transformar la creación de software en un proceso industrial, predecible y estéticamente premium. No es un chat con una IA; es una **infraestructura de producción masiva** gobernada por compuertas físicas y protocolos de confianza cero.
+**dasafo_Systems** is an autonomous engineering ecosystem designed to transform software creation into an industrial, predictable, and aesthetically premium process. It is not just an AI chat; it is a **mass production infrastructure** governed by physical gates and zero-trust protocols.
 
 ---
 
-## 🏗️ Ecosistema Industrial: Los 3 Nodos
+## 🏗️ Industrial Ecosystem: The 3 Nodes
 
-El sistema opera bajo una arquitectura tripartita que garantiza aislamiento total y persistencia de datos:
+The system operates under a tripartite architecture that ensures total isolation and data persistence:
 
 ```mermaid
 graph TD
@@ -29,79 +29,79 @@ graph TD
     end
 ```
 
-### 1. `dasafo_FACTORY` (El Cerebro)
-El nodo inmutable que contiene las leyes, identidades y habilidades ejecutivas.
-- **Top 18 Hub:** Librería de 25+ skills atómicas (`06_SKILL_LIBRARY`).
-- **Agentes:** 15 perfiles industriales en 5 departamentos (Estrategia, Arquitectura, Producción, Calidad y Operaciones).
+### 1. `dasafo_FACTORY` (The Brain)
+The immutable node containing the laws, identities, and executive skills.
+- **Top 18 Hub:** Library of 25+ atomic skills (`06_SKILL_LIBRARY`).
+- **Agents:** 15 industrial profiles across 5 departments (Strategy, Architecture, Production, Compliance, and Operations).
 
-### 2. `INFRA` (El Power Grid)
-Servicios backend compartidos mediante Docker Compose:
-- **Relacional:** Postgres (`shared-db`) para metadatos operativos.
-- **Semántico:** Neo4j (`kg-db`) para el Grafo de Conocimiento.
-- **Caché:** Redis (`cache-node`) para orquestación en tiempo real.
-- **Salud:** Glances para monitoreo de recursos del sistema.
+### 2. `INFRA` (The Power Grid)
+Shared backend services managed via Docker Compose:
+- **Relational:** Postgres (`shared-db`) for operational metadata.
+- **Semantic:** Neo4j (`kg-db`) for the Knowledge Graph.
+- **Cache:** Redis (`cache-node`) for real-time orchestration.
+- **Health:** Glances for system resource monitoring.
 
-### 3. `PROJECTS` (El Taller)
-El espacio donde se ejecutan las misiones. Cada proyecto cuenta con su propio **Chasis Blindado**:
-- `DOCS/`: Planos técnicos y manuales de usuario.
-- `TASKS/`: Registro físico del Kanban industrial (`registry.json`).
-- `WORKSPACE/`: Código fuente distribuido (Frontend/Backend/Shared).
-- `LOGS/`: Evidencia técnica y telemetría de cada sesión.
-
----
-
-## ⚙️ El Motor Industrial (v3.4.0-S)
-
-Diferenciamos nuestro motor por el uso de **Compuertas Físicas de Estado**:
-
-*   **Aduana Universal (`session_hook.py`):** Ninguna herramienta puede ser invocada si el proyecto no está en la fase correcta o si faltan firmas físicas en `PROJECT_STATE.json`.
-*   **Solidity Guard (`skill_engine.py`):** Verifica que cada skill genere los artefactos prometidos en disco antes de validar el éxito de la tarea.
-*   **Mandato SI:** 100% obligatorio. Tiempo en **segundos (s)**, recursos en **bytes (B)**. Sin excepciones.
+### 3. `PROJECTS` (The Workshop)
+The space where missions are executed. Each project has its own **Armored Chassis**:
+- `DOCS/`: Technical blueprints and user manuals.
+- `TASKS/`: Physical record of the industrial Kanban (`registry.json`).
+- `WORKSPACE/`: Distributed source code (Frontend/Backend/Shared).
+- `LOGS/`: Technical evidence and telemetry for each session.
 
 ---
 
-## 🕹️ Centro de Control (Slash Commands)
+## ⚙️ The Industrial Engine (v3.4.0-S)
 
-Interactúa con la factoría mediante comandos de alto nivel en **Antigravity**:
+Our engine is distinguished by the use of **Physical State Gates**:
 
-| Comando | Acción Industrial | Propósito |
+*   **Aduana Universal (`session_hook.py`):** No tool can be invoked if the project is not in the correct phase or if physical signatures are missing in `PROJECT_STATE.json`.
+*   **Solidity Guard (`skill_engine.py`):** Verifies that each skill generates the promised artifacts on disk before validating the task's success.
+*   **SI Mandate:** 100% mandatory. Time in **seconds (s)**, resources in **bytes (B)**. No exceptions.
+
+---
+
+## 🕹️ Command Center (Slash Commands)
+
+Interact with the factory using high-level commands in **Antigravity**:
+
+| Command | Industrial Action | Purpose |
 | :--- | :--- | :--- |
-| **`/init-contract`** | Generación de PRP | El **PRODUCT_OWNER** redacta el contrato maestro de 12 secciones. |
-| **`/factory-orchestrate`** | Deconstrucción | El **ORCHESTRATOR** abre compuertas y genera tareas en el Kanban. |
-| **`/execute-task`** | Producción Blindada | Lanza un peón en una **Clean Session** aislada para codificar. |
-| **`/scan`** | Auditoria de Seguridad | Escaneo mandatorio de secretos y vulnerabilidades (Zero-Trust). |
-| **`/factory-status`** | Reporte Ejecutivo | Salud del proyecto basada en evidencia física del disco. |
+| **`/init-contract`** | PRP Generation | The **PRODUCT_OWNER** drafts the 12-section master contract. |
+| **`/factory-orchestrate`** | Deconstruction | The **ORCHESTRATOR** opens gates and generates tasks in the Kanban. |
+| **`/execute-task`** | Armored Production | Launches a worker in an isolated **Clean Session** to code. |
+| **`/scan`** | Security Audit | Mandatory scanning for secrets and vulnerabilities (Zero-Trust). |
+| **`/factory-status`** | Executive Report | Project health based on physical evidence from the disk. |
 
 ---
 
-## 🚀 Guía de Inicio Rápido: De Director a Propietario
+## 🚀 Quick Start Guide: From Director to Owner
 
-1.  **Encender la Red:**
+1.  **Power Up the Grid:**
     ```bash
     cd INFRA && docker-compose up -d
     ```
-2.  **Lanzar una Misión:**
+2.  **Launch a Mission:**
     ```bash
-    cd dasafo_FACTORY && ./init_project.sh NombreProyecto
+    cd dasafo_FACTORY && ./init_project.sh ProjectName
     ```
-3.  **Definir la Visión:**
-    - Usa `/init-contract` en Antigravity.
-    - Firma físicamente el `PRP_CONTRACT.json` cambiando el estado a `VALIDATED`.
-4.  **Ejecutar:**
-    - Usa `/factory-orchestrate` para llenar el Kanban.
-    - Usa `/execute-task` para ver cómo la factoría construye el software por ti.
+3.  **Define the Vision:**
+    - Use `/init-contract` in Antigravity.
+    - Physically sign the `PRP_CONTRACT.json` by changing the status to `VALIDATED`.
+4.  **Execute:**
+    - Use `/factory-orchestrate` to populate the Kanban.
+    - Use `/execute-task` to watch the factory build the software for you.
 
 ---
 
-## 📂 Documentación Detallada (Deep Dive)
+## 📂 Detailed Documentation (Deep Dive)
 
-Toda la inteligencia de la factoría se encuentra en el directorio [Informacion/](../Informacion/):
+All factory intelligence is located in the [Informacion/](Informacion/) directory:
 
-- [00_GLOBAL_KNOWLEDGE.md](Informacion/00_GLOBAL_KNOWLEDGE.md): La Constitución de la Factoría.
-- [06_SKILL_LIBRARY.md](Informacion/06_SKILL_LIBRARY.md): Catálogo de habilidades industriales.
-- [Agent_Skill_mapping.md](Informacion/Agent_Skill_mapping.md): Matriz de autoridad Agente → Skill.
-- [OPERACIONES_USUARIO_UX.md](Informacion/OPERACIONES_USUARIO_UX.md): Manual de operación para el usuario final.
-- [MANUAL_SISTEMA_DASAFO.md](Informacion/MANUAL_SISTEMA_DASAFO.md): Guía técnica completa.
+- [00_GLOBAL_KNOWLEDGE.md](Informacion/00_GLOBAL_KNOWLEDGE.md): The Factory Constitution.
+- [06_SKILL_LIBRARY.md](Informacion/06_SKILL_LIBRARY.md): Industrial Skills Catalog.
+- [Agent_Skill_mapping.md](Informacion/Agent_Skill_mapping.md): Agent → Skill authority matrix.
+- [OPERACIONES_USUARIO_UX.md](Informacion/OPERACIONES_USUARIO_UX.md): End-user operations manual.
+- [MANUAL_SISTEMA_DASAFO.md](Informacion/MANUAL_SISTEMA_DASAFO.md): Complete technical guide.
 
 ---
 <p align="center">
