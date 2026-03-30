@@ -30,19 +30,25 @@ graph TD
 ```
 
 ### 1. `dasafo_FACTORY` (The Brain)
+
 The immutable node containing the laws, identities, and executive skills.
+
 - **Top 18 Hub:** Library of 25+ atomic skills (`06_SKILL_LIBRARY`).
 - **Agents:** 15 industrial profiles across 5 departments (Strategy, Architecture, Production, Compliance, and Operations).
 
 ### 2. `INFRA` (The Power Grid)
+
 Shared backend services managed via Docker Compose:
+
 - **Relational:** Postgres (`shared-db`) for operational metadata.
 - **Semantic:** Neo4j (`kg-db`) for the Knowledge Graph.
 - **Cache:** Redis (`cache-node`) for real-time orchestration.
 - **Health:** Glances for system resource monitoring.
 
 ### 3. `PROJECTS` (The Workshop)
+
 The space where missions are executed. Each project has its own **Armored Chassis**:
+
 - `DOCS/`: Technical blueprints and user manuals.
 - `TASKS/`: Physical record of the industrial Kanban (`registry.json`).
 - `WORKSPACE/`: Distributed source code (Frontend/Backend/Shared).
@@ -54,9 +60,9 @@ The space where missions are executed. Each project has its own **Armored Chassi
 
 Our engine is distinguished by the use of **Physical State Gates**:
 
-*   **Aduana Universal (`session_hook.py`):** No tool can be invoked if the project is not in the correct phase or if physical signatures are missing in `PROJECT_STATE.json`.
-*   **Solidity Guard (`skill_engine.py`):** Verifies that each skill generates the promised artifacts on disk before validating the task's success.
-*   **SI Mandate:** 100% mandatory. Time in **seconds (s)**, resources in **bytes (B)**. No exceptions.
+- **Aduana Universal (`session_hook.py`):** No tool can be invoked if the project is not in the correct phase or if physical signatures are missing in `PROJECT_STATE.json`.
+- **Solidity Guard (`skill_engine.py`):** Verifies that each skill generates the promised artifacts on disk before validating the task's success.
+- **SI Mandate:** 100% mandatory. Time in **seconds (s)**, resources in **bytes (B)**. No exceptions.
 
 ---
 
@@ -76,34 +82,27 @@ Interact with the factory using high-level commands in **Antigravity**:
 
 ## 🚀 Quick Start Guide: From Director to Owner
 
-1.  **Power Up the Grid:**
+1. **Power Up the Grid:**
+
     ```bash
     cd INFRA && docker-compose up -d
     ```
-2.  **Launch a Mission:**
+
+2. **Launch a Mission:**
+
     ```bash
     cd dasafo_FACTORY && ./init_project.sh ProjectName
     ```
-3.  **Define the Vision:**
+
+3. **Define the Vision:**
     - Use `/init-contract` in Antigravity.
     - Physically sign the `PRP_CONTRACT.json` by changing the status to `VALIDATED`.
-4.  **Execute:**
+4. **Execute:**
     - Use `/factory-orchestrate` to populate the Kanban.
     - Use `/execute-task` to watch the factory build the software for you.
 
 ---
 
-## 📂 Detailed Documentation (Deep Dive)
-
-All factory intelligence is located in the [Informacion/](Informacion/) directory:
-
-- [00_GLOBAL_KNOWLEDGE.md](Informacion/00_GLOBAL_KNOWLEDGE.md): The Factory Constitution.
-- [06_SKILL_LIBRARY.md](Informacion/06_SKILL_LIBRARY.md): Industrial Skills Catalog.
-- [Agent_Skill_mapping.md](Informacion/Agent_Skill_mapping.md): Agent → Skill authority matrix.
-- [OPERACIONES_USUARIO_UX.md](Informacion/OPERACIONES_USUARIO_UX.md): End-user operations manual.
-- [MANUAL_SISTEMA_DASAFO.md](Informacion/MANUAL_SISTEMA_DASAFO.md): Complete technical guide.
-
----
 <p align="center">
   <i>"Industrializing the Future of Autonomous Software Engineering"</i><br>
   <b>dasafo_Systems v3.4.0-S | Solidity, Speed, Veracity.</b>
