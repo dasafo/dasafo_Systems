@@ -8,7 +8,7 @@ Este documento define la matriz de autoridad entre los Agentes de la Factoría y
 
 | Agente | Skills Autorizadas | Propósito Principal |
 | :--- | :--- | :--- |
-| **ORCHESTRATOR** | `delegate-clean-session`, `prp-generator`, `kanban-solidity-gate` | Delegación, deconstrucción de PRP y control de fases. |
+| **ORCHESTRATOR** | `delegate-clean-session`, `prp-generator`, `kanban-solidity-gate`, `registry-manager` | Delegación, deconstrucción de PRP, control de fases y gestión del registro Kanban. |
 | **PRODUCT_OWNER** | `prp-generator`, `apify-trend-analysis`, `project-management` | Creación de PRP_MASTER, análisis de mercado y gestión de procesos. |
 | **MARKETING_GROWTH** | `apify-trend-analysis`, `social-content-strategy`, `hallucination-guardrail`, `factory-audit-pro` | Ejecución de campañas, análisis de tendencias y auditoría de marca. |
 
@@ -27,8 +27,8 @@ Este documento define la matriz de autoridad entre los Agentes de la Factoría y
 
 | Agente | Skills Autorizadas | Propósito Principal |
 | :--- | :--- | :--- |
-| **BACKEND_DEV** | `async-fastapi-logic`, `supabase-stack-expert`, `agentic-thought-secret-scanner`, `api-contract-generator` | Implementación de APIs, lógica de dominio y seguridad de secretos. |
-| **FRONTEND_DEV** | `shadcn-component-library`, `atomic-design-tokens`, `playwright-ui-tester` | Construcción de UIs atómicas y pruebas de regresión visual. |
+| **BACKEND_DEV** | `async-fastapi-logic`, `supabase-stack-expert`, `agentic-thought-secret-scanner`, `api-contract-generator`, `pytest-logic-verifier` | Implementación de APIs, lógica de dominio, seguridad y verificación de lógica backend. |
+| **FRONTEND_DEV** | `shadcn-component-library`, `atomic-design-tokens`, `playwright-ui-tester`, `playwright-e2e-tester` | Construcción de UIs atómicas, pruebas de regresión visual y flujos E2E. |
 | **DB_MASTER** | `database-architect-strategic`, `supabase-stack-expert`, `agentic-thought-secret-scanner` | Ejecución de esquemas, migraciones y seguridad RLS. |
 | **DATA_SCIENTIST** | `autonomous-feedback-analyzer`, `apify-trend-analysis`, `agentic-thought-secret-scanner` | Modelado IA, análisis de datos y protección PII. |
 
@@ -39,7 +39,7 @@ Este documento define la matriz de autoridad entre los Agentes de la Factoría y
 | Agente | Skills Autorizadas | Propósito Principal |
 | :--- | :--- | :--- |
 | **SECURITY_AUDITOR** | `agentic-thought-secret-scanner`, `factory-audit-pro`, `dependency-vulnerability-scanner` | Caza de vulnerabilidades, escaneo de secretos y auditoría de CVEs. |
-| **QA_TESTER** | `factory-audit-pro`, `hallucination-guardrail`, `agentic-thought-secret-scanner` | Auditoría de arquitectura, linter cultural y validación de evidencias. |
+| **QA_TESTER** | `factory-audit-pro`, `hallucination-guardrail`, `agentic-thought-secret-scanner`, `build-test-executor`, `playwright-e2e-tester`, `pytest-logic-verifier` | Auditoría, validación de evidencias, ejecución de builds y pruebas lógicas/E2E. |
 | **DOCS_MASTER** | `api-docs-generator`, `arxiv-technical-digest`, `hallucination-guardrail` | Documentación técnica, manuales y verificación de veracidad. |
 
 ---
@@ -48,7 +48,7 @@ Este documento define la matriz de autoridad entre los Agentes de la Factoría y
 
 | Agente | Skills Autorizadas | Propósito Principal |
 | :--- | :--- | :--- |
-| **DEVOPS_SRE** | `docker-stack-provisioner`, `terraform-iac-builder`, `agentic-thought-secret-scanner`, `hallucination-guardrail` | Provisión de infraestructura (IaC), contenedores y seguridad de red. |
+| **DEVOPS_SRE** | `docker-stack-provisioner`, `terraform-iac-builder`, `agentic-thought-secret-scanner`, `hallucination-guardrail`, `build-test-executor` | Provisión de infra (IaC), contenedores, seguridad y ejecución de pipeline de build. |
 | **DEPLOYMENT_MONITOR** | `telemetry-analyzer`, `playwright-ui-tester`, `hallucination-guardrail` | Análisis de latencia (s/B) y monitoreo de salud en tiempo real. |
 | **FACTORY_EVOLVER** | `autonomous-feedback-analyzer`, `skill-refactor-pro`, `autoshield-preflight-check`, `hallucination-guardrail` | Evolución del framework, refactorización de skills y mejora de tokens. |
 | **MEMORY_OPTIMIZER** | `context-pruning-sieve`, `hallucination-guardrail` | Poda de contexto y optimización de memoria de sesión. |
@@ -63,7 +63,8 @@ Skills que pueden ser invocadas por cualquier agente en modo auditoría:
 - `agentic-thought-secret-scanner`: Prevención de fugas de credenciales.
 
 ---
-*Mapping v3.4.0-S | Dasafo Factory Industry Standard*
+> [!NOTE]
+> **Mapping v3.4.0-S | Dasafo Factory Industry Standard**
 
 ---
 
@@ -86,18 +87,23 @@ Skills que pueden ser invocadas por cualquier agente en modo auditoría:
 | `async-fastapi-logic` | `ARCHITECT`, `BACKEND_DEV` |
 | `arxiv-technical-digest` | `RESEARCH_AGENT`, `DOCS_MASTER` |
 | `supabase-stack-expert` | `BACKEND_DEV`, `DB_MASTER` |
-| `agentic-thought-secret-scanner`| `TODOS` (Principalmente `SECURITY`, `BACKEND`, `DB`, `DEVOPS`) |
+| `agentic-thought-secret-scanner` | `TODOS` (Principalmente `SECURITY`, `BACKEND`, `DB`, `DEVOPS`) |
 | `shadcn-component-library` | `FRONTEND_DEV` |
 | `atomic-design-tokens` | `FRONTEND_DEV` |
 | `playwright-ui-tester` | `FRONTEND_DEV`, `DEPLOYMENT_MONITOR` |
 | `autonomous-feedback-analyzer` | `DATA_SCIENTIST`, `FACTORY_EVOLVER` |
-| `dependency-vulnerability-scanner`| `SECURITY_AUDITOR` |
+| `dependency-vulnerability-scanner` | `SECURITY_AUDITOR` |
 | `telemetry-analyzer` | `DEPLOYMENT_MONITOR` |
 | `docker-stack-provisioner` | `DEVOPS_SRE` |
 | `terraform-iac-builder` | `DEVOPS_SRE` |
 | `skill-refactor-pro` | `FACTORY_EVOLVER` |
 | `autoshield-preflight-check` | `FACTORY_EVOLVER` |
 | `context-pruning-sieve` | `MEMORY_OPTIMIZER` |
+| `registry-manager` | `ORCHESTRATOR` |
+| `build-test-executor` | `DEVOPS_SRE`, `QA_TESTER` |
+| `playwright-e2e-tester` | `QA_TESTER`, `FRONTEND_DEV` |
+| `pytest-logic-verifier` | `QA_TESTER`, `BACKEND_DEV` |
 
 ---
-*Mapping v3.4.0-S | Dasafo Factory Industry Standard*
+> [!NOTE]
+> **Mapping v3.4.0-S | Dasafo Factory Industry Standard**
