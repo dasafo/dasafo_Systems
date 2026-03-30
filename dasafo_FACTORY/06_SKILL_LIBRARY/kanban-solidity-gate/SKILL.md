@@ -1,5 +1,5 @@
 ---
-version: 3.3.1-S
+version: 3.4.0-S
 agent: ALL AGENTS
 source: https://skills.sh/supercent-io/skills-template/vibe-kanban
 ---

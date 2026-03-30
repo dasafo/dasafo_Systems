@@ -1,5 +1,5 @@
 ---
-version: 3.3.0-S
+version: 3.4.0-S
 agent: RESEARCH_AGENT / ACADEMIC_STRATEGIST
 source: https://skills.sh/actionbook/actionbook/active-research
 ---

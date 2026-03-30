@@ -1,5 +1,5 @@
 ---
-version: 3.3.0-S
+version: 3.4.0-S
 agent: ARCHITECT / LEAD_DEV
 source: https://skills.sh/wshobson/agents/architecture-decision-records
 ---

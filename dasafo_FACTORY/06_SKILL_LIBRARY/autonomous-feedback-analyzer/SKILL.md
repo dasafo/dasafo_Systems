@@ -1,5 +1,5 @@
 ---
-version: 3.3.0-S
+version: 3.4.0-S
 agent: FACTORY_EVOLVER / PRODUCT_ANALYST
 source: https://skills.sh/eddiebe147/claude-settings/feedback-analyzer
 ---

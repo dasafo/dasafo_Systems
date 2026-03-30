@@ -1,5 +1,5 @@
 ---
-version: 3.3.0-S
+version: 3.4.0-S
 agent: FRONTEND_DEV / UI_ARCHITECT
 source: https://skills.sh/wshobson/agents/design-system-patterns
 ---

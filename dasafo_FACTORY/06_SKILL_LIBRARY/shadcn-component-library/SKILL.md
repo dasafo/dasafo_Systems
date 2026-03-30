@@ -1,5 +1,5 @@
 ---
-version: 3.3.1-S
+version: 3.4.0-S
 agent: FRONTEND_DEV
 source: https://skills.sh/shadcn/ui/shadcn
 ---

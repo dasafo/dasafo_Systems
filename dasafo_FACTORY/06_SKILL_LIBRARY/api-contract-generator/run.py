@@ -4,13 +4,13 @@ import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(
 run.py — API Designer & Contract Generator (ARCHITECT / BACKEND_DEV)
 v3.4.0-S: Modular Toolbox | Industrial Scale.
 
-Advanced module to design resource-oriented OpenAPI 3.1 contracts with RFC 7807 support.
-Based on jeffallan/claude-skills/api-designer logic.
+Solidified: v3.4.0-S Redundancy Lock, Compliance Reporting & SI Mandate.
 """
 
 import os
 import re
 import yaml
+import time
 from pathlib import Path
 from skill_schema import SkillInput, SkillOutput
 
@@ -90,6 +90,8 @@ def run(skill_input: SkillInput) -> SkillOutput:
     skill = "api-contract-generator"
     cid = skill_input.correlation_id
     params = skill_input.params or {}
+    
+    start_time = time.time()
 
     try:
         # 1. Path & Context Resolution
@@ -98,23 +100,28 @@ def run(skill_input: SkillInput) -> SkillOutput:
              return SkillOutput.failure(agent, skill, "SECURITY LOCK: Missing TARGET_PROJECT path.", cid)
         
         project_path = Path(target).resolve()
-        action = params.get("action", "design")
         resource = params.get("resource", "generic_resource")
         version = params.get("version", "1.0.0")
+        overwrite = params.get("overwrite", False)
 
-        # 2. Logic: Create Spec (OpenAPI 3.1)
-        spec = create_pro_openapi(resource, version)
-
-        # 3. Persistence
+        # 2. Redundancy Lock Enforcement
         docs_dir = project_path / "DOCS"
         docs_dir.mkdir(parents=True, exist_ok=True)
-        
         yaml_path = docs_dir / "API-CONTRACT.yaml"
+        
+        if yaml_path.exists() and not overwrite:
+             return SkillOutput.failure(agent, skill, f"REDUNDANCY LOCK: {yaml_path.name} already exists. Set overwrite=True to update.", cid)
+
+        # 3. Logic: Create Spec (OpenAPI 3.1)
+        spec = create_pro_openapi(resource, version)
+
+        # 4. Persistence
         with open(yaml_path, 'w', encoding='utf-8') as f:
             yaml.dump(spec, f, sort_keys=False, allow_unicode=True)
             
-        # 4. Result Metrics (SI Compliance)
+        # 5. Result Metrics (SI Compliance)
         endpoints_count = sum(len(methods) for methods in spec.get("paths", {}).values())
+        execution_time_s = time.time() - start_time
         
         result_payload = {
             "status": "SOLIDIFIED - PRO DESIGN",
@@ -124,12 +131,13 @@ def run(skill_input: SkillInput) -> SkillOutput:
                 "endpoints_count": endpoints_count,
                 "standards_compliance": "OpenAPI 3.1 + RFC 7807"
             },
-            "recommendations": [
-                "Always use snake_case for resources and field names.",
-                "Implement pagination for list endpoints (supported by default in this spec).",
-                "Use RFC 7807 (Problem Details) for all error responses (schemas included).",
-                "Verify this spec with 'npx @redocly/cli lint' for best results."
-            ]
+            "compliance_report": {
+                "openapi_standard": "3.1.0",
+                "rfc7807_enabled": True,
+                "lock_verified": True,
+                "execution_duration_seconds": round(execution_time_s, 4)
+            },
+            "summary": f"API Contract for '{resource}' generated at DOCS/API-CONTRACT.yaml. {endpoints_count} endpoints defined."
         }
 
         return SkillOutput.success(

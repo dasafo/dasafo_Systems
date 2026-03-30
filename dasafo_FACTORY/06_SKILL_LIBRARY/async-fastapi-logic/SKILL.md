@@ -1,5 +1,5 @@
 ---
-version: 3.3.0-S
+version: 3.4.0-S
 agent: BACKEND_DEV / ARCHITECT
 source: https://skills.sh/jezweb/claude-skills/fastapi
 ---

@@ -1,5 +1,5 @@
 ---
-version: 3.3.1-S
+version: 3.4.0-S
 agent: PRODUCT_OWNER
 source: https://skills.sh/daffy0208/ai-dev-standards/prp-generator
 ---
@@ -9,6 +9,7 @@ source: https://skills.sh/daffy0208/ai-dev-standards/prp-generator
 ## Objective
 
 Generate industrial-grade requirements artifacts. Supports the dual-track contract system:
+
 - **PRP_MASTER:** 12-section full contract for project discovery (M1).
 - **SPEC_LITE:** 4-section atomic specification for isolated task execution.
 

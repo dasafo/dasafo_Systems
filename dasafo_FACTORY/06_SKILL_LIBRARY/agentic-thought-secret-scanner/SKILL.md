@@ -1,5 +1,5 @@
 ---
-version: 3.3.0-S
+version: 3.4.0-S
 agent: Multiple (SECURITY / PO / BACKEND / QA)
 source: https://skills.sh/useai-pro/openclaw-skills-security/credential-scanner
 ---

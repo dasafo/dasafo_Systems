@@ -1,5 +1,5 @@
 ---
-version: 3.3.1-S
+version: 3.4.0-S
 agent: ARCHITECT / DB_MASTER
 source: https://skills.sh/sickn33/antigravity-awesome-skills/database-architect
 ---

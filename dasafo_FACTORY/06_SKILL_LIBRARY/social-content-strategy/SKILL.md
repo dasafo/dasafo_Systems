@@ -1,5 +1,5 @@
 ---
-version: 3.3.1-S
+version: 3.4.0-S
 agent: MARKETING_GROWTH
 source: https://skills.sh/coreyhaines31/marketingskills/social-content
 ---

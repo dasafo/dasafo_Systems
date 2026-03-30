@@ -1,5 +1,5 @@
 ---
-version: 3.3.0-S
+version: 3.4.0-S
 agent: MARKETING_GROWTH / RESEARCH_AGENT
 source: https://skills.sh/apify/agent-skills/apify-trend-analysis
 ---
