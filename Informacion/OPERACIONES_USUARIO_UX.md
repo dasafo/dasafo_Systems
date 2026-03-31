@@ -1,59 +1,68 @@
 # 🎮 Guía de Experiencia de Usuario: Director de Operaciones (v3.4.0-S)
 
-Con toda esta infraestructura industrial (**v3.4.0-S**) montada, tu experiencia pasa de ser un simple "chat con una IA" a ser el **Director de Operaciones de una Factoría de Software**. 
-
-Tú ya no picas código ni copias y pegas scripts; tú **gestionas agentes, apruebas contratos y exiges resultados físicos**.
-
-Así es exactamente como usarías la `dasafo_FACTORY` en el día a día a través de la interfaz de **Antigravity**:
+Con la infraestructura industrial **v3.4.0-S** activa, dejas de picar código para **gestionar departamentos, aprobar contratos y auditar evidencias físicas** en el disco duro.
 
 ---
 
 ## ⚙️ Fase 0: Ignición (El "Power Grid")
-Antes de abrir la interfaz de chat, preparas el terreno:
-1. **Enciendes el Núcleo:** Vas a la terminal, entras en `INFRA/` y ejecutas `docker-compose up -d`. Esto levanta la memoria a largo plazo (Neo4j), la base de datos operativa (Postgres) y la caché (Redis).
-2. **Creas el Cascarón:** Ejecutas `./init_project.sh NuevoCRM`. Esto genera instantáneamente las carpetas `DOCS/`, `TASKS/`, `WORKSPACE/` y establece la aduana en **Phase M1 (Discovery)**.
+
+Antes de comandar, preparas la energía vital de la factoría:
+
+1. **Enciendes el Núcleo:** Desde la terminal en `INFRA/`, ejecutas `docker-compose up -d` para levantar la Memoria de Largo Plazo (Neo4j) y la persistencia de datos.
+2. **Creas el Cascarón:** Ejecutas `./init_project.sh NombreProyecto`. Esto genera la estructura física de carpetas y establece la **Aduana Universal** en Fase M1 (Discovery).
+
+## 🗣️ Fase 1: El Contrato (Discovery)
+
+Abres **Antigravity** y defines la visión del producto:
+
+1. **Briefing:** Explicas tu idea al **PRODUCT_OWNER** en lenguaje natural.
+2. **Generación del PRP:** Comandas `/init-contract`. El agente invoca la skill `prp-generator` y deposita un `PRP_CONTRACT.json` en la raíz, que servirá como la "Constitución" del proyecto. Este contrato ahora incluye obligatoriamente las secciones de **Operations (M5)** y **Evolution (Phase 6)**.
+
+## 🗺️ Fase 2: Hubs y Orquestación Atómica
+
+Aquí es donde el sistema valida si tiene la "maquinaria" necesaria:
+
+1. **Validación de Hubs:** El **ORCHESTRATOR** escanea los archivos `TOOLS.md` de cada departamento (01-05) para confirmar que tiene las skills autorizadas antes de proceder.
+2. **Despiece Técnico:** Escribes `/factory-orchestrate`. El Orquestador deconstruye el contrato en tareas atómicas (`SPEC_LITE.json`) y las inyecta en `TASKS/01_PENDING/`.
+
+## 🏭 Fase 3: Producción Autónoma (Double-Gating)
+
+La línea de montaje se mueve por la soberanía del disco duro, no por micro-gestión:
+
+1. **Activación por Presencia:** Gracias al **Double-Gating**, un **BACKEND_DEV** o **FRONTEND_DEV** puede iniciar su trabajo en cuanto detecta físicamente su `SPEC_LITE.json` en el disco.
+2. **Clean Sessions:** Cada tarea se ejecuta en una sesión aislada para evitar el *token decay* y las alucinaciones por exceso de contexto.
+3. **Cierre Atómico:** El agente usa el `registry-manager` para mover su propia tarea a `03_COMPLETED` tras verificar que el código está escrito físicamente.
+
+## 🛂 Fase 4: Auditoría y Compliance
+
+Nada avanza sin pruebas verificables bajo el **Rigor del Sistema Internacional (SI)**:
+
+1. **Escaneo de Seguridad:** Ejecutas `/scan`. El **SECURITY_AUDITOR** busca secretos y vulnerabilidades en el código.
+2. **Métricas Industriales:** Ejecutas `/audit`. El **QA_TESTER** valida que el software cumpla con los criterios de éxito, reportando latencias en **segundos (s)** y pesos en **bytes (B)**.
+3. **Bloqueo DAST:** La **Aduana Universal** impide promocionar el proyecto si falta una sola evidencia física (ej. `BUILD_REPORT.json`).
+
+## 🚀 Fase 5: Operaciones y Despliegue (M5)
+
+Activas la maquinaria pesada del **Hub 05_OPERATIONS** para llevar el proyecto a la vida real:
+
+1. **Aprovisionamiento:** Ejecutas `/provision`. El **DEVOPS_SRE** prepara la infraestructura física (Docker/Terraform) en `WORKSPACE/infra/`.
+2. **Despliegue Atómico:** Ejecutas `/deploy`. El sistema lanza el build validado hacia el entorno de producción.
+3. **Monitoreo Sentinel:** Ejecutas `/health-check`. El **DEPLOYMENT_MONITOR** verifica la salud del endpoint en tiempo real, reportando latencia (s) y tamaño de respuesta (B) en `LOGS/deployment/`.
+
+## 🧬 Fase 6: Evolución de ADN (LTP)
+
+Al terminar, la factoría se vuelve más inteligente procesando incluso los datos de despliegue:
+
+1. **Extracción de Engramas:** El **MEMORY_OPTIMIZER** analiza el log de feedback y los logs de despliegue en `LOGS/deployment/` para guardar las "Golden Rules" en el Grafo de Conocimiento (Neo4j).
+2. **Refactor de Skills:** El **FACTORY_EVOLVER** utiliza estas reglas para optimizar las skills en `06_SKILL_LIBRARY/`, reduciendo costes y tiempos para el futuro.
 
 ---
 
-## 🗣️ Fase 1: El Contrato (Discovery en Antigravity)
-Abres **Antigravity** y seleccionas tu proyecto:
-1. **Hablas con el PRODUCT_OWNER:** Le explicas tu idea en lenguaje natural: *"Quiero un CRM ligero para clínicas dentales. Necesito gestión de pacientes y un calendario."*
-2. **Pulsas el Botón Rojo:** Escribes en el chat el comando `/init-contract`. 
-3. **Magia Industrial:** Antigravity envía la orden por MCP al `skill_engine.py`. El Product Owner ejecuta la skill `prp-generator` y, sin que tú hagas nada, aparece en tu disco duro un `PRP_CONTRACT.json` perfecto de 12 secciones en la raíz de tu proyecto.
+## 💡 Resumen: Tu Nuevo Rol como Director
+
+* **Corriges Especificaciones, no Código:** Si algo falla, ajustas la `SPEC_LITE.json` y relanzas la tarea. La factoría se encarga del resto.
+* **Soberanía Física:** Tienes la paz mental de que el estado del proyecto en el Kanban es un reflejo exacto de lo que hay en tus archivos.
+* **Aprendizaje Perpetuo:** Tu factoría no solo entrega software, sino que acumula experiencia técnica que hereda cada nuevo proyecto.
 
 ---
-
-## 🗺️ Fase 2: Arquitectura y Despiece
-Con el contrato firmado en el disco duro, llamas a tus jefes técnicos:
-1. **Visualización:** Escribes `/arch-diagram`. El **ARCHITECT** lee el contrato y dibuja los diagramas de base de datos en `DOCS/ARCH/`, asegurándose de apuntar a la base de datos híbrida de la factoría (`dasafo-shared-db`).
-2. **Orquestación:** Escribes `/factory-orchestrate`. El **ORCHESTRATOR** despierta, lee el `PRP_CONTRACT.json` y lo despedaza en tareas atómicas. Tu archivo `TASKS/registry.json` se llena de misiones en estado `PENDING`.
-
----
-
-## 🏭 Fase 3: La Línea de Montaje (Producción)
-Aquí es donde la factoría brilla por su protocolo **Zero-Trust** y **Clean Sessions**:
-1. **Control Visual:** Escribes `/kanban-board` para abrir tu dashboard visual en `localhost:3001` y monitorizar las tareas.
-2. **Ejecución Blindada:** Escribes `/execute-task`. El **ORCHESTRATOR** consulta el Kanban, toma la primera tarea (ej. "Crear Login UI") y **aísla a un FRONTEND_DEV en una sala limpia** (`delegate-clean-session`). 
-3. **Resultado Atómico:** El peón (Frontend) genera los componentes Shadcn. Al tener acceso solo a esa pequeña tarea, **no se confunde ni alucina**. Cuando termina, guarda el código en `WORKSPACE/frontend/` y la sesión se destruye automáticamente.
-
----
-
-## 🛂 Fase 4: Auditoría y Aduana Universal
-El código está escrito, pero en esta factoría nada avanza sin pruebas:
-1. **Escaneo de Seguridad:** Escribes `/scan`. El **SECURITY_AUDITOR** rastrea el código buscando secretos hardcodeados o vulnerabilidades.
-2. **Control de Calidad:** Escribes `/audit`. El **QA_TESTER** revisa la calidad visual y el rendimiento, garantizando que cumple con el mandato del **Sistema Internacional** (latencias en *segundos*, tamaños en *bytes*).
-3. **Paso de Fase:** Escribes `/factory-orchestrate` de nuevo. El **ORCHESTRATOR** invoca a la `kanban-solidity-gate`. La aduana verifica que todas las tareas de la Fase M3 tienen evidencia física. Si es así, actualiza el `PROJECT_STATE.json` y promociona el proyecto a la **Fase M4**.
-
----
-
-## 💡 Resumen de la Experiencia: Pensar, Comandar y Aprobar
-
-Como usuario, tu flujo de trabajo ha evolucionado:
-* **Sin Micro-gestión:** Ya no corriges código; **corriges las especificaciones** (`SPEC_LITE.json`).
-* **Sin Amnesia:** Ya no sufres porque la IA "se olvida" del contexto en mensajes largos; **cada tarea se ejecuta en una Clean Session fresca**.
-* **Seguridad Física:** Tienes la tranquilidad de que el sistema no se saltará pasos; el **`session_hook.py` (Aduana) bloquea físicamente** cualquier intento de avanzar sin pruebas verificables en verde.
-
-**Tu rol se ha elevado.** Eres el dueño de la fábrica.
-
----
-*Manual de Operaciones v3.4.0-S | Guía UX Industrial*
+*Manual de Operaciones v3.4.0-S | Director de Operaciones Solidificado*

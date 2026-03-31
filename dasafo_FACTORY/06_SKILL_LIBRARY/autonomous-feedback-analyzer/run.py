@@ -2,9 +2,9 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Autonomous Feedback Analyzer (MEMORY_OPTIMIZER / FACTORY_EVOLVER)
-v3.4.0-S: Industrial Core | LTP Integration.
+v3.4.0-S: Industrial Core | LTP & Deployment Insights Integration.
 
-Solidified: Neo4j Persistence, Schema-driven Analysis & SI Metrics.
+Solidified: Neo4j Persistence, Deployment Log Scanning & SI Metrics.
 """
 
 import os
@@ -49,7 +49,7 @@ def persist_to_knowledge_graph(rules: list, project: str, agent: str):
         return False, f"KG Sync Error: {str(e)}"
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Entry point industrial para el análisis de feedback."""
+    """Entry point industrial para el análisis de feedback y despliegue."""
     agent = skill_input.agent or "MEMORY_OPTIMIZER"
     skill = "autonomous-feedback-analyzer"
     cid = skill_input.correlation_id
@@ -66,44 +66,61 @@ def run(skill_input: SkillInput) -> SkillOutput:
         project_path = Path(target).resolve()
         logs_dir = project_path / "LOGS"
         feedback_file = logs_dir / "FEEDBACK-LOG.md"
+        deployment_dir = logs_dir / "deployment" # Nueva fuente de verdad M5
         
-        if not feedback_file.exists():
-            return SkillOutput.failure(agent, skill, f"NOT_FOUND: {feedback_file} ausente.", cid)
-
-        # 2. Ingesta y Análisis de "Engramas" (Bytes)
-        content = feedback_file.read_text(encoding="utf-8")
-        payload_size_b = len(content.encode("utf-8")) # Mandato SI: Bytes
-
-        # Extraer bloques JSON basados en FEEDBACK_SCHEMA.json
-        entries = re.findall(r'(\{.*?\})', content, re.DOTALL)
         golden_rules_extracted = []
+        total_bytes_processed = 0
         critical_errors = 0
 
-        for entry_raw in entries:
-            try:
-                entry = json.loads(entry_raw)
-                if "golden_rule" in entry:
-                    golden_rules_extracted.append(entry["golden_rule"])
-                if entry.get("severity") == "critical":
-                    critical_errors += 1
-            except: continue
+        # 2. Análisis de FEEDBACK-LOG.md
+        if feedback_file.exists():
+            content = feedback_file.read_text(encoding="utf-8")
+            total_bytes_processed += len(content.encode("utf-8")) # Mandato SI: Bytes
+            
+            entries = re.findall(r'(\{.*?\})', content, re.DOTALL)
+            for entry_raw in entries:
+                try:
+                    entry = json.loads(entry_raw)
+                    if "golden_rule" in entry:
+                        golden_rules_extracted.append(entry["golden_rule"])
+                    if entry.get("severity") == "critical":
+                        critical_errors += 1
+                except: continue
 
-        # 3. Sincronización LTP (Neo4j)
+        # 3. Escaneo de LOGS/deployment/ (Integración Fase M5)
+        if deployment_dir.exists():
+            for health_file in deployment_dir.glob("HEALTH_*.json"):
+                try:
+                    h_content = health_file.read_text(encoding="utf-8")
+                    total_bytes_processed += len(h_content.encode("utf-8"))
+                    h_data = json.loads(h_content)
+                    
+                    # Transformar incidentes de despliegue en reglas de optimización
+                    status = h_data.get("status", "Unknown")
+                    latency = h_data.get("latency_s", 0)
+                    
+                    if status != "Healthy" or latency > 2.0: # Umbral de alerta industrial
+                        rule = f"Infra Rule: Deployment in {project_path.name} reported {status} with {latency}s latency. Optimization required."
+                        golden_rules_extracted.append(rule)
+                        critical_errors += 1 if status != "Healthy" else 0
+                except: continue
+
+        # 4. Sincronización LTP (Neo4j)
         sync_success, sync_msg = persist_to_knowledge_graph(
             golden_rules_extracted, 
             project_path.name, 
             agent
         )
 
-        # 4. Generación de Artefacto Físico (DAST)
+        # 5. Generación de Artefacto Físico (DAST)
         report_path = logs_dir / f"ANALYSIS_LTP_{cid[:8]}.json"
         analysis_data = {
             "project": project_path.name,
             "agent": agent,
             "metrics": {
-                "total_entries": len(entries),
+                "total_rules": len(golden_rules_extracted),
                 "critical_incidents": critical_errors,
-                "payload_bytes": payload_size_b
+                "payload_bytes": total_bytes_processed # SI Units: Bytes
             },
             "extracted_rules": golden_rules_extracted,
             "ltp_sync": {"success": sync_success, "message": sync_msg}
@@ -114,17 +131,18 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
         execution_duration_s = time.time() - start_time # Mandato SI: Segundos
 
-        # 5. Outcome Report "Zero Fluff"
+        # 6. Outcome Report "Zero Fluff"
         result_payload = {
-            "industrial_status": "SOLIDIFIED - LTP SYNCED",
+            "industrial_status": "SOLIDIFIED - DEPLOYMENT AWARE",
             "rules_learned": len(golden_rules_extracted),
             "critical_blockers": critical_errors,
             "compliance_report": {
                 "neo4j_sync": sync_success,
+                "deployment_logs_scanned": deployment_dir.exists(),
                 "si_metrics_applied": True,
                 "execution_duration_seconds": round(execution_duration_s, 4)
             },
-            "summary": f"Analizados {payload_size_b}B de feedback. Sincronizadas {len(golden_rules_extracted)} reglas en Neo4j."
+            "summary": f"Analizados {total_bytes_processed}B. Capturadas reglas de feedback y despliegue en Neo4j."
         }
 
         return SkillOutput.success(agent, skill, result_payload, [str(report_path)], cid)

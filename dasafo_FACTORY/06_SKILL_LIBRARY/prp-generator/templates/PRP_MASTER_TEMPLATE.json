@@ -1,71 +1,40 @@
 {
-  "v3_code": "STARK-SOLIDITY-v3.4.0-S-MASTER",
-  "metadata": {
-    "project_name": "Required",
-    "pattern": "B",
-    "created_at": "ISO_TIMESTAMP",
-    "author": "PRODUCT_OWNER",
-    "standard": "v3.4.0-S (Chasis Blindado)"
+  "v3_code": "STARK-SOLIDITY-v3.4.0-S",
+  "project_metadata": {
+    "project_name": "REQUIRED_FIELD",
+    "version": "1.0.0-S",
+    "status": "M1_DISCOVERY",
+    "standard": "v3.4.0-S (Industrial Core)"
   },
-  "requirements": {
-    "01_overview": "One-sentence high-level description.",
-    "02_problem": "Detailed problem statement and context.",
-    "03_success_criteria": {
-      "north_star": "Main metric to move (e.g., Conversion > 20%)",
-      "measurable": true,
-      "industrial_metrics": {
-        "latency_target": "Required in Seconds (s)",
-        "storage_efficiency": "Required in Bytes (B)",
-        "execution_limit": "Seconds (s)"
-      },
-      "verification_method": "Physical Disk Artifact Verification (DAST Protocol)"
+  "sections": {
+    "01_problem_definition": "Descripción detallada del dolor de mercado o necesidad técnica.",
+    "02_target_audience": "Definición del usuario final y perfiles de acceso.",
+    "03_core_features": "Lista atómica de funcionalidades mínimas viables (MVP).",
+    "04_technical_stack": "Definición de lenguajes, frameworks y bases de datos autorizadas (Hub 03).",
+    "05_architectural_blueprints": "Requerimientos para DTOs, Schemas y Capas de servicio (Hub 02).",
+    "06_security_compliance": "Protocolos Zero-Trust, manejo de secretos y auditoría (Hub 04).",
+    "07_quality_assurance": "Criterios de éxito para pruebas unitarias, E2E y auditoría visual.",
+    "08_user_experience_ux": "Flujos de usuario, componentes UI (Shadcn/Atomic) y accesibilidad.",
+    "09_data_strategy": "Modelado de datos, migraciones y persistencia en dasafo-shared-db.",
+    "10_industrial_metrics_si": {
+      "latency_unit": "Seconds (s)",
+      "size_unit": "Bytes (B)",
+      "throughput_unit": "Requests/s",
+      "compliance": "Mandato Constitucional v3.4.0-S de métricas físicas estrictas."
     },
-    "04_user_stories": [
-      {
-        "id": "US1",
-        "story": "As a [role], I want [action] so that [benefit]."
-      }
-    ],
-    "05_functional": [
-      {
-        "id": "F1",
-        "feature": "Specific capability the system must have."
-      }
-    ],
-    "06_non_functional": {
-      "latency_precision": "Strictly Seconds (s) with 4 decimal places",
-      "storage_precision": "Strictly Bytes (B)",
-      "compliance": "Aduana Universal v3.4.0-S"
+    "11_operations_m5": {
+      "infrastructure": "Requerimientos de Provisioning (Docker/Terraform) para el Hub 05.",
+      "deployment_strategy": "Protocolo de lanzamiento atómico y validación de salud (Health-check).",
+      "monitoring_alerts": "Definición de umbrales de error y logs sentinel."
     },
-    "07_constraints": [
-      "No Hardcoding",
-      "Zero-Trust Architecture",
-      "Cero-Residuos de Contexto (No-Trash Policy)",
-      "Soberanía del Disco (DAST): El registro debe seguir al archivo físico"
-    ],
-    "08_data": {
-      "entities": [],
-      "persistence": "Required (Neo4j for LTP / Postgres for Ops)",
-      "volume_limit": "Bytes (B)"
-    },
-    "09_ui_ux": {
-      "design_language": "Atomic Logic",
-      "key_flows": [],
-      "e2e_evidence": "Mandatory Playwright Trace (Bytes)"
-    },
-    "10_risks": [
-      {
-        "risk": "Token Decay",
-        "mitigation": "Clean Sessions & Context Pruning Sieve"
-      },
-      {
-        "risk": "Registry Desync",
-        "mitigation": "Pre-flight Sync & Factory Doctor"
-      }
-    ],
-    "11_out_of_scope": [
-      "Anything not in this contract"
-    ],
-    "12_open_questions": []
-  }
+    "12_evolution_and_ltp": {
+      "knowledge_extraction": "Mandato para que el MEMORY_OPTIMIZER extraiga Golden Rules.",
+      "skill_refactoring": "Instrucciones para que el FACTORY_EVOLVER optimice la Skill Library tras el cierre."
+    }
+  },
+  "acceptance_criteria": [
+    "Existencia física de PRP_CONTRACT.json en la raíz del proyecto.",
+    "Validación de fases M1-M5 completada mediante kanban-solidity-gate.",
+    "Evidencia de métricas reportadas estrictamente en Segundos (s) y Bytes (B)."
+  ]
 }

@@ -7,34 +7,35 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("AduanaUniversal")
 
-# Skills autorizadas para bypass (RCP de proyecto y utilidades de sistema) 
+# Skills autorizadas para bypass (RCP de proyecto, utilidades de sistema y gestión de ADN) 
 BYPASS_SKILLS = {
-    "kanban-solidity-gate",
+    "kanban-solidity-gate",       #
     "factory-doctor",             # 🚑 Autorizado para RCP de Proyecto
-    "agentic-thought-secret-scanner",
-    "factory-audit-pro",
-    "prp-generator",
-    "arxiv-technical-digest",
-    "apify-trend-analysis",
-    "hallucination-guardrail",
-    "autonomous-feedback-analyzer",
-    "project-management",
-    "deployment-health-check",
-    "registry-manager",
-    "context-pruning-sieve"
+    "registry-manager",           # 📦 Gestión atómica de tareas
+    "agentic-thought-secret-scanner", #
+    "factory-audit-pro",          #
+    "prp-generator",              #
+    "arxiv-technical-digest",     #
+    "apify-trend-analysis",       #
+    "hallucination-guardrail",    #
+    "autonomous-feedback-analyzer", #
+    "project-management",         #
+    "deployment-health-check",    # 📡 Monitoreo Sentinel
+    "context-pruning-sieve",      # 🧠 Optimización de memoria
+    "skill-refactor-pro"          # 🧬 Evolución autónoma de ADN (v3.4.0-S)
 }
 
 def verify_project_state(target_project: str, requested_skill: str, agent: str = None) -> tuple[bool, str]:
     """
     Protocol-Level Session Hook (Aduana Universal v3.4.0-S).
-    Implementa DAST (Disk-as-Source-of-Truth) y Double-Gating. 
+    Implementa DAST (Disk-as-Source-of-Truth) y Double-Gating para agentes autónomos. 
     """
     
-    # 1. Bypass Inmediato 
+    # 1. Bypass Inmediato para herramientas de gestión e infraestructura
     if requested_skill in BYPASS_SKILLS:
         return True, "Bypass skill allowed."
 
-    # 2. Verificación de Integridad del Estado 
+    # 2. Verificación de Integridad del Estado Físico
     state_path = Path(target_project) / "PROJECT_STATE.json"
     if not state_path.exists():
         return False, "Solidity Guard: PROJECT_STATE.json ausente. Operación denegada."
@@ -49,22 +50,31 @@ def verify_project_state(target_project: str, requested_skill: str, agent: str =
     if not phases:
         return False, "Solidity Guard: No se definen 'phases' en el estado."
 
-    # --- 3. LÓGICA DE DOUBLE-GATING (Autorización Distribuida) ---
-    # Permite que agentes de producción operen si poseen una SPEC_LITE física
-    if agent in ["BACKEND_DEV", "FRONTEND_DEV", "DB_MASTER", "DATA_SCIENTIST"]:
+    # --- 3. LÓGICA DE DOUBLE-GATING (Autorización Distribuida v3.4.0-S) ---
+    # Permite que CUALQUIER agente autónomo opere si posee una SPEC_LITE física asignada
+    # Se expande la lista para cubrir todos los Hubs de la factoría (01-05)
+    authorized_peons = [
+        "BACKEND_DEV", "FRONTEND_DEV", "DB_MASTER", "DATA_SCIENTIST", # Producción
+        "QA_TESTER", "SECURITY_AUDITOR", "RESEARCH_AGENT",           # Compliance
+        "DEVOPS_SRE", "FACTORY_EVOLVER", "MEMORY_OPTIMIZER",         # Operations
+        "PRODUCT_OWNER", "MARKETING_GROWTH", "DOCS_MASTER"           # Strategy
+    ]
+
+    if agent in authorized_peons:
         spec_path = Path(target_project) / "TASKS" / "SPEC_LITE.json"
         if spec_path.exists():
             try:
                 with open(spec_path, "r") as f:
                     spec = json.load(f)
                     assigned = spec.get("metadata", {}).get("assigned_agent")
+                    # Si la tarea en el disco está asignada a este agente, se concede bypass de fase
                     if assigned == agent:
-                        return True, f"Double-Gate: Agente {agent} autorizado por SPEC_LITE física."
+                        return True, f"Double-Gate: Agente {agent} autorizado por SPEC_LITE física en disco."
             except:
                 pass 
     # -----------------------------------------------------------------------
 
-    # 4. Validación de Secuencialidad de Fases
+    # 4. Validación de Secuencialidad de Fases (Foco Atómico)
     phase_keys = list(phases.keys())
     in_progress_idx = -1
     in_progress_count = 0

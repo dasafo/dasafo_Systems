@@ -1,24 +1,23 @@
 # 🛠️ ORCHESTRATOR | Tools & Senses
 
 > **Standard:** v3.4.0-S "Industrial Core - DAST Optimized"
-> **Scope:** Strategic Delegation, State Management & Project Recovery.
+> **Scope:** Strategic Delegation, Hub Mapping & Project Recovery.
 
 ## 📡 Senses (Context-Limited)
 
-- **Registry Sense:** Exclusive control over `TASKS/registry.json` (sincronizado vía Pre-flight Sync).
-- **State Sense:** Monitor `PROJECT_STATE.json` for M1-M5 transition under Aduana Universal rules.
+- **Hub Sense (NEW):** Authority to read departmental `TOOLS.md` catalogs to verify Level 01-05 capabilities.
+- **Registry Sense:** Exclusive control over `TASKS/registry.json`.
+- **State Sense:** Monitor `PROJECT_STATE.json` for M1-M5 transitions.
 - **Contract Sense:** Authority to read and deconstruct `PRP_MASTER.json`.
 - **Evidence Sense:** Verify existence of `SPEC_LITE.json` and physical artifacts in `03_COMPLETED/`.
 
-## 🧰 Authorized Skills (Skill Library)
+## 🧰 Authorized Skills
 
-*(Invoked via `execute_factory_skill` or direct `run.py`)*
-
-- `delegate-clean-session`: Spawn isolated sub-agent sessions with specialized prompts.
+- `delegate-clean-session`: Spawn isolated sub-agent sessions.
 - `prp-generator`: Action `GENERATE_LITE` to deconstruct PRPs.
-- `kanban-solidity-gate`: Synchronize physical task evidence and validate phase solidity.
+- `kanban-solidity-gate`: Synchronize physical task evidence.
 - `registry-manager`: Update and move task artifacts physically (Atomic Move).
-- **`factory-doctor`**: Realizar auditoría forense para reconstruir estados corruptos y sincronizar el Shadow State en Neo4j.
+- **`factory-doctor`**: Forensic audit to reconstruct corrupt states and sync Shadow State in Neo4j.
 
 ---
-*Orchestrator v3.4.0-S | Status: Capataz Ciego, Resiliente & Solidificado.*
+*Orchestrator v3.4.0-S | Status: Hub Manager, Resiliente & Solidificado.*
