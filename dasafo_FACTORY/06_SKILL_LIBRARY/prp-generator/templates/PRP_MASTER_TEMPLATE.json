@@ -4,7 +4,8 @@
     "project_name": "Required",
     "pattern": "B",
     "created_at": "ISO_TIMESTAMP",
-    "author": "PRODUCT_OWNER"
+    "author": "PRODUCT_OWNER",
+    "standard": "v3.4.0-S (Chasis Blindado)"
   },
   "requirements": {
     "01_overview": "One-sentence high-level description.",
@@ -12,33 +13,55 @@
     "03_success_criteria": {
       "north_star": "Main metric to move (e.g., Conversion > 20%)",
       "measurable": true,
-      "verification_method": "Disk Artifact Verification"
+      "industrial_metrics": {
+        "latency_target": "Required in Seconds (s)",
+        "storage_efficiency": "Required in Bytes (B)",
+        "execution_limit": "Seconds (s)"
+      },
+      "verification_method": "Physical Disk Artifact Verification (DAST Protocol)"
     },
     "04_user_stories": [
-      { "id": "US1", "story": "As a [role], I want [action] so that [benefit]." }
+      {
+        "id": "US1",
+        "story": "As a [role], I want [action] so that [benefit]."
+      }
     ],
     "05_functional": [
-      { "id": "F1", "feature": "Specific capability the system must have." }
+      {
+        "id": "F1",
+        "feature": "Specific capability the system must have."
+      }
     ],
     "06_non_functional": {
-      "latency": "Seconds",
-      "storage": "Bytes",
-      "compliance": "Standardized"
+      "latency_precision": "Strictly Seconds (s) with 4 decimal places",
+      "storage_precision": "Strictly Bytes (B)",
+      "compliance": "Aduana Universal v3.4.0-S"
     },
     "07_constraints": [
       "No Hardcoding",
-      "Zero-Trust Architecture"
+      "Zero-Trust Architecture",
+      "Cero-Residuos de Contexto (No-Trash Policy)",
+      "Soberanía del Disco (DAST): El registro debe seguir al archivo físico"
     ],
     "08_data": {
       "entities": [],
-      "persistence": "Required"
+      "persistence": "Required (Neo4j for LTP / Postgres for Ops)",
+      "volume_limit": "Bytes (B)"
     },
     "09_ui_ux": {
       "design_language": "Atomic Logic",
-      "key_flows": []
+      "key_flows": [],
+      "e2e_evidence": "Mandatory Playwright Trace (Bytes)"
     },
     "10_risks": [
-      { "risk": "Token Decay", "mitigation": "Clean Sessions" }
+      {
+        "risk": "Token Decay",
+        "mitigation": "Clean Sessions & Context Pruning Sieve"
+      },
+      {
+        "risk": "Registry Desync",
+        "mitigation": "Pre-flight Sync & Factory Doctor"
+      }
     ],
     "11_out_of_scope": [
       "Anything not in this contract"

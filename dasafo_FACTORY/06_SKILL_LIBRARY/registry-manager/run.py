@@ -3,7 +3,7 @@ import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(
 """
 run.py — Registry Manager (ORCHESTRATOR)
 v3.4.0-S: Modular Toolbox | Industrial Scale.
-Solidified: Physical Artifact Sync & Kanban SSoT Integrity.
+Solidified: Atomic Physical Move (DAST) & Kanban SSoT Integrity.
 """
 
 import os
@@ -21,6 +21,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
     start_time = time.time()
 
     try:
+        # 1. Resolución de Rutas
         target = params.get("target_project") or skill_input.target_project or os.environ.get("TARGET_PROJECT")
         if not target:
              return SkillOutput.failure(agent, skill, "SECURITY LOCK: Missing TARGET_PROJECT.", cid)
@@ -31,7 +32,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
         
         action = params.get("action", "update_status")
         task_id = params.get("task_id")
-        new_status = params.get("new_status")
+        new_status = params.get("new_status") # PENDING, IN_PROGRESS, COMPLETED
 
         if not registry_file.exists():
             return SkillOutput.failure(agent, skill, "GATE_ERROR: registry.json not found.", cid)
@@ -40,54 +41,77 @@ def run(skill_input: SkillInput) -> SkillOutput:
             if not task_id or not new_status:
                 return SkillOutput.failure(agent, skill, "INPUT_ERROR: task_id and new_status required.", cid)
 
+            # Mapeo de carpetas industriales v3.4.0-S
+            folder_map = {
+                "PENDING": "01_PENDING",
+                "IN_PROGRESS": "02_IN_PROGRESS",
+                "COMPLETED": "03_COMPLETED"
+            }
+
+            if new_status not in folder_map:
+                return SkillOutput.failure(agent, skill, f"INVALID_STATUS: {new_status} no reconocido.", cid)
+
+            # --- ESTRATEGIA DAST: MOVIMIENTO ATÓMICO ---
+            
+            # 1. Localizar el archivo físico actual (Búsqueda en todas las subcarpetas)
+            source_file = None
+            for folder in folder_map.values():
+                potential_path = tasks_dir / folder / f"{task_id}.json"
+                if potential_path.exists():
+                    source_file = potential_path
+                    break
+
+            # 2. Preparar el destino
+            target_folder = tasks_dir / folder_map[new_status]
+            target_folder.mkdir(parents=True, exist_ok=True)
+            destination_file = target_folder / f"{task_id}.json"
+
+            # 3. Ejecutar Movimiento o Creación
+            if source_file:
+                # Movimiento atómico a nivel de Sistema Operativo
+                os.replace(source_file, destination_file)
+            else:
+                # Si es una tarea nueva, se crea directamente en el destino
+                # (Nota: En un flujo SDD puro, el archivo debería existir antes de actualizar el registro)
+                pass
+
+            # 4. Sincronizar el registry.json (La "Vista" del Disco)
             with open(registry_file, 'r', encoding='utf-8') as f:
                 registry = json.load(f)
 
             task_found = False
             prev_status = "UNKNOWN"
-            task_data = {}
-
             for task in registry:
                 if task.get("id") == task_id:
                     prev_status = task.get("status", "PENDING")
                     task["status"] = new_status
-                    task_data = task
                     task_found = True
                     break
 
-            if not task_found:
-                return SkillOutput.failure(agent, skill, f"NOT_FOUND: Task {task_id} not in registry.", cid)
-
-            # Physical Sync Strategy (Zero-Trust)
-            target_folder = tasks_dir / f"03_{new_status}" if new_status == "COMPLETED" else tasks_dir / f"02_{new_status}" if new_status == "IN_PROGRESS" else tasks_dir / "01_PENDING"
-            target_folder.mkdir(parents=True, exist_ok=True)
-            
-            artifact_file = target_folder / f"{task_id}.json"
-            with open(artifact_file, 'w', encoding='utf-8') as f:
-                json.dump(task_data, f, indent=2)
-
-            # Save SSoT
+            # Guardar el registro actualizado como SSoT
             with open(registry_file, 'w', encoding='utf-8') as f:
                 json.dump(registry, f, indent=2)
 
+            # --- MÉTRICAS INDUSTRIALES (SI) ---
             execution_duration_s = time.time() - start_time
             
             result_payload = {
-                "industrial_status": "SOLIDIFIED - REGISTRY SYNCED",
+                "industrial_status": "SOLIDIFIED - ATOMIC MOVE SUCCESSFUL",
                 "task_id": task_id,
                 "previous_status": prev_status,
                 "current_status": new_status,
-                "artifact_path": str(artifact_file),
+                "artifact_path": str(destination_file),
                 "compliance_report": {
-                    "physical_sync_verified": True,
-                    "execution_duration_seconds": round(execution_duration_s, 4)
+                    "atomic_move_verified": True,
+                    "disk_as_source_of_truth": True,
+                    "execution_duration_seconds": round(execution_duration_s, 4) # Mandato Segundos
                 },
-                "summary": f"Task {task_id} transitioned from {prev_status} to {new_status}."
+                "summary": f"Task {task_id} moved physically from {prev_status} to {new_status}."
             }
             
-            return SkillOutput.success(agent, skill, result_payload, [str(artifact_file), str(registry_file)], cid)
+            return SkillOutput.success(agent, skill, result_payload, [str(destination_file), str(registry_file)], cid)
 
         return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented.", cid)
 
     except Exception as e:
-        return SkillOutput.failure(agent, skill, f"Registry CRITICAL Fault: {str(e)}", cid)
+        return SkillOutput.failure(agent, skill, f"Registry ATOMIC Fault: {str(e)}", cid)

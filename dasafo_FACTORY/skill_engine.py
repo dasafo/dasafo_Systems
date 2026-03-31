@@ -1,8 +1,6 @@
 """
 skill_engine.py — CLI unificado para ejecutar cualquier skill de dasafo_FACTORY (v3.4.0-S).
-
-ADR: Industrial Core v3.4.0-S. Todas las skills residen en 06_SKILL_LIBRARY/.
-El motor carga run.py dinámicamente basándose en el nombre de la skill del Top 18 Hub.
+ADR: Industrial Core v3.4.0-S. Implementa DAST (Disk-as-Source-of-Truth) y Double-Gating.
 """
 
 from __future__ import annotations
@@ -13,6 +11,7 @@ import json
 import os
 import sys
 import uuid
+import time
 from pathlib import Path
 from typing import Optional
 
@@ -34,50 +33,72 @@ except ImportError:
 # Caché en memoria para evitar I/O de disco
 _MODULE_CACHE = {}
 
-def inject_infra_env() -> bool:
+def pre_flight_sync(target_project: str):
     """
-    Carga las variables del CORE INDUSTRIAL (INFRA) y las inyecta 
-    en el proceso actual para que todas las Skills tengan conectividad.
+    Sincronización Atómica (DAST): El Disco manda sobre el Registro.
+    Asegura que el registry.json refleje la realidad física antes de cualquier ejecución.
     """
-    # Buscamos el .env en la carpeta INFRA adyacente a la factoría
-    infra_env = FACTORY_ROOT.parent / "INFRA" / ".env"
+    project_path = Path(target_project)
+    tasks_root = project_path / "TASKS"
+    registry_file = tasks_root / "registry.json"
     
+    if not tasks_root.exists() or not registry_file.exists():
+        return
+
+    folders = {"PENDING": "01_PENDING", "IN_PROGRESS": "02_IN_PROGRESS", "COMPLETED": "03_COMPLETED"}
+    physical_tasks = []
+
+    for status, folder_name in folders.items():
+        folder_path = tasks_root / folder_name
+        if folder_path.exists():
+            for task_file in folder_path.glob("*.json"):
+                try:
+                    with open(task_file, 'r', encoding='utf-8') as f:
+                        task_data = json.load(f)
+                        task_data["status"] = status  # Forzamos el estado según la carpeta física 
+                        physical_tasks.append(task_data)
+                except: continue
+
+    with open(registry_file, 'w', encoding='utf-8') as f:
+        json.dump(physical_tasks, f, indent=2)
+
+def inject_infra_env(target_project: Optional[str] = None) -> bool:
+    """
+    Inyección de Permisos de Fase (Double-Gating).
+    Carga variables de INFRA e inyecta la fase autorizada actual en el entorno.
+    """
+    infra_env = FACTORY_ROOT.parent / "INFRA" / ".env"
     if infra_env.exists():
         load_dotenv(infra_env)
-        return True
-    return False
+    
+    # --- Punto 3: Double-Gating Authorization ---
+    if target_project:
+        state_path = Path(target_project) / "PROJECT_STATE.json"
+        if state_path.exists():
+            try:
+                with open(state_path) as f:
+                    state = json.load(f)
+                    # El agente recibe permiso explícito de la fase actual detectada en disco 
+                    os.environ["CURRENT_AUTHORIZED_PHASE"] = state.get("current_phase", "M1")
+            except:
+                os.environ["CURRENT_AUTHORIZED_PHASE"] = "M1"
+    return True
 
 def _resolve_run_module(skill: str) -> Path:
-    """Devuelve la ruta absoluta al run.py de la skill en la librería central."""
     run_path = SKILL_LIBRARY_DIR / skill / "run.py"
     if not run_path.exists():
-        raise FileNotFoundError(
-            f"Error Industrial Core: No se encontró run.py para la skill '{skill}'.\n"
-            f"Ruta esperada en la librería: {run_path}"
-        )
+        raise FileNotFoundError(f"Error Industrial Core: No se encontró run.py para '{skill}'.")
     return run_path
 
 def _load_and_run(run_path: Path, skill_input: SkillInput) -> SkillOutput:
-    """Carga dinámicamente run.py (con caché) y ejecuta su función run()."""
     module_name = run_path.parent.name
-    
-    # Si el módulo no está en caché, lo cargamos desde el disco
     if module_name not in _MODULE_CACHE:
         spec = importlib.util.spec_from_file_location(f"skill_{module_name}", run_path)
         if spec is None or spec.loader is None:
             raise ImportError(f"No se pudo cargar el módulo: {run_path}")
-        
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
-        
-        if not hasattr(module, "run"):
-            raise AttributeError(
-                f"El módulo {run_path} no tiene una función 'run(input: SkillInput) -> SkillOutput'."
-            )
-        # Guardamos en caché
         _MODULE_CACHE[module_name] = module
-
-    # Ejecutamos desde la caché
     return _MODULE_CACHE[module_name].run(skill_input)
 
 def execute(
@@ -88,17 +109,21 @@ def execute(
     correlation_id: Optional[str] = None,
     isolate: bool = False,
 ) -> SkillOutput:
-    """Punto de entrada programático. v3.4.0-S compatible."""
-    # 🔌 Inyectar conectividad INFRA (Aduana Universal | Industrial Core)
-    inject_infra_env()
+    """Punto de entrada con Guardián de Solidez y Sincronización v3.4.0-S."""
+    
+    if target_project is None:
+        target_project = os.environ.get("TARGET_PROJECT", ".")
+
+    # 🔄 1. Sincronización Pre-flight (DAST)
+    pre_flight_sync(target_project)
+
+    # 🔌 2. Inyectar conectividad INFRA y Permisos de Fase (Double-Gating)
+    inject_infra_env(target_project)
 
     if isolate:
         os.environ["CLEAN_SESSION"] = "True"
     if correlation_id is None:
         correlation_id = str(uuid.uuid4())[:8]
-
-    if target_project is None:
-        target_project = os.environ.get("TARGET_PROJECT", ".")
 
     skill_input = SkillInput(
         agent=agent,
@@ -112,86 +137,44 @@ def execute(
     try:
         run_path = _resolve_run_module(skill)
         
-        # 🧪 Snapshot state before execution (Solidity Guard)
-        state_path = Path(target_project) / "PROJECT_STATE.json" if target_project else None
+        # 🧪 Snapshot antes de ejecución
+        state_path = Path(target_project) / "PROJECT_STATE.json"
         before_phases = {}
-        
-        if state_path and state_path.exists():
-            try:
-                with open(state_path) as f:
-                    before_phases = json.load(f).get("phases", {})
-            except json.JSONDecodeError as e:
-                return SkillOutput.failure(agent, skill, f"Solidity Guard Fatal: PROJECT_STATE.json corrupto. {e}", correlation_id)
-            except Exception as e:
-                return SkillOutput.failure(agent, skill, f"Solidity Guard Fatal: Error leyendo estado. {e}", correlation_id)
+        if state_path.exists():
+            with open(state_path) as f:
+                before_phases = json.load(f).get("phases", {})
 
-        # Ejecución
+        # 🚀 Ejecución de Skill
         output = _load_and_run(run_path, skill_input)
 
-        # 🧬 Solidity Guard v3.4.0-S: Post-Execution Verification
+        # 🧬 Solidity Guard v3.4.0-S: Verificación Post-Ejecución 
         if output.success:
-            # 1. Physical Artifact Verification
+            # Verificación de Artefactos Físicos
             if output.artifacts:
-                missing = []
                 for art in output.artifacts:
-                    art_path = Path(art)
-                    if not art_path.is_absolute():
-                        art_path = Path(target_project) / art
+                    art_path = Path(art) if Path(art).is_absolute() else Path(target_project) / art
                     if not art_path.exists():
-                        missing.append(str(art_path))
-                if missing:
-                    output.success = False
-                    output.error = f"Solidity Guard Violation: Artifacts missing from disk: {', '.join(missing)}"
-                    return output
-
-            # 2. Phase-Gate Enforcement (Aduana Universal)
-            if state_path and state_path.exists():
-                try:
-                    with open(state_path) as f:
-                        after_phases = json.load(f).get("phases", {})
-                    
-                    before_done = sum(1 for v in before_phases.values() if v == "APPROVED")
-                    after_done = sum(1 for v in after_phases.values() if v == "APPROVED")
-                    
-                    if after_done > before_done + 1:
                         output.success = False
-                        output.error = (
-                            f"Aduana Solidity Breach: Phase jump detected ({before_done} -> {after_done}). "
-                            "Authorization must be physical and sequential in PROJECT_STATE.json."
-                        )
-                except Exception as e:
+                        output.error = f"Solidity Guard: Artefacto ausente en disco: {art_path}"
+                        return output
+
+            # Validación de Salto de Fase
+            if state_path.exists():
+                with open(state_path) as f:
+                    after_phases = json.load(f).get("phases", {})
+                
+                before_done = sum(1 for v in before_phases.values() if v == "APPROVED")
+                after_done = sum(1 for v in after_phases.values() if v == "APPROVED")
+                
+                if after_done > before_done + 1:
                     output.success = False
-                    output.error = f"Solidity Guard Fatal: Post-execution check failed. {e}"
+                    output.error = f"Solidity Breach: Salto de fase detectado ({before_done} -> {after_done})."
         
         return output
         
-    except (ValueError, FileNotFoundError, AttributeError, ImportError) as exc:
-        return SkillOutput.failure(
-            agent=agent,
-            skill=skill,
-            error=str(exc),
-            correlation_id=correlation_id,
-        )
     except Exception as exc:
-        return SkillOutput.failure(
-            agent=agent,
-            skill=skill,
-            error=f"Unexpected Error v3.4.0-S: {exc}",
-            correlation_id=correlation_id,
-        )
+        return SkillOutput.failure(agent, skill, f"Error v3.4.0-S: {exc}", correlation_id)
 
-def _parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        prog="skill_engine",
-        description="Industrial Core Engine - dasafo_FACTORY v3.4.0-S",
-    )
-    parser.add_argument("--agent", required=True, help="ID del agente que invoca")
-    parser.add_argument("--skill", required=True, help="Nombre de la skill en 06_SKILL_LIBRARY")
-    parser.add_argument("--input", default="{}", help="Parámetros como JSON string.")
-    parser.add_argument("--target-project", default=None, help="Ruta al proyecto activo.")
-    parser.add_argument("--correlation-id", default=None, help="ID de correlación.")
-    parser.add_argument("--isolate", action="store_true", help="Activar isolation_guard (Clean Session)")
-    return parser.parse_args()
 
 if __name__ == "__main__":
     args = _parse_args()

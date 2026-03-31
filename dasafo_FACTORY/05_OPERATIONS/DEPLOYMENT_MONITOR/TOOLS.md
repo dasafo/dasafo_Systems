@@ -1,22 +1,17 @@
 # 🛠️ DEPLOYMENT_MONITOR | Tools & Senses
 
-> **Standard:** v3.4.0-S "SDD Implementation"
-> **Scope:** Real-time monitoring, log analysis, and health-check validation.
+> **Standard:** v3.4.0-S "Industrial Core - DAST Optimized".
 
 ## 📡 Senses (Context-Limited)
-- **Log Sense:** Authority to read deployment logs in `$TARGET_PROJECT/LOGS/`.
-- **Endpoint X-Ray:** Read-only access to verify HTTP Status Codes and response times.
-- **Spec Sense:** Read access to `SPEC_LITE.json` to verify against expected health thresholds.
 
-## 🧰 Authorized Skills (Skill Library)
-*(Lazy loaded only when mandated by the Spec)*
+- **Log Sense:** Autoridad para leer logs de despliegue en `LOGS/`.
+- **Endpoint X-Ray:** Acceso de solo lectura para verificar códigos HTTP y tiempos de respuesta.
+- **DAST Sense:** Capacidad para verificar la integridad física de las tareas y registros antes de emitir un veredicto de salud.
 
-### 📊 Monitoring & Telemetry
-- `telemetry-analyzer`: Deep synthesis of resource usage (B/s) and execution times (s).
-- `playwright-ui-tester`: (In Smoke-Test mode) Verify that the deployed UI is physically reachable.
+## 🧰 Authorized Skills
 
-### 🛡️ Guardrails
-- `hallucination-guardrail`: Mandatory verification to ensure health reports are backed by real logs, not assumptions.
-
----
-*Deployment Monitor v3.4.0-S | Status: Resurrected & Industrialized.*
+- `telemetry-analyzer`: Síntesis profunda de uso de recursos (B) y tiempos de ejecución (s).
+- `playwright-ui-tester`: Verificar que la UI sea físicamente alcanzable.
+- **`registry-manager`**: Acción `update_status` para el cierre físico de tareas en el disco.
+- `hallucination-guardrail`: Asegurar que los reportes se basen en logs reales, no en suposiciones.
+- `deployment-health-check`: Real-time health-check validation (s/B).

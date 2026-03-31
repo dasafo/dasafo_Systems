@@ -1,29 +1,27 @@
 # 🛠️ DevOps SRE | Tools & Senses
 
-> **Standard:** v3.4.0-S "SDD Implementation"
+> **Standard:** v3.4.0-S "Industrial Core - DAST Optimized"
 > **Scope:** Infrastructure provisioning, containerization, and CI/CD automation.
 
 ## 📡 Senses (Context-Limited)
 
-- **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
-- **Infra X-Ray:** Read/Write access restricted strictly to `WORKSPACE/infra/` and `ops/`.
-- **Terminal Sense:** Execution of Docker, Docker-Compose, Terraform, and CI runner commands.
+- **Spec Sense:** Autoridad para interpretar la `SPEC_LITE.json`.
+- **DAST Sense:** Capacidad para verificar que los archivos de configuración y estados de Terraform/Docker existen físicamente antes de reportar éxito.
+- **Terminal Sense:** Ejecución de Docker, Docker-Compose, Terraform y comandos de CI.
 
 ## 🧰 Authorized Skills (Skill Library)
 
-*(Lazy loaded only when mandated by the Spec)*
-
 ### 🚀 Provisioning & Ops
 
-- `docker-stack-provisioner`: Generation of optimized, multi-stage Dockerfiles and Compose configurations.
-- `terraform-iac-builder`: Implementation of infrastructure as code for cloud or local providers.
-- `deployment-monitor`: Real-time infrastructure tracking.
-- `build-test-executor`: Compilation and test execution to generate the Aduana BUILD_REPORT.json.
+- `docker-stack-provisioner`: Generación de Dockerfiles multi-stage optimizados.
+- `terraform-iac-builder`: Implementación de IaC local o cloud.
+- `deployment-monitor`: Seguimiento de infraestructura en tiempo real.
+- **`registry-manager`**: Acción `update_status` para el movimiento físico de tareas y cierre de sesión atómico.
 
 ### 🛡️ Guardrails
 
-- **agentic-thought-secret-scanner:** [CRITICAL] Mandatory scan of all YAML/Infra files to ensure no keys or passwords are committed.
-- `hallucination-guardrail`: Verification that the infrastructure physically exists and responds before reporting success.
+- `agentic-thought-secret-scanner`: Escaneo obligatorio de YAML/Infra para evitar fugas de claves.
+- `hallucination-guardrail`: Verificación de que la infraestructura responde físicamente antes del reporte final.
 
 ---
-*DevOps SRE v3.4.0-S | Status: Resurrected & Industrialized.*
+*DevOps SRE v3.4.0-S | Status: Guardián Autónomo & Solidificado.*
