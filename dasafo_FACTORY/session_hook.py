@@ -23,7 +23,8 @@ BYPASS_SKILLS = {
     "deployment-health-check",    # 📡 Monitoreo Sentinel
     "context-pruning-sieve",      # 🧠 Optimización de memoria
     "skill-refactor-pro",         # 🧬 Evolución autónoma de ADN (v4.0-S)
-    "project-backbone-validator"  # 🏗️ INYECTADO: Inspector de andamiaje permitido siempre
+    "project-backbone-validator",  # 🏗️ INYECTADO: Inspector de andamiaje permitido siempre
+    "research-manager"            # 🔬 INYECTADO: Inspector de andamiaje permitido siempre
 }
 
 def verify_project_state(target_project: str, requested_skill: str, agent: str = None) -> tuple[bool, str]:

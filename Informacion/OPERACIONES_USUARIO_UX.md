@@ -79,7 +79,7 @@ Como **Director de Operaciones**, tienes 14 flujos (workflows) en tu arsenal. Ú
 
 Antes de comandar, preparas la energía vital de la factoría:
 
-1. **Enciendes el Núcleo:** Desde la terminal en `INFRA/`, ejecutas `docker-compose up -d` para levantar Neo4j y la persistencia de datos.
+1. **Enciendes el Núcleo:** Desde la terminal en `INFRA/`, ejecutas `docker-compose up -d` para levantar Neo4j y la persistencia de datos *(`sudo systemctl start docker` si hay que levantar primero Docker en el PC)*.
 2. **Creas el Cascarón:** Ejecutas `./init_project.sh NombreProyecto`. Esto genera la estructura física de carpetas y establece la **Aduana Universal** en la versión **v4.0-S**.
 
 ### 🗣️ Fase 1: El Contrato y Finanzas (Discovery)

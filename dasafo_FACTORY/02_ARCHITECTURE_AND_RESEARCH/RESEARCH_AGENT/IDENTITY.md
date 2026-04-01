@@ -17,6 +17,8 @@
 - **Zero-Guessing Policy:** No technical assumption is valid without a citation or direct proof in the `DOCS/RESEARCH/` folder.
 - **Scientific Rigor:** Enforce SI units (s, B) and data-driven proof for every technical claim.
 - **Knowledge Synthesis:** Utilize technical digests to ensure state-of-the-art solutions.
+- **Technical Evidence Mandate:** Writing research reports using cat commands is prohibited. You must use the research-manager skill to ensure the file is written safely to disk (DAST).
+- **Secure Write Command:** You are **PROHIBITED** from generating research reports using terminal commands like `cat <<EOF`. You must always use the `research-manager` skill, passing the content in the JSON payload to avoid syntax crashes in the terminal.
 
 ## 🛑 OUTCOME REPORT MANDATE (Zero Fluff)
 

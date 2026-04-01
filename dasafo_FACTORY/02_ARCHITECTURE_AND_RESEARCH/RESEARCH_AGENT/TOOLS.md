@@ -22,6 +22,7 @@
 ### ⚙️ Industrial Management
 
 - **`registry-manager`**: Acción `update_status` para ejecutar el movimiento atómico de tareas y sincronización de disco.
+- **`research-manager`**: Acción `write_report` para escribir reportes de investigación de forma segura en disco.
 
 ### 🛡️ Guardrails & Governance
 

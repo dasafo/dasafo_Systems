@@ -20,6 +20,7 @@
 - `apify-trend-analysis`: Scrape external data to validate technical assumptions and market state.
 - **`registry-manager`**: Herramienta transversal obligatoria para el movimiento atómico de tareas en el disco.
 - **`factory-doctor`**: Auditoría de salud técnica para asegurar que la base del proyecto es sólida antes de avanzar a M3.
+- **`research-manager`**: Acción `write_report` para escribir reportes de investigación de forma segura en disco.
 
 ---
 *Architecture & Research Tools v4.0-S | Status: SOLIDIFIED.*
