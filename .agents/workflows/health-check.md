@@ -8,7 +8,7 @@ This flow validates that the deployment is reachable and performing under indust
 
 1. **Agent:** `DEPLOYMENT_MONITOR`
 2. **Execution Protocol:** // turbo
-3. **Run Health Check:** `python3 dasafo_FACTORY/skill_engine.py --agent DEVOPS_SRE --skill deployment-health-check --target-project $TARGET_PROJECT`
+3. **Run Health Check:** `python3 dasafo_FACTORY/skill_engine.py --agent DEPLOYMENT_MONITOR --skill deployment-health-check --target-project $TARGET_PROJECT`
 
 4. **SI Verification:** Ensure latency is reported in **seconds (s)** and response size in **bytes (B)**.
 
