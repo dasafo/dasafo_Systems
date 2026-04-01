@@ -119,7 +119,7 @@ Interact with the factory using high-level Slash Commands in **Antigravity**. Yo
 
 -----
 
-\<p align="center"\>
-\<i\>"Industrializing the Future of Autonomous Software Engineering"\</i\><br>
-\<b\>dasafo\_Systems v4.0-S | Solidity, Speed, Veracity.\</b\>
-\</p\>
+<p align="center">
+<i>"Industrializing the Future of Autonomous Software Engineering"</i><br>
+<b>dasafo_Systems v4.0-S | Solidity, Speed, Veracity.</b>
+</p>
