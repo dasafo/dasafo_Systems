@@ -1,3 +1,8 @@
+### 5. `01_STRATEGY_AND_MARKETING.md`
+
+*(Añadido el validador de andamiaje para el Orquestador y las Startup Metrics para el Product Owner).*
+
+```markdown
 # 🏛️ Categoría 01: STRATEGY & MARKETING | Dasafo Factory (v4.0-S)
 
 Esta categoría agrupa a los agentes encargados de la visión, orquestación técnica y ejecución de crecimiento. Su misión es transformar la necesidad humana en especificaciones industriales y asegurar que el proyecto avance de forma sólida y auditable.
@@ -14,11 +19,13 @@ Es el director estratégico del proyecto. Su verdad reside en el `registry.json`
   - Toda inspección, depuración o creación de código debe delegarse a los peones en **Clean Sessions**.
 - **Responsabilidades**:
   - Deconstruir el contrato `PRP_MASTER` en tareas atómicas `SPEC_LITE`.
+  - Consultar el grafo de conocimiento (Neo4j) para inyectar prevenciones históricas antes de delegar.
   - Gestionar el DAG (Grafo Dirigido Acíclico) de tareas del proyecto.
   - Sincronizar el estado físico en disco con el registro digital.
 - **Herramientas Clave**: 
   - `delegate-clean-session`: Lanza sesiones aisladas.
   - `kanban-solidity-gate`: Valida la evidencia física de las tareas.
+  - `project-backbone-validator`: Verifica físicamente el andamiaje del framework antes de producir.
 
 ---
 
@@ -31,10 +38,12 @@ Es el guardián de la visión y el responsable de definir el **QUÉ** y el **POR
   - Define las reglas de negocio y criterios de éxito, pero **nunca** el "Cómo" técnico (esquemas DB, rutas API, etc.).
 - **Responsabilidades**:
   - Transformar la necesidad del Usuario en el Contrato Industrial de 12 secciones (`PRP_MASTER`).
-  - Asegurar que todas las métricas de éxito utilicen Unidades SI (segundos, bytes).
+  - Calcular y establecer los KPIs financieros objetivo (Target CAC, Target LTV).
+  - Asegurar que todas las métricas de éxito técnico utilicen Unidades SI (segundos, bytes).
   - Gestionar el **Sign-Off** de la Fase M1 tras la aprobación humana.
 - **Herramientas Clave**: 
   - `prp-generator`: Genera y actualiza el contrato maestro.
+  - `startup-metrics-framework`: Genera proyecciones financieras y valida viabilidad de negocio.
   - `apify-trend-analysis`: Justifica las métricas North Star con datos reales.
 
 ---
@@ -60,6 +69,6 @@ Es el encargado de ejecutar los artefactos de marketing y contenido basados estr
 
 1. **SDD (Spec Driven Development)**: Ningún agente de esta categoría actúa sin una especificación o contrato previo.
 2. **Context Isolation**: La ejecución se realiza en salas aisladas para evitar el "Token Decay" y la contaminación de contexto.
-3. **Métricas North Star**: Todo éxito se mide en unidades SI para garantizar la comparabilidad industrial.
+3. **Métricas North Star**: Todo éxito se mide en unidades SI (s, B) y KPIs financieros (CAC, LTV) para garantizar la comparabilidad industrial.
 
 *Documentación Solidificada v4.0-S | Categoría 01 - Strategy & Marketing*

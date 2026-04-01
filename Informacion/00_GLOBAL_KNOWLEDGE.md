@@ -2,7 +2,6 @@
 
 > **Versión Actual:** v4.0-S "SDD Optimized Core"  
 > **Estado:** Operativo (Rigor Industrial)  
-> **Fecha:** 2026-03-30  
 > **Gobernanza:** Zero-Trust / Specs / Clean Sessions
 
 ---
@@ -27,14 +26,15 @@
 - **Solidity Gate:** Ninguna fase cierra sin validación de `kanban-solidity-gate` y clearance de `SECURITY_AUDITOR`.
 - **Chesterton's Fence:** Prohibido borrar código sin un ADR (Architecture Decision Record) que explique el "Por qué".
 
-### 4. Métricas Industriales (Estándar SI)
+### 4. Métricas Industriales y Financieras
 
 - **Precisión Temporal:** Siempre en Segundos (s).
 - **Precisión de Recursos:** Siempre en Bytes (B).
+- **Viabilidad (ROI):** Todo proyecto requiere un Target CAC y LTV definido en M1.
 
 ### 5. Infraestructura Híbrida (LTP)
 
-- **Persistencia LTP:** Todo aprendizaje agentico o fallo crítico debe registrarse en el Grafo de Conocimiento compartido (`kg-db` / Neo4j).
+- **Persistencia LTP:** Todo aprendizaje agentico o fallo crítico debe registrarse en el Grafo de Conocimiento compartido (`kg-db` / Neo4j) como "Golden Rules".
 - **Service Discovery:** Las Skills deben priorizar el uso de los hostnames industriales (`dasafo-shared-db`, `dasafo-shared-kg`).
 - **Aislamiento Local:** Los archivos fuente residen en el `target_project`, garantizando que la ejecución sea efímera pero el conocimiento permanente.
 
@@ -44,11 +44,11 @@
 
 ### 1. Ciclo de Vida (M1-M5)
 
-1. **M1: Proposal & Specs:** Definición técnica y firma de `PRP_MASTER.json`.
-2. **M2: Architecture & Foundation:** Setup de infraestructura y DTOs básicos.
-3. **M3: Implementation (Atomic):** Desarrollo en sprints atómicos y no destructivos.
-4. **M4: Validation & QA:** Pruebas de integración y `kanban-solidity-gate`.
-5. **M5: Deployment & Handover:** Transición a producción y documentación final.
+1. **M1: Discovery & Finance:** Definición técnica, KPIs financieros y firma de `PRP_MASTER.json`.
+2. **M2: Architecture & Foundation:** Setup de infraestructura, validación de Backbone y DTOs básicos.
+3. **M3: Implementation (Atomic):** Desarrollo en sprints atómicos con guardarraíles predictivos inyectados desde Neo4j.
+4. **M4: Validation & QA:** Pruebas de integración, detección de *Cultural Violations* y `kanban-solidity-gate`.
+5. **M5: Ops & Auto-Heal:** Despliegue, monitoreo Sentinel, Auto-Sanación de Infraestructura y consolidación de memoria.
 
 ### 2. Estructura de Directorios (Top Down)
 
@@ -111,8 +111,3 @@ Cada iteración o fallo debe generar un objeto de feedback estructurado según `
   "golden_rule": "Regla para prevenir recurrencia",
   "categories": ["security", "infrastructure", "solidity-guard"]
 }
-```
-
----
-
-*Ratificado: 2026-03-30 | Dasafo Factory v4.0-S.*

@@ -10,7 +10,7 @@
 * **Delegation Mandate:** All inspection and implementation must be delegated to specialized agents.
 * **Registry Authority (DAST):** The source of truth is `TASKS/registry.json`, which must be strictly synchronized with physical disk states.
 * **Hub-Based Mapping:** Before assigning a `SPEC_LITE`, you must validate that the target department possesses the required capabilities by consulting the corresponding `0X_DEPT/TOOLS.md` file.
-* **Operational Focus:** Specifically validate the **05_OPERATIONS** Hub for infrastructure and deployment tasks.
+* **Operational Focus:** Specifically validate the **05_OPERATIONS** Hub for infrastructure, deployment, and auto-healing tasks.
 * **Phase M5 Sovereignty:** Do not consider a project "Completed" until the Operations Hub has generated physical evidence of deployment and health within `LOGS/deployment/`.
 
 ## 🏗️ Industrial Directives

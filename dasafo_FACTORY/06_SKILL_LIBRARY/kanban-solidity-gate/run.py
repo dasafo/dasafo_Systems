@@ -98,14 +98,21 @@ def run(skill_input: SkillInput) -> SkillOutput:
             return SkillOutput.success(agent, skill, result_payload, [], cid)
 
         elif action == "start_dashboard":
+            import subprocess
             port = params.get("port", 3001)
+            server_script = Path(__file__).parent / "server.py"
+            
+            # Lanzamos el servidor en segundo plano (Popen)
+            # Pasamos el puerto y la ruta absoluta del proyecto para que lea el registry.json
+            subprocess.Popen([sys.executable, str(server_script), str(port), str(project_path)])
+            
             result_payload = {
                 "industrial_status": "SOLIDIFIED - DASHBOARD ACTIVE",
-                "dashboard_url": f"http://localhost:{port}/vibe-kanban",
+                "dashboard_url": f"http://localhost:{port}",
                 "compliance_report": {"service": "vibe-kanban", "port": port}
             }
-            return SkillOutput.success(agent, skill, result_payload, [], cid, summary=f"Vibe Kanban dashboard started on port {port}.")
-
+            return SkillOutput.success(agent, skill, result_payload, [], cid, summary=f"Vibe Kanban dashboard launched physically on port {port}.")
+        
         return SkillOutput.failure(agent, skill, f"Action '{action}' not fully implemented in v4.0-S.", cid)
 
     except Exception as e:
