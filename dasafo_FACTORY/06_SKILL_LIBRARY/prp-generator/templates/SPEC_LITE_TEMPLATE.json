@@ -9,7 +9,11 @@
   "specification": {
     "01_objective": "Single, absolute technical goal.",
     "02_success_evidence": [
-      { "location": "Relative path to disk check", "type": "JSON|File|Build" }
+      {
+        "location": "Relative path to [requirements.txt|package.json|Dockerfile]",
+        "type": "File",
+        "critical": true
+      }
     ],
     "03_constraints": [
       "No-Code Persistence",
@@ -17,7 +21,8 @@
       "SI Units (s, B)"
     ],
     "04_execution_context": [
-      "Access limited to specific files in context_pointers."
+      "Access limited to specific files in context_pointers.",
+      "STRICT DIRECTIVE: All Backend code MUST be written inside WORKSPACE/backend/. All Frontend code MUST be written inside WORKSPACE/frontend/. Never create an src/ folder in the project root."
     ]
   }
 }

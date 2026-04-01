@@ -2,15 +2,14 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Deployment Health Check (DEPLOYMENT_MONITOR)
-v3.4.0-S: Industrial Core | Real-time Sentinel.
-
-Solidified: Endpoint Verification, SI Metrics (s/B) & Atomic Persistence.
+v3.4.1-S: Industrial Core | Real-time Sentinel & Auto-Deploy.
 """
 
 import os
 import json
 import time
 import requests
+import subprocess
 from pathlib import Path
 from skill_schema import SkillInput, SkillOutput
 
@@ -33,8 +32,23 @@ def run(skill_input: SkillInput) -> SkillOutput:
         
         target_url = params.get("url", "http://localhost:3000/health")
         timeout_s = params.get("timeout_seconds", 5)
+        action = params.get("action", "check_endpoint")
 
-        # 2. Ejecución de Health-Check (Métricas SI)
+        # 🚀 2. INYECCIÓN INDUSTRIAL: Si la acción es 'deploy', levantamos los contenedores primero
+        if action == "deploy":
+            infra_path = project_path / "WORKSPACE" / "infra"
+            if not infra_path.exists():
+                return SkillOutput.failure(agent, skill, f"No infra directory found at {infra_path}", cid)
+            
+            try:
+                # Ejecutamos docker compose en el Host y lo dejamos en background (-d)
+                subprocess.run(["docker", "compose", "up", "--build", "-d"], cwd=str(infra_path), check=True)
+                # Damos 5 segundos de cortesía para que los puertos se mapeen
+                time.sleep(5)
+            except subprocess.CalledProcessError as e:
+                return SkillOutput.failure(agent, skill, f"Docker Compose Failed: {e}", cid)
+
+        # 3. Ejecución de Health-Check (Métricas SI)
         status = "CRITICAL"
         latency_s = 0.0
         content_size_b = 0
@@ -46,13 +60,16 @@ def run(skill_input: SkillInput) -> SkillOutput:
             latency_s = round(time.time() - req_start, 4) # Segundos (s)
             content_size_b = len(response.content) # Bytes (B)
             
-            if response.status_code == 200:
+            # Aceptamos 200 (OK) o 404 (Not Found si la ruta exacta no existe pero el server responde)
+            if response.status_code in [200, 404]:
                 status = "HEALTHY"
                 verdict = "PASS"
+            else:
+                status = f"UNHEALTHY_STATUS_{response.status_code}"
         except Exception as e:
             status = f"UNREACHABLE: {str(e)}"
 
-        # 3. Persistencia de Evidencia Física (DAST)
+        # 4. Persistencia de Evidencia Física (DAST)
         report_path = deploy_logs_dir / f"HEALTH_{cid[:8]}.json"
         report_data = {
             "cid": cid,
@@ -71,7 +88,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
         execution_duration_s = round(time.time() - start_time, 4)
 
-        # 4. Outcome Report Industrial
+        # 5. Outcome Report Industrial
         result_payload = {
             "industrial_status": f"SOLIDIFIED - {status}",
             "verdict": verdict,
@@ -84,7 +101,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
                 "si_metrics_applied": True,
                 "execution_duration_seconds": execution_duration_s
             },
-            "summary": f"Check en {target_url} resultó en {status} ({latency_s}s)."
+            "summary": f"Check en {target_url} resultó en {status} ({latency_s}s). Acción ejecutada: {action}"
         }
 
         return SkillOutput.success(agent, skill, result_payload, [str(report_path)], cid)

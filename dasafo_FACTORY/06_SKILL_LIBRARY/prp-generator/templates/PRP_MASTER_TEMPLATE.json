@@ -1,40 +1,30 @@
 {
   "v3_code": "STARK-SOLIDITY-v3.4.0-S",
-  "project_metadata": {
+  "metadata": {
     "project_name": "REQUIRED_FIELD",
     "version": "1.0.0-S",
     "status": "M1_DISCOVERY",
-    "standard": "v3.4.0-S (Industrial Core)"
+    "standard": "v3.4.0-S (Industrial Core)",
+    "created_at": "REQUIRED",
+    "cid": "REQUIRED"
   },
-  "sections": {
-    "01_problem_definition": "Descripción detallada del dolor de mercado o necesidad técnica.",
-    "02_target_audience": "Definición del usuario final y perfiles de acceso.",
-    "03_core_features": "Lista atómica de funcionalidades mínimas viables (MVP).",
-    "04_technical_stack": "Definición de lenguajes, frameworks y bases de datos autorizadas (Hub 03).",
-    "05_architectural_blueprints": "Requerimientos para DTOs, Schemas y Capas de servicio (Hub 02).",
-    "06_security_compliance": "Protocolos Zero-Trust, manejo de secretos y auditoría (Hub 04).",
-    "07_quality_assurance": "Criterios de éxito para pruebas unitarias, E2E y auditoría visual.",
-    "08_user_experience_ux": "Flujos de usuario, componentes UI (Shadcn/Atomic) y accesibilidad.",
-    "09_data_strategy": "Modelado de datos, migraciones y persistencia en dasafo-shared-db.",
-    "10_industrial_metrics_si": {
-      "latency_unit": "Seconds (s)",
-      "size_unit": "Bytes (B)",
-      "throughput_unit": "Requests/s",
-      "compliance": "Mandato Constitucional v3.4.0-S de métricas físicas estrictas."
-    },
-    "11_operations_m5": {
-      "infrastructure": "Requerimientos de Provisioning (Docker/Terraform) para el Hub 05.",
-      "deployment_strategy": "Protocolo de lanzamiento atómico y validación de salud (Health-check).",
-      "monitoring_alerts": "Definición de umbrales de error y logs sentinel."
-    },
-    "12_evolution_and_ltp": {
-      "knowledge_extraction": "Mandato para que el MEMORY_OPTIMIZER extraiga Golden Rules.",
-      "skill_refactoring": "Instrucciones para que el FACTORY_EVOLVER optimice la Skill Library tras el cierre."
-    }
+  "requirements": {
+    "01_overview": "High-level summary of the ContentRepurpose AI SaaS.",
+    "02_problem": "Market pain or technical need addressed by this project.",
+    "03_success_criteria": "Measurable metrics in SI units (seconds, bytes).",
+    "04_user_stories": "Functional narratives from the user perspective.",
+    "05_functional": "Atomic list of features (MVP).",
+    "06_non_functional": "Performance, security, and scalability requirements.",
+    "07_constraints": "Strategic and technical limitations (e.g., No-Code, AI-Native).",
+    "08_data": "Data modeling, schema, and persistence strategy.",
+    "09_ui_ux": "Atomic design tokens, shadcn components, and flow definition.",
+    "10_risks": "Potential technical or market blockers and mitigation plans.",
+    "11_out_of_scope": "Explicit boundaries to prevent feature creep.",
+    "12_open_questions": "Undiscovered requirements or missing information."
   },
   "acceptance_criteria": [
     "Existencia física de PRP_CONTRACT.json en la raíz del proyecto.",
     "Validación de fases M1-M5 completada mediante kanban-solidity-gate.",
-    "Evidencia de métricas reportadas estrictamente en Segundos (s) y Bytes (B)."
+    "Métricas reportadas en Segundos (s) y Bytes (B)."
   ]
 }

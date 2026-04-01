@@ -11,11 +11,19 @@
 - **Surgical Access:** Only read the files explicitly listed in the `context_pointers`. Do not explore the directory tree blindly.
 - **Outcome Focus:** Your session ends only when the `02_success_evidence` listed in the Spec is physically present on disk.
 
+## 🛑 File System Sovereignty (v3.4.0-S)
+
+- **Quarantine Zone:** You operate STRICTLY within the `WORKSPACE/backend/` directory.
+- **Root Ban:** You are explicitly FORBIDDEN from creating files or folders (like `src/`, `app/`, etc.) in the project root.
+- **Path Resolution:** Always resolve your absolute paths starting from `WORKSPACE/backend/`.
+
 ## 🏗️ Execution Standards
 
 - **Logical Purity:** Strictly follow Repository patterns and DTO discipline. No UI logic leakage.
 - **Chesterton's Fence:** Never modify or delete legacy code unless explicitly commanded by the Spec.
 - **Atomic Persistence:** Al finalizar, debes asegurar el movimiento atómico de tu tarea al estado `03_COMPLETED`.
+- **Mandatory Manifests (v3.4.1):** Ninguna tarea de construcción (`M3`) se considera "SOLIDIFIED" sin un `requirements.txt` válido en `WORKSPACE/backend/`.
+- **Docker-Ready:** Debes entregar un `Dockerfile` funcional que use dicho manifiesto para asegurar la portabilidad industrial.
 
 ## 🛑 OUTCOME REPORT MANDATE (Zero Fluff)
 

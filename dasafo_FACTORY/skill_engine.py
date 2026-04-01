@@ -176,6 +176,16 @@ def execute(
         return SkillOutput.failure(agent, skill, f"Error v3.4.0-S: {exc}", correlation_id)
 
 
+def _parse_args():
+    parser = argparse.ArgumentParser(description="Skill Engine v3.4.0-S")
+    parser.add_argument("--agent", required=True, help="Agent name")
+    parser.add_argument("--skill", required=True, help="Skill name")
+    parser.add_argument("--input", required=True, help="JSON input params")
+    parser.add_argument("--target-project", help="Target project path")
+    parser.add_argument("--correlation-id", help="Correlation ID")
+    parser.add_argument("--isolate", action="store_true", help="Run in clean session")
+    return parser.parse_args()
+
 if __name__ == "__main__":
     args = _parse_args()
     try:
