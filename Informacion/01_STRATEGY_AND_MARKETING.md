@@ -1,5 +1,3 @@
-### 5. `01_STRATEGY_AND_MARKETING.md`
-
 # 🏛️ Categoría 01: STRATEGY & MARKETING | Dasafo Factory (v4.0-S)
 
 Esta categoría agrupa a los agentes encargados de la visión, orquestación técnica y ejecución de crecimiento. Su misión es transformar la necesidad humana en especificaciones industriales y asegurar que el proyecto avance de forma sólida y auditable.
