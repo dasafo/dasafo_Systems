@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Social Content Strategy (MARKETING_GROWTH)
-v3.4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-S: Modular Toolbox | Industrial Scale.
 
 Solidified: Schema Alignment, Multi-platform Repurposing & SI Mandate.
 """
@@ -14,7 +14,7 @@ from pathlib import Path
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Industrial execution engine for content repurposing and strategy (v3.4.0-S)."""
+    """Industrial execution engine for content repurposing and strategy (v4.0-S)."""
     agent = skill_input.agent or "MARKETING_GROWTH"
     skill = "social-content-strategy"
     cid = skill_input.correlation_id
@@ -52,7 +52,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
                 "Twitter/X": {
                     "thread": [
                         f"1/ Why {pillars[1]} is inevitable.",
-                        "2/ Scale or fail: the v3.4.0-S standard."
+                        "2/ Scale or fail: the v4.0-S standard."
                     ]
                 }
             }
@@ -63,7 +63,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             ]
 
             strategy_data = {
-                "metadata": {"cid": cid, "version": "v3.4.0-S", "timestamp": time.time()},
+                "metadata": {"cid": cid, "version": "v4.0-S", "timestamp": time.time()},
                 "pillars": pillars,
                 "outputs": platforms_output,
                 "flow": repurposing_flow
@@ -73,7 +73,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
                 
             execution_duration_s = time.time() - start_time
             
-            # 3. Result Building (Strict Schema Alignment v3.4.0-S)
+            # 3. Result Building (Strict Schema Alignment v4.0-S)
             result_payload = {
                 "content_pillars": pillars,
                 "platforms_output": platforms_output,
@@ -91,7 +91,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
             return SkillOutput.success(agent, skill, result_payload, [str(strategy_file)], cid)
 
-        return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented in v3.4.0-S.", cid)
+        return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented in v4.0-S.", cid)
 
     except Exception as e:
         return SkillOutput.failure(agent, skill, f"Social Strategy CRITICAL Fault: {str(e)}", cid)

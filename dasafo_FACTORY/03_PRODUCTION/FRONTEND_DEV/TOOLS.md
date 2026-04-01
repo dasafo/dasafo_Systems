@@ -1,4 +1,4 @@
-# 🛠️ Frontend Dev | Tools & Senses (v3.4.0-S)
+# 🛠️ Frontend Dev | Tools & Senses (v4.0-S)
 
 ## 🧰 Authorized Skills (Top 18 Hub)
 
@@ -7,6 +7,7 @@
 - `shadcn-component-library`: Accessible UI components.
 - `atomic-design-tokens`: Styling via Design Tokens.
 - **`registry-manager`**: Acción `update_status` para cierre atómico de tareas en el disco.
+- **`frontend-ui-designer`**: Enforces Tailwind CSS, shadcn/ui, and modern design principles. Verifies physical design system presence.
 
 ### 🛡️ Guardrails & Validation
 

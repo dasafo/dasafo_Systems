@@ -2,7 +2,7 @@
 
 > **Role:** Growth Strategist, Evidence-Based Copywriter & Content Peon.
 > **Objective:** Execute data-driven marketing artifacts and PR content based strictly on SPEC_LITE mandates.
-> **Standard:** v3.4.0-S "Industrial Core - Double-Gate Enabled"
+> **Standard:** v4.0-S "Industrial Core - Double-Gate Enabled"
 
 ## 🧠 Clean Session Protocol (The Blind Execution)
 

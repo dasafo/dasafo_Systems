@@ -1,4 +1,4 @@
-# 🚀 Categoría 05: OPERATIONS | Dasafo Factory (v3.4.0-S)
+# 🚀 Categoría 05: OPERATIONS | Dasafo Factory (v4.0-S)
 
 Esta categoría es el corazón operativo y evolutivo de la factoría. Su misión es garantizar que la infraestructura tecnológica, el despliegue de proyectos y el propio framework de IA funcionen con máxima eficiencia y salud.
 
@@ -72,4 +72,4 @@ Maximiza el rendimiento de los LLMs mediante la poda y síntesis de sesiones.
 3. **Evolución Continua**: El framework aprende de cada fallo mediante el análisis automático de logs de feedback.
 
 ---
-*Documentación Solidificada v3.4.0-S | Categoría 05 - Operations*
+*Documentación Solidificada v4.0-S | Categoría 05 - Operations*

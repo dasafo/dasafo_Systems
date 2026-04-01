@@ -1,4 +1,4 @@
-# ⚙️ Categoría 03: PRODUCTION (Clean Sessions) | Dasafo Factory (v3.4.0-S)
+# ⚙️ Categoría 03: PRODUCTION (Clean Sessions) | Dasafo Factory (v4.0-S)
 
 Esta categoría agrupa a los "Peones" de la factoría: agentes especializados en la ejecución técnica pura. Operan bajo el protocolo de **Clean Sessions** para garantizar que el desarrollo sea atómico, escalable y libre de "Token Decay".
 
@@ -68,4 +68,4 @@ Especialista en modelado de datos, análisis y arquitecturas de IA.
 4. **Zero-Trust Scanner**: Antes de escribir en disco, el `secret-scanner` valida que no haya fugas de credenciales.
 
 ---
-*Documentación Solidificada v3.4.0-S | Categoría 03 - Production*
+*Documentación Solidificada v4.0-S | Categoría 03 - Production*

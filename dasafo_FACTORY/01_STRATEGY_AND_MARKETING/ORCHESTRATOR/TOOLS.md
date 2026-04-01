@@ -1,6 +1,6 @@
 # 🛠️ ORCHESTRATOR | Tools & Senses
 
-> **Standard:** v3.4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
 > **Scope:** Strategic Delegation, Hub Mapping & Project Recovery.
 
 ## 📡 Senses (Context-Limited)
@@ -18,6 +18,7 @@
 - `kanban-solidity-gate`: Synchronize physical task evidence.
 - `registry-manager`: Update and move task artifacts physically (Atomic Move).
 - **`factory-doctor`**: Forensic audit to reconstruct corrupt states and sync Shadow State in Neo4j.
+- `project-backbone-validator`: Inspect physical disk for minimum framework scaffolding before delegating SPEC_LITE.
 
 ---
-*Orchestrator v3.4.0-S | Status: Hub Manager, Resiliente & Solidificado.*
+*Orchestrator v4.0-S | Status: Hub Manager, Resiliente & Solidificado.*

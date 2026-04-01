@@ -1,4 +1,4 @@
-# 📐 Categoría 02: ARCHITECTURE & RESEARCH | Dasafo Factory (v3.4.0-S)
+# 📐 Categoría 02: ARCHITECTURE & RESEARCH | Dasafo Factory (v4.0-S)
 
 Esta categoría es el motor de diseño técnico y validación científica de la factoría. Su misión es transformar la visión de negocio en planos técnicos rígidos y eliminar cualquier incertidumbre mediante investigación empírica.
 
@@ -47,4 +47,4 @@ Es el encargado de eliminar la incertidumbre técnica mediante investigación ba
 2. **Solidificación en M2**: Ningún proyecto pasa a Producción (M3) sin la firma electrónica del Arquitecto en los planos de `DOCS/ARCH/`.
 3. **Métricas SI**: La latencia se mide en segundos (s) y el almacenamiento en bytes (B) para todas las proyecciones arquitectónicas.
 
-*Documentación Solidificada v3.4.0-S | Categoría 02 - Architecture & Research*
+*Documentación Solidificada v4.0-S | Categoría 02 - Architecture & Research*

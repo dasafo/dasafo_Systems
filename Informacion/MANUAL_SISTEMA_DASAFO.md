@@ -1,6 +1,6 @@
-# 🏛️ Manual Maestro de Instrucciones | dasafo_Systems v3.4.0-S
+# 🏛️ Manual Maestro de Instrucciones | dasafo_Systems v4.0-S
 
-**dasafo_Systems** es un ecosistema industrial de Inteligencia Artificial de alto rendimiento, diseñado para el desarrollo de software bajo el estándar **v3.4.0-S "Industrial Core"**. Este manual es la **Fuente Única de Verdad (SSoT)** que define la arquitectura, protocolos y soberanía técnica del sistema.
+**dasafo_Systems** es un ecosistema industrial de Inteligencia Artificial de alto rendimiento, diseñado para el desarrollo de software bajo el estándar **v4.0-S "Industrial Core"**. Este manual es la **Fuente Única de Verdad (SSoT)** que define la arquitectura, protocolos y soberanía técnica del sistema.
 
 ---
 
@@ -89,4 +89,4 @@ Ningún proyecto avanza a M3 (Producción) sin un **PRP_MASTER** firmado. Debe i
 4. **Resilience:** Los servicios corren sobre `dasafo_network` y son accesibles por las skills mediante inyección dinámica de entorno.
 
 ---
-*Manual Maestro v3.4.0-S | dasafo_Systems — Industrializando la Excelencia.*
+*Manual Maestro v4.0-S | dasafo_Systems — Industrializando la Excelencia.*

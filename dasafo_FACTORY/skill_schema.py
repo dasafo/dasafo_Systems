@@ -1,5 +1,5 @@
 """
-skill_schema.py — Definición de contratos para Skills (v3.4.0-S).
+skill_schema.py — Definición de contratos para Skills (v4.0-S).
 Define las estructuras de entrada y salida obligatorias para todas las skills industriales.
 """
 

@@ -1,5 +1,5 @@
 ---
-version: 3.4.0-S
+version: v4.0-S
 agent: Multiple (SECURITY / PO / BACKEND / QA)
 source: https://skills.sh/useai-pro/openclaw-skills-security/credential-scanner
 ---
@@ -10,7 +10,7 @@ source: https://skills.sh/useai-pro/openclaw-skills-security/credential-scanner
 
 Identify and mitigate accidental exposure of sensitive credentials (API keys, passwords, private keys, database URLs) within the project workspace, logs, and agent's chain-of-thought. This skill is based on the industrial-grade **Credential Scanner** protocol.
 
-## 🛠️ Interface (v3.4.0-S)
+## 🛠️ Interface (v4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -66,4 +66,4 @@ Cualquier métrica numérica generada como parte de este escaneo (tamaño de arc
 
 ---
 **ORIGIN:** [credential-scanner by useai-pro](https://skills.sh/useai-pro/openclaw-skills-security/credential-scanner)
-*Skill v3.4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

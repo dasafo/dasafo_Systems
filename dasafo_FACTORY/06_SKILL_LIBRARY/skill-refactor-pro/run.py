@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Skill Refactor Pro (FACTORY_EVOLVER)
-v3.4.0-S: Modular Toolbox | Industrial Evolution.
+v4.0-S: Modular Toolbox | Industrial Evolution.
 
 Solidified: Rule-based Transformation, Chesterton's Fence & Atomic Output.
 """
@@ -12,15 +12,38 @@ import json
 import time
 from pathlib import Path
 from skill_schema import SkillInput, SkillOutput
+import re
 
 def apply_rule_logic(content: str, rules: list) -> str:
-    """Aplica transformaciones de 'Golden Rules' al contenido del código."""
+    """Aplica transformaciones de 'Golden Rules' al contenido (Código o YAML)."""
     new_content = content
     for rule in rules:
-        if "SI_UNITS" in rule.upper():
-            # Inyecta lógica de redondeo a 4 decimales para segundos/bytes
+        rule_upper = rule.upper()
+        
+        # Regla original de código
+        if "SI_UNITS" in rule_upper:
             if "round(" not in new_content:
                 new_content = new_content.replace("time.time() - start_time", "round(time.time() - start_time, 4)")
+                
+        # NUEVAS REGLAS DE AUTO-SANACIÓN (M5)
+        elif "PORT_CONFLICT" in rule_upper:
+            # Busca un patrón como "5432:5432" y lo sube a "5433:5432"
+            # Asume que la regla viene con el puerto conflictivo, ej: "PORT_CONFLICT:5432"
+            conflict_port = rule.split(":")[1].strip() if ":" in rule else None
+            if conflict_port:
+                new_port = str(int(conflict_port) + 1)
+                new_content = re.sub(rf'"{conflict_port}:(\d+)"', f'"{new_port}:\\1"', new_content)
+                new_content = re.sub(rf'- {conflict_port}:(\d+)', f'- {new_port}:\\1', new_content)
+
+        elif "MEMORY_LIMIT_EXCEEDED" in rule_upper or "OOM" in rule_upper:
+            # Busca límites de memoria y los duplica (ej. 512M -> 1G, o 1G -> 2G)
+            if "memory: 512M" in new_content:
+                new_content = new_content.replace("memory: 512M", "memory: 1G")
+            elif "memory: 1G" in new_content:
+                new_content = new_content.replace("memory: 1G", "memory: 2G")
+            elif "memory: 2G" in new_content:
+                new_content = new_content.replace("memory: 2G", "memory: 4G")
+                
     return new_content
 
 def run(skill_input: SkillInput) -> SkillOutput:
@@ -52,7 +75,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             # Aplicar Refactor basado en Golden Rules
             refactored_content = apply_rule_logic(original_content, rules)
             
-            # Persistencia Sandboxed (v3.4.0-S)
+            # Persistencia Sandboxed (v4.0-S)
             refactored_file = target_file.parent / f"{target_file.stem}_refactored{target_file.suffix}"
             refactored_file.write_text(refactored_content, encoding="utf-8")
             

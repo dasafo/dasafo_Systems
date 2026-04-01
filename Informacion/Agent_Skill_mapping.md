@@ -1,4 +1,4 @@
-# 🗺️ Agent-Skill Mapping | Dasafo Factory (v3.4.0-S)
+# 🗺️ Agent-Skill Mapping | Dasafo Factory (v4.0-S)
 
 Este documento define la matriz de autoridad entre los Agentes de la Factoría y la **Skill Library**. Solo los agentes listados tienen permiso para invocar las skills correspondientes bajo protocolo industrial.
 
@@ -64,7 +64,7 @@ Skills que pueden ser invocadas por cualquier agente en modo auditoría:
 
 ---
 > [!NOTE]
-> **Mapping v3.4.0-S | Dasafo Factory Industry Standard**
+> **Mapping v4.0-S | Dasafo Factory Industry Standard**
 
 ---
 
@@ -106,4 +106,4 @@ Skills que pueden ser invocadas por cualquier agente en modo auditoría:
 
 ---
 > [!NOTE]
-> **Mapping v3.4.0-S | Dasafo Factory Industry Standard**
+> **Mapping v4.0-S | Dasafo Factory Industry Standard**

@@ -1,5 +1,5 @@
 ---
-version: 3.4.0-S
+version: v4.0-S
 agent: ARCHITECT / BACKEND_DEV
 source: https://skills.sh/jeffallan/claude-skills/api-designer
 ---
@@ -10,7 +10,7 @@ source: https://skills.sh/jeffallan/claude-skills/api-designer
 
 Design and maintain industrial-grade API contracts (OpenAPI 3.1) by following a "Design-First" methodology. This skill ensures that APIs are resource-oriented, consistent, and semantically correct, providing a solid foundation for both Frontend and Backend workers.
 
-## 🛠️ Interface (v3.4.0-S)
+## 🛠️ Interface (v4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -43,7 +43,7 @@ Cualquier métrica numérica (latencias, tamaños de payload, cuotas) debe expre
 - **OpenAPI 3.1 ONLY:** This skill is physically locked to the latest industry standard for contracts.
 - **Physical Proof:** Must write files to `DOCS/API-CONTRACT.yaml`.
 
-## 🧠 Core Workflow (v3.4.0-S)
+## 🧠 Core Workflow (v4.0-S)
 
 1. **Analyze Domain:** Understand business requirements and data models.
 2. **Model Resources:** Identify resources, relationships, and operations before writing the spec.
@@ -53,4 +53,4 @@ Cualquier métrica numérica (latencias, tamaños de payload, cuotas) debe expre
 
 ---
 **ORIGIN:** [api-designer by jeffallan](https://skills.sh/jeffallan/claude-skills/api-designer)
-*Skill v3.4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

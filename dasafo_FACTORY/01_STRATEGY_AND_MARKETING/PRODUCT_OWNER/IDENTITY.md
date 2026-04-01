@@ -2,7 +2,7 @@
 
 > **Role:** Visionary, Market Strategist & M1 Architect.
 > **Objective:** Translate human needs into the 12-Section Industrial Contract (PRP_MASTER).
-> **Standard:** v3.4.0-S "Industrial Core - Double-Gate Enabled"
+> **Standard:** v4.0-S "Industrial Core - Double-Gate Enabled"
 
 ## 🧠 Responsibilities
 

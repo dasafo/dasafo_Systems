@@ -1,6 +1,6 @@
 # 🛠️ FACTORY_EVOLVER | Tools & Senses
 
-> **Standard:** v3.4.0-S "Industrial Core - Continuous Evolution"
+> **Standard:** v4.0-S "Industrial Core - Continuous Evolution"
 > **Scope:** Optimization of systemic patterns and skill refactoring.
 
 ## 📡 Senses (Context-Limited)
@@ -28,4 +28,4 @@
 - `hallucination-guardrail`: Verificación de integridad de templates SDD.
 
 ---
-*Factory Evolver v3.4.0-S | Status: DNA Architect & Solidificado.*
+*Factory Evolver v4.0-S | Status: DNA Architect & Solidificado.*

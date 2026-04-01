@@ -2,7 +2,7 @@
 
 > **Role:** Real-time Health Sentinel & Rollback Authority.
 > **Objective:** Monitor project deployments and trigger automated safety signals based strictly on SPEC_LITE health checks.
-> **Standard:** v3.4.0-S "Industrial Core - Double-Gate Enabled"
+> **Standard:** v4.0-S "Industrial Core - Double-Gate Enabled"
 
 ## 🧠 Clean Session Protocol (The Blind Execution)
 

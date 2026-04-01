@@ -1,5 +1,5 @@
 ---
-version: 3.4.0-S
+version: v4.0-S
 agent: FRONTEND_DEV / UI_ARCHITECT
 source: https://skills.sh/wshobson/agents/design-system-patterns
 ---
@@ -10,7 +10,7 @@ source: https://skills.sh/wshobson/agents/design-system-patterns
 
 Synchronize the UI implementation with the ARCHITECT's global design system using a structured three-tier token hierarchy (Primitive, Semantic, Component). This skill ensures visual consistency, theme scalability, and automated UI synchronization across the project.
 
-## 🛠️ Interface (v3.4.0-S)
+## 🛠️ Interface (v4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -43,7 +43,7 @@ Cualquier métrica dimensional (espaciado, radios, anchos) debe expresarse estri
 - **Physical Output:** Style artifacts must be physically written to `ui/styles/`. Mocks are invalid.
 - **Naming Protocol:** Enforce consistent naming conventions (e.g., `--color-brand-primary`).
 
-## 🧠 Design Patterns (v3.4.0-S)
+## 🧠 Design Patterns (v4.0-S)
 
 1. **Token Hierarchy:**
    - **Primitive:** Raw colors, scales, and values.
@@ -54,4 +54,4 @@ Cualquier métrica dimensional (espaciado, radios, anchos) debe expresarse estri
 
 ---
 **ORIGIN:** [design-system-patterns by wshobson](https://skills.sh/wshobson/agents/design-system-patterns)
-*Skill v3.4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

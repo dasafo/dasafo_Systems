@@ -1,7 +1,7 @@
 """
 factory_cli.py — MCP Server (STDIO)
 Bridges Antigravity/MCP requests to the Factory's skill_engine.py.
-v3.4.0-S: Industrial Core - Hub-Level Discovery Enabled.
+v4.0-S: Industrial Core - Hub-Level Discovery Enabled.
 """
 
 import sys
@@ -42,7 +42,7 @@ def main():
             method = request.get("method")
             msg_id = request.get("id")
 
-            # 1. PROTOCOLO DE INICIALIZACIÓN (v3.4.0-S)
+            # 1. PROTOCOLO DE INICIALIZACIÓN (v4.0-S)
             if method == "initialize":
                 hubs = get_hub_metadata()
                 response = {
@@ -52,7 +52,7 @@ def main():
                         "capabilities": {"tools": {}},
                         "serverInfo": {
                             "name": "dasafo_factory", 
-                            "version": "3.4.0-S",
+                            "version": "v4.0-S",
                             "hubs_status": hubs # Inyectar metadatos de Hubs para el Orquestador
                         }
                     }
@@ -70,7 +70,7 @@ def main():
                         "tools": [
                             {
                                 "name": "execute_factory_skill",
-                                "description": f"Industrial Core Runner (v3.4.0-S). Active Hubs: {hub_desc}",
+                                "description": f"Industrial Core Runner (v4.0-S). Active Hubs: {hub_desc}",
                                 "inputSchema": {
                                     "type": "object",
                                     "properties": {

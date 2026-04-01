@@ -1,6 +1,6 @@
 # ✅ Milestone Approval Template
 >
-> **Standard:** v3.4.0-S "SDD Implementation"
+> **Standard:** v4.0-S "SDD Implementation"
 > **Project:** [PROJECT_NAME]
 > **Milestone:** [MILESTONE_ID]
 > **Owner:** ORCHESTRATOR
@@ -17,6 +17,7 @@
 - [ ] **Solidity Gate:** `kanban-solidity-gate` execution log confirmed.
 - [ ] **Security:** `agentic-thought-secret-scanner` cleared for all project paths.
 - [ ] **Technical Rigor:** Metrics reported in SI Units (Seconds/Bytes).
+- [ ] **Backbone Health:** `project-backbone-validator` execution confirmed (Scaffolding ready).
 
 ## ✍️ 3. Human Sign-off (HITL)
 
@@ -26,4 +27,4 @@ I, [USER_NAME], approve the transition to the next phase based on the industrial
 **Sign-off:** ___________________ (Human/Orchestrator Proxy)
 
 ---
-*v3.4.0-S Template | Dasafo Factory.*
+*v4.0-S Template | Dasafo Factory.*

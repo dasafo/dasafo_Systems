@@ -3,14 +3,14 @@ name: Deployment Monitor
 type: agent
 core_path: dasafo_FACTORY/05_OPERATIONS/DEPLOYMENT_MONITOR
 icon: monitoring
-description: Guardián de Uptime y Salud de Despliegue (v3.4.0-S).
+description: Guardián de Uptime y Salud de Despliegue (v4.0-S).
 ---
 
 # Deployment Monitor | Gateway
 
 **CORE ORIGIN:** `dasafo_FACTORY/05_OPERATIONS/DEPLOYMENT_MONITOR`
 
-### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
+### 🚨 ARCHITECTURAL DIRECTIVE (v4.0-S)
 
 This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agents do not store their core operational rules in the `.agents/` manifest.
 

@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Terraform IaC Builder (DEVOPS_SRE)
-v3.4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-S: Modular Toolbox | Industrial Scale.
 
 Solidified: HashiCorp Style Guide, Surgical Access & Zero-Trust IaC.
 """
@@ -43,7 +43,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
         if action == "scaffold_module":
             
             # A) providers.tf (Version Pinning & Aliasing)
-            providers_content = f"""# Terraform and Provider configuration (v3.4.0-S)
+            providers_content = f"""# Terraform and Provider configuration (v4.0-S)
 terraform {{
   required_version = ">= 1.7"
 

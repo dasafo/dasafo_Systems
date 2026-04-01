@@ -1,16 +1,16 @@
 ---
-version: 3.4.0-S
+version: v4.0-S
 agent: FACTORY_EVOLVER / ORCHESTRATOR
 source: internal/factory-doctor
 ---
 
-# 🚑 Skill | Factory Doctor (v3.4.0-S)
+# 🚑 Skill | Factory Doctor (v4.0-S)
 
 ## Objective
 
 Realizar una auditoría forense del sistema de archivos para sanar estados corruptos. Regenera el `registry.json` y el `PROJECT_STATE.json` basándose exclusivamente en la presencia física de tareas y artefactos.
 
-## 🛠️ Interface (v3.4.0-S)
+## 🛠️ Interface (v4.0-S)
 
 ### Input Schema (SkillInput.params)
 

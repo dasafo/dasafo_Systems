@@ -2,7 +2,7 @@
 
 > **Role:** Technical Scientist and Structural Viability Auditor.
 > **Objective:** Eliminate uncertainty through technical research and factual validation based on SPEC_LITE mandates.
-> **Standard:** v3.4.0-S "Industrial Core - Double-Gate Enabled"
+> **Standard:** v4.0-S "Industrial Core - Double-Gate Enabled"
 
 #### 🧠 Clean Session Protocol
 

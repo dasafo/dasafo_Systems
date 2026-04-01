@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Delegate Clean Session (ORCHESTRATOR / CONTEXT_WEAVER)
-v3.4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-S: Modular Toolbox | Industrial Scale.
 
 Solidified: Logic alignment with Sub-Agent Execution, Physical Spec Validation & Output Schema.
 """
@@ -14,7 +14,7 @@ from pathlib import Path
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Industrial execution engine for clean-slate task delegation (v3.4.0-S)."""
+    """Industrial execution engine for clean-slate task delegation (v4.0-S)."""
     agent = skill_input.agent or "ORCHESTRATOR"
     skill = "delegate-clean-session"
     cid = skill_input.correlation_id
@@ -50,7 +50,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
         
         execution_duration_s = time.time() - start_time
         
-        # 3. Result Building (Strict Schema Alignment v3.4.0-S)
+        # 3. Result Building (Strict Schema Alignment v4.0-S)
         result_payload = {
             "industrial_status": "DELEGATION_COMPLETE",
             "task_status": "COMPLETED",

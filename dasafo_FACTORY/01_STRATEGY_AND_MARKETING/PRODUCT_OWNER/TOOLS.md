@@ -1,6 +1,6 @@
 # 🛠️ PRODUCT_OWNER | Tools & Senses
 
-> **Standard:** v3.4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
 
 ## 📡 Senses
 
@@ -12,7 +12,8 @@
 
 - `prp-generator`: Create and update the `PRP_MASTER` (12-section mandate).
 - `apify-trend-analysis`: Gather external data to justify North Star metrics.
-- **`registry-manager`**: Acción `update_status` para ejecutar el movimiento atómico de tareas y sincronización de disco.
+- `startup-metrics-framework`: Genera proyecciones financieras (CAC, LTV, ROI) para validar el modelo de negocio en M1.
+- `registry-manager`: Acción `update_status` para ejecutar el movimiento atómico de tareas y sincronización de disco.
 
 ---
-*Product Owner v3.4.0-S | Status: Visionario Autónomo & Solidificado.*
+*Product Owner v4.0-S | Status: Visionario Autónomo & Solidificado.*

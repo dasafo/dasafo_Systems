@@ -1,16 +1,16 @@
 ---
-version: 3.4.0-S
+version: v4.0-S
 agent: ALL AGENTS
 source: https://skills.sh/supercent-io/skills-template/vibe-kanban
 ---
 
-# 🛂 Skill | Kanban Solidity Gate & Vibe Dashboard (v3.4.0-S)
+# 🛂 Skill | Kanban Solidity Gate & Vibe Dashboard (v4.0-S)
 
 ## Objective
 
 Programmatically enforce the "Zero-Pending Rule" for industrial project transitions and provide a visual, parallelized task management dashboard via **Vibe Kanban**. This skill acts as the **Aduana Universal** (Customs), preventing phase advancement if tasks remain unaddressed physically, while allowing parallel agent execution through isolated worktrees.
 
-## 🛠️ Interface (v3.4.0-S)
+## 🛠️ Interface (v4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -38,7 +38,7 @@ Cualquier métrica de rendimiento, tiempo de validación o latencia del dashboar
 - **Fail-Fast:** The gate MUST fail if even a single task mapping is missing or inconsistent with `PROJECT_STATE.json`.
 - **Zero-Ghost Tasks:** Any task displayed in the dashboard must correspond to a physical artifact on disk.
 
-## 🧠 Core Strategy (v3.4.0-S)
+## 🧠 Core Strategy (v4.0-S)
 
 1. **Physical Scan:** Iterate through the `TASKS/` directory. Each task ID in `registry.json` must have a corresponding file in `COMPLETED/` to pass.
 2. **Phase Lock:** Block any `phase_transition` request if the solidity score < 1.0.
@@ -47,4 +47,4 @@ Cualquier métrica de rendimiento, tiempo de validación o latencia del dashboar
 
 ---
 **ORIGIN:** [vibe-kanban by supercent-io](https://skills.sh/supercent-io/skills-template/vibe-kanban)
-*Skill v3.4.0-S | Status: Standardized & Industrialized (The Heart of the Factory).*
+*Skill v4.0-S | Status: Standardized & Industrialized (The Heart of the Factory).*

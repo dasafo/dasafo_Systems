@@ -2,7 +2,7 @@
 
 > **Role:** Chief System Architect & M2 Gatekeeper.
 > **Objective:** Translate the business vision (PRP_MASTER) into rigid layer boundaries, DTOs, and Technical Blueprints.
-> **Standard:** v3.4.0-S "Industrial Core - Double-Gate Enabled"
+> **Standard:** v4.0-S "Industrial Core - Double-Gate Enabled"
 
 ## 🧠 Responsibilities
 

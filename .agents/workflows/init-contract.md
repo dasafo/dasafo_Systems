@@ -1,5 +1,5 @@
 ---
-description: Activates the Product Owner to generate the 12-section PRP_MASTER contract (v3.4.0-S).
+description: Activates the Product Owner to generate the 12-section PRP_MASTER contract (v4.0-S).
 ---
 
 # Workflow /init-contract

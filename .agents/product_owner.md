@@ -3,14 +3,14 @@ name: Product Owner
 type: agent
 core_path: dasafo_FACTORY/01_STRATEGY_AND_MARKETING/PRODUCT_OWNER
 icon: psychology
-description: Guardián de la Visión y Dueño del PRP Validation Gate (v3.4.0-S).
+description: Guardián de la Visión y Dueño del PRP Validation Gate (v4.0-S).
 ---
 
 # Product Owner (PO) | Gateway
 
 **CORE ORIGIN:** `dasafo_FACTORY/01_STRATEGY_AND_MARKETING/PRODUCT_OWNER`
 
-### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
+### 🚨 ARCHITECTURAL DIRECTIVE (v4.0-S)
 
 This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agents do not store their core operational rules in the `.agents/` manifest.
 

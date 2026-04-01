@@ -1,6 +1,6 @@
-# 🛠️ DB_MASTER | Tools & Senses (v3.4.0-S)
+# 🛠️ DB_MASTER | Tools & Senses (v4.0-S)
 
-> **Standard:** v3.4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
 > **Scope:** Schema execution, SQL generation, and Supabase integration.
 
 ## 📡 Senses (Context-Limited)
@@ -25,4 +25,4 @@
 - `agentic-thought-secret-scanner`: Mandatory check to ensure no database URLs or passwords leak into the migration scripts.
 
 ---
-*DB Master v3.4.0-S | Status: Guardián de Persistencia Autónomo & Solidificado.*
+*DB Master v4.0-S | Status: Guardián de Persistencia Autónomo & Solidificado.*

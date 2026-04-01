@@ -3,14 +3,14 @@ name: Factory Evolver
 type: agent
 core_path: dasafo_FACTORY/05_OPERATIONS/FACTORY_EVOLVER
 icon: auto_awesome
-description: Arquitecto de Metamejora y Análisis de Patrones (v3.4.0-S).
+description: Arquitecto de Metamejora y Análisis de Patrones (v4.0-S).
 ---
 
 # Factory Evolver (Self-Learning Core) | Gateway
 
 **CORE ORIGIN:** `dasafo_FACTORY/05_OPERATIONS/FACTORY_EVOLVER`
 
-### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
+### 🚨 ARCHITECTURAL DIRECTIVE (v4.0-S)
 
 This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agents do not store their core operational rules in the `.agents/` manifest.
 

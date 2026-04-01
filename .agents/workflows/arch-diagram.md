@@ -1,10 +1,10 @@
 ---
-description: Requests the Architect to generate updated Mermaid diagrams of the system in real-time (v3.4.0-S).
+description: Requests the Architect to generate updated Mermaid diagrams of the system in real-time (v4.0-S).
 ---
 
 Workflow /arch-diagram
 
-This flow activates the Architect to visualize the technical architecture under the **v3.4.0-S** **"Modular Toolbox"** standard.
+This flow activates the Architect to visualize the technical architecture under the **v4.0-S** **"Modular Toolbox"** standard.
 
 1. **Agent:** `ARCHITECT`
 

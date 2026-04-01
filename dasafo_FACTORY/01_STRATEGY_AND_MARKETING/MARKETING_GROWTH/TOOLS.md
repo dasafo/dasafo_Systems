@@ -1,6 +1,6 @@
 # 🛠️ MARKETING_GROWTH | Tools & Senses
 
-> **Standard:** v3.4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
 > **Scope:** Trend analysis, messaging alignment, and content generation.
 
 ## 📡 Senses (Context-Limited)
@@ -19,4 +19,4 @@
 - **`registry-manager`**: Acción `update_status` para ejecutar el movimiento atómico de tareas y sincronización de disco.
 
 ---
-*Marketing Growth v3.4.0-S | Status: Standardized & Industrialized.*
+*Marketing Growth v4.0-S | Status: Standardized & Industrialized.*

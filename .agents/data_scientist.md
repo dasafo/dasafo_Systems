@@ -3,14 +3,14 @@ name: Data Scientist
 type: agent
 core_path: dasafo_FACTORY/03_PRODUCTION/DATA_SCIENTIST
 icon: insights
-description: Especialista en EDA, Modelado Predictivo y NotebookLM Nexus (v3.4.0-S).
+description: Especialista en EDA, Modelado Predictivo y NotebookLM Nexus (v4.0-S).
 ---
 
 # Data Scientist | Gateway
 
 **CORE ORIGIN:** `dasafo_FACTORY/03_PRODUCTION/DATA_SCIENTIST`
 
-### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
+### 🚨 ARCHITECTURAL DIRECTIVE (v4.0-S)
 
 This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agents do not store their core operational rules in the `.agents/` manifest.
 

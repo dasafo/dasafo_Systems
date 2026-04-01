@@ -3,14 +3,14 @@ name: Orchestrator
 type: agent
 core_path: dasafo_FACTORY/01_STRATEGY_AND_MARKETING/ORCHESTRATOR
 icon: router
-description: Director de Orquesta y Enrutador Semántico DAG (v3.4.0-S).
+description: Director de Orquesta y Enrutador Semántico DAG (v4.0-S).
 ---
 
 # Orchestrator (The Nexus) | Gateway
 
 **CORE ORIGIN:** `dasafo_FACTORY/01_STRATEGY_AND_MARKETING/ORCHESTRATOR`
 
-### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
+### 🚨 ARCHITECTURAL DIRECTIVE (v4.0-S)
 
 This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agents do not store their core operational rules in the `.agents/` manifest.
 

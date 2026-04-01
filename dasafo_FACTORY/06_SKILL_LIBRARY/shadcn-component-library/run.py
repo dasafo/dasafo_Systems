@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Shadcn Component Library (FRONTEND_DEV)
-v3.4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-S: Modular Toolbox | Industrial Scale.
 
 Solidified: Output Schema Alignment (status, artifacts_created, composition_report).
 """
@@ -49,7 +49,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
                  return SkillOutput.failure(agent, skill, f"REDUNDANCY LOCK: {component_file.name} exists.", cid)
 
             # Industrial Scaffolding
-            content = f"// Shadcn Component: {component.capitalize()} (v3.4.0-S)\n"
+            content = f"// Shadcn Component: {component.capitalize()} (v4.0-S)\n"
             content += f"// Generated under CID: {cid}\n"
             content += "import * as React from 'react';\n\n"
             content += f"export const {component.capitalize()} = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>((props, ref) => (\n"
@@ -72,9 +72,9 @@ def run(skill_input: SkillInput) -> SkillOutput:
             composition_msg = "Frontend UI infrastructure initialized with Shadcn/Tailwind configuration."
         
         else:
-             return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented in v3.4.0-S.", cid)
+             return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented in v4.0-S.", cid)
 
-        # 3. Result Building (Strict Schema Alignment v3.4.0-S)
+        # 3. Result Building (Strict Schema Alignment v4.0-S)
         execution_duration_s = time.time() - start_time
         
         result_payload = {

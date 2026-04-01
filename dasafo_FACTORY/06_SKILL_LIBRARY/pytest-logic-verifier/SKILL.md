@@ -1,16 +1,16 @@
 ---
-version: 3.4.0-S
+version: v4.0-S
 agent: QA_TESTER / BACKEND_DEV
 source: internal/skill-creator
 ---
 
-# 🐍 Skill | Pytest Logic Verifier (v3.4.0-S)
+# 🐍 Skill | Pytest Logic Verifier (v4.0-S)
 
 ## Objective
 
 Programmatically generate and execute Python logic tests (Pytest) to verify that backend code strictly adheres to the constraints defined in the `SPEC_LITE.json`.
 
-## 🛠️ Interface (v3.4.0-S)
+## 🛠️ Interface (v4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -36,7 +36,7 @@ Cualquier métrica de rendimiento de los tests debe expresarse en **segundos** (
 - **Physical Proof:** The results MUST be written to `LOGS/PYTEST_REPORT.json` so the Orchestrator can audit them.
 - **No Silent Failures:** If a single assertion fails, `test_status` must be FAILED, halting the pipeline.
 
-## 🧠 Workflow (v3.4.0-S)
+## 🧠 Workflow (v4.0-S)
 
 1. **Read Contract:** Load the `SPEC_LITE.json` to understand the acceptance criteria.
 2. **Generate Test:** Scaffold the `test_*.py` file using Pytest fixtures.

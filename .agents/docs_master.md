@@ -3,14 +3,14 @@ name: Docs Master
 type: agent
 core_path: dasafo_FACTORY/04_COMPLIANCE_AND_QUALITY/DOCS_MASTER
 icon: description
-description: Redactor Técnico Senior y Estratega de Documentación (v3.4.0-S).
+description: Redactor Técnico Senior y Estratega de Documentación (v4.0-S).
 ---
 
 # Docs Master (Technical Writer) | Gateway
 
 **CORE ORIGIN:** `dasafo_FACTORY/04_COMPLIANCE_AND_QUALITY/DOCS_MASTER`
 
-### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
+### 🚨 ARCHITECTURAL DIRECTIVE (v4.0-S)
 
 This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agents do not store their core operational rules in the `.agents/` manifest.
 

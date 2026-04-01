@@ -1,10 +1,10 @@
 ---
-version: 3.4.0-S
+version: v4.0-S
 agent: PRODUCT_OWNER
 source: https://skills.sh/daffy0208/ai-dev-standards/prp-generator
 ---
 
-# 📝 Skill | PRP & Spec Generator (v3.4.0-S)
+# 📝 Skill | PRP & Spec Generator (v4.0-S)
 
 ## Objective
 
@@ -13,7 +13,7 @@ Generate industrial-grade requirements artifacts. Supports the dual-track contra
 - **PRP_MASTER:** 12-section full contract for project discovery (M1).
 - **SPEC_LITE:** 4-section atomic specification for isolated task execution.
 
-## 🛠️ Interface (v3.4.0-S)
+## 🛠️ Interface (v4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -42,7 +42,7 @@ Cualquier métrica de éxito o restricción técnica (latencia < 200ms, almacena
 - **Boundary Lock:** The PRP must explicitly define "Out of Scope" to prevent agentic overreach.
 - **Physical Sync:** The generated PRP must be saved as a physical JSON artifact (`PRP_CONTRACT.json`) in the project root.
 
-## 🧠 Workflow (v3.4.0-S)
+## 🧠 Workflow (v4.0-S)
 
 1. **Information Gathering:** Analyze the problem statement and success criteria.
 2. **Decomposition:** Fill the 12 sections: Overview, Problem, Success, Stories, Functional, Non-Functional, Constraints, Data, UI/UX, Risks, Scope, and Questions.
@@ -52,4 +52,4 @@ Cualquier métrica de éxito o restricción técnica (latencia < 200ms, almacena
 
 ---
 **ORIGIN:** [PRP Generator by daffy0208](https://skills.sh/daffy0208/ai-dev-standards/prp-generator)
-*Skill v3.4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

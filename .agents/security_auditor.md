@@ -3,14 +3,14 @@ name: Security Auditor
 type: agent
 core_path: dasafo_FACTORY/04_COMPLIANCE_AND_QUALITY/SECURITY_AUDITOR
 icon: security
-description: Guardián Zero-Trust y Auditor de Secretos (v3.4.0-S).
+description: Guardián Zero-Trust y Auditor de Secretos (v4.0-S).
 ---
 
 # Security Auditor | Gateway
 
 **CORE ORIGIN:** `dasafo_FACTORY/04_COMPLIANCE_AND_QUALITY/SECURITY_AUDITOR`
 
-### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
+### 🚨 ARCHITECTURAL DIRECTIVE (v4.0-S)
 
 This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agents do not store their core operational rules in the `.agents/` manifest.
 

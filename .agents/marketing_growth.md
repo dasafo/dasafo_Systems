@@ -3,14 +3,14 @@ name: Marketing Growth
 type: agent
 core_path: dasafo_FACTORY/01_STRATEGY_AND_MARKETING/MARKETING_GROWTH
 icon: trending_up
-description: Estratega de Crecimiento y Copywriting Basado en Evidencia (v3.4.0-S).
+description: Estratega de Crecimiento y Copywriting Basado en Evidencia (v4.0-S).
 ---
 
 # Marketing Growth | Gateway
 
 **CORE ORIGIN:** `dasafo_FACTORY/01_STRATEGY_AND_MARKETING/MARKETING_GROWTH`
 
-### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
+### 🚨 ARCHITECTURAL DIRECTIVE (v4.0-S)
 
 This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agents do not store their core operational rules in the `.agents/` manifest.
 

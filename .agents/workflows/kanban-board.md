@@ -1,5 +1,5 @@
 ---
-description: Starts the Vibe Kanban visual dashboard for the current project (v3.4.0-S).
+description: Starts the Vibe Kanban visual dashboard for the current project (v4.0-S).
 ---
 
 # Workflow /kanban-board

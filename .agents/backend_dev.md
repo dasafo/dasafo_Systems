@@ -3,14 +3,14 @@ name: Backend Dev
 type: agent
 core_path: dasafo_FACTORY/03_PRODUCTION/BACKEND_DEV
 icon: dns
-description: Desarrollador de Lógica de Negocio y APIs Resilientes (v3.4.0-S).
+description: Desarrollador de Lógica de Negocio y APIs Resilientes (v4.0-S).
 ---
 
 # Backend Dev | Gateway
 
 **CORE ORIGIN:** `dasafo_FACTORY/03_PRODUCTION/BACKEND_DEV`
 
-### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
+### 🚨 ARCHITECTURAL DIRECTIVE (v4.0-S)
 
 This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agents do not store their core operational rules in the `.agents/` manifest.
 

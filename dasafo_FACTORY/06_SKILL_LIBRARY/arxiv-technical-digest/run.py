@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Arxiv Technical Digest (RESEARCH_AGENT)
-v3.4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-S: Modular Toolbox | Industrial Scale.
 
 Solidified: Live API Integration (Zero-Trust), Output Schema & Action Routing.
 """
@@ -99,13 +99,13 @@ def run(skill_input: SkillInput) -> SkillOutput:
             report_file = research_dir / f"ARXIV_DIGEST_{paper_id.replace('.','_')}.json"
             
         else:
-            return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented in v3.4.0-S.", cid)
+            return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented in v4.0-S.", cid)
 
         # 3. Physical Artifact Generation (Mandatory)
         report_data = {
             "action": action,
             "timestamp": time.time(),
-            "standard": "v3.4.0-S",
+            "standard": "v4.0-S",
             "papers": papers
         }
         report_file.write_text(json.dumps(report_data, indent=2, ensure_ascii=False), encoding="utf-8")

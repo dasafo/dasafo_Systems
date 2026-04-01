@@ -22,12 +22,13 @@ BYPASS_SKILLS = {
     "project-management",         #
     "deployment-health-check",    # 📡 Monitoreo Sentinel
     "context-pruning-sieve",      # 🧠 Optimización de memoria
-    "skill-refactor-pro"          # 🧬 Evolución autónoma de ADN (v3.4.0-S)
+    "skill-refactor-pro",         # 🧬 Evolución autónoma de ADN (v4.0-S)
+    "project-backbone-validator"  # 🏗️ INYECTADO: Inspector de andamiaje permitido siempre
 }
 
 def verify_project_state(target_project: str, requested_skill: str, agent: str = None) -> tuple[bool, str]:
     """
-    Protocol-Level Session Hook (Aduana Universal v3.4.0-S).
+    Protocol-Level Session Hook (Aduana Universal v4.0-S).
     Implementa DAST (Disk-as-Source-of-Truth) y Double-Gating para agentes autónomos. 
     """
     
@@ -50,7 +51,7 @@ def verify_project_state(target_project: str, requested_skill: str, agent: str =
     if not phases:
         return False, "Solidity Guard: No se definen 'phases' en el estado."
 
-    # --- 3. LÓGICA DE DOUBLE-GATING (Autorización Distribuida v3.4.0-S) ---
+    # --- 3. LÓGICA DE DOUBLE-GATING (Autorización Distribuida v4.0-S) ---
     # Permite que CUALQUIER agente autónomo opere si posee una SPEC_LITE física asignada
     # Se expande la lista para cubrir todos los Hubs de la factoría (01-05)
     authorized_peons = [
@@ -61,17 +62,21 @@ def verify_project_state(target_project: str, requested_skill: str, agent: str =
     ]
 
     if agent in authorized_peons:
+        # Rutas de Specs autorizadas (Normal y Emergencia M5)
         spec_path = Path(target_project) / "TASKS" / "SPEC_LITE.json"
-        if spec_path.exists():
-            try:
-                with open(spec_path, "r") as f:
-                    spec = json.load(f)
-                    assigned = spec.get("metadata", {}).get("assigned_agent")
-                    # Si la tarea en el disco está asignada a este agente, se concede bypass de fase
-                    if assigned == agent:
-                        return True, f"Double-Gate: Agente {agent} autorizado por SPEC_LITE física en disco."
-            except:
-                pass 
+        emergency_spec = Path(target_project) / "TASKS" / "01_PENDING" / "EMERGENCY_SPEC.json"
+        
+        for sp in [spec_path, emergency_spec]:
+            if sp.exists():
+                try:
+                    with open(sp, "r") as f:
+                        spec = json.load(f)
+                        assigned = spec.get("metadata", {}).get("assigned_agent")
+                        # Si la tarea en el disco está asignada a este agente, bypass concedido
+                        if assigned == agent:
+                            return True, f"Double-Gate: Agente {agent} autorizado por {sp.name} física en disco."
+                except:
+                    continue
     # -----------------------------------------------------------------------
 
     # 4. Validación de Secuencialidad de Fases (Foco Atómico)

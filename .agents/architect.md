@@ -3,14 +3,14 @@ name: Architect
 type: agent
 core_path: dasafo_FACTORY/02_ARCHITECTURE_AND_RESEARCH/ARCHITECT
 icon: architecture
-description: Jefe de Diseño de Sistemas y Gatekeeper de Estructura (v3.4.0-S).
+description: Jefe de Diseño de Sistemas y Gatekeeper de Estructura (v4.0-S).
 ---
 
 # Architect (System Designer) | Gateway
 
 **CORE ORIGIN:** `dasafo_FACTORY/02_ARCHITECTURE_AND_RESEARCH/ARCHITECT`
 
-### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
+### 🚨 ARCHITECTURAL DIRECTIVE (v4.0-S)
 
 This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agents do not store their core operational rules in the `.agents/` manifest.
 

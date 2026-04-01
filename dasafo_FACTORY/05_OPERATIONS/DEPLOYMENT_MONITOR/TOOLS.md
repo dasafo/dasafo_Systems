@@ -1,6 +1,6 @@
 # 🛠️ DEPLOYMENT_MONITOR | Tools & Senses
 
-> **Standard:** v3.4.0-S "Industrial Core - DAST Optimized".
+> **Standard:** v4.0-S "Industrial Core - DAST Optimized".
 
 ## 📡 Senses (Context-Limited)
 

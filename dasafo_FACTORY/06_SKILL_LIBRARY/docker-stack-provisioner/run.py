@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Docker Stack Provisioner (DEVOPS_SRE)
-v3.4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-S: Modular Toolbox | Industrial Scale.
 
 Solidified: Rootless Containers, Multi-stage Builds & Physical IaC Artifacts.
 """
@@ -43,7 +43,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             dockerfile_path = infra_dir / f"{service_name}.Dockerfile"
             
             content = f"""# 🐳 Industrial Dockerfile for {service_name} ({stack_type})
-# Standard: v3.4.0-S (Zero-Trust, Rootless, Multi-stage)
+# Standard: v4.0-S (Zero-Trust, Rootless, Multi-stage)
 
 # Stage 1: Dependencies (Layer Caching)
 FROM {stack_type}:18-alpine AS deps
@@ -87,7 +87,7 @@ CMD ["node", "dist/index.js"]
             compose_path = infra_dir / f"{service_name}-compose.yml"
             
             content = f"""# ⚙️ Industrial Compose for {service_name}
-# Standard: v3.4.0-S (Zero-Trust, SI Metrics)
+# Standard: v4.0-S (Zero-Trust, SI Metrics)
 
 version: '3.8'
 services:

@@ -1,6 +1,6 @@
 """
-skill_engine.py — CLI unificado para ejecutar cualquier skill de dasafo_FACTORY (v3.4.0-S).
-ADR: Industrial Core v3.4.0-S. Implementa DAST (Disk-as-Source-of-Truth) y Double-Gating.
+skill_engine.py — CLI unificado para ejecutar cualquier skill de dasafo_FACTORY (v4.0-S).
+ADR: Industrial Core v4.0-S. Implementa DAST (Disk-as-Source-of-Truth) y Double-Gating.
 """
 
 from __future__ import annotations
@@ -17,7 +17,7 @@ from typing import Optional
 
 from dotenv import load_dotenv
 
-# Path resolution for v3.4.0-S (Modular Toolbox)
+# Path resolution for v4.0-S (Modular Toolbox)
 FACTORY_ROOT = Path(__file__).resolve().parent
 SKILL_LIBRARY_DIR = FACTORY_ROOT / "06_SKILL_LIBRARY"
 
@@ -109,7 +109,7 @@ def execute(
     correlation_id: Optional[str] = None,
     isolate: bool = False,
 ) -> SkillOutput:
-    """Punto de entrada con Guardián de Solidez y Sincronización v3.4.0-S."""
+    """Punto de entrada con Guardián de Solidez y Sincronización v4.0-S."""
     
     if target_project is None:
         target_project = os.environ.get("TARGET_PROJECT", ".")
@@ -147,7 +147,7 @@ def execute(
         # 🚀 Ejecución de Skill
         output = _load_and_run(run_path, skill_input)
 
-        # 🧬 Solidity Guard v3.4.0-S: Verificación Post-Ejecución 
+        # 🧬 Solidity Guard v4.0-S: Verificación Post-Ejecución 
         if output.success:
             # Verificación de Artefactos Físicos
             if output.artifacts:
@@ -173,11 +173,11 @@ def execute(
         return output
         
     except Exception as exc:
-        return SkillOutput.failure(agent, skill, f"Error v3.4.0-S: {exc}", correlation_id)
+        return SkillOutput.failure(agent, skill, f"Error v4.0-S: {exc}", correlation_id)
 
 
 def _parse_args():
-    parser = argparse.ArgumentParser(description="Skill Engine v3.4.0-S")
+    parser = argparse.ArgumentParser(description="Skill Engine v4.0-S")
     parser.add_argument("--agent", required=True, help="Agent name")
     parser.add_argument("--skill", required=True, help="Skill name")
     parser.add_argument("--input", required=True, help="JSON input params")

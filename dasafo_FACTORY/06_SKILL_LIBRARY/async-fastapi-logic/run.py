@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Async FastAPI & Domain Logic (BACKEND_DEV / ARCHITECT)
-v3.4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-S: Modular Toolbox | Industrial Scale.
 Solidified: Implementado Redundancy Lock y Compliance Reporting.
 """
 
@@ -21,7 +21,7 @@ router = APIRouter(prefix="/{domain.replace('_', '-')}", tags=["{domain.capitali
 async def list_{domain}s(
     domain_service: service.{domain.capitalize()}Service = Depends(dependencies.get_{domain}_service)
 ):
-    \"\"\" List all {domain}s (v3.4.0-S) \"\"\"
+    \"\"\" List all {domain}s (v4.0-S) \"\"\"
     return await domain_service.get_all()
 """
 
@@ -49,14 +49,14 @@ def get_service_template(domain: str) -> str:
 from . import models, schemas
 
 class {domain.capitalize()}Service:
-    \"\"\" Business logic for {domain} (v3.4.0-S) \"\"\"
+    \"\"\" Business logic for {domain} (v4.0-S) \"\"\"
     async def get_all(self) -> List[models.{domain.capitalize()}]:
         # Implementation here
         return []
 """
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Industrial Entry Point for FastAPI Backend Logic (v3.4.0-S)."""
+    """Industrial Entry Point for FastAPI Backend Logic (v4.0-S)."""
     agent = skill_input.agent or "BACKEND_DEV"
     skill = "async-fastapi-logic"
     cid = skill_input.correlation_id
@@ -87,7 +87,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
                 (d_path / "__init__.py").touch()
             
             main_py = src_dir / "main.py"
-            main_py.write_text("from fastapi import FastAPI\n\napp = FastAPI(title='Industrial API v3.4.0-S')\n", encoding="utf-8")
+            main_py.write_text("from fastapi import FastAPI\n\napp = FastAPI(title='Industrial API v4.0-S')\n", encoding="utf-8")
             artifacts.append(str(main_py))
             
             result = {
@@ -113,7 +113,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
                 "router.py": get_router_template(domain),
                 "schemas.py": get_schemas_template(domain),
                 "service.py": get_service_template(domain),
-                "models.py": "# SQLAlchemy Models (v3.4.0-S)\n",
+                "models.py": "# SQLAlchemy Models (v4.0-S)\n",
                 "dependencies.py": f"def get_{domain}_service():\n    pass\n"
             }
             

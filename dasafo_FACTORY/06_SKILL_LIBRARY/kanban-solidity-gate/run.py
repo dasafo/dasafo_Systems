@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Kanban Solidity Gate & Vibe Dashboard (ORCHESTRATOR / ALL AGENTS)
-v3.4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-S: Modular Toolbox | Industrial Scale.
 
 Solidified: Physical Verification, Phase Logic & Dashboard Orchestration.
 """
@@ -106,7 +106,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             }
             return SkillOutput.success(agent, skill, result_payload, [], cid, summary=f"Vibe Kanban dashboard started on port {port}.")
 
-        return SkillOutput.failure(agent, skill, f"Action '{action}' not fully implemented in v3.4.0-S.", cid)
+        return SkillOutput.failure(agent, skill, f"Action '{action}' not fully implemented in v4.0-S.", cid)
 
     except Exception as e:
         return SkillOutput.failure(agent, skill, f"CRITICAL Gate Failure: {str(e)}", cid)

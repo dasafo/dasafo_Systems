@@ -1,6 +1,6 @@
 # 🛠️ ARCHITECT | Tools & Senses
 
-> **Standard:** v3.4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
 > **Scope:** High-level blueprinting, ADR synthesis, and structural definition.
 
 ## 📡 Senses (Context-Limited)
@@ -20,4 +20,4 @@
 - **`factory-doctor`**: Realizar una auditoría de salud antes de iniciar M2 para asegurar que la base de M1 es sólida.
 
 ---
-*Architect v3.4.0-S | Status: Gatekeeper M2, Autónomo & Solidificado.*
+*Architect v4.0-S | Status: Gatekeeper M2, Autónomo & Solidificado.*

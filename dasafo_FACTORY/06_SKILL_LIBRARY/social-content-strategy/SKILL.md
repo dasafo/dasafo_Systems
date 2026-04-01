@@ -1,16 +1,16 @@
 ---
-version: 3.4.0-S
+version: v4.0-S
 agent: MARKETING_GROWTH
 source: https://skills.sh/coreyhaines31/marketingskills/social-content
 ---
 
-# 🚀 Skill | Social Content Strategy (v3.4.0-S)
+# 🚀 Skill | Social Content Strategy (v4.0-S)
 
 ## Objective
 
 Design and execute high-performance social media marketing strategies through content pillars, hook optimization, and multi-platform repurposing. This skill transforms "Pillar Content" (blogs, videos, podcasts) into a distributed ecosystem of social assets while maintaining brand voice and engagement loops.
 
-## 🛠️ Interface (v3.4.0-S)
+## 🛠️ Interface (v4.0-S)
 
 ### Input Schema (SkillInput.params)
 
@@ -39,7 +39,7 @@ Cualquier métrica de rendimiento (tiempos de lectura, latencia de publicación,
 - **Batching Mandate:** All proposed strategies must follow the "Batching Strategy" (targeting efficiency < 10,800s per week).
 - **Physical Metadata:** The content calendar and pillars must be saved as physical JSON/MD artifacts in `DOCS/MARKETING/`.
 
-## 🧠 Strategic Workflow (v3.4.0-S)
+## 🧠 Strategic Workflow (v4.0-S)
 
 1. **Pillar Analysis:** Extract 3-5 key insights from the source content.
 2. **Hook Generation:** Create curiosity, story, and value hooks for each insight.
@@ -49,4 +49,4 @@ Cualquier métrica de rendimiento (tiempos de lectura, latencia de publicación,
 
 ---
 **ORIGIN:** [social-content by coreyhaines31](https://skills.sh/coreyhaines31/marketingskills/social-content)
-*Skill v3.4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*

@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Context Pruning Sieve (MEMORY_OPTIMIZER)
-v3.4.0-S: Modular Toolbox | Industrial Compaction.
+v4.0-S: Modular Toolbox | Industrial Compaction.
 
 Solidified: Token-aware Pruning, Zero-Trash Policy & Cache Optimization.
 """

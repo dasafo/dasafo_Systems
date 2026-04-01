@@ -1,6 +1,6 @@
-# 🛠️ DOCS_MASTER | Tools & Senses (v3.4.0-S)
+# 🛠️ DOCS_MASTER | Tools & Senses (v4.0-S)
 
-> **Standard:** v3.4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
 > **Scope:** Technical writing, automated docs extraction, and context synthesis.
 
 ## 📡 Senses (Context-Limited)
@@ -27,4 +27,4 @@
 - `hallucination-guardrail`: Mandatory verification of technical claims against the project's source of truth.
 
 ---
-*Docs Master v3.4.0-S | Status: Estratega Autónomo & Solidificado.*
+*Docs Master v4.0-S | Status: Estratega Autónomo & Solidificado.*

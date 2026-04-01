@@ -1,5 +1,5 @@
 ---
-description: Performs an industrial-grade security scan following Zero-Trust v3.4.0-S standards.
+description: Performs an industrial-grade security scan following Zero-Trust v4.0-S standards.
 ---
 
 # Workflow /scan
@@ -14,4 +14,4 @@ This flow activates the **Security Auditor** to perform a deep-dive audit on the
 
 4. **Reporting**: Generate a structured `SECURITY_REPORT.md` within the project's `LOGS/` directory.
 
-**Enforcing Zero-Trust v3.4.0-S Enforcement...**
+**Enforcing Zero-Trust v4.0-S Enforcement...**

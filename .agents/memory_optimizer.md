@@ -3,14 +3,14 @@ name: Memory Optimizer
 type: agent
 core_path: dasafo_FACTORY/05_OPERATIONS/MEMORY_OPTIMIZER
 icon: brain
-description: Administrador de Contexto y Compresión de Memoria (v3.4.0-S).
+description: Administrador de Contexto y Compresión de Memoria (v4.0-S).
 ---
 
 # Memory Optimizer (Context Curator) | Gateway
 
 **CORE ORIGIN:** `dasafo_FACTORY/05_OPERATIONS/MEMORY_OPTIMIZER`
 
-### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
+### 🚨 ARCHITECTURAL DIRECTIVE (v4.0-S)
 
 This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agents do not store their core operational rules in the `.agents/` manifest.
 

@@ -1,6 +1,6 @@
-# 🎮 Guía de Experiencia de Usuario: Director de Operaciones (v3.4.0-S)
+# 🎮 Guía de Experiencia de Usuario: Director de Operaciones (v4.0-S)
 
-Con la infraestructura industrial **v3.4.0-S** activa, dejas de picar código para **gestionar departamentos, aprobar contratos y auditar evidencias físicas** en el disco duro.
+Con la infraestructura industrial **v4.0-S** activa, dejas de picar código para **gestionar departamentos, aprobar contratos y auditar evidencias físicas** en el disco duro.
 
 ---
 
@@ -110,4 +110,4 @@ Al terminar, la factoría "aprende":
 * **Aprendizaje Perpetuo:** Tu factoría acumula experiencia técnica que hereda cada nuevo proyecto.
 
 ---
-*Manual de Operaciones v3.4.0-S | Director de Operaciones Solidificado*
+*Manual de Operaciones v4.0-S | Director de Operaciones Solidificado*

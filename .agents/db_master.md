@@ -3,14 +3,14 @@ name: Database Master
 type: agent
 core_path: dasafo_FACTORY/03_PRODUCTION/DB_MASTER
 icon: storage
-description: Experto en Supabase, PostGIS y Optimización SQL (v3.4.0-S).
+description: Experto en Supabase, PostGIS y Optimización SQL (v4.0-S).
 ---
 
 # DB Master (Data Guardian) | Gateway
 
 **CORE ORIGIN:** `dasafo_FACTORY/03_PRODUCTION/DB_MASTER`
 
-### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
+### 🚨 ARCHITECTURAL DIRECTIVE (v4.0-S)
 
 This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agents do not store their core operational rules in the `.agents/` manifest.
 

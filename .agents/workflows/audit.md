@@ -1,10 +1,10 @@
 ---
-description: Requests the QA_Tester to perform a comprehensive review of the current task before completion (v3.4.0-S).
+description: Requests the QA_Tester to perform a comprehensive review of the current task before completion (v4.0-S).
 ---
 
 # Workflow /audit
 
-This flow activates the quality feedback loop to validate the current task against **Solidity Guard v3.4.0-S** industrial standards.
+This flow activates the quality feedback loop to validate the current task against **Solidity Guard v4.0-S** industrial standards.
 
 1. **Agent:** `QA_TESTER`
 2. **Execution Protocol (AutoShield v3.4)**:

@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "dasafo_factory/feedback_entry/v3.4.0-S",
+  "$id": "dasafo_factory/feedback_entry/v4.0-S",
   "title": "Feedback Log Entry Schema",
-  "description": "Machine-parseable schema for FEEDBACK-LOG entries. Enables automated pre-flight checks and pattern analysis (Industrial Core v3.4.0-S).",
+  "description": "Machine-parseable schema for FEEDBACK-LOG entries. Enables automated pre-flight checks and pattern analysis (Industrial Core v4.0-S).",
   "type": "object",
   "required": [
     "id",
@@ -23,8 +23,8 @@
     },
     "version": {
       "type": "string",
-      "pattern": "^v\\d+\\.\\d+\\.\\d+(-[A-Z]+)?$",
-      "description": "Semantic version of the factory standard (e.g., 'v3.4.0-S')."
+      "pattern": "^v\\d+\\.\\d+(\\.\\d+)?(-[A-Z]+)?$",
+      "description": "Semantic version of the factory standard (e.g., 'v4.0-S' or 'v4.0-S')."
     },
     "timestamp": {
       "type": "string",
@@ -56,7 +56,7 @@
             "FACTORY_EVOLVER",
             "MEMORY_OPTIMIZER"
           ],
-          "description": "Authorized Agent ID from v3.4.0-S Industrial Mapping."
+          "description": "Authorized Agent ID from v4.0-S Industrial Mapping."
         },
         "project": {
           "type": "string",
@@ -131,7 +131,8 @@
           "mcp-bridge",
           "hallucination",
           "atomic-vibe",
-          "secret-leak"
+          "secret-leak",
+          "scaffolding"
         ]
       },
       "description": "Category tags for automated pattern analysis."

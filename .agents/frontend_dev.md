@@ -3,14 +3,14 @@ name: Frontend Dev
 type: agent
 core_path: dasafo_FACTORY/03_PRODUCTION/FRONTEND_DEV
 icon: brush
-description: Artesano de Interfaces UI/UX Premium (v3.4.0-S).
+description: Artesano de Interfaces UI/UX Premium (v4.0-S).
 ---
 
 # Frontend Dev (Vibe Architect) | Gateway
 
 **CORE ORIGIN:** `dasafo_FACTORY/03_PRODUCTION/FRONTEND_DEV`
 
-### 🚨 ARCHITECTURAL DIRECTIVE (v3.4.0-S)
+### 🚨 ARCHITECTURAL DIRECTIVE (v4.0-S)
 
 This file is a **Lightweight Pointer**. Under the "Encapsulation Protocol", agents do not store their core operational rules in the `.agents/` manifest.
 

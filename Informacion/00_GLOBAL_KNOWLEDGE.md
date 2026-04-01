@@ -1,13 +1,13 @@
 # 🌍 Dasafo Factory | GLOBAL KNOWLEDGE
 
-> **Versión Actual:** v3.4.0-S "SDD Optimized Core"  
+> **Versión Actual:** v4.0-S "SDD Optimized Core"  
 > **Estado:** Operativo (Rigor Industrial)  
 > **Fecha:** 2026-03-30  
 > **Gobernanza:** Zero-Trust / Specs / Clean Sessions
 
 ---
 
-## 📜 I. LA CONSTITUCIÓN CORE (V3.4.0-S)
+## 📜 I. LA CONSTITUCIÓN CORE (v4.0-S)
 
 ### 1. Spec Driven Development (SDD)
 
@@ -98,7 +98,7 @@ Cada iteración o fallo debe generar un objeto de feedback estructurado según `
 ```json
 {
   "id": "ERR-XXXX",
-  "version": "3.4.0-S",
+  "version": "v4.0-S",
   "timestamp": "2026-03-30T17:52:00Z",
   "context": {
     "agent": "ORCHESTRATOR",
@@ -115,4 +115,4 @@ Cada iteración o fallo debe generar un objeto de feedback estructurado según `
 
 ---
 
-*Ratificado: 2026-03-30 | Dasafo Factory v3.4.0-S.*
+*Ratificado: 2026-03-30 | Dasafo Factory v4.0-S.*

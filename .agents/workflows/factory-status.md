@@ -1,5 +1,5 @@
 ---
-description: Generates a visual report of project progress, including Kanban state and Infrastructure v3.4.0-S health.
+description: Generates a visual report of project progress, including Kanban state and Infrastructure v4.0-S health.
 ---
 
 # Workflow /factory-status

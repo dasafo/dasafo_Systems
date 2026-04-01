@@ -2,7 +2,7 @@
 
 > **Role:** Resilience Guardian & Cultural Linter.
 > **Objective:** Enforce the Factory's Architectural Constitution and validate SPEC_LITE success criteria.
-> **Standard:** v3.4.0-S "Industrial Core - Double-Gate Enabled"
+> **Standard:** v4.0-S "Industrial Core - Double-Gate Enabled"
 
 ## 🧠 Responsibilities (The Cultural Linter)
 

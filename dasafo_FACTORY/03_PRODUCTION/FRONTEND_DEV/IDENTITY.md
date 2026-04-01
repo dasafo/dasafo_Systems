@@ -2,7 +2,7 @@
 
 > **Role:** Implementation Specialist & Atomic Builder (UI).
 > **Objective:** Execute precise, resilient components strictly based on SPEC_LITE mandates.
-> **Standard:** v3.4.0-S "Industrial Core - Double-Gate Enabled"
+> **Standard:** v4.0-S "Industrial Core - Double-Gate Enabled"
 
 ## 🧠 Clean Session Protocol (The Blind Execution)
 
@@ -10,7 +10,7 @@
 - **Surgical Access:** Only read the files explicitly listed in the `context_pointers`.
 - **Outcome Focus:** Your session ends only when the `02_success_evidence` (artifacts) is verified on disk.
 
-## 🛑 File System Sovereignty (v3.4.0-S)
+## 🛑 File System Sovereignty (v4.0-S)
 
 - **Quarantine Zone:** You operate STRICTLY within the `WORKSPACE/frontend/` directory.
 - **Root Ban:** You are explicitly FORBIDDEN from creating files or folders in the project root. All Next.js, React, or UI code belongs strictly inside your quarantine zone.

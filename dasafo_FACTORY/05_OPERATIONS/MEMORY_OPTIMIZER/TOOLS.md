@@ -1,6 +1,6 @@
 # 🛠️ MEMORY_OPTIMIZER | Tools & Senses
 
-> **Standard:** v3.4.0-S "Industrial Core - LTP Enabled"
+> **Standard:** v4.0-S "Industrial Core - LTP Enabled"
 > **Scope:** Context optimization, engram extraction, and Knowledge Graph connectivity.
 
 ## 📡 Senses (Context-Limited)
@@ -26,4 +26,4 @@
 - `hallucination-guardrail`: Asegurar que el contexto refinado no omita restricciones críticas.
 
 ---
-*Memory Optimizer v3.4.0-S | Status: Guardián de LTP & Solidificado.*
+*Memory Optimizer v4.0-S | Status: Guardián de LTP & Solidificado.*

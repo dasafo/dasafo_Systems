@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Autonomous Feedback Analyzer (MEMORY_OPTIMIZER / FACTORY_EVOLVER)
-v3.4.0-S: Industrial Core | LTP & Deployment Insights Integration.
+v4.0-S: Industrial Core | LTP & Deployment Insights Integration.
 
 Solidified: Neo4j Persistence, Deployment Log Scanning & SI Metrics.
 """
@@ -20,12 +20,11 @@ try:
 except ImportError:
     GraphDatabase = None
 
-def persist_to_knowledge_graph(rules: list, project: str, agent: str):
-    """Sincroniza el aprendizaje agentico con el Grafo Central (Neo4j)."""
+def persist_to_knowledge_graph(insights: list, project: str, agent: str):
+    """Sincroniza el aprendizaje agentico con el Grafo Central (Neo4j) v4.0-S."""
     if not GraphDatabase:
         return False, "Driver neo4j no instalado."
 
-    # Configuración de INFRA/
     uri = os.getenv("NEO4J_URI", "bolt://dasafo-shared-kg:7687")
     user = os.getenv("NEO4J_USER", "neo4j")
     pwd = os.getenv("NEO4J_PASSWORD", "freedom85")
@@ -33,16 +32,23 @@ def persist_to_knowledge_graph(rules: list, project: str, agent: str):
     try:
         driver = GraphDatabase.driver(uri, auth=(user, pwd))
         with driver.session() as session:
-            for rule in rules:
-                # Persistencia de engramas en el Grafo de Conocimiento
+            for insight in insights:
+                rule = insight.get("rule")
+                tech = insight.get("tech", "Global")
+                
+                # Inyección v4.0-S: Nodos de Violación Cultural y Tecnología
                 session.run("""
                     MERGE (r:GoldenRule {content: $rule})
                     MERGE (p:Project {name: $project})
                     MERGE (a:Agent {id: $agent})
+                    MERGE (t:Technology {name: $tech})
+                    MERGE (cv:CulturalViolation {description: $rule})
+                    MERGE (cv)-[:CAUSED_BY]->(t)
                     MERGE (p)-[:GENERATED]->(r)
                     MERGE (a)-[:LEARNED]->(r)
+                    MERGE (r)-[:ADDRESSES]->(cv)
                     SET r.last_sync = datetime(), r.status = 'ACTIVE'
-                """, rule=rule, project=project, agent=agent)
+                """, rule=rule, project=project, agent=agent, tech=tech)
         driver.close()
         return True, "KG Sync Success"
     except Exception as e:
@@ -75,15 +81,26 @@ def run(skill_input: SkillInput) -> SkillOutput:
         # 2. Análisis de FEEDBACK-LOG.md
         if feedback_file.exists():
             content = feedback_file.read_text(encoding="utf-8")
-            total_bytes_processed += len(content.encode("utf-8")) # Mandato SI: Bytes
+            total_bytes_processed += len(content.encode("utf-8")) 
             
             entries = re.findall(r'(\{.*?\})', content, re.DOTALL)
             for entry_raw in entries:
                 try:
                     entry = json.loads(entry_raw)
                     if "golden_rule" in entry:
-                        golden_rules_extracted.append(entry["golden_rule"])
-                    if entry.get("severity") == "critical":
+                        # Deducción heurística de la tecnología
+                        tech = "Global"
+                        file_path = entry.get("context", {}).get("file", "").lower()
+                        if "shadcn" in file_path or "ui" in file_path: tech = "shadcn"
+                        elif "fastapi" in file_path or ".py" in file_path: tech = "fastapi"
+                        elif "nextjs" in file_path or ".tsx" in file_path: tech = "nextjs"
+                        elif "docker" in file_path: tech = "docker"
+
+                        golden_rules_extracted.append({
+                            "rule": entry["golden_rule"],
+                            "tech": tech
+                        })
+                    if entry.get("severity") in ["critical", "high"]:
                         critical_errors += 1
                 except: continue
 

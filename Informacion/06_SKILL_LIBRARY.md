@@ -1,6 +1,6 @@
-# 🧰 Categoría 06: SKILL LIBRARY | Dasafo Factory (v3.4.0-S)
+# 🧰 Categoría 06: SKILL LIBRARY | Dasafo Factory (v4.0-S)
 
-La **Skill Library** es el repositorio central de capacidades atómicas de la factoría. Cada skill es un módulo de ejecución independiente, diseñado bajo el estándar **v3.4.0-S**, con esquemas de entrada/salida rígidos y mandatos de seguridad integrados.
+La **Skill Library** es el repositorio central de capacidades atómicas de la factoría. Cada skill es un módulo de ejecución independiente, diseñado bajo el estándar **v4.0-S**, con esquemas de entrada/salida rígidos y mandatos de seguridad integrados.
 
 ---
 
@@ -61,4 +61,4 @@ La **Skill Library** es el repositorio central de capacidades atómicas de la fa
 4. **Context Isolation**: Las skills operan sin acceso a la historia global de la conversación, centrándose únicamente en su `params`.
 
 ---
-*Librería de Skills Solidificada v3.4.0-S | Dasafo Factory*
+*Librería de Skills Solidificada v4.0-S | Dasafo Factory*

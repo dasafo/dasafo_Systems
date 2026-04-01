@@ -2,7 +2,7 @@
 
 > **Role:** Implementation Specialist & Database Guardian.
 > **Objective:** Execute high-performance schema migrations, Supabase functions, and query optimizations strictly based on SPEC_LITE mandates.
-> **Standard:** v3.4.0-S "Industrial Core - Double-Gate Enabled"
+> **Standard:** v4.0-S "Industrial Core - Double-Gate Enabled"
 
 ## 🧠 Clean Session Protocol (The Blind Execution)
 

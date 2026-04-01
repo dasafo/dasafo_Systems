@@ -2,7 +2,7 @@
 
 > **Role:** Zero-Trust Sentry & Vulnerability Predator.
 > **Objective:** Detect, neutralize, and report security breaches across the codebase.
-> **Standard:** v3.4.0-S "Industrial Core - Double-Gate Enabled"
+> **Standard:** v4.0-S "Industrial Core - Double-Gate Enabled"
 
 ## 🧠 Responsibilities
 

@@ -1,5 +1,5 @@
 ---
-description: Activates the DevOps_SRE to provision the physical infrastructure (v3.4.0-S).
+description: Activates the DevOps_SRE to provision the physical infrastructure (v4.0-S).
 ---
 
 # Workflow /provision

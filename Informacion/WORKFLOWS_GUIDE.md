@@ -1,6 +1,6 @@
-# 🚀 Guía de Workflows Industriales | dasafo_FACTORY (v3.4.0-S)
+# 🚀 Guía de Workflows Industriales | dasafo_FACTORY (v4.0-S)
 
-Esta guía detalla los 11 flujos de trabajo (workflows) disponibles en el ecosistema para la gestión, ejecución y auditoría de proyectos bajo el estándar **Industrial Core (v3.4.0-S)**.
+Esta guía detalla los 11 flujos de trabajo (workflows) disponibles en el ecosistema para la gestión, ejecución y auditoría de proyectos bajo el estándar **Industrial Core (v4.0-S)**.
 
 ---
 
@@ -75,4 +75,4 @@ Los workflows se dividen según su propósito dentro del pipeline universal:
   - **Resultado**: Resumen textual directo en el chat.
 
 ---
-*Documentación Solidificada v3.4.0-S | dasafo_FACTORY*
+*Documentación Solidificada v4.0-S | dasafo_FACTORY*

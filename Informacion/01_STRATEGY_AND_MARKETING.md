@@ -1,4 +1,4 @@
-# 🏛️ Categoría 01: STRATEGY & MARKETING | Dasafo Factory (v3.4.0-S)
+# 🏛️ Categoría 01: STRATEGY & MARKETING | Dasafo Factory (v4.0-S)
 
 Esta categoría agrupa a los agentes encargados de la visión, orquestación técnica y ejecución de crecimiento. Su misión es transformar la necesidad humana en especificaciones industriales y asegurar que el proyecto avance de forma sólida y auditable.
 
@@ -62,4 +62,4 @@ Es el encargado de ejecutar los artefactos de marketing y contenido basados estr
 2. **Context Isolation**: La ejecución se realiza en salas aisladas para evitar el "Token Decay" y la contaminación de contexto.
 3. **Métricas North Star**: Todo éxito se mide en unidades SI para garantizar la comparabilidad industrial.
 
-*Documentación Solidificada v3.4.0-S | Categoría 01 - Strategy & Marketing*
+*Documentación Solidificada v4.0-S | Categoría 01 - Strategy & Marketing*

@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Apify Trend Analysis (MARKETING_GROWTH / RESEARCH_AGENT)
-v3.4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-S: Modular Toolbox | Industrial Scale.
 
 Solidified: Fixed Schema Mismatch, added insights & recommendations, and aligned summary object with industrial_status.
 """
@@ -76,7 +76,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             
             execution_duration_s = time.time() - start_time
             
-            # 4. Result Building (v3.4.0-S Aligned Schema)
+            # 4. Result Building (v4.0-S Aligned Schema)
             result_payload = {
                 "industrial_status": "TREND_CAPTURED",
                 "summary": {
@@ -88,7 +88,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
                 "recommendations": [
                     "Cross-reference keywords with active ad campaigns.",
                     "Identify rising niches for specialized content generation.",
-                    "Save raw dataset for historical comparison (v3.4.0-S)."
+                    "Save raw dataset for historical comparison (v4.0-S)."
                 ],
                 "compliance_report": {
                     "data_integrity_verified": True,
@@ -99,7 +99,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
             return SkillOutput.success(agent, skill, result_payload, [str(results_file)], cid)
 
-        return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented in v3.4.0-S.", cid)
+        return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented in v4.0-S.", cid)
 
     except Exception as e:
         return SkillOutput.failure(agent, skill, f"Trend Analysis CRITICAL Fault: {str(e)}", cid)

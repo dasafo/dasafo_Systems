@@ -1,6 +1,6 @@
-# 🛠️ PRODUCTION | Tools & Senses (v3.4.0-S Solidified)
+# 🛠️ PRODUCTION | Tools & Senses (v4.0-S Solidified)
 
-> **Standard:** v3.4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
 > **Scope:** Level 03 Implementation (Backend, Frontend, Data, DB).
 
 ## 📡 Senses (Department-Wide)
@@ -20,6 +20,8 @@
 - `database-architect-strategic`: Tactical execution of SQL/NoSQL schema migrations.
 - `supabase-stack-expert`: Direct interaction with Postgres, RLS and Edge Functions.
 - `autonomous-feedback-analyzer`: Deep synthesis of data patterns and telemetry.
+- `nodejs-backend-patterns`: Enforces strict Repository/DTO patterns and TDD for Node.js/TypeScript backends.
+- `frontend-ui-designer`: Enforces Tailwind CSS, shadcn/ui, and modern design principles. Verifies physical design system presence.
 
 ### 🛡️ Guardrails & Validation
 
@@ -27,7 +29,7 @@
 - `pytest-logic-verifier`: Programmatic backend logic testing and verification.
 - `hallucination-guardrail`: Mandatory safety and grounding checks for AI outputs.
 - `agentic-thought-secret-scanner`: Proactive leak prevention for credentials and PII.
-- **`registry-manager`**: Herramienta transversal obligatoria para el movimiento atómico de tareas en el disco.
+- `registry-manager`: Herramienta transversal obligatoria para el movimiento atómico de tareas en el disco.
 
 ---
-*Production Tools v3.4.0-S | Status: SOLIDIFIED.*
+*Production Tools v4.0-S | Status: SOLIDIFIED.*

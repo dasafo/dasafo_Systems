@@ -1,6 +1,6 @@
 # 📜 Dasafo Factory | Core Constitution
 
-> **Standard:** v3.4.0-S "SDD Optimized Core"
+> **Standard:** v4.0-S "SDD Optimized Core"
 > **Governance:** Zero-Trust / Spec Driven Development / Clean Sessions.
 
 ## 🏗️ I. The Law of the Spec (SDD)
@@ -20,6 +20,7 @@
 1. **Surgical Access:** Agents have no write permissions outside their technical domain or the project's logic layers.
 2. **Solidity Gate:** No phase is considered complete without a verified `kanban-solidity-gate` check and a `SECURITY_AUDITOR` clearance.
 3. **Chesterton's Fence:** No legacy code is deleted without an ADR (Architecture Decision Record) explaining the "Why".
+4. **Backbone Mandate:** No atomic implementation agent (e.g., FRONTEND_DEV, BACKEND_DEV) shall be dispatched without prior physical validation of the framework's scaffolding via the `project-backbone-validator`.
 
 ## 📊 IV. Industrial Metrics (SI Standards)
 
@@ -35,4 +36,4 @@
 
 ---
 
-*Ratified: 2026-03-30 | Dasafo Factory v3.4.0-S.*
+*Ratified: 2026-03-30 | Dasafo Factory v4.0-S.*

@@ -1,17 +1,17 @@
 {
-  "v3_code": "STARK-SOLIDITY-v3.4.0-S",
+  "v3_code": "STARK-SOLIDITY-v4.0-S",
   "metadata": {
     "project_name": "REQUIRED_FIELD",
     "version": "1.0.0-S",
     "status": "M1_DISCOVERY",
-    "standard": "v3.4.0-S (Industrial Core)",
+    "standard": "v4.0-S (Industrial Core)",
     "created_at": "REQUIRED",
     "cid": "REQUIRED"
   },
   "requirements": {
     "01_overview": "High-level summary of the ContentRepurpose AI SaaS.",
     "02_problem": "Market pain or technical need addressed by this project.",
-    "03_success_criteria": "Measurable metrics in SI units (seconds, bytes).",
+    "03_success_criteria": "Measurable metrics in SI units (seconds, bytes) AND Financial KPIs (Target CAC, Target LTV, Cost per execution).",
     "04_user_stories": "Functional narratives from the user perspective.",
     "05_functional": "Atomic list of features (MVP).",
     "06_non_functional": "Performance, security, and scalability requirements.",

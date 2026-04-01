@@ -1,6 +1,6 @@
-# 🛠️ DATA_SCIENTIST | Tools & Senses (v3.4.0-S)
+# 🛠️ DATA_SCIENTIST | Tools & Senses (v4.0-S)
 
-> **Standard:** v3.4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
 > **Scope:** Data analysis, model training, and empirical metric generation.
 
 ## 📡 Senses (Context-Limited)
@@ -20,4 +20,4 @@
 - **`registry-manager`**: Acción `update_status` para ejecutar el movimiento atómico de tareas y sincronización de disco.
 
 ---
-*Data Scientist v3.4.0-S | Status: Guardián de Insights Autónomo & Solidificado.*
+*Data Scientist v4.0-S | Status: Guardián de Insights Autónomo & Solidificado.*

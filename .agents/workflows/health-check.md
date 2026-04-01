@@ -1,5 +1,5 @@
 ---
-description: Activates the Deployment_Monitor to verify real-time health and SI metrics of the live project (v3.4.0-S).
+description: Activates the Deployment_Monitor to verify real-time health and SI metrics of the live project (v4.0-S).
 ---
 
 # Workflow /health-check

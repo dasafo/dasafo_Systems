@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Database Architect Strategic (ARCHITECT / DB_MASTER)
-v3.4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-S: Modular Toolbox | Industrial Scale.
 
 Solidified: Hybrid Infrastructure Alignment, Output Schema & SI Mandate.
 """
@@ -14,7 +14,7 @@ from pathlib import Path
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Industrial execution engine for DB architecture and modeling (v3.4.0-S)."""
+    """Industrial execution engine for DB architecture and modeling (v4.0-S)."""
     agent = skill_input.agent or "ARCHITECT"
     skill = "database-architect-strategic"
     cid = skill_input.correlation_id
@@ -68,7 +68,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             
             schema_file.write_text(json.dumps(schema_data, indent=2, ensure_ascii=False), encoding="utf-8")
             
-            # 3. Result Building (Strict Schema Alignment v3.4.0-S)
+            # 3. Result Building (Strict Schema Alignment v4.0-S)
             execution_duration_s = time.time() - start_time
             
             plan_desc = f"Relational strategy for '{resource}' using PostgreSQL on host '{target_host}' with JSONB for flexible metadata."
@@ -93,7 +93,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             
             return SkillOutput.success(agent, skill, result_payload, [str(schema_file)], cid)
 
-        return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented in v3.4.0-S.", cid)
+        return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented in v4.0-S.", cid)
 
     except Exception as e:
         return SkillOutput.failure(agent, skill, f"DB Architect CRITICAL Fault: {str(e)}", cid)

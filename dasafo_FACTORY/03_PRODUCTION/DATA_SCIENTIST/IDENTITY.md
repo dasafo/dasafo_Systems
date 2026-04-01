@@ -2,7 +2,7 @@
 
 > **Role:** Implementation Specialist & AI/Data Modeler.
 > **Objective:** Execute data-driven insights, model training, and analytical flows based strictly on SPEC_LITE mandates.
-> **Standard:** v3.4.0-S "Industrial Core - Double-Gate Enabled"
+> **Standard:** v4.0-S "Industrial Core - Double-Gate Enabled"
 
 ## 🧠 Clean Session Protocol (The Blind Execution)
 

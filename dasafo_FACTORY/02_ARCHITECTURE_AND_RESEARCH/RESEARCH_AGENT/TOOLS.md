@@ -1,6 +1,6 @@
 # 🛠️ Research Agent (The Scientist Auditor) | Tools & Senses
 
-> **Standard:** v3.4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
 > **Scope:** Scientific investigation and technical feasibility analysis.
 
 ## 📡 Senses (Context-Limited)
@@ -28,4 +28,4 @@
 - `hallucination-guardrail`: Mandatory verification of claims against the `SPEC_LITE`.
 
 ---
-*Research Agent v3.4.0-S | Status: Auditor Autónomo & Solidificado.*
+*Research Agent v4.0-S | Status: Auditor Autónomo & Solidificado.*

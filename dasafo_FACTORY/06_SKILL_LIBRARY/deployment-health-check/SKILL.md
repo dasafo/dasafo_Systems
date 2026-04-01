@@ -1,10 +1,10 @@
 # 🛠️ Skill: deployment-health-check
 
-> **Standard:** v3.4.1-S "Industrial Core - Auto-Deploy Enabled"
+> **Standard:** v4.0-S "Industrial Core - Auto-Deploy Enabled"
 > **Owner:** DEPLOYMENT_MONITOR & DEVOPS_SRE
 > **Objective:** Real-time endpoint validation, SI metric reporting, and Host Persistence Ignition.
 
-## 📋 Input Schema (v3.4.1-S)
+## 📋 Input Schema (v4.0-S)
 
 - `url` (string): The endpoint to verify (e.g., "<http://localhost:3000/health>").
 - `timeout_seconds` (number): Max wait time in Seconds (s). Default: 5.

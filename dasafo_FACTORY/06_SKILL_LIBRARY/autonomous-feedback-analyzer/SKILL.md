@@ -1,16 +1,16 @@
 ---
-version: 3.4.0-S
+version: v4.0-S
 agent: FACTORY_EVOLVER / DATA_SCIENTIST
 source: https://skills.sh/phuryn/pm-skills/sentiment-analysis
 ---
 
-# 🧠 Skill | Autonomous Feedback Analyzer (v3.4.0-S)
+# 🧠 Skill | Autonomous Feedback Analyzer (v4.0-S)
 
 ## Objective
 
 Perform sentiment analysis, segment insights, and extract actionable "Golden Rules" from user feedback or factory engram logs to drive continuous systemic improvement.
 
-## 🛠️ Interface (v3.4.0-S)
+## 🛠️ Interface (v4.0-S)
 
 ### Input Schema (SkillInput.params)
 
