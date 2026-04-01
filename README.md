@@ -35,7 +35,7 @@ graph TD
         Neo4j["Knowledge Graph (LTP)"]
         Clean["Clean Session Isolation"]
     end
-````
+```
 
 ### 1\. `dasafo_FACTORY` (The Brain)
 
