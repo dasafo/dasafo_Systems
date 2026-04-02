@@ -32,9 +32,9 @@ Design, scaffold, and implement high-performance, maintainable asynchronous micr
   - `ppp_validation`: (string) "Pydantic-SQLAlchemy-Pattern Verified"
 - `summary`: (string) Brief recap of the implementation changes.
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica técnica definida (timeouts, cuotas de almacenamiento, límites de memoria) debe expresarse estrictamente en el Sistema Internacional (segundos, bytes).
+Any defined technical metrics (timeouts, storage quotas, memory limits) must be strictly expressed in the International System (SI) (seconds, bytes).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

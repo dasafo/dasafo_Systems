@@ -27,9 +27,9 @@ Enforce programmable safety and factual integrity for LLM outputs. This skill pr
 - `corrected_content`: (string, optional) Content with sanitized PII or corrected facts.
 - `industrial_verdict`: (string) "SOLIDIFIED - CONTENT SAFE" | "BLOCKED - HALLUCINATION DETECTED"
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica de rendimiento del modelo (tiempos de inferencia, latencia de respuesta, cuotas de tokens) debe expresarse estrictamente en el SI (**segundos**, (**bytes** para memoria de contexto).
+Any model performance metrics (inference times, response latency, token quotas) must be strictly expressed in SI (**seconds**, **bytes** for context memory).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

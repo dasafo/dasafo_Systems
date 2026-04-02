@@ -29,9 +29,9 @@ Identify and analyze market trends, consumer behavior, and niche opportunities a
 - `insights`: (string) Automated summary of key trend patterns identified in the data.
 - `recommendations`: (list) Actionable next steps based on trend analysis.
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica temporal (intervalos, crecimiento) o de volumen de datos debe expresarse estrictamente en unidades del Sistema Internacional (segundos, bytes).
+Any temporal metrics (intervals, growth) or data volume must be strictly expressed in International System (SI) units (seconds, bytes).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

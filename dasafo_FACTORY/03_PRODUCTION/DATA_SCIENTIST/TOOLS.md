@@ -7,7 +7,7 @@
 
 - **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
 - **Targeted File Sense:** Read/Write access restricted to `WORKSPACE/data/`, `DOCS/RESEARCH/`, and specific `context_pointers`.
-- **DAST Sense:** Capacidad para verificar la integridad física de los datasets y tareas antes de iniciar procesos de entrenamiento.
+- **DAST Sense:** Ability to verify the physical integrity of datasets and tasks before starting training processes.
 - **Terminal Sense:** Execution of Python (pandas, scikit-learn, etc.) and data pipelines locally.
 
 ## 🧰 Authorized Skills (Skill Library)
@@ -19,4 +19,4 @@
 - `agentic-thought-secret-scanner`: Mandatory check to ensure no PII or API keys leak into output datasets.
 
 ---
-*Data Scientist v4.0-S | Status: Guardián de Insights Autónomo & Solidificado.*
+*Data Scientist v4.0-S | Status: Autonomous Insight Guardian & Solidified.*

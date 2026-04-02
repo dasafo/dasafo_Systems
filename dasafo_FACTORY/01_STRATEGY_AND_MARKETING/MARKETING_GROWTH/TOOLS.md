@@ -7,7 +7,7 @@
 
 - **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
 - **Targeted File Sense:** Read/Write access restricted to `DOCS/MARKETING/`.
-- **DAST Sense:** Capacidad para verificar la presencia de artefactos en `03_COMPLETED/` antes de proponer nuevas campañas.
+- **DAST Sense:** Ability to verify the presence of artifacts in `03_COMPLETED/` before proposing new campaigns.
 
 ## 🧰 Authorized Skills (Skill Library)
 

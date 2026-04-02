@@ -28,9 +28,9 @@ Transform physical API contracts (OpenAPI) into professional, user-friendly, and
   - `errors_documented`: (integer) Count of error response patterns found.
 - `industrial_status`: (string) "SOLIDIFIED - PRO DOCS GENERATED"
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica mencionada en la documentación (límites de tiempo de respuesta, cuotas de datos, cuotas de peticiones) debe expresarse estrictamente en unidades del SI (segundos, bytes).
+Any metrics mentioned in the documentation (response time limits, data quotas, request quotas) must be strictly expressed in SI units (seconds, bytes).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

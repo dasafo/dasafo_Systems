@@ -30,9 +30,9 @@ Design and execute high-fidelity academic research strategies. This skill allows
 - `report_path`: (string, optional) Path to the physical Markdown/JSON artifact.
 - `key_findings`: (list) Core technical insights extracted during the process.
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica técnica extraída (latencias, parámetros de modelo, consumo energético, frecuencias) debe expresarse estrictamente en el Sistema Internacional (segundos, bytes, hercios).
+Any extracted technical metrics (latencies, model parameters, energy consumption, frequencies) must be strictly expressed in the International System (SI) (seconds, bytes, hertz).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

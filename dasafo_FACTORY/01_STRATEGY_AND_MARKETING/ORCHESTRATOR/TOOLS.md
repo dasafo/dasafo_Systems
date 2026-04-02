@@ -21,4 +21,4 @@
 - `project-backbone-validator`: Inspect physical disk for minimum framework scaffolding before delegating SPEC_LITE.
 
 ---
-*Orchestrator v4.0-S | Status: Hub Manager, Resiliente & Solidificado.*
+*Orchestrator v4.0-S | Status: Hub Manager, Resilient & Solidified.*

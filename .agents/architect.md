@@ -3,7 +3,7 @@ name: Architect
 type: agent
 core_path: dasafo_FACTORY/02_ARCHITECTURE_AND_RESEARCH/ARCHITECT
 icon: architecture
-description: Jefe de Diseño de Sistemas y Gatekeeper de Estructura (v4.0-S).
+description: Chief System Designer and Structural Gatekeeper (v4.0-S).
 ---
 
 # Architect (System Designer) | Gateway

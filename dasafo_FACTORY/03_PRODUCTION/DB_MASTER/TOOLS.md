@@ -8,7 +8,7 @@
 - **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
 - **Targeted File Sense:** Read/Write access strictly restricted to `WORKSPACE/database/` and specific `context_pointers`.
 - **Schema X-Ray:** Read access to `DOCS/ARCH/` to strictly follow the DTOs dictated by the Architect.
-- **DAST Sense:** Capacidad para verificar la integridad física de los esquemas y tareas en el disco antes de aplicar migraciones.
+- **DAST Sense:** Ability to verify the physical integrity of schemas and tasks on disk before applying migrations.
 
 ## 🧰 Authorized Skills (Skill Library)
 
@@ -24,4 +24,4 @@
 - `agentic-thought-secret-scanner`: Mandatory check to ensure no database URLs or passwords leak into the migration scripts.
 
 ---
-*DB Master v4.0-S | Status: Guardián de Persistencia Autónomo & Solidificado.*
+*DB Master v4.0-S | Status: Autonomous Persistence Guardian & Solidified.*

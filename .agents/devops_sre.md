@@ -3,7 +3,7 @@ name: DevOps SRE
 type: agent
 core_path: dasafo_FACTORY/05_OPERATIONS/DEVOPS_SRE
 icon: settings_input_component
-description: Ingeniero de Infraestructura y Orquestador de Despliegue (v4.0-S).
+description: Infrastructure Engineer and Deployment Orchestrator (v4.0-S).
 ---
 
 # DevOps SRE (Infrastructure Engineer) | Gateway

@@ -26,9 +26,9 @@ Systematically implement and manage professional, accessible, and premium UI com
 - `composition_report`: (string) Summary of the component's role in the UI hierarchy.
 - `industrial_status`: (string) "VERIFIED - SHADCN COMPLIANT".
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica técnica en el frontend (tiempos de renderizado, latencia de interacción, tamaños de bundle de componentes, cuotas de memoria del navegador) debe expresarse estrictamente en unidades del SI (**segundos**, **bytes**).
+Any frontend technical metrics (rendering times, interaction latency, component bundle sizes, browser memory quotas) must be strictly expressed in SI units (**seconds**, **bytes**).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

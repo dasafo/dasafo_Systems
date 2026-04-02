@@ -27,9 +27,9 @@ Act as the industrial notary for the project's Kanban state. This skill mutates 
 - `artifact_path`: (string) Path to the newly moved physical task JSON.
 - `industrial_status`: (string) "SOLIDIFIED - REGISTRY SYNCED"
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica de latencia de I/O de disco debe registrarse en **segundos** (s).
+Any disk I/O latency metrics must be recorded in **seconds** (s).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

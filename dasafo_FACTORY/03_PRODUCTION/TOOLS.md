@@ -7,7 +7,7 @@
 
 - **Spec Sense:** Authority to read and interpret `SPEC_LITE.json` for task execution.
 - **Targeted File Sense:** Read/Write access restricted to `WORKSPACE/` and `context_pointers`.
-- **DAST Sense:** Capacidad para verificar la integridad física de esquemas, datasets y tareas antes de iniciar la producción.
+- **DAST Sense:** Ability to verify the physical integrity of schemas, datasets, and tasks before starting production.
 - **Schema X-Ray:** Access to `DOCS/ARCH/` to follow architectural blueprints (DTOs/Layers).
 - **Terminal Sense:** Execution of local development environments (Node, Python, Supabase CLI).
 

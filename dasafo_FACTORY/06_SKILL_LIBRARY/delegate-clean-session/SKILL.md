@@ -25,7 +25,7 @@ Execute a technical task by spawning a specialized sub-agent (FRONTEND, BACKEND,
 - `outcome_report`: (string) Summary of the work done and evidence found.
 - `artifacts_produced`: (array) Paths to new or modified files.
 - `token_usage_estimated`: (integer) Total tokens consumed by the clean session.
-- `ltp_injected_rules`: (integer) Número de Golden Rules extraídas de Neo4j e inyectadas en la Spec.
+- `ltp_injected_rules`: (integer) Number of Golden Rules extracted from Neo4j and injected into the Spec.
 
 ## 🛡️ Industrial Constraints (SSD)
 

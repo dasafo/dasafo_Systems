@@ -1,10 +1,10 @@
 ---
-description: Verifica que el andamiaje estructural del framework (Scaffolding) exista físicamente en disco antes de delegar tareas a los peones (v4.0-S).
+description: Verifies that the structural scaffolding of the framework physically exists on disk before delegating tasks to peons (v4.0-S).
 ---
 
 # Workflow /validate-backbone
 
-This flow activates the Orchestrator to act as the "Inspector de Obra", ensuring the structural backbone of the project is solid before any atomic implementation agent is dispatched.
+This flow activates the Orchestrator to act as the "Project Inspector", ensuring the structural backbone of the project is solid before any atomic implementation agent is dispatched.
 
 1. **Agent:** `ORCHESTRATOR`
 

@@ -32,9 +32,9 @@ Design and maintain industrial-grade API contracts (OpenAPI 3.1) by following a 
   - `endpoints_count`: (integer) Count of generated/active endpoints.
   - `standards_compliance`: (string) "OpenAPI 3.1 + RFC 7807"
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica numérica (latencias, tamaños de payload, cuotas) debe expresarse estrictamente en unidades del Sistema Internacional (segundos, bytes).
+Any numerical metrics (latencies, payload sizes, quotas) must be strictly expressed in International System (SI) units (seconds, bytes).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

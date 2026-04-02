@@ -26,9 +26,9 @@ Programmatically generate and execute Python logic tests (Pytest) to verify that
 - `coverage_percentage`: (float) Test coverage metric.
 - `industrial_status`: (string) "SOLIDIFIED - LOGIC VERIFIED" | "BLOCKED - LOGIC FAILED".
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica de rendimiento de los tests debe expresarse en **segundos** (s).
+Any test performance metrics must be expressed in **seconds** (s).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

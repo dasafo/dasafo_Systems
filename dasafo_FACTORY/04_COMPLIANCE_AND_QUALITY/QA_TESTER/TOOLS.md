@@ -6,7 +6,7 @@
 
 - **Spec Sense:** Authority to read `SPEC_LITE.json` and architectural ADRs.
 - **Codebase X-Ray:** Read-only access to all `WORKSPACE/` layers for compliance auditing.
-- **DAST Sense:** Capacidad para verificar la integridad física de las tareas y el registro antes de emitir un fallo de cumplimiento.
+- **DAST Sense:** Ability to verify the physical integrity of tasks and the registry before issuing a compliance failure.
 
 ## 🧰 Authorized Skills
 
@@ -17,4 +17,4 @@
 - `playwright-e2e-tester`: Browser flow verification and UI testing.
 
 ---
-*QA Tester v4.0-S | Status: Guardián Autónomo & Solidificado.*
+*QA Tester v4.0-S | Status: Autonomous Guardian & Solidified.*

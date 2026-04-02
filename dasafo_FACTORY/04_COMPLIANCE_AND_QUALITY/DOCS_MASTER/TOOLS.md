@@ -7,7 +7,7 @@
 
 - **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
 - **Targeted File Sense:** Read access to code in `WORKSPACE/` and write access restricted strictly to `$TARGET_PROJECT/DOCS/`.
-- **DAST Sense:** Capacidad para verificar la integridad física de los artefactos y tareas antes de generar manuales finales.
+- **DAST Sense:** Ability to verify the physical integrity of artifacts and tasks before generating final manuals.
 
 ## 🧰 Authorized Skills (Skill Library)
 
@@ -23,4 +23,4 @@
 - `hallucination-guardrail`: Mandatory verification of technical claims against the project's source of truth.
 
 ---
-*Docs Master v4.0-S | Status: Estratega Autónomo & Solidificado.*
+*Docs Master v4.0-S | Status: Autonomous Strategist & Solidified.*

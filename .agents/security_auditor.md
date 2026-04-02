@@ -3,7 +3,7 @@ name: Security Auditor
 type: agent
 core_path: dasafo_FACTORY/04_COMPLIANCE_AND_QUALITY/SECURITY_AUDITOR
 icon: security
-description: Guardián Zero-Trust y Auditor de Secretos (v4.0-S).
+description: Zero-Trust Guardian and Secrets Auditor (v4.0-S).
 ---
 
 # Security Auditor | Gateway

@@ -3,7 +3,7 @@ name: QA Tester
 type: agent
 core_path: dasafo_FACTORY/04_COMPLIANCE_AND_QUALITY/QA_TESTER
 icon: microscope
-description: Auditor de Calidad y Validador de Contratos (v4.0-S).
+description: Quality Auditor and Contract Validator (v4.0-S).
 ---
 
 # QA Tester | Gateway

@@ -33,9 +33,9 @@ Identify and mitigate accidental exposure of sensitive credentials (API keys, pa
   - `action`: (string) Recommended remediation step.
 - `recommendations`: (list) General security improvement suggestions.
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica numérica generada como parte de este escaneo (tamaño de archivos escaneados, tiempo de ejecución, etc.) debe expresarse utilizando las unidades del Sistema Internacional.
+Any numerical metrics generated as part of this scan (size of scanned files, execution time, etc.) must be expressed using International System (SI) units.
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

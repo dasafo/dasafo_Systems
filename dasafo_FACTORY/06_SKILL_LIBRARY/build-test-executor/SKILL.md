@@ -25,9 +25,9 @@ Execute compilation, testing, or build commands and generate the mandatory `BUIL
 - `metrics`: (object) Output sizes and execution times.
 - `industrial_status`: (string) "SOLIDIFIED - BUILD VERIFIED"
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica de compilación debe indicar el tiempo en **segundos** (s) y el tamaño del bundle generado en **bytes** (B).
+Any build metrics must indicate the time in **seconds** (s) and the size of the generated bundle in **bytes** (B).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

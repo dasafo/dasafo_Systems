@@ -7,7 +7,7 @@
 
 - **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
 - **Zero-Trust Sense:** Read-only access to all files in `WORKSPACE/`.
-- **DAST Sense:** Capacidad para verificar la integridad física de los artefactos y el registro antes de emitir un fallo de seguridad.
+- **DAST Sense:** Ability to verify the physical integrity of artifacts and the registry before issuing a security failure.
 - **Secret X-Ray:** Deep scan access to file contents and environment variable templates.
 
 ## 🧰 Authorized Skills
@@ -17,4 +17,4 @@
 - `dependency-vulnerability-scanner`: Scan dependencies for known CVEs.
 
 ---
-*Security Auditor v4.0-S | Status: Guardián Autónomo & Solidificado.*
+*Security Auditor v4.0-S | Status: Autonomous Guardian & Solidified.*

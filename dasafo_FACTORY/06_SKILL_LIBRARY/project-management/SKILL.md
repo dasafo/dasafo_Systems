@@ -26,9 +26,9 @@ Coordinate industrial projects through task tracking, resource orchestration, an
 - `next_steps`: (list) Priority tasks inferred from the state.
 - `industrial_status`: (string) "SOLIDIFIED - PROJECT STATE SYNCED"
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica de progreso, tiempo de ejecución de tareas o hitos temporales debe expresarse estrictamente en **segundos** (s). Los tamaños de archivos o cuotas de recursos se expresan en **bytes**.
+Any progress metrics, task execution time, or temporal milestones must be strictly expressed in **seconds** (s). File sizes or resource quotas are expressed in **bytes**.
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

@@ -28,9 +28,9 @@ Design and execute high-performance social media marketing strategies through co
 - `repurposing_flow`: (array) List of assets extracted from the pillar.
 - `industrial_status`: (string) "SOLIDIFIED - CONTENT STRATEGY READY".
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica de rendimiento (tiempos de lectura, latencia de publicación, tasas de engagement, cuotas de almacenamiento de assets) debe expresarse estrictamente en el SI (**segundos**, **bytes**).
+Any performance metrics (reading times, publishing latency, engagement rates, asset storage quotas) must be strictly expressed in the SI (**seconds**, **bytes**).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

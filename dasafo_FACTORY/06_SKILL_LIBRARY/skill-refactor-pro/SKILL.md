@@ -26,9 +26,9 @@ Provide surgical code refactoring to improve maintainability, structure, and rea
 - `artifacts_produced`: (array) Paths to the generated `.refactored` physical files.
 - `industrial_status`: (string) "SOLIDIFIED - CODE REFACTORED".
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica de rendimiento comparativo (antes/después de la refactorización) debe expresarse en **segundos** (s) para el tiempo de ejecución y en **bytes** (B) para el tamaño del archivo o consumo de memoria.
+Any comparative performance metrics (before/after refactoring) must be expressed in **seconds** (s) for execution time and in **bytes** (B) for file size or memory consumption.
 
 ## 🛡️ Industrial Constraints (Zero-Trust & Safe Refactoring)
 

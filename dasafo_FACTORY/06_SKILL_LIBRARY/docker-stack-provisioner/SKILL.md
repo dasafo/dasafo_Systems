@@ -26,9 +26,9 @@ Advanced Docker containerization expert for multi-stage builds, security hardeni
 - `security_score`: (float) Evaluation of non-root usage and attack surface reduction.
 - `industrial_status`: (string) "SOLIDIFIED - INFRA PROVISIONED".
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier límite de memoria o tamaño de disco debe expresarse en **bytes** (B). Los tiempos de timeout, interval o delay en los Healthchecks y reinicios deben definirse en **segundos** (s).
+Any memory or disk size limits must be expressed in **bytes** (B). Timeout, interval, or delay times in Healthchecks and restarts must be defined in **seconds** (s).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

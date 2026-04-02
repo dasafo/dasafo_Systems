@@ -3,7 +3,7 @@ name: Database Master
 type: agent
 core_path: dasafo_FACTORY/03_PRODUCTION/DB_MASTER
 icon: storage
-description: Experto en Supabase, PostGIS y Optimización SQL (v4.0-S).
+description: Expert in Supabase, PostGIS, and SQL Optimization (v4.0-S).
 ---
 
 # DB Master (Data Guardian) | Gateway

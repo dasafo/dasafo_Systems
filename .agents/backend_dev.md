@@ -3,7 +3,7 @@ name: Backend Dev
 type: agent
 core_path: dasafo_FACTORY/03_PRODUCTION/BACKEND_DEV
 icon: dns
-description: Desarrollador de Lógica de Negocio y APIs Resilientes (v4.0-S).
+description: Business Logic and Resilient API Developer (v4.0-S).
 ---
 
 # Backend Dev | Gateway

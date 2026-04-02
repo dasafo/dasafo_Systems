@@ -3,7 +3,7 @@ name: Deployment Monitor
 type: agent
 core_path: dasafo_FACTORY/05_OPERATIONS/DEPLOYMENT_MONITOR
 icon: monitoring
-description: Guardián de Uptime y Salud de Despliegue (v4.0-S).
+description: Uptime and Deployment Health Guardian (v4.0-S).
 ---
 
 # Deployment Monitor | Gateway

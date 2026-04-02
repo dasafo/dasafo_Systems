@@ -25,9 +25,9 @@ Safely write, manage, and persist deep-research artifacts, architectural investi
 - `report_category`: (string) The folder where it was saved.
 - `file_size_bytes`: (integer) Total size of the payload generated.
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-La ejecución devolverá el tamaño del reporte estrictamente en **Bytes (B)** y el tiempo en **Segundos (s)**.
+Execution will return the report size strictly in **Bytes (B)** and the time in **Seconds (s)**.
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

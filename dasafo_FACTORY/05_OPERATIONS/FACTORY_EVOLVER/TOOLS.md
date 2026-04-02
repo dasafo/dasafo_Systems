@@ -5,8 +5,8 @@
 
 ## 📡 Senses (Context-Limited)
 
-- **Knowledge Graph Sense (LTP):** Acceso a 'Golden Rules' en `dasafo-shared-kg` (Neo4j).
-- **DAST Sense:** Capacidad para verificar que los cambios en el código fuente de las skills se han persistido físicamente antes de cerrar la tarea.
+- **Knowledge Graph Sense (LTP):** Access to 'Golden Rules' in `dasafo-shared-kg` (Neo4j).
+- **DAST Sense:** Ability to verify that changes in skill source code have been physically persisted before closing the task.
 - **System Insight Sense:** Access to `FEEDBACK-LOG.md` and performance metrics.
 
 ## 🧰 Authorized Skills (Top 18 Hub)
@@ -15,13 +15,13 @@
 
 ### 🧬 Evolution & Patterns
 
-- **`skill-refactor-pro`**: Refactors quirúrgicos basados en Golden Rules.
-- **`autonomous-feedback-analyzer`**: Extracción de métricas y lecciones aprendidas.
+- **`skill-refactor-pro`**: Surgical refactors based on Golden Rules.
+- **`autonomous-feedback-analyzer`**: Extraction of metrics and lessons learned.
 
 ### 🛡️ Guardrails & Alignment
 
-- **`factory-doctor`**: Auditorías de salud post-refactor.
-- `hallucination-guardrail`: Verificación de integridad de templates SDD.
+- **`factory-doctor`**: Post-refactor health audits.
+- `hallucination-guardrail`: Verification of SDD template integrity.
 
 ---
-*Factory Evolver v4.0-S | Status: DNA Architect & Solidificado.*
+*Factory Evolver v4.0-S | Status: DNA Architect & Solidified.*

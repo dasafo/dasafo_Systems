@@ -3,7 +3,7 @@ name: Memory Optimizer
 type: agent
 core_path: dasafo_FACTORY/05_OPERATIONS/MEMORY_OPTIMIZER
 icon: brain
-description: Administrador de Contexto y Compresión de Memoria (v4.0-S).
+description: Context Manager and Memory Compression Administrator (v4.0-S).
 ---
 
 # Memory Optimizer (Context Curator) | Gateway

@@ -26,9 +26,9 @@ Execute End-to-End (E2E) browser testing using Playwright to ensure UI/UX workfl
 - `video_trace_bytes`: (integer) Size of the generated trace/video in bytes.
 - `industrial_status`: (string) "SOLIDIFIED - E2E VERIFIED" | "BLOCKED - E2E FAILED".
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-El tamaño de las trazas de red y video debe reportarse en **bytes** (B), y el tiempo de carga/ejecución en **segundos** (s).
+The size of network and video traces must be reported in **bytes** (B), and the loading/execution time in **seconds** (s).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

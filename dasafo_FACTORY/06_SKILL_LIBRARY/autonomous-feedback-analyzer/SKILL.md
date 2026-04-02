@@ -27,9 +27,9 @@ Perform sentiment analysis, segment insights, and extract actionable "Golden Rul
 - `report_path`: (string) Physical path to the generated JSON analysis artifact.
 - `industrial_status`: (string) "SOLIDIFIED - FEEDBACK ANALYZED".
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-El peso de los datos analizados (`source_payload_bytes`) debe reportarse en **bytes** (B), y el tiempo de computación del análisis semántico en **segundos** (s).
+The weight of the analyzed data (`source_payload_bytes`) must be reported in **bytes** (B), and the computation time of the semantic analysis in **seconds** (s).
 
 ## 🛡️ Industrial Constraints (Zero-Trust & Empirical Analysis)
 

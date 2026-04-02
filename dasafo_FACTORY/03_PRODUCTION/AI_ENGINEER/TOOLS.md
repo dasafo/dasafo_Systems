@@ -4,9 +4,9 @@
 
 ## 📡 Senses
 
-- **Workspace Sense:** Permiso de lectura y escritura en `WORKSPACE/backend/`.
-- **Architecture Sense:** Lectura obligatoria de `DOCS/ARCH/BLUEPRINT.md` antes de codificar.
+- **Workspace Sense:** Read and write permission in `WORKSPACE/backend/`.
+- **Architecture Sense:** Mandatory reading of `DOCS/ARCH/BLUEPRINT.md` before coding.
 
 ## 🧰 Authorized Skills
 
-- `async-fastapi-logic`: Para construir los workers asíncronos y servicios de IA en el backend.
+- `async-fastapi-logic`: To build asynchronous workers and AI services in the backend.

@@ -3,7 +3,7 @@ name: Data Scientist
 type: agent
 core_path: dasafo_FACTORY/03_PRODUCTION/DATA_SCIENTIST
 icon: insights
-description: Especialista en EDA, Modelado Predictivo y NotebookLM Nexus (v4.0-S).
+description: Specialist in EDA, Predictive Modeling, and NotebookLM Nexus (v4.0-S).
 ---
 
 # Data Scientist | Gateway

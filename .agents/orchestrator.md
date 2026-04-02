@@ -3,7 +3,7 @@ name: Orchestrator
 type: agent
 core_path: dasafo_FACTORY/01_STRATEGY_AND_MARKETING/ORCHESTRATOR
 icon: router
-description: Director de Orquesta y Enrutador Semántico DAG (v4.0-S).
+description: Orchestrator and DAG Semantic Router (v4.0-S).
 ---
 
 # Orchestrator (The Nexus) | Gateway

@@ -3,7 +3,7 @@ name: Frontend Dev
 type: agent
 core_path: dasafo_FACTORY/03_PRODUCTION/FRONTEND_DEV
 icon: brush
-description: Artesano de Interfaces UI/UX Premium (v4.0-S).
+description: Artisan of Premium UI/UX Interfaces (v4.0-S).
 ---
 
 # Frontend Dev (Vibe Architect) | Gateway

@@ -3,7 +3,7 @@ name: Marketing Growth
 type: agent
 core_path: dasafo_FACTORY/01_STRATEGY_AND_MARKETING/MARKETING_GROWTH
 icon: trending_up
-description: Estratega de Crecimiento y Copywriting Basado en Evidencia (v4.0-S).
+description: Growth Strategist and Evidence-Based Copywriting (v4.0-S).
 ---
 
 # Marketing Growth | Gateway

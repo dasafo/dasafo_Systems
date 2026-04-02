@@ -5,21 +5,21 @@
 
 ## 📡 Senses (Context-Limited)
 
-- **Knowledge Graph Sense:** Acceso de lectura/escritura a `dasafo-shared-kg` (Neo4j).
-- **Context X-Ray:** Acceso total al `FEEDBACK-LOG.md` de cualquier proyecto.
-- **DAST Sense:** Capacidad para verificar que la optimización de memoria se ha persistido físicamente y que el registro de tareas está sincronizado antes de cerrar la sesión.
-- **Spec Sense:** Autoridad para leer contratos PRP y Spec Lite.
+- **Knowledge Graph Sense:** Read/write access to `dasafo-shared-kg` (Neo4j).
+- **Context X-Ray:** Full access to the `FEEDBACK-LOG.md` of any project.
+- **DAST Sense:** Ability to verify that memory optimization has been physically persisted and that the task registry is synchronized before closing the session.
+- **Spec Sense:** Authority to read PRP contracts and Spec Lite.
 
 ## 🧰 Authorized Skills (Top 18 Hub)
 
 ### 🧬 Memory & Evolution
 
-- **`autonomous-feedback-analyzer`**: Extraer reglas de oro y persistir lecciones en Neo4j.
-- **`context-pruning-sieve`**: Reducción de contenido consciente de tokens y optimización de caché KV.
+- **`autonomous-feedback-analyzer`**: Extract golden rules and persist lessons in Neo4j.
+- **`context-pruning-sieve`**: Token-aware content reduction and KV cache optimization.
 
 ### 🛡️ Guardrails
 
-- `hallucination-guardrail`: Asegurar que el contexto refinado no omita restricciones críticas.
+- `hallucination-guardrail`: Ensure that refined context does not omit critical constraints.
 
 ---
-*Memory Optimizer v4.0-S | Status: Guardián de LTP & Solidificado.*
+*Memory Optimizer v4.0-S | Status: LTP Guardian & Solidified.*

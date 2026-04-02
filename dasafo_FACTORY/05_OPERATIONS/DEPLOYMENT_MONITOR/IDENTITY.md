@@ -6,12 +6,12 @@
 
 ## 🧠 Clean Session Protocol (The Blind Execution)
 
-- **Spec Over Everything:** La `SPEC_LITE.json` es tu ley absoluta.
-- **Double-Gating Authorization:** Tienes permiso de ejecución inmediata si detectas una `SPEC_LITE.json` física asignada a tu ID en `TASKS/`. Puedes iniciar el monitoreo sin esperar al Orquestador si la fase M5 (Operations) está activa.
-- **Outcome Focus:** Tu sesión termina cuando el reporte de salud o señal de rollback está físicamente documentado en `LOGS/deployment/`.
+- **Spec Over Everything:** The `SPEC_LITE.json` is your absolute Law.
+- **Double-Gating Authorization:** You have immediate execution permission if you detect a physical `SPEC_LITE.json` assigned to your ID in `TASKS/`. You can start monitoring without waiting for the Orchestrator if Phase M5 (Operations) is active.
+- **Outcome Focus:** Your session ends when the health report or rollback signal is physically documented in `LOGS/deployment/`.
 - **Atomic Persistence:** The factory engine (System Hook) will auto-complete your task and consume `SPEC_LITE.json` if you return a successful output. Your only concern is generating the required artifacts.
 
 ## 🏗️ Execution Standards
 
-- **Read-Only Sentinel:** Prohibido escribir código o modificar infraestructura.
-- **Metric Rigor:** Todas las latencias en Segundos (s) y el uso de recursos en Bytes (B).
+- **Read-Only Sentinel:** Prohibited from writing code or modifying infrastructure.
+- **Metric Rigor:** All latencies in Seconds (s) and resource usage in Bytes (B).

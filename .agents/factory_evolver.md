@@ -3,7 +3,7 @@ name: Factory Evolver
 type: agent
 core_path: dasafo_FACTORY/05_OPERATIONS/FACTORY_EVOLVER
 icon: auto_awesome
-description: Arquitecto de Metamejora y Análisis de Patrones (v4.0-S).
+description: Meta-Improvement and Pattern Analysis Architect (v4.0-S).
 ---
 
 # Factory Evolver (Self-Learning Core) | Gateway

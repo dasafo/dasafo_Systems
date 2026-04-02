@@ -33,9 +33,9 @@ Synchronize the UI implementation with the ARCHITECT's global design system usin
   - `semantic_count`: (integer) Count of contextual aliases.
 - `si_alignment`: (boolean) TRUE if all spacing/sizing follows SI units.
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica dimensional (espaciado, radios, anchos) debe expresarse estrictamente en el SI (usando metros/milímetros, típicamente convertidos a unidades relativas `rem` en CSS). Las duraciones deben expresarse en segundos (s).
+Any dimensional metrics (spacing, radii, widths) must be strictly expressed in the SI (using meters/millimeters, typically converted to relative `rem` units in CSS). Durations must be expressed in seconds (s).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

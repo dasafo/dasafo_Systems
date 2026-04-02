@@ -3,7 +3,7 @@ name: Docs Master
 type: agent
 core_path: dasafo_FACTORY/04_COMPLIANCE_AND_QUALITY/DOCS_MASTER
 icon: description
-description: Redactor Técnico Senior y Estratega de Documentación (v4.0-S).
+description: Senior Technical Writer and Documentation Strategist (v4.0-S).
 ---
 
 # Docs Master (Technical Writer) | Gateway

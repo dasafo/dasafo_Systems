@@ -27,12 +27,12 @@
 1. **Temporal Precision:** All time-based metrics must be expressed in Seconds (s).
 2. **Resource Precision:** All size-based metrics must be expressed in Bytes (B).
 
-## 🏗️ V. Mandato de Infraestructura Híbrida (LTP)
+## 🏗️ V. Hybrid Infrastructure Mandate (LTP)
 
-1. **Persistencia de Largo Plazo (LTP):** Todo aprendizaje agentico, fallo crítico o decisión arquitectónica DEBE ser registrado en el Grafo de Conocimiento compartido (`kg-db` / Neo4j).
-2. **Aislamiento de Ejecución:** Los archivos fuente y artefactos temporales pertenecen al `target_project` local. La ejecución es efímera, el conocimiento es permanente.
-3. **Service Discovery:** Las Skills deben buscar primero el hostname `dasafo-shared-db` para operaciones relacionales y `dasafo-shared-kg` para semántica.
-4. **Métricas de INFRA:** El monitoreo (vía Glances/Core) debe reportar latencias en segundos (s) y consumo de recursos en bytes (B).
+1. **Long-Term Persistence (LTP):** Every agentic learning, critical failure, or architectural decision MUST be recorded in the shared Knowledge Graph (`kg-db` / Neo4j).
+2. **Execution Isolation:** Source files and temporary artifacts belong to the local `target_project`. Execution is ephemeral, knowledge is permanent.
+3. **Service Discovery:** Skills must first look for the hostname `dasafo-shared-db` for relational operations and `dasafo-shared-kg` for semantics.
+4. **INFRA Metrics:** Monitoring (via Glances/Core) must report latencies in seconds (s) and resource consumption in bytes (B).
 
 ---
 

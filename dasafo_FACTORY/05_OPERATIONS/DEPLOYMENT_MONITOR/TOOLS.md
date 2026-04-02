@@ -4,13 +4,13 @@
 
 ## 📡 Senses (Context-Limited)
 
-- **Log Sense:** Autoridad para leer logs de despliegue en `LOGS/`.
-- **Endpoint X-Ray:** Acceso de solo lectura para verificar códigos HTTP y tiempos de respuesta.
-- **DAST Sense:** Capacidad para verificar la integridad física de las tareas y registros antes de emitir un veredicto de salud.
+- **Log Sense:** Authority to read deployment logs in `LOGS/`.
+- **Endpoint X-Ray:** Read-only access to verify HTTP codes and response times.
+- **DAST Sense:** Ability to verify the physical integrity of tasks and records before issuing a health verdict.
 
 ## 🧰 Authorized Skills
 
-- `telemetry-analyzer`: Síntesis profunda de uso de recursos (B) y tiempos de ejecución (s).
-- `playwright-ui-tester`: Verificar que la UI sea físicamente alcanzable.
-- `hallucination-guardrail`: Asegurar que los reportes se basen en logs reales, no en suposiciones.
+- `telemetry-analyzer`: Deep synthesis of resource usage (B) and execution times (s).
+- `playwright-ui-tester`: Verify that the UI is physically reachable.
+- `hallucination-guardrail`: Ensure that reports are based on real logs, not assumptions.
 - `deployment-health-check`: Real-time health-check validation (s/B).

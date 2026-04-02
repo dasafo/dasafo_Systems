@@ -31,9 +31,9 @@ Generate industrial-grade requirements artifacts. Supports the dual-track contra
 - `open_questions`: (array) List of missing or vague requirements.
 - `industrial_status`: (string) "SOLIDIFIED - PRP CONTRACT SIGNED".
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica de éxito o restricción técnica (latencia < 200ms, almacenamiento > 50GB) debe expresarse estrictamente en unidades del SI (**segundos**, **bytes**).
+Any success metrics or technical constraints (latency < 200ms, storage > 50GB) must be strictly expressed in SI units (**seconds**, **bytes**).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

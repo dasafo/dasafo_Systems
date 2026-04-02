@@ -3,7 +3,7 @@ name: Research Agent
 type: agent
 core_path: dasafo_FACTORY/02_ARCHITECTURE_AND_RESEARCH/RESEARCH_AGENT
 icon: travel_explore
-description: Científico Técnico y Auditor de Viabilidad Estructural (v4.0-S).
+description: Technical Scientist and Structural Feasibility Auditor (v4.0-S).
 ---
 
 # Research Agent (The Scientist) | Gateway

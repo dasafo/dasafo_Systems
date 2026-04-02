@@ -32,9 +32,9 @@ Capture and manage technical decisions in a formal, searchable, and persistent l
 - `adr_id`: (string, optional) Assigned sequential ID (e.g., "0021").
 - `summary`: (list) Brief recap of the decision and its impact.
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica técnica mencionada en el ADR (ej: latencias < 200ms, almacenamiento > 50GB, ancho de banda > 1Gbps) debe expresarse estrictamente en unidades del SI (segundos, bytes).
+Any technical metrics mentioned in the ADR (e.g., latencies < 200ms, storage > 50GB, bandwidth > 1Gbps) must be strictly expressed in SI units (seconds, bytes).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

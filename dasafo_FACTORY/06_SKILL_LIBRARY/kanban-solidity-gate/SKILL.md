@@ -27,9 +27,9 @@ Programmatically enforce the "Zero-Pending Rule" for industrial project transiti
 - `pending_tasks`: (list) Task IDs blocking progress.
 - `industrial_status`: (string) "SOLIDIFIED - GATE PASSED" | "LOCKED - PENDING TASKS DETECTED".
 
-### ⚖️ Mandato SI (Sistema Internacional)
+### ⚖️ SI Mandate (International System)
 
-Cualquier métrica de rendimiento, tiempo de validación o latencia del dashboard debe expresarse estrictamente en **segundos** (s).
+Any performance metrics, validation time, or dashboard latency must be strictly expressed in **seconds** (s).
 
 ## 🛡️ Industrial Constraints (Zero-Trust)
 

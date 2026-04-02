@@ -7,7 +7,7 @@
 
 - **Spec Sense:** Authority to read and interpret `SPEC_LITE.json` for validation.
 - **Codebase X-Ray:** Read-only access to all `WORKSPACE/` layers for compliance and security auditing.
-- **DAST Sense:** Capacidad para verificar la integridad física de los artefactos y el registro antes de emitir fallos o reportes.
+- **DAST Sense:** Ability to verify the physical integrity of artifacts and the registry before issuing failures or reports.
 - **Secret X-Ray:** Deep scan access to file contents and environment variable templates.
 - **Targeted File Sense:** Write access restricted strictly to `$TARGET_PROJECT/DOCS/` and `$TARGET_PROJECT/LOGS/`.
 

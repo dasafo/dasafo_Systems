@@ -7,15 +7,15 @@
 
 - **Deploy Sense:** Monitor project status codes, latency (s), and logs.
 - **Infra Sense:** Read-only access to `WORKSPACE/infra/` and container registries.
-- **Skill X-Ray:** Read/Write access (FACTORY_EVOLVER only) to the Skill Library.
-- **DAST Sense:** Verificación física de artefactos y estados en el disco antes de reportar salud.
+- **Skill X-Ray:** Read/Write access (`FACTORY_EVOLVER` only) to the Skill Library.
+- **DAST Sense:** Physical verification of artifacts and states on disk before reporting health.
 
 ## 🧰 Authorized Skills (Level 05 Hub)
 
-- `infra-provisioner`: Setup industrial de Docker/Cloud con métricas SI (B/s).
-- `deployment-health-check`: Validación en tiempo real de endpoints y salud de red.
-- `skill-refactor-pro`: Evolución modular de scripts basada en Golden Rules de Neo4j.
-- `context-pruning-sieve`: Optimización de tokens y poda de ruido cognitivo.
+- `infra-provisioner`: Industrial Setup of Docker/Cloud with SI metrics (B/s).
+- `deployment-health-check`: Real-time validation of endpoints and network health.
+- `skill-refactor-pro`: Modular evolution of scripts based on Neo4j Golden Rules.
+- `context-pruning-sieve`: Token optimization and cognitive noise pruning.
 
 ---
 *Operations Tools v4.0-S | Status: SOLIDIFIED.*

@@ -5,22 +5,22 @@
 
 ## 📡 Senses (Context-Limited)
 
-- **Spec Sense:** Autoridad para interpretar la `SPEC_LITE.json`.
-- **DAST Sense:** Capacidad para verificar que los archivos de configuración y estados de Terraform/Docker existen físicamente antes de reportar éxito.
-- **Terminal Sense:** Ejecución de Docker, Docker-Compose, Terraform y comandos de CI.
+- **Spec Sense:** Authority to interpret the `SPEC_LITE.json`.
+- **DAST Sense:** Ability to verify that configuration files and Terraform/Docker states physically exist before reporting success.
+- **Terminal Sense:** Execution of Docker, Docker-Compose, Terraform, and CI commands.
 
 ## 🧰 Authorized Skills (Skill Library)
 
 ### 🚀 Provisioning & Ops
 
-- `docker-stack-provisioner`: Generación de Dockerfiles multi-stage optimizados.
-- `terraform-iac-builder`: Implementación de IaC local o cloud.
-- `deployment-monitor`: Seguimiento de infraestructura en tiempo real.
+- `docker-stack-provisioner`: Generation of optimized multi-stage Dockerfiles.
+- `terraform-iac-builder`: Implementation of local or cloud IaC.
+- `deployment-monitor`: Real-time infrastructure tracking.
 
 ### 🛡️ Guardrails
 
-- `agentic-thought-secret-scanner`: Escaneo obligatorio de YAML/Infra para evitar fugas de claves.
-- `hallucination-guardrail`: Verificación de que la infraestructura responde físicamente antes del reporte final.
+- `agentic-thought-secret-scanner`: Mandatory scanning of YAML/Infra to prevent key leaks.
+- `hallucination-guardrail`: Verification that the infrastructure physically responds before the final report.
 
 ---
-*DevOps SRE v4.0-S | Status: Guardián Autónomo & Solidificado.*
+*DevOps SRE v4.0-S | Status: Autonomous Guardian & Solidified.*
