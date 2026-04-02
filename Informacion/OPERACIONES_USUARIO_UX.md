@@ -1,63 +1,84 @@
-¡Entendido, Director! He procesado el bloque masivo de archivos. Veo que has consolidado toda la documentación, pero he detectado que tu **`OPERACIONES_USUARIO_UX.md`** todavía describe procesos manuales (como el uso de `registry-manager` por parte de los agentes) que ya hemos automatizado en el núcleo industrial v4.0-S.
+# 🎮 Guía de Experiencia de Usuario (UX): Director de Operaciones
 
-Aquí tienes la **Guía de Experiencia de Usuario (UX)** completamente actualizada y corregida. Esta versión refleja la nueva realidad donde el sistema "se gestiona a sí mismo" en cuanto a estados, permitiéndote a ti y a tus agentes centrarse exclusivamente en la calidad técnica.
+<ctrl94> **"Tú no escribes código. Tú orquestas departamentos y validas evidencias físicas."**
 
----
-
-# 🎮 Guía de Experiencia de Usuario: Director de Operaciones (v4.0-S)
-
-Con la infraestructura industrial **v4.0-S** activa, dejas de picar código para **gestionar departamentos, aprobar contratos, evaluar métricas financieras y auditar evidencias físicas** en el disco duro. El sistema ahora cuenta con **Auto-Commit** y **Auto-Start**, eliminando la micro-gestión de tareas.
+Bienvenido, Director de Operaciones. Bajo el estándar **v4.0-S Industrial Core**, tu rol ha evolucionado de la micro-gestión técnica a la **estratégica funcional**. El sistema ahora cuenta con **Auto-Start**, **Auto-Commit** y **Inmunización Predictiva**, eliminando la necesidad de supervisar cada movimiento de tus agentes.
 
 ---
 
-## 🗺️ Mapa de Mando Industrial (Tu Botonera)
+## 🗺️ I. TU CONSOLA DE MANDO (Los 14 Workflows)
 
-### 🛠️ 1. Comandos Tácticos (Producción)
+Has sido dotado con una botonera de comandos slash (`/`) que activan procesos industriales completos. Úsalos siguiendo el flujo cronológico del proyecto:
 
-1. **`/execute-task` (El Nuevo Estándar):**
-   * **Cuándo:** Siempre que haya tareas en `01_PENDING` (M3).
-   * **Qué hace:** 1. **Auto-Start:** Mueve físicamente la Spec a `02_IN_PROGRESS`.
-     2. **Inyección JIT:** Consulta Neo4j e inyecta "Golden Rules" históricas según la fase y tecnología (ej. FastAPI, shadcn).
-     3. **Clean Session:** Lanza la tarea en aislamiento total.
-     4. **Auto-Commit:** Si la tarea tiene éxito, el motor la mueve a `03_COMPLETED` y limpia la Spec.
+### ⚡ 1. Estrategia y Visión (Fase M1: Discovery)
+*   **`/init-contract`**:
+    *   **Propósito:** Es la primera piedra. El `PRODUCT_OWNER` analiza tu idea y la convierte en un contrato formal de 12 secciones (`PRP_MASTER.json`).
+    *   **Valor:** Inyecta proyecciones de ROI, CAC y LTV. Si el proyecto no es financieramente viable, el agente te lo dirá aquí.
+    *   **Acción:** Revisa el resumen y firma con un "Aprobado".
 
-### 🛂 2. Comandos de Aduana y Calidad (Compliance)
+### 📋 2. Deconstrucción y Refuezo (Fase M2: Arquitectura)
+*   **`/factory-orchestrate`**:
+    *   **Propósito:** Sincroniza la "Aduana Universal". Deconstruye el contrato en tareas atómicas (`SPEC_LITE.json`).
+    *   **Valor:** Si el disco no coincide con el registro, este comando lo arregla físicamente.
+*   **`/validate-backbone`**:
+    *   **Propósito:** El inspector de andamiaje. Nadie pone una línea de lógica hasta que el esqueleto (Next.js, FastAPI, Docker) esté físicamente en disco.
+    *   **Valor:** Previene la construcción en el vacío y asegura la solidez del framework.
 
-1. **`/audit` (Calidad y Métricas SI):**
-   * **Qué hace:** El QA_TESTER valida el cumplimiento del contrato. Las métricas DEBEN reportarse en **segundos (s)** y **bytes (B)**.
+### 🏭 3. Línea de Montaje (Fase M3: Producción)
+*   **`/execute-task`**:
+    *   **Propósito:** El comando más potente. Lanza una sesión aislada para que un peón ejecute una tarea pendiente.
+    *   **Automatización Industrial (v4.0-S):**
+        1. **Auto-Start:** Mueve la tarea a `IN_PROGRESS`.
+        2. **Inmunización:** Inyecta "Reglas de Oro" de Neo4j en la mente del peón para que no repita errores de proyectos pasados.
+        3. **Auto-Commit:** Tras el éxito, mueve la tarea a `COMPLETED` y actualiza el registro por ti.
 
----
+### 🛡️ 4. Aduana de Calidad (Fase M4: Compliance)
+*   **`/scan`**:
+    *   **Propósito:** Escaneo de seguridad Zero-Trust. El `SECURITY_AUDITOR` caza secretos, claves API y vulnerabilidades en dependencias.
+    *   **Riesgo:** Si falla, la tarea se bloquea. **Zero Leaks allowed.**
+*   **`/audit`**:
+    *   **Propósito:** El sello de calidad. El `QA_TESTER` revisa que el código cumple con el contrato y reporta en **Segundos (s)** y **Bytes (B)**.
+    *   **Valor:** Detecta violaciones contra la constitución de la factoría.
 
-## 🏗️ Ciclo de Vida Automatizado: Paso a Paso
-
-### ⚙️ Fase 0: Ignición y Chasis (DAST)
-
-1. **Encendido:** Levantas la INFRA (`docker-compose up -d`).
-2. **Bootstrap:** `./init_project.sh`. Generas la estructura de carpetas y la **Aduana Universal v4.0-S**.
-
-### 🏭 Fase 3: Producción Inmunizada (M3)
-
-1. **Ejecución Inteligente:** Al lanzar `/execute-task`, el ORCHESTRATOR ya no solo delega; **inmuniza** al agente inyectando reglas de Neo4j en la Spec física.
-2. **Soberanía del Disco (DAST):** Ya no verás tareas "atascadas" en el registro. Si un archivo está físicamente en la carpeta `02_IN_PROGRESS`, el sistema lo reconoce como activo.
-3. **Finalización Silenciosa:** Olvídate de ver al agente usar `registry-manager`. Cuando termine su código, el **Skill Engine** detectará los artefactos y hará el "Commit" por él.
-
-### 🚀 Fase 5: Operaciones y Auto-Sanación (M5)
-
-1. **Resiliencia Sentinel:** El `DEPLOYMENT_MONITOR` vigila los logs en tiempo real.
-2. **Auto-Heal:** Si detecta una caída de puerto o memoria, invocas `/auto-heal`. El sistema creará una Spec de emergencia y el `FACTORY_EVOLVER` aplicará el parche automáticamente.
-
----
-
-## 💡 Resumen: Tu Nuevo Rol como Director
-
-* **Corriges el "Qué", no el "Cómo":** Si un agente falla, ajustas la `PRP_MASTER` o la `SPEC_LITE` y relanzas. La infraestructura se encarga del resto.
-* **Rigor Métrico:** Rechazas cualquier reporte que no use Segundos (s) y Bytes (B).
-* **LTP (Memoria Muscular):** Cada error que corriges se convierte en una "Golden Rule" que la factoría inyectará en futuros proyectos de forma invisible.
+### 🚀 5. Lanzamiento y Resiliencia (Fase M5: Operaciones)
+*   **`/provision`**: Prepara la infraestructura como código (Docker, Cloud) en la carpeta `WORKSPACE/infra/`.
+*   **`/deploy`**: Sube los artefactos al entorno en vivo.
+*   **`/health-check`**: El monitor sentinel verifica latencia y salud constante.
+*   **`/auto-heal`**: Sistema inmunológico. Si algo falla en producción, el sistema crea una Spec de emergencia y se parchea solo.
 
 ---
 
-### ⚠️ Nota Crítica de Implementación
+## 🏗️ II. CICLO DE VIDA: PASO A PASO DEL DIRECTOR
 
-Para que esta guía sea 100% verídica, **debes asegurarte de que los archivos `skill_engine.py` y `session_hook.py` de tu bloque anterior sean reemplazados por las versiones refactoreadas que te proporcioné** (las que incluyen la lógica de búsqueda en `02_IN_PROGRESS` y el bloque `if isolate: auto_commit`).
+### 🛤️ Paso 1: Ignición del Taller (Fase 0)
+Antes de nada, prepara el flujo de energía:
+1.  **Enciende el Núcleo:** Desde la terminal en `INFRA/`, lanza `docker-compose up -d`. Esto levanta el cerebro (Neo4j) y el sistema de datos.
+2.  **Crea el Chasis:** Ejecuta `./init_project.sh NombreProyecto`. Esto genera las carpetas industriales blindadas.
 
-¿Deseas que simulemos el primer arranque de un proyecto real con esta nueva UX para verificar que todo fluye sin errores?
+### 🛤️ Paso 2: La Visión del Producto (Fase M1)
+1.  Llama al `PRODUCT_OWNER` y explícale tu visión.
+2.  Ejecuta `/init-contract`. El sistema te entregará un resumen financiero pesado. Si te gusta, fírmalo.
+
+### 🛤️ Paso 3: Producción Inmunizada (Fase M2-M3)
+1.  Lanza `/factory-orchestrate` para ver las tareas en `01_PENDING`.
+2.  Valida la estructura con `/validate-backbone`.
+3.  Comanda `/execute-task`. Observa cómo los agentes entran en sus sesiones, se autogestionan, escriben código y cierran la tarea sin que tú muevas un dedo.
+
+### 🛤️ Paso 4: Auditoría y Despliegue (Fase M4-M5)
+1.  Audita la seguridad con `/scan`.
+2.  Audita la solidez con `/audit`.
+3.  Lanza `/provision` y `/deploy`.
+4.  Mantén el sistema vivo con `/health-check` y deja que el `/auto-heal` se encargue de las caídas nocturnas.
+
+---
+
+## 💡 III. TU NUEVO ROL ESTRATÉGICO
+
+En **v4.0-S**, ya no eres un depurador de bugs. Eres un **Auditor de la Verdad Física**:
+
+1.  **Corrige el "Qué" (Specs), no el "Cómo":** Si un agente falla, no edites su código. Edita su `SPEC_LITE.json` o la `PRP_MASTER.json` y relanza la tarea. El sistema aprenderá del error.
+2.  **Rigor Métrico:** Rechaza cualquier reporte que no use **segundos (s)** y **bytes (B)**. El lenguaje industrial es matemático.
+3.  **LTP (Persistencia a Largo Plazo):** Usa `/sync-memory` al final de cada hito. Esto graba las lecciones aprendidas en el Grafo de Neo4j para que la factoría herede inteligencia acumulativa.
+
+---
+*Manual de Operaciones v4.0-S | Director de Operaciones Solidificado.*

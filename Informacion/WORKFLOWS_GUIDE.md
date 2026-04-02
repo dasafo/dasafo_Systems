@@ -1,97 +1,93 @@
-# 🚀 Guía de Workflows Industriales | dasafo_FACTORY (v4.0-S)
+# 🚀 Guía de Workflows Industriales: dasafo_FACTORY (v4.0-S)
 
-Esta guía detalla los 14 flujos de trabajo (workflows) disponibles en el ecosistema para la gestión, ejecución, auditoría y auto-sanación de proyectos bajo el estándar **Industrial Core (v4.0-S)**.
-
----
-
-## 🏗️ Ciclo de Vida del Proyecto (M1-M5)
-
-Los workflows se dividen según su propósito dentro del pipeline universal:
-
-### 1. Fase M1: Descubrimiento (Discovery)
-
-- **`/init-contract`**:
-  - **Propósito**: Generar el contrato maestro del proyecto (`PRP_MASTER.json`) inyectando proyecciones financieras.
-  - **Agente**: `PRODUCT_OWNER`.
-  - **Cuándo**: Al inicio de un nuevo proyecto, tras definir los requisitos iniciales.
-  - **Resultado**: Crea un documento de 12 secciones con métricas SI y KPIs Financieros (Target CAC, Target LTV) mediante la skill `startup-metrics-framework`.
-
-### 2. Fase M2-M3: Arquitectura y Producción (Build)
-
-- **`/factory-orchestrate`**:
-  - **Propósito**: Comando de transición que deconstruye contratos en tareas (`SPEC_LITE.json`) o promociona fases.
-  - **Agente**: `ORCHESTRATOR`.
-  - **Cuándo**: Para sincronizar el `registry.json` con los archivos físicos y mover el proyecto a través del pipeline de la Aduana Universal.
-- **`/arch-diagram`**:
-  - **Propósito**: Genera diagramas Mermaid actualizados de la arquitectura del sistema.
-  - **Agente**: `ARCHITECT`.
-  - **Cuándo**: Durante la Fase M2 o cambios estructurales significativos.
-  - **Resultado**: Archivos técnicos en `DOCS/ARCH/`.
-- **`/validate-backbone`** *(Nuevo v3.4.5)*:
-  - **Propósito**: Verifica físicamente que el andamiaje del framework (Scaffolding) existe en el disco duro.
-  - **Agente**: `ORCHESTRATOR`.
-  - **Cuándo**: Antes de despachar a los peones (`FRONTEND_DEV`, `BACKEND_DEV`) para evitar construcciones en el vacío.
-- **`/execute-task`**:
-  - **Propósito**: Lanza una **Clean Session** aislada con guardarraíles predictivos de Neo4j.
-  - **Agente**: `ORCHESTRATOR` (vía Delegación a Peones).
-  - **Cuándo**: Durante la producción (M3). El Orquestador inyecta las *Golden Rules* históricas de Neo4j en la `SPEC_LITE` antes de delegar.
-  - **Resultado**: Código funcional y verificado en `WORKSPACE/`.
-
-### 3. Fase M4: Cumplimiento y Calidad (Compliance)
-
-- **`/scan`**:
-  - **Propósito**: Realizar un escaneo de seguridad profundo (SAST + Secrets) bajo el estándar **Zero-Trust**.
-  - **Agente**: `SECURITY_AUDITOR`.
-  - **Cuándo**: Antes de realizar cualquier commit importante o transición de fase.
-  - **Resultado**: Reportes en la carpeta `LOGS/` y/o `SECURITY_REPORT.md`.
-- **`/audit`**:
-  - **Propósito**: Validar la calidad y el cumplimiento de una tarea contra el contrato PRP original.
-  - **Agente**: `QA_TESTER`.
-  - **Cuándo**: Al finalizar una tarea, reportando *Cultural Violations* o errores arquitectónicos.
-  - **Resultado**: Feedback estructurado en `FEEDBACK-LOG.md` listo para ser procesado.
-
-### 4. Fase M5: Operaciones y Despliegue (Ops)
-
-- **`/provision`**:
-  - **Propósito**: Preparar la infraestructura física (Docker, Terraform, Scripts).
-  - **Agente**: `DEVOPS_SRE`.
-  - **Cuándo**: Fase M4 aprobada con evidencias físicas sólidas.
-  - **Resultado**: Scripts de infraestructura en `WORKSPACE/infra/`.
-- **`/deploy`**:
-  - **Propósito**: Ejecución del despliegue atómico al entorno de producción.
-  - **Agente**: `DEVOPS_SRE`.
-  - **Cuándo**: Infraestructura aprovisionada y `SECURITY_REPORT.md` en estado `PASSED`.
-  - **Resultado**: Sistema operando "Live" en el entorno destino.
-- **`/auto-heal`** *(Nuevo v4.0-S)*:
-  - **Propósito**: Sistema Inmunológico Industrial. Parchea automáticamente bloqueos de infraestructura.
-  - **Agente**: `DEVOPS_SRE` (Trigger) -> `FACTORY_EVOLVER` (Ejecución).
-  - **Cuándo**: Cuando un despliegue falla por conflictos de puertos o memoria (OOM).
-  - **Resultado**: Archivo `docker-compose.yml` refactorizado físicamente en el disco.
-- **`/sync-memory`** *(Nuevo v4.0-S)*:
-  - **Propósito**: Extrae los *Engramas Agenticos* y las reglas de oro para consolidar la Persistencia de Largo Plazo (LTP).
-  - **Agente**: `MEMORY_OPTIMIZER`.
-  - **Cuándo**: Ciclo de sueño de la factoría. Se ejecuta para convertir el `FEEDBACK-LOG.md` a nodos en la base de datos Neo4j.
-  - **Resultado**: Grafo de conocimiento actualizado (prevención de futuras alucinaciones).
+Esta guía detalla los **14 flujos de trabajo (workflows)** autorizados para la orquestación de misiones en el ecosistema **Industrial Core (v4.0-S)**. Cada flujo está diseñado para garantizar la **Soberanía del Disco (DAST)** y la **Transición Basada en Evidencia (Phase-Gate Logic)**.
 
 ---
 
-## 📡 Monitoreo y Radares (Visibilidad)
+## 🏗️ I. WORKFLOWS DE CICLO DE VIDA (M1-M5 Pipeline)
 
-- **`/kanban-board`**:
-  - **Propósito**: Levantar el Dashboard visual de **Vibe Kanban** en tiempo real.
-  - **Agente**: `ORCHESTRATOR`.
-  - **Cuándo**: Para monitorizar el flujo de tarjetas y bloqueos físicos sin usar la terminal.
-  - **Resultado**: Interfaz web en el puerto 3001.
-- **`/factory-status`**:
-  - **Propósito**: Generar un reporte de salud y progreso consolidado en formato texto.
-  - **Agente**: `DEPLOYMENT_MONITOR`.
-  - **Cuándo**: Para obtener un pulso rápido del consumo de memoria, estado de los Hubs y progreso de fases.
-  - **Resultado**: Resumen textual directo en el chat.
-- **`/health-check`**:
-  - **Propósito**: Monitoreo Sentinel de salud y latencia en tiempo real del sistema desplegado.
-  - **Agente**: `DEPLOYMENT_MONITOR`.
-  - **Cuándo**: Proyecto en estado "Live" o después de cada `/deploy`.
-  - **Resultado**: Reportes de latencia (s) y tamaño (B) en `LOGS/deployment/`.
+Los flujos se agrupan por etapa dentro del "Universal Pipeline" de la factoría.
+
+### 1. Fase M1: Descubrimiento & Estrategia (Discovery)
+*   **`/init-contract`**:
+    *   **Agente:** `PRODUCT_OWNER`.
+    *   **Propósito:** Generar el contrato maestro del proyecto (`PRP_MASTER.json`) inyectando análisis de ROI, CAC y LTV.
+    *   **Pre-condición:** Briefing inicial por parte del Director de Operaciones.
+    *   **Post-condición:** Generación física de `PRP_MASTER.json` en la raíz del proyecto. El sistema bloquea el paso a M2 si no existe este artefacto.
+    *   **Skill:** `prp-generator` + `startup-metrics-framework`.
+
+### 2. Fase M2-M3: Arquitectura & Producción (Build)
+*   **`/factory-orchestrate` (Sincronización Total)**:
+    *   **Agente:** `ORCHESTRATOR`.
+    *   **Propósito:** Deconstruir el contrato maestro en especificaciones atómicas (`SPEC_LITE.json`) y sincronizar el registro de tareas en el disco.
+    *   **Pre-condición:** Contrato M1 aprobado.
+    *   **Post-condición:** Población de la carpeta `TASKS/01_PENDING/` con specs autorizadas.
+    *   **Skill:** `kanban-solidity-gate` + `registry-manager`.
+*   **`/validate-backbone` (Inspección Structural)**:
+    *   **Agente:** `ORCHESTRATOR`.
+    *   **Propósito:** Verificar físicamente que el andamiaje del framework (Next.js, FastAPI, etc.) existe en disco antes de delegar lógica de negocio.
+    *   **Pre-condición:** Tareas de arquitectura (M2) completadas.
+    *   **Post-condición:** Reporte de validación oficial; habilitación del Hub 03 (Producción).
+    *   **Skill:** `project-backbone-validator`.
+*   **`/arch-diagram` (Blueprint Visual)**:
+    *   **Agente:** `ARCHITECT`.
+    *   **Propósito:** Generar planos técnicos actualizados en formato Mermaid basándose en la estructura física del proyecto.
+    *   **Resultado:** Archivos `.md` en `DOCS/ARCH/`.
+*   **`/execute-task` (La Línea de Montaje)**:
+    *   **Agente:** `ORCHESTRATOR` (Delegador) -> `PEON` (Ejecutor).
+    *   **Propósito:** Lanza una **Clean Session** aislada con guardarraíles predictivos de Neo4j para ejecutar una spec técnica.
+    *   **Automatización Industrial (v4.0-S):** Implementa el **Auto-Start** (mueve la tarea a `02_IN_PROGRESS`) y el **Auto-Commit** (mueve a `03_COMPLETED` tras el éxito).
+    *   **Skill:** `delegate-clean-session` + `skill-engine` (Inject Golden Rules).
+
+### 3. Fase M4: Calidad & Cumplimiento (Compliance)
+*   **`/scan` (Escudo Zero-Trust)**:
+    *   **Agente:** `SECURITY_AUDITOR`.
+    *   **Propósito:** Escaneo profundo de secretos, claves API y vulnerabilidades en dependencias.
+    *   **Post-condición:** Generación de `SECURITY_REPORT.md`. Si hay filtraciones, el proyecto se bloquea automáticamente.
+    *   **Skill:** `agentic-thought-secret-scanner` + `dependency-vulnerability-scanner`.
+*   **`/audit` (Sello de Calidad)**:
+    *   **Agente:** `QA_TESTER`.
+    *   **Propósito:** Validar que el código escrito cumple con el contrato M1. Reporta métricas en **segundos (s)** y **bytes (B)**.
+    *   **Valor:** Detecta antipatrones y "Cultural Violations" para inyectar en la memoria analítica.
+    *   **Skill:** `factory-audit-pro` + `pytest-logic-verifier`.
+
+### 4. Fase M5: Operaciones & Despliegue (Ops)
+*   **`/provision` (IaC Infrastructure)**:
+    *   **Agente:** `DEVOPS_SRE`.
+    *   **Propósito:** Preparar Dockerfiles, Terraform o scripts de nube en `WORKSPACE/infra/`.
+    *   **Pre-condición:** Auditoría M4 aprobada.
+    *   **Skill:** `infra-provisioner` + `docker-stack-provisioner`.
+*   **`/deploy` (Lanzamiento Industrial)**:
+    *   **Agente:** `DEVOPS_SRE`.
+    *   **Propósito:** Despliegue atómico de artefactos al entorno en vivo.
+    *   **Skill:** `registry-manager` + `docker-stack-provisioner`.
 
 ---
-*Documentación Solidificada v4.0-S | dasafo_FACTORY*
+
+## 🧬 II. WORKFLOWS DE RESILIENCIA Y EVOLUCIÓN (LTP)
+
+Flujos transversales que mantienen la salud y la inteligencia de la factoría.
+
+*   **`/auto-heal` (Sanación Autónoma)**:
+    *   **Agente:** `DEVOPS_SRE` (Aviso) -> `FACTORY_EVOLVER` (Parcheo).
+    *   **Propósito:** Si un despliegue o la salud del sistema falla por conflictos de infraestructura (OOM, Puertos bloqueados), el sistema se parchea solo.
+    *   **Skill:** `infra-provisioner` (Emergency Refactor) + `factory-doctor`.
+*   **`/health-check` (Ojo Sentinel)**:
+    *   **Agente:** `DEPLOYMENT_MONITOR`.
+    *   **Propósito:** Monitoreo en tiempo real de latencia (s), salud y tamaño de respuesta (B).
+    *   **Skill:** `deployment-health-check` + `latency-pulse-reporter`.
+*   **`/sync-memory` (Consolidación LTP)**:
+    *   **Agente:** `MEMORY_OPTIMIZER`.
+    *   **Propósito:** Extraer lecciones aprendidas de los logs e inyectarlas como "Reglas de Oro" permanentes en el Grafo de Neo4j.
+    *   **Resultado:** Prevención de alucinaciones futuras.
+    *   **Skill:** `context-pruning-sieve` + `kg-db-sync`.
+
+---
+
+## 📡 III. WORKFLOWS DE VISIBILIDAD (Radares)
+
+*   **`/kanban-board`**: Levanta el dashboard visual de **Vibe Kanban** en el puerto 3001.
+*   **`/factory-status`**: Genera un reporte rápido de salud de los Hubs, estado del pipeline y bloqueos físicos en disco.
+
+---
+*Manual de Workflows v4.0-S | Dasafo Factory | Industrializando la Precisión.*

@@ -1,106 +1,92 @@
-# 🗺️ Agent-Skill Mapping | Dasafo Factory (v4.0-S)
+# 🗺️ Mapeo Exhaustivo de AGENTES Y SKILLS
 
-Este documento define la matriz de autoridad entre los Agentes de la Factoría y la **Skill Library**. Solo los agentes listados tienen permiso para invocar las skills correspondientes bajo protocolo industrial.
+> **Versión:** v4.0-S "Industrial Core - Mapping Enabled"
+> **Misión:** Establecer la matriz definitiva de autoridad, sentidos (senses) y capacidades técnicas.
+> **Gobernanza:** Zero-Trust de Identidad / SDD de Ejecución / Unidades SI (s, B)
 
----
-
-## 🏛️ 1. STRATEGY & MARKETING
-
-| Agente | Skills Autorizadas | Propósito Principal |
-| :--- | :--- | :--- |
-| **ORCHESTRATOR** | `delegate-clean-session`, `prp-generator`, `kanban-solidity-gate`, `registry-manager`, `factory-doctor`, `project-backbone-validator` | Orquestación, deconstrucción, control de fases, sanación de estados y validación de andamiaje. |
-| **PRODUCT_OWNER** | `prp-generator`, `apify-trend-analysis`, `startup-metrics-framework`, `registry-manager` | Creación de PRP_MASTER, análisis de mercado, viabilidad financiera y gestión de registro. |
-| **MARKETING_GROWTH** | `apify-trend-analysis`, `social-content-strategy`, `hallucination-guardrail`, `registry-manager` | Ejecución de campañas, análisis de señales externas y auditoría de marca. |
+Este documento define las fronteras de acción de cada uno de los **17 agentes** de la factoría. Solo los agentes listados poseen autorización técnica para invocar las habilidades correspondientes dentro del entorno industrial.
 
 ---
 
-## 📐 2. ARCHITECTURE & RESEARCH
+## 🏛️ HUB 01: ESTRATEGIA, PRODUCTO Y MARKETING
 
-| Agente | Skills Autorizadas | Propósito Principal |
-| :--- | :--- | :--- |
-| **ARCHITECT** | `architecture-decision-records`, `api-contract-generator`, `database-architect-strategic`, `registry-manager`, `factory-doctor` | Diseño de planos técnicos, contratos API, modelado de datos y auditoría previa a M2. |
-| **RESEARCH_AGENT** | `arxiv-technical-digest`, `apify-trend-analysis`, `registry-manager`, `hallucination-guardrail` | Investigación científica, validación de hipótesis y auditoría factual. |
+El centro de mando que transforma necesidades humanas en contratos industriales y coordina el pipeline.
 
----
+| Agente | Rol Industrial | Skills Autorizadas (Hub 01) | Sentidos (Senses) |
+| :--- | :--- | :--- | :--- |
+| **ORCHESTRATOR** | Director Estratégico | `delegate-clean-session`, `kanban-solidity-gate`, `registry-manager`, `factory-doctor`, `project-backbone-validator` | **Registry, Hub, Contract, Evidence** |
+| **PRODUCT_OWNER** | Arquitecto de Visión | `prp-generator`, `startup-metrics-framework`, `apify-trend-analysis`, `registry-manager` | **Market, Contract, Evidence** |
+| **MARKETING_GROWTH** | Estratega de Crecimiento | `social-content-strategy`, `hallucination-guardrail`, `copywriting-evidence`, `registry-manager` | **Market, Targeted File** |
 
-## ⚙️ 3. PRODUCTION (M3)
-
-| Agente | Skills Autorizadas | Propósito Principal |
-| :--- | :--- | :--- |
-| **BACKEND_DEV** | `async-fastapi-logic`, `supabase-stack-expert`, `pytest-logic-verifier`, `registry-manager`, `nodejs-backend-patterns`, `agentic-thought-secret-scanner` | Implementación de APIs, lógica de dominio, patrones Repository y verificación de seguridad. |
-| **FRONTEND_DEV** | `shadcn-component-library`, `atomic-design-tokens`, `registry-manager`, `frontend-ui-designer`, `playwright-e2e-tester` | Construcción de UIs atómicas, diseño premium, pruebas de regresión y flujos de usuario. |
-| **DB_MASTER** | `database-architect-strategic`, `supabase-stack-expert`, `registry-manager`, `agentic-thought-secret-scanner` | Ejecución de esquemas, migraciones físicas y seguridad de datos RLS. |
-| **DATA_SCIENTIST** | `autonomous-feedback-analyzer`, `apify-trend-analysis`, `agentic-thought-secret-scanner`, `registry-manager` | Modelado IA, análisis de patrones y protección de PII/Secretos en datasets. |
+*   **Interacción Clave:** El **Product Owner** firma el contrato (M1); el **Orquestador** lo deconstruye y el **Marketing** lo posiciona.
 
 ---
 
-## 🛡️ 4. COMPLIANCE & QUALITY
+## 📐 HUB 02: ARQUITECTURA E INVESTIGACIÓN
 
-| Agente | Skills Autorizadas | Propósito Principal |
-| :--- | :--- | :--- |
-| **SECURITY_AUDITOR** | `agentic-thought-secret-scanner`, `factory-audit-pro`, `registry-manager` | Caza de vulnerabilidades, escaneo de secretos y auditoría de salud industrial. |
-| **QA_TESTER** | `factory-audit-pro`, `hallucination-guardrail`, `agentic-thought-secret-scanner`, `build-test-executor`, `playwright-e2e-tester`, `registry-manager` | Auditoría, validación de evidencias físicas, ejecución de CI local y pruebas E2E. |
-| **DOCS_MASTER** | `api-docs-generator`, `arxiv-technical-digest`, `registry-manager`, `hallucination-guardrail` | Extracción de documentación técnica, manuales y verificación de veracidad factual. |
+El núcleo técnico que define la estructura ósea y reduce la incertidumbre tecnológica.
 
----
+| Agente | Rol Industrial | Skills Autorizadas (Hub 02) | Sentidos (Senses) |
+| :--- | :--- | :--- | :--- |
+| **ARCHITECT** | Diseñador del Backbone | `architecture-decision-records`, `api-contract-generator`, `database-architect-strategic`, `data-schema-generator`, `registry-manager` | **Structural, Evidence, Schema X-Ray** |
+| **RESEARCH_AGENT** | Analista Factual | `web-research-engine`, `arxiv-technical-digest`, `hallucination-guardrail`, `registry-manager` | **Deep Search, Market, Evidence** |
 
-## 🚀 5. OPERATIONS & EVOLUTION
-
-| Agente | Skills Autorizadas | Propósito Principal |
-| :--- | :--- | :--- |
-| **DEVOPS_SRE** | `docker-stack-provisioner`, `terraform-iac-builder`, `deployment-health-check`, `registry-manager`, `agentic-thought-secret-scanner`, `hallucination-guardrail` | Provisión IaC, contenedores, monitoreo de infraestructura y seguridad de despliegue. |
-| **DEPLOYMENT_MONITOR** | `deployment-health-check`, `playwright-e2e-tester`, `registry-manager`, `hallucination-guardrail` | Análisis de salud en tiempo real (s/B) y monitoreo sentinel de entornos live. |
-| **FACTORY_EVOLVER** | `skill-refactor-pro`, `autonomous-feedback-analyzer`, `registry-manager`, `factory-doctor`, `hallucination-guardrail` | Optimización del ADN de la factoría, refactorización de skills y sanación del sistema. |
-| **MEMORY_OPTIMIZER** | `autonomous-feedback-analyzer`, `context-pruning-sieve`, `registry-manager`, `hallucination-guardrail` | Sincronización con Neo4j, poda de contexto y arquitectura de memoria LTP. |
+*   **Interacción Clave:** La **Arquitectura** traduce la visión en planos (M2); la **Investigación** valida que las herramientas propuestas sean viables y estables.
 
 ---
 
-### 🛡️ Guardrail Transversal
+## ⚙️ HUB 03: PRODUCCIÓN E IMPLEMENTACIÓN
 
-Skills que pueden (y deben) ser invocadas por cualquier agente en modo auditoría o como paso final de tarea:
+La línea de montaje física donde se construye el código, los esquemas de datos y la UI.
 
-- `hallucination-guardrail`: Verificación de integridad factual contra SSoT.
-- `agentic-thought-secret-scanner`: Prevención de fugas de credenciales en logs y pensamiento.
-- `registry-manager`: Único medio autorizado para marcar tareas como `COMPLETED` físicamente.
+| Agente | Rol Industrial | Skills Autorizadas (Hub 03) | Sentidos (Senses) |
+| :--- | :--- | :--- | :--- |
+| **BACKEND_DEV** | Ingeniero de Lógica | `async-fastapi-logic`, `nodejs-backend-patterns`, `pytest-logic-verifier`, `registry-manager` | **Spec, Targeted File** |
+| **FRONTEND_DEV** | Diseñador de Interfaz | `frontend-ui-designer`, `shadcn-component-library`, `playwright-e2e-tester`, `atomic-design-tokens`, `registry-manager` | **Spec, Targeted File** |
+| **DB_MASTER** | Estratega de Datos | `database-architect-strategic`, `supabase-stack-expert`, `sql-migration-pro`, `registry-manager` | **Spec, Schema X-Ray** |
+| **DATA_SCIENTIST** | Analista de Patrones | `autonomous-feedback-analyzer`, `telemetry-reporting`, `registry-manager` | **Schema X-Ray, Evidence** |
+| **AI_ENGINEER** | Ingeniero de IA | `llm-logic-integration`, `prompt-engineering-refactor`, `agentic-pattern-builder`, `registry-manager` | **Spec, Targeted File** |
+
+*   **Interacción Clave:** Los peones de producción trabajan bajo **Clean Sessions** (M3), guiados por las especificaciones del Arquitecto.
+
+---
+
+## 🛡️ HUB 04: CALIDAD Y CUMPLIMIENTO (COMPLIANCE)
+
+El departamento que garantiza la seguridad, solidez y veracidad de cada entrega.
+
+| Agente | Rol Industrial | Skills Autorizadas (Hub 04) | Sentidos (Senses) |
+| :--- | :--- | :--- | :--- |
+| **QA_TESTER** | Inspector de Solidez | `playwright-e2e-tester`, `build-test-executor`, `hallucination-guardrail`, `factory-audit-pro`, `registry-manager` | **Codebase X-Ray, Spec, Evidence** |
+| **SECURITY_AUDITOR** | Guardián Zero-Trust | `agentic-thought-secret-scanner`, `factory-audit-pro`, `dependency-vulnerability-scanner`, `registry-manager` | **Secret X-Ray, Codebase X-Ray** |
+| **DOCS_MASTER** | Gestor del Conocimiento | `api-docs-generator`, `readme-sync-expert`, `registry-manager` | **Codebase X-Ray, Targeted File** |
+
+*   **Interacción Clave:** El **Auditor de Seguridad** bloquea el pipeline (Gate M4) si detecta filtraciones; el **QA** garantiza que las **Unidades SI** se cumplan.
 
 ---
 
-## 🧰 6. Mapeo Inverso: Skill → Agentes Autorizados (v4.0-S)
+## 🚀 HUB 05: OPERACIONES Y EVOLUCIÓN
 
-| Skill | Agentes que la Utilizan |
-| :--- | :--- |
-| `prp-generator` | `PRODUCT_OWNER`, `ORCHESTRATOR` |
-| `apify-trend-analysis` | `PRODUCT_OWNER`, `MARKETING_GROWTH`, `RESEARCH_AGENT`, `DATA_SCIENTIST` |
-| `registry-manager` | `TODOS` (Mandatorio para transiciones físicas) |
-| `factory-doctor` | `ORCHESTRATOR`, `ARCHITECT`, `FACTORY_EVOLVER` |
-| `hallucination-guardrail` | `TODOS` |
-| `agentic-thought-secret-scanner` | `TODOS` (Principalmente `SECURITY`, `BACKEND`, `QA`, `DEVOPS`) |
-| `factory-audit-pro` | `QA_TESTER`, `SECURITY_AUDITOR` |
-| `architecture-decision-records` | `ARCHITECT` |
-| `api-contract-generator` | `ARCHITECT` |
-| `database-architect-strategic` | `ARCHITECT`, `DB_MASTER` |
-| `api-docs-generator` | `DOCS_MASTER` |
-| `async-fastapi-logic` | `BACKEND_DEV` |
-| `nodejs-backend-patterns` | `BACKEND_DEV` |
-| `arxiv-technical-digest` | `RESEARCH_AGENT`, `DOCS_MASTER` |
-| `supabase-stack-expert` | `BACKEND_DEV`, `DB_MASTER` |
-| `shadcn-component-library` | `FRONTEND_DEV` |
-| `atomic-design-tokens` | `FRONTEND_DEV` |
-| `frontend-ui-designer` | `FRONTEND_DEV` |
-| `autonomous-feedback-analyzer` | `DATA_SCIENTIST`, `FACTORY_EVOLVER`, `MEMORY_OPTIMIZER` |
-| `playwright-e2e-tester` | `QA_TESTER`, `FRONTEND_DEV`, `DEPLOYMENT_MONITOR` |
-| `pytest-logic-verifier` | `BACKEND_DEV` |
-| `build-test-executor` | `QA_TESTER` |
-| `docker-stack-provisioner` | `DEVOPS_SRE` |
-| `terraform-iac-builder` | `DEVOPS_SRE` |
-| `deployment-health-check` | `DEVOPS_SRE`, `DEPLOYMENT_MONITOR` |
-| `skill-refactor-pro` | `FACTORY_EVOLVER` |
-| `context-pruning-sieve` | `MEMORY_OPTIMIZER` |
-| `project-backbone-validator` | `ORCHESTRATOR` |
-| `startup-metrics-framework` | `PRODUCT_OWNER` |
-| `social-content-strategy` | `MARKETING_GROWTH` |
+La capa externa que gestiona el despliegue, la salud del sistema y el aprendizaje de la factoría.
+
+| Agente | Rol Industrial | Skills Autorizadas (Hub 05) | Sentidos (Senses) |
+| :--- | :--- | :--- | :--- |
+| **DEVOPS_SRE** | Ingeniero de Plataforma | `infra-provisioner`, `terraform-iac-builder`, `docker-stack-provisioner`, `registry-manager`, `auto-heal-trigger` | **Infra, Deploy, Evidence** |
+| **DEPLOYMENT_MONITOR** | Centinela Sentinel | `deployment-health-check`, `latency-pulse-reporter`, `registry-manager` | **Deploy, Physical Disk** |
+| **FACTORY_EVOLVER** | Arquitecto de ADN | `skill-refactor-pro`, `factory-upgrade-manager`, `factory-doctor`, `registry-manager` | **Skill X-Ray, Registry, Evidence** |
+| **MEMORY_OPTIMIZER** | Curador de Engramas | `context-pruning-sieve`, `kg-db-sync`, `registry-manager` | **Skill X-Ray, Evidence** |
+
+*   **Interacción Clave:** El **SRE** despliega el producto (M5); el **Optimizador de Memoria** sincroniza los aprendizajes finales con el Grafo de Neo4j (LTP).
 
 ---
-> [!NOTE]
-> **Mapping v4.0-S | Dasafo Factory Industry Standard**
-> Este mapping es inmutable para los agentes; cualquier desviación resultará en fallo de ejecución por falta de autoridad.
+
+## ☣️ ESPECIFICACIONES DE SEGURIDAD TRANSVERSAL
+
+Existen habilidades que operan fuera de la jerarquía de Hubs para garantizar la integridad absoluta:
+
+1.  **`registry-manager`**: Única herramienta autorizada para el movimiento físico de tareas entre carpetas (`01_PENDING` -> `03_COMPLETED`). Es el motor del DAST.
+2.  **`hallucination-guardrail`**: Filtro de salida obligatorio para todos los agentes. Compara respuestas contra la base de conocimiento global.
+3.  **`agentic-thought-secret-scanner`**: Escudo proactivo que escanea el pensamiento del agente antes de que cualquier acción se ejecute en el disco.
+
+---
+*Mapping v4.0-S | Dasafo Factory Industry Standard | Inmutable y Verificable.*

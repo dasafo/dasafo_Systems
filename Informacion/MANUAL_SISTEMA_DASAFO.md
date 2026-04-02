@@ -1,124 +1,117 @@
-# 🏛️ Manual Maestro de Instrucciones | dasafo_Systems v4.0-S
+# 🏛️ Manual Maestro de Instrucciones: dasafo_Systems v4.0-S
 
-**dasafo_Systems** es un ecosistema industrial de Inteligencia Artificial de alto rendimiento, diseñado para el desarrollo de software bajo el estándar **v4.0-S "Industrial Core"**. Este manual es la **Fuente Única de Verdad (SSoT)** que define la arquitectura, protocolos y soberanía técnica del sistema.
+> **"Industrializando la Excelencia Evolutiva a través de la Soberanía del Disco y el Grafo de Conocimiento."**
 
----
+**dasafo_Systems** es un ecosistema industrial de Inteligencia Artificial de alto rendimiento diseñado para la ingeniería de software autónoma. Opera bajo el estándar **v4.0-S "Industrial Core"**, que prioriza la **Solidez de Capas**, la **Soberanía de Datos (DAST)** y la **Persistencia a Largo Plazo (LTP)**. 
 
-## 🏗️ 1. ARCHITECTURE NODES (El Ecosistema)
-
-El sistema se divide en tres nodos lógicos y físicos que garantizan el aislamiento y la escalabilidad industrial:
-
-### 🧠 A. `dasafo_FACTORY` (The Core)
-
-El corazón inmutable. Contiene la identidad de los agentes, las leyes de la factoría y el motor ejecutivo.
-
-- **`00_GLOBAL_KNOWLEDGE`**: Constitución, Mandatos SI y Plantillas Industriales.
-- **`01-05 Hubs`**: Jerarquía de 16 agentes especializados divididos en 5 departamentos (Estrategia, Arquitectura, Producción, Cumplimiento y Operaciones).
-- **`06_SKILL_LIBRARY`**: El Repositorio Central. Contiene las herramientas atómicas (`run.py`), incluyendo validadores financieros, de andamiaje y motores de auto-sanación.
-
-### ⚡ B. `INFRA` (The Power Grid)
-
-Nodo de servicios compartidos autogestionados mediante **Docker Compose**.
-
-- **Postgres (`shared-db`)**: Almacenamiento relacional operativo (Malla 2GB).
-- **Neo4j (`kg-db`)**: Grafo de conocimiento central. Almacena las "Golden Rules" y previene alucinaciones futuras (LTP).
-- **Redis (`cache-node`)**: Caché de estado y tareas en tiempo real.
-- **Glances**: Monitor de telemetría y salud del grid (Puerto 61208).
-
-### 📦 C. `PROJECTS` (The Workshop)
-
-Espacio mutable donde se ejecutan las misiones. Cada proyecto es un entorno **SDD (Spec Driven Development)** aislado.
+Este manual constituye la **Fuente Única de Verdad (SSoT)**. Cualquier desviación de estos protocolos se considera una *Cultural Violation* técnica.
 
 ---
 
-## ⚙️ 2. THE INDUSTRIAL ENGINE (El Motor de Ejecución)
+## 🏗️ I. ARQUITECTURA DE NODOS (El Ecosistema)
 
-La factoría opera mediante un sistema de ejecución por contratos y compuertas físicas (DAST):
+El sistema se distribuye en tres nodos físicos y lógicos que garantizan el aislamiento hermético y la resiliencia operativa:
 
-### 📡 `factory_cli.py` (MCP Bridge)
+### 🧠 A. `dasafo_FACTORY` (El Núcleo Inmutable)
+Es el "Cerebro Central" que contiene el ADN de la factoría. Sus componentes son de solo lectura para la mayoría de los agentes (Zero-Trust):
 
-Servidor MCP que comunica la IA con las herramientas de la factoría. Implementa el **Session Hook** (Aduana Universal) en cada llamada y reporta el estado de los Hubs.
+1.  **`00_GLOBAL_KNOWLEDGE`**: Contiene la Constitución Core, el Mandato de Unidades SI y las plantillas maestras (`PRP_MASTER`, `SPEC_LITE`, `FEEDBACK_SCHEMA`).
+2.  **`01-05 Hubs Departamentales`**: Jerarquía de 17 agentes organizados en:
+    *   **Hub 01 (Strategy):** Orquestación y Producto.
+    *   **Hub 02 (Architecture):** Planos y Diseño.
+    *   **Hub 03 (Production):** Implementación de Código y Datos.
+    *   **Hub 04 (Compliance):** Seguridad y Calidad.
+    *   **Hub 05 (Operations):** Despliegue y Evolución.
+3.  **`06_SKILL_LIBRARY`**: Repositorio de scripts atómicos (`run.py`) que ejecutan las tareas físicas.
+4.  **`factory_cli.py`**: El puente MCP que comunica la interfaz de usuario con el motor interno.
 
-### 🛂 `session_hook.py` (Aduana Universal)
+### ⚡ B. `INFRA` (La Red Eléctrica / Power Grid)
+Nodo de servicios compartidos gestionado por Docker Compose que provee la infraestructura persistente:
 
-Middleware de seguridad que intercepta ejecuciones.
+*   **Postgres (`shared-db`)**: Almacenamiento operativo para estados persistentes complejos.
+*   **Neo4j (`kg-db`)**: El Grafo de Conocimiento. Mapa semántico que almacena las "Reglas de Oro" y previene alucinaciones reinyectando experiencias pasadas.
+*   **Redis (`cache-node`)**: Gestión de colas de tareas y estados volátiles.
+*   **Glances**: Telemetría de hardware (CPU, RAM, Red) accesible en tiempo real.
 
-- **Regla de Cierre:** Bloquea cualquier skill no autorizada si el estado en `PROJECT_STATE.json` es inconsistente.
-- **Double-Gating v4.0-S:** Permite a los agentes ejecutar tareas autónomamente si poseen una `SPEC_LITE.json` o una `EMERGENCY_SPEC.json` física asignada en disco.
-- **Fase Segura:** Exige que las fases se completen secuencialmente (M1 -> M5) y verifica evidencias físicas (ej. `BUILD_REPORT.json`).
-
-### 🧪 `skill_engine.py` (The Executive)
-
-Cargador dinámico de habilidades con **Solidity Guard** integrado.
-
-- **Pre-Flight:** Inyecta automáticamente credenciales y permisos de fase desde `INFRA/.env`.
-- **Post-Flight Verification:** Verifica físicamente que los artefactos declarados por la skill existan en disco antes de devolver éxito.
-
----
-
-## 🚀 3. CICLO DE VIDA DE PROYECTO (Phase-Gate Logic)
-
-### 👶 A. Inicialización (`init_project.sh`)
-
-El script de arranque provisiona el chasis blindado del proyecto en versión **v4.0-S**:
-
-1. **Squeleto SDD:** Crea `DOCS/`, `TASKS/`, `WORKSPACE/` y `LOGS/`.
-2. **Registry:** Genera `registry.json` y `PROJECT_STATE.json` (Fase M1: Discovery).
-3. **Contrato Maestro:** Siembra el `PRP_CONTRACT.json` en la raíz.
-
-### 📜 B. El Mandato de 12 Secciones y Lógica Financiera (PRP)
-
-Ningún proyecto avanza a M2 sin un **PRP_MASTER** firmado. Este debe incluir:
-
-- Objetivos, Riesgos, Contratos de Datos, **Métricas SI** (s, B) y **KPIs Financieros** obligatorios (Target CAC, Target LTV) calculados vía `startup-metrics-framework`.
-
-### 🏗️ C. Backbone y Prevención (M2-M3)
-
-Antes de escribir código de producción:
-
-- El `project-backbone-validator` audita que el andamiaje del framework exista físicamente.
-- El Orquestador consulta Neo4j para inyectar reglas anti-alucinación en la Spec basadas en el historial de la factoría.
+### 📦 C. `PROJECTS` (El Taller / Workshop)
+Espacio mutable donde residen los proyectos individuales. Cada proyecto sigue la estructura **SDD (Spec Driven Development)**:
+*   `DOCS/`: Blueprints, ADRs y Reportes.
+*   `TASKS/`: Línea de montaje física (`01_PENDING`, `02_IN_PROGRESS`, `03_COMPLETED`).
+*   `WORKSPACE/`: El código fuente real del producto.
+*   `LOGS/`: Evidencias de ejecución, seguridad y despliegue.
 
 ---
 
-## 🛡️ 4. SEGURIDAD, SOLIDEZ Y AUTO-SANACIÓN
+## ⚙️ II. EL MOTOR INDUSTRIAL (Mecanismos de Ejecución)
 
-- **Mandato SI:** Todas las métricas de rendimiento deben expresarse en **Segundos (s)** y **Bytes (B)**.
-- **Zero-Trust Secret Scanner:** Escaneo mandatorio de secretos antes de cualquier commit o cierre de tarea.
-- **Clean Session Protocol:** Los agentes operan en "Sesiones Limpias", con acceso limitado a lo definido en su especificación.
-- **Sistema Inmunológico (Auto-Heal):** Si un despliegue falla por conflictos de infraestructura, el SRE genera una alerta atómica y el `FACTORY_EVOLVER` parchea automáticamente el código.
-- **Persistencia a Largo Plazo (LTP):** Las *Cultural Violations* detectadas en auditorías se inyectan en Neo4j como nodos de aprendizaje, creando una memoria muscular a prueba de fallos.
+La eficiencia de la factoría reside en la automatización de la micro-gestión mediante tres componentes críticos:
+
+### 🛂 1. Session Hook: La Aduana Universal
+Intercepta cada llamada a una habilidad. Sus funciones son:
+*   **Auto-Start:** Al ejecutar una tarea, busca la `SPEC_LITE.json` en `01_PENDING` y la mueve automáticamente a `02_IN_PROGRESS`. Si no hay Spec física, la ejecución se bloquea.
+*   **Validación de Fase:** Impide que se ejecuten tareas de Producción (M3) si la fase de Arquitectura (M2) no tiene el sello de "Solidified".
+
+### 🧪 2. Skill Engine: El Ejecutivo Atómico
+El motor que carga las habilidades y garantiza su integridad.
+*   **Inyección JIT (Just-In-Time):** Antes de ejecutar, inyecta credenciales del `.env` global y reglas de Neo4j en la memoria del agente.
+*   **Auto-Commit:** Tras el éxito de una skill bajo aislamiento, el motor mueve los artefactos a `03_COMPLETED` y cierra la tarea en el registro sin intervención humana.
+
+### 📊 3. DAST (Disk Artifact State Tracking)
+En v4.0-S, el **disco duro es la única fuente de verdad**. Si un agente dice que terminó, pero el archivo no existe físicamente en la carpeta correspondiente, la tarea se considera fallida.
 
 ---
 
-## 🕹️ 5. COMANDOS DE CONTROL (Slash Commands Universales)
+## 🚀 III. CICLO DE VIDA DEL PROYECTO (M1-M5 Pipeline)
 
-| Comando | Hub | Impacto Industrial |
+### 🕵️ M1: Discovery & Economics
+*   **Acción:** El `PRODUCT_OWNER` crea el `PRP_MASTER.json`.
+*   **Mandato:** Debe incluir el análisis de CAC (Costo de Adquisición) y LTV (Valor de Vida del Cliente) mediante el `startup-metrics-framework`.
+*   **Cierre:** Firma física (Approval) del usuario.
+
+### 📐 M2: Architecture & Backbone
+*   **Acción:** El `ARCHITECT` crea el plano estructural (`blueprint.md`).
+*   **Gate:** El `project-backbone-validator` confirma que la estructura de carpetas del framework existe físicamente. No se programa funcionalidad hasta que el "esqueleto" sea sólido.
+
+### ⚙️ M3: Implementation (Atomic Production)
+*   **Acción:** Delegación de `SPEC_LITE` a peones de producción.
+*   **Predictive Shield:** El Orquestador inyecta "Reglas de Oro" de proyectos pasados para evitar errores de implementación recurrentes.
+
+### 🛡️ M4: Compliance & Quality Gate
+*   **Acción:** Escaneo de secretos con `agentic-thought-secret-scanner` y auditoría de calidad de código.
+*   **Solidity Score:** El `QA_TESTER` emite una puntuación de solidez basada en la cobertura de tests y adhesión al Mandato SI.
+
+### 🚀 M5: Operations & Sentinel
+*   **Acción:** Provisión de infra e ignición del entorno Live.
+*   **Auto-Heal:** El sistema monitoriza logs corporales y parchea automáticamente la infraestructura ante fallos de puerto o memoria.
+
+---
+
+## ⚖️ IV. MANDATOS Y ÉTICA DE LA FACTORÍA
+
+### 1. Mandato de Unidades SI (Estándar de Medición)
+Toda métrica técnica en reportes debe expresarse exclusivamente en:
+*   **Tiempo:** Segundos (s) (ej: Latencia API: 0.12s).
+*   **Espacio:** Bytes (B) (ej: Tamaño Bundle: 450,230B).
+
+### 2. Soberanía Vegetariana (Factoría de Software)
+Prohibido el uso de analogías de "carnicería", "matadero" o "consumo de recursos" que impliquen sufrimiento animal. Somos una factoría de alta tecnología, no un proveedor de carnes.
+
+### 3. Zero-Trust de Identidad
+Cada agente tiene su propia "Aduana de Pensamiento" (Thought Boundary). Ningún agente puede leer la memoria de otro a menos que se use el grafo de conocimiento compartido.
+
+---
+
+## 🕹️ V. MATRIZ DE CONTROL (Comandos de Director)
+
+| Comando | Función Industrial | Responsable |
 | :--- | :--- | :--- |
-| **`/init-contract`** | L01 | Genera el PRP_MASTER con proyecciones financieras (CAC/LTV). |
-| **`/factory-orchestrate`** | L01 | Convierte PRP en tareas atómicas (`SPEC_LITE`) y sincroniza el Kanban. |
-| **`/validate-backbone`** | L01 | Verifica físicamente el esqueleto del proyecto antes de producir. |
-| **`/arch-diagram`** | L02 | Dibuja la arquitectura en formato Mermaid. |
-| **`/execute-task`** | L03 | Lanza una sesión limpia de producción con guardarraíles de Neo4j. |
-| **`/scan`** | L04 | Ejecuta el Secret Scanner bajo estándar Zero-Trust. |
-| **`/audit`** | L04 | Valida calidad y cumplimiento de SI Units. Detecta violaciones culturales. |
-| **`/provision`** | L05 | Aprovisiona infraestructura como código (Docker/Terraform). |
-| **`/deploy`** | L05 | Despliega los artefactos verificados al entorno Live. |
-| **`/health-check`** | L05 | Verifica latencia y salud en tiempo real (M5). |
-| **`/auto-heal`** | L05 | Dispara el parcheo autónomo de infraestructura caída. |
-| **`/sync-memory`** | L05 | Convierte logs temporales en Engramas permanentes dentro de Neo4j. |
-| **`/factory-status`** | All | Reporte de progreso de fases y salud de Hubs. |
-| **`/kanban-board`** | All | Lanza el dashboard visual en el puerto 3001. |
+| `/init-contract` | Sella la visión y viabilidad financiera. | Product Owner |
+| `/factory-orchestrate` | Sincroniza el disco con el plan de ataque. | Orchestrator |
+| `/execute-task` | Lanza la línea de montaje con inmunidad Neo4j. | Orchestrator/Peon |
+| `/audit` | Valida la solidez y cumplimiento de SI Units. | QA Tester |
+| `/scan` | Ejecuta el escudo Zero-Trust de secretos. | Security Auditor |
+| `/auto-heal` | Activa la resiliencia autónoma ante fallos. | DevOps / Evolver |
+| `/sync-memory` | Graba el aprendizaje del proyecto en el ADN. | Memory Optimizer |
 
 ---
-
-## 🍱 6. GESTIÓN DE INFRAESTRUCTURA (Ops)
-
-1. **Setup:** `cd INFRA`.
-2. **Config:** `cp .env.shared .env` y configurar secretos reales.
-3. **Boot:** `docker-compose up -d`.
-4. **Resilience:** Los servicios corren sobre `dasafo_network`. El Grafo Neo4j (`kg-db`) es el cerebro persistente de la factoría y no debe ser borrado entre proyectos.
-
----
-*Manual Maestro v4.0-S | dasafo_Systems — Industrializando la Excelencia Evolutiva.*
-actualiza este archivo que tiene que estar en español mirando estos archivos:
+*Ratificado: 2026-04-02 | Dasafo Factory v4.0-S | El Futuro de la Ingeniería de Software Solidificada.*
