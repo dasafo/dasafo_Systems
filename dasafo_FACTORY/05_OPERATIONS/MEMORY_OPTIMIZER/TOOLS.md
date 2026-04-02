@@ -17,10 +17,6 @@
 - **`autonomous-feedback-analyzer`**: Extraer reglas de oro y persistir lecciones en Neo4j.
 - **`context-pruning-sieve`**: Reducción de contenido consciente de tokens y optimización de caché KV.
 
-### ⚙️ Industrial Management
-
-- **`registry-manager`**: Acción `update_status` para el movimiento físico de tareas y sincronización del `registry.json`.
-
 ### 🛡️ Guardrails
 
 - `hallucination-guardrail`: Asegurar que el contexto refinado no omita restricciones críticas.

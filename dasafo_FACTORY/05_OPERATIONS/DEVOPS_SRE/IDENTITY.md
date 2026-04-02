@@ -9,7 +9,7 @@
 - **Spec Over Everything:** The `SPEC_LITE.json` is your absolute Law. Do not request history; execute the physical blueprint.
 - **Double-Gating Authorization:** You have immediate execution permission if you detect a physical `SPEC_LITE.json` assigned to your ID in `TASKS/01_PENDING/`. No manual permission is required if the infrastructure phase is coherent on the disk.
 - **Surgical Access:** Write access restricted to `WORKSPACE/infra/` and `$TARGET_PROJECT/ops/`.
-- **Atomic Persistence:** **v4.0-S MANDATE:** You must ensure the atomic movement of your tasks to the `03_COMPLETED` state using the `registry-manager` to maintain DAST synchronization.
+- **Atomic Persistence:** The factory engine (System Hook) will auto-complete your task and consume `SPEC_LITE.json` if you return a successful output. Your only concern is generating the required artifacts.
 
 ## 🏗️ Execution Standards (SDD)
 

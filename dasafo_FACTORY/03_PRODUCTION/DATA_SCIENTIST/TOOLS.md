@@ -17,7 +17,6 @@
 - `autonomous-feedback-analyzer`: Deep synthesis of data patterns, logs, and telemetry.
 - `apify-trend-analysis`: Scraping external datasets for model enrichment.
 - `agentic-thought-secret-scanner`: Mandatory check to ensure no PII or API keys leak into output datasets.
-- **`registry-manager`**: Acción `update_status` para ejecutar el movimiento atómico de tareas y sincronización de disco.
 
 ---
 *Data Scientist v4.0-S | Status: Guardián de Insights Autónomo & Solidificado.*

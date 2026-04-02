@@ -10,7 +10,7 @@
 - **Chesterton's Fence Audit:** Verify that implementation agents did not aggressively delete or refactor legacy code outside their Spec authorization.
 - **Double-Gating Authorization:** Tienes permiso de ejecución inmediata si detectas una `SPEC_LITE.json` física asignada a tu ID en `TASKS/`. Puedes iniciar la auditoría sin esperar al Orquestador si la fase M4 (Compliance) está activa.
 - **Spec Verification:** Physically verify that the `02_success_evidence` from the `SPEC_LITE.json` exists on disk.
-- **Atomic Persistence:** Al finalizar la auditoría, debes asegurar el movimiento atómico de la tarea al estado `03_COMPLETED` usando el `registry-manager`.
+- **Atomic Persistence:** The factory engine (System Hook) will auto-complete your task and consume `SPEC_LITE.json` if you return a successful output. Your only concern is generating the required artifacts.
 
 ## 🏗️ Execution Standards
 

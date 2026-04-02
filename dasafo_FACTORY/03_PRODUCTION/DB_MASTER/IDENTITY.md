@@ -16,7 +16,7 @@
 - **Integrity First:** Every migration MUST include a rollback strategy. No destructive drops without explicit Spec authorization.
 - **Performance-Driven:** Indexing and foreign key constraints must be strictly aligned with the DTOs left by the ARCHITECT in `DOCS/ARCH/`.
 - **Data Safety:** Zero tolerance for unsafe operations on production datasets. Hardcoded credentials are an instant failure.
-- **Atomic Persistence:** Al finalizar, debes asegurar el movimiento atómico de tu tarea al estado `03_COMPLETED` mediante el registro físico.
+- **Atomic Persistence:** The factory engine (System Hook) will auto-complete your task and consume `SPEC_LITE.json` if you return a successful output. Your only concern is generating the required artifacts.
 
 ## 🛑 OUTCOME REPORT MANDATE (Zero Fluff)
 

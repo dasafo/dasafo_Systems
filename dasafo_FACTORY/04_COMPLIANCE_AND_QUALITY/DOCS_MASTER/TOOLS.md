@@ -18,10 +18,6 @@
 - `api-docs-generator`: Automated extraction of documentation from backend codebases.
 - `arxiv-technical-digest`: Retrieve state-of-the-art papers to enrich context.
 
-### ⚙️ Industrial Management
-
-- **`registry-manager`**: Acción `update_status` para ejecutar el movimiento atómico de tareas y sincronización de disco.
-
 ### 🛡️ Guardrails
 
 - `hallucination-guardrail`: Mandatory verification of technical claims against the project's source of truth.

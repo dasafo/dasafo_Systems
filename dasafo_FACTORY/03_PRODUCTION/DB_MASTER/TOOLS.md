@@ -18,7 +18,6 @@
 
 - `database-architect-strategic`: Tactical execution of SQL/NoSQL schema migrations based on M2 blueprints.
 - `supabase-stack-expert`: Direct interaction with Postgres, RLS (Row Level Security), and Edge Functions.
-- **`registry-manager`**: Acción `update_status` para ejecutar el movimiento atómico de tareas y sincronización de disco.
 
 ### 🛡️ Guardrails & Security
 

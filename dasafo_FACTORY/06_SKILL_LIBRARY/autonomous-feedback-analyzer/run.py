@@ -33,22 +33,26 @@ def persist_to_knowledge_graph(insights: list, project: str, agent: str):
         driver = GraphDatabase.driver(uri, auth=(user, pwd))
         with driver.session() as session:
             for insight in insights:
-                rule = insight.get("rule")
-                tech = insight.get("tech", "Global")
+                # Soportar strings directos (infra) o diccionarios (feedback estructurado)
+                rule = insight.get("rule") if isinstance(insight, dict) else insight
+                tech = insight.get("tech", "Global") if isinstance(insight, dict) else "docker"
+                phase = insight.get("phase", "M5_OPERATIONS") if isinstance(insight, dict) else "M5_OPERATIONS"
                 
-                # Inyección v4.0-S: Nodos de Violación Cultural y Tecnología
+                # Inyección v4.0-S: Ontología Expandida con Nodo de Fase
                 session.run("""
                     MERGE (r:GoldenRule {content: $rule})
                     MERGE (p:Project {name: $project})
                     MERGE (a:Agent {id: $agent})
                     MERGE (t:Technology {name: $tech})
+                    MERGE (ph:Phase {name: $phase})
                     MERGE (cv:CulturalViolation {description: $rule})
                     MERGE (cv)-[:CAUSED_BY]->(t)
                     MERGE (p)-[:GENERATED]->(r)
                     MERGE (a)-[:LEARNED]->(r)
                     MERGE (r)-[:ADDRESSES]->(cv)
+                    MERGE (r)-[:BELONGS_TO_PHASE]->(ph)
                     SET r.last_sync = datetime(), r.status = 'ACTIVE'
-                """, rule=rule, project=project, agent=agent, tech=tech)
+                """, rule=rule, project=project, agent=agent, tech=tech, phase=phase)
         driver.close()
         return True, "KG Sync Success"
     except Exception as e:
@@ -98,7 +102,8 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
                         golden_rules_extracted.append({
                             "rule": entry["golden_rule"],
-                            "tech": tech
+                            "tech": tech,
+                            "phase": phase
                         })
                     if entry.get("severity") in ["critical", "high"]:
                         critical_errors += 1

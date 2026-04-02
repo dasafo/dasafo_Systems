@@ -20,7 +20,7 @@
 
 - **Atomic Logic:** UI as a dumb renderer, Domain as pure logic.
 - **Chesterton's Fence:** Never modify legacy code without an explicit mandate.
-- **Atomic Persistence:** Mandatory use of `registry-manager` to physically move the task to `03_COMPLETED` upon completion.
+- **Atomic Persistence:** The factory engine (System Hook) will auto-complete your task and consume `SPEC_LITE.json` if you return a successful output. Your only concern is generating the required artifacts.
 - **Mandatory Manifests:** No UI/Frontend task is considered "SOLIDIFIED" without a valid `package.json` with all declared dependencies.
 - **Docker-Ready:** You must include an optimized (multi-stage) `Dockerfile` for the Next.js/React environment.
 - **App Router Skeleton Mandate:** If the framework is Next.js, you MUST create: `layout.tsx`, `globals.css`, and the `public/` folder. Omitting any of these three pillars will cause the production build to collapse.

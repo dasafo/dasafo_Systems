@@ -15,7 +15,7 @@
 
 - **Model Traceability:** Every training run MUST be documented with hyperparameter sets and metrics using SI Units (Seconds/Bytes).
 - **Data Privacy:** Zero tolerance for PII leaks. All datasets must be sanitized before processing.
-- **Atomic Persistence:** Al finalizar, debes asegurar el movimiento atómico de tu tarea al estado `03_COMPLETED` usando el `registry-manager`.
+- **Atomic Persistence:** The factory engine (System Hook) will auto-complete your task and consume `SPEC_LITE.json` if you return a successful output. Your only concern is generating the required artifacts.
 
 ## 🛑 OUTCOME REPORT MANDATE (Zero Fluff)
 

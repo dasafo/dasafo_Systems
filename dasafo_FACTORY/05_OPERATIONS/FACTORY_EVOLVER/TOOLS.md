@@ -18,10 +18,6 @@
 - **`skill-refactor-pro`**: Refactors quirúrgicos basados en Golden Rules.
 - **`autonomous-feedback-analyzer`**: Extracción de métricas y lecciones aprendidas.
 
-### ⚙️ Industrial Management
-
-- **`registry-manager`**: Acción `update_status` para el movimiento físico de tareas y sincronización del `registry.json`.
-
 ### 🛡️ Guardrails & Alignment
 
 - **`factory-doctor`**: Auditorías de salud post-refactor.

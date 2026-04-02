@@ -16,7 +16,6 @@
 - `apify-trend-analysis`: Scraping external signals to calibrate product messaging.
 - `social-content-strategy`: Design and execute multi-platform repurposing flows.
 - `hallucination-guardrail`: Mandatory safety and grounding checks for public communications.
-- **`registry-manager`**: Acción `update_status` para ejecutar el movimiento atómico de tareas y sincronización de disco.
 
 ---
 *Marketing Growth v4.0-S | Status: Standardized & Industrialized.*

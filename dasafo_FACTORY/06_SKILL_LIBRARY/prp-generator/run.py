@@ -119,17 +119,40 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
         # 3. Action: generate_lite (Phase M3)
         elif action == "generate_lite":
-            task_id = params.get("task_id", "M3-XXX")
-            spec_file = project_path / "TASKS" / f"SPEC_{task_id}.json"
+            spec_data = params.get("spec_data", {})
+            
+            # Capturamos el task_id desde el payload del Orquestador o usamos LITE por defecto
+            task_id = spec_data.get("metadata", {}).get("task_id") or params.get("task_id", "LITE")
+            
+            # Escribimos siempre en SPEC_LITE.json para que sea un "buzón de entrega" predecible
+            spec_file = project_path / "TASKS" / "SPEC_LITE.json"
             
             template = load_template("SPEC_LITE_TEMPLATE")
             if not template:
                  return SkillOutput.failure(agent, skill, "FATAL: SPEC_LITE_TEMPLATE.json not found.", cid)
 
-            template["metadata"]["task_id"] = task_id
-            template["metadata"]["parent_prp"] = str(prp_file.name)
-            template["specification"]["01_objective"] = problem or "Atomic task execution."
+            # 🧬 Fusión DAST: Inyectamos los datos del Orquestador en tu plantilla
+            if "metadata" in spec_data:
+                template["metadata"].update(spec_data["metadata"])
             
+            template["metadata"]["parent_prp"] = str(prp_file.name)
+
+            # Asegurar la clave technology para la Inyección JIT de Neo4j
+            if "technology" in spec_data:
+                template["metadata"]["technology"] = spec_data["technology"]
+            
+            if "technical_goal" in spec_data:
+                template["specification"]["01_objective"] = spec_data["technical_goal"]
+            elif problem:
+                template["specification"]["01_objective"] = problem
+                
+            if "requirements" in spec_data:
+                template["specification"]["02_success_evidence"] = spec_data["requirements"]
+                
+            if "boundaries" in spec_data:
+                template["specification"]["04_execution_context"].append(f"Boundaries: {spec_data['boundaries']}")
+
+            # Guardado físico seguro
             spec_file.parent.mkdir(parents=True, exist_ok=True)
             with open(spec_file, 'w', encoding='utf-8') as f:
                 json.dump(template, f, indent=2, ensure_ascii=False)
@@ -139,17 +162,16 @@ def run(skill_input: SkillInput) -> SkillOutput:
             result_payload = {
                 "industrial_status": "SOLIDIFIED - SPEC LITE READY",
                 "prp_path": str(spec_file),
-                "prp_content": json.dumps(template),
                 "solidity_score": 1.0,
-                "open_questions": [],
                 "compliance_report": {
                     "atomic_spec_verified": True,
+                    "dast_injection_successful": True,
                     "execution_duration_seconds": round(time.time() - start_time, 4)
                 },
-                "summary": f"SPEC_LITE generated for task {task_id}."
+                "summary": f"SPEC_LITE generated physically at TASKS/{spec_file.name} for agent {template['metadata'].get('assigned_agent')}."
             }
             return SkillOutput.success(agent, skill, result_payload, artifacts, cid)
-
+            
         # 4. Action: validate
         elif action == "validate":
             if not prp_file.exists():

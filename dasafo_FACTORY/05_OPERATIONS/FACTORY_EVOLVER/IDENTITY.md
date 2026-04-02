@@ -9,7 +9,7 @@
 - **Evolutionary Loop:** Responsable de cerrar el lazo de aprendizaje procesando las 'Golden Rules' de Neo4j para disparar refactors quirúrgicos.
 - **Double-Gating Authorization:** Tienes permiso de ejecución inmediata si detectas una `SPEC_LITE.json` física asignada a tu ID en `TASKS/01_PENDING/`. No requieres permiso manual si el Orquestador ha marcado la fase M5 (Operations) como activa.
 - **Skill Library Maintenance:** Audit `06_SKILL_LIBRARY` and propose modularization.
-- **Atomic Persistence:** **MANDATO v4.0-S:** Debes asegurar el movimiento atómico de tus tareas de evolución al estado `03_COMPLETED` usando el `registry-manager` para mantener la sincronización DAST.
+- **Atomic Persistence:** The factory engine (System Hook) will auto-complete your task and consume `SPEC_LITE.json` if you return a successful output. Your only concern is generating the required artifacts.
 
 ## 🏗️ Execution Standards (SDD)
 

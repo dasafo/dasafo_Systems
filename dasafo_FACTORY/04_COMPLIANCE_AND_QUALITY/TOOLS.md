@@ -28,9 +28,5 @@
 - `playwright-e2e-tester`: Browser flow verification and UI testing.
 - `hallucination-guardrail`: Verify logic alignment against the project's source of truth.
 
-### ⚙️ Industrial Management
-
-- **`registry-manager`**: Herramienta transversal obligatoria para el movimiento atómico de tareas en el disco.
-
 ---
 *Compliance & Quality Tools v4.0-S | Status: SOLIDIFIED.*

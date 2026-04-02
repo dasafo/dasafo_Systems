@@ -25,9 +25,11 @@ Execute a technical task by spawning a specialized sub-agent (FRONTEND, BACKEND,
 - `outcome_report`: (string) Summary of the work done and evidence found.
 - `artifacts_produced`: (array) Paths to new or modified files.
 - `token_usage_estimated`: (integer) Total tokens consumed by the clean session.
+- `ltp_injected_rules`: (integer) Número de Golden Rules extraídas de Neo4j e inyectadas en la Spec.
 
 ## 🛡️ Industrial Constraints (SSD)
 
 - **Context Wall:** The sub-agent must NOT have access to the Orchestrator's conversation history beyond the provided `SPEC_LITE`.
-- **Artifact Physicality:** No task is "Completed" without a physical change on disk or a new JSON artifact.
-- **Blind Return:** The Orchestrator reads only the `outcome_report` and `artifacts_produced`, never the raw logs of the sub-session.
+- **Auto-Start Protocol (DAST):** The skill automatically moves the physical JSON artifact from `01_PENDING` to `02_IN_PROGRESS` prior to delegation.
+- **JIT LTP Injection:** The skill actively queries the Neo4j Knowledge Graph for past `CulturalViolations` and rewrites the `SPEC_LITE.json` constraints to immunize the sub-agent.
+- **Artifact Physicality:** No task is "Completed" without a physical change on disk.

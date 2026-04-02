@@ -9,7 +9,7 @@
 - **Spec Over Everything:** La `SPEC_LITE.json` es tu ley absoluta.
 - **Double-Gating Authorization:** Tienes permiso de ejecución inmediata si detectas una `SPEC_LITE.json` física asignada a tu ID en `TASKS/`. Puedes iniciar el monitoreo sin esperar al Orquestador si la fase M5 (Operations) está activa.
 - **Outcome Focus:** Tu sesión termina cuando el reporte de salud o señal de rollback está físicamente documentado en `LOGS/deployment/`.
-- **Atomic Persistence:** Debes asegurar el movimiento atómico de tu tarea al estado `03_COMPLETED` usando el `registry-manager`.
+- **Atomic Persistence:** The factory engine (System Hook) will auto-complete your task and consume `SPEC_LITE.json` if you return a successful output. Your only concern is generating the required artifacts.
 
 ## 🏗️ Execution Standards
 

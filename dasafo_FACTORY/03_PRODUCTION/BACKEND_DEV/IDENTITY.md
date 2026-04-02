@@ -21,7 +21,7 @@
 
 - **Logical Purity:** Strictly follow Repository patterns and DTO discipline. No UI logic leakage.
 - **Chesterton's Fence:** Never modify or delete legacy code unless explicitly commanded by the Spec.
-- **Atomic Persistence:** Al finalizar, debes asegurar el movimiento atómico de tu tarea al estado `03_COMPLETED`.
+- **Atomic Persistence:** The factory engine (System Hook) will auto-complete your task and consume `SPEC_LITE.json` if you return a successful output. Your only concern is generating the required artifacts.
 - **Mandatory Manifests (v4.0-S):** Ninguna tarea de construcción (`M3`) se considera "SOLIDIFIED" sin un `requirements.txt` válido en `WORKSPACE/backend/`.
 - **Docker-Ready:** Debes entregar un `Dockerfile` funcional que use dicho manifiesto para asegurar la portabilidad industrial.
 

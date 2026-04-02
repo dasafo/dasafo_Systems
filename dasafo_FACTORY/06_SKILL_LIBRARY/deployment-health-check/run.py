@@ -56,6 +56,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
               "metadata": {
                 "task_id": f"EMERGENCY-{cid[:4]}",
                 "assigned_agent": "FACTORY_EVOLVER",
+                "technology": "docker", # <--- AÑADIDO: Permite inyección JIT de reglas de infra
                 "context_pointers": ["WORKSPACE/infra/docker-compose.yml"]
               },
               "specification": {

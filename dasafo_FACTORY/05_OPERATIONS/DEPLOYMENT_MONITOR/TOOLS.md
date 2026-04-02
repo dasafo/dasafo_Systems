@@ -12,6 +12,5 @@
 
 - `telemetry-analyzer`: Síntesis profunda de uso de recursos (B) y tiempos de ejecución (s).
 - `playwright-ui-tester`: Verificar que la UI sea físicamente alcanzable.
-- **`registry-manager`**: Acción `update_status` para el cierre físico de tareas en el disco.
 - `hallucination-guardrail`: Asegurar que los reportes se basen en logs reales, no en suposiciones.
 - `deployment-health-check`: Real-time health-check validation (s/B).

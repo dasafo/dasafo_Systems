@@ -13,7 +13,6 @@
 - `prp-generator`: Create and update the `PRP_MASTER` (12-section mandate).
 - `apify-trend-analysis`: Gather external data to justify North Star metrics.
 - `startup-metrics-framework`: Genera proyecciones financieras (CAC, LTV, ROI) para validar el modelo de negocio en M1.
-- `registry-manager`: Acción `update_status` para ejecutar el movimiento atómico de tareas y sincronización de disco.
 
 ---
 *Product Owner v4.0-S | Status: Visionario Autónomo & Solidificado.*

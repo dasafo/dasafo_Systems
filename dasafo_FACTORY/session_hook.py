@@ -59,23 +59,31 @@ def verify_project_state(target_project: str, requested_skill: str, agent: str =
         "BACKEND_DEV", "FRONTEND_DEV", "DB_MASTER", "DATA_SCIENTIST", # Producción
         "QA_TESTER", "SECURITY_AUDITOR", "RESEARCH_AGENT",           # Compliance
         "DEVOPS_SRE", "FACTORY_EVOLVER", "MEMORY_OPTIMIZER",         # Operations
-        "PRODUCT_OWNER", "MARKETING_GROWTH", "DOCS_MASTER"           # Strategy
+        "PRODUCT_OWNER", "MARKETING_GROWTH", "DOCS_MASTER",
+        "AI_ENGINEER"           # Strategy
     ]
 
     if agent in authorized_peons:
-        # Rutas de Specs autorizadas (Normal y Emergencia M5)
-        spec_path = Path(target_project) / "TASKS" / "SPEC_LITE.json"
-        emergency_spec = Path(target_project) / "TASKS" / "01_PENDING" / "EMERGENCY_SPEC.json"
+        # 📂 Rutas de búsqueda v4.0-S (Búsqueda recursiva en el ciclo de vida)
+        tasks_dir = Path(target_project) / "TASKS"
         
-        for sp in [spec_path, emergency_spec]:
+        # El Hook ahora busca la SPEC en: Raíz, PENDING (antes de empezar) o IN_PROGRESS (durante ejecución)
+        possible_specs = [
+            tasks_dir / "SPEC_LITE.json",
+            tasks_dir / "01_PENDING" / "EMERGENCY_SPEC.json",
+            tasks_dir / "01_PENDING" / "SPEC_LITE.json", # Por si acaso
+            tasks_dir / "02_IN_PROGRESS" / "SPEC_LITE.json" # <--- CRÍTICO: Nueva ubicación Auto-Start
+        ]
+        
+        # Búsqueda dinámica por nombre de archivo si el orquestador pasó uno específico
+        for sp in possible_specs:
             if sp.exists():
                 try:
                     with open(sp, "r") as f:
                         spec = json.load(f)
                         assigned = spec.get("metadata", {}).get("assigned_agent")
-                        # Si la tarea en el disco está asignada a este agente, bypass concedido
                         if assigned == agent:
-                            return True, f"Double-Gate: Agente {agent} autorizado por {sp.name} física en disco."
+                            return True, f"Double-Gate: Agente {agent} autorizado por {sp.parent.name}/{sp.name}."
                 except:
                     continue
     # -----------------------------------------------------------------------

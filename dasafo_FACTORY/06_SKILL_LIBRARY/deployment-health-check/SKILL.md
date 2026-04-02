@@ -16,7 +16,7 @@
 
 1. **Physical Artifact:** A JSON health report MUST be generated in `LOGS/deployment/`.
 2. **SI Compliance:** Latency MUST be reported in Seconds (s) and payload in Bytes (B).
-3. **Atomic Move:** The task must be closed via `registry-manager` upon completion.
+3. **Auto-Commit:** The task will be logically closed by the System Hook (Aduana Universal) upon successful execution. The agent only needs to guarantee the physical creation of the `HEALTH_*.json` artifact.
 
 ## 🛡️ Guardrails
 

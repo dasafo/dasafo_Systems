@@ -29,7 +29,6 @@
 - `pytest-logic-verifier`: Programmatic backend logic testing and verification.
 - `hallucination-guardrail`: Mandatory safety and grounding checks for AI outputs.
 - `agentic-thought-secret-scanner`: Proactive leak prevention for credentials and PII.
-- `registry-manager`: Herramienta transversal obligatoria para el movimiento atómico de tareas en el disco.
 
 ---
 *Production Tools v4.0-S | Status: SOLIDIFIED.*

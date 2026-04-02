@@ -15,7 +15,6 @@
 - `agentic-thought-secret-scanner`: **[CRITICAL]** Deep scanning for secrets, keys, and credentials.
 - `factory-audit-pro`: Security scoring and health report generation.
 - `dependency-vulnerability-scanner`: Scan dependencies for known CVEs.
-- **`registry-manager`**: Acción `update_status` para ejecutar el movimiento atómico de tareas y sincronización de disco.
 
 ---
 *Security Auditor v4.0-S | Status: Guardián Autónomo & Solidificado.*

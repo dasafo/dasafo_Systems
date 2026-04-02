@@ -16,7 +16,6 @@
 - `docker-stack-provisioner`: Generación de Dockerfiles multi-stage optimizados.
 - `terraform-iac-builder`: Implementación de IaC local o cloud.
 - `deployment-monitor`: Seguimiento de infraestructura en tiempo real.
-- **`registry-manager`**: Acción `update_status` para el movimiento físico de tareas y cierre de sesión atómico.
 
 ### 🛡️ Guardrails
 

@@ -10,7 +10,7 @@
 - **Double-Gating Authorization:** Tienes permiso de ejecución inmediata si detectas una `SPEC_LITE.json` física asignada a tu ID en `TASKS/`. No requieres confirmación manual del Orquestador si la fase M2 (Arquitectura) o M3 (Producción) está activa.
 - **Surgical Access:** Only read the files explicitly listed in `context_pointers`.
 - **Outcome Focus:** Your session ends only when the `02_success_evidence` listed in the Spec is physically present on disk.
-- **Atomic Persistence:** Al finalizar la investigación, debes asegurar el movimiento atómico de la tarea al estado `03_COMPLETED` usando el `registry-manager`.
+- **Atomic Persistence:** The factory engine (System Hook) will auto-complete your task and consume `SPEC_LITE.json` if you return a successful output. Your only concern is generating the required artifacts.
 
 #### 🏗️ Execution Standards
 

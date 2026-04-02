@@ -111,6 +111,12 @@ def execute(
 ) -> SkillOutput:
     """Punto de entrada con Guardián de Solidez y Sincronización v4.0-S."""
     
+    # Importación dinámica para cargar BYPASS_SKILLS de la aduana
+    try:
+        from session_hook import BYPASS_SKILLS
+    except ImportError:
+        BYPASS_SKILLS = set()
+
     if target_project is None:
         target_project = os.environ.get("TARGET_PROJECT", ".")
 
@@ -169,12 +175,47 @@ def execute(
                 if after_done > before_done + 1:
                     output.success = False
                     output.error = f"Solidity Breach: Salto de fase detectado ({before_done} -> {after_done})."
+
+            # ⚙️ INYECCIÓN: AUTO-COMMIT (Hook-Driven Registry)
+            # Se dispara solo en sesiones aisladas y si la skill no es de bypass
+            if isolate and skill not in BYPASS_SKILLS:
+                spec_path = Path(target_project) / "TASKS" / "SPEC_LITE.json"
+                if spec_path.exists():
+                    try:
+                        with open(spec_path, "r", encoding="utf-8") as f:
+                            spec = json.load(f)
+                        
+                        task_id = spec.get("metadata", {}).get("task_id")
+                        assigned = spec.get("metadata", {}).get("assigned_agent")
+                        
+                        # Si el agente activo estaba ejecutando la tarea asignada
+                        if task_id and assigned == agent:
+                            # Llamada interna programática al registry-manager
+                            rm_input = SkillInput(
+                                agent="SYSTEM_HOOK", # Identidad del motor
+                                skill="registry-manager",
+                                params={"action": "update_status", "task_id": task_id, "new_status": "COMPLETED"},
+                                target_project=target_project,
+                                correlation_id=correlation_id
+                            )
+                            rm_path = _resolve_run_module("registry-manager")
+                            rm_output = _load_and_run(rm_path, rm_input)
+                            
+                            if rm_output.success:
+                                if output.result is None:
+                                    output.result = {}
+                                output.result["auto_commit"] = f"Task {task_id} logically and physically closed."
+                                # Consumo Atómico de la Especificación: Destruye el archivo
+                                os.remove(spec_path)
+                            else:
+                                output.warnings.append(f"Auto-Commit falló: {rm_output.error}")
+                    except Exception as e:
+                        output.warnings.append(f"Auto-Commit falló críticamente: {str(e)}")
         
         return output
         
     except Exception as exc:
         return SkillOutput.failure(agent, skill, f"Error v4.0-S: {exc}", correlation_id)
-
 
 def _parse_args():
     parser = argparse.ArgumentParser(description="Skill Engine v4.0-S")

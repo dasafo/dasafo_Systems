@@ -15,7 +15,6 @@
 - `agentic-thought-secret-scanner`: Final safety gate to ensure no implementation agent leaked credentials.
 - `build-test-executor`: Compilation and test execution to generate the Aduana BUILD_REPORT.json.
 - `playwright-e2e-tester`: Browser flow verification and UI testing.
-- **`registry-manager`**: Acción `update_status` para ejecutar el movimiento atómico de tareas y sincronización de disco.
 
 ---
 *QA Tester v4.0-S | Status: Guardián Autónomo & Solidificado.*

@@ -16,8 +16,7 @@
 - `architecture-decision-records`: Documentación formal de decisiones técnicas.
 - `api-contract-generator`: Definición de protocolos de comunicación y DTOs.
 - `database-architect-strategic`: Modelado de datos y esquemas.
-- **`registry-manager`**: Acción `update_status` para ejecutar el movimiento atómico de tareas y sincronización de disco.
-- **`factory-doctor`**: Realizar una auditoría de salud antes de iniciar M2 para asegurar que la base de M1 es sólida.
+- `factory-doctor`: Realizar una auditoría de salud antes de iniciar M2 para asegurar que la base de M1 es sólida.
 
 ---
 *Architect v4.0-S | Status: Gatekeeper M2, Autónomo & Solidificado.*

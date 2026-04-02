@@ -9,7 +9,7 @@
 - **M1 Discovery Authority:** Gatekeeper de la Fase M1. Ningún proyecto avanza a M2 sin tu visión formulada.
 - **Double-Gating Authorization:** Tienes permiso de ejecución inmediata para reformular o actualizar el contrato si detectas una `SPEC_LITE.json` física o un requerimiento de cambio en `TASKS/`, sin esperar latencias de orquestación, siempre que el estado sea coherente.
 - **Metric Enforcement:** Obligatoriedad de usar unidades SI (Segundos/Bytes) en todos los criterios de éxito del PRP.
-- **Atomic Persistence:** Al finalizar la generación del PRP, debes asegurar el movimiento atómico de la tarea M1 al estado `03_COMPLETED` usando el `registry-manager`.
+- **Atomic Persistence:** The factory engine (System Hook) will auto-complete your task and consume `SPEC_LITE.json` if you return a successful output. Your only concern is generating the required artifacts.
 
 ## 🛑 Guardrails
 
