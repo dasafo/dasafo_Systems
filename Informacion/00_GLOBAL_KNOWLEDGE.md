@@ -1,113 +1,107 @@
-# 🌍 Dasafo Factory | GLOBAL KNOWLEDGE
+# 🌍 Dasafo Factory | GLOBAL KNOWLEDGE (v4.0-S Solidificada)
 
-> **Versión Actual:** v4.0-S "SDD Optimized Core"  
-> **Estado:** Operativo (Rigor Industrial)  
-> **Gobernanza:** Zero-Trust / Specs / Clean Sessions
+> **Versión Actual:** v4.0-S "Industrial Core - Double-Gate Enabled"
+> **Estado Operativo:** Producción / Industrialización Completa
+> **Gobernanza:** Zero-Trust / Spec-Driven Development (SDD) / Mandato SI
 
 ---
 
 ## 📜 I. LA CONSTITUCIÓN CORE (v4.0-S)
 
-### 1. Spec Driven Development (SDD)
-
-- **Nada existe sin Spec:** No se inicia trabajo sin un `PRP_MASTER.json` (Fase M1) o `SPEC_LITE.json` (Ejecución).
-- **Aislamiento de Fase:** El paso entre fases (M1-M5) está bloqueado físicamente por artefactos en disco. Sin artefacto, no hay transición.
-- **Mandato de Resultado:** Toda tarea finaliza con un reporte "Zero Fluff": `status`, `artifacts`, `summary`.
+### 1. Spec-Driven Development (SDD)
+- **Spec Sobre Todo:** No se inicia ninguna misión sin un `PRP_MASTER.json` (Fase M1) o `SPEC_LITE.json` (Ejecución).
+- **Aislamiento de Fase:** Las transiciones entre M1 y M5 están bloqueadas físicamente por la presencia de artefactos en disco. Sin artefacto, no hay transición.
+- **Mandato de Resultado:** Toda tarea debe terminar con un reporte "Zero Fluff": `status`, `artifacts` y `summary`.
 
 ### 2. Context Isolation (Clean Sessions)
-
-- **Memory Sovereignty:** Los agentes operan bajo `CLEAN_SESSION=True`. Solo leen los `context_pointers` autorizados por el Orquestador.
-- **No-Noise Policy:** El `FEEDBACK-LOG` es un sustrato técnico, no una conversación. Se poda mediante el `MEMORY_OPTIMIZER`.
-- **Artifact-First:** La comunicación entre agentes es vía cambios en el sistema de archivos, eliminando hilos conversacionales infinitos.
+- **Soberanía de Memoria:** Los agentes operan bajo `CLEAN_SESSION=True`. El acceso está restringido estrictamente a los `context_pointers` autorizados.
+- **Política No-Noise:** El `FEEDBACK-LOG` es un sustrato técnico, no un chat compartido. Es procesado y comprimido por el `MEMORY_OPTIMIZER`.
+- **Artifact-First:** La comunicación entre agentes se realiza mediante cambios en archivos, eliminando hilos conversacionales infinitos.
 
 ### 3. Zero-Trust & Solidity
+- **Acceso Quirúrgico:** Los agentes no tienen permisos de escritura fuera de su dominio técnico o las capas de lógica del proyecto.
+- **Solidity Gate:** El cierre de hitos requiere validación de `kanban-solidity-gate` y clearance del `SECURITY_AUDITOR`.
+- **Valla de Chesterton:** Prohibido borrar código legado sin un ADR (Architecture Decision Record) que justifique el "Por qué".
+- **Mandato Backbone:** No se realiza implementación atómica sin validación previa física del andamiaje (scaffolding) mediante el `project-backbone-validator`.
 
-- **Acceso Quirúrgico:** Sin permisos fuera del dominio técnico asignado.
-- **Solidity Gate:** Ninguna fase cierra sin validación de `kanban-solidity-gate` y clearance de `SECURITY_AUDITOR`.
-- **Chesterton's Fence:** Prohibido borrar código sin un ADR (Architecture Decision Record) que explique el "Por qué".
+### 4. Métricas Industriales (Estándares SI)
+- **Precisión Temporal:** Siempre expresada en **Segundos (s)**.
+- **Precisión de Recursos:** Siempre expresada en **Bytes (B)**.
 
-### 4. Métricas Industriales y Financieras
-
-- **Precisión Temporal:** Siempre en Segundos (s).
-- **Precisión de Recursos:** Siempre en Bytes (B).
-- **Viabilidad (ROI):** Todo proyecto requiere un Target CAC y LTV definido en M1.
-
-### 5. Infraestructura Híbrida (LTP)
-
-- **Persistencia LTP:** Todo aprendizaje agentico o fallo crítico debe registrarse en el Grafo de Conocimiento compartido (`kg-db` / Neo4j) como "Golden Rules".
-- **Service Discovery:** Las Skills deben priorizar el uso de los hostnames industriales (`dasafo-shared-db`, `dasafo-shared-kg`).
-- **Aislamiento Local:** Los archivos fuente residen en el `target_project`, garantizando que la ejecución sea efímera pero el conocimiento permanente.
+### 5. Soberanía de Infraestructura (LTP)
+- **Persistencia a Largo Plazo (LTP):** Todo aprendizaje agentico, fallo crítico o insight arquitectónico debe sincronizarse al Grafo de Conocimiento compartido (`kg-db` / Neo4j) como "Golden Rules".
+- **Descubrimiento de Servicios:** Los agentes priorizan el uso de hostnames industriales (`dasafo-shared-db`, `dasafo-shared-kg`).
+- **Ejecución Local, Conocimiento Global:** Los archivos residen localmente, pero el conocimiento se persiste globalmente para la evolución de la factoría.
 
 ---
 
-## 🛠️ II. ARQUITECTURA DE PROYECTOS
+## 🛠️ II. ARQUITECTURA Y CICLO DE VIDA (M1-M5)
 
-### 1. Ciclo de Vida (M1-M5)
+1. **M1: Discovery & Finance:** Market fit, proyección ROI (CAC/LTV) y firma del `PRP_MASTER.json`.
+2. **M2: Architecture & Foundation:** Provisión de infra, definiciones DTO y validación de Backbone.
+3. **M3: Implementation (Atomic):** Desarrollo basado en SDD con guardarraíles predictivos inyectados desde Neo4j LTP.
+4. **M4: Validation & Quality (QA):** Auditoría industrial, validación de contratos y escaneo de secretos.
+5. **M5: Ops & Auto-Heal:** Despliegue, monitoreo Sentinel en tiempo real y parches de auto-sanación.
 
-1. **M1: Discovery & Finance:** Definición técnica, KPIs financieros y firma de `PRP_MASTER.json`.
-2. **M2: Architecture & Foundation:** Setup de infraestructura, validación de Backbone y DTOs básicos.
-3. **M3: Implementation (Atomic):** Desarrollo en sprints atómicos con guardarraíles predictivos inyectados desde Neo4j.
-4. **M4: Validation & QA:** Pruebas de integración, detección de *Cultural Violations* y `kanban-solidity-gate`.
-5. **M5: Ops & Auto-Heal:** Despliegue, monitoreo Sentinel, Auto-Sanación de Infraestructura y consolidación de memoria.
-
-### 2. Estructura de Directorios (Top Down)
-
-- `/domain`: Lógica pura, sin dependencias externas.
-- `/application`: Orquestación de casos de uso.
-- `/infrastructure`: Adaptadores, bases de datos, APIs externas.
-- `/ui`: Interfaz "muda" (renders data only).
+### 🏛️ Separación de Capas (SoC)
+- `/domain`: Lógica de negocio pura, sin dependencias.
+- `/application`: Orquestación de casos de uso y flujo de lógica.
+- `/infrastructure`: Adaptadores, bases de datos y gateways externos.
+- `/ui`: Capa de renderizado mudo / componentes de diseño atómico.
 
 ---
 
-## 🚀 III. ESTRATEGIA DE CRECIMIENTO (G1-G3)
+## 🚀 III. ESTRATEGIA DE CRECIMIENTO Y MARKETING
 
-Para sistemas en producción que requieren escalabilidad industrial.
+Gestionado por `MARKETING_GROWTH` mediante `social-content-strategy` y `apify-trend-analysis`.
 
-- **G1 (Tuning):** Benchmarking con unidades SI (s, B). Capacidad hasta 10k conc.
-- **G2 (Scale-Out):** Extracción de microservicios y modularización estricta.
-- **G3 (Redundancy):** Despliegue cross-region y test de failover.
+- **Hooks Basados en Valor:** Mensajería directa basada en métricas SI (ROI en s, B).
+- **Estética Industrial:** Modos oscuros premium, glassmorphism y tokens de diseño responsivo.
+- **Mandato Ético:** Cero menciones a analogías de carne/matadero (Factoría Vegetariana).
 
 ---
 
-## 📡 IV. TELEMETRÍA Y SISTEMA PULSE
+## 📊 IV. TELEMETRÍA DE MISIÓN (Sistema Pulse)
 
-Toda auditoría de sistema debe reportar:
-
-- **ResponseTime (s):** Latencia media.
-- **MemoryUsage (B):** Tamaño del heap.
-- **NodeStatus:** (OK/Degraded/Critical).
-- **ResourceDrift (%):** Desviación respecto a la especificación original.
+Todo reporte de auditoría o ciclo de vida DEBE incluir:
+- **Resource Delta:** Consumo de tokens, Delta de almacenamiento (B), Sobrecarga de red (B).
+- **Performance:** Tiempo de ejecución (s), Tasa de éxito (%), Profundidad DAG.
+- **Systemic Health:** Puntuación de Solidez (1-10), Tasa de alucinación (Target: 0%), Evidencia Disk IO.
 
 ---
 
 ## ✅ V. PROTOCOLO DE APROBACIÓN (SIGN-OFF)
 
-Antes de finalizar cualquier proyecto (`PRP_FINAL_SIGN_OFF`):
-
-1. **Infra:** Secrets y Variantes fijadas (Pinned).
-2. **Gov:** `PRP_CONTRACT.json` sincronizado.
-3. **Code:** 0 Errores de Lint (`solidity-gate`).
-4. **Docs:** `WALKTHROUGH.md` actualizado al código real.
+La transición entre fases requiere la **Plantilla de Aprobación de Hitos**:
+1. **Artefactos Físicos:** Evidencia documentada en `DOCS/` (Blueprints, ADRs).
+2. **Chequeo de Solidez:** Log de `kanban-solidity-gate` confirmado como SOLIDIFIED.
+3. **Clearance de Seguridad:** Resultado de `agentic-thought-secret-scanner`: PASSED.
+4. **Rigor Técnico:** Métricas validadas en Unidades SI (s, B).
+5. **Human Sign-off (HITL):** Firma del usuario obligatoria para M1 y M5 (Release final).
 
 ---
 
-## 📝 VI. FEEDBACK SCHEMA (INDUSTRIAL)
+## 📝 VI. ESQUEMA DE FEEDBACK Y APRENDIZAJE
 
-Cada iteración o fallo debe generar un objeto de feedback estructurado según `FEEDBACK_SCHEMA.json` para su análisis automático por el `FACTORY_EVOLVER`:
+Las anomalías se registran como objetos JSON procesables para permitir la mejora autónoma vía `FACTORY_EVOLVER`:
 
 ```json
 {
-  "id": "ERR-XXXX",
+  "id": "FB-XXXX",
   "version": "v4.0-S",
-  "timestamp": "2026-03-30T17:52:00Z",
+  "timestamp": "ISO_8601_TIMESTAMP",
   "context": {
-    "agent": "ORCHESTRATOR",
-    "project": "CurrentProject",
-    "phase": "M1_DISCOVERY"
+    "agent": "ID_AGENTE_AUTORIZADO",
+    "project": "NOMBRE_PROYECTO",
+    "phase": "M[1-5]_FASE"
   },
   "severity": "critical | high | medium | low",
-  "error_description": "Descriptivo y técnico",
-  "correction": "Acción inmediata tomada",
-  "golden_rule": "Regla para prevenir recurrencia",
-  "categories": ["security", "infrastructure", "solidity-guard"]
+  "error_description": "Definición técnica precisa de la desviación",
+  "correction": "Acción inmediata de corrección / mitigación",
+  "golden_rule": "Regla universal derivada para prevención futura",
+  "categories": ["security", "infrastructure", "performance", "solidity-guard"]
 }
+```
+
+---
+*Ratificado: 2026-04-02 | Dasafo Factory v4.0-S Industrialized Spanish Edition.*

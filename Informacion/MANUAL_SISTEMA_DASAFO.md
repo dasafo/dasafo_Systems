@@ -121,3 +121,4 @@ Antes de escribir código de producción:
 
 ---
 *Manual Maestro v4.0-S | dasafo_Systems — Industrializando la Excelencia Evolutiva.*
+actualiza este archivo que tiene que estar en español mirando estos archivos:

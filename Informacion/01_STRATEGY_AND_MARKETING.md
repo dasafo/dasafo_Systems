@@ -1,69 +1,64 @@
-# 🏛️ Categoría 01: STRATEGY & MARKETING | Dasafo Factory (v4.0-S)
+# 🏛️ Departamento de ESTRATEGIA Y MARKETING (Hub 01)
 
-Esta categoría agrupa a los agentes encargados de la visión, orquestación técnica y ejecución de crecimiento. Su misión es transformar la necesidad humana en especificaciones industriales y asegurar que el proyecto avance de forma sólida y auditable.
-
----
-
-## 🏛️ 1. ORCHESTRATOR (El Nexo / Capataz Ciego)
-
-Es el director estratégico del proyecto. Su verdad reside en el `registry.json` y su herramienta principal es la delegación quirúrgica.
-
-- **Rol**: Director de Estrategia y Operaciones.
-- **Protocolo "Capataz Ciego"**:
-  - Tiene **prohibido** leer código fuente directamente.
-  - Toda inspección, depuración o creación de código debe delegarse a los peones en **Clean Sessions**.
-- **Responsabilidades**:
-  - Deconstruir el contrato `PRP_MASTER` en tareas atómicas `SPEC_LITE`.
-  - Consultar el grafo de conocimiento (Neo4j) para inyectar prevenciones históricas antes de delegar.
-  - Gestionar el DAG (Grafo Dirigido Acíclico) de tareas del proyecto.
-  - Sincronizar el estado físico en disco con el registro digital.
-- **Herramientas Clave**:
-  - `delegate-clean-session`: Lanza sesiones aisladas.
-  - `kanban-solidity-gate`: Valida la evidencia física de las tareas.
-  - `project-backbone-validator`: Verifica físicamente el andamiaje del framework antes de producir.
+> **Versión:** v4.0-S "Industrial Core - Hub Manager Enabled"
+> **Misión:** Transformar necesidades humanas en contratos industriales (`PRP_MASTER`), orquestar el ciclo de vida del proyecto (M1-M5) y ejecutar estrategias de crecimiento basadas en evidencia.
+> **Gobernanza:** Zero-Trust / SDD / Unidades SI (s, B)
 
 ---
 
-## 👔 2. PRODUCT_OWNER (El Visionario / Arquitecto de M1)
+## 👥 Agentes del Departamento
 
-Es el guardián de la visión y el responsable de definir el **QUÉ** y el **POR QUÉ**. Es la autoridad única de la Fase M1.
+### 1. 🏛️ ORCHESTRATOR (Director Estratégico)
+*   **Rol:** Gestor del Hub y Director de Misión.
+*   **Objetivo:** Deconstruir contratos `PRP_MASTER` en tareas atómicas `SPEC_LITE` y liderar el proyecto desde el Descubrimiento (M1) hasta la Operación (M5).
+*   **Protocolos Clave:**
+    *   **Punto de Ciego (Blind Foreman):** Prohibido leer código fuente; delegación total a especialistas.
+    *   **Autoridad DAST:** Sincronización estricta del `registry.json` con el estado físico del disco.
+    *   **Guardarraíles Neo4j:** Inyección de "Reglas de Oro" basadas en fallos históricos antes de la ejecución.
 
-- **Rol**: Estratega de Mercado y Dueño del Producto.
-- **Protocolo de "Anti-Arquitectura"**:
-  - Define las reglas de negocio y criterios de éxito, pero **nunca** el "Cómo" técnico (esquemas DB, rutas API, etc.).
-- **Responsabilidades**:
-  - Transformar la necesidad del Usuario en el Contrato Industrial de 12 secciones (`PRP_MASTER`).
-  - Calcular y establecer los KPIs financieros objetivo (Target CAC, Target LTV).
-  - Asegurar que todas las métricas de éxito técnico utilicen Unidades SI (segundos, bytes).
-  - Gestionar el **Sign-Off** de la Fase M1 tras la aprobación humana.
-- **Herramientas Clave**:
-  - `prp-generator`: Genera y actualiza el contrato maestro.
-  - `startup-metrics-framework`: Genera proyecciones financieras y valida viabilidad de negocio.
-  - `apify-trend-analysis`: Justifica las métricas North Star con datos reales.
+### 2. 👔 PRODUCT_OWNER (Arquitecto de Visión)
+*   **Rol:** Estratega de Mercado y Arquitecto de la Fase M1.
+*   **Objetivo:** Traducir los requisitos del usuario en el Contrato Industrial de 12 secciones (`PRP_MASTER.json`).
+*   **Protocolos Clave:**
+    *   **Validación Financiera:** Generación de proyecciones de ROI, CAC y LTV para validar el modelo de negocio.
+    *   **Mandato HITL:** Requiere firma física (aprobación) del usuario para cerrar la fase M1.
+    *   **Definición de Éxito:** Los KPIs deben expresarse obligatoriamente en Segundos (s) y Bytes (B).
 
----
-
-## 📈 3. MARKETING_GROWTH (Estratega de Crecimiento / Peón)
-
-Es el encargado de ejecutar los artefactos de marketing y contenido basados estrictamente en los mandatos de la especificación.
-
-- **Rol**: Copywriter basado en evidencia y ejecutor de crecimiento.
-- **Protocolo "Ejecución Ciega"**:
-  - Bajo `CLEAN_SESSION=True`, su única ley es el `SPEC_LITE.json`. No solicita contexto global.
-- **Responsabilidades**:
-  - Crear artefactos de marketing (copys, planes de redes, documentación de usuario) en `DOCS/MARKETING/`.
-  - Respetar los guardias éticos (Mandato Nemo - Cero analogías cárnicas).
-  - Reportar resultados sin "fluff" conversacional: solo estado, artefactos y resumen técnico.
-- **Herramientas Clave**:
-  - `apify-trend-analysis`: Calibra el mensaje con señales externas.
-  - `social-content-strategy`: Diseña flujos de republicación multi-plataforma.
+### 3. 📈 MARKETING_GROWTH (Estratega de Crecimiento)
+*   **Rol:** Copywriter basado en evidencia y peón de contenido.
+*   **Objetivo:** Ejecutar artefactos de marketing y contenido de relaciones públicas bajo mandatos estrictos de `SPEC_LITE`.
+*   **Protocolos Clave:**
+    *   **Ejecución Ciega:** Operación exclusiva bajo punteros de contexto autorizados.
+    *   **Seguridad Nemo:** Mandato absoluto de cero analogías cárnicas (Factoría Vegetariana).
+    *   **Persistencia Atómica:** Los artefactos generados se mueven físicamente a `DOCS/MARKETING/`.
 
 ---
 
-## ⚙️ Estándares de la Categoría 01
+## 🛠️ Herramientas y Sentidos Autorizados
 
-1. **SDD (Spec Driven Development)**: Ningún agente de esta categoría actúa sin una especificación o contrato previo.
-2. **Context Isolation**: La ejecución se realiza en salas aisladas para evitar el "Token Decay" y la contaminación de contexto.
-3. **Métricas North Star**: Todo éxito se mide en unidades SI (s, B) y KPIs financieros (CAC, LTV) para garantizar la comparabilidad industrial.
+### 📡 Sentidos del Departamento (Senses)
+- **Market Sense:** Acceso a documentos de estrategia y conocimiento global del usuario.
+- **Registry Sense:** Autoridad total sobre `TASKS/registry.json` para auditoría de tareas.
+- **Contract Sense:** Capacidad para deconstruir contratos maestros en especificaciones ligeras.
+- **DAST Sense:** Validación física de la existencia de artefactos antes de cualquier transición de fase.
 
-*Documentación Solidificada v4.0-S | Categoría 01 - Strategy & Marketing*
+### 🧰 Skill Library (Hub 01)
+- `prp-generator`: Creación y actualización de contratos `PRP_MASTER` (Formato 12 secciones).
+- `delegate-clean-session`: Generación de sesiones aisladas para sub-agentes (Exclusivo Orchestrator).
+- `apify-trend-analysis`: Scraping de señales externas para calibrar mensajes de producto.
+- `startup-metrics-framework`: Proyecciones financieras (ROI) y validación de modelo de negocio.
+- `social-content-strategy`: Diseño de flujos de republicación multiplataforma.
+- `factory-doctor`: Auditoría forense para reconstruir estados de orquestación corruptos.
+- `project-backbone-validator`: Inspección de andamiaje físico antes de delegar implementaciones.
+
+---
+
+## 🛑 Estándares Operativos (v4.0-S)
+
+1.  **Cero Fricción, Máxima Solidez:** No se inicia ninguna tarea sin un `SPEC_LITE.json` físico en disco.
+2.  **Unidades SI:** Todos los reportes de impacto y rendimiento se calculan en **Segundos (s)** y **Bytes (B)**.
+3.  **Transiciones Bloqueadas:** Ningún proyecto pasa de fase (ej. de M2 a M3) sin la evidencia DAST correspondiente en la carpeta de completados.
+4.  **Aislamiento:** Los agentes de Estrategia escriben especificaciones, NUNCA código de producción.
+
+---
+*Ratificado por la Dirección de Dasafo Factory | 2026-04-02 | Hub 01 Solidified.*

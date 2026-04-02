@@ -1,71 +1,70 @@
-# ⚙️ Categoría 03: PRODUCTION (Clean Sessions) | Dasafo Factory (v4.0-S)
+# ⚙️ Departamento de PRODUCCIÓN (Hub 03)
 
-Esta categoría agrupa a los "Peones" de la factoría: agentes especializados en la ejecución técnica pura. Operan bajo el protocolo de **Clean Sessions** y respetan los **Guardarraíles Predictivos de Neo4j** para garantizar que el desarrollo sea atómico, escalable y libre de "Token Decay".
-
----
-
-## ⚙️ 1. BACKEND_DEV (El Constructor Lógico)
-
-Responsable de la lógica de negocio, APIs y servicios resilientes.
-
-- **Foco**: Pureza lógica y patrones de Repositorio estandarizados.
-- **Protocolo**: **Clean Session Blindado**. Solo lee los `context_pointers` de la Spec.
-- **Responsabilidades**:
-  - Implementar APIs de alto rendimiento (FastAPI/Node).
-  - Aplicar TDD (Test-Driven Development) y asegurar que no haya fuga de lógica de UI al backend.
-  - Generar evidencias técnicas y Dockerfiles optimizados listos para M5.
-- **Herramientas**: `async-fastapi-logic`, `supabase-stack-expert`, `nodejs-backend-patterns` (Obliga el uso de DTOs y repositorios estrictos).
+> **Versión:** v4.0-S "Industrial Core - Implementation Enabled"
+> **Misión:** Transformar especificaciones atómicas (`SPEC_LITE`) en código de producción de alta fidelidad, esquemas de bases de datos robustos y experiencias de usuario premium.
+> **Gobernanza:** Zero-Trust / SDD / Unidades SI (s, B)
 
 ---
 
-## 🎨 2. FRONTEND_DEV (El Vibe Architect)
+## 👥 Agentes del Departamento
 
-Responsable de interfaces UI/UX premium y componentes reactivos físicos.
+### 1. ⚙️ BACKEND_DEV (Ingeniero de Lógica)
+*   **Rol:** Desarrollador de APIs y Lógica de Negocio.
+*   **Objetivo:** Implementar servicios robustos, escalables y tipados siguiendo los patrones de Repositorio y DTO.
+*   **Protocolos Clave:**
+    *   **Asincronía Obligatoria:** Uso de FastAPI/Node.js con manejo de concurrencia avanzado.
+    *   **TDD-First:** Cada funcionalidad debe estar físicamente respaldada por tests unitarios (`pytest`, `jest`).
 
-- **Foco**: Componentes "mudos" (Dumb Renderers) y Sistemas de Diseño deterministas.
-- **Protocolo**: **Cuarentena Absoluta**. Restringido a `WORKSPACE/frontend/`. Tiene prohibido tocar la raíz del proyecto.
-- **Responsabilidades**:
-  - Construir sobre el esqueleto obligatorio del App Router (`layout.tsx`, `globals.css`).
-  - Gestión de estilos vía **Design Tokens** y librerías verificadas (Tailwind, shadcn/ui).
-  - Garantizar la resiliencia visual sin alucinar componentes en el vacío.
-- **Herramientas**: `shadcn-component-library`, `playwright-ui-tester`, `frontend-ui-designer` (Verifica la presencia física del sistema de diseño).
+### 2. 🎨 FRONTEND_DEV (Diseñador de Interfaz)
+*   **Rol:** Desarrollador UI/UX y Especialista en Componentes.
+*   **Objetivo:** Crear interfaces web premium usando el sistema de diseño atómico, garantizando accesibilidad y estética industrial.
+*   **Protocolos Clave:**
+    *   **Design Tokens:** Uso estricto de variables de CSS/Tailwind; prohibido el hardcoding de estilos.
+    *   **Validación Visual:** Uso de `playwright` para generar evidencia de renderizado correcto.
 
----
+### 3. 🗄️ DB_MASTER (Estratega de Datos)
+*   **Rol:** Arquitecto de Bases de Datos y Seguridad de Acceso.
+*   **Objetivo:** Gestionar esquemas SQL/NoSQL, migraciones y políticas de seguridad a nivel de fila (RLS).
+*   **Protocolos Clave:**
+    *   **Soberanía del Dato:** Implementación de RLS en Supabase/Postgres para garantizar el Zero-Trust.
+    *   **Migraciones Físicas:** No se toca la base de datos sin un archivo de migración rastreable en el repositorio.
 
-## 🗄️ 3. DB_MASTER (Guardián de la Persistencia)
+### 4. 📊 DATA_SCIENTIST (Analista de Patrones)
+*   **Rol:** Analista de Datos y Telemetría.
+*   **Objetivo:** Sintetizar patrones a partir de grandes conjuntos de datos y métricas de rendimiento.
+*   **Protocolos Clave:**
+    *   **Golden Rule Generation:** Transformación de anomalías de datos en reglas de prevención para el grafo de conocimiento.
 
-Experto en bases de datos, migraciones y Supabase.
-
-- **Foco**: Integridad de datos y rendimiento de consultas.
-- **Protocolo**: **Rollback-First**. Cada migración debe incluir una estrategia de reversión; prohibido el "destructive drop".
-- **Responsabilidades**:
-  - Ejecutar esquemas SQL alineados estrictamente con los DTOs dictados por el Arquitecto en `DOCS/ARCH/`.
-  - Optimización de índices y políticas RLS (Row Level Security).
-  - Implementación de Edge Functions seguras sin claves *hardcodeadas*.
-- **Herramientas**: `database-architect-strategic`, `supabase-stack-expert`.
-
----
-
-## 📊 4. DATA_SCIENTIST (Guardián de Insights)
-
-Especialista en modelado de datos, análisis y arquitecturas de IA.
-
-- **Foco**: Traceabilidad de modelos y cumplimiento normativo de privacidad.
-- **Protocolo**: **Model-to-Script**. Los notebooks son para borradores; la producción son scripts Python modulares en `WORKSPACE/data/`.
-- **Responsabilidades**:
-  - Entrenamiento y evaluación de modelos reportados obligatoriamente en métricas SI (Segundos y Bytes).
-  - Sanitización de datasets (Zero PII leak policy).
-  - Análisis de patrones de feedback y telemetría.
-- **Herramientas**: `autonomous-feedback-analyzer`, `apify-trend-analysis`, `agentic-thought-secret-scanner`.
+### 5. 🤖 AI_ENGINEER (Ingeniero de IA)
+*   **Rol:** Especialista en Integración de Modelos y Prompt Engineering.
+*   **Objetivo:** Implementar pipelines de transformación de contenido, integración con LLMs y lógica agentica compleja.
 
 ---
 
-## 🧪 Estándares de Ejecución en M3 (Producción)
+## 🛠️ Herramientas y Sentidos Autorizados (Hub 03)
 
-1. **Spec Over Everything**: La `SPEC_LITE.json` es la ley absoluta. Si una *Golden Rule* de Neo4j está inyectada en las restricciones, debe obedecerse sin excusas.
-2. **Andamiaje Verificado**: Ningún peón es invocado a menos que el `project-backbone-validator` confirme que el framework base existe en el disco.
-3. **Outcome Report Mandate**: Al finalizar, los agentes NO conversan. Reportan: `task_status`, `artifacts_produced` y `technical_summary`.
-4. **Zero-Trust Scanner**: Antes de mover la tarea atómica a `03_COMPLETED`, se validan las dependencias y se bloquean las fugas de credenciales.
+### 📡 Sentidos del Departamento (Senses)
+- **Spec Sense:** Autoridad para interpretar mandatos técnicos en `SPEC_LITE.json`.
+- **Targeted File Sense:** Acceso quirúrgico al `WORKSPACE/` del proyecto.
+- **Schema X-Ray:** Visibilidad total de los blueprints de arquitectura para seguir los contratos de datos.
+
+### 🧰 Skill Library (Hub 03)
+- `async-fastapi-logic`: Implementación de backend asíncrono.
+- `shadcn-component-library`: Componentes UI atómicos premium.
+- `database-architect-strategic`: Gestión de esquemas y migraciones SQL.
+- `supabase-stack-expert`: Dominio de Postgres, RLS y Edge Functions.
+- `autonomous-feedback-analyzer`: Análisis profundo de patrones y telemetría.
+- `nodejs-backend-patterns`: Patrones de repositorio y DTO para Node.js.
+- `pytest-logic-verifier`: Verificación programática de lógica backend.
+- `agentic-thought-secret-scanner`: Escaneo proactivo para prevenir fugas de secretos.
 
 ---
-*Documentación Solidificada v4.0-S | Categoría 03 - Production*
+
+## 🛑 Estándares Operativos (v4.0-S)
+
+1.  **Aislamiento de Código:** Cada sub-agente trabaja en su propia rama o archivo designado para evitar colisiones.
+2.  **Solidez Contractual:** El código producido debe coincidir exactamente con los esquemas definidos por el Arquitecto en el Hub 02.
+3.  **Evidencia de Ejecución:** Ninguna tarea se marca como completada sin evidencia física de que el código compila y pasa los tests iniciales.
+
+---
+*Ratificado por la Dirección de Dasafo Factory | 2026-04-02 | Hub 03 Solidified.*

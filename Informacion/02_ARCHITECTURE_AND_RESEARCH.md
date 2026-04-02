@@ -1,51 +1,52 @@
-# 📐 Categoría 02: ARCHITECTURE & RESEARCH | Dasafo Factory (v4.0-S)
+# 📐 Departamento de ARQUITECTURA E INVESTIGACIÓN (Hub 02)
 
-Esta categoría es el motor de diseño técnico y validación científica de la factoría. Su misión es transformar la visión de negocio en planos técnicos rígidos, establecer el chasis estructural y eliminar cualquier incertidumbre mediante investigación empírica.
-
----
-
-## 📐 1. ARCHITECT (Arquitecto de Sistemas / Gatekeeper de M2)
-
-Es la máxima autoridad técnica de la Fase M2. Su responsabilidad es diseñar el "Chasis Blindado" sobre el cual se construirá el código y definir los DTOs que validará la Aduana Universal.
-
-- **Rol**: Diseñador Jefe de Sistemas y Guardián de la Estructura.
-- **Protocolo "Doc-First, Code-Never"**:
-  - Tiene **prohibido** escribir código de producción.
-  - Su salida son planos técnicos (ADR, Contratos API, Esquemas) guardados estrictamente en `DOCS/ARCH/`.
-- **Responsabilidades**:
-  - Diseñar la separación de 4 capas (Domain, Application, Infrastructure, UI).
-  - Definir los DTOs (Data Transfer Objects) que luego serán impuestos forzosamente al `BACKEND_DEV` mediante sus patrones de Node.js/Python.
-  - Aplicar el **Fail-Closed Design**: Si un requisito viola la solidez del sistema, emite un bloqueo preventivo (ADR).
-- **Herramientas Clave**:
-  - `architecture-decision-records`: Documentación formal de decisiones técnicas y sincronización con Neo4j.
-  - `api-contract-generator`: Definición de protocolos de comunicación.
-  - `database-architect-strategic`: Modelado de datos a alto nivel.
-  - `factory-doctor`: Auditoría de salud técnica para asegurar que la base de M1 es sólida antes de avanzar a M3.
+> **Versión:** v4.0-S "Industrial Core - Architecture Enabled"
+> **Misión:** Diseñar la estructura ósea del software (Backbone), realizar investigaciones técnicas profundas y asegurar la viabilidad arquitectónica de cada proyecto.
+> **Gobernanza:** Zero-Trust / SDD / Unidades SI (s, B)
 
 ---
 
-## 🔬 2. RESEARCH_AGENT (El Científico / Auditor de Viabilidad)
+## 👥 Agentes del Departamento
 
-Es el encargado de eliminar la incertidumbre técnica mediante investigación basada en hechos. No se permiten suposiciones en su dominio.
+### 1. 📐 ARCHITECT (Arquitecto de Sistemas)
+*   **Rol:** Diseñador del Backbone y Guardián de la Estructura.
+*   **Objetivo:** Crear los esquemas de datos, diagramas de flujo y el andamiaje físico inicial del proyecto.
+*   **Protocolos Clave:**
+    *   **Diseñador de Planos:** Genera el `blueprint.md` y los diagramas C4/PlantUML obligatorios.
+    *   **Solididad Estructural:** Responsable de definir los DTOs y las interfaces antes de la implementación.
+    *   **Transmisión de M3:** Su trabajo finaliza cuando el `project-backbone-validator` confirma que la estructura está físicamente en disco.
 
-- **Rol**: Científico Técnico y Auditor de Estructura.
-- **Protocolo "Zero-Guessing"**:
-  - Ninguna afirmación es válida sin una cita o prueba directa en `DOCS/RESEARCH/`.
-- **Responsabilidades**:
-  - Validar la viabilidad técnica de las especificaciones propuestas en M1.
-  - Realizar investigaciones de vanguardia utilizando literatura técnica y científica.
-  - Garantizar que todas las afirmaciones técnicas utilicen Unidades SI (segundos, bytes).
-- **Herramientas Clave**:
-  - `arxiv-technical-digest`: Recuperación de papers técnicos de última generación.
-  - `apify-trend-analysis`: Validación empírica de suposiciones mediante scraping.
-  - `hallucination-guardrail`: Verificación obligatoria contra la `SPEC_LITE`.
+### 2. 🔍 RESEARCH_AGENT (Analista Técnico)
+*   **Rol:** Investigador profundo y Auditor de tendencias.
+*   **Objetivo:** Resolver incertidumbres tecnológicas, analizar bibliotecas de terceros y proponer soluciones basadas en datos.
+*   **Protocolos Clave:**
+    *   **Documentación de Investigación:** Genera el reporte `TECH_RESEARCH.md` con pros/contras y métricas de rendimiento (s, B).
+    *   **Validación de Dependencias:** Escanea si las herramientas propuestas cumplen con el estándar industrial de la factoría.
+    *   **Grounding:** Asegura que las decisiones técnicas no se basen en alucinaciones, sino en documentación oficial.
 
 ---
 
-## ⚙️ Estándares de la Categoría 02
+## 🛠️ Herramientas y Sentidos Autorizados (Hub 02)
 
-1. **Rigor Científico y Cero Alucinaciones**: Cada decisión debe estar respaldada por evidencia física o literatura comprobada. Se evitan tecnologías no validadas.
-2. **Solidificación en M2**: Ningún proyecto pasa a Producción (M3) sin la firma electrónica del Arquitecto en los planos de `DOCS/ARCH/`.
-3. **Métricas SI**: La latencia se mide en segundos (s) y el almacenamiento en bytes (B) para todas las proyecciones arquitectónicas.
+### 📡 Sentidos del Departamento (Senses)
+- **Deep Search Sense:** Autoridad para realizar búsquedas web profundas y analizar documentación técnica extensa.
+- **Structural Sense:** Capacidad para visualizar la jerarquía de archivos y proponer refactorizaciones complejas.
+- **Evidence Sense:** Verificación de requerimientos en `PRP_MASTER.json` antes de iniciar el diseño.
 
-*Documentación Solidificada v4.0-S | Categoría 02 - Architecture & Research*
+### 🧰 Skill Library (Hub 02)
+- `generate-plantuml-diagrams`: Creación de diagramas de arquitectura (C4, Secuencia, Clase).
+- `web-research-engine`: Motor de búsqueda avanzado para resolución de problemas técnicos complejos.
+- `api-specification-designer`: Definición de contratos OpenApi/Swagger robustos.
+- `data-schema-generator`: Creación de modelos Pydantic/Zod basados en el dominio.
+- `arch-diagram-flow`: Workflow integrado para visualizar planes industriales.
+
+---
+
+## 🛑 Estándares Operativos (v4.0-S)
+
+1.  **Backbone-First:** Ningún código de lógica de negocio se escribe antes de que el Arquitecto haya físicamente creado el andamiaje (`/src`, `/tests`, etc.).
+2.  **No Hallucination Zone:** El `RESEARCH_AGENT` debe proporcionar URLs verificables para cada recomendación técnica.
+3.  **Refactor Rules:** El Arquitecto debe registrar cada decisión de diseño mayor como un ADR (Architecture Decision Record) en la carpeta principal de documentación.
+
+---
+*Ratificado por la Dirección de Dasafo Factory | 2026-04-02 | Hub 02 Solidified.*

@@ -1,74 +1,64 @@
-# 🚀 Categoría 05: OPERATIONS | Dasafo Factory (v4.0-S)
+# 🚀 Departamento de OPERACIONES Y EVOLUCIÓN (Hub 05)
 
-Esta categoría es el corazón operativo y evolutivo de la factoría. Su misión es garantizar que la infraestructura tecnológica, el despliegue de proyectos y el propio ADN del framework de IA funcionen, se auto-sanen y aprendan con máxima eficiencia.
-
----
-
-## 🛠️ 1. DEVOPS_SRE (Guardián del Pipeline / SRE)
-
-Responsable de la Infraestructura como Código (IaC) y el escalado físico de los proyectos.
-
-- **Rol**: Arquitecto de Infraestructura y Fiabilidad.
-- **Protocolo "Zero-Trust Networking"**:
-  - Provisión física (Docker, Terraform) solo bajo mandato de la `SPEC_LITE`.
-  - Prohibido tocar las capas de Dominio o UI; su dominio es `WORKSPACE/infra/`.
-- **Responsabilidades**:
-  - Mantener flujos CI/CD automatizados y seguros.
-  - Generar las **Specs de Emergencia** (`EMERGENCY_SPEC.json`) si un despliegue falla por bloqueos de red o memoria (OOM), activando el ciclo de Auto-Sanación.
-  - Provisionamiento de recursos locales y cloud.
-- **Herramientas Clave**: `docker-stack-provisioner`, `terraform-iac-builder`, `deployment-health-check` (Modo Deploy).
+> **Versión:** v4.0-S "Industrial Core - Operations Enabled"
+> **Misión:** Garantizar el funcionamiento continuo de los sistemas, la integridad de la infraestructura y el aprendizaje evolutivo de la factoría.
+> **Gobernanza:** Zero-Trust / SDD / Unidades SI (s, B)
 
 ---
 
-## 📡 2. DEPLOYMENT_MONITOR (Centinela de Salud)
+## 👥 Agentes del Departamento
 
-Monitorea los despliegues en tiempo real y alerta sobre desviaciones operativas.
+### 1. 🛠️ DEVOPS_SRE (Ingeniero de Plataforma)
+*   **Rol:** Administrador de Infraestructura y Despliegue.
+*   **Objetivo:** Provisionar entornos seguros, escalables y monitorizables mediante Infraestructura como Código (IaC).
+*   **Protocolos Clave:**
+    *   **IaC-First:** Cada cambio en la infraestructura debe estar documentado en archivos `Dockerfile`, `docker-compose.yml` o scripts de nube.
+    *   **Métricas de Provisión:** Reporte obligatorio de recursos utilizados en Bytes (B) y tiempo de despliegue en Segundos (s).
 
-- **Rol**: Monitor de Salud y Gestión de Alertas.
-- **Protocolo "Read-Only Sentinel"**:
-  - Tiene prohibido escribir código o modificar la infraestructura.
-  - Sus señales son datos puros (Status Codes, Latencias en segundos).
-- **Responsabilidades**:
-  - Verificar que el despliegue en vivo cumple con los umbrales de salud de la Spec.
-  - Generar reportes de métricas SI (Latencia en Segundos, Carga útil en Bytes).
-- **Herramientas Clave**: `telemetry-analyzer`, `deployment-health-check` (Modo Check).
+### 📡 2. DEPLOYMENT_MONITOR (Centinela de Salud)
+*   **Rol:** Monitor de Salud en Tiempo Real.
+*   **Objetivo:** Detectar anomalías operativas, latencias fuera de rango y asegurar que los servicios estén activos.
+*   **Protocolos Clave:**
+    *   **Sentinel Loop:** Chequeo continuo de endpoints y logs de error.
+    *   **Alerta Temprana:** Notificación inmediata ante fallos de conexión o degradación de rendimiento.
 
----
+### 🧬 3. FACTORY_EVOLVER (Ingeniero de Mejora Continua)
+*   **Rol:** Evolucionador de la Skill Library.
+*   **Objetivo:** Refactorizar herramientas, optimizar prompts y mejorar los procesos de la factoría basados en el feedback técnico.
+*   **Protocolos Clave:**
+    *   **Skill Refactoring:** Actualización modular de scripts en `06_SKILL_LIBRARY`.
+    *   **Sincronización Neo4j:** Traducción de anomalías en nuevas "Reglas de Oro" para el grafo de conocimiento.
 
-## 🌀 3. FACTORY_EVOLVER (Bibliotecario de Skills / Auto-Healer)
-
-Encargado de la evolución del framework y de ejecutar los parches de infraestructura en tiempo real.
-
-- **Rol**: Optimizador de Patrones, Mantenedor de Skills y Bombero Industrial.
-- **Protocolo "Authority on 06 & Auto-Heal"**:
-  - Es el único agente autorizado para despertar automáticamente y parchar el `docker-compose.yml` si recibe una Spec de Emergencia del DEVOPS_SRE.
-- **Responsabilidades**:
-  - Resolver autónomamente conflictos de puertos o memoria en despliegues fallidos.
-  - Modularizar scripts monolíticos en skills atómicas en `06_SKILL_LIBRARY`.
-  - Optimizar plantillas usando "Golden Rules" para minimizar la huella de tokens.
-- **Herramientas Clave**: `skill-refactor-pro` (Motor de parcheo y evolución).
-
----
-
-## 🧠 4. MEMORY_OPTIMIZER (Tejedor de Contexto y Guardián LTP)
-
-Maximiza el rendimiento de los LLMs gestionando la Persistencia a Largo Plazo (LTP) en Neo4j.
-
-- **Rol**: Podador de Sesiones y Sintetizador de Conocimiento del Grafo.
-- **Protocolo "Pure Intellectual Agent"**:
-  - No escribe código ni despliega infraestructura; su salida es "Engramas Estructurados" inyectados en la base de datos.
-- **Responsabilidades**:
-  - Procesar el `FEEDBACK-LOG.md` y enviar los incidentes como nodos de *CulturalViolation* al Grafo de Conocimiento (`kg-db`).
-  - Podar el ruido conversacional y las redundancias para evitar el "Token Decay".
-- **Herramientas Clave**: `autonomous-feedback-analyzer` (Sincronizador Neo4j), `context-pruning-sieve`.
+### 🧠 4. MEMORY_OPTIMIZER (Arquitecto de Gráfico de Conocimiento)
+*   **Rol:** Optimizador de Memoria y Puntos de Contexto.
+*   **Objetivo:** Reducir el ruido cognitivo, podar contextos irrelevantes y sincronizar el aprendizaje agentico con la base de datos Neo4j.
+*   **Protocolos Clave:**
+    *   **Context Pruning:** Selección quirúrgica de `context_pointers` para maximizar la eficiencia de tokens.
+    *   **Long-Term Persistence (LTP):** Gestión de la memoria persistente de la factoría.
 
 ---
 
-## ⚙️ Estándares Sistémicos en M5 (Operaciones)
+## 🛠️ Herramientas y Sentidos Autorizados (Hub 05)
 
-1. **Auto-Sanación (Immune System)**: Si la infraestructura colapsa, M5 no falla silenciosamente; crea un parche automático (vía Evolver) e intenta redesplegar.
-2. **Métricas de Rendimiento SI**: Toda eficiencia en Ops se mide en ahorro de tokens (Bytes) y velocidad de ejecución/latencia (Segundos).
-3. **Memoria Eterna**: El proyecto no finaliza hasta que el flujo `/sync-memory` envía todas las lecciones aprendidas al clúster de Neo4j.
+### 📡 Sentidos del Departamento (Senses)
+- **Deploy Sense:** Monitorización de códigos de estado, latencia (s) y logs.
+- **Infra Sense:** Acceso de lectura a `WORKSPACE/infra/` y registros de contenedores.
+- **Skill X-Ray:** Autoridad para leer y escribir en la Skill Library (Exclusivo FACTORY_EVOLVER).
+- **DAST Sense:** Verificación física de artefactos y estados de disco antes de reportar salud.
+
+### 🧰 Skill Library (Hub 05)
+- `infra-provisioner`: Configuración industrial de Docker con métricas SI.
+- `deployment-health-check`: Validación en tiempo real de endpoints y salud de red.
+- `skill-refactor-pro`: Evolución modular de scripts basada en Reglas de Oro.
+- `context-pruning-sieve`: Optimización de tokens y poda de ruido cognitivo.
 
 ---
-*Documentación Solidificada v4.0-S | Categoría 05 - Operations*
+
+## 🛑 Estándares Operativos (v4.0-S)
+
+1.  **Auto-Heal First:** Ante un fallo operativo, el sistema debe intentar procesos de auto-sanación antes de solicitar intervención humana.
+2.  **Infraestructura Inmutable:** Los entornos de producción no se modifican manualmente; se destruyen y recrean mediante código.
+3.  **Memoria de Elefante (LTP):** Ningún error técnico se ignora; cada uno debe alimentar el ciclo de evolución de la factoría.
+
+---
+*Ratificado por la Dirección de Dasafo Factory | 2026-04-02 | Hub 05 Solidified.*
