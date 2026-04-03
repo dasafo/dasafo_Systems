@@ -1,40 +1,35 @@
 ---
-version: v4.0-MCP
-agent: DEVOPS_SRE
+version: v5.0-MCP (Native)
+agent_authorization: [DEVOPS_SRE]
 source: https://skills.sh/hashicorp/agent-skills/terraform-style-guide
+protocol: IaC-First / DAST
 ---
 
-# 🌍 Skill | Terraform IaC Builder (v4.0-MCP)
+# 🌍 Skill | terraform-iac-builder
 
 ## Objective
 
-Generate and maintain Terraform Infrastructure-as-Code (IaC) following HashiCorp's official style conventions and the Zero-Trust industrial standard of the dasafo_FACTORY.
+Generate and maintain industrial-grade Terraform IaC. Enforces HashiCorp's official style (file separation) and the Zero-Trust mandate of the factoría.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use direct typed arguments. `params_json` is **DEPRECATED**.
 
+### Typed Parameters
+
+- `agent` (string): Your Agent ID (must be 'DEVOPS_SRE').
+- `target_project` (string): Absolute path to the project root.
 - `action` (enum): `scaffold_module`, `generate_resource`.
-- `target_project` (string, mandatory): Absolute path to the project workspace.
-- `module_name` (string, mandatory): Name of the infrastructure module (e.g., `network`, `database`).
-- `cloud_provider` (enum, optional): `aws`, `gcp`, `azure` (Default: `aws`).
+- `module_name` (string): Infrastructure module name (e.g., 'database').
+- `cloud_provider` (enum): `aws`, `gcp`, `azure`.
+- `isolate` (boolean): Execution in Clean Session.
 
-### Output Schema (SkillOutput.result)
+## 🛡️ Industrial Constraints
 
-- `provision_status`: (string) `SUCCESS` or `FAILED`.
-- `artifacts_produced`: (array) Paths to the generated `.tf` files.
-- `compliance_score`: (float) Validation of HashiCorp style conventions (1.0 = perfect).
-- `industrial_status`: (string) "SOLIDIFIED - IAC PROVISIONED".
-
-### ⚖️ Mandato SI (Sistema Internacional)
-
-Cualquier timeout de provisión o latencia límite descrita en la configuración de Terraform (ej. timeouts de lambdas o bases de datos) debe configurarse y documentarse en **segundos** (s). Tamaños de volumen o disco deben referenciarse en **bytes** (B) en la documentación generada.
-
-## 🛡️ Industrial Constraints (Zero-Trust & HashiCorp Style)
-
-- **File Organization:** Code MUST be split across `providers.tf`, `main.tf`, `variables.tf`, and `outputs.tf`. Monolithic `.tf` files are rejected.
+- **File Separation:** Monolithic `.tf` files are FORBIDDEN. Must use `providers.tf`, `main.tf`, `variables.tf`, and `outputs.tf`.
 - **Surgical Access:** Files MUST only be written to `WORKSPACE/infra/terraform/`.
-- **Variable Strictness:** Every variable MUST have a `description` and `type`.
-- **Naming Conventions:** Lowercase with underscores (snake_case). Resource names must be singular.
-- **Dynamic Blocks:** Use `for_each` over `count` for dynamic resource creation to prevent state-shifting bugs.
-- **Secrets Management:** Credentials MUST NOT be hardcoded. Use `sensitive = true` for secret outputs/variables.
+- **SI Standards:** Timeouts and latencies in **seconds (s)**; sizes in **bytes (B)**.
+- **Zero-Secrets:** Credentials must NEVER be hardcoded.
+
+---
+*Standard v5.0-MCP | Dasafo Factory Operations Hub.*

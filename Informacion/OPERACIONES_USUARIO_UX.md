@@ -51,7 +51,7 @@ Ya no usas "comandos slash" manuales en una terminal; ahora activas **Workflows*
 
 ### 🛤️ Paso 1: Ignición del Taller (Fase 0)
 
-1. **Enciende el Núcleo:** Desde `INFRA/`, lanza `docker compose up -d` para levantar el cerebro (Neo4j) y los datos.
+1. **Enciende el Núcleo:** Desde `INFRA/`, lanza `docker compose up -d` para levantar el cerebro (Neo4j) y los datos (si el motor de docker esta down, levántalo con `systemctl start docker` o `sudo systemctl start docker`).
 2. **Activa el Servidor MCP:** Asegúrate de que Antigravity ha iniciado `factory_mcp_server.py`. Este es el único canal autorizado.
 3. **Crea el Chasis:** Ejecuta `./init_project.sh NombreProyecto` para generar las carpetas blindadas.
 

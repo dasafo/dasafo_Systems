@@ -1,52 +1,34 @@
 ---
-version: v4.0-MCP
-agent: RESEARCH_AGENT / ACADEMIC_STRATEGIST
-source: https://skills.sh/actionbook/actionbook/active-research
+version: v5.0-MCP (Native)
+agent_authorization: [RESEARCH_AGENT, DOCS_MASTER]
+source: https://skills.sh/jezweb/claude-skills/arxiv-digest
+protocol: Fact-First / DAST
 ---
 
-# 📚 Skill | Active Academic Research (ArXiv)
+# 📚 Skill | arxiv-technical-digest
 
 ## Objective
 
-Design and execute high-fidelity academic research strategies. This skill allows agents to search, filter, and synthesize technical papers from ArXiv and other verified sources, transforming complex scientific data into actionable architectural insights and structured reports.
+Ingest and summarize technical papers from ArXiv to validate architectural decisions or research emerging technologies.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use direct arguments. The `params_json` structure is **DEPRECATED**.
 
-- `action` (string, optional): "search" (default) | "digest" | "synthesize".
-  - `search`: Find papers based on keywords, authors, or categories.
-  - `digest`: Perform a deep read and technical breakdown of a specific paper ID.
-  - `synthesize`: Combine multiple digests into a thematic research report.
-- `query` (string, required for "search"): Search keywords (e.g., "Large Language Model Agents").
-- `id` (string, required for "digest"): ArXiv Paper ID (e.g., "2301.12345").
-- `max_results` (integer, optional): Default `10`.
-- `target_project` (string, optional): Absolute path to the active project.
+### Typed Parameters
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Your authorized Agent ID (RESEARCH_AGENT or DOCS_MASTER).
+- `target_project` (string): Absolute path to the project root.
+- `query` (string): Technical keywords to search (e.g., 'FastAPI async patterns').
+- `max_results` (integer): (Optional) Limit of papers to digest (default: 5).
+- `overwrite` (boolean): (Optional) Bypass the Redundancy Lock.
+- `isolate` (boolean): (Optional) Execute in a Clean Session.
 
-- `status`: (string) "RESEARCH_SOLIDIFIED" | "DIGEST_CREATED" | "SYNTHESIS_COMPLETE"
-- `results_count`: (integer) Number of items found or processed.
-- `report_path`: (string, optional) Path to the physical Markdown/JSON artifact.
-- `key_findings`: (list) Core technical insights extracted during the process.
+## 🛡️ Industrial Constraints
 
-### ⚖️ SI Mandate (International System)
-
-Any extracted technical metrics (latencies, model parameters, energy consumption, frequencies) must be strictly expressed in the International System (SI) (seconds, bytes, hertz).
-
-## 🛡️ Industrial Constraints (Zero-Trust)
-
-- **Authenticity Only:** Must query the live ArXiv API. Hallucinating paper titles or summaries is FORBIDDEN.
-- **Physical Proof:** Every research cycle must result in a physical artifact in `LOCAL_KNOWLEDGE/research/`.
-- **SI Only:** Any numeric data found in papers (e.g., "50ms") must be converted to SI ("0.05s") in the final digest.
-
-## 🧠 Active Research Workflow (v4.0-MCP)
-
-1. **Plan Strategy:** Define clear research questions and target categories (e.g., cs.AI).
-2. **Search & Filter:** Use URL-based API queries to find the most relevant and recent papers.
-3. **Deep Read (Digest):** Analyze abstracts, methodologies, and conclusions for technical viability.
-4. **Synthesize Findings:** Aggregate multi-paper insights into a structured report with actionable architectural recommendations.
+- **Factual Sovereignty:** Do not hallucinate research; data must originate from a physical disk artifact in `LOCAL_KNOWLEDGE/research/`.
+- **SI Standards:** All temporal reporting MUST use **seconds (s)**.
+- **Auth Gate:** Only Hub 02 and Hub 04 agents are permitted to invoke this sense.
 
 ---
-**ORIGIN:** [active-research by actionbook](https://skills.sh/actionbook/actionbook/active-research)
-*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*
+**ORIGIN:** [arxiv-digest by jezweb](https://skills.sh/jezweb/claude-skills/arxiv-digest)

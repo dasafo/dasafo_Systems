@@ -1,24 +1,33 @@
-# 🛠️ Skill: deployment-health-check
+---
+version: v5.0-MCP (Native)
+agent_authorization: [DEPLOYMENT_MONITOR, DEVOPS_SRE]
+protocol: Auto-Heal / DAST
+---
 
-> **Standard:** v4.0-MCP "Industrial Core - Auto-Deploy Enabled"
-> **Owner:** DEPLOYMENT_MONITOR & DEVOPS_SRE
-> **Objective:** Real-time endpoint validation, SI metric reporting, and Host Persistence Ignition.
+# 🚀 Skill | deployment-health-check
 
-## 📋 Input Schema (v4.0-MCP)
+## Objective
 
-- `url` (string): The endpoint to verify (e.g., "<http://localhost:3000/health>").
-- `timeout_seconds` (number): Max wait time in Seconds (s). Default: 5.
-- `action` (string):
-  - `check_endpoint` (default): Only pings the target URL.
-  - `deploy`: Executes `docker compose up --build -d` in the host infrastructure before pinging.
+Real-time endpoint validation and SI metric reporting. Includes the **Immune System Protocol** to trigger emergency infrastructure patches via FACTORY_EVOLVER.
 
-## 📊 Success Criteria (DAST)
+## 🛠️ Interface (v5.0-MCP Native)
 
-1. **Physical Artifact:** A JSON health report MUST be generated in `LOGS/deployment/`.
-2. **SI Compliance:** Latency MUST be reported in Seconds (s) and payload in Bytes (B).
-3. **Auto-Commit:** The task will be logically closed by the System Hook (Aduana Universal) upon successful execution. The agent only needs to guarantee the physical creation of the `HEALTH_*.json` artifact.
+**MANDATORY:** Use typed arguments. `params_json` is **DEPRECATED**.
 
-## 🛡️ Guardrails
+### Typed Parameters
 
-- **Hallucination Guard:** The skill returns "UNREACHABLE" if the network fails; it never assumes success.
-- **Secret Scanner:** The tool log is stripped of sensitive headers before saving to disk.
+- `agent` (string): Your Agent ID (DEPLOYMENT_MONITOR, DEVOPS_SRE).
+- `target_project` (string): Path to project root.
+- `action` (enum): `check_endpoint` (default) | `deploy`.
+- `url` (string): Target health URL (default: `http://localhost:3000/health`).
+- `timeout_seconds` (integer): Max wait time (default: 5).
+- `isolate` (boolean): Execution in Clean Session.
+
+## 🛡️ Industrial Constraints
+
+- **Immune Response:** If `deploy` fails, the skill MUST generate a physical `EMERGENCY_SPEC.json` in `TASKS/01_PENDING/`.
+- **SI Standards:** Latency in **Seconds (s)** and payload in **Bytes (B)**.
+- **DAST Sovereignty:** Physical JSON report required in `LOGS/deployment/`.
+
+---
+*Standard v5.0-MCP | Dasafo Factory Operations Hub.*

@@ -1,55 +1,37 @@
 ---
-version: v4.0-MCP
-agent: ARCHITECT / LEAD_DEV
+version: v5.0-MCP (Nativa)
+agent_authorization: [ARCHITECT]
 source: https://skills.sh/wshobson/agents/architecture-decision-records
+protocol: Immutable-Log / DAST
 ---
 
-# 📝 Skill | Architecture Decision Records (ADR)
+# 📝 Skill | architecture-decision-records
 
-## Objective
+## Objetivo
 
-Capture and manage technical decisions in a formal, searchable, and persistent log. This skill ensures that the "Why" behind every architectural choice is documented, enabling future agents and humans to understand the system's evolution and trade-offs.
+Capturar y gestionar decisiones técnicas en un registro formal, searchable y persistente. Basado en el estándar de **wshobson**.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interfaz v5.0-MCP Nativa
 
-### Input Schema (SkillInput.params)
+**Uso Mandatorio:** Parámetros tipados. El parámetro `params_json` ha sido **ELIMINADO**.
 
-- `action` (string, optional): "new" (default) | "init" | "list" | "supersede".
-  - `init`: Initialize the ADR directory and index.
-  - `new`: Create a new ADR entry.
-  - `list`: Show all current ADRs and their status.
-  - `supersede`: Mark an old ADR as superseded by a new one.
-- `title` (string, required for "new"): Short, descriptive title.
-- `context` (string, optional): The problem background and constraints.
-- `decision` (string, optional): The chosen solution and its rationale.
-- `consequences` (string, optional): Trade-offs (positive/negative) resulting from the choice.
-- `target_id` (string, required for "supersede"): The ID of the ADR being replaced (e.g., "0003").
+### Parámetros
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Tu ID de Agente (debe ser 'ARCHITECT').
+- `target_project` (string): Ruta física al proyecto.
+- `action` (enum): `new`, `init`, `list`, `supersede`, `finalize_blueprint`.
+- `title` (string): Título descriptivo (Requerido para `new`).
+- `context` (string): El problema y las restricciones.
+- `decision` (string): La solución elegida y su razonamiento.
+- `consequences` (string): Trade-offs e impacto.
+- `target_id` (string): ID del ADR a reemplazar (Requerido para `supersede`).
+- `overwrite` (boolean): Opcional. Saltar el Redundancy Lock.
 
-- `status`: (string) "SOLIDIFIED - ADR RECORDED" | "ADR_INDEX_UPDATED"
-- `adr_path`: (string, optional) Path to the newly created ADR file.
-- `adr_id`: (string, optional) Assigned sequential ID (e.g., "0021").
-- `summary`: (list) Brief recap of the decision and its impact.
+## 🛡️ Restricciones Industriales
 
-### ⚖️ SI Mandate (International System)
-
-Any technical metrics mentioned in the ADR (e.g., latencies < 200ms, storage > 50GB, bandwidth > 1Gbps) must be strictly expressed in SI units (seconds, bytes).
-
-## 🛡️ Industrial Constraints (Zero-Trust)
-
-- **Sequential Integrity:** ADR IDs must be strictly sequential (0001, 0002...).
-- **Physical Immutability:** Once an ADR is "ACCEPTED", it should only be changed via a "SUPERSEDE" action in a new ADR.
-- **Index Sync:** Every new or updated ADR must trigger a physical update of the `DOCS/ADR/README.md` index.
-
-## 🧠 Core Lifecycle (v4.0-MCP)
-
-1. **Identify Decision:** Recognize a strategic choice (Pattern, Library, Infrastructure).
-2. **Standard Format:** Use the MADR (Markdown Architecture Decision Record) template.
-3. **Capture Rationale:** Document context, decision, and consequences.
-4. **Lifecycle Management:** Transition states: `Proposed → Accepted → Deprecated → Superseded`.
-5. **Update Index:** Ensure the central README reflects the current architectural state.
+- **Inmutabilidad Física:** Una vez aceptado, un ADR solo se cambia vía `supersede`.
+- **Integridad Secuencial:** Los IDs deben ser estrictamente correlativos (0001, 0002...).
+- **Métricas SI:** Cualquier métrica técnica (latencia, almacenamiento) debe expresarse en **segundos (s)** o **bytes (B)**.
 
 ---
-**ORIGIN:** [architecture-decision-records by wshobson](https://skills.sh/wshobson/agents/architecture-decision-records)
-*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*
+**ORIGEN:** [architecture-decision-records by wshobson](https://skills.sh/wshobson/agents/architecture-decision-records)

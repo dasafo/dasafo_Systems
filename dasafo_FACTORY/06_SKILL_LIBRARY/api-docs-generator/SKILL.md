@@ -1,50 +1,35 @@
 ---
-version: v4.0-MCP
-agent: ARCHITECT / DOCS_MASTER
+version: v5.0-MCP (Nativa)
+agent_authorization: [DOCS_MASTER]
 source: https://skills.sh/sickn33/antigravity-awesome-skills/api-documentation-generator
+protocol: Documentation-as-Code / DAST
 ---
 
-# 📚 Skill | API Documentation Generator (v4.0-MCP)
+# 📚 Skill | api-docs-generator
 
-## Objective
+## Objetivo
 
-Transform physical API contracts (OpenAPI) into professional, user-friendly, and actionable Markdown documentation. This skill ensures that all stakeholders (Frontend, Mobile, QA, Clients) have clear, up-to-date guidance on how to consume the system's APIs.
+Transformar contratos API físicos (YAML) en documentación Markdown profesional y accionable. Basado en el estándar de **sickn33**.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interfaz v5.0-MCP Nativa
 
-### Input Schema (SkillInput.params)
+**Uso Mandatorio:** Parámetros directos. El uso de `params_json` es una **Violación de Protocolo**.
 
-- `contract_path` (string, optional): Path to the OpenAPI contract (YAML). Defaults to `$TARGET_PROJECT/DOCS/API-CONTRACT.yaml`.
-- `output_name` (string, optional): Name of the generated Markdown file. Defaults to `API_REFERENCE.md`.
-- `include_examples` (boolean, optional): Default `true`. If `true`, generates code examples (cURL, Python, TS) for each endpoint.
-- `target_project` (string, optional): Absolute path to the project workspace.
+### Parámetros Tipados
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Tu ID de Agente (debe ser 'DOCS_MASTER').
+- `target_project` (string): Ruta física al proyecto.
+- `contract_path` (string): (Opcional) Nombre del YAML en `DOCS/` (defecto: 'API-CONTRACT.yaml').
+- `output_name` (string): (Opcional) Nombre del archivo generado (defecto: 'API_REFERENCE_PRO.md').
+- `include_examples` (boolean): (Opcional) Generar snippets de código (cURL, Python, TS).
+- `overwrite` (boolean): (Opcional) Ignorar el Redundancy Lock.
+- `isolate` (boolean): (Opcional) Ejecución en Clean Session.
 
-- `markdown_docs`: (string) The generated markdown documentation content (truncated in output).
-- `path`: (string) Absolute path where the documentation was saved.
-- `summary`:
-  - `endpoints_documented`: (integer) Count of endpoints parsed and documented.
-  - `errors_documented`: (integer) Count of error response patterns found.
-- `industrial_status`: (string) "SOLIDIFIED - PRO DOCS GENERATED"
+## 🛡️ Restricciones Industriales
 
-### ⚖️ SI Mandate (International System)
-
-Any metrics mentioned in the documentation (response time limits, data quotas, request quotas) must be strictly expressed in SI units (seconds, bytes).
-
-## 🛡️ Industrial Constraints (Zero-Trust)
-
-- **Physical Parsing:** Must read and parse the physical YAML on disk. Mocking documentation from non-existent contracts is FORBIDDEN.
-- **Reference Integrity:** All generated documentation must include a reference to the source contract and its version.
-
-## 🧠 Documentation Workflow (v4.0-MCP)
-
-1. **Ingest Specs:** Parse the OpenAPI 3.x contract from the Architect.
-2. **Endpoint Specification:** Detail HTTP methods, URL paths, and authentication requirements.
-3. **Request/Response Mapping:** Generate clear tables for parameters and body schemas.
-4. **Usage Guidelines:** Add authentication setup, common use cases, and best practices.
-5. **Code Samples:** Provide ready-to-use snippets for multiple languages.
+- **Fidelidad Física:** Prohibido inventar documentación; debe leer el disco.
+- **Métricas SI:** Tiempos reportados en **segundos (s)**.
+- **Soberanía DAST:** El artefacto resultante debe ser verificable en `DOCS/`.
 
 ---
-**ORIGIN:** [api-documentation-generator by sickn33](https://skills.sh/sickn33/antigravity-awesome-skills/api-documentation-generator)
-*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*
+**ORIGEN:** [api-documentation-generator by sickn33](https://skills.sh/sickn33/antigravity-awesome-skills/api-documentation-generator)

@@ -1,38 +1,35 @@
 ---
-version: v4.0-MCP
-agent: FACTORY_EVOLVER
+version: v5.0-MCP (Native)
+agent_authorization: [FACTORY_EVOLVER]
 source: https://skills.sh/github/awesome-copilot/refactor
+protocol: Surgical-Evolution / DAST
 ---
 
-# 🧬 Skill | Skill Refactor Pro (v4.0-MCP)
+# 🧬 Skill | skill-refactor-pro
 
 ## Objective
 
-Provide surgical code refactoring to improve maintainability, structure, and readability without changing external behavior. Refactoring is treated as a gradual evolution, heavily relying on existing tests before any mutation occurs.
+Provide surgical code refactoring to improve maintainability and apply "Golden Rules" from Neo4j without changing external behavior. Treats refactoring as gradual evolution.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use direct typed arguments. `params_json` is **DEPRECATED**.
 
-- `action` (enum): `analyze_smells`, `apply_refactor`.
-- `target_project` (string, mandatory): Absolute path to the project workspace.
-- `file_path` (string, mandatory): Specific file within `WORKSPACE/` to analyze or refactor.
-- `target_smell` (string, optional): Specific smell to target (e.g., `nested_conditionals`, `magic_numbers`).
+### Typed Parameters
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Your Agent ID (must be 'FACTORY_EVOLVER').
+- `target_project` (string): Absolute path to the project root.
+- `file_path` (string): Specific file within `WORKSPACE/` to evolve (e.g., `backend/main.py`).
+- `action` (enum): `apply_refactor` (default), `analyze_smells`.
+- `rules` (list): (Optional) List of Golden Rules to apply (e.g., `["SI_UNITS", "PORT_CONFLICT:5432"]`).
+- `target_smell` (string): (Optional) Specific smell to target.
+- `isolate` (boolean): Execution in Clean Session.
 
-- `refactor_status`: (string) `ANALYZED` or `REFACTORED`.
-- `identified_smells`: (array) List of detected code smells and their line numbers.
-- `artifacts_produced`: (array) Paths to the generated `.refactored` physical files.
-- `industrial_status`: (string) "SOLIDIFIED - CODE REFACTORED".
+## 🛡️ Industrial Constraints
 
-### ⚖️ SI Mandate (International System)
+- **Physical Sandboxing:** Refactored code MUST be output to a new file with `_refactored` suffix. Never overwrite original files directly.
+- **SI Mandate:** Execution time in **seconds (s)** and metrics in **bytes (B)**.
+- **Test-Driven Policy:** Refactoring is FORBIDDEN on files that lack corresponding physical tests.
 
-Any comparative performance metrics (before/after refactoring) must be expressed in **seconds** (s) for execution time and in **bytes** (B) for file size or memory consumption.
-
-## 🛡️ Industrial Constraints (Zero-Trust & Safe Refactoring)
-
-- **Test-Driven Mutation:** Refactoring is FORBIDDEN on files that lack corresponding tests (`test_*.py` or `*.spec.ts`). Without tests, you're not refactoring, you're editing.
-- **Single Responsibility:** Apply only one type of refactor pattern (e.g., Extract Method, Introduce Strategy Pattern) per execution to avoid regression.
-- **Physical Sandboxing:** The refactored code MUST be output to a new file appended with `_refactored` (e.g., `main_refactored.py`). The Orchestrator or QA_TESTER must approve it before it replaces the original.
-- **No Behavior Change:** The logic must yield the exact same output.
+---
+**ORIGIN:** [refactor by awesome-copilot](https://skills.sh/github/awesome-copilot/refactor)

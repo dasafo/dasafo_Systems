@@ -1,36 +1,33 @@
 ---
-version: v4.0-MCP
-agent: QA_TESTER / FRONTEND_DEV
-source: internal/skill-creator
+version: v5.0-MCP (Native)
+agent_authorization: [QA_TESTER, FRONTEND_DEV]
+protocol: E2E-Validation / DAST
 ---
 
-# 🎭 Skill | Playwright E2E Tester (v4.0-MCP)
+# 🎭 Skill | playwright-e2e-tester
 
 ## Objective
 
-Execute End-to-End (E2E) browser testing using Playwright to ensure UI/UX workflows match the functional criteria established in the `SPEC_LITE.json` contract.
+Execute End-to-End (E2E) browser testing using Playwright to ensure UI/UX workflows match functional criteria. Generates physical evidence (JSON/Video) for quality audits.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use direct typed arguments. `params_json` is **DEPRECATED**.
 
-- `action` (enum): `generate_spec`, `run_e2e`.
-- `target_project` (string, mandatory): Absolute path to the project workspace.
-- `spec_path` (string, mandatory): Path to the `SPEC_LITE.json` defining the user flow.
-- `url` (string, optional): Localhost or staging URL to test.
+### Typed Parameters
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Your Agent ID (QA_TESTER or FRONTEND_DEV).
+- `target_project` (string): Absolute path to project root.
+- `action` (enum): `run_e2e` (default) | `generate_spec`.
+- `spec_path` (string): (Optional) Path to the task specification defining the flow.
+- `url` (string): (Optional) Staging or localhost URL to test (default: `http://localhost:3000`).
+- `isolate` (boolean): Execution in Clean Session.
 
-- `e2e_status`: (string) `PASSED` or `FAILED`.
-- `report_path`: (string) Path to the physical report in `LOGS/`.
-- `video_trace_bytes`: (integer) Size of the generated trace/video in bytes.
-- `industrial_status`: (string) "SOLIDIFIED - E2E VERIFIED" | "BLOCKED - E2E FAILED".
+## 🛡️ Industrial Constraints
 
-### ⚖️ SI Mandate (International System)
+- **Physical Proof:** Every run MUST generate a `PLAYWRIGHT_REPORT.json` in `LOGS/`.
+- **SI Standards:** Durations in **Seconds (s)** and video/trace sizes in **Bytes (B)**.
+- **Contract Parity:** Assertions must map 1:1 to user stories in the project contract.
 
-The size of network and video traces must be reported in **bytes** (B), and the loading/execution time in **seconds** (s).
-
-## 🛡️ Industrial Constraints (Zero-Trust)
-
-- **Trace Artifacts:** All runs must produce a physical `PLAYWRIGHT_REPORT.json` detailing the network activity and DOM assertions.
-- **Contract Parity:** The assertions in the Playwright spec must map 1:1 to the `04_user_stories` in the project's PRPs.
+---
+*Standard v5.0-MCP | Dasafo Factory Compliance Hub.*

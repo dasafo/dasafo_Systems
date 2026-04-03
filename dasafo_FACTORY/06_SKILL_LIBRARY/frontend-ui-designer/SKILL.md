@@ -1,37 +1,32 @@
 ---
-name: frontend-ui-designer
-description: Enforces modern UI/UX design patterns using Tailwind CSS, shadcn/ui, and Lucide icons. Use this skill when generating or refactoring React/Next.js frontend components to ensure aesthetic consistency and industrial quality.
+version: v5.0-MCP (Native)
+agent_authorization: [FRONTEND_DEV]
+protocol: Aesthetic-Guard / DAST
 ---
 
-# 🎨 Skill | Frontend UI Designer (v4.0-MCP)
+# 🎨 Skill | frontend-ui-designer
 
 ## Objective
 
-Act as the UI/UX standard enforcer for the dasafo_Factory. Ensure that all generated React/Next.js components strictly adhere to modern design principles, utilizing Tailwind CSS for styling, `shadcn/ui` for accessible component foundations, and `lucide-react` for iconography.
+Enforce modern UI/UX design patterns (Tailwind, Shadcn) by verifying physical scaffolding before code generation. Ensures aesthetic consistency and industrial quality.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use typed arguments. `params_json` is **DEPRECATED**.
 
-- `target_project` (string, mandatory): Absolute path to the project root.
-- `component_name` (string, mandatory): Name of the component to be designed (e.g., `HeroSection`, `LoginForm`).
-- `design_vibe` (string, optional): Aesthetic direction (e.g., "dark mode, glassmorphism, minimalistic").
+### Typed Parameters
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Your Agent ID (FRONTEND_DEV).
+- `target_project` (string): Path to project root.
+- `component_name` (string): Name of the component to design (e.g., 'HeroSection').
+- `design_vibe` (string): (Optional) Aesthetic direction (e.g., 'glassmorphism').
+- `isolate` (boolean): Execution in Clean Session.
 
-- `design_system_verified`: (boolean) Confirmation that Tailwind and UI libraries are present physically.
-- `scaffold_path`: (string) The physical path where the component should be written.
-- `execution_time_s`: (float) Validation time in seconds.
+## 🛡️ Industrial Constraints
 
-## 🧠 Industrial Constraints & Best Practices
+- **Physical Containment:** Validations target strictly `WORKSPACE/frontend/`.
+- **SI Standards:** Timing metrics MUST be in **Seconds (s)**.
+- **Non-Hallucination:** If markers like `components.json` are missing, the status must reflect failure.
 
-- **Component Anatomy:** Build components using functional React components with standard hooks.
-- **Styling Standards:** Rely exclusively on Tailwind CSS utility classes. Avoid custom CSS files unless strictly necessary for animations not supported by Tailwind.
-- **Accessibility (a11y):** Prioritize accessible semantic HTML and Radix UI primitives (via shadcn).
-- **Physical Containment:** Always resolve paths to `WORKSPACE/frontend/components/` or `WORKSPACE/frontend/app/`. Never write UI logic to the backend.
-
-## 🚀 Execution Guide
-
-1. Receive the target component requirement from the `SPEC_LITE.json`.
-2. Run this skill to physically verify the frontend design system (Tailwind/Shadcn) is initialized.
-3. Once `design_system_verified` is True, generate the component applying the requested `design_vibe`.
+---
+*Standard v5.0-MCP | Dasafo Factory Production Hub.*

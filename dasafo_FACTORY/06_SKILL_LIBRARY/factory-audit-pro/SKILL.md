@@ -1,51 +1,34 @@
 ---
-version: v4.0-MCP
-agent: MARKETING_GROWTH / QA_TESTER / SECURITY_AUDITOR
+version: v5.0-MCP (Native)
+agent_authorization: [MARKETING_GROWTH, QA_TESTER, SECURITY_AUDITOR]
 source: https://skills.sh/pbakaus/impeccable/audit
+protocol: Quality-First / DAST
 ---
 
-# 🔍 Skill | Factory Audit Pro (v4.0-MCP)
+# 🔍 Skill | factory-audit-pro
 
 ## Objective
 
-Perform an industrial-grade diagnostic scan and quality audit of project artifacts. This skill evaluates 5 key dimensions: Accessibility (A11y), Performance, Theming, Responsive Design, and Anti-Patterns. It produces a comprehensive **Audit Health Score** and a prioritized list of findings (P0-P3).
+Execute a comprehensive quality audit evaluating performance, accessibility, and architectural anti-patterns. Basado en el estándar de **pbakaus**.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use direct typed arguments. `params_json` is **DEPRECATED**.
 
-- `target_path` (string, mandatory): Absolute path to the directory or file to audit.
-- `dimensions` (array, optional): Default `["A11y", "Perf", "Theme", "Resp", "AntiPattern"]`.
-- `severity_threshold` (enum, optional): Only report issues above this level (`P0`, `P1`, `P2`, `P3`).
-- `strict_mode` (boolean, optional): Default `true`. Fails the audit if any P0 issues are found.
+### Typed Parameters
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Your Agent ID.
+- `target_path` (string): Absolute path to the audit target.
+- `dimensions` (list): (Optional) Aspects to scan (e.g., `["Perf", "Theme"]`).
+- `severity_threshold` (enum): Min severity to report (`P0` to `P3`).
+- `strict_mode` (boolean): (Optional) Fail audit on any P0 finding.
+- `isolate` (boolean): Execution in Clean Session.
 
-- `health_score`: (integer) Total score (0-20) based on diagnostic criteria.
-- `verdict`: (string) "PASS" | "FAIL" | "PASS_WITH_WARNINGS".
-- `executive_summary`: (string) High-level overview of findings and health rating.
-- `detailed_findings`: (array of objects) Issues with severity, category, location, and fix recommendation.
-- `industrial_status`: (string) "AUDITED - SOLIDITY VERIFIED".
+## 🛡️ Industrial Constraints
 
-### ⚖️ Mandato SI (Sistema Internacional)
-
-Cualquier métrica técnica en el informe (tiempos de carga, latencia de renderizado, tamaños de bundle, cuotas de memoria) debe expresarse estrictamente en unidades del SI (**segundos**, **bytes**).
-
-## 🛡️ Industrial Constraints (Zero-Trust)
-
-- **Physical Evidence:** Audits must be based on physical file analysis. Generic or "hallucinated" reports are strictly FORBIDDEN.
-- **Brutal Honesty:** The "Anti-Patterns Verdict" must explicitly state if the code looks like low-quality AI generation.
-- **Traceability:** Every finding must point to a specific file and line number.
-- **No Direct Fixes:** This skill documents issues for specialized agents to fix; it does not modify the source code.
-
-## 🧠 Audit Workflow (v4.0-MCP)
-
-1. **Diagnostic Scan:** Run systematic checks across the 5 dimensions.
-2. **Scoring:** Assign a score (0-4) to each dimension.
-3. **P0 Detection:** Identify "Blocking" issues that prevent phase transition (Gate Lockdown).
-4. **Report Generation:** Assemble findings into a structured audit report (`DOCS/AUDIT/`).
-5. **Verdict:** Issue the final industrial verdict based on the health score and severity of issues.
+- **Physical Evidence:** Reports MUST be physically saved in `LOGS/AUDITS/`.
+- **SI Standards:** Technical metrics reported in **Seconds (s)** and **Bytes (B)**.
+- **Brutal Honesty:** Mandatory reporting of "AI-slop" or low-quality generation.
 
 ---
 **ORIGIN:** [audit by pbakaus](https://skills.sh/pbakaus/impeccable/audit)
-*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*

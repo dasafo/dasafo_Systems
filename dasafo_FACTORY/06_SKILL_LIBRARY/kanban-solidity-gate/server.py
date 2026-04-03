@@ -3,15 +3,16 @@ import socketserver
 import json
 import sys
 import os
+import time
 from pathlib import Path
 
-# Argumentos pasados por el run.py
+# Argumentos industriales
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 3001
-PROJECT_ROOT = Path(sys.argv[2]) if len(sys.argv) > 2 else Path(".")
+PROJECT_ROOT = Path(sys.argv[2]).resolve() if len(sys.argv) > 2 else Path(".").resolve()
 
 class KanbanHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
-        # Endpoint de lectura DAST (Lee directo del disco)
+        # 🔍 Endpoint DAST: Lectura en tiempo real del estado físico
         if self.path == "/api/data":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
@@ -21,32 +22,35 @@ class KanbanHandler(http.server.SimpleHTTPRequestHandler):
             registry_path = PROJECT_ROOT / "TASKS" / "registry.json"
             state_path = PROJECT_ROOT / "PROJECT_STATE.json"
 
-            registry_data = []
-            state_data = {}
+            data = {"registry": [], "state": {}, "server_time": time.time()}
 
-            if registry_path.exists():
-                with open(registry_path, "r", encoding="utf-8") as f:
-                    registry_data = json.load(f)
-            if state_path.exists():
-                with open(state_path, "r", encoding="utf-8") as f:
-                    state_data = json.load(f)
+            try:
+                # Lectura con reintentos mínimos para evitar colisiones
+                if registry_path.exists():
+                    data["registry"] = json.loads(registry_path.read_text(encoding="utf-8"))
+                if state_path.exists():
+                    data["state"] = json.loads(state_path.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, PermissionError):
+                # Fail-safe: Si el archivo está bloqueado o incompleto, devolvemos estado previo
+                pass
 
-            response = {"registry": registry_data, "state": state_data}
-            self.wfile.write(json.dumps(response).encode("utf-8"))
+            self.wfile.write(json.dumps(data).encode("utf-8"))
         
-        # Servir la interfaz gráfica principal
+        # 🌐 Servir la UI Industrial
         elif self.path == "/":
             self.path = "ui/index.html"
-            return http.server.SimpleHTTPRequestHandler.do_GET(self)
+            return super().do_GET()
         else:
-            return http.server.SimpleHTTPRequestHandler.do_GET(self)
+            return super().do_GET()
 
-# Asegurar que el servidor corre desde el directorio de la skill
+# Asegurar que el contexto de ejecución es el directorio de la skill
 os.chdir(Path(__file__).parent)
 
-print(f"[*] Vibe Kanban Industrial Server running on port {PORT}")
-print(f"[*] Target Project: {PROJECT_ROOT}")
+print(f"[*] dasafo_FACTORY | Vibe Kanban Server v5.0")
+print(f"[*] Port: {PORT} | Root: {PROJECT_ROOT}")
 
-# Iniciar servidor
-with socketserver.TCPServer(("", PORT), KanbanHandler) as httpd:
-    httpd.serve_forever()
+try:
+    with socketserver.TCPServer(("", PORT), KanbanHandler) as httpd:
+        httpd.serve_forever()
+except KeyboardInterrupt:
+    print("\n[!] Server decommissioned by user.")

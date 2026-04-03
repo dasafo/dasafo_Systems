@@ -1,3 +1,4 @@
+# dasafo_FACTORY/session_hook.py
 import json
 import logging
 import os
@@ -5,42 +6,43 @@ from pathlib import Path
 
 # Configuración de logging industrial
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("AduanaUniversal")
+logger = logging.getLogger("AduanaUniversal_v5.0")
 
-# Skills autorizadas para bypass (RCP de proyecto, utilidades de sistema y gestión de ADN) 
+# 🚦 Herramientas autorizadas para saltar la validación de fase (Utilidades de Sistema)
+# IMPORTANTE: Estos deben coincidir con el 'skill_name' en @aduana_universal
 BYPASS_SKILLS = {
-    "kanban-solidity-gate",       #
-    "factory-doctor",             # 🚑 Autorizado para RCP de Proyecto
-    "registry-manager",           # 📦 Gestión atómica de tareas
-    "agentic-thought-secret-scanner", #
-    "factory-audit-pro",          #
-    "prp-generator",              #
-    "arxiv-technical-digest",     #
-    "apify-trend-analysis",       #
-    "hallucination-guardrail",    #
-    "autonomous-feedback-analyzer", #
-    "project-management",         #
-    "deployment-health-check",    # 📡 Monitoreo Sentinel
-    "context-pruning-sieve",      # 🧠 Optimización de memoria
-    "skill-refactor-pro",         # 🧬 Evolución autónoma de ADN (v4.0-S)
-    "project-backbone-validator",  # 🏗️ INYECTADO: Inspector de andamiaje permitido siempre
-    "research-manager"            # 🔬 INYECTADO: Inspector de andamiaje permitido siempre
+    "kanban-solidity-gate",
+    "factory-doctor",
+    "registry-manager",
+    "agentic-thought-secret-scanner",
+    "factory-audit-pro",
+    "prp-generator",
+    "api-docs-generator",           # 🏗️ Añadida a Bypass para permitir documentación fluida
+    "apify-trend-analysis",
+    "arxiv-technical-digest",
+    "hallucination-guardrail",
+    "autonomous-feedback-analyzer",
+    "deployment-health-check",
+    "context-pruning-sieve",
+    "skill-refactor-pro",
+    "project-backbone-validator",
+    "research-manager"
 }
 
 def verify_project_state(target_project: str, requested_skill: str, agent: str = None) -> tuple[bool, str]:
     """
-    Protocol-Level Session Hook (Aduana Universal v4.0-S).
-    Implementa DAST (Disk-as-Source-of-Truth) y Double-Gating para agentes autónomos. 
+    Protocol-Level Session Hook (Aduana Universal v5.0-MCP).
+    Implementa DAST (Disk-as-Source-of-Truth) y Double-Gating Nativo. 
     """
     
     # 1. Bypass Inmediato para herramientas de gestión e infraestructura
     if requested_skill in BYPASS_SKILLS:
-        return True, "Bypass skill allowed."
+        return True, "Bypass: Skill de gestión permitida."
 
-    # 2. Verificación de Integridad del Estado Físico
+    # 2. Verificación de Existencia del Proyecto
     state_path = Path(target_project) / "PROJECT_STATE.json"
     if not state_path.exists():
-        return False, "Solidity Guard: PROJECT_STATE.json ausente. Operación denegada."
+        return False, "Solidity Guard: PROJECT_STATE.json ausente. El proyecto no ha sido inicializado físicamente."
         
     try:
         with open(state_path, "r", encoding="utf-8") as f:
@@ -50,45 +52,42 @@ def verify_project_state(target_project: str, requested_skill: str, agent: str =
     
     phases = state_data.get("phases", {})
     if not phases:
-        return False, "Solidity Guard: No se definen 'phases' en el estado."
+        return False, "Solidity Guard: No se definen 'phases' en el estado del proyecto."
 
-    # --- 3. LÓGICA DE DOUBLE-GATING (Autorización Distribuida v4.0-S) ---
-    # Permite que CUALQUIER agente autónomo opere si posee una SPEC_LITE física asignada
-    # Se expande la lista para cubrir todos los Hubs de la factoría (01-05)
+    # --- 3. LÓGICA DE DOUBLE-GATING (Autorización Distribuida v5.0-MCP) ---
+    # Permite que un agente opere si posee una SPEC_LITE física asignada en el disco.
+    # Lista sincronizada con el AGENT_SKILL_MAPPING.md
     authorized_peons = [
-        "BACKEND_DEV", "FRONTEND_DEV", "DB_MASTER", "DATA_SCIENTIST", # Producción
-        "QA_TESTER", "SECURITY_AUDITOR", "RESEARCH_AGENT",           # Compliance
-        "DEVOPS_SRE", "FACTORY_EVOLVER", "MEMORY_OPTIMIZER",         # Operations
-        "PRODUCT_OWNER", "MARKETING_GROWTH", "DOCS_MASTER",
-        "AI_ENGINEER"           # Strategy
+        "ORCHESTRATOR", "PRODUCT_OWNER", "MARKETING_GROWTH",           # Hub 01
+        "ARCHITECT", "RESEARCH_AGENT",                                 # Hub 02
+        "AI_ENGINEER", "BACKEND_DEV", "FRONTEND_DEV", "DB_MASTER", "DATA_SCIENTIST", # Hub 03
+        "QA_TESTER", "SECURITY_AUDITOR", "DOCS_MASTER",                # Hub 04
+        "DEVOPS_SRE", "DEPLOYMENT_MONITOR", "FACTORY_EVOLVER", "MEMORY_OPTIMIZER" # Hub 05
     ]
 
     if agent in authorized_peons:
-        # 📂 Rutas de búsqueda v4.0-S (Búsqueda recursiva en el ciclo de vida)
         tasks_dir = Path(target_project) / "TASKS"
-        
-        # El Hook ahora busca la SPEC en: Raíz, PENDING (antes de empezar) o IN_PROGRESS (durante ejecución)
+        # Búsqueda prioritaria en IN_PROGRESS (estándar v5.0 Auto-Start)
         possible_specs = [
-            tasks_dir / "SPEC_LITE.json",
+            tasks_dir / "02_IN_PROGRESS" / "SPEC_LITE.json",
+            tasks_dir / "01_PENDING" / "SPEC_LITE.json",
             tasks_dir / "01_PENDING" / "EMERGENCY_SPEC.json",
-            tasks_dir / "01_PENDING" / "SPEC_LITE.json", # Por si acaso
-            tasks_dir / "02_IN_PROGRESS" / "SPEC_LITE.json" # <--- CRÍTICO: Nueva ubicación Auto-Start
+            tasks_dir / "SPEC_LITE.json"
         ]
         
-        # Búsqueda dinámica por nombre de archivo si el orquestador pasó uno específico
         for sp in possible_specs:
             if sp.exists():
                 try:
                     with open(sp, "r") as f:
                         spec = json.load(f)
                         assigned = spec.get("metadata", {}).get("assigned_agent")
+                        # Si el agente es el dueño de la tarea física, se abre la aduana
                         if assigned == agent:
-                            return True, f"Double-Gate: Agente {agent} autorizado por {sp.parent.name}/{sp.name}."
+                            return True, f"Double-Gate: Agente {agent} autorizado por evidencia física en {sp.name}."
                 except:
                     continue
-    # -----------------------------------------------------------------------
 
-    # 4. Validación de Secuencialidad de Fases (Foco Atómico)
+    # 4. Validación de Secuencialidad de Fases
     phase_keys = list(phases.keys())
     in_progress_idx = -1
     in_progress_count = 0
@@ -99,47 +98,38 @@ def verify_project_state(target_project: str, requested_skill: str, agent: str =
             in_progress_idx = i
 
     if in_progress_count > 1:
-        return False, "Solidity Guard: Multi-fase detectada. Se requiere foco atómico."
+        return False, "Solidity Guard: Multi-fase detectada. Se requiere foco atómico (solo una fase IN_PROGRESS)."
         
     if in_progress_idx != -1:
-        # Verificar que todas las fases anteriores estén APPROVED
+        # Bloqueo: No se puede trabajar en una fase si las anteriores no están APPROVED
         for i in range(in_progress_idx):
             if phases[phase_keys[i]] != "APPROVED":
-                return False, f"Solidity Guard: Bloqueo de fase. {phase_keys[i]} debe estar APPROVED."
+                return False, f"Solidity Guard: Bloqueo de fase. {phase_keys[i]} debe estar APPROVED antes de avanzar."
                 
     if in_progress_count == 0:
-         return False, "Solidity Guard: Ninguna fase activa. Use kanban-solidity-gate."
+         return False, "Solidity Guard: Ninguna fase activa. El Director debe activar una fase vía kanban-solidity-gate."
 
-    # --- 5. STARK-SOLIDITY ENFORCEMENT (Verificación Física DAST) ---
-
+    # --- 5. STARK-SOLIDITY ENFORCEMENT (DAST) ---
     
-    # Validación M1: Contrato Maestro
+    # Validación M1: Contrato Maestro físico
     if phases.get("M1") == "APPROVED":
         if not (Path(target_project) / "PRP_CONTRACT.json").exists():
-            return False, "DAST Violation: M1 aprobada pero falta PRP_CONTRACT.json físico."
+            return False, "DAST Violation: M1 aparece como APPROVED pero falta el PRP_CONTRACT.json físico."
 
-    # --- VALIDACIÓN DE FIRMA HUMANA (HITL) v4.0-S ---
-    # Bloqueo: M1 no puede estar APPROVED sin el acta de aprobación firmada
+    # Validación M1: Firma Humana Obligatoria
     if phases.get("M1") == "APPROVED":
         approval_file = Path(target_project) / "DOCS" / "USER" / "APPROVAL_M1.md"
         if not approval_file.exists():
-            return False, "HITL Violation: Fase M1 aprobada en registro, pero falta APPROVAL_M1.md firmado en DOCS/USER/."
+            return False, "HITL Violation: Falta APPROVAL_M1.md firmado por el Director en DOCS/USER/."
         
-        # Opcional: Verificar que el archivo contenga el string de aprobación
         with open(approval_file, "r") as f:
             if "Status: APPROVED" not in f.read():
-                return False, "Solidity Guard: El archivo de aprobación existe pero no tiene el estado APPROVED."
+                return False, "Solidity Guard: El archivo de aprobación existe pero no ha sido firmado con 'Status: APPROVED'."
 
     # Validación M2: Planos Arquitectónicos
     if phases.get("M2") == "APPROVED":
         arch_docs = list((Path(target_project) / "DOCS" / "ARCH").glob("*.md"))
         if not arch_docs:
-            return False, "DAST Violation: M2 aprobada pero no hay evidencia en DOCS/ARCH/."
-
-    # Validación M3/M4: Reportes de Construcción/QA
-    current_phase = phase_keys[in_progress_idx]
-    if current_phase in ["M3", "M4"] and requested_skill in ["project-management", "kanban-solidity-gate"]:
-        if not (Path(target_project) / "LOGS" / "BUILD_REPORT.json").exists():
-            return False, f"DAST Violation: Cierre en {current_phase} denegado sin BUILD_REPORT.json."
+            return False, "DAST Violation: Fase M2 aprobada sin planos técnicos en DOCS/ARCH/."
 
     return True, "State Validated"

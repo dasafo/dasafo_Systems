@@ -1,51 +1,34 @@
 ---
-version: v4.0-MCP
-agent: MARKETING_GROWTH / RESEARCH_AGENT
+version: v5.0-MCP (Nativa)
+agent_authorization: [MARKETING_GROWTH, PRODUCT_OWNER, RESEARCH_AGENT, DATA_SCIENTIST]
 source: https://skills.sh/apify/agent-skills/apify-trend-analysis
+protocol: Trend-Intelligence / DAST
 ---
 
-# 📈 Skill | Apify Trend Analysis
+# 📈 Skill | apify-trend-analysis
 
-## Objective
+## Objetivo
 
-Identify and analyze market trends, consumer behavior, and niche opportunities across global platforms (Google Trends, Instagram, TikTok, YouTube, etc.) using Apify Actors. This skill provides a structured framework for data-driven strategic decision-making.
+Identificar y analizar tendencias de mercado y nichos usando Apify Actors. Basado en el estándar de **Apify**.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interfaz v5.0-MCP Nativa
 
-### Input Schema (SkillInput.params)
+**Uso Mandatorio:** Parámetros directos. El parámetro `params_json` está **DEPRECADO**.
 
-- `actor` (string): The Apify Actor ID to execute (e.g., `apify/google-trends-scraper`).
-- `input_data` (object): The specific parameters for the selected actor (as per its schema).
-- `format` (string, optional): Output format. "json" (default) or "csv".
-- `target_project` (string, optional): Absolute path to the active project.
+### Parámetros Tipados
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Tu ID de Agente autorizado.
+- `target_project` (string): Ruta física al proyecto.
+- `actor` (string): ID del Actor de Apify (ej. `apify/google-trends-scraper`).
+- `input_data` (object): (Opcional) Parámetros específicos del actor.
+- `overwrite` (boolean): (Opcional) Saltar el Redundancy Lock.
+- `isolate` (boolean): (Opcional) Ejecución en Clean Session.
 
-- `status`: (string) "TREND_CAPTURED" | "ANALYSIS_FAILED"
-- `summary`:
-  - `actor_used`: (string) ID of the actor executed.
-  - `data_points_count`: (integer) Total number of items captured.
-  - `file_path`: (string) Path to the physical artifact.
-- `insights`: (string) Automated summary of key trend patterns identified in the data.
-- `recommendations`: (list) Actionable next steps based on trend analysis.
+## 🛡️ Restricciones Industriales
 
-### ⚖️ SI Mandate (International System)
-
-Any temporal metrics (intervals, growth) or data volume must be strictly expressed in International System (SI) units (seconds, bytes).
-
-## 🛡️ Industrial Constraints (Zero-Trust)
-
-- **Authenticity Only:** Requires a valid `APIFY_API_TOKEN`. Generating "hallucinated trends" without a live run is FORBIDDEN.
-- **Physical Proof:** Raw data must be persisted to `LOCAL_KNOWLEDGE/trends/` before success is returned.
-- **Schema-Driven:** Before execution, agents are encouraged to fetch the actor's schema for parameter accuracy.
-
-## 🧠 Strategic Workflow (v4.0-MCP)
-
-1. **Identify Trend Type:** Select a specialized actor (Google Trends, Instagram Search, etc.).
-2. **Fetch Schema:** Retrieve the actor's input requirements dynamically to ensure valid parameters.
-3. **Execution:** Run the analysis script with the defined input and selected format.
-4. **Summarize Findings:** Report the number of results, key patterns, and content opportunities.
+- **Autenticidad Live:** Prohibido inventar tendencias; requiere ejecución real con `APIFY_API_TOKEN`.
+- **Soberanía DAST:** Los datos deben persistir en `LOCAL_KNOWLEDGE/trends/`.
+- **Métricas SI:** Tiempos reportados en **segundos (s)**.
 
 ---
 **ORIGIN:** [apify-trend-analysis by apify](https://skills.sh/apify/agent-skills/apify-trend-analysis)
-*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*

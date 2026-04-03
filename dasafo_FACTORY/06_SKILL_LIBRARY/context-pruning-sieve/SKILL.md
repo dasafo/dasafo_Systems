@@ -1,39 +1,34 @@
 ---
-version: v4.0-MCP
-agent: MEMORY_OPTIMIZER
+version: v5.0-MCP (Native)
+agent_authorization: [MEMORY_OPTIMIZER]
 source: https://skills.sh/sickn33/antigravity-awesome-skills/context-optimization
+protocol: Context-Hygiene / DAST
 ---
 
-# 🧠 Skill | Context Pruning Sieve (v4.0-MCP)
+# 🧠 Skill | context-pruning-sieve
 
 ## Objective
 
-Extend the effective capacity of agent context windows through strategic compaction, observation masking, and KV-cache optimization. This skill prevents Token Decay and reduces operational latency/costs.
+Extend agent context windows by pruning verbose tool outputs, social fluff, and redundant session data. Prevents Token Decay and reduces operational costs.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use direct typed arguments. `params_json` is **DEPRECATED**.
 
-- `action` (enum): `compact_context`, `mask_observations`, `optimize_cache_order`.
-- `target_project` (string, mandatory): Absolute path to the project workspace.
-- `target_file` (string, mandatory): Path to the session log or context file to optimize (e.g., `LOGS/sessions/current.json`).
-- `budget_threshold` (float, optional): Token utilization threshold to trigger optimization (Default: 0.8).
+### Typed Parameters
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Your Agent ID (MEMORY_OPTIMIZER).
+- `target_project` (string): Path to project root.
+- `target_file` (string): Relative path to context file (e.g., `LOGS/sessions/current.json`).
+- `action` (enum): `compact_context`, `mask_observations`.
+- `budget_threshold` (float): (Optional) Trigger threshold (default: 0.8).
+- `isolate` (boolean): Execution in Clean Session.
 
-- `optimization_status`: (string) `COMPACTED`, `MASKED`, or `REORDERED`.
-- `original_size_bytes`: (integer) Initial file size in bytes (SI Mandate).
-- `optimized_size_bytes`: (integer) Final file size in bytes (SI Mandate).
-- `compaction_ratio`: (float) Percentage of reduction achieved.
-- `artifacts_produced`: (array) Path to the optimized physical artifact.
-- `industrial_status`: (string) "SOLIDIFIED - CONTEXT PRUNED".
+## 🛡️ Industrial Constraints
 
-### ⚖️ Mandato SI (Sistema Internacional)
+- **Non-Destructive:** Never overwrite the original source; always generate an `*_optimized` version.
+- **SI Standards:** All metrics strictly in **Bytes (B)** and **Seconds (s)**.
+- **No-Trash Policy:** Automatic removal of social-loop phrases ("thank you", "perfect").
 
-Cualquier métrica de reducción de contexto o tamaño de archivo debe expresarse estrictamente en **bytes** (B). El tiempo de ejecución del algoritmo de compresión debe medirse en **segundos** (s).
-
-## 🛡️ Industrial Constraints (Zero-Trust)
-
-- **Observation Masking:** "Observation masking replaces verbose tool outputs with compact references.". Raw tool outputs over 500 bytes MUST be masked if older than 3 turns.
-- **Cache-Friendly Ordering:** "Place stable elements first (system prompt, tool definitions), then frequently reused elements, then unique elements last.".
-- **Non-Destructive Pruning:** The original context file must be preserved. Output must be saved to a new file (e.g., `*_optimized.json`).
+---
+**ORIGIN:** [context-optimization by sickn33](https://skills.sh/sickn33/antigravity-awesome-skills/context-optimization)

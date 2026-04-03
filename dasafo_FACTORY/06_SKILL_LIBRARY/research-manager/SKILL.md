@@ -1,38 +1,34 @@
 ---
-version: v4.0-MCP
-agent: RESEARCH_AGENT / ALL
+version: v5.0-MCP (Native)
+agent_authorization: [RESEARCH_AGENT]
 source: custom_dasafo_factory
+protocol: Research-Persistence / DAST
 ---
 
-# 🔬 Skill | Research Manager (v4.0-MCP)
+# 🔬 Skill | research-manager
 
 ## Objective
 
-Safely write, manage, and persist deep-research artifacts, architectural investigations, and API evaluations to the disk. Replaces the use of insecure shell `cat` commands to prevent terminal syntax errors (zsh/bash injection).
+Safely manage and persist deep-research artifacts, architectural investigations, and API evaluations to the disk. Eliminates terminal syntax errors and shell injection risks.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use typed arguments. `params_json` is **DEPRECATED**.
 
-- `action` (string, optional): "write_report" (default).
-- `report_name` (string, required): The exact name of the markdown file (e.g., "RESEARCH_AI_MODELS.md").
-- `content` (string, required): The full markdown content of the research.
-- `category` (string, optional): "RESEARCH" (default) | "ARCH" | "MARKETING". Determines the physical subfolder in `DOCS/`.
+### Typed Parameters
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Your Agent ID (must be 'RESEARCH_AGENT').
+- `target_project` (string): Absolute path to the project root.
+- `report_name` (string): Exact name of the markdown file (e.g., 'RESEARCH_AI_MODELS.md').
+- `content` (string): Full markdown content of the research.
+- `category` (enum): `RESEARCH` (default), `ARCH`, `MARKETING`.
+- `isolate` (boolean): Execution in Clean Session.
 
-- `industrial_status`: (string) "SOLIDIFIED - RESEARCH RECORDED".
-- `report_category`: (string) The folder where it was saved.
-- `file_size_bytes`: (integer) Total size of the payload generated.
+## 🛡️ Industrial Constraints
 
-### ⚖️ SI Mandate (International System)
-
-Execution will return the report size strictly in **Bytes (B)** and the time in **Seconds (s)**.
-
-## 🛡️ Industrial Constraints (Zero-Trust)
-
-- **No Shell Escaping:** Agents MUST use this tool to write markdown reports. Writing via `cat <<EOF` in standard bash/zsh is strictly forbidden to prevent backtick/quote evaluation errors.
-- **DAST Enforcement:** Artifacts are strictly routed to `DOCS/RESEARCH`, `DOCS/ARCH`, or `DOCS/MARKETING`.
+- **No Shell Escaping:** Using `cat <<EOF` in standard bash/zsh for reports is **STRICTLY FORBIDDEN**.
+- **Sovereign Routing:** Artifacts are strictly routed to the `DOCS/` hierarchy.
+- **SI Standards:** Size in **Bytes (B)** and time in **Seconds (s)**.
 
 ---
-*Skill v4.0-MCP | Status: Standardized & Industrialized.*
+*Standard v5.0-MCP | Dasafo Factory Research Hub.*

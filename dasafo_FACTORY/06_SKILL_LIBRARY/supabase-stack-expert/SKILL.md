@@ -1,55 +1,36 @@
 ---
-version: v4.0-MCP
-agent: DB_MASTER
+version: v5.0-MCP (Native)
+agent_authorization: [DB_MASTER]
 source: https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices
+protocol: DB-Optimization / DAST
 ---
 
-# 🐘 Skill | Supabase Stack Expert (v4.0-MCP)
+# 🐘 Skill | supabase-stack-expert
 
 ## Objective
 
-Operate as a high-performance database engineer specialized in the Supabase/Postgres ecosystem. This skill enforces 8 priority categories of Postgres best practices (Query Performance, Connection Management, Security/RLS, Schema Design, Concurrency, Data Access, Monitoring, and Advanced Features) to ensure scalability, security, and industrial-grade reliability.
+Operate as a high-performance database engineer specialized in the Supabase/Postgres ecosystem. Enforces strict RLS policies, indexing strategies, and SI-compliant performance monitoring.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use direct typed arguments. `params_json` is **DEPRECATED**.
 
+### Typed Parameters
+
+- `agent` (string): Your Agent ID (must be 'DB_MASTER').
+- `target_project` (string): Path to project root.
 - `action` (enum): `tune_query`, `audit_schema`, `enforce_rls`, `monitor_performance`.
-- `target_project` (string, mandatory): Absolute path to the backend/database workspace.
-- `sql_script` (string, optional): The SQL script or schema definition to analyze.
-- `overwrite` (boolean, optional): Whether to overwrite existing report files.
-- `isolation_mode` (boolean, optional): If `True`, targets a local/isolated database instead of the shared INFRA node (`dasafo-shared-db`).
-- `audit_scope` (array, optional): Default `["query", "security", "schema"]`.
+- `sql_script` (string): (Optional) The SQL/Schema to analyze.
+- `overwrite` (boolean): Bypass Redundancy Lock for reports.
+- `isolation_mode` (boolean): If `true`, targets local DB instead of Shared INFRA.
+- `isolate` (boolean): Execution in Clean Session.
 
-### Output Schema (SkillOutput.result)
+## 🛡️ Industrial Constraints
 
-- `industrial_status`: (string) "SOLIDIFIED - DATABASE OPTIMIZED".
-- `optimization_report`: (string) Detailed analysis based on the 8 priority categories.
-- `suggested_indexes`: (array) List of missing or partial indexes identified.
-- `rls_verification`: (object) Status of Row-Level Security policies.
-- `performance_metrics`: (object) Estimated time (s) and impact of changes.
-- `compliance_report`: (object) Verification of SI mandates and Hybrid Infra alignment.
-- `summary`: (string) Human-readable outcome of the specific database action.
-
-### ⚖️ SI Mandate (International System)
-
-Any performance metrics (query latency, EXPLAIN execution time, recovery times, table and index sizes) must be strictly expressed in the SI (**seconds**, **bytes**).
-
-## 🛡️ Industrial Constraints (Zero-Trust)
-
-- **RLS by Default:** No table can exist in the public schema without a defined and verified Row-Level Security policy.
-- **Index Guardrail:** Every table over 1,000,000 bytes (1MB) must have verified indexes for common query patterns.
-- **Explain-Before-Commit:** Substantial query changes must include a simulated or actual `EXPLAIN ANALYZE` output in seconds (s).
-- **Physical Migrations:** All database changes must be saved as physical migration files (`.sql`) in `INFRASTRUCTURE/DATABASE/`.
-
-## 🧠 Database Workflow (v4.0-MCP)
-
-1. **Pre-Audit:** Analyze the schema or query using the 8 priority categories (Query, Conn, Security, Schema, Lock, Data, Monitor, Advanced).
-2. **Indexing Strategy:** Implement partial or covering indexes to reduce execution time (< 0.1s for OLTP).
-3. **Security Lockdown:** Configure RLS using `auth.uid()` or similar patterns for shared multi-tenant environments.
-4. **Optimization:** Apply connection pooling and tuning for Postgres-specific features (JSONB indexing, Full-text search).
-5. **Physical Record:** Document the EXPLAIN analysis and performance metrics in the project's architecture folder.
+- **RLS Mandate:** No table can exist in the `public` schema without a verified Row-Level Security policy.
+- **Index Guardrail:** Tables > 1MB MUST have verified indexes for common patterns.
+- **SI Standards:** All latencies in **Seconds (s)** and sizes in **Bytes (B)**.
+- **DAST Sovereignty:** All migrations and reports MUST be persisted in `INFRASTRUCTURE/DATABASE/`.
 
 ---
-**ORIGIN:** [supabase-postgres-best-practices by supabase](https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices)
-*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*
+**ORIGIN:** [supabase-best-practices by supabase](https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices)

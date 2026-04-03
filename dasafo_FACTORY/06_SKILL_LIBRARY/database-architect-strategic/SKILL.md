@@ -1,55 +1,35 @@
 ---
-version: v4.0-MCP
-agent: ARCHITECT / DB_MASTER
+version: v5.0-MCP (Native)
+agent_authorization: [ARCHITECT, DB_MASTER]
 source: https://skills.sh/sickn33/antigravity-awesome-skills/database-architect
+protocol: Schema-First / DAST
 ---
 
-# 🗄️ Skill | Database Architect Strategic (v4.0-MCP)
+# 🗄️ Skill | database-architect-strategic
 
 ## Objective
 
-Provide expert-level database architecture, technology selection, and strategic data modeling. This skill spans from conceptual ERD design to physical schema optimization across relational (Postgres/Supabase), NoSQL, Graph, and Time-series models.
+Provide strategic database modeling and architecture. Ensures that all data persistence follows the Hybrid Infrastructure Mandate (LTP) and SI standards.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use direct typed arguments. The `params_json` structure is **DEPRECATED**.
 
-- `action` (enum): One of `evaluate_tech`, `design_schema`, `plan_migration`, `optimize_indexing`.
-- `target_project` (string, mandatory): Absolute path to the project workspace.
-- `resource_entity` (string, optional): The name of the table or resource (default: "generic_resource").
-- `overwrite` (boolean, optional): Whether to overwrite existing schema files.
-- `isolation_mode` (boolean, optional): If `True`, targets a local/isolated database instead of the shared INFRA node (`dasafo-shared-db`).
-- `requirements` (object, optional): Data volume, read/write ratios, latency targets, and compliance needs.
-- `current_schema_path` (string, optional): Path to existing SQL/Schema for re-architecture.
+### Typed Parameters
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Your Agent ID (ARCHITECT or DB_MASTER).
+- `target_project` (string): Path to project root.
+- `action` (enum): `design_schema`, `evaluate_tech`, `plan_migration`.
+- `resource_entity` (string): Primary entity name (e.g., 'user').
+- `overwrite` (boolean): Bypass Redundancy Lock.
+- `isolation_mode` (boolean): If `true`, targets local DB instead of Shared INFRA.
+- `isolate` (boolean): Execution in Clean Session.
 
-- `industrial_status`: (string) "SOLIDIFIED - DATABASE BLUEPRINT GENERATED"
-- `architecture_plan`: (string) Detailed strategy for technology selection and modeling.
-- `schema_artifacts`: (array) List of generated SQL/JSON schema files.
-- `performance_projections`: (object) Estimated latency (s) and throughput (B/s).
-- `compliance_report`: (object) Verification of SI mandates and Hybrid Infra alignment.
-- `summary`: (string) Human-readable outcome of the specific action.
+## 🛡️ Industrial Constraints
 
-### ⚖️ Mandato SI (Sistema Internacional)
-
-Cualquier métrica técnica mencionada (latencias de consulta, tamaños de tabla, tasas de transferencia, límites de almacenamiento) debe expresarse estrictamente en unidades del SI (**segundos**, **bytes**).
-
-## 🛡️ Industrial Constraints (Zero-Trust)
-
-- **SQL First:** All relational designs must include raw, executable SQL migrations.
-- **RLS Enforcement:** For Supabase/Postgres, Row Level Security (RLS) policies must be part of the core schema design.
-- **No Data Loss:** Every migration plan must include a verified rollback strategy.
-- **Pattern Alignment:** All schemas must follow the `02_ARCHITECTURE_RULES.md` regarding SoC and DTOs.
-
-## 🧠 Strategic Workflow (v4.0-MCP)
-
-1. **Tech Selection:** Evaluate trade-offs (CAP theorem, cost, operational complexity) to choose the optimal storage engine.
-2. **Conceptual Modeling:** Map business entities to a logical data domain (Normalization/Denormalization strategies).
-3. **Physical Design:** Specify data types, partitioning, and indexing for production scale.
-4. **Security Hardening:** Define RLS, encryption at rest, and access control policies.
-5. **Validation:** Execute plan in a sandbox/migration-check before promoting to M3/M4.
+- **SI Standards:** All throughput must be in **Bytes/s (B/s)** and latency in **Seconds (s)**.
+- **LTP Alignment:** By default, architecture must align with `dasafo-shared-db`.
+- **DAST Sovereignty:** Schemas must be physically persisted in `INFRASTRUCTURE/DATABASE/`.
 
 ---
 **ORIGIN:** [database-architect by sickn33](https://skills.sh/sickn33/antigravity-awesome-skills/database-architect)
-*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*

@@ -1,35 +1,34 @@
 ---
-version: v4.0-MCP
-agent: DEVOPS_SRE / QA_TESTER
+version: v5.0-MCP (Native)
+agent_authorization: [QA_TESTER, DEVOPS_SRE]
 source: internal/skill-creator
+protocol: Build-Verification / DAST
 ---
 
-# 🔨 Skill | Build & Test Executor (v4.0-MCP)
+# 🔨 Skill | build-test-executor
 
 ## Objective
 
-Execute compilation, testing, or build commands and generate the mandatory `BUILD_REPORT.json` required by the Universal Customs (`session_hook.py`) to authorize phase transitions (M3 -> M4).
+Execute technical build or test commands and generate the mandatory **BUILD_REPORT.json** (Aduana Passport) required for phase transitions.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use direct arguments. Generic `params_json` is **DEPRECATED**.
 
-- `action` (enum): `run_build`, `run_tests`.
-- `command` (string, optional): The technical command to run (e.g., `npm run build`, `pytest`).
-- `target_project` (string, mandatory): Absolute path to the project workspace.
+### Typed Parameters
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Your authorized Agent ID (QA_TESTER, DEVOPS_SRE).
+- `target_project` (string): Absolute path to project root.
+- `action` (enum): `run_build` | `run_tests`.
+- `command` (string): The actual shell command (e.g., `npm run build`, `pytest`).
+- `overwrite` (boolean): (Optional) Bypass Redundancy Lock.
+- `isolate` (boolean): Execution in Clean Session.
 
-- `build_status`: (string) `SUCCESS` or `FAILED`.
-- `report_path`: (string) Path to `LOGS/BUILD_REPORT.json`.
-- `metrics`: (object) Output sizes and execution times.
-- `industrial_status`: (string) "SOLIDIFIED - BUILD VERIFIED"
+## 🛡️ Industrial Constraints
 
-### ⚖️ SI Mandate (International System)
+- **Customs Mandate:** This skill MUST generate a physical `LOGS/BUILD_REPORT.json`. No report = No phase transition.
+- **Fail-Fast:** Any non-zero exit code will raise a critical exception to block the pipeline.
+- **SI Standards:** Durations in **seconds (s)** and sizes in **bytes (B)**.
 
-Any build metrics must indicate the time in **seconds** (s) and the size of the generated bundle in **bytes** (B).
-
-## 🛡️ Industrial Constraints (Zero-Trust)
-
-- **Aduana Passport:** This skill MUST generate a physical `BUILD_REPORT.json` in the `LOGS/` directory, acting as the unforgeable proof of compilation.
-- **Fail-Fast:** If the command fails, the `build_status` must be `FAILED`, blocking any phase transition attempts.
+---
+*Standard v5.0-MCP | Dasafo Factory Compliance Hub.*

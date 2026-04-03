@@ -1,50 +1,34 @@
 ---
-version: v4.0-MCP
-agent: PRODUCT_OWNER
+version: v5.0-MCP (Native)
+agent_authorization: [PRODUCT_OWNER]
 source: https://skills.sh/googleworkspace/cli/persona-project-manager
+protocol: Project-Coordination / DAST
 ---
 
-# 📅 Skill | Project Management (v4.0-MCP)
+# 📅 Skill | project-management
 
 ## Objective
 
-Coordinate industrial projects through task tracking, resource orchestration, and stakeholder communication. This skill integrates with the project's physical artifacts and provides workflows for standup reports, weekly digests, and automated status logging.
+Coordinate industrial projects through task tracking and automated status logging. Integrates directly with `registry.json` and `PROJECT_STATE.json` to ensure 100% factual accuracy.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use typed arguments. `params_json` is **DEPRECATED**.
 
-- `action` (enum): `standup_report`, `weekly_digest`, `log_status`, `announce_artifact`.
-- `target_project` (string, mandatory): Absolute path to the project workspace.
-- `report_data` (object, optional): Data for the report or log entry.
-- `stakeholders` (array, optional): List of stakeholder IDs or emails to notify.
+### Typed Parameters
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Your Agent ID (must be 'PRODUCT_OWNER').
+- `target_project` (string): Path to project root.
+- `action` (enum): `standup_report` (default), `log_status`.
+- `report_data` (object): (Optional) Data for log notes (e.g., `{"note": "Transitioning to M2"}`).
+- `overwrite` (boolean): (Optional) Bypass Redundancy Lock for reports.
+- `isolate` (boolean): Execution in Clean Session.
 
-- `status`: (string) "LOGGED" | "REPORT_GENERATED"
-- `artifact_path`: (string, optional) Path to the generated report in `DOCS/MANAGEMENT/`.
-- `next_steps`: (list) Priority tasks inferred from the state.
-- `industrial_status`: (string) "SOLIDIFIED - PROJECT STATE SYNCED"
+## 🛡️ Industrial Constraints
 
-### ⚖️ SI Mandate (International System)
-
-Any progress metrics, task execution time, or temporal milestones must be strictly expressed in **seconds** (s). File sizes or resource quotas are expressed in **bytes**.
-
-## 🛡️ Industrial Constraints (Zero-Trust)
-
-- **Physical Grounding:** Status reports MUST be derived from `TASKS/registry.json` and `PROJECT_STATE.json`. Do not guess progress.
-- **Audit Trail:** Every status update or announcement must leave a physical trace in the project's `DOCS/MANAGEMENT/` folder.
-- **Stakeholder Integrity:** All communications must follow the tone and safety guardrails defined in the project's metadata.
-- **Dry-Run Protocol:** For any external tool invocation (Drive, Sheets), a dry-run is required unless explicitly skipped.
-
-## 🧠 Coordination Workflow (v4.0-MCP)
-
-1. **State Analysis:** Parse the physical `registry.json` to identify blockers and progress ratios.
-2. **Task Logging:** Append updates to the project's status log (physical file or Google Sheet).
-3. **Artifact Sharing:** Upload key architectural or logic deliverables to the project's centralized storage (Drive).
-4. **Announcement:** Notify stakeholders of significant milestones or blockers via automated digests.
-5. **Standup:** Generate the daily "Stark-Standup" based on the last 24h of task completions.
+- **Physical Grounding:** Reports MUST be derived from disk artifacts. Guessing progress is a **Cultural Violation**.
+- **SI Standards:** All timings strictly in **Seconds (s)**.
+- **Audit Trail:** Every action must leave a physical trace in `DOCS/MANAGEMENT/`.
 
 ---
 **ORIGIN:** [persona-project-manager by googleworkspace](https://skills.sh/googleworkspace/cli/persona-project-manager)
-*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*

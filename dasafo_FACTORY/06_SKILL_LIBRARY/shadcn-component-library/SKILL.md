@@ -1,51 +1,35 @@
 ---
-version: v4.0-MCP
-agent: FRONTEND_DEV
+version: v5.0-MCP (Native)
+agent_authorization: [FRONTEND_DEV]
 source: https://skills.sh/shadcn/ui/shadcn
+protocol: Component-Composition / DAST
 ---
 
-# 🎨 Skill | Shadcn Component Library (v4.0-MCP)
+# 🎨 Skill | shadcn-component-library
 
 ## Objective
 
-Systematically implement and manage professional, accessible, and premium UI components using the Shadcn/UI framework. This skill enforces the "Compose, Don't Reinvent" principle, utilizing the Shadcn CLI to scaffold components and maintain a consistent, token-based design system.
+Systematically implement and manage professional UI components using the Shadcn/UI framework. Enforces the "Compose, Don't Reinvent" principle and a consistent, token-based design system.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use direct typed arguments. `params_json` is **DEPRECATED**.
 
-- `action` (enum): `init`, `add`, `search`, `info`, `docs`.
-- `target_project` (string, mandatory): Absolute path to the frontend project.
-- `component` (string, optional): Name of the component to add or search (e.g., `button`, `card`, `tabs`).
-- `preset` (string, optional): Preset code for initialization (e.g., `new-york-dark`).
+### Typed Parameters
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Your Agent ID (must be 'FRONTEND_DEV').
+- `target_project` (string): Absolute path to the project root.
+- `action` (enum): `init`, `add`, `search`, `info`.
+- `component` (string): (Optional) Name of the component (e.g., 'button', 'card').
+- `overwrite` (boolean): (Optional) Bypass Redundancy Lock to update existing components.
+- `isolate` (boolean): Execution in Clean Session.
 
-- `status`: (string) "SOLIDIFIED - COMPONENT ADDED" | "CONFIG_GENERATED"
-- `artifacts_created`: (array) List of paths to the newly created component files.
-- `composition_report`: (string) Summary of the component's role in the UI hierarchy.
-- `industrial_status`: (string) "VERIFIED - SHADCN COMPLIANT".
+## 🛡️ Industrial Constraints
 
-### ⚖️ SI Mandate (International System)
-
-Any frontend technical metrics (rendering times, interaction latency, component bundle sizes, browser memory quotas) must be strictly expressed in SI units (**seconds**, **bytes**).
-
-## 🛡️ Industrial Constraints (Zero-Trust)
-
-- **Registry First:** Use `npx shadcn@latest search` before creating custom markup. Custom components that replicate Shadcn functionality are FORBIDDEN.
-- **Token Consistency:** Use only semantic Tailwind tokens (`bg-primary`, `text-muted-foreground`). Hardcoded hex/rgb values are STRICTLY BANNED.
-- **Composition Rule:** Complex UIs must be built by composing atomic components (e.g., `Dashboard = Sidebar + Card + Table`).
-- **Icons Policy:** Pass icons as React objects, not string keys. Use `data-icon="inline-start"` for positioning inside buttons.
-- **No Custom Pulse:** Use the `Skeleton` component for all loading states. Custom `animate-pulse` divs are disallowed.
-
-## 🧠 Frontend Workflow (v4.0-MCP)
-
-1. **Information Gathering:** Detect the project context using `npx shadcn@latest info`.
-2. **Component Retrieval:** Add necessary components using the CLI: `npx shadcn@latest add <component>`.
-3. **Styling Integration:** Apply semantic tokens and variants (`variant="outline"`, `size="sm"`) to match the design system.
-4. **Composition:** Assemble full pages using the provided components as building blocks.
-5. **Validation:** Ensure accessibility standards and visual regression checks pass.
+- **Registry First:** Use Shadcn primitives before creating custom markup. Duplicating standard components is a **Cultural Violation**.
+- **Token Consistency:** Use only semantic Tailwind tokens (e.g., `bg-primary`). Hex/RGB hardcoding is **FORBIDDEN**.
+- **SI Standards:** Timing metrics MUST be in **Seconds (s)**.
+- **DAST Sovereignty:** Components MUST be persisted in `WORKSPACE/frontend/components/ui/`.
 
 ---
 **ORIGIN:** [shadcn by shadcn/ui](https://skills.sh/shadcn/ui/shadcn)
-*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*

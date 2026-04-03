@@ -1,38 +1,34 @@
 ---
-version: v4.0-MCP
-agent: FACTORY_EVOLVER / DATA_SCIENTIST
+version: v5.0-MCP (Native)
+agent_authorization: [FACTORY_EVOLVER, MEMORY_OPTIMIZER, DATA_SCIENTIST]
 source: https://skills.sh/phuryn/pm-skills/sentiment-analysis
+protocol: LTP-Sync / DAST
 ---
 
-# 🧠 Skill | Autonomous Feedback Analyzer (v4.0-MCP)
+# 🧠 Skill | autonomous-feedback-analyzer
 
 ## Objective
 
-Perform sentiment analysis, segment insights, and extract actionable "Golden Rules" from user feedback or factory engram logs to drive continuous systemic improvement.
+Extract actionable "Golden Rules" from feedback logs and synchronize agentic learning with the Long-Term Persistence (LTP) graph in Neo4j.
 
-## 🛠️ Interface (v4.0-MCP)
+## 🛠️ Interface (v5.0-MCP Native)
 
-### Input Schema (SkillInput.params)
+**MANDATORY:** Use direct arguments. Generic `params_json` is **DEPRECATED**.
 
-- `action` (enum): `analyze_file`, `analyze_text`.
-- `target_project` (string, mandatory): Absolute path to the project workspace.
-- `file_path` (string, optional): Path to the feedback log (Default: `LOGS/FEEDBACK-LOG.md`).
-- `raw_text` (string, optional): Direct string input if analyzing isolated feedback.
+### Typed Parameters
 
-### Output Schema (SkillOutput.result)
+- `agent` (string): Your authorized Agent ID.
+- `target_project` (string): Path to project root.
+- `action` (enum): `analyze_file` (default) | `analyze_text`.
+- `file_path` (string): Relative path to feedback source (default: `LOGS/FEEDBACK-LOG.md`).
+- `raw_text` (string): Direct text to analyze if using `analyze_text`.
+- `isolate` (boolean): Execution in Clean Session.
 
-- `sentiment_score`: (string) `POSITIVE`, `NEGATIVE`, or `MIXED`.
-- `key_insights`: (array) Processed bullet points of user friction or delight.
-- `golden_rules`: (array) Universal rules extracted to update agent instructions.
-- `report_path`: (string) Physical path to the generated JSON analysis artifact.
-- `industrial_status`: (string) "SOLIDIFIED - FEEDBACK ANALYZED".
+## 🛡️ Industrial Constraints
 
-### ⚖️ SI Mandate (International System)
+- **SI Standards:** Report processed data in **Bytes (B)** and execution in **Seconds (s)**.
+- **DAST Sovereignty:** Analysis MUST be persisted in `LOGS/` as a JSON artifact.
+- **LTP Integrity:** Direct sync with `dasafo-shared-kg` (Neo4j) is mandatory for rule extraction.
 
-The weight of the analyzed data (`source_payload_bytes`) must be reported in **bytes** (B), and the computation time of the semantic analysis in **seconds** (s).
-
-## 🛡️ Industrial Constraints (Zero-Trust & Empirical Analysis)
-
-- **No Hallucination:** Insights MUST be directly traceable to the source text. Do not invent user complaints or feature requests.
-- **Physical Sandboxing:** The analysis results MUST be saved to a physical artifact (`LOGS/FEEDBACK_ANALYSIS_*.json`) for the Orchestrator to review.
-- **Schema Alignment:** Golden Rules extracted should align with the structure defined in `FEEDBACK_SCHEMA.json`.
+---
+**ORIGIN:** [sentiment-analysis by phuryn](https://skills.sh/phuryn/pm-skills/sentiment-analysis)
