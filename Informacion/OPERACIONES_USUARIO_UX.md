@@ -1,55 +1,49 @@
 # 🎮 Guía de Experiencia de Usuario (UX): Director de Operaciones
 
-<ctrl94> **"Tú no escribes código. Tú orquestas departamentos y validas evidencias físicas."**
+> **"Tú no escribes código. Tú orquestas departamentos y validas evidencias físicas mediante el Protocolo MCP."**
 
-Bienvenido, Director de Operaciones. Bajo el estándar **v4.0-S Industrial Core**, tu rol ha evolucionado de la micro-gestión técnica a la **estratégica funcional**. El sistema ahora cuenta con **Auto-Start**, **Auto-Commit** y **Inmunización Predictiva**, eliminando la necesidad de supervisar cada movimiento de tus agentes.
+Bienvenido, Director de Operaciones. Bajo el estándar **v4.0-MCP Native Industrial Core**, tu rol ha evolucionado de la supervisión de scripts a la **validación de flujos industriales**. El sistema ahora opera mediante un servidor MCP centralizado que garantiza que ningún agente actúe sin una especificación física y tu aprobación previa.
 
 ---
 
-## 🗺️ I. TU CONSOLA DE MANDO (Los 14 Workflows)
+## 🗺️ I. TU CONSOLA DE MANDO (Los 14 SOPs Industriales)
 
-Has sido dotado con una botonera de comandos slash (`/`) que activan procesos industriales completos. Úsalos siguiendo el flujo cronológico del proyecto:
+Ya no usas "comandos slash" manuales en una terminal; ahora activas **Workflows** que los agentes ejecutan invocando la herramienta MCP `execute_industrial_skill`.
 
 ### ⚡ 1. Estrategia y Visión (Fase M1: Discovery)
 
-* **`/init-contract`**:
-  * **Propósito:** Es la primera piedra. El `PRODUCT_OWNER` analiza tu idea y la convierte en un contrato formal de 12 secciones (`PRP_MASTER.json`).
-  * **Valor:** Inyecta proyecciones de ROI, CAC y LTV. Si el proyecto no es financieramente viable, el agente te lo dirá aquí.
-  * **Acción:** Revisa el resumen y firma con un "Aprobado".
+* **SOP `init-contract`**:
+  * **Propósito:** El `PRODUCT_OWNER` traduce tu visión en un contrato `PRP_MASTER.json` de 12 secciones.
+  * **Valor:** Inyecta proyecciones de ROI, CAC y LTV.
+  * **Acción:** Revisa el resumen y firma físicamente el archivo `APPROVAL_M1.md` en `DOCS/USER/` para abrir la aduana.
 
-### 📋 2. Deconstrucción y Refuezo (Fase M2: Arquitectura)
+### 📋 2. Deconstrucción y Refuerzo (Fase M2: Arquitectura)
 
-* **`/factory-orchestrate`**:
-  * **Propósito:** Sincroniza la "Aduana Universal". Deconstruye el contrato en tareas atómicas (`SPEC_LITE.json`).
-  * **Valor:** Si el disco no coincide con el registro, este comando lo arregla físicamente.
-* **`/validate-backbone`**:
-  * **Propósito:** El inspector de andamiaje. Nadie pone una línea de lógica hasta que el esqueleto (Next.js, FastAPI, Docker) esté físicamente en disco.
-  * **Valor:** Previene la construcción en el vacío y asegura la solidez del framework.
+* **SOP `factory-orchestrate`**:
+  * **Propósito:** Sincroniza la "Aduana Universal". El `ORCHESTRATOR` deconstruye el contrato en tareas atómicas (`SPEC_LITE.json`).
+* **SOP `validate-backbone`**:
+  * **Propósito:** El inspector de infraestructura. Verifica que el framework (Next.js, FastAPI, etc.) esté físicamente en el disco antes de delegar lógica.
 
 ### 🏭 3. Línea de Montaje (Fase M3: Producción)
 
-* **`/execute-task`**:
-  * **Propósito:** El comando más potente. Lanza una sesión aislada para que un peón ejecute una tarea pendiente.
-  * **Automatización Industrial (v4.0-S):**
-        1. **Auto-Start:** Mueve la tarea a `IN_PROGRESS`.
-        2. **Inmunización:** Inyecta "Reglas de Oro" de Neo4j en la mente del peón para que no repita errores de proyectos pasados.
-        3. **Auto-Commit:** Tras el éxito, mueve la tarea a `COMPLETED` y actualiza el registro por ti.
+* **SOP `execute-task`**:
+  * **Propósito:** Lanza una **Clean Session** aislada donde un agente de producción ejecuta una tarea específica.
+  * **Automatización MCP:**
+        1. **Inmunización:** Inyecta "Reglas de Oro" de Neo4j para evitar errores pasados.
+        2. **Auto-Commit:** Tras el éxito, el motor MCP mueve la tarea a `03_COMPLETED` y destruye la especificación para evitar duplicidad.
 
 ### 🛡️ 4. Aduana de Calidad (Fase M4: Compliance)
 
-* **`/scan`**:
-  * **Propósito:** Escaneo de seguridad Zero-Trust. El `SECURITY_AUDITOR` caza secretos, claves API y vulnerabilidades en dependencias.
-  * **Riesgo:** Si falla, la tarea se bloquea. **Zero Leaks allowed.**
-* **`/audit`**:
-  * **Propósito:** El sello de calidad. El `QA_TESTER` revisa que el código cumple con el contrato y reporta en **Segundos (s)** y **Bytes (B)**.
-  * **Valor:** Detecta violaciones contra la constitución de la factoría.
+* **SOP `scan`**:
+  * **Propósito:** Escaneo Zero-Trust de secretos y vulnerabilidades por el `SECURITY_AUDITOR`.
+* **SOP `audit`**:
+  * **Propósito:** El `QA_TESTER` valida que el código cumple con la arquitectura y reporta en **Segundos (s)** y **Bytes (B)**.
 
 ### 🚀 5. Lanzamiento y Resiliencia (Fase M5: Operaciones)
 
-* **`/provision`**: Prepara la infraestructura como código (Docker, Cloud) en la carpeta `WORKSPACE/infra/`.
-* **`/deploy`**: Sube los artefactos al entorno en vivo.
-* **`/health-check`**: El monitor sentinel verifica latencia y salud constante.
-* **`/auto-heal`**: Sistema inmunológico. Si algo falla en producción, el sistema crea una Spec de emergencia y se parchea solo.
+* **SOP `provision` / `deploy`**: Prepara y sube la infraestructura como código.
+* **SOP `health-check`**: Monitoreo constante de latencia y salud operativa.
+* **SOP `auto-heal`**: Si el sistema detecta un fallo (ej. puerto bloqueado), se parchea a sí mismo creando una Spec de emergencia.
 
 ---
 
@@ -57,38 +51,35 @@ Has sido dotado con una botonera de comandos slash (`/`) que activan procesos in
 
 ### 🛤️ Paso 1: Ignición del Taller (Fase 0)
 
-Antes de nada, prepara el flujo de energía:
-
-1. **Enciende el Núcleo:** Desde la terminal en `INFRA/`, lanza `docker compose up -d`. Esto levanta el cerebro (Neo4j) y el sistema de datos(igual antes tienes que levantar docker con `sudo systemctl start docker`).
-2. **Crea el Chasis:** Ejecuta `./init_project.sh NombreProyecto`. Esto genera las carpetas industriales blindadas.
+1. **Enciende el Núcleo:** Desde `INFRA/`, lanza `docker compose up -d` para levantar el cerebro (Neo4j) y los datos.
+2. **Activa el Servidor MCP:** Asegúrate de que Antigravity ha iniciado `factory_mcp_server.py`. Este es el único canal autorizado.
+3. **Crea el Chasis:** Ejecuta `./init_project.sh NombreProyecto` para generar las carpetas blindadas.
 
 ### 🛤️ Paso 2: La Visión del Producto (Fase M1)
 
-1. Llama al `PRODUCT_OWNER` y explícale tu visión.
-2. Ejecuta `/init-contract`. El sistema te entregará un resumen financiero pesado. Si te gusta, fírmalo.
+1. Explica tu idea al `PRODUCT_OWNER`.
+2. Instruye al agente para que ejecute el SOP `init-contract` vía MCP.
+3. **Firma Obligatoria:** Si el ROI es correcto, edita `DOCS/USER/APPROVAL_M1.md` poniendo `Status: APPROVED`. Sin esto, el sistema se bloqueará por protocolo.
 
 ### 🛤️ Paso 3: Producción Inmunizada (Fase M2-M3)
 
-1. Lanza `/factory-orchestrate` para ver las tareas en `01_PENDING`.
-2. Valida la estructura con `/validate-backbone`.
-3. Comanda `/execute-task`. Observa cómo los agentes entran en sus sesiones, se autogestionan, escriben código y cierran la tarea sin que tú muevas un dedo.
+1. Lanza el flujo de orquestación para ver las tareas pendientes.
+2. Observa cómo los agentes entran en sesiones aisladas (`CLEAN_SESSION=True`), escriben código en `WORKSPACE/` y cierran tareas automáticamente.
 
-### 🛤️ Paso 4: Auditoría y Despliegue (Fase M4-M5)
+### 🛤️ Paso 4: Cierre de Memoria (LTP)
 
-1. Audita la seguridad con `/scan`.
-2. Audita la solidez con `/audit`.
-3. Lanza `/provision` y `/deploy`.
-4. Mantén el sistema vivo con `/health-check` y deja que el `/auto-heal` se encargue de las caídas nocturnas.
+1. Al finalizar el hito, ordena ejecutar el SOP **`sync-memory`**.
+2. Esto graba las lecciones aprendidas en el Grafo de Neo4j para que la factoría no cometa los mismos errores en el próximo proyecto.
 
 ---
 
 ## 💡 III. TU NUEVO ROL ESTRATÉGICO
 
-En **v4.0-S**, ya no eres un depurador de bugs. Eres un **Auditor de la Verdad Física**:
+Bajo el estándar **v4.0-MCP**, ya no eres un depurador. Eres un **Auditor de la Verdad Física**:
 
-1. **Corrige el "Qué" (Specs), no el "Cómo":** Si un agente falla, no edites su código. Edita su `SPEC_LITE.json` o la `PRP_MASTER.json` y relanza la tarea. El sistema aprenderá del error.
-2. **Rigor Métrico:** Rechaza cualquier reporte que no use **segundos (s)** y **bytes (B)**. El lenguaje industrial es matemático.
-3. **LTP (Persistencia a Largo Plazo):** Usa `/sync-memory` al final de cada hito. Esto graba las lecciones aprendidas en el Grafo de Neo4j para que la factoría herede inteligencia acumulativa.
+1. **Soberanía del Disco:** Si un agente dice que terminó, verifica que el archivo exista en `03_COMPLETED/`. No aceptes promesas textuales.
+2. **Rigor de Unidades SI:** Todo reporte debe usar **segundos (s)** y **bytes (B)**. El lenguaje de la factoría es matemático.
+3. **Nemo Safety:** Mantén la ética industrial. Absoluta prohibición de analogías de consumo animal en cualquier documento.
 
 ---
-*Manual de Operaciones v4.0-S | Director de Operaciones Solidificado.*
+*Guía de Experiencia de Usuario v4.0-MCP | Director de Operaciones Solidificado.*

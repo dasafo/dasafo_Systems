@@ -1,10 +1,10 @@
 # 🗺️ Mapeo Exhaustivo de AGENTES Y SKILLS
 
-> **Versión:** v4.0-S "Industrial Core - Mapping Enabled"
-> **Misión:** Establecer la matriz definitiva de autoridad, sentidos (senses) y capacidades técnicas.
-> **Gobernanza:** Zero-Trust de Identidad / SDD de Ejecución / Unidades SI (s, B)
+> **Versión:** v4.0-MCP "Native Industrial Core"
+> **Misión:** Establecer la matriz definitiva de autoridad, sentidos (senses) y capacidades técnicas mediante MCP.
+> **Gobernanza:** Zero-Trust / Spec Driven Development / MCP Tool Mandate / Unidades SI (s, B)
 
-Este documento define las fronteras de acción de cada uno de los **17 agentes** de la factoría. Solo los agentes listados poseen autorización técnica para invocar las habilidades correspondientes dentro del entorno industrial.
+Este documento define las fronteras de acción de cada uno de los **17 agentes**. Bajo el estándar **v4.0-MCP**, la ejecución de habilidades se realiza exclusivamente a través del motor industrial (`execute_industrial_skill`), garantizando la auditoría total y la soberanía del disco (DAST).
 
 ---
 
@@ -18,7 +18,7 @@ El centro de mando que transforma necesidades humanas en contratos industriales 
 | **PRODUCT_OWNER** | Arquitecto de Visión | `prp-generator`, `startup-metrics-framework`, `apify-trend-analysis`, `registry-manager` | **Market, Contract, Evidence** |
 | **MARKETING_GROWTH** | Estratega de Crecimiento | `social-content-strategy`, `hallucination-guardrail`, `copywriting-evidence`, `registry-manager` | **Market, Targeted File** |
 
-*   **Interacción Clave:** El **Product Owner** firma el contrato (M1); el **Orquestador** lo deconstruye y el **Marketing** lo posiciona.
+*   **Interacción Clave (SOP `init-contract`):** El **Product Owner** sella la visión; el **Orquestador** activa el pipeline vía MCP.
 
 ---
 
@@ -31,7 +31,7 @@ El núcleo técnico que define la estructura ósea y reduce la incertidumbre tec
 | **ARCHITECT** | Diseñador del Backbone | `architecture-decision-records`, `api-contract-generator`, `database-architect-strategic`, `data-schema-generator`, `registry-manager` | **Structural, Evidence, Schema X-Ray** |
 | **RESEARCH_AGENT** | Analista Factual | `web-research-engine`, `arxiv-technical-digest`, `hallucination-guardrail`, `registry-manager` | **Deep Search, Market, Evidence** |
 
-*   **Interacción Clave:** La **Arquitectura** traduce la visión en planos (M2); la **Investigación** valida que las herramientas propuestas sean viables y estables.
+*   **Interacción Clave (SOP `arch-diagram`):** La **Arquitectura** solidifica los planos (M2); la **Investigación** valida la viabilidad técnica antes del primer byte de código.
 
 ---
 
@@ -47,7 +47,7 @@ La línea de montaje física donde se construye el código, los esquemas de dato
 | **DATA_SCIENTIST** | Analista de Patrones | `autonomous-feedback-analyzer`, `telemetry-reporting`, `registry-manager` | **Schema X-Ray, Evidence** |
 | **AI_ENGINEER** | Ingeniero de IA | `llm-logic-integration`, `prompt-engineering-refactor`, `agentic-pattern-builder`, `registry-manager` | **Spec, Targeted File** |
 
-*   **Interacción Clave:** Los peones de producción trabajan bajo **Clean Sessions** (M3), guiados por las especificaciones del Arquitecto.
+*   **Interacción Clave (SOP `execute-task`):** Los agentes de producción operan en **Clean Sessions** (M3) aisladas por el wrapper MCP, consumiendo specs físicas.
 
 ---
 
@@ -61,7 +61,7 @@ El departamento que garantiza la seguridad, solidez y veracidad de cada entrega.
 | **SECURITY_AUDITOR** | Guardián Zero-Trust | `agentic-thought-secret-scanner`, `factory-audit-pro`, `dependency-vulnerability-scanner`, `registry-manager` | **Secret X-Ray, Codebase X-Ray** |
 | **DOCS_MASTER** | Gestor del Conocimiento | `api-docs-generator`, `readme-sync-expert`, `registry-manager` | **Codebase X-Ray, Targeted File** |
 
-*   **Interacción Clave:** El **Auditor de Seguridad** bloquea el pipeline (Gate M4) si detecta filtraciones; el **QA** garantiza que las **Unidades SI** se cumplan.
+*   **Interacción Clave (SOP `audit` / `scan`):** El **Auditor de Seguridad** valida el escudo Zero-Trust; el **QA** garantiza que los resultados respeten el Mandato de Unidades SI.
 
 ---
 
@@ -76,17 +76,15 @@ La capa externa que gestiona el despliegue, la salud del sistema y el aprendizaj
 | **FACTORY_EVOLVER** | Arquitecto de ADN | `skill-refactor-pro`, `factory-upgrade-manager`, `factory-doctor`, `registry-manager` | **Skill X-Ray, Registry, Evidence** |
 | **MEMORY_OPTIMIZER** | Curador de Engramas | `context-pruning-sieve`, `kg-db-sync`, `registry-manager` | **Skill X-Ray, Evidence** |
 
-*   **Interacción Clave:** El **SRE** despliega el producto (M5); el **Optimizador de Memoria** sincroniza los aprendizajes finales con el Grafo de Neo4j (LTP).
+*   **Interacción Clave (SOP `sync-memory`):** El **SRE** provisiona la infraestructura; el **Optimizador de Memoria** persiste los engramas finales en Neo4j (LTP).
 
 ---
 
-## ☣️ ESPECIFICACIONES DE SEGURIDAD TRANSVERSAL
+## 🛑 EL MANDATO MCP (Restricciones Críticas)
 
-Existen habilidades que operan fuera de la jerarquía de Hubs para garantizar la integridad absoluta:
-
-1.  **`registry-manager`**: Única herramienta autorizada para el movimiento físico de tareas entre carpetas (`01_PENDING` -> `03_COMPLETED`). Es el motor del DAST.
-2.  **`hallucination-guardrail`**: Filtro de salida obligatorio para todos los agentes. Compara respuestas contra la base de conocimiento global.
-3.  **`agentic-thought-secret-scanner`**: Escudo proactivo que escanea el pensamiento del agente antes de que cualquier acción se ejecute en el disco.
+1. **Prohibición de Terminal:** Los agentes no pueden usar `bash` para mover archivos o ejecutar scripts de la `06_SKILL_LIBRARY`. El uso de `execute_industrial_skill` es obligatorio.
+2. **Soberanía DAST:** Si una habilidad se ejecuta vía MCP y el resultado no aparece físicamente en el disco, la sesión se considera nula.
+3. **Aislamiento de Escritura:** Las herramientas genéricas de `filesystem` están restringidas a la capa de `WORKSPACE/` para prevenir sabotajes accidentales en la estructura de la factoría.
 
 ---
-*Mapping v4.0-S | Dasafo Factory Industry Standard | Inmutable y Verificable.*
+*Mapping v4.0-MCP | Dasafo Factory Industry Standard | Soberanía Industrial Garantizada.*

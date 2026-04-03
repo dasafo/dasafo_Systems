@@ -2,8 +2,7 @@
 
 ## 🧰 Authorized Skills (Top 18 Hub)
 
-> [!IMPORTANT]
-> All skills must be executed by passing the skill name to the `execute_industrial_skill` MCP Tool.
+*(CRITICAL: All skills must be executed by passing the skill name to the `execute_industrial_skill` MCP Tool).*
 
 ### ⚙️ Logic & Implementation
 

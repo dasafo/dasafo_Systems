@@ -12,10 +12,9 @@
 
 ## 🧰 Authorized Skills (Skill Library)
 
-> [!IMPORTANT]
-> **Skill Execution**: All skills must be executed by passing the skill name to the `execute_industrial_skill` MCP Tool.
->
-> **Lazy Loading**: Skills are lazy loaded only when mandated by the Spec.
+*(CRITICAL: All skills must be executed by passing the skill name to the `execute_industrial_skill` MCP Tool).*
+
+*(Lazy loaded only when mandated by the Spec)*
 
 - `autonomous-feedback-analyzer`: Deep synthesis of data patterns, logs, and telemetry.
 - `apify-trend-analysis`: Scraping external datasets for model enrichment.

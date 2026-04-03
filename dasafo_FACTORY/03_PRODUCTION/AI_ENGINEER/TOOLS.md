@@ -9,7 +9,6 @@
 
 ## 🧰 Authorized Skills
 
-> [!IMPORTANT]
-> All skills must be executed by passing the skill name to the `execute_industrial_skill` MCP Tool.
+*(CRITICAL: All skills must be executed by passing the skill name to the `execute_industrial_skill` MCP Tool).*
 
 - `async-fastapi-logic`: To build asynchronous workers and AI services in the backend.
