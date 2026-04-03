@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Deployment Health Check (DEPLOYMENT_MONITOR)
-v4.0-S: Industrial Core | Auto-Healing & Immune System Enabled.
+v4.0-MCP: Industrial Core | Auto-Healing & Immune System Enabled.
 """
 
 import os
@@ -52,7 +52,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
             # Generar Spec de Emergencia (DAST)
             spec_payload = {
-              "v3_code": "STARK-SOLIDITY-v4.0-S-LITE",
+              "v3_code": "STARK-SOLIDITY-v4.0-MCP-LITE",
               "metadata": {
                 "task_id": f"EMERGENCY-{cid[:4]}",
                 "assigned_agent": "FACTORY_EVOLVER",

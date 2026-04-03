@@ -1,16 +1,16 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: PRODUCT_OWNER
 source: https://skills.sh/googleworkspace/cli/persona-project-manager
 ---
 
-# 📅 Skill | Project Management (v4.0-S)
+# 📅 Skill | Project Management (v4.0-MCP)
 
 ## Objective
 
 Coordinate industrial projects through task tracking, resource orchestration, and stakeholder communication. This skill integrates with the project's physical artifacts and provides workflows for standup reports, weekly digests, and automated status logging.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 
@@ -37,7 +37,7 @@ Any progress metrics, task execution time, or temporal milestones must be strict
 - **Stakeholder Integrity:** All communications must follow the tone and safety guardrails defined in the project's metadata.
 - **Dry-Run Protocol:** For any external tool invocation (Drive, Sheets), a dry-run is required unless explicitly skipped.
 
-## 🧠 Coordination Workflow (v4.0-S)
+## 🧠 Coordination Workflow (v4.0-MCP)
 
 1. **State Analysis:** Parse the physical `registry.json` to identify blockers and progress ratios.
 2. **Task Logging:** Append updates to the project's status log (physical file or Google Sheet).
@@ -47,4 +47,4 @@ Any progress metrics, task execution time, or temporal milestones must be strict
 
 ---
 **ORIGIN:** [persona-project-manager by googleworkspace](https://skills.sh/googleworkspace/cli/persona-project-manager)
-*Skill v4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*

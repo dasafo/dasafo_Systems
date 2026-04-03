@@ -1,5 +1,5 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: RESEARCH_AGENT / ACADEMIC_STRATEGIST
 source: https://skills.sh/actionbook/actionbook/active-research
 ---
@@ -10,7 +10,7 @@ source: https://skills.sh/actionbook/actionbook/active-research
 
 Design and execute high-fidelity academic research strategies. This skill allows agents to search, filter, and synthesize technical papers from ArXiv and other verified sources, transforming complex scientific data into actionable architectural insights and structured reports.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 
@@ -40,7 +40,7 @@ Any extracted technical metrics (latencies, model parameters, energy consumption
 - **Physical Proof:** Every research cycle must result in a physical artifact in `LOCAL_KNOWLEDGE/research/`.
 - **SI Only:** Any numeric data found in papers (e.g., "50ms") must be converted to SI ("0.05s") in the final digest.
 
-## 🧠 Active Research Workflow (v4.0-S)
+## 🧠 Active Research Workflow (v4.0-MCP)
 
 1. **Plan Strategy:** Define clear research questions and target categories (e.g., cs.AI).
 2. **Search & Filter:** Use URL-based API queries to find the most relevant and recent papers.
@@ -49,4 +49,4 @@ Any extracted technical metrics (latencies, model parameters, energy consumption
 
 ---
 **ORIGIN:** [active-research by actionbook](https://skills.sh/actionbook/actionbook/active-research)
-*Skill v4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*

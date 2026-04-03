@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Hallucination Guardrail (QA_TESTER / ORCHESTRATOR)
-v4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-MCP: Modular Toolbox | Industrial Scale.
 
 Solidified: Physical Grounding, Risk Scoring & Strict Schema Alignment.
 """
@@ -56,7 +56,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
         
         execution_duration_s = time.time() - start_time
         
-        # 4. Result Building (Strict Schema Alignment v4.0-S)
+        # 4. Result Building (Strict Schema Alignment v4.0-MCP)
         result_payload = {
             "industrial_status": verdict,
             "is_safe": is_safe,

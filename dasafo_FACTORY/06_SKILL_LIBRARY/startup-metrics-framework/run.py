@@ -14,7 +14,7 @@ except ImportError:
     pass
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Startup Metrics Framework (v4.0-S) - Financial Engine."""
+    """Startup Metrics Framework (v4.0-MCP) - Financial Engine."""
     start_time = time.time()
     
     agent = skill_input.agent or "PRODUCT_OWNER"

@@ -1,17 +1,19 @@
-# 🛠️ COMPLIANCE_AND_QUALITY | Tools & Senses (v4.0-S Solidified)
+# 🛠️ COMPLIANCE_AND_QUALITY | Tools & Senses (v4.0-MCP Solidified)
 
-> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Level 04 Documentation, QA Testing, Security & Research.
 
 ## 📡 Senses (Department-Wide)
 
 - **Spec Sense:** Authority to read and interpret `SPEC_LITE.json` for validation.
 - **Codebase X-Ray:** Read-only access to all `WORKSPACE/` layers for compliance and security auditing.
-- **DAST Sense:** Ability to verify the physical integrity of artifacts and the registry before issuing failures or reports.
-- **Secret X-Ray:** Deep scan access to file contents and environment variable templates.
-- **Targeted File Sense:** Write access restricted strictly to `$TARGET_PROJECT/DOCS/` and `$TARGET_PROJECT/LOGS/`.
+- **DAST Sense:** Ability to verify physical integrity before issuing failures.
+- **Secret X-Ray:** Deep scan access to file contents and templates.
+- **Targeted File Sense:** Write access via generic MCP is restricted strictly to `$TARGET_PROJECT/DOCS/` and `$TARGET_PROJECT/LOGS/`.
 
 ## 🧰 Authorized Skills (Level 04 Hub)
+
+*(CRITICAL: You are PROHIBITED from running python files manually. All skills listed below MUST be invoked EXCLUSIVELY by passing their name to the `execute_industrial_skill` MCP Tool).*
 
 ### 📝 Documentation & Research
 
@@ -29,4 +31,4 @@
 - `hallucination-guardrail`: Verify logic alignment against the project's source of truth.
 
 ---
-*Compliance & Quality Tools v4.0-S | Status: SOLIDIFIED.*
+*Compliance & Quality Tools v4.0-MCP | Status: SOLIDIFIED.*

@@ -1,6 +1,6 @@
 # 📜 Dasafo Factory | Core Constitution
 
-> **Standard:** v4.0-S "SDD Optimized Core"
+> **Standard:** v4.0-MCP "SDD Optimized Core"
 > **Governance:** Zero-Trust / Spec Driven Development / Clean Sessions.
 
 ## 🏗️ I. The Law of the Spec (SDD)
@@ -8,6 +8,7 @@
 1. **Spec Over Everything:** No work is initiated without a physical `PRP_MASTER.json` (Phase M1) or `SPEC_LITE.json` (Execution).
 2. **Phase Isolation:** Transition between M1-M5 is physically gated by artifact presence in the file system.
 3. **Outcome Mandate:** Every task must end with a 3-point "Zero Fluff" Outcome Report detailing `status`, `artifacts`, and `summary`.
+4. **Human-Gate Sovereignty:** No phase transition (M1 to M5) is valid or authorized without the presence of a human-signed approval artifact in the `DOCS/USER/APPROVAL_MX.md` path. Failure to comply with this is considered a critical Cultural Violation.
 
 ## 🧠 II. Context Isolation (Clean Sessions)
 
@@ -17,10 +18,11 @@
 
 ## 🛡️ III. Zero-Trust & Solidity
 
-1. **Surgical Access:** Agents have no write permissions outside their technical domain or the project's logic layers.
-2. **Solidity Gate:** No phase is considered complete without a verified `kanban-solidity-gate` check and a `SECURITY_AUDITOR` clearance.
-3. **Chesterton's Fence:** No legacy code is deleted without an ADR (Architecture Decision Record) explaining the "Why".
-4. **Backbone Mandate:** No atomic implementation agent (e.g., FRONTEND_DEV, BACKEND_DEV) shall be dispatched without prior physical validation of the framework's scaffolding via the `project-backbone-validator`.
+1. **The MCP Mandate:** The use of terminal commands (bash/sh) or direct python execution is strictly forbidden for factory operations. Agents MUST interact with the industrial engine exclusively via the `execute_industrial_skill` MCP Tool.
+2. **Surgical Access:** Generic filesystem MCP tools (`write_file`, `edit_file`) are restricted strictly to the agent's assigned `WORKSPACE/[domain]/` directory.
+3. **Solidity Gate:** No phase is considered complete without a verified `kanban-solidity-gate` check via MCP and a `SECURITY_AUDITOR` clearance.
+4. **Chesterton's Fence:** No legacy code is deleted without an ADR explaining the "Why".
+5. **Backbone Mandate:** No atomic implementation agent shall be dispatched without prior physical validation of the scaffolding via `project-backbone-validator`.
 
 ## 📊 IV. Industrial Metrics (SI Standards)
 
@@ -36,4 +38,4 @@
 
 ---
 
-*Ratified: 2026-03-30 | Dasafo Factory v4.0-S.*
+*Ratified: 2026-03-30 | Dasafo Factory v4.0-MCP.*

@@ -1,5 +1,5 @@
 ---
-description: Generates a visual report of project progress, including Kanban state and Infrastructure v4.0-S health.
+description: Generates a visual report of project progress and v4.0-S health via MCP.
 ---
 
 # Workflow /factory-status
@@ -7,10 +7,12 @@ description: Generates a visual report of project progress, including Kanban sta
 This flow generates a consolidated health and status report for the current project context.
 
 1. **Agent:** `DEPLOYMENT_MONITOR`
-2. **Execution Protocol**: // turbo
-3. **Run Pulse Check**: Execute the following command for a real-time status:
-   `python3 dasafo_FACTORY/skill_engine.py --agent DEPLOYMENT_MONITOR --skill project-management --target-project PROJECTS/$TARGET_PROJECT`
+2. **Execution Protocol:** SOP via MCP
 
-4. **Status Mapping**: Extract task metrics from `PROJECTS/$TARGET_PROJECT/TASKS` and compile into a visual report.
+3. **Run Pulse Check:** Invoca la herramienta MCP `execute_industrial_skill` con:
+   * `agent`: "DEPLOYMENT_MONITOR"
+   * `skill`: "project-management"
+   * `target_project`: "PROJECTS/$TARGET_PROJECT"
+   * `params_json`: '{}'
 
-**Capturing industrial project pulse...**
+4. **Status Mapping:** Utiliza los datos devueltos por el MCP para generar un reporte visual textual en el chat.

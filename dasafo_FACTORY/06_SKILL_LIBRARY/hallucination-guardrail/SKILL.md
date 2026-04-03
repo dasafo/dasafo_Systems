@@ -1,16 +1,16 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: MEMORY_OPTIMIZER / SECURITY_AUDITOR / MARKETING_GROWTH
 source: https://skills.sh/davila7/claude-code-templates/nemo-guardrails
 ---
 
-# 🛡️ Skill | Hallucination Guardrail (v4.0-S)
+# 🛡️ Skill | Hallucination Guardrail (v4.0-MCP)
 
 ## Objective
 
 Enforce programmable safety and factual integrity for LLM outputs. This skill prevents hallucinations, jailbreak attempts, and PII leaks using defined guardrails (NeMo style). It ensures that agent communications are grounded in physical project reality and follow industrial safety protocols.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 
@@ -37,7 +37,7 @@ Any model performance metrics (inference times, response latency, token quotas) 
 - **Fail-Safe Mode:** If the risk score exceeds 0.5, the output is blocked from the project workspace.
 - **No Self-Correction:** The skill identifies issues but does not silently rewrite logic; it reports the violation for the `MEMORY_OPTIMIZER` to handle.
 
-## 🧠 Protection Workflow (v4.0-S)
+## 🧠 Protection Workflow (v4.0-MCP)
 
 1. **Input Interception:** Catch the proposed content before it reaches the `PROJECTS/` workspace.
 2. **Context Retrieval:** Fetch the latest physical artifacts from the designated project root.
@@ -50,4 +50,4 @@ Any model performance metrics (inference times, response latency, token quotas) 
 
 ---
 **ORIGIN:** [nemo-guardrails by davila7](https://skills.sh/davila7/claude-code-templates/nemo-guardrails)
-*Skill v4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*

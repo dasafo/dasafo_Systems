@@ -1,16 +1,16 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: DEVOPS_SRE
 source: https://skills.sh/sickn33/antigravity-awesome-skills/docker-expert
 ---
 
-# 🐳 Skill | Docker Stack Provisioner (v4.0-S)
+# 🐳 Skill | Docker Stack Provisioner (v4.0-MCP)
 
 ## Objective
 
 Advanced Docker containerization expert for multi-stage builds, security hardening, and production deployment patterns. Provision infrastructure-as-code (IaC) strictly within the `WORKSPACE/infra/` boundary.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 

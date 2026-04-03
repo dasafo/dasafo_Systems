@@ -1,6 +1,6 @@
 # 🛠️ Research Agent (The Scientist Auditor) | Tools & Senses
 
-> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Scientific investigation and technical feasibility analysis.
 
 ## 📡 Senses (Context-Limited)
@@ -10,9 +10,9 @@
 - **Filesystem Sense:** Read architectural ADRs and write research logs strictly to `DOCS/RESEARCH/`.
 - **DAST Sense:** Ability to verify the physical integrity of tasks before starting the audit.
 
-## 🧰 Authorized Skills (Skill Library)
+## 🧰 Authorized Skills (Factory Engine)
 
-*(Invoked via `execute_factory_skill` or direct `run.py` in isolated sessions)*
+*(CRITICAL: Invoked EXCLUSIVELY via the `execute_industrial_skill` MCP tool in isolated sessions. Do not run terminal scripts manually).*
 
 ### 🔬 Scientific Research
 
@@ -21,11 +21,11 @@
 
 ### ⚙️ Industrial Management
 
-- **`research-manager`**: `write_report` action to safely write research reports to disk.
+- `research-manager`: `write_report` action to safely write research reports to disk via the Factory MCP.
 
 ### 🛡️ Guardrails & Governance
 
 - `hallucination-guardrail`: Mandatory verification of claims against the `SPEC_LITE`.
 
 ---
-*Research Agent v4.0-S | Status: Autonomous Auditor & Solidified.*
+*Research Agent v4.0-MCP | Status: Autonomous Auditor & Solidified.*

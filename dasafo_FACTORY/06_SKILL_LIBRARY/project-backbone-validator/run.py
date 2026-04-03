@@ -13,7 +13,7 @@ except ImportError:
     pass # Gestionado por skill_engine.py
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Project Backbone Validator (v4.0-S) - Scaffolding Inspector."""
+    """Project Backbone Validator (v4.0-MCP) - Scaffolding Inspector."""
     start_time = time.time()
     
     agent = skill_input.agent or "ORCHESTRATOR"

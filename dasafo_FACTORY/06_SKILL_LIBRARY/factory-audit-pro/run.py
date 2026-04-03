@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Factory Audit Pro (QA_TESTER / SECURITY_AUDITOR)
-v4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-MCP: Modular Toolbox | Industrial Scale.
 
 Solidified: Output Schema Alignment, Detailed Findings & SI Mandate.
 """
@@ -14,7 +14,7 @@ from pathlib import Path
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Industrial execution engine for quality and anti-pattern auditing (v4.0-S)."""
+    """Industrial execution engine for quality and anti-pattern auditing (v4.0-MCP)."""
     agent = skill_input.agent or "QA_TESTER"
     skill = "factory-audit-pro"
     cid = skill_input.correlation_id
@@ -32,7 +32,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
         if not project_path.exists():
             return SkillOutput.failure(agent, skill, f"PHYSICAL_ERROR: {project_path} not found.", cid)
         
-        # 2. Logic: Diagnostic Audit (v4.0-S Simulation)
+        # 2. Logic: Diagnostic Audit (v4.0-MCP Simulation)
         # In production, this would scan specific files for A11y, Perf, etc.
         health_score = 18 # Industrial Scale 0-20
         verdict = "PASS"
@@ -52,7 +52,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             }
         ]
 
-        # 3. Result Building (Strict Schema Alignment v4.0-S)
+        # 3. Result Building (Strict Schema Alignment v4.0-MCP)
         execution_duration_s = time.time() - start_time
         
         result_payload = {
@@ -76,7 +76,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
         report_file = audit_dir / f"QA_AUDIT_{cid}.json"
         report_file.write_text(json.dumps(result_payload, indent=2, ensure_ascii=False), encoding="utf-8")
 
-        # INYECCIÓN v4.0-S: Registrar Cultural Violations en el FEEDBACK-LOG
+        # INYECCIÓN v4.0-MCP: Registrar Cultural Violations en el FEEDBACK-LOG
         feedback_log = project_path / "LOGS" / "FEEDBACK-LOG.md"
         if feedback_log.exists():
             with open(feedback_log, "a", encoding="utf-8") as f:
@@ -85,7 +85,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
                         # Adaptación estricta al FEEDBACK_SCHEMA.json
                         feedback_entry = {
                             "id": f"FB-{str(int(time.time()))[-4:]}",
-                            "version": "v4.0-S",
+                            "version": "v4.0-MCP",
                             "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                             "context": {
                                 "agent": agent,

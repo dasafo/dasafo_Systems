@@ -1,16 +1,16 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: RESEARCH_AGENT / ALL
 source: custom_dasafo_factory
 ---
 
-# 🔬 Skill | Research Manager (v4.0-S)
+# 🔬 Skill | Research Manager (v4.0-MCP)
 
 ## Objective
 
 Safely write, manage, and persist deep-research artifacts, architectural investigations, and API evaluations to the disk. Replaces the use of insecure shell `cat` commands to prevent terminal syntax errors (zsh/bash injection).
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 
@@ -35,4 +35,4 @@ Execution will return the report size strictly in **Bytes (B)** and the time in 
 - **DAST Enforcement:** Artifacts are strictly routed to `DOCS/RESEARCH`, `DOCS/ARCH`, or `DOCS/MARKETING`.
 
 ---
-*Skill v4.0-S | Status: Standardized & Industrialized.*
+*Skill v4.0-MCP | Status: Standardized & Industrialized.*

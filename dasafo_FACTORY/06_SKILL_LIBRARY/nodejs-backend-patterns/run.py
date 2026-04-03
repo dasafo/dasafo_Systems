@@ -13,7 +13,7 @@ except ImportError:
     pass
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Node.js Backend Patterns (v4.0-S) - Architecture Enforcer."""
+    """Node.js Backend Patterns (v4.0-MCP) - Architecture Enforcer."""
     start_time = time.time()
     
     agent = skill_input.agent or "BACKEND_DEV"

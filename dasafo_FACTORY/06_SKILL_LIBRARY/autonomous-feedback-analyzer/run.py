@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Autonomous Feedback Analyzer (MEMORY_OPTIMIZER / FACTORY_EVOLVER)
-v4.0-S: Industrial Core | LTP & Deployment Insights Integration.
+v4.0-MCP: Industrial Core | LTP & Deployment Insights Integration.
 
 Solidified: Neo4j Persistence, Deployment Log Scanning & SI Metrics.
 """
@@ -21,7 +21,7 @@ except ImportError:
     GraphDatabase = None
 
 def persist_to_knowledge_graph(insights: list, project: str, agent: str):
-    """Sincroniza el aprendizaje agentico con el Grafo Central (Neo4j) v4.0-S."""
+    """Sincroniza el aprendizaje agentico con el Grafo Central (Neo4j) v4.0-MCP."""
     if not GraphDatabase:
         return False, "Driver neo4j no instalado."
 
@@ -38,7 +38,7 @@ def persist_to_knowledge_graph(insights: list, project: str, agent: str):
                 tech = insight.get("tech", "Global") if isinstance(insight, dict) else "docker"
                 phase = insight.get("phase", "M5_OPERATIONS") if isinstance(insight, dict) else "M5_OPERATIONS"
                 
-                # Inyección v4.0-S: Ontología Expandida con Nodo de Fase
+                # Inyección v4.0-MCP: Ontología Expandida con Nodo de Fase
                 session.run("""
                     MERGE (r:GoldenRule {content: $rule})
                     MERGE (p:Project {name: $project})

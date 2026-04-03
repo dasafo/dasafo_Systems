@@ -142,3 +142,6 @@ echo "[+] Standardized under 00_CORE_CONSTITUTION.md."
 echo "[+] Master Registry seeded for Clean Sessions."
 echo "[+] Aduana Universal state initialized to v4.0-S."
 echo "[+] SUCCESS: Factory ready for Phase M1 (Discovery)."
+
+# 10. Provisionar Hoja de Firma Humana
+cp "../dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/TEMPLATES/approval.md" "$PROJECT_ROOT/DOCS/USER/APPROVAL_M1.md"

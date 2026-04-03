@@ -1,16 +1,16 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: DEVOPS_SRE
 source: https://skills.sh/hashicorp/agent-skills/terraform-style-guide
 ---
 
-# 🌍 Skill | Terraform IaC Builder (v4.0-S)
+# 🌍 Skill | Terraform IaC Builder (v4.0-MCP)
 
 ## Objective
 
 Generate and maintain Terraform Infrastructure-as-Code (IaC) following HashiCorp's official style conventions and the Zero-Trust industrial standard of the dasafo_FACTORY.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 

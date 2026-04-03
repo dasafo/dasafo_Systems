@@ -1,5 +1,5 @@
 ---
-description: The factory's master command. Analyzes project state and advances to the next phase following the Universal Pipeline (v4.0-S).
+description: The factory's master command. Analyzes project state and advances phases using MCP.
 ---
 
 # Workflow /factory-orchestrate
@@ -7,11 +7,14 @@ description: The factory's master command. Analyzes project state and advances t
 This flow activates the Orchestrator to drive project evolution under the **Aduana Universal** protocol.
 
 1. **Agent:** `ORCHESTRATOR`
-2. **Security Gate (MANDATORY)**: Run `kanban-solidity-gate` via MCP to verify physical tasks. **Hard Stop** if not SOLIDIFIED.
-3. **Run Scan**: Execute the following command:
-   `python3 dasafo_FACTORY/skill_engine.py --agent ORCHESTRATOR --skill agentic-thought-secret-scanner --target-project $TARGET_PROJECT`
-4. **Execution (v4.0-S)**:
-   - Synchronize `registry.json` with the physical `TASKS/` folder.
-   - Analyze project state and delegate next tasks ONLY if Phase transitions are validated by the Aduana protocol.
+2. **Execution Protocol:** SOP via MCP
 
-**Synchronizing industrial pipeline v4.0-S...**
+3. **Run Scan (Security Gate):** Invoca la herramienta MCP `execute_industrial_skill` con:
+   * `agent`: "ORCHESTRATOR"
+   * `skill`: "agentic-thought-secret-scanner"
+   * `target_project`: "PROJECTS/$TARGET_PROJECT"
+   * `params_json`: '{}'
+
+4. **Execution (Phase Analysis):**
+   * El motor MCP sincronizará automáticamente la carpeta `TASKS/` con `registry.json`.
+   * Analiza el estado devuelto y deconstruye las siguientes tareas SOLO si la Aduana lo permite (ej. si el HITL Approval está firmado).

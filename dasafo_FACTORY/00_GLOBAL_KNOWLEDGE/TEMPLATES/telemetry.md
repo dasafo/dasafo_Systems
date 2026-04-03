@@ -1,6 +1,6 @@
 # 📊 MISSION TELEMETRY | [MISSION_NAME]
 
-> **Standard:** v4.0-S "SDD Implementation"
+> **Standard:** v4.0-MCP "SDD Implementation"
 > **Project:** [PROJECT_NAME]
 > **Correlation ID:** [CORRELATION_ID]
 
@@ -24,4 +24,4 @@
 - **Disk IO Truth:** Artifacts confirmed in `DOCS/` (YES/NO).
 
 ---
-*v4.0-S Industrial Telemetry | Dasafo Factory.*
+*v4.0-MCP Industrial Telemetry | Dasafo Factory.*

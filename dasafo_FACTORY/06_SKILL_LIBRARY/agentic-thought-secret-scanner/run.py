@@ -2,9 +2,9 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Agentic Thought & Secret Scanner (Credential Scanner) - SECURITY / PO / BACKEND / QA
-v4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-MCP: Modular Toolbox | Industrial Scale.
 
-Solidified: Implementado Compliance Reporting y Output Schema v4.0-S.
+Solidified: Implementado Compliance Reporting y Output Schema v4.0-MCP.
 """
 
 import re

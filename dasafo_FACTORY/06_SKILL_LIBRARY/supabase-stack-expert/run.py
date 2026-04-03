@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Supabase Stack Expert (DB_MASTER)
-v4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-MCP: Modular Toolbox | Industrial Scale.
 
 Solidified: Output Schema Alignment, SI Metrics (s, B), Action Sync & Hybrid Infra.
 """
@@ -14,7 +14,7 @@ from pathlib import Path
 from skill_schema import SkillInput, SkillOutput
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Industrial execution engine for database performance and security (v4.0-S)."""
+    """Industrial execution engine for database performance and security (v4.0-MCP)."""
     agent = skill_input.agent or "DB_MASTER"
     skill = "supabase-stack-expert"
     cid = skill_input.correlation_id
@@ -46,7 +46,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             if report_file.exists() and not overwrite:
                  return SkillOutput.failure(agent, skill, f"REDUNDANCY LOCK: {report_file.name} exists.", cid)
 
-            # Simulated Expert Analysis (v4.0-S Standards) targeting Hybrid Infra
+            # Simulated Expert Analysis (v4.0-MCP Standards) targeting Hybrid Infra
             optimization_report = (
                 f"# 🐘 Postgres Optimization Report (Target: {target_host})\n\n"
                 "## 🔍 Findings\n"
@@ -77,7 +77,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             
             execution_duration_s = time.time() - start_time
             
-            # 3. Result Building (Strict Schema Alignment v4.0-S)
+            # 3. Result Building (Strict Schema Alignment v4.0-MCP)
             result_payload = {
                 "optimization_report": optimization_report,
                 "suggested_indexes": suggested_indexes,
@@ -96,7 +96,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
 
             return SkillOutput.success(agent, skill, result_payload, [str(report_file)], cid)
 
-        return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented in v4.0-S.", cid)
+        return SkillOutput.failure(agent, skill, f"Action '{action}' not implemented in v4.0-MCP.", cid)
 
     except Exception as e:
         return SkillOutput.failure(agent, skill, f"Supabase Expert CRITICAL Fault: {str(e)}", cid)

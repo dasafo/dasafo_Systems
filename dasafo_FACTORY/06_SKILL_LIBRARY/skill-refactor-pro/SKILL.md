@@ -1,16 +1,16 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: FACTORY_EVOLVER
 source: https://skills.sh/github/awesome-copilot/refactor
 ---
 
-# 🧬 Skill | Skill Refactor Pro (v4.0-S)
+# 🧬 Skill | Skill Refactor Pro (v4.0-MCP)
 
 ## Objective
 
 Provide surgical code refactoring to improve maintainability, structure, and readability without changing external behavior. Refactoring is treated as a gradual evolution, heavily relying on existing tests before any mutation occurs.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 

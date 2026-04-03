@@ -1,16 +1,16 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: ORCHESTRATOR
 description: Delegate execution to a sub-agent in a context-isolated session.
 ---
 
-# 🚀 Skill | Delegate Clean Session (v4.0-S)
+# 🚀 Skill | Delegate Clean Session (v4.0-MCP)
 
 ## Objective
 
 Execute a technical task by spawning a specialized sub-agent (FRONTEND, BACKEND, QA, etc.) in a "Clean Slate" context. This prevents the Orchestrator's high-level strategic memory from being contaminated by low-level implementation details (Token Decay prevention).
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 

@@ -1,5 +1,5 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: ARCHITECT / LEAD_DEV
 source: https://skills.sh/wshobson/agents/architecture-decision-records
 ---
@@ -10,7 +10,7 @@ source: https://skills.sh/wshobson/agents/architecture-decision-records
 
 Capture and manage technical decisions in a formal, searchable, and persistent log. This skill ensures that the "Why" behind every architectural choice is documented, enabling future agents and humans to understand the system's evolution and trade-offs.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 
@@ -42,7 +42,7 @@ Any technical metrics mentioned in the ADR (e.g., latencies < 200ms, storage > 5
 - **Physical Immutability:** Once an ADR is "ACCEPTED", it should only be changed via a "SUPERSEDE" action in a new ADR.
 - **Index Sync:** Every new or updated ADR must trigger a physical update of the `DOCS/ADR/README.md` index.
 
-## 🧠 Core Lifecycle (v4.0-S)
+## 🧠 Core Lifecycle (v4.0-MCP)
 
 1. **Identify Decision:** Recognize a strategic choice (Pattern, Library, Infrastructure).
 2. **Standard Format:** Use the MADR (Markdown Architecture Decision Record) template.
@@ -52,4 +52,4 @@ Any technical metrics mentioned in the ADR (e.g., latencies < 200ms, storage > 5
 
 ---
 **ORIGIN:** [architecture-decision-records by wshobson](https://skills.sh/wshobson/agents/architecture-decision-records)
-*Skill v4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*

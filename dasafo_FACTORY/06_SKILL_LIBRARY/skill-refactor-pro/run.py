@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Skill Refactor Pro (FACTORY_EVOLVER)
-v4.0-S: Modular Toolbox | Industrial Evolution.
+v4.0-MCP: Modular Toolbox | Industrial Evolution.
 
 Solidified: Rule-based Transformation, Chesterton's Fence & Atomic Output.
 """
@@ -75,7 +75,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             # Aplicar Refactor basado en Golden Rules
             refactored_content = apply_rule_logic(original_content, rules)
             
-            # Persistencia Sandboxed (v4.0-S)
+            # Persistencia Sandboxed (v4.0-MCP)
             refactored_file = target_file.parent / f"{target_file.stem}_refactored{target_file.suffix}"
             refactored_file.write_text(refactored_content, encoding="utf-8")
             

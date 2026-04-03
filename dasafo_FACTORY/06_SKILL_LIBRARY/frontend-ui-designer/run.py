@@ -13,7 +13,7 @@ except ImportError:
     pass
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Frontend UI Designer (v4.0-S) - Design System Enforcer."""
+    """Frontend UI Designer (v4.0-MCP) - Design System Enforcer."""
     start_time = time.time()
     
     agent = skill_input.agent or "FRONTEND_DEV"

@@ -1,16 +1,16 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: DEVOPS_SRE / QA_TESTER
 source: internal/skill-creator
 ---
 
-# 🔨 Skill | Build & Test Executor (v4.0-S)
+# 🔨 Skill | Build & Test Executor (v4.0-MCP)
 
 ## Objective
 
 Execute compilation, testing, or build commands and generate the mandatory `BUILD_REPORT.json` required by the Universal Customs (`session_hook.py`) to authorize phase transitions (M3 -> M4).
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 

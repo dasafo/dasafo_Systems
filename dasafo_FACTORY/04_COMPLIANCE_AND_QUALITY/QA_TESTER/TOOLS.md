@@ -1,6 +1,6 @@
-# 🛠️ QA_TESTER | Tools & Senses (v4.0-S)
+# 🛠️ QA_TESTER | Tools & Senses
 
-> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
 
 ## 📡 Senses
 
@@ -8,7 +8,9 @@
 - **Codebase X-Ray:** Read-only access to all `WORKSPACE/` layers for compliance auditing.
 - **DAST Sense:** Ability to verify the physical integrity of tasks and the registry before issuing a compliance failure.
 
-## 🧰 Authorized Skills
+## 🧰 Authorized Skills (Factory Engine)
+
+*(CRITICAL: All skills MUST be invoked EXCLUSIVELY by passing their name to the `execute_industrial_skill` MCP Tool. Do NOT use bash).*
 
 - `factory-audit-pro`: Deep scan for architecture and DTO compliance.
 - `hallucination-guardrail`: Verify logic alignment against the `SPEC_LITE`.
@@ -17,4 +19,4 @@
 - `playwright-e2e-tester`: Browser flow verification and UI testing.
 
 ---
-*QA Tester v4.0-S | Status: Autonomous Guardian & Solidified.*
+*QA Tester v4.0-MCP | Status: Autonomous Guardian & Solidified.*

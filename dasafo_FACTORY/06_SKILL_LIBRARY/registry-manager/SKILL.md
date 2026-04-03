@@ -1,16 +1,16 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: ORCHESTRATOR / PROJECT_MANAGER
 source: internal/skill-creator
 ---
 
-# 🗂️ Skill | Registry Manager (v4.0-S)
+# 🗂️ Skill | Registry Manager (v4.0-MCP)
 
 ## Objective
 
 Act as the industrial notary for the project's Kanban state. This skill mutates `TASKS/registry.json` and synchronizes the physical state of task artifacts across `01_PENDING`, `02_IN_PROGRESS`, and `03_COMPLETED` directories to satisfy the `kanban-solidity-gate`.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 
@@ -36,7 +36,7 @@ Any disk I/O latency metrics must be recorded in **seconds** (s).
 - **Physical Artifact Sync:** If a task is marked `COMPLETED`, its JSON file MUST be physically moved/created in `TASKS/03_COMPLETED/`.
 - **SSoT Integrity:** The `registry.json` must always perfectly mirror the physical directories.
 
-## 🧠 Workflow (v4.0-S)
+## 🧠 Workflow (v4.0-MCP)
 
 1. **Read SSoT:** Load `TASKS/registry.json`.
 2. **Mutate State:** Update the status of the target `task_id`.

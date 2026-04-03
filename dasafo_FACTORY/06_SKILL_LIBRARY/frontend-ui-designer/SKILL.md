@@ -3,13 +3,13 @@ name: frontend-ui-designer
 description: Enforces modern UI/UX design patterns using Tailwind CSS, shadcn/ui, and Lucide icons. Use this skill when generating or refactoring React/Next.js frontend components to ensure aesthetic consistency and industrial quality.
 ---
 
-# 🎨 Skill | Frontend UI Designer (v4.0-S)
+# 🎨 Skill | Frontend UI Designer (v4.0-MCP)
 
 ## Objective
 
 Act as the UI/UX standard enforcer for the dasafo_Factory. Ensure that all generated React/Next.js components strictly adhere to modern design principles, utilizing Tailwind CSS for styling, `shadcn/ui` for accessible component foundations, and `lucide-react` for iconography.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 

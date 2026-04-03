@@ -3,13 +3,13 @@ name: nodejs-backend-patterns
 description: Enforces industrial-grade Node.js/TypeScript design patterns (Repository, DTOs, Service Layer) and TDD. Use this skill when generating or refactoring backend logic in a Node.js environment to ensure architectural purity.
 ---
 
-# ⚙️ Skill | Node.js Backend Patterns (v4.0-S)
+# ⚙️ Skill | Node.js Backend Patterns (v4.0-MCP)
 
 ## Objective
 
 Act as the Node.js Architectural Enforcer for the dasafo_Factory. Ensure that all TypeScript/JavaScript backend code adheres to strict separation of concerns, utilizing DTOs (Data Transfer Objects) for input validation and Repository patterns for data access.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 

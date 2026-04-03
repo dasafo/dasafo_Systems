@@ -1,21 +1,19 @@
 ---
-description: Verifies that the structural scaffolding of the framework physically exists on disk before delegating tasks to peons (v4.0-S).
+description: Verifies physical scaffolding existence on disk via MCP before delegating tasks.
 ---
 
 # Workflow /validate-backbone
 
-This flow activates the Orchestrator to act as the "Project Inspector", ensuring the structural backbone of the project is solid before any atomic implementation agent is dispatched.
+This flow activates the Orchestrator to act as the "Project Inspector", ensuring the structural backbone is solid.
 
 1. **Agent:** `ORCHESTRATOR`
+2. **Execution Protocol:** SOP via MCP
 
-2. **Execution Protocol:** // turbo
+3. **Run Validation:** Invoca la herramienta MCP `execute_industrial_skill` con:
+   * `agent`: "ORCHESTRATOR"
+   * `skill`: "project-backbone-validator"
+   * `target_project`: "PROJECTS/$TARGET_PROJECT"
+   * `params_json`: '{"framework": "<FRAMEWORK>"}' *(Sustituir por fastapi, nextjs, etc.)*
 
-3. **Pre-flight Check:** Verify physical SSoT (Single Source of Truth) for the base framework.
-
-4. **Run Validation:** Execute the following command (replace `<FRAMEWORK>` with `nextjs` or `fastapi` as needed):
-   `python3 dasafo_FACTORY/skill_engine.py --agent ORCHESTRATOR --skill project-backbone-validator --target-project $TARGET_PROJECT --input '{"framework": "<FRAMEWORK>"}'`
-
-5. **Decision Gate:** - If `scaffolding_ready` is True: Proceed to `/execute-task`.
-   - If `scaffolding_ready` is False: Suspend delegation and trigger the framework bootstrapper or alert the ARCHITECT to resolve the `missing_bones`.
-
-**Inspecting industrial backbone...**
+4. **Decision Gate:** - If `scaffolding_ready` is True: Proceed to delegating implementation tasks.
+   * If `scaffolding_ready` is False: Suspend delegation and alert the ARCHITECT.

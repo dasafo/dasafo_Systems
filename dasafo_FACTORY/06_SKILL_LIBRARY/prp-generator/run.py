@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — PRP & Spec Generator (PRODUCT_OWNER)
-v4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-MCP: Modular Toolbox | Industrial Scale.
 Solidified: Root Persistence, 12-Section Validation & Dynamic Scoring.
 """
 
@@ -52,7 +52,7 @@ def update_project_state(project_path: Path, phase: str):
             json.dump(state, f, indent=2)
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Industrial execution engine for project contract definition (v4.0-S)."""
+    """Industrial execution engine for project contract definition (v4.0-MCP)."""
     agent = skill_input.agent or "PRODUCT_OWNER"
     skill = "prp-generator"
     cid = skill_input.correlation_id

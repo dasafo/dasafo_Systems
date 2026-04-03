@@ -1,6 +1,6 @@
-# 🛠️ DB_MASTER | Tools & Senses (v4.0-S)
+# 🛠️ DB_MASTER | Tools & Senses (v4.0-MCP)
 
-> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Schema execution, SQL generation, and Supabase integration.
 
 ## 📡 Senses (Context-Limited)
@@ -12,7 +12,7 @@
 
 ## 🧰 Authorized Skills (Skill Library)
 
-*(Lazy loaded only when mandated by the Spec)*
+*(CRITICAL: All skills must be executed by passing the skill name to the `execute_industrial_skill` MCP Tool).*
 
 ### ⚙️ Logic & Implementation
 
@@ -24,4 +24,4 @@
 - `agentic-thought-secret-scanner`: Mandatory check to ensure no database URLs or passwords leak into the migration scripts.
 
 ---
-*DB Master v4.0-S | Status: Autonomous Persistence Guardian & Solidified.*
+*DB Master v4.0-MCP | Status: Autonomous Persistence Guardian & Solidified.*

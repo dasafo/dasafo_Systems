@@ -3,13 +3,13 @@ name: startup-metrics-framework
 description: Translates industrial execution metrics (Seconds, Bytes) into SaaS business KPIs (CAC, LTV, ROI). Use this during Phase M1 to formulate the financial success criteria for the PRP_MASTER contract.
 ---
 
-# 📈 Skill | Startup Metrics Framework (v4.0-S)
+# 📈 Skill | Startup Metrics Framework (v4.0-MCP)
 
 ## Objective
 
 Act as the Financial Engine for the dasafo_Factory. Empower the `PRODUCT_OWNER` to define the business viability of a project by calculating projected Customer Acquisition Cost (CAC), Lifetime Value (LTV), and Cost Per Execution based on the factory's technical capabilities.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 

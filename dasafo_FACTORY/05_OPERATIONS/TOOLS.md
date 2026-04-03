@@ -1,21 +1,28 @@
-# 🛠️ OPERATIONS | Tools & Senses (v4.0-S Solidified)
+# 🛠️ OPERATIONS | Tools & Senses (v4.0-MCP Solidified)
 
-> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Level 05 Ops tools (Infra, Deploy, Evolution, Memory).
 
 ## 📡 Senses (Context-Limited)
 
 - **Deploy Sense:** Monitor project status codes, latency (s), and logs.
-- **Infra Sense:** Read-only access to `WORKSPACE/infra/` and container registries.
-- **Skill X-Ray:** Read/Write access (`FACTORY_EVOLVER` only) to the Skill Library.
+- **Infra Sandbox Sense:** Generic filesystem MCP read/write access restricted strictly to `WORKSPACE/infra/`.
+- **Skill Sandbox Sense:** Generic filesystem MCP read/write access restricted strictly to `06_SKILL_LIBRARY/` (`FACTORY_EVOLVER` only).
 - **DAST Sense:** Physical verification of artifacts and states on disk before reporting health.
 
 ## 🧰 Authorized Skills (Level 05 Hub)
 
-- `infra-provisioner`: Industrial Setup of Docker/Cloud with SI metrics (B/s).
-- `deployment-health-check`: Real-time validation of endpoints and network health.
+*(CRITICAL: All skills listed below MUST be invoked EXCLUSIVELY by passing their name to the `execute_industrial_skill` MCP Tool. Do NOT use bash terminals or run python scripts manually).*
+
+- `docker-stack-provisioner`: Generation of optimized multi-stage Dockerfiles.
+- `terraform-iac-builder`: Implementation of local or cloud IaC.
+- `deployment-health-check`: Real-time validation of endpoints and network health (s/B).
+- `telemetry-analyzer`: Deep synthesis of resource usage and execution times.
 - `skill-refactor-pro`: Modular evolution of scripts based on Neo4j Golden Rules.
-- `context-pruning-sieve`: Token optimization and cognitive noise pruning.
+- `autonomous-feedback-analyzer`: Extract golden rules and persist lessons in Neo4j.
+- `context-pruning-sieve`: Token optimization and KV cache pruning.
+- `agentic-thought-secret-scanner`: Mandatory scanning of YAML/Infra to prevent key leaks.
+- `hallucination-guardrail`: Ensure reports are based on real logs, not assumptions.
 
 ---
-*Operations Tools v4.0-S | Status: SOLIDIFIED.*
+*Operations Tools v4.0-MCP | Status: SOLIDIFIED.*

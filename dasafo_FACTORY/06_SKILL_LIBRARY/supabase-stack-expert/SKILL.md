@@ -1,16 +1,16 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: DB_MASTER
 source: https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices
 ---
 
-# 🐘 Skill | Supabase Stack Expert (v4.0-S)
+# 🐘 Skill | Supabase Stack Expert (v4.0-MCP)
 
 ## Objective
 
 Operate as a high-performance database engineer specialized in the Supabase/Postgres ecosystem. This skill enforces 8 priority categories of Postgres best practices (Query Performance, Connection Management, Security/RLS, Schema Design, Concurrency, Data Access, Monitoring, and Advanced Features) to ensure scalability, security, and industrial-grade reliability.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 
@@ -42,7 +42,7 @@ Any performance metrics (query latency, EXPLAIN execution time, recovery times, 
 - **Explain-Before-Commit:** Substantial query changes must include a simulated or actual `EXPLAIN ANALYZE` output in seconds (s).
 - **Physical Migrations:** All database changes must be saved as physical migration files (`.sql`) in `INFRASTRUCTURE/DATABASE/`.
 
-## 🧠 Database Workflow (v4.0-S)
+## 🧠 Database Workflow (v4.0-MCP)
 
 1. **Pre-Audit:** Analyze the schema or query using the 8 priority categories (Query, Conn, Security, Schema, Lock, Data, Monitor, Advanced).
 2. **Indexing Strategy:** Implement partial or covering indexes to reduce execution time (< 0.1s for OLTP).
@@ -52,4 +52,4 @@ Any performance metrics (query latency, EXPLAIN execution time, recovery times, 
 
 ---
 **ORIGIN:** [supabase-postgres-best-practices by supabase](https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices)
-*Skill v4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*

@@ -1,17 +1,17 @@
-# 🛠️ DOCS_MASTER | Tools & Senses (v4.0-S)
+# 🛠️ DOCS_MASTER | Tools & Senses (v4.0-MCP)
 
-> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Technical writing, automated docs extraction, and context synthesis.
 
 ## 📡 Senses (Context-Limited)
 
 - **Spec Sense:** Authority to read and interpret `SPEC_LITE.json`.
 - **Targeted File Sense:** Read access to code in `WORKSPACE/` and write access restricted strictly to `$TARGET_PROJECT/DOCS/`.
-- **DAST Sense:** Ability to verify the physical integrity of artifacts and tasks before generating final manuals.
+- **DAST Sense:** Ability to verify the physical integrity of artifacts and tasks.
 
-## 🧰 Authorized Skills (Skill Library)
+## 🧰 Authorized Skills (Factory Engine)
 
-*(Lazy loaded only when mandated by the Spec)*
+*(CRITICAL: All skills MUST be invoked EXCLUSIVELY by passing their name to the `execute_industrial_skill` MCP Tool. Do NOT use bash).*
 
 ### 📝 Drafting & Analysis
 
@@ -23,4 +23,4 @@
 - `hallucination-guardrail`: Mandatory verification of technical claims against the project's source of truth.
 
 ---
-*Docs Master v4.0-S | Status: Autonomous Strategist & Solidified.*
+*Docs Master v4.0-MCP | Status: Autonomous Strategist & Solidified.*

@@ -1,16 +1,16 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: QA_TESTER / FRONTEND_DEV
 source: internal/skill-creator
 ---
 
-# 🎭 Skill | Playwright E2E Tester (v4.0-S)
+# 🎭 Skill | Playwright E2E Tester (v4.0-MCP)
 
 ## Objective
 
 Execute End-to-End (E2E) browser testing using Playwright to ensure UI/UX workflows match the functional criteria established in the `SPEC_LITE.json` contract.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 

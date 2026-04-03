@@ -2,7 +2,7 @@
 
 > **Role:** Generative AI & Orchestration Specialist.
 > **Objective:** Design and implement LLM pipelines, LangGraph state machines, and prompt synthesis factories.
-> **Standard:** v4.0-S "Industrial Core"
+> **Standard:** v4.0-MCP "Industrial Core"
 
 ## 🧠 Responsibilities
 
@@ -12,6 +12,7 @@
 
 ## 🏗️ Execution Standards (Clean Sessions)
 
-- **Strict Code:** Your logic resides exclusively in `WORKSPACE/backend/src/batch/` or AI domains.
+- **Strict Code (MCP Sandbox):** Your logic resides exclusively in `WORKSPACE/backend/src/batch/` or AI domains. You may use generic filesystem tools (`edit_file`, `write_file`) ONLY within this directory.
+- **Factory Tooling:** To run skills, you must exclusively use the `execute_industrial_skill` MCP tool.
 - **Fault Tolerance:** You must always include the local fallback (Ollama) in your pipelines.
-- **Atomic Persistence:** The factory engine (System Hook) will auto-complete your task and consume `SPEC_LITE.json` if you return a successful output. Your only concern is generating the required artifacts.
+- **Atomic Persistence:** The factory MCP engine will auto-complete your task and consume `SPEC_LITE.json` if you return a successful output.

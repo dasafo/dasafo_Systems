@@ -1,6 +1,6 @@
 {
   "project_name": "dasafo_FACTORY",
-  "version": "3.4.0-S",
+  "version": "4.0-MCP",
   "agent_manager_v2": true,
   "orchestrator_id": "@orchestrator",
   "agents_path": ".agents/",

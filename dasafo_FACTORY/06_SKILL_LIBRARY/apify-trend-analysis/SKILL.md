@@ -1,5 +1,5 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: MARKETING_GROWTH / RESEARCH_AGENT
 source: https://skills.sh/apify/agent-skills/apify-trend-analysis
 ---
@@ -10,7 +10,7 @@ source: https://skills.sh/apify/agent-skills/apify-trend-analysis
 
 Identify and analyze market trends, consumer behavior, and niche opportunities across global platforms (Google Trends, Instagram, TikTok, YouTube, etc.) using Apify Actors. This skill provides a structured framework for data-driven strategic decision-making.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 
@@ -39,7 +39,7 @@ Any temporal metrics (intervals, growth) or data volume must be strictly express
 - **Physical Proof:** Raw data must be persisted to `LOCAL_KNOWLEDGE/trends/` before success is returned.
 - **Schema-Driven:** Before execution, agents are encouraged to fetch the actor's schema for parameter accuracy.
 
-## 🧠 Strategic Workflow (v4.0-S)
+## 🧠 Strategic Workflow (v4.0-MCP)
 
 1. **Identify Trend Type:** Select a specialized actor (Google Trends, Instagram Search, etc.).
 2. **Fetch Schema:** Retrieve the actor's input requirements dynamically to ensure valid parameters.
@@ -48,4 +48,4 @@ Any temporal metrics (intervals, growth) or data volume must be strictly express
 
 ---
 **ORIGIN:** [apify-trend-analysis by apify](https://skills.sh/apify/agent-skills/apify-trend-analysis)
-*Skill v4.0-S | Status: Standardized & Industrialized (Dasafo Edition).*
+*Skill v4.0-MCP | Status: Standardized & Industrialized (Dasafo Edition).*

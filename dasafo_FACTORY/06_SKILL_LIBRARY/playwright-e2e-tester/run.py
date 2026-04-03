@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Playwright E2E Tester (QA_TESTER)
-v4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-MCP: Modular Toolbox | Industrial Scale.
 Solidified: Browser Flow Verification & SI Trace Metrics.
 """
 
@@ -38,7 +38,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             e2e_dir.mkdir(parents=True, exist_ok=True)
             spec_file = e2e_dir / f"flow_{cid[:8]}.spec.ts"
             
-            content = f"// Playwright spec mapped to {spec_path} (v4.0-S)\n"
+            content = f"// Playwright spec mapped to {spec_path} (v4.0-MCP)\n"
             content += "import { test, expect } from '@playwright/test';\n\n"
             content += f"test('User flow validation', async ({{ page }}) => {{\n"
             content += f"  await page.goto('{url}');\n"

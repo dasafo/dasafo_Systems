@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Registry Manager (ORCHESTRATOR)
-v4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-MCP: Modular Toolbox | Industrial Scale.
 Solidified: Atomic Physical Move (DAST) & Kanban SSoT Integrity.
 """
 
@@ -41,7 +41,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             if not task_id or not new_status:
                 return SkillOutput.failure(agent, skill, "INPUT_ERROR: task_id and new_status required.", cid)
 
-            # Mapeo de carpetas industriales v4.0-S
+            # Mapeo de carpetas industriales v4.0-MCP
             folder_map = {
                 "PENDING": "01_PENDING",
                 "IN_PROGRESS": "02_IN_PROGRESS",

@@ -1,17 +1,18 @@
 ---
-description: Performs an industrial-grade security scan following Zero-Trust v4.0-S standards.
+description: Performs an industrial-grade security scan following Zero-Trust v4.0-S standards via MCP.
 ---
 
 # Workflow /scan
 
 This flow activates the **Security Auditor** to perform a deep-dive audit on the current project.
 
-1. **Target Identification**: Identify the project root using the `$TARGET_PROJECT` environment variable.
-2. **Execution Protocol**:
-// turbo
-3. **Run Scan**: Execute the following command:
-   `python3 dasafo_FACTORY/skill_engine.py --agent SECURITY_AUDITOR --skill agentic-thought-secret-scanner --target-project $TARGET_PROJECT`
+1. **Agent:** `SECURITY_AUDITOR`
+2. **Execution Protocol:** SOP via MCP
 
-4. **Reporting**: Generate a structured `SECURITY_REPORT.md` within the project's `LOGS/` directory.
+3. **Run Scan:** Invoca la herramienta MCP `execute_industrial_skill` con:
+   * `agent`: "SECURITY_AUDITOR"
+   * `skill`: "agentic-thought-secret-scanner"
+   * `target_project`: "PROJECTS/$TARGET_PROJECT"
+   * `params_json`: '{}'
 
-**Enforcing Zero-Trust v4.0-S Enforcement...**
+4. **Reporting:** Generate a structured `SECURITY_REPORT.md` within the project's `LOGS/` directory.

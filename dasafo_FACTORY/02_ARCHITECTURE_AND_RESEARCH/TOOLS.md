@@ -1,6 +1,6 @@
-# 🛠️ ARCHITECTURE_AND_RESEARCH | Tools & Senses (v4.0-S Solidified)
+# 🛠️ ARCHITECTURE_AND_RESEARCH | Tools & Senses (v4.0-MCP Solidified)
 
-> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Level 02 Design, Blueprints & Scientific Validation.
 
 ## 📡 Senses (Department-Wide)
@@ -13,13 +13,15 @@
 
 ## 🧰 Authorized Skills (Level 02 Hub)
 
+*(CRITICAL: All skills must be executed by passing the skill name to the `execute_industrial_skill` MCP Tool).*
+
 - `architecture-decision-records`: Formal documentation of technical decisions (ADRs).
 - `api-contract-generator`: Definition of communication protocols, OpenAPI, and DTOs.
 - `database-architect-strategic`: Data modeling, relational schemas, and NoSQL.
 - `arxiv-technical-digest`: Retrieve and analyze state-of-the-made technical papers.
 - `apify-trend-analysis`: Scrape external data to validate technical assumptions and market state.
-- **`factory-doctor`**: Technical health audit to ensure the project foundation is solid before advancing to M3.
-- **`research-manager`**: `write_report` action to safely write research reports to disk.
+- `factory-doctor`: Technical health audit to ensure the project foundation is solid before advancing to M3.
+- `research-manager`: `write_report` action to safely write research reports to disk.
 
 ---
-*Architecture & Research Tools v4.0-S | Status: SOLIDIFIED.*
+*Architecture & Research Tools v4.0-MCP | Status: SOLIDIFIED.*

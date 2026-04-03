@@ -1,16 +1,16 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: FACTORY_EVOLVER / ORCHESTRATOR
 source: internal/factory-doctor
 ---
 
-# 🚑 Skill | Factory Doctor (v4.0-S)
+# 🚑 Skill | Factory Doctor (v4.0-MCP)
 
 ## Objective
 
 Realizar una auditoría forense del sistema de archivos para sanar estados corruptos. Regenera el `registry.json` y el `PROJECT_STATE.json` basándose exclusivamente en la presencia física de tareas y artefactos.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 

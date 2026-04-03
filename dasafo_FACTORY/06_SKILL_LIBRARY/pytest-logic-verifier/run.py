@@ -2,7 +2,7 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Pytest Logic Verifier (QA_TESTER)
-v4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-MCP: Modular Toolbox | Industrial Scale.
 Solidified: Spec-Driven Verification & Physical Test Reports.
 """
 
@@ -41,7 +41,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
             test_dir.mkdir(parents=True, exist_ok=True)
             test_file = test_dir / f"test_{cid[:8]}.py"
             
-            content = f"# Pytest generated for spec: {spec_path} (v4.0-S)\n"
+            content = f"# Pytest generated for spec: {spec_path} (v4.0-MCP)\n"
             content += "def test_logic_constraint():\n"
             content += "    # TODO: Implement specific assertions from SPEC_LITE\n"
             content += "    assert True\n"

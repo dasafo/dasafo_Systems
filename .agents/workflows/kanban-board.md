@@ -1,5 +1,5 @@
 ---
-description: Starts the Vibe Kanban visual dashboard for the current project (v4.0-S).
+description: Starts the Vibe Kanban visual dashboard for the current project via MCP.
 ---
 
 # Workflow /kanban-board
@@ -7,7 +7,10 @@ description: Starts the Vibe Kanban visual dashboard for the current project (v4
 This flow starts the local server to visualize `registry.json` and the physical task artifacts.
 
 1. **Agent:** `ORCHESTRATOR`
-2. **Execution Protocol:** // turbo
-3. **Start Dashboard:** `python3 dasafo_FACTORY/skill_engine.py --agent ORCHESTRATOR --skill kanban-solidity-gate --target-project $TARGET_PROJECT --input '{"action": "start_dashboard", "port": 3001}'`
+2. **Execution Protocol:** SOP via MCP
 
-**Initializing Industrial Dashboard on Port 3001...**
+3. **Start Dashboard:** Invoca la herramienta MCP `execute_industrial_skill` con:
+   * `agent`: "ORCHESTRATOR"
+   * `skill`: "kanban-solidity-gate"
+   * `target_project`: "PROJECTS/$TARGET_PROJECT"
+   * `params_json`: '{"action": "start_dashboard", "port": 3001}'

@@ -1,6 +1,6 @@
 # 🛠️ MARKETING_GROWTH | Tools & Senses
 
-> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Trend analysis, messaging alignment, and content generation.
 
 ## 📡 Senses (Context-Limited)
@@ -9,13 +9,13 @@
 - **Targeted File Sense:** Read/Write access restricted to `DOCS/MARKETING/`.
 - **DAST Sense:** Ability to verify the presence of artifacts in `03_COMPLETED/` before proposing new campaigns.
 
-## 🧰 Authorized Skills (Skill Library)
+## 🧰 Authorized Skills (Factory Engine)
 
-*(Invoked via `execute_factory_skill` or direct `run.py`)*
+*(CRITICAL: Invoked EXCLUSIVELY via the `execute_industrial_skill` MCP tool. Do not run python scripts manually).*
 
 - `apify-trend-analysis`: Scraping external signals to calibrate product messaging.
 - `social-content-strategy`: Design and execute multi-platform repurposing flows.
 - `hallucination-guardrail`: Mandatory safety and grounding checks for public communications.
 
 ---
-*Marketing Growth v4.0-S | Status: Standardized & Industrialized.*
+*Marketing Growth v4.0-MCP | Status: Standardized & Industrialized.*

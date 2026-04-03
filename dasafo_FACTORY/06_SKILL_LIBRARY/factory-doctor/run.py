@@ -65,7 +65,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
         # 4. SANACIÓN DEL PROJECT_STATE.JSON
         state_file = project_path / "PROJECT_STATE.json"
         new_state = {
-            "factory_version": "v4.0-S",
+            "factory_version": "v4.0-MCP",
             "project_status": "HEALED",
             "current_phase": detected_phase,
             "phases": {

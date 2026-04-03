@@ -1,17 +1,17 @@
-# 🛠️ PRODUCTION | Tools & Senses (v4.0-S Solidified)
+# 🛠️ PRODUCTION | Tools & Senses (v4.0-MCP Solidified)
 
-> **Standard:** v4.0-S "Industrial Core - DAST Optimized"
+> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Level 03 Implementation (Backend, Frontend, Data, DB).
 
 ## 📡 Senses (Department-Wide)
 
 - **Spec Sense:** Authority to read and interpret `SPEC_LITE.json` for task execution.
-- **Targeted File Sense:** Read/Write access restricted to `WORKSPACE/` and `context_pointers`.
-- **DAST Sense:** Ability to verify the physical integrity of schemas, datasets, and tasks before starting production.
+- **Quarantine Filesystem Sense:** Read/Write access via generic MCP is STRICTLY RESTRICTED to `WORKSPACE/[domain]/` and `context_pointers`.
 - **Schema X-Ray:** Access to `DOCS/ARCH/` to follow architectural blueprints (DTOs/Layers).
-- **Terminal Sense:** Execution of local development environments (Node, Python, Supabase CLI).
 
 ## 🧰 Authorized Skills (Level 03 Hub)
+
+*(CRITICAL: You are PROHIBITED from running python files manually. All skills listed below MUST be invoked EXCLUSIVELY by passing their name to the `execute_industrial_skill` MCP Tool).*
 
 ### ⚙️ Logic & Implementation
 
@@ -20,8 +20,8 @@
 - `database-architect-strategic`: Tactical execution of SQL/NoSQL schema migrations.
 - `supabase-stack-expert`: Direct interaction with Postgres, RLS and Edge Functions.
 - `autonomous-feedback-analyzer`: Deep synthesis of data patterns and telemetry.
-- `nodejs-backend-patterns`: Enforces strict Repository/DTO patterns and TDD for Node.js/TypeScript backends.
-- `frontend-ui-designer`: Enforces Tailwind CSS, shadcn/ui, and modern design principles. Verifies physical design system presence.
+- `nodejs-backend-patterns`: Enforces strict Repository/DTO patterns.
+- `frontend-ui-designer`: Enforces Tailwind CSS, shadcn/ui, and modern design principles.
 
 ### 🛡️ Guardrails & Validation
 
@@ -31,4 +31,4 @@
 - `agentic-thought-secret-scanner`: Proactive leak prevention for credentials and PII.
 
 ---
-*Production Tools v4.0-S | Status: SOLIDIFIED.*
+*Production Tools v4.0-MCP | Status: SOLIDIFIED.*

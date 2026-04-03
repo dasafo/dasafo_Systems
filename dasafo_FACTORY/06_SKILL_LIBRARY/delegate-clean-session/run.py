@@ -2,10 +2,10 @@ from __future__ import annotations
 import sys, os; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 """
 run.py — Delegate Clean Session (ORCHESTRATOR / CONTEXT_WEAVER)
-v4.0-S: Modular Toolbox | Industrial Scale.
+v4.0-MCP: Modular Toolbox | Industrial Scale.
 
 Solidified: Logic alignment with Sub-Agent Execution, Physical Spec Validation & Output Schema.
-Added v4.0-S: Auto-Start (DAST Physical Move) & Neo4j JIT Golden Rule Injection.
+Added v4.0-MCP: Auto-Start (DAST Physical Move) & Neo4j JIT Golden Rule Injection.
 """
 
 import os
@@ -50,7 +50,7 @@ def fetch_golden_rules(tech_hints: list[str], current_phase: str) -> list[str]:
     return rules
 
 def run(skill_input: SkillInput) -> SkillOutput:
-    """Industrial execution engine for clean-slate task delegation (v4.0-S)."""
+    """Industrial execution engine for clean-slate task delegation (v4.0-MCP)."""
     agent = skill_input.agent or "ORCHESTRATOR"
     skill = "delegate-clean-session"
     cid = skill_input.correlation_id
@@ -120,7 +120,7 @@ def run(skill_input: SkillInput) -> SkillOutput:
         
         execution_duration_s = time.time() - start_time
         
-        # 6. Result Building (Strict Schema Alignment v4.0-S)
+        # 6. Result Building (Strict Schema Alignment v4.0-MCP)
         result_payload = {
             "industrial_status": "DELEGATION_COMPLETE",
             "task_status": "COMPLETED",

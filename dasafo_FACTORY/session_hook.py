@@ -111,11 +111,24 @@ def verify_project_state(target_project: str, requested_skill: str, agent: str =
          return False, "Solidity Guard: Ninguna fase activa. Use kanban-solidity-gate."
 
     # --- 5. STARK-SOLIDITY ENFORCEMENT (Verificación Física DAST) ---
+
     
     # Validación M1: Contrato Maestro
     if phases.get("M1") == "APPROVED":
         if not (Path(target_project) / "PRP_CONTRACT.json").exists():
             return False, "DAST Violation: M1 aprobada pero falta PRP_CONTRACT.json físico."
+
+    # --- VALIDACIÓN DE FIRMA HUMANA (HITL) v4.0-S ---
+    # Bloqueo: M1 no puede estar APPROVED sin el acta de aprobación firmada
+    if phases.get("M1") == "APPROVED":
+        approval_file = Path(target_project) / "DOCS" / "USER" / "APPROVAL_M1.md"
+        if not approval_file.exists():
+            return False, "HITL Violation: Fase M1 aprobada en registro, pero falta APPROVAL_M1.md firmado en DOCS/USER/."
+        
+        # Opcional: Verificar que el archivo contenga el string de aprobación
+        with open(approval_file, "r") as f:
+            if "Status: APPROVED" not in f.read():
+                return False, "Solidity Guard: El archivo de aprobación existe pero no tiene el estado APPROVED."
 
     # Validación M2: Planos Arquitectónicos
     if phases.get("M2") == "APPROVED":

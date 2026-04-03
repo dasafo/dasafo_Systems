@@ -1,16 +1,16 @@
 ---
-version: v4.0-S
+version: v4.0-MCP
 agent: MEMORY_OPTIMIZER
 source: https://skills.sh/sickn33/antigravity-awesome-skills/context-optimization
 ---
 
-# 🧠 Skill | Context Pruning Sieve (v4.0-S)
+# 🧠 Skill | Context Pruning Sieve (v4.0-MCP)
 
 ## Objective
 
 Extend the effective capacity of agent context windows through strategic compaction, observation masking, and KV-cache optimization. This skill prevents Token Decay and reduces operational latency/costs.
 
-## 🛠️ Interface (v4.0-S)
+## 🛠️ Interface (v4.0-MCP)
 
 ### Input Schema (SkillInput.params)
 
