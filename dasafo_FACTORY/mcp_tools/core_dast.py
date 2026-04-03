@@ -1,7 +1,7 @@
 import importlib.util
 from pathlib import Path
 import os
-from factory_mcp_server import mcp, aduana_universal
+from mcp_tools.mcp_app import mcp, aduana_universal
 
 # --- CARGADOR DINÁMICO DE LÓGICA (CORE) ---
 
@@ -22,26 +22,9 @@ doctor_logic = _load_skill_logic("factory-doctor")
 kanban_logic = _load_skill_logic("kanban-solidity-gate")
 validator_logic = _load_skill_logic("project-backbone-validator")
 registry_logic = _load_skill_logic("registry-manager")
-build_logic = _load_skill_logic("build-test-executor")
+# ADR: build-test-executor se registra exclusivamente en hub04_compliance.py
 
 # --- HERRAMIENTAS CORE ---
-
-@mcp.tool(name="build-test-executor")
-@aduana_universal(skill_name="build-test-executor")
-def build_test_executor(
-    agent: str, 
-    target_project: str, 
-    action: str = "run_build", 
-    command: str = "echo 'Build...'", 
-    overwrite: bool = False,
-    isolate: bool = False
-) -> tuple[dict, list]:
-    """
-    [FASE M3] Ejecuta comandos de build/test y genera el Pasaporte de Aduana.
-    """
-    return build_logic.execute_build_test(
-        target_project, agent, action, command, overwrite
-    )
 
 @mcp.tool(name="kanban-solidity-gate")
 @aduana_universal(skill_name="kanban-solidity-gate")
@@ -64,16 +47,24 @@ def kanban_solidity_gate(
 def delegate_clean_session(
     agent: str, 
     target_project: str, 
-    action: str = "clean_session", 
-    session_id: str = None,
-    overwrite: bool = False,
-    isolate: bool = False
+    spec_path: str = None,
+    agent_type: str = None,
+    current_phase: str = "M3",
+    isolate: bool = True
 ) -> tuple[dict, list]:
     """
-    [CORE] Gestiona la delegación de tareas y la limpieza de sesiones activas.
+    [CORE] Delega una tarea a un sub-agente en sesión aislada con inyección JIT Neo4j.
+    
+    Args:
+        agent: Tu ID (ej. ORCHESTRATOR).
+        target_project: Ruta al proyecto (ej. PROJECTS/ContentRepurpose).
+        spec_path: Nombre del archivo SPEC_LITE (ej. M3-001.json).
+        agent_type: FRONTEND_DEV, BACKEND_DEV, QA_TESTER, etc.
+        current_phase: M1-M5 para filtrar Golden Rules.
+        isolate: Siempre true para clean sessions.
     """
     return delegation_logic.execute_delegation(
-        target_project, agent, action, session_id, overwrite
+        target_project, spec_path, agent_type, current_phase
     )
 
 @mcp.tool(name="factory-doctor")

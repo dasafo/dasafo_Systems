@@ -1,6 +1,6 @@
 # ✅ Milestone Approval Template
 >
-> **Standard:** v4.0-MCP "SDD Implementation"
+> **Standard:** v5.0-MCP "SDD Implementation"
 > **Project:** [PROJECT_NAME]
 > **Milestone:** [MILESTONE_ID]
 > **Owner:** ORCHESTRATOR
@@ -27,4 +27,4 @@ I, [USER_NAME], approve the transition to the next phase based on the industrial
 **Sign-off:** ___________________ (Human/Orchestrator Proxy)
 
 ---
-*v4.0-MCP Template | Dasafo Factory.*
+*v5.0-MCP Template | Dasafo Factory.*

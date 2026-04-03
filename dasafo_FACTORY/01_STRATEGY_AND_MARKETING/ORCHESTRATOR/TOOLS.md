@@ -1,6 +1,6 @@
 # 🛠️ ORCHESTRATOR | Tools & Senses
 
-> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
+> **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Strategic Delegation, Hub Mapping & Project Recovery.
 
 ## 📡 Senses (Context-Limited)
@@ -13,7 +13,7 @@
 
 ## 🧰 Authorized Skills (Factory Engine)
 
-*(CRITICAL: All skills MUST be invoked EXCLUSIVELY by passing their name as the `skill` parameter to the `execute_industrial_skill` MCP tool. Do NOT use bash or edit files manually).*
+*(CRITICAL: All skills MUST be invoked EXCLUSIVELY **directly by name** (e.g., `delegate-clean-session`, `prp-generator`). Do NOT use bash or edit files manually).*
 
 - `delegate-clean-session`: Spawn isolated sub-agent sessions via MCP.
 - `prp-generator`: Action `GENERATE_LITE` to deconstruct PRPs.
@@ -23,4 +23,4 @@
 - `project-backbone-validator`: Inspect physical disk for minimum framework scaffolding before delegating SPEC_LITE.
 
 ---
-*Orchestrator v4.0-MCP | Status: Hub Manager, Resilient & Solidified.*
+*Orchestrator v5.0-MCP | Status: Hub Manager, Resilient & Solidified.*

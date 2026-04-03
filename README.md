@@ -1,4 +1,4 @@
-# 🏛️ dasafo_Systems | Multi-Agent AI Software Factory (v4.0-MCP)
+# 🏛️ dasafo_Systems | Multi-Agent AI Software Factory (v5.0-MCP)
 
 [![Status](https://img.shields.io/badge/Status-Industrial_Ready-emerald?style=for-the-badge)](#)
 [![Version](https://img.shields.io/badge/Standard-v4.0--MCP_Native_Core-gold?style=for-the-badge)](#)
@@ -9,7 +9,7 @@
 
 ---
 
-## 🚀 Key Innovations in v4.0-MCP
+## 🚀 Key Innovations in v5.0-MCP
 
 - **🔌 Native MCP Bridge:** Zero terminal access. Agents communicate with the factory engine exclusively via a secure `FastMCP` server, eliminating arbitrary code execution and enforcing strict operational guardrails.
 - **🧠 Predictive Memory (Neo4j):** The factory learns from its mistakes. The `QA_TESTER` logs cultural violations, which are synthesized into *Golden Rules* in the Neo4j Knowledge Graph. The Orchestrator injects these rules into future tasks to prevent hallucination loops.
@@ -31,7 +31,7 @@ graph TD
     Server --> Projects["📦 PROJECTS / Workshop"]
     Projects <--> Infra["⚡ INFRA / Power Grid"]
 
-    subgraph Solidity_Guard_v4.0-MCP
+    subgraph Solidity_Guard_v5.0-MCP
         PRP["12-Section Contract"]
         Neo4j["Knowledge Graph (LTP)"]
         Clean["Clean Session Isolation"]
@@ -126,5 +126,5 @@ Interact with the factory using high-level Standard Operating Procedures (SOPs) 
 
 <p align="center">
 <i>"Industrializing the Future of Autonomous Software Engineering"</i><br>
-<b>dasafo_Systems v4.0-S | Solidity, Speed, Veracity.</b>
+<b>dasafo_Systems v5.0-MCP | Solidity, Speed, Veracity.</b>
 </p>

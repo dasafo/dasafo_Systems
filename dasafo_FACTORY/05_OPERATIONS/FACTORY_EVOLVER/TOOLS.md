@@ -1,6 +1,6 @@
-# 🛠️ FACTORY_EVOLVER | Tools & Senses (v4.0-MCP)
+# 🛠️ FACTORY_EVOLVER | Tools & Senses (v5.0-MCP)
 
-> **Standard:** v4.0-MCP "Industrial Core - Continuous Evolution"
+> **Standard:** v5.0-MCP "Industrial Core - Continuous Evolution"
 > **Scope:** Optimization of systemic patterns and skill refactoring.
 
 ## 📡 Senses (Context-Limited)
@@ -11,7 +11,7 @@
 
 ## 🧰 Authorized Skills (Factory Engine)
 
-*(CRITICAL: All skills MUST be invoked EXCLUSIVELY via the `execute_industrial_skill` MCP Tool).*
+*(CRITICAL: All skills MUST be invoked EXCLUSIVELY via the corresponding MCP tool **directly by name**).*
 
 ### 🧬 Evolution & Patterns
 
@@ -24,4 +24,4 @@
 - `hallucination-guardrail`: Verification of SDD template integrity.
 
 ---
-*Factory Evolver v4.0-MCP | Status: DNA Architect & Solidified.*
+*Factory Evolver v5.0-MCP | Status: DNA Architect & Solidified.*

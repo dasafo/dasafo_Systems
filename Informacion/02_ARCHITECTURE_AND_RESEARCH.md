@@ -1,6 +1,6 @@
 # 📐 Departamento de ARQUITECTURA E INVESTIGACIÓN (Hub 02)
 
-> **Versión:** v4.0-S "Industrial Core - Architecture Enabled"
+> **Versión:** v5.0-MCP "Industrial Core - Architecture Enabled"
 > **Misión:** Diseñar la estructura ósea del software (Backbone), realizar investigaciones técnicas profundas y asegurar la viabilidad arquitectónica de cada proyecto.
 > **Gobernanza:** Zero-Trust / SDD / Unidades SI (s, B)
 
@@ -42,7 +42,7 @@
 
 ---
 
-## 🛑 Estándares Operativos (v4.0-S)
+## 🛑 Estándares Operativos (v5.0-MCP)
 
 1.  **Backbone-First:** Ningún código de lógica de negocio se escribe antes de que el Arquitecto haya físicamente creado el andamiaje (`/src`, `/tests`, etc.).
 2.  **No Hallucination Zone:** El `RESEARCH_AGENT` debe proporcionar URLs verificables para cada recomendación técnica.

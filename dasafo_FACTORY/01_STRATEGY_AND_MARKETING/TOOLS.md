@@ -1,6 +1,6 @@
-# 🛠️ STRATEGY_AND_MARKETING | Tools & Senses (v4.0-MCP Solidified)
+# 🛠️ STRATEGY_AND_MARKETING | Tools & Senses (v5.0-MCP Solidified)
 
-> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
+> **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Level 01 Strategy & Marketing tools (Orchestration, Product, Growth).
 
 ## 📡 Senses (Department-Wide)
@@ -13,7 +13,7 @@
 
 ## 🧰 Authorized Skills (Level 01 Hub)
 
-*(All skills must be executed by passing the skill name to the `execute_industrial_skill` MCP Tool).*
+*(All skills must be executed **directly by name** (e.g., the tool name matches the skill name)).*
 
 - `prp-generator`: Create and deconstruct the PRP_MASTER contract (Master & Lite).
 - `delegate-clean-session`: Spawn isolated sub-agent sessions via MCP (Orchestrator exclusive).
@@ -25,4 +25,4 @@
 - `project-backbone-validator`: Inspect physical disk for minimum framework scaffolding before delegating SPEC_LITE.
 
 ---
-*Strategy & Marketing Tools v4.0-MCP | Status: SOLIDIFIED.*
+*Strategy & Marketing Tools v5.0-MCP | Status: SOLIDIFIED.*

@@ -1,6 +1,6 @@
-# 🛠️ COMPLIANCE_AND_QUALITY | Tools & Senses (v4.0-MCP Solidified)
+# 🛠️ COMPLIANCE_AND_QUALITY | Tools & Senses (v5.0-MCP Solidified)
 
-> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
+> **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Level 04 Documentation, QA Testing, Security & Research.
 
 ## 📡 Senses (Department-Wide)
@@ -13,7 +13,7 @@
 
 ## 🧰 Authorized Skills (Level 04 Hub)
 
-*(CRITICAL: You are PROHIBITED from running python files manually. All skills listed below MUST be invoked EXCLUSIVELY by passing their name to the `execute_industrial_skill` MCP Tool).*
+*(CRITICAL: You are PROHIBITED from running python files manually. All skills listed below MUST be invoked EXCLUSIVELY **directly by name** (e.g., `factory-audit-pro`, `build-test-executor`)).*
 
 ### 📝 Documentation & Research
 
@@ -25,10 +25,10 @@
 
 - `agentic-thought-secret-scanner`: **[CRITICAL]** Deep scanning for secrets, keys, and credentials.
 - `factory-audit-pro`: Architectural compliance and security scoring.
-- `dependency-vulnerability-scanner`: Scan dependencies for known CVEs.
+- `agentic-thought-secret-scanner`: **[CRITICAL]** Deep scanning for secrets, keys, credentials, and dependency analysis.
 - `build-test-executor`: Compilation and test execution for build reports.
 - `playwright-e2e-tester`: Browser flow verification and UI testing.
 - `hallucination-guardrail`: Verify logic alignment against the project's source of truth.
 
 ---
-*Compliance & Quality Tools v4.0-MCP | Status: SOLIDIFIED.*
+*Compliance & Quality Tools v5.0-MCP | Status: SOLIDIFIED.*

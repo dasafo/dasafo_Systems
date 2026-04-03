@@ -1,6 +1,6 @@
 import importlib.util
 from pathlib import Path
-from factory_mcp_server import mcp, aduana_universal
+from mcp_tools.mcp_app import mcp, aduana_universal
 
 # --- CARGADOR DINÁMICO DE LÓGICA ---
 
@@ -46,8 +46,8 @@ def playwright_e2e_tester(
 @aduana_universal(skill_name="hallucination-guardrail")
 def hallucination_guardrail(
     agent: str, 
-    content: str, 
-    target_project: str = None, 
+    target_project: str,
+    content: str = "", 
     action: str = "check_fact", 
     context_path: str = None, 
     strictness: float = 0.8,

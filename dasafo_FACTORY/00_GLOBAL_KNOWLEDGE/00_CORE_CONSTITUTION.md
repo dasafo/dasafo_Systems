@@ -1,6 +1,6 @@
 # 📜 Dasafo Factory | Core Constitution
 
-> **Standard:** v4.0-MCP "SDD Optimized Core"
+> **Standard:** v5.0-MCP "Native Industrial Core"
 > **Governance:** Zero-Trust / Spec Driven Development / Clean Sessions.
 
 ## 🏗️ I. The Law of the Spec (SDD)
@@ -18,7 +18,7 @@
 
 ## 🛡️ III. Zero-Trust & Solidity
 
-1. **The MCP Mandate:** The use of terminal commands (bash/sh) or direct python execution is strictly forbidden for factory operations. Agents MUST interact with the industrial engine exclusively via the `execute_industrial_skill` MCP Tool.
+1. **The MCP Mandate:** The use of terminal commands (bash/sh) or direct python execution is strictly forbidden for factory operations. Agents MUST invoke their authorized MCP tools **directly by name** (e.g., `prp-generator`, `delegate-clean-session`, `kanban-solidity-gate`). The tools are natively registered in the `dasafo_FACTORY_Core_v5.0` FastMCP server.
 2. **Surgical Access:** Generic filesystem MCP tools (`write_file`, `edit_file`) are restricted strictly to the agent's assigned `WORKSPACE/[domain]/` directory.
 3. **Solidity Gate:** No phase is considered complete without a verified `kanban-solidity-gate` check via MCP and a `SECURITY_AUDITOR` clearance.
 4. **Chesterton's Fence:** No legacy code is deleted without an ADR explaining the "Why".
@@ -38,4 +38,4 @@
 
 ---
 
-*Ratified: 2026-03-30 | Dasafo Factory v4.0-MCP.*
+*Ratified: 2026-04-03 | Dasafo Factory v5.0-MCP (Native).*

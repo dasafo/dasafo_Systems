@@ -1,8 +1,8 @@
-# 🏛️ Manual Maestro de Instrucciones: dasafo_Systems v4.0-MCP
+# 🏛️ Manual Maestro de Instrucciones: dasafo_Systems v5.0-MCP
 
 > **"Industrializando la Excelencia Evolutiva a través del Model Context Protocol (MCP) y la Soberanía del Disco."**
 
-**dasafo_Systems** es un ecosistema industrial de IA de alto rendimiento. Opera bajo el estándar **v4.0-MCP "Native Industrial Core"**, que integra el protocolo MCP para eliminar la fricción humana y garantizar que cada acción esté auditada por la **Aduana Universal**.
+**dasafo_Systems** es un ecosistema industrial de IA de alto rendimiento. Opera bajo el estándar **v5.0-MCP "Native Industrial Core"**, que integra el protocolo MCP para eliminar la fricción humana y garantizar que cada acción esté auditada por la **Aduana Universal**.
 
 ---
 
@@ -12,7 +12,7 @@
 
 El "Cerebro Central" ahora se comunica mediante un sistema nervioso digital directo:
 
-1. **`00_GLOBAL_KNOWLEDGE`**: Contiene la **Constitución Core v4.0-MCP**, plantillas y el esquema de feedback.
+1. **`00_GLOBAL_KNOWLEDGE`**: Contiene la **Constitución Core v5.0-MCP**, plantillas y el esquema de feedback.
 2. **`01-05 Hubs Departamentales`**: 17 agentes con "ADN MCP" que prohíbe el uso de terminales para la gestión de estados.
 3. **`06_SKILL_LIBRARY`**: Repositorio de habilidades atómicas.
 4. **`factory_mcp_server.py`**: El nuevo **Wrapper Industrial**. Servidor nativo de Anthropic que expone las skills como herramientas seguras.
@@ -29,14 +29,14 @@ Espacio de construcción bajo el protocolo **DAST (Disk-as-Source-of-Truth)**. L
 
 ## ⚙️ II. EL MOTOR INDUSTRIAL (Mecanismos MCP)
 
-### 🛂 1. execute_industrial_skill: La Herramienta Única
+### 🛂 1. Invocación Directa MCP por Nombre
 
-Es el único canal motriz autorizado. Sustituye a la terminal bash.
+Es el único canal motriz autorizado. Los agentes invocan herramientas **directamente por nombre** (ej. `prp-generator`, `delegate-clean-session`). Sustituye a la terminal bash.
 
 * **Encapsulamiento:** El agente envía un JSON con los parámetros y el servidor MCP se encarga de la ejecución física.
 * **Sandbox de Escritura:** Los agentes solo pueden editar archivos de código en `WORKSPACE/`, nunca la estructura del proyecto.
 
-### 🛡️ 2. Session Hook: La Aduana v4.0-MCP
+### 🛡️ 2. Session Hook: La Aduana v5.0-MCP
 
 Integrada directamente en el servidor MCP.
 
@@ -59,7 +59,7 @@ Cada fase se ejecuta ahora mediante **SOPs (Standard Operating Procedures)** inv
 
 ## ⚖️ IV. MANDATOS CONSTITUCIONALES
 
-### 1. El Mandato MCP (v4.0-MCP)
+### 1. El Mandato MCP (v5.0-MCP)
 
 Queda estrictamente prohibido el uso de `bash_command`, `cat` o `edit_file` para gestiones administrativas. La única vía es el servidor MCP oficial.
 
@@ -85,4 +85,4 @@ Se prohíbe cualquier analogía de explotación o sacrificio animal en la docume
 | `sync-memory` | Graba el aprendizaje en el ADN (Neo4j). | Memory Optimizer |
 
 ---
-*Ratificado: 2026-04-03 | Dasafo Factory v4.0-MCP | Soberanía Industrial Garantizada.*
+*Ratificado: 2026-04-03 | Dasafo Factory v5.0-MCP | Soberanía Industrial Garantizada.*

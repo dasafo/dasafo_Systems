@@ -1,6 +1,6 @@
 # 📈 Go-To-Market Strategy: [PROJECT_NAME]
 >
-> **Standard:** v4.0-MCP "SDD Implementation"
+> **Standard:** v5.0-MCP "SDD Implementation"
 > **Target Audience:** [TARGET_NICHE]
 > **Developed by:** MARKETING_GROWTH
 > **Authorized by:** PRODUCT_OWNER
@@ -28,4 +28,4 @@ Targeting high-intent engineering and business queries using authorized industri
 - **Visuals:** Dark mode, glassmorphism, curated design tokens. Exact visual logic established by FRONTEND_DEV.
 
 ---
-*Status: Strategy aligned with v4.0-MCP Industrial Hub.*
+*Status: Strategy aligned with v5.0-MCP Industrial Hub.*

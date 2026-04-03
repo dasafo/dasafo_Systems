@@ -1,4 +1,4 @@
-# 🛠️ dasafo_FACTORY | Global Infrastructure Services (v4.0-MCP)
+# 🛠️ dasafo_FACTORY | Global Infrastructure Services (v5.0-MCP)
 
 ## 🌐 Central Node (The Power Grid)
 
@@ -22,4 +22,4 @@ This directory hosts the shared services for the entire factory ecosystem under 
 4. Projects will automatically connect via the internal `dasafo_network`.
 
 ---
-*Infrastructure v4.0-MCP | Status: Industrial Core Active.*
+*Infrastructure v5.0-MCP | Status: Industrial Core Active.*

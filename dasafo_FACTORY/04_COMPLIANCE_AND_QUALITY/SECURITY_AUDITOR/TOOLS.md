@@ -1,6 +1,6 @@
 # 🛠️ SECURITY_AUDITOR | Tools & Senses
 
-> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
+> **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Static analysis (SAST), secret scanning, and dependency auditing.
 
 ## 📡 Senses (Context-Limited)
@@ -12,11 +12,10 @@
 
 ## 🧰 Authorized Skills (Factory Engine)
 
-*(CRITICAL: All skills MUST be invoked EXCLUSIVELY by passing their name to the `execute_industrial_skill` MCP Tool. Do NOT use bash).*
+*(CRITICAL: All skills MUST be invoked EXCLUSIVELY **directly by name** (e.g., `factory-audit-pro`, `build-test-executor`). Do NOT use bash).*
 
-- `agentic-thought-secret-scanner`: **[CRITICAL]** Deep scanning for secrets, keys, and credentials.
+- `agentic-thought-secret-scanner`: **[CRITICAL]** Deep scanning for secrets, keys, credentials, and dependency CVEs.
 - `factory-audit-pro`: Security scoring and health report generation.
-- `dependency-vulnerability-scanner`: Scan dependencies for known CVEs.
 
 ---
-*Security Auditor v4.0-MCP | Status: Autonomous Guardian & Solidified.*
+*Security Auditor v5.0-MCP | Status: Autonomous Guardian & Solidified.*

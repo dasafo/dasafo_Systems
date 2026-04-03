@@ -1,6 +1,6 @@
-# 🛠️ DOCS_MASTER | Tools & Senses (v4.0-MCP)
+# 🛠️ DOCS_MASTER | Tools & Senses (v5.0-MCP)
 
-> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
+> **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Technical writing, automated docs extraction, and context synthesis.
 
 ## 📡 Senses (Context-Limited)
@@ -11,7 +11,7 @@
 
 ## 🧰 Authorized Skills (Factory Engine)
 
-*(CRITICAL: All skills MUST be invoked EXCLUSIVELY by passing their name to the `execute_industrial_skill` MCP Tool. Do NOT use bash).*
+*(CRITICAL: All skills MUST be invoked EXCLUSIVELY **directly by name** (e.g., `factory-audit-pro`, `build-test-executor`). Do NOT use bash).*
 
 ### 📝 Drafting & Analysis
 
@@ -23,4 +23,4 @@
 - `hallucination-guardrail`: Mandatory verification of technical claims against the project's source of truth.
 
 ---
-*Docs Master v4.0-MCP | Status: Autonomous Strategist & Solidified.*
+*Docs Master v5.0-MCP | Status: Autonomous Strategist & Solidified.*

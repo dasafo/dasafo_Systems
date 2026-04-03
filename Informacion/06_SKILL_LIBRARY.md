@@ -1,6 +1,6 @@
 # 🧰 Biblioteca de SKILLS (Hub 06)
 
-> **Versión:** v4.0-S "Industrial Core - Skills Solidified"
+> **Versión:** v5.0-MCP "Industrial Core - Skills Solidified"
 > **Misión:** Catálogo completo de capacidades técnicas modulares autorizadas en Dasafo Factory.
 > **Gobernanza:** Zero-Trust / SDD / Unidades SI (s, B)
 
@@ -43,7 +43,7 @@
 ## 🛡️ Hub 04: Calidad y Cumplimiento
 
 - **`agentic-thought-secret-scanner`**: Escaneo profundo para evitar fugas de secretos y claves API.
-- **`factory-audit-pro`**: Auditoría de cumplimiento contra las reglas de la constitución v4.0-S.
+- **`factory-audit-pro`**: Auditoría de cumplimiento contra las reglas de la constitución v5.0-MCP.
 - **`api-docs-generator`**: Documentación automatizada de puntos finales y esquemas.
 - **`playwright-e2e-tester`**: Pruebas de extremo a extremo automatizadas en navegadores reales.
 - **`hallucination-guardrail`**: Verificación de alineación para asegurar que el agente no "invente" nada fuera de la especificación.
@@ -60,4 +60,4 @@
 - **`kanban-solidity-gate`**: Sincronización del estado de tareas con evidencia física de disco (DAST).
 
 ---
-*Ratificado: 2026-04-02 | Dasafo Factory v4.0-S Central Library.*
+*Ratificado: 2026-04-02 | Dasafo Factory v5.0-MCP Central Library.*

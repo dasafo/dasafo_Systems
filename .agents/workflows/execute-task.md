@@ -1,5 +1,5 @@
 ---
-description: Triggers context-isolated delegation with predictive Neo4j guardrails via MCP (v4.0-S).
+description: Triggers context-isolated delegation with predictive Neo4j guardrails via MCP (v5.0-MCP).
 ---
 
 # Workflow /execute-task
@@ -11,10 +11,10 @@ This flow triggers the `delegate-clean-session` skill to prevent Token Decay, en
 
 3. **Pre-Flight Intelligence Check:** Before delegating to Phase M3, analyze the target technology. If needed, query Neo4j for `CulturalViolation` nodes and ensure rules are injected.
 
-4. **Delegate Action:** Invoca la herramienta MCP `execute_industrial_skill` con:
+4. **Delegate Action:** Invoca la herramienta MCP **directamente por nombre** con:
    * `agent`: "ORCHESTRATOR"
-   * `skill`: "delegate-clean-session"
+   * **Tool MCP:** `delegate-clean-session`
    * `target_project`: "PROJECTS/$TARGET_PROJECT"
-   * `params_json`: '{"agent_type": "BACKEND_DEV", "spec_path": "TASKS/01_PENDING/M3-001.json"}' *(Ajusta el agent_type y spec_path según corresponda).*
+   * **Params:** '{"agent_type": "BACKEND_DEV", "spec_path": "TASKS/01_PENDING/M3-001.json"}' *(Ajusta el agent_type y spec_path según corresponda).*
 
 **Spawning isolated sub-agent session via Factory MCP...**

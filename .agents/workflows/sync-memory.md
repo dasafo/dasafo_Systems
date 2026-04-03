@@ -9,8 +9,8 @@ This flow acts as the factory's "sleep cycle", converting short-term logs into L
 1. **Agent:** `MEMORY_OPTIMIZER`
 2. **Execution Protocol:** SOP via MCP
 
-3. **Extract & Sync:** Invoca la herramienta MCP `execute_industrial_skill` con:
+3. **Extract & Sync:** Invoca la herramienta MCP **directamente por nombre** con:
    * `agent`: "MEMORY_OPTIMIZER"
-   * `skill`: "autonomous-feedback-analyzer"
+   * **Tool MCP:** `autonomous-feedback-analyzer`
    * `target_project`: "PROJECTS/$TARGET_PROJECT"
-   * `params_json`: '{}'
+   * **Params:** '{}'

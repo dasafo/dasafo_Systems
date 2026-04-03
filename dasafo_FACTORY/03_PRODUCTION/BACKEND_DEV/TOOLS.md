@@ -1,8 +1,8 @@
-# 🛠️ Backend Dev | Tools & Senses (v4.0-MCP)
+# 🛠️ Backend Dev | Tools & Senses (v5.0-MCP)
 
 ## 🧰 Authorized Skills (Top 18 Hub)
 
-*(CRITICAL: All skills must be executed by passing the skill name to the `execute_industrial_skill` MCP Tool).*
+*(CRITICAL: All skills must be executed **directly by name** (e.g., the tool name matches the skill name)).*
 
 ### ⚙️ Logic & Implementation
 

@@ -1,7 +1,7 @@
 import importlib.util
 import time
 from pathlib import Path
-from factory_mcp_server import mcp, aduana_universal
+from mcp_tools.mcp_app import mcp, aduana_universal
 
 # --- CARGADOR DINÁMICO DE LÓGICA ---
 

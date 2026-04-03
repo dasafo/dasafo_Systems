@@ -1,6 +1,6 @@
 # ⚙️ Departamento de PRODUCCIÓN (Hub 03)
 
-> **Versión:** v4.0-S "Industrial Core - Implementation Enabled"
+> **Versión:** v5.0-MCP "Industrial Core - Implementation Enabled"
 > **Misión:** Transformar especificaciones atómicas (`SPEC_LITE`) en código de producción de alta fidelidad, esquemas de bases de datos robustos y experiencias de usuario premium.
 > **Gobernanza:** Zero-Trust / SDD / Unidades SI (s, B)
 
@@ -60,7 +60,7 @@
 
 ---
 
-## 🛑 Estándares Operativos (v4.0-S)
+## 🛑 Estándares Operativos (v5.0-MCP)
 
 1.  **Aislamiento de Código:** Cada sub-agente trabaja en su propia rama o archivo designado para evitar colisiones.
 2.  **Solidez Contractual:** El código producido debe coincidir exactamente con los esquemas definidos por el Arquitecto en el Hub 02.

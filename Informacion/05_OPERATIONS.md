@@ -1,6 +1,6 @@
 # 🚀 Departamento de OPERACIONES Y EVOLUCIÓN (Hub 05)
 
-> **Versión:** v4.0-S "Industrial Core - Operations Enabled"
+> **Versión:** v5.0-MCP "Industrial Core - Operations Enabled"
 > **Misión:** Garantizar el funcionamiento continuo de los sistemas, la integridad de la infraestructura y el aprendizaje evolutivo de la factoría.
 > **Gobernanza:** Zero-Trust / SDD / Unidades SI (s, B)
 
@@ -54,7 +54,7 @@
 
 ---
 
-## 🛑 Estándares Operativos (v4.0-S)
+## 🛑 Estándares Operativos (v5.0-MCP)
 
 1.  **Auto-Heal First:** Ante un fallo operativo, el sistema debe intentar procesos de auto-sanación antes de solicitar intervención humana.
 2.  **Infraestructura Inmutable:** Los entornos de producción no se modifican manualmente; se destruyen y recrean mediante código.

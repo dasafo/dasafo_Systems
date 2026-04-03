@@ -1,6 +1,6 @@
-# 🛠️ DEPLOYMENT_MONITOR | Tools & Senses (v4.0-MCP)
+# 🛠️ DEPLOYMENT_MONITOR | Tools & Senses (v5.0-MCP)
 
-> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized".
+> **Standard:** v5.0-MCP "Industrial Core - DAST Optimized".
 
 ## 📡 Senses (Context-Limited)
 
@@ -10,12 +10,12 @@
 
 ## 🧰 Authorized Skills (Factory Engine)
 
-*(CRITICAL: All skills MUST be invoked EXCLUSIVELY via the `execute_industrial_skill` MCP Tool).*
+*(CRITICAL: All skills MUST be invoked EXCLUSIVELY via the corresponding MCP tool **directly by name**).*
 
-- `telemetry-analyzer`: Deep synthesis of resource usage (B) and execution times (s).
-- `playwright-ui-tester`: Verify that the UI is physically reachable.
+- `autonomous-feedback-analyzer`: Deep synthesis of resource usage (B) and execution metrics (s).
+- `playwright-e2e-tester`: Verify that the UI is physically reachable.
 - `hallucination-guardrail`: Ensure that reports are based on real logs.
 - `deployment-health-check`: Real-time health-check validation (s/B).
 
 ---
-*Deployment Monitor v4.0-MCP | Status: Solidified.*
+*Deployment Monitor v5.0-MCP | Status: Solidified.*

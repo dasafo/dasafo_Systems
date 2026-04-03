@@ -1,12 +1,12 @@
-# 🚀 Guía de Workflows Industriales: dasafo_FACTORY (v4.0-MCP)
+# 🚀 Guía de Workflows Industriales: dasafo_FACTORY (v5.0-MCP)
 
-Esta guía detalla los **14 procedimientos operativos estándar (SOPs)** autorizados para la orquestación de misiones en el ecosistema **Native Industrial Core (v4.0-MCP)**. Cada flujo está diseñado para garantizar la **Soberanía del Disco (DAST)** y la **Transición Basada en Evidencia**.
+Esta guía detalla los **14 procedimientos operativos estándar (SOPs)** autorizados para la orquestación de misiones en el ecosistema **Native Industrial Core (v5.0-MCP)**. Cada flujo está diseñado para garantizar la **Soberanía del Disco (DAST)** y la **Transición Basada en Evidencia**.
 
 ---
 
 ## 🏗️ I. WORKFLOWS DE CICLO DE VIDA (M1-M5 Pipeline)
 
-Los flujos se ejecutan mediante la herramienta MCP `execute_industrial_skill`, que actúa como el único brazo motriz de la factoría.
+Los flujos se ejecutan mediante la herramienta MCP las herramientas MCP **directamente por nombre**, que actúa como el único brazo motriz de la factoría.
 
 ### 1. Fase M1: Descubrimiento & Estrategia (Discovery)
 
@@ -73,4 +73,4 @@ Los flujos se ejecutan mediante la herramienta MCP `execute_industrial_skill`, q
 * **SOP `factory-status`**: Reporte consolidado de salud de los Hubs y estado del pipeline basado en DAST.
 
 ---
-*Manual de Workflows v4.0-MCP | Dasafo Factory | Soberanía Industrial Garantizada.*
+*Manual de Workflows v5.0-MCP | Dasafo Factory | Soberanía Industrial Garantizada.*

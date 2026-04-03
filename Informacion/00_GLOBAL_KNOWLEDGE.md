@@ -1,12 +1,12 @@
-# 🌍 Dasafo Factory | GLOBAL KNOWLEDGE (v4.0-S Solidificada)
+# 🌍 Dasafo Factory | GLOBAL KNOWLEDGE (v5.0-MCP Solidificada)
 
-> **Versión Actual:** v4.0-S "Industrial Core - Double-Gate Enabled"
+> **Versión Actual:** v5.0-MCP "Industrial Core - Double-Gate Enabled"
 > **Estado Operativo:** Producción / Industrialización Completa
 > **Gobernanza:** Zero-Trust / Spec-Driven Development (SDD) / Mandato SI
 
 ---
 
-## 📜 I. LA CONSTITUCIÓN CORE (v4.0-S)
+## 📜 I. LA CONSTITUCIÓN CORE (v5.0-MCP)
 
 ### 1. Spec-Driven Development (SDD)
 - **Spec Sobre Todo:** No se inicia ninguna misión sin un `PRP_MASTER.json` (Fase M1) o `SPEC_LITE.json` (Ejecución).
@@ -88,7 +88,7 @@ Las anomalías se registran como objetos JSON procesables para permitir la mejor
 ```json
 {
   "id": "FB-XXXX",
-  "version": "v4.0-S",
+  "version": "v5.0-MCP",
   "timestamp": "ISO_8601_TIMESTAMP",
   "context": {
     "agent": "ID_AGENTE_AUTORIZADO",
@@ -104,4 +104,4 @@ Las anomalías se registran como objetos JSON procesables para permitir la mejor
 ```
 
 ---
-*Ratificado: 2026-04-02 | Dasafo Factory v4.0-S Industrialized Spanish Edition.*
+*Ratificado: 2026-04-02 | Dasafo Factory v5.0-MCP Industrialized Spanish Edition.*

@@ -1,10 +1,10 @@
 {
-  "v3_code": "STARK-SOLIDITY-v4.0-MCP",
+  "v3_code": "STARK-SOLIDITY-v5.0-MCP",
   "metadata": {
     "project_name": "REQUIRED_FIELD",
     "version": "1.0.0-S",
     "status": "M1_DISCOVERY",
-    "standard": "v4.0-MCP (Industrial Core)",
+    "standard": "v5.0-MCP (Industrial Core)",
     "created_at": "REQUIRED",
     "cid": "REQUIRED"
   },

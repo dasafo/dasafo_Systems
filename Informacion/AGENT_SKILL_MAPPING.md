@@ -1,10 +1,10 @@
 # 🗺️ Mapeo Exhaustivo de AGENTES Y SKILLS
 
-> **Versión:** v4.0-MCP "Native Industrial Core"
+> **Versión:** v5.0-MCP "Native Industrial Core"
 > **Misión:** Establecer la matriz definitiva de autoridad, sentidos (senses) y capacidades técnicas mediante MCP.
 > **Gobernanza:** Zero-Trust / Spec Driven Development / MCP Tool Mandate / Unidades SI (s, B)
 
-Este documento define las fronteras de acción de cada uno de los **17 agentes**. Bajo el estándar **v4.0-MCP**, la ejecución de habilidades se realiza exclusivamente a través del motor industrial (`execute_industrial_skill`), garantizando la auditoría total y la soberanía del disco (DAST).
+Este documento define las fronteras de acción de cada uno de los **17 agentes**. Bajo el estándar **v5.0-MCP**, la ejecución de habilidades se realiza exclusivamente a través del motor industrial (las herramientas MCP **directamente por nombre**), garantizando la auditoría total y la soberanía del disco (DAST).
 
 ---
 
@@ -114,9 +114,9 @@ Esta lista detalla qué agentes tienen permiso para invocar cada skill de la `06
 ---
 ## 🛑 EL MANDATO MCP (Restricciones Críticas)
 
-1. **Prohibición de Terminal:** Los agentes no pueden usar `bash` para mover archivos o ejecutar scripts de la `06_SKILL_LIBRARY`. El uso de `execute_industrial_skill` es obligatorio.
+1. **Prohibición de Terminal:** Los agentes no pueden usar `bash` para mover archivos o ejecutar scripts de la `06_SKILL_LIBRARY`. El uso de las herramientas MCP **directamente por nombre** es obligatorio.
 2. **Soberanía DAST:** Si una habilidad se ejecuta vía MCP y el resultado no aparece físicamente en el disco, la sesión se considera nula.
 3. **Aislamiento de Escritura:** Las herramientas genéricas de `filesystem` están restringidas a la capa de `WORKSPACE/` para prevenir sabotajes accidentales en la estructura de la factoría.
 
 ---
-*Mapping v4.0-MCP | Dasafo Factory Industry Standard | Soberanía Industrial Garantizada.*
+*Mapping v5.0-MCP | Dasafo Factory Industry Standard | Soberanía Industrial Garantizada.*

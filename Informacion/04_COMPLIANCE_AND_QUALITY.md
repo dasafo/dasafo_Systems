@@ -1,6 +1,6 @@
 # 🛡️ Departamento de CUMPLIMIENTO Y CALIDAD (Hub 04)
 
-> **Versión:** v4.0-S "Industrial Core - Compliance Enabled"
+> **Versión:** v5.0-MCP "Industrial Core - Compliance Enabled"
 > **Misión:** Garantizar que cada línea de código y cada documento cumpla con los estándares industriales de seguridad, funcionalidad y documentación de la factoría.
 > **Gobernanza:** Zero-Trust / SDD / Unidades SI (s, B)
 
@@ -50,7 +50,7 @@
 
 ---
 
-## 🛑 Estándares Operativos (v4.0-S)
+## 🛑 Estándares Operativos (v5.0-MCP)
 
 1.  **Gatekeeper Final:** Nada llega a M5 (Operaciones) sin el sello de aprobación firmado por `QA_TESTER` y `SECURITY_AUDITOR`.
 2.  **Zero Leaks:** La detección de una sola clave API en texto plano resulta en un fallo inmediato de la misión.

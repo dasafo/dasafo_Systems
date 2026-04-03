@@ -1,6 +1,6 @@
-# 🛠️ ARCHITECTURE_AND_RESEARCH | Tools & Senses (v4.0-MCP Solidified)
+# 🛠️ ARCHITECTURE_AND_RESEARCH | Tools & Senses (v5.0-MCP Solidified)
 
-> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
+> **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Level 02 Design, Blueprints & Scientific Validation.
 
 ## 📡 Senses (Department-Wide)
@@ -13,7 +13,7 @@
 
 ## 🧰 Authorized Skills (Level 02 Hub)
 
-*(CRITICAL: All skills must be executed by passing the skill name to the `execute_industrial_skill` MCP Tool).*
+*(CRITICAL: All skills must be executed **directly by name** (e.g., the tool name matches the skill name)).*
 
 - `architecture-decision-records`: Formal documentation of technical decisions (ADRs).
 - `api-contract-generator`: Definition of communication protocols, OpenAPI, and DTOs.
@@ -24,4 +24,4 @@
 - `research-manager`: `write_report` action to safely write research reports to disk.
 
 ---
-*Architecture & Research Tools v4.0-MCP | Status: SOLIDIFIED.*
+*Architecture & Research Tools v5.0-MCP | Status: SOLIDIFIED.*

@@ -9,8 +9,8 @@ This flow starts the local server to visualize `registry.json` and the physical 
 1. **Agent:** `ORCHESTRATOR`
 2. **Execution Protocol:** SOP via MCP
 
-3. **Start Dashboard:** Invoca la herramienta MCP `execute_industrial_skill` con:
+3. **Start Dashboard:** Invoca la herramienta MCP **directamente por nombre** con:
    * `agent`: "ORCHESTRATOR"
-   * `skill`: "kanban-solidity-gate"
+   * **Tool MCP:** `kanban-solidity-gate`
    * `target_project`: "PROJECTS/$TARGET_PROJECT"
-   * `params_json`: '{"action": "start_dashboard", "port": 3001}'
+   * **Params:** '{"action": "start_dashboard", "port": 3001}'

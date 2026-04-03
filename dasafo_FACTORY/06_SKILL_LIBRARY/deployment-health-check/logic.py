@@ -6,7 +6,7 @@ import subprocess
 import re
 from pathlib import Path
 
-# Logic based on dasafo_FACTORY Core v4.0-MCP
+# Logic based on dasafo_FACTORY Core v5.0-MCP
 # Standard: Auto-Healing & Immune System Enabled
 
 def trigger_emergency_heal(project_path: Path, error_text: str, cid: str) -> list:
@@ -24,7 +24,7 @@ def trigger_emergency_heal(project_path: Path, error_text: str, cid: str) -> lis
         rules.append("GENERAL_INFRA_FAULT")
 
     spec_payload = {
-      "v3_code": "STARK-SOLIDITY-v4.0-MCP-LITE",
+      "v3_code": "STARK-SOLIDITY-v5.0-MCP-LITE",
       "metadata": {
         "task_id": f"EMERGENCY-{cid[:4]}",
         "assigned_agent": "FACTORY_EVOLVER",

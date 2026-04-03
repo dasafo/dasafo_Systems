@@ -1,6 +1,6 @@
 # 🏛️ Departamento de ESTRATEGIA Y MARKETING (Hub 01)
 
-> **Versión:** v4.0-S "Industrial Core - Hub Manager Enabled"
+> **Versión:** v5.0-MCP "Industrial Core - Hub Manager Enabled"
 > **Misión:** Transformar necesidades humanas en contratos industriales (`PRP_MASTER`), orquestar el ciclo de vida del proyecto (M1-M5) y ejecutar estrategias de crecimiento basadas en evidencia.
 > **Gobernanza:** Zero-Trust / SDD / Unidades SI (s, B)
 
@@ -53,7 +53,7 @@
 
 ---
 
-## 🛑 Estándares Operativos (v4.0-S)
+## 🛑 Estándares Operativos (v5.0-MCP)
 
 1.  **Cero Fricción, Máxima Solidez:** No se inicia ninguna tarea sin un `SPEC_LITE.json` físico en disco.
 2.  **Unidades SI:** Todos los reportes de impacto y rendimiento se calculan en **Segundos (s)** y **Bytes (B)**.

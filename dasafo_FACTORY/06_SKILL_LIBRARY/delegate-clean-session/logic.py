@@ -4,7 +4,7 @@ import time
 import shutil
 from pathlib import Path
 
-# Logic based on dasafo_FACTORY Core v4.0-MCP
+# Logic based on dasafo_FACTORY Core v5.0-MCP
 # Integrated with Neo4j for Long-Term Persistence (LTP) rules
 
 def fetch_golden_rules(tech_hints: list[str], current_phase: str) -> list[str]:

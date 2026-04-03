@@ -1,6 +1,6 @@
-# 🛠️ PRODUCTION | Tools & Senses (v4.0-MCP Solidified)
+# 🛠️ PRODUCTION | Tools & Senses (v5.0-MCP Solidified)
 
-> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
+> **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Level 03 Implementation (Backend, Frontend, Data, DB).
 
 ## 📡 Senses (Department-Wide)
@@ -11,7 +11,7 @@
 
 ## 🧰 Authorized Skills (Level 03 Hub)
 
-*(CRITICAL: You are PROHIBITED from running python files manually. All skills listed below MUST be invoked EXCLUSIVELY by passing their name to the `execute_industrial_skill` MCP Tool).*
+*(CRITICAL: You are PROHIBITED from running python files manually. All skills listed below MUST be invoked EXCLUSIVELY **directly by name** (e.g., `factory-audit-pro`, `build-test-executor`)).*
 
 ### ⚙️ Logic & Implementation
 
@@ -31,4 +31,4 @@
 - `agentic-thought-secret-scanner`: Proactive leak prevention for credentials and PII.
 
 ---
-*Production Tools v4.0-MCP | Status: SOLIDIFIED.*
+*Production Tools v5.0-MCP | Status: SOLIDIFIED.*

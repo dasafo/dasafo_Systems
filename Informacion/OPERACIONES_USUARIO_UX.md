@@ -2,13 +2,13 @@
 
 > **"Tú no escribes código. Tú orquestas departamentos y validas evidencias físicas mediante el Protocolo MCP."**
 
-Bienvenido, Director de Operaciones. Bajo el estándar **v4.0-MCP Native Industrial Core**, tu rol ha evolucionado de la supervisión de scripts a la **validación de flujos industriales**. El sistema ahora opera mediante un servidor MCP centralizado que garantiza que ningún agente actúe sin una especificación física y tu aprobación previa.
+Bienvenido, Director de Operaciones. Bajo el estándar **v5.0-MCP Native Industrial Core**, tu rol ha evolucionado de la supervisión de scripts a la **validación de flujos industriales**. El sistema ahora opera mediante un servidor MCP centralizado que garantiza que ningún agente actúe sin una especificación física y tu aprobación previa.
 
 ---
 
 ## 🗺️ I. TU CONSOLA DE MANDO (Los 14 SOPs Industriales)
 
-Ya no usas "comandos slash" manuales en una terminal; ahora activas **Workflows** que los agentes ejecutan invocando la herramienta MCP `execute_industrial_skill`.
+Ya no usas "comandos slash" manuales en una terminal; ahora activas **Workflows** que los agentes ejecutan invocando la herramienta MCP las herramientas MCP **directamente por nombre**.
 
 ### ⚡ 1. Estrategia y Visión (Fase M1: Discovery)
 
@@ -75,11 +75,11 @@ Ya no usas "comandos slash" manuales en una terminal; ahora activas **Workflows*
 
 ## 💡 III. TU NUEVO ROL ESTRATÉGICO
 
-Bajo el estándar **v4.0-MCP**, ya no eres un depurador. Eres un **Auditor de la Verdad Física**:
+Bajo el estándar **v5.0-MCP**, ya no eres un depurador. Eres un **Auditor de la Verdad Física**:
 
 1. **Soberanía del Disco:** Si un agente dice que terminó, verifica que el archivo exista en `03_COMPLETED/`. No aceptes promesas textuales.
 2. **Rigor de Unidades SI:** Todo reporte debe usar **segundos (s)** y **bytes (B)**. El lenguaje de la factoría es matemático.
 3. **Nemo Safety:** Mantén la ética industrial. Absoluta prohibición de analogías de consumo animal en cualquier documento.
 
 ---
-*Guía de Experiencia de Usuario v4.0-MCP | Director de Operaciones Solidificado.*
+*Guía de Experiencia de Usuario v5.0-MCP | Director de Operaciones Solidificado.*

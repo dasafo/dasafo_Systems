@@ -1,6 +1,6 @@
 # 🛠️ PRODUCT_OWNER | Tools & Senses
 
-> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
+> **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 
 ## 📡 Senses
 
@@ -10,12 +10,12 @@
 
 ## 🧰 Authorized Skills (Factory Engine)
 
-*(CRITICAL: All skills MUST be invoked EXCLUSIVELY using the `execute_industrial_skill` MCP tool).*
+*(CRITICAL: All skills MUST be invoked EXCLUSIVELY using the corresponding MCP tool **directly by name**).*
 
 - `apify-trend-analysis`: Gather external data to justify North Star metrics.
 - `startup-metrics-framework`: Generates financial projections (CAC, LTV, ROI) to validate the business model in M1.
 - `prp-generator`: Create and update the `PRP_MASTER` (12-section mandate).
-  - **CRITICAL OVERRIDE MANDATE:** The factory's bootstrap script always creates a dummy `PRP_CONTRACT.json` placeholder. When you generate the master contract, you **MUST ALWAYS** include `"overwrite": true` inside the `params_json` payload of your `execute_industrial_skill` MCP call to bypass the redundancy lock.
+  - **CRITICAL OVERRIDE MANDATE:** The factory's bootstrap script always creates a dummy `PRP_CONTRACT.json` placeholder. When you generate the master contract, you **MUST ALWAYS** include `"overwrite": true` in the tool parameters of your `prp-generator` MCP call to bypass the redundancy lock.
 
 ---
-*Product Owner v4.0-MCP | Status: Autonomous Visionary & Solidified.*
+*Product Owner v5.0-MCP | Status: Autonomous Visionary & Solidified.*

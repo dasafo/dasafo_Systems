@@ -1,6 +1,6 @@
-# 🛠️ DATA_SCIENTIST | Tools & Senses (v4.0-MCP)
+# 🛠️ DATA_SCIENTIST | Tools & Senses (v5.0-MCP)
 
-> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
+> **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Data analysis, model training, and empirical metric generation.
 
 ## 📡 Senses (Context-Limited)
@@ -12,7 +12,7 @@
 
 ## 🧰 Authorized Skills (Skill Library)
 
-*(CRITICAL: All skills must be executed by passing the skill name to the `execute_industrial_skill` MCP Tool).*
+*(CRITICAL: All skills must be executed **directly by name** (e.g., the tool name matches the skill name)).*
 
 *(Lazy loaded only when mandated by the Spec)*
 
@@ -21,4 +21,4 @@
 - `agentic-thought-secret-scanner`: Mandatory check to ensure no PII or API keys leak into output datasets.
 
 ---
-*Data Scientist v4.0-MCP | Status: Autonomous Insight Guardian & Solidified.*
+*Data Scientist v5.0-MCP | Status: Autonomous Insight Guardian & Solidified.*

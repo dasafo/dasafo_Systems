@@ -1,6 +1,6 @@
-# 🛠️ MEMORY_OPTIMIZER | Tools & Senses (v4.0-MCP)
+# 🛠️ MEMORY_OPTIMIZER | Tools & Senses (v5.0-MCP)
 
-> **Standard:** v4.0-MCP "Industrial Core - LTP Enabled"
+> **Standard:** v5.0-MCP "Industrial Core - LTP Enabled"
 > **Scope:** Context optimization, engram extraction, and Knowledge Graph connectivity.
 
 ## 📡 Senses (Context-Limited)
@@ -11,7 +11,7 @@
 
 ## 🧰 Authorized Skills (Factory Engine)
 
-*(CRITICAL: All skills MUST be invoked EXCLUSIVELY via the `execute_industrial_skill` MCP Tool).*
+*(CRITICAL: All skills MUST be invoked EXCLUSIVELY via the corresponding MCP tool **directly by name**).*
 
 ### 🧬 Memory & Evolution
 
@@ -23,4 +23,4 @@
 - `hallucination-guardrail`: Ensure that refined context does not omit critical constraints.
 
 ---
-*Memory Optimizer v4.0-MCP | Status: LTP Guardian & Solidified.*
+*Memory Optimizer v5.0-MCP | Status: LTP Guardian & Solidified.*

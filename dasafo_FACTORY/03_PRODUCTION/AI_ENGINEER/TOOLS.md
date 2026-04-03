@@ -1,6 +1,6 @@
 # 🛠️ AI_ENGINEER | Tools & Senses
 
-> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
+> **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 
 ## 📡 Senses
 
@@ -9,6 +9,6 @@
 
 ## 🧰 Authorized Skills
 
-*(CRITICAL: All skills must be executed by passing the skill name to the `execute_industrial_skill` MCP Tool).*
+*(CRITICAL: All skills must be executed **directly by name** (e.g., the tool name matches the skill name)).*
 
 - `async-fastapi-logic`: To build asynchronous workers and AI services in the backend.

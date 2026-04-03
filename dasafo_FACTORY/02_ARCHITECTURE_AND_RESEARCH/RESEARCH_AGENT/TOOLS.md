@@ -1,6 +1,6 @@
 # 🛠️ Research Agent (The Scientist Auditor) | Tools & Senses
 
-> **Standard:** v4.0-MCP "Industrial Core - DAST Optimized"
+> **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Scientific investigation and technical feasibility analysis.
 
 ## 📡 Senses (Context-Limited)
@@ -12,7 +12,7 @@
 
 ## 🧰 Authorized Skills (Factory Engine)
 
-*(CRITICAL: Invoked EXCLUSIVELY via the `execute_industrial_skill` MCP tool in isolated sessions. Do not run terminal scripts manually).*
+*(CRITICAL: Invoked EXCLUSIVELY via the corresponding MCP tool **directly by name** in isolated sessions. Do not run terminal scripts manually).*
 
 ### 🔬 Scientific Research
 
@@ -28,4 +28,4 @@
 - `hallucination-guardrail`: Mandatory verification of claims against the `SPEC_LITE`.
 
 ---
-*Research Agent v4.0-MCP | Status: Autonomous Auditor & Solidified.*
+*Research Agent v5.0-MCP | Status: Autonomous Auditor & Solidified.*

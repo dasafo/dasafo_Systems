@@ -9,11 +9,11 @@ This flow activates the Orchestrator to drive project evolution under the **Adua
 1. **Agent:** `ORCHESTRATOR`
 2. **Execution Protocol:** SOP via MCP
 
-3. **Run Scan (Security Gate):** Invoca la herramienta MCP `execute_industrial_skill` con:
+3. **Run Scan (Security Gate):** Invoca la herramienta MCP **directamente por nombre** con:
    * `agent`: "ORCHESTRATOR"
-   * `skill`: "agentic-thought-secret-scanner"
+   * **Tool MCP:** `agentic-thought-secret-scanner`
    * `target_project`: "PROJECTS/$TARGET_PROJECT"
-   * `params_json`: '{}'
+   * **Params:** '{}'
 
 4. **Execution (Phase Analysis):**
    * El motor MCP sincronizará automáticamente la carpeta `TASKS/` con `registry.json`.
