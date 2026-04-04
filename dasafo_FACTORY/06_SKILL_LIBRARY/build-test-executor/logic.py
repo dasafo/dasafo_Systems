@@ -11,13 +11,14 @@ def execute_build_test(
     command: str = "echo 'Simulating industrial build...'",
     overwrite: bool = False
 ) -> tuple[dict, list]:
-    """Pure logic for executing builds/tests and generating the Aduana Passport (v5.0-MCP)."""
-    start_time = time.time()
-    project_path = Path(target_project).resolve()
-    logs_dir = project_path / "LOGS"
-    logs_dir.mkdir(parents=True, exist_ok=True)
-    
-    # 1. Physical Execution (Subprocess)
+    # 1. Industrial Command Audit (v5.0 ANTI-PHISING)
+    # If the user is DEVOPS/M5, prohibit pure 'echo' or empty simulations.
+    is_simulation = command.strip().startswith("echo") and len(command.split()) < 10
+    if is_simulation and "docker" not in command and "npm" not in command:
+        error_msg = f"PHISING ATTEMPT BLOCKED: Agent '{agent}' tried to use a fake 'echo' command for Phase M5. PRODUCTION DEPLOYMENT MUST USE REAL TOOLS (docker-compose, npm run, etc.)."
+        raise RuntimeError(error_msg)
+
+    # 2. Physical Execution (Subprocess)
     try:
         # Industrial Guard: Safe execution within project context
         cmd_result = subprocess.run(
