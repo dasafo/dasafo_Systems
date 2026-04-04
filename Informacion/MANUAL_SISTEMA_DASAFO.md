@@ -1,6 +1,6 @@
 # 🏛️ Manual Maestro de Instrucciones: dasafo_Systems v5.0-MCP
 
-> **"Industrializando la Excelencia Evolutiva a través del Model Context Protocol (MCP) y la Soberanía del Disco."**
+> **"Industrializando la Excelencia Evolutiva a través del Model Context Protocol (MCP) y la Soberanía del Disco (DAST)."**
 
 **dasafo_Systems** es un ecosistema industrial de IA de alto rendimiento. Opera bajo el estándar **v5.0-MCP "Native Industrial Core"**, que integra el protocolo MCP para eliminar la fricción humana y garantizar que cada acción esté auditada por la **Aduana Universal**.
 
@@ -10,79 +10,77 @@
 
 ### 🧠 A. `dasafo_FACTORY` (El Núcleo Inmutable)
 
-El "Cerebro Central" ahora se comunica mediante un sistema nervioso digital directo:
+El núcleo se ha modularizado para escalar mediante Hubs especializados:
 
-1. **`00_GLOBAL_KNOWLEDGE`**: Contiene la **Constitución Core v5.0-MCP**, plantillas y el esquema de feedback.
-2. **`01-05 Hubs Departamentales`**: 17 agentes con "ADN MCP" que prohíbe el uso de terminales para la gestión de estados.
-3. **`06_SKILL_LIBRARY`**: Repositorio de habilidades atómicas.
-4. **`factory_mcp_server.py`**: El nuevo **Wrapper Industrial**. Servidor nativo de Anthropic que expone las skills como herramientas seguras.
+- **`00_GLOBAL_KNOWLEDGE`**: Constitución Core, Esquemas de Feedback y Conocimiento Global.
+- **`mcp_tools/`**: Directorio raíz del motor industrial.
+  - `mcp_app.py`: Define el singleton `FastMCP` y el decorador `@aduana_universal`.
+  - `core_dast.py`: Herramientas base (Delegación, Kanban Gate, Doctor).
+  - `hub01-05`: Implementación de herramientas por departamento (Estrategia, Arq, Prod, Calidad, Ops).
+- **`factory_mcp_server.py`**: Entrypoint del servidor. Orquesta la carga de hubs y expone las herramientas a Antigravity.
+- **`06_SKILL_LIBRARY`**: Lógica atómica de cada skill, desacoplada del servidor MCP.
 
 ### ⚡ B. `INFRA` (Power Grid)
 
-Nodo de servicios persistentes (Postgres, Neo4j, Redis) accesible mediante el motor industrial.
+Nodo de servicios persistentes (Postgres, Neo4j, Redis). La Aduana inyecta automáticamente las credenciales JIT desde `INFRA/.env`.
 
 ### 📦 C. `PROJECTS` (El Taller / Workshop)
 
-Espacio de construcción bajo el protocolo **DAST (Disk-as-Source-of-Truth)**. Lo que no está en el disco, no existe.
+Espacio de construcción bajo el protocolo **DAST (Disk-as-Source-of-Truth)**. Solo existe aquello que tiene evidencia física en disco.
 
 ---
 
-## ⚙️ II. EL MOTOR INDUSTRIAL (Mecanismos MCP)
+## ⚙️ II. EL MOTOR INDUSTRIAL (Mecanismos v5.0-MCP)
 
-### 🛂 1. Invocación Directa MCP por Nombre
+### 🛂 1. Aduana Universal y Pre-flight Sync
 
-Es el único canal motriz autorizado. Los agentes invocan herramientas **directamente por nombre** (ej. `prp-generator`, `delegate-clean-session`). Sustituye a la terminal bash.
+Cada vez que se invoca una herramienta, el decorador `@aduana_universal` ejecuta:
 
-* **Encapsulamiento:** El agente envía un JSON con los parámetros y el servidor MCP se encarga de la ejecución física.
-* **Sandbox de Escritura:** Los agentes solo pueden editar archivos de código en `WORKSPACE/`, nunca la estructura del proyecto.
+- **DAST Sync**: Escanea las carpetas `TASKS/01_PENDING`, `02_IN_PROGRESS`, etc., y reconstruye el `registry.json`. El disco manda sobre la memoria.
+- **Auto-Commit**: Genera un mensaje de éxito atómico que cierra lógicamente la tarea en el payload de respuesta.
 
-### 🛡️ 2. Session Hook: La Aduana v5.0-MCP
+### 🛡️ 2. Double-Gating (Autorización por Evidencia)
 
-Integrada directamente en el servidor MCP.
+Un agente solo puede operar si:
 
-* **HITL (Human-In-The-Loop):** Bloquea cualquier avance de fase si no detecta la firma física en `APPROVAL_MX.md`.
-* **Double-Gating:** Valida que el agente tenga una `SPEC_LITE.json` asignada antes de permitirle "tocar" el proyecto.
+- Está en el roster de **17 agentes autorizados**.
+- Existe una **SPEC_LITE.json** (o `EMERGENCY_SPEC.json`) física en el proyecto que le asigne explícitamente la tarea (`metadata.assigned_agent`).
+
+### 🚦 3. Bypass Protocol
+
+Ciertas herramientas de gestión (`factory-doctor`, `kanban-solidity-gate`, `registry-manager`) tienen pase libre por la aduana para permitir el diagnóstico y avance de fases sin Specs previas.
 
 ---
 
-## 🚀 III. CICLO DE VIDA (M1-M5 SOPs)
+## 🚀 III. CICLO DE VIDA (Fases M1-M5)
 
-Cada fase se ejecuta ahora mediante **SOPs (Standard Operating Procedures)** invocados por MCP:
-
-* **🕵️ M1: Discovery:** El `PRODUCT_OWNER` sella la visión y el ROI financiero.
-* **📐 M2: Architecture:** El `ARCHITECT` solidifica el Blueprint de 4 capas.
-* **⚙️ M3: Production:** Ejecución de **Clean Sessions** aisladas para evitar el *Token Decay*.
-* **🛡️ M4: Compliance:** Auditoría de **Solidity Guard** y escaneo de secretos.
-* **🚀 M5: Operations:** Ignición de infraestructura y persistencia de memoria en Neo4j.
+- **🕵️ M1: Discovery:** ROI y visión sellados en el contrato maestro.
+- **📐 M2: Architecture:** Solidificación del Backbone y ADRs técnicos.
+- **⚙️ M3: Production:** Ejecución paralela en **Clean Sessions** (aislamientos atómicos).
+- **🛡️ M4: Compliance:** Auditoría de **Solidity Guard** y escaneo Zero-Trust de secretos.
+- **🚀 M5: Operations:** Uptime garantizado y persistencia LTP en Neo4j.
 
 ---
 
 ## ⚖️ IV. MANDATOS CONSTITUCIONALES
 
-### 1. El Mandato MCP (v5.0-MCP)
-
-Queda estrictamente prohibido el uso de `bash_command`, `cat` o `edit_file` para gestiones administrativas. La única vía es el servidor MCP oficial.
-
-### 2. Estándar de Medición SI
-
-* **Tiempo:** Segundos (s).
-* **Espacio:** Bytes (B).
-
-### 3. Soberanía Vegetariana
-
-Se prohíbe cualquier analogía de explotación o sacrificio animal en la documentación técnica.
+- **MANDATO MCP**: Prohibido usar `bash` para tareas industriales. Solo invocación directa MCP.
+- **UNIDADES SI**: Tiempo en **segundos (s)**, Espacio en **bytes (B)**.
+- **HITL OBLIGATORIO**: Ninguna fase avanza a `APPROVED` sin la firma del Director en `APPROVAL_MX.md`.
 
 ---
 
 ## 🕹️ V. MATRIZ DE CONTROL (SOPs via MCP)
 
-| SOP (Comando) | Función Industrial | Responsable |
+| SOP / Tool | Función Industrial | Responsable Primario |
 | :--- | :--- | :--- |
-| `init-contract` | Sella la visión y el ROI financiero. | Product Owner |
-| `factory-orchestrate` | Sincroniza el disco y avanza fases. | Orchestrator |
-| `execute-task` | Lanza una **Clean Session** aislada. | Orchestrator |
-| `audit` | Ejecuta el linter cultural y arquitectónico. | QA Tester |
-| `sync-memory` | Graba el aprendizaje en el ADN (Neo4j). | Memory Optimizer |
+| `prp-generator` | Generación del contrato maestro M1. | Product Owner |
+| `factory-orchestrate` | Análisis de topología DAG y despacho paralelo. | Orchestrator |
+| `delegate-clean-session` | Delegación aislada con inyección JIT Neo4j. | Orchestrator |
+| `kanban-solidity-gate` | Control de flujos, avance de fases y dashboard. | Orchestrator |
+| `factory-audit-pro` | Auditoría de lógica y conformidad industrial. | QA Tester |
+| `agentic-thought-secret-scanner` | Escaneo industrial de vulnerabilidades y secretos. | Security Auditor |
+| `sync-memory` | Persistencia de engramas finales en el LTP. | Memory Optimizer |
 
 ---
-*Ratificado: 2026-04-03 | Dasafo Factory v5.0-MCP | Soberanía Industrial Garantizada.*
+*Ratificado: 2026-04-04 | Dasafo Factory v5.0-MCP | Soberanía Industrial Garantizada.*

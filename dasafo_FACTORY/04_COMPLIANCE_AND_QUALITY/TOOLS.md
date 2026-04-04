@@ -23,9 +23,8 @@
 
 ### 🛡️ Testing & Security
 
-- `agentic-thought-secret-scanner`: **[CRITICAL]** Deep scanning for secrets, keys, and credentials.
-- `factory-audit-pro`: Architectural compliance and security scoring.
 - `agentic-thought-secret-scanner`: **[CRITICAL]** Deep scanning for secrets, keys, credentials, and dependency analysis.
+- `factory-audit-pro`: Architectural compliance and security scoring.
 - `build-test-executor`: Compilation and test execution for build reports.
 - `playwright-e2e-tester`: Browser flow verification and UI testing.
 - `hallucination-guardrail`: Verify logic alignment against the project's source of truth.

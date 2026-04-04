@@ -1,9 +1,9 @@
 {
-  "v3_code": "STARK-SOLIDITY-v5.0-MCP-LITE",
+  "spec_standard": "STARK-SOLIDITY-v5.0-MCP-LITE",
   "metadata": {
     "task_id": "TestTask01",
     "parent_prp": "PRP_CONTRACT.json",
-    "assigned_agent": "Required",
+    "assigned_agent": "UNASSIGNED",
     "context_pointers": []
   },
   "specification": {

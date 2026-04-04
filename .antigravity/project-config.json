@@ -1,12 +1,12 @@
 {
   "project_name": "dasafo_FACTORY",
-  "version": "4.0-MCP",
+  "version": "5.0-MCP",
   "agent_manager_v2": true,
   "orchestrator_id": "@orchestrator",
   "agents_path": ".agents/",
   "workflows_path": ".agents/workflows/",
   "mcp_enabled": true,
-  "mcp_server_path": "dasafo_FACTORY/factory_cli.py",
+  "mcp_server_path": "dasafo_FACTORY/mcp_tools/mcp_app.py",
   "identities": [
     {
       "id": "orchestrator",
@@ -37,6 +37,12 @@
       "name": "Research Agent",
       "instruction_file": ".agents/research_agent.md",
       "icon": "travel_explore"
+    },
+    {
+      "id": "ai_engineer",
+      "name": "AI Engineer",
+      "instruction_file": ".agents/ai_engineer.md",
+      "icon": "smart_toy"
     },
     {
       "id": "backend_dev",

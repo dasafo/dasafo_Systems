@@ -20,7 +20,6 @@ Enforce the "Zero-Pending Rule" for phase transitions and orchestrate the **Vibe
 - `agent` (string): Your ID (must be 'ORCHESTRATOR').
 - `target_project` (string): Path to project root.
 - `action` (enum): `audit` (default) | `start_dashboard`.
-- `proposed_phase` (string): (Optional) The target phase to validate (M1-M5).
 - `port` (integer): (Optional) Dashboard port (default: 3001).
 - `isolate` (boolean): Always `false` as it needs project persistence.
 

@@ -17,9 +17,8 @@
 - `docker-stack-provisioner`: Generation of optimized multi-stage Dockerfiles.
 - `terraform-iac-builder`: Implementation of local or cloud IaC.
 - `deployment-health-check`: Real-time validation of endpoints and network health (s/B).
-- `autonomous-feedback-analyzer`: Deep synthesis of resource usage and execution metrics.
+- `autonomous-feedback-analyzer`: Deep synthesis of resource usage, execution metrics, and golden rule extraction for Neo4j persistence.
 - `skill-refactor-pro`: Modular evolution of scripts based on Neo4j Golden Rules.
-- `autonomous-feedback-analyzer`: Extract golden rules and persist lessons in Neo4j.
 - `context-pruning-sieve`: Token optimization and KV cache pruning.
 - `agentic-thought-secret-scanner`: Mandatory scanning of YAML/Infra to prevent key leaks.
 - `hallucination-guardrail`: Ensure reports are based on real logs, not assumptions.

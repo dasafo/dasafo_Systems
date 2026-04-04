@@ -5,7 +5,7 @@ import shutil
 from pathlib import Path
 
 # Logic: Industrial Registry Notary (v5.0-MCP)
-# Pattern: Atomic Physical Move -> SSoT Sync
+# Pattern: Atomic Physical Move + DAG Topological Enforcement
 
 def execute_registry_update(
     target_project: str,
@@ -14,7 +14,7 @@ def execute_registry_update(
     task_id: str = None,
     new_status: str = None
 ) -> tuple[dict, list]:
-    """Pure logic for atomic task movement and registry synchronization (v5.0-MCP)."""
+    """Pure logic for atomic task movement and DAG enforcement (v5.0-MCP)."""
     start_time = time.time()
     project_path = Path(target_project).resolve()
     tasks_dir = project_path / "TASKS"
@@ -32,11 +32,30 @@ def execute_registry_update(
     if action == "update_status":
         if not task_id or not new_status:
             raise ValueError("INPUT_ERROR: task_id and new_status required.")
-
         if new_status not in folder_map:
             raise ValueError(f"INVALID_STATUS: {new_status} is not an industrial state.")
 
-        # 1. ATOMIC DAST: Locate source
+        # 1. Read SSoT
+        with open(registry_file, 'r', encoding='utf-8') as f:
+            registry = json.load(f)
+
+        target_task = next((t for t in registry if t.get("id") == task_id), None)
+        if not target_task:
+            raise ValueError(f"NOT_FOUND: Task {task_id} not in registry.")
+
+        # 2. 🛡️ DAG ENFORCEMENT (Topological Lock)
+        if new_status == "IN_PROGRESS":
+            deps = target_task.get("dependencies", [])
+            pending_deps = []
+            for dep_id in deps:
+                dep_task = next((t for t in registry if t.get("id") == dep_id), None)
+                if not dep_task or dep_task.get("status") != "COMPLETED":
+                    pending_deps.append(dep_id)
+            
+            if pending_deps:
+                raise PermissionError(f"DAG_LOCK: Task {task_id} blocked. Unmet dependencies: {pending_deps}")
+
+        # 3. ATOMIC DAST: Locate source & Move
         source_file = None
         for folder in folder_map.values():
             potential_path = tasks_dir / folder / f"{task_id}.json"
@@ -44,28 +63,16 @@ def execute_registry_update(
                 source_file = potential_path
                 break
 
-        # 2. Prepare target
         target_folder = tasks_dir / folder_map[new_status]
         target_folder.mkdir(parents=True, exist_ok=True)
         destination_file = target_folder / f"{task_id}.json"
 
-        # 3. Physical Execution
         if source_file:
             os.replace(str(source_file), str(destination_file))
-        else:
-            # Fallback for new tasks not found in folders
-            pass
 
-        # 4. SSoT Sync (registry.json)
-        with open(registry_file, 'r', encoding='utf-8') as f:
-            registry = json.load(f)
-
-        prev_status = "UNKNOWN"
-        for task in registry:
-            if task.get("id") == task_id:
-                prev_status = task.get("status", "PENDING")
-                task["status"] = new_status
-                break
+        # 4. Update Registry
+        prev_status = target_task.get("status", "PENDING")
+        target_task["status"] = new_status
 
         with open(registry_file, 'w', encoding='utf-8') as f:
             json.dump(registry, f, indent=2)
@@ -78,14 +85,13 @@ def execute_registry_update(
             "previous_status": prev_status,
             "current_status": new_status,
             "compliance_report": {
-                "atomic_move_verified": True,
+                "dag_enforced": True,
                 "disk_ssot_synced": True,
                 "si_metrics_applied": True,
                 "execution_duration_seconds": execution_duration_s
             },
-            "summary": f"Task {task_id} moved physically from {prev_status} to {new_status}."
+            "summary": f"Task {task_id} moved to {new_status}. DAG validation passed."
         }
-        
         return result_payload, [str(destination_file), str(registry_file)]
 
-    raise ValueError(f"Action '{action}' not supported in the v5.0 pipeline.")
+    raise ValueError(f"Action '{action}' not supported.")

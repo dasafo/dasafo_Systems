@@ -33,7 +33,7 @@ def aduana_universal(skill_name: str):
     """
     def decorator(func):
         @wraps(func)
-        def wrapper(agent: str, target_project: str, isolate: bool = False, *args, **kwargs):
+        def wrapper(agent: str, target_project: str, *args, isolate: bool = False, **kwargs):
             project_path = Path(target_project)
             
             # 1. PRE-FLIGHT SYNC (DAST)
@@ -51,7 +51,11 @@ def aduana_universal(skill_name: str):
                                     task_data = json.load(f)
                                     task_data["status"] = status
                                     physical_tasks.append(task_data)
-                            except: pass
+                            except Exception as e:
+                                import logging
+                                logging.getLogger("AduanaUniversal_v5.0").warning(
+                                    f"DAST Sync: Corrupted task file {task_file}: {e}"
+                                )
                 with open(registry_file, 'w', encoding='utf-8') as f:
                     json.dump(physical_tasks, f, indent=2)
 
@@ -75,7 +79,7 @@ def aduana_universal(skill_name: str):
             # 4. EJECUCIÓN DE LA HERRAMIENTA NATIVA
             try:
                 # La función debe devolver: dict(result), list(artifacts)
-                result_payload, artifacts = func(agent, target_project, isolate, *args, **kwargs)
+                result_payload, artifacts = func(agent, target_project, *args, isolate=isolate, **kwargs)
                 
                 # 5. AUTO-COMMIT (Si es aislada y no es bypass)
                 if isolate and skill_name not in session_hook.BYPASS_SKILLS:

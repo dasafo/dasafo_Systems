@@ -21,6 +21,7 @@
 - `registry-manager`: Update and move task artifacts physically (Atomic Move).
 - `factory-doctor`: Forensic audit to reconstruct corrupt states and sync Shadow State in Neo4j.
 - `project-backbone-validator`: Inspect physical disk for minimum framework scaffolding before delegating SPEC_LITE.
+- `project-management`: Action `analyze_schedule` to calculate the DAG topological path and determine which tasks can be executed in parallel safely.
 
 ---
 *Orchestrator v5.0-MCP | Status: Hub Manager, Resilient & Solidified.*

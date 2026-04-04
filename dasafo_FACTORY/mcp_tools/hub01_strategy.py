@@ -112,7 +112,7 @@ def social_content_strategy(
     isolate: bool = False
 ) -> tuple[dict, list]:
     """
-    [FASE M1/M6] Transforma contenido pilar en activos sociales multi-plataforma.
+    [FASE M1/M5] Transforma contenido pilar en activos sociales multi-plataforma.
     Alineado con el mandato SI (segundos, bytes).
     """
     return social_logic.execute_social_strategy(

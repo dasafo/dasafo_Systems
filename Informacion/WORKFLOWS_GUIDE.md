@@ -1,76 +1,74 @@
 # 🚀 Guía de Workflows Industriales: dasafo_FACTORY (v5.0-MCP)
 
-Esta guía detalla los **14 procedimientos operativos estándar (SOPs)** autorizados para la orquestación de misiones en el ecosistema **Native Industrial Core (v5.0-MCP)**. Cada flujo está diseñado para garantizar la **Soberanía del Disco (DAST)** y la **Transición Basada en Evidencia**.
+Esta guía detalla los **14 procedimientos operativos estándar (SOPs)** autorizados para la orquestación de misiones en el ecosistema **Native Industrial Core (v5.0-MCP)**. Cada flujo se activa mediante **Slash Commands** y garantiza la **Soberanía del Disco (DAST)** y la **Transición Basada en Evidencia**.
 
 ---
 
-## 🏗️ I. WORKFLOWS DE CICLO DE VIDA (M1-M5 Pipeline)
+## 🏗️ I. WORKFLOWS DE CICLO DE VIDA (M1-M4 Pipeline)
 
-Los flujos se ejecutan mediante la herramienta MCP las herramientas MCP **directamente por nombre**, que actúa como el único brazo motriz de la factoría.
+Los flujos se ejecutan mediante la activación directa de comandos que disparan las tareas en los Hubs correspondientes.
 
-### 1. Fase M1: Descubrimiento & Estrategia (Discovery)
+### 1. Fase M1: Estrategia y Contrato Maestro
 
-* **SOP `init-contract`**:
-  * **Agente:** `PRODUCT_OWNER`.
-  * **Propósito:** Generar el contrato maestro (`PRP_MASTER.json`) con análisis de ROI, CAC y LTV.
-  * **Protocolo MCP:** Invoca las skills `startup-metrics-framework` y `prp-generator`.
-  * **Post-condición:** Requiere firma física humana en `APPROVAL_M1.md` para abrir la aduana.
+- **`/init-contract` (Apertura de Misión)**:
+  - **Agente:** `PRODUCT_OWNER`.
+  - **Propósito:** Generar el contrato industrial `PRP_MASTER.json` con análisis de ROI, CAC y LTV.
+  - **Protocolo MCP:** Invoca `startup-metrics-framework` y `prp-generator` (Mandato de sobreescritura).
+  - **Post-condición:** Requiere el artefacto `APPROVAL_M1.md` firmado para abrir la aduana.
 
-### 2. Fase M2-M3: Arquitectura & Producción (Build)
+### 2. Fase M2-M3: Arquitectura y Producción Paralela
 
-* **SOP `factory-orchestrate` (Sincronización Total)**:
-  * **Agente:** `ORCHESTRATOR`.
-  * **Propósito:** Deconstruir el contrato en especificaciones atómicas (`SPEC_LITE.json`) y sincronizar el registro físico de tareas.
-  * **Protocolo MCP:** Invoca `kanban-solidity-gate` para verificar la solidez del disco antes de avanzar.
-* **SOP `validate-backbone` (Inspección Estructural)**:
-  * **Agente:** `ORCHESTRATOR`.
-  * **Propósito:** Verificar que el andamiaje del framework (Next.js, FastAPI, etc.) existe físicamente antes de permitir la delegación de lógica.
-* **SOP `arch-diagram` (Blueprint Visual)**:
-  * **Agente:** `ARCHITECT`.
-  * **Propósito:** Generar planos técnicos actualizados y consolidar los ADRs en `DOCS/ARCH/BLUEPRINT.md`.
-* **SOP `execute-task` (Línea de Montaje)**:
-  * **Agente:** `ORCHESTRATOR` (Delegador) -> `PEON` (Ejecutor).
-  * **Propósito:** Lanza una **Clean Session** aislada con guardarraíles predictivos de Neo4j.
-  * **Automatización Industrial:** Implementa el **Auto-Start** (bloqueo de tarea) y el **Auto-Commit** (cierre atómico tras el éxito).
+- **`/factory-orchestrate` (Maestro de Orquestación)**:
+  - **Agente:** `ORCHESTRATOR`.
+  - **Propósito:** Calcular la topología de tareas (DAG) y sincronizar el registro de tareas en disco.
+  - **Protocolo MCP:** Invoca `project-management` (`analyze_schedule`) para habilitar la ejecución paralela masiva.
+- **`/arch-diagram` (Blueprint & Mapping)**:
+  - **Agente:** `ARCHITECT`.
+  - **Propósito:** Generar planos técnicos y el mapeo de sistema de 4 capas en `DOCS/ARCH/BLUEPRINT.md`.
+- **`/validate-backbone` (Inspección de Andamiaje)**:
+  - **Agente:** `ORCHESTRATOR`.
+  - **Propósito:** Verificar físicamente la existencia de la estructura base (`/src`, `/tests`, `Dockerfile`) antes de autorizar la lógica.
+- **`/execute-task` (Línea de Montaje Atómica)**:
+  - **Agente:** `ORCHESTRATOR` (Delegador) -> `IMPLEMENTADOR` (Ejecutor).
+  - **Propósito:** Lanza una **Clean Session** aislada activando el protocolo de **Doble-Puerta (Double-Gating)**.
+  - **Autorización:** El ejecutor tiene permiso inmediato si detecta su `SPEC_LITE.json` física en la carpeta `TASKS/`.
 
-### 3. Fase M4: Calidad & Cumplimiento (Compliance)
+### 3. Fase M4: Calidad y Aduana Industrial
 
-* **SOP `scan` (Escudo Zero-Trust)**:
-  * **Agente:** `SECURITY_AUDITOR`.
-  * **Propósito:** Escaneo profundo de secretos y vulnerabilidades. Genera el `SECURITY_REPORT.md` obligatorio.
-* **SOP `audit` (Sello de Calidad)**:
-  * **Agente:** `QA_TESTER`.
-  * **Propósito:** Validar la adhesión al contrato M1. Reporta métricas estrictamente en **segundos (s)** y **bytes (B)**.
-
-### 4. Fase M5: Operaciones & Despliegue (Ops)
-
-* **SOP `provision` (Infraestructura IaC)**:
-  * **Agente:** `DEVOPS_SRE`.
-  * **Propósito:** Generar Dockerfiles y configuraciones de nube en `WORKSPACE/infra/`.
-* **SOP `deploy` (Lanzamiento Atómico)**:
-  * **Agente:** `DEVOPS_SRE`.
-  * **Propósito:** Despliegue de los artefactos verificados al entorno operacional.
+- **`/scan` (Escudo Zero-Trust)**:
+  - **Agente:** `SECURITY_AUDITOR`.
+  - **Propósito:** Escaneo profundo de secretos, llaves API y CVEs. Genera el `SECURITY_REPORT.md` obligatorio.
+- **`/audit` (Sello de Calidad y Solidez)**:
+  - **Agente:** `QA_TESTER`.
+  - **Propósito:** Validar la adhesión a la Constitución Arquitectónica. Reporta métricas estrictamente en **Segundos (s)** y **Bytes (B)**.
+  - **Protocolo MCP:** Invoca `factory-audit-pro` y `build-test-executor` para emitir el `BUILD_REPORT.json`.
 
 ---
 
-## 🧬 II. WORKFLOWS DE RESILIENCIA Y EVOLUCIÓN (LTP)
+## 🧬 II. WORKFLOWS DE DESPLIEGUE Y RESILIENCIA (M5)
 
-* **SOP `auto-heal` (Sanación Autónoma)**:
-  * **Agente:** `FACTORY_EVOLVER`.
-  * **Propósito:** Ante un fallo de infraestructura (ej. puerto bloqueado), el sistema genera un parche automático y refactoriza el `docker-compose.yml` sin intervención humana.
-* **SOP `health-check` (Monitor Sentinel)**:
-  * **Agente:** `DEPLOYMENT_MONITOR`.
-  * **Propósito:** Validación en tiempo real de latencia (s) y salud de red (B).
-* **SOP `sync-memory` (Consolidación LTP)**:
-  * **Agente:** `MEMORY_OPTIMIZER`.
-  * **Propósito:** Extraer lecciones aprendidas e inyectarlas como "Reglas de Oro" en el Grafo de Neo4j para prevenir alucinaciones futuras.
+- **`/provision` (Infraestructura Inmutable)**:
+  - **Agente:** `DEVOPS_SRE`.
+  - **Propósito:** Generar Dockerfiles multi-stage y configuraciones IaC en `WORKSPACE/infra/`.
+- **`/deploy` (Lanzamiento Atómico)**:
+  - **Agente:** `DEVOPS_SRE`.
+  - **Propósito:** Despliegue de artefactos verificados mediante provisión de contenedores.
+- **`/auto-heal` (Sanación Autónoma del Core)**:
+  - **Agente:** `FACTORY_EVOLVER`.
+  - **Propósito:** Activación del bucle M5 ante fallos críticos de infraestructura; genera parches automáticos en `docker-compose.yml`.
+- **`/health-check` (Telemetría Sentinel)**:
+  - **Agente:** `DEPLOYMENT_MONITOR`.
+  - **Propósito:** Validación en tiempo real de latencia (s) y salud de red física (B).
+- **`/sync-memory` (Persistencia LTP)**:
+  - **Agente:** `MEMORY_OPTIMIZER`.
+  - **Propósito:** Sincronizar lecciones aprendidas y "Reglas de Oro" con la base de datos Neo4j para evitar amnesia sistémica.
 
 ---
 
-## 📡 III. WORKFLOWS DE VISIBILIDAD (Radares)
+## 📡 III. WORKFLOWS DE VISIBILIDAD Y CONTROL (Dashboards)
 
-* **SOP `kanban-board`**: Inicia el dashboard visual en el puerto 3001 para inspeccionar la línea de montaje física.
-* **SOP `factory-status`**: Reporte consolidado de salud de los Hubs y estado del pipeline basado en DAST.
+- **`/kanban-board` (Vibe Dashboard)**: Inicia el visualizador en el puerto 3001 para inspeccionar la línea de montaje física y el estado de los agentes.
+- **`/factory-status` (Pulso Industrial)**: Genera un reporte consolidado de salud de los Hubs y progreso del pipeline basado en evidencia DAST.
 
 ---
-*Manual de Workflows v5.0-MCP | Dasafo Factory | Soberanía Industrial Garantizada.*
+*Manual de Workflows v5.0-MCP | Dasafo Factory | Soberanía Industrial y Ejecución Paralela Garantizada.*

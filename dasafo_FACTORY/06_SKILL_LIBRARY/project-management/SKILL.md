@@ -1,6 +1,6 @@
 ---
 version: v5.0-MCP (Native)
-agent_authorization: [PRODUCT_OWNER]
+agent_authorization: [ORCHESTRATOR, PRODUCT_OWNER]
 source: https://skills.sh/googleworkspace/cli/persona-project-manager
 protocol: Project-Coordination / DAST
 ---
@@ -17,9 +17,9 @@ Coordinate industrial projects through task tracking and automated status loggin
 
 ### Typed Parameters
 
-- `agent` (string): Your Agent ID (must be 'PRODUCT_OWNER').
+- `agent` (string): Your Agent ID (authorized: 'ORCHESTRATOR', 'PRODUCT_OWNER').
 - `target_project` (string): Path to project root.
-- `action` (enum): `standup_report` (default), `log_status`.
+- `action` (enum): `standup_report` (default), `analyze_schedule`, `log_status`.
 - `report_data` (object): (Optional) Data for log notes (e.g., `{"note": "Transitioning to M2"}`).
 - `overwrite` (boolean): (Optional) Bypass Redundancy Lock for reports.
 - `isolate` (boolean): Execution in Clean Session.

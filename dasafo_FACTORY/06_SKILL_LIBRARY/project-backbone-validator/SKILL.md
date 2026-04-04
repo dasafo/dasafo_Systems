@@ -19,7 +19,8 @@ Act as the "Inspector de Obra" for the factory. Ensure that the necessary framew
 
 - `agent` (string): Your Agent ID (must be 'ORCHESTRATOR').
 - `target_project` (string): Absolute path to the project root.
-- `framework` (enum): The core stack expected (`nextjs`, `fastapi`).
+- `action` (enum): `validate_structure` (default). Validates the physical scaffolding.
+- `schema_version` (string): (Optional) Schema version to validate against (default: 'v1').
 - `isolate` (boolean): Execution in Clean Session.
 
 ## 🛡️ Industrial Constraints

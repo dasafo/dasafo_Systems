@@ -19,9 +19,9 @@ Act as the industrial notary for the project's Kanban state. Mutates `registry.j
 
 - `agent` (string): Your Agent ID (must be 'ORCHESTRATOR').
 - `target_project` (string): Absolute path to the project root.
-- `action` (enum): `update_status` (default) | `add_task`.
-- `task_id` (string): The ID of the task (e.g., 'M3-001').
-- `new_status` (enum): `PENDING`, `IN_PROGRESS`, `COMPLETED`.
+- `action` (enum): `update_registry` (default) | `add_task`.
+- `key_value_pairs` (object): (Optional) Key-value data for the registry update (e.g., `{"task_id": "M3-001", "new_status": "COMPLETED"}`).
+- `overwrite` (boolean): (Optional) Force overwrite of existing registry entries.
 - `isolate` (boolean): Execution in Clean Session.
 
 ## 🛡️ Industrial Constraints
