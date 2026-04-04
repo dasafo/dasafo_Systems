@@ -57,20 +57,35 @@ def execute_audit(
             # Solo verificamos si estamos en una fase avanzada (M5) o si el auditor detecta el stack de infra
             docker_file = project_path / "WORKSPACE" / "INFRASTRUCTURE" / "docker-compose.yml"
             if docker_file.exists():
-                ports_to_check = [8000, 5173, 3000] # Backend, Vite, Next.js
-                running_on = [p for p in ports_to_check if is_port_open(p)]
+                # Definiendo puertos críticos por tecnología (SDD)
+                backend_port = 8000
+                frontend_ports = [5173, 3000]
                 
-                if not running_on:
-                    health_score -= 5
-                    # Nota: Lo ponemos como ADVERTENCIA Crítica para forzar el levantamiento
+                # Check Backend
+                if not is_port_open(backend_port):
+                    health_score -= 10
+                    verdict = "FAIL"
                     detailed_findings.append({
-                        "severity": "P1",
+                        "severity": "P0",
                         "category": "PhysicalDeployment",
-                        "location": "Localhost - Stack Ports",
-                        "recommendation": "PHYSICAL DEPLOYMENT MISSING: Infrastructure files exist but no services are listening on ports 8000/5173. Execute '/provision --action run_stack' to complete the industrial launch."
+                        "location": f"Localhost - Port {backend_port}",
+                        "recommendation": "BACKEND OFFLINE: Contract mandates FastAPI, but port 8000 is closed. Final launch blocked."
                     })
-                    if health_score < 15:
+
+                # Check Frontend (Required if in contract)
+                has_ui_req = "next.js" in constraints or "react" in constraints or "vite" in constraints or "ui" in ui_ux
+                if has_ui_req:
+                    ui_online = any(is_port_open(p) for p in frontend_ports)
+                    if not ui_online:
+                        health_score -= 10
                         verdict = "FAIL"
+                        detailed_findings.append({
+                            "severity": "P0",
+                            "category": "PhysicalDeployment",
+                            "location": "Localhost - Frontend Ports (5173/3000)",
+                            "recommendation": "FULL-STACK LEAK: Contract mandates UI, but no frontend service is reachable. Must dockerize and run the frontend before M5 closure."
+                        })
+
                     
         except Exception as e:
             detailed_findings.append({"severity": "P1", "category": "AuditError", "location": "PRP_CONTRACT.json", "recommendation": str(e)})
