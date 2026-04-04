@@ -96,5 +96,13 @@ La transición requiere la **Plantilla de Aprobación** (`approval.md`):
 }
 ```
 
+## XI. AGENTIC WORKSPACE SOVEREIGNTY (v5.0-Solidified)
+
+- **RULE:** All production-grade artifacts (e.g., `src/`, `INFRASTRUCTURE/`, `Dockerfile`, `requirements.txt`, `docker-compose.yml`) MUST be confined to the `${PROJECT_ROOT}/WORKSPACE/` directory.
+- **PROHIBITION:** Agents are strictly forbidden from creating or modifying files at the `${PROJECT_ROOT}/` level, which is reserved exclusively for project documentation (`DOCS/`), task state (`TASKS/`), and the master contract (`PRP_CONTRACT.json`).
+- **RATIONALE:** This ensures that the production environment is isolated from the project management layer, preventing accidental deletions or context spills during multi-agent orchestration.
+- **ENFORCEMENT:** Any output created outside `WORKSPACE/` will be considered a "Deployment Leak" and will be auto-healed (moved) to the correct location by the `DEVOPS_SRE` or `ORCHESTRATOR`.
+
 ---
+*Manual de Conocimiento Global v5.0-Solidified | Dasafo Factory | Soberanía de Disco Garantizada.*
 *Ratificado: 2026-04-04 | Dasafo Factory v5.0-MCP Industrialized Spanish Edition.*

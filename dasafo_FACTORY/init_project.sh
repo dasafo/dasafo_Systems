@@ -67,22 +67,26 @@ cat <<EOF > "$PROJECT_ROOT/TASKS/registry.json"
   {
     "id": "M1-001",
     "title": "Generate PRP_MASTER Contract via prp-generator",
-    "status": "PENDING",
+    "status": "IN_PROGRESS",
     "phase": "M1",
-    "assigned_to": "PRODUCT_OWNER",
+    "metadata": {
+        "assigned_agent": "PRODUCT_OWNER"
+    },
     "dependencies": []
   }
 ]
 EOF
 
 # 4. Physical Kanban Seeding (v5.0-MCP Physical Sync Mandate)
-cat <<EOF > "$PROJECT_ROOT/TASKS/01_PENDING/M1-001.json"
+cat <<EOF > "$PROJECT_ROOT/TASKS/02_IN_PROGRESS/SPEC_LITE.json"
 {
   "id": "M1-001",
   "title": "Generate PRP_MASTER Contract via prp-generator",
-  "status": "PENDING",
+  "status": "IN_PROGRESS",
   "phase": "M1",
-  "assigned_to": "PRODUCT_OWNER",
+  "metadata": {
+    "assigned_agent": "PRODUCT_OWNER"
+  },
   "dependencies": []
 }
 EOF
@@ -95,7 +99,7 @@ cat <<EOF > "$PROJECT_ROOT/PROJECT_STATE.json"
   "current_phase": "M1",
   "objective": "Formulate project vision and sign PRP_MASTER contract.",
   "phases": {
-    "M1": "PENDING",
+    "M1": "IN_PROGRESS",
     "M2": "PENDING",
     "M3": "PENDING",
     "M4": "PENDING",

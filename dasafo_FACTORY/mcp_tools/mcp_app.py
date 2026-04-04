@@ -70,11 +70,11 @@ def aduana_universal(skill_name: str):
             # 3. VERIFICACIÓN DE LA ADUANA (session_hook)
             is_allowed, reason = session_hook.verify_project_state(target_project, skill_name, agent)
             if not is_allowed:
-                return json.dumps({
+                return {
                     "success": False, 
                     "error": f"Aduana Blocked: {reason}",
                     "industrial_status": "BLOCKED"
-                }, indent=2)
+                }, []
 
             # 4. EJECUCIÓN DE LA HERRAMIENTA NATIVA
             try:
@@ -86,16 +86,16 @@ def aduana_universal(skill_name: str):
                     if result_payload.get("task_status") == "COMPLETED":
                         result_payload["auto_commit"] = "Task logically and physically closed via MCP."
 
-                return json.dumps({
+                return {
                     "success": True,
                     "industrial_status": result_payload.get("industrial_status", "SUCCESS"),
                     "summary": result_payload.get("summary", "Ejecución completada."),
                     "artifacts_generated": artifacts,
                     "details": result_payload
-                }, indent=2)
+                }, artifacts
 
             except Exception as e:
-                return json.dumps({"success": False, "error": f"Tool Exception: {str(e)}"}, indent=2)
+                return {"success": False, "error": f"Tool Exception: {str(e)}"}, []
 
         return wrapper
     return decorator

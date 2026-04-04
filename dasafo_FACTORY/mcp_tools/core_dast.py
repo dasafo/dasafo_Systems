@@ -104,14 +104,14 @@ def project_backbone_validator(
 def registry_manager(
     agent: str, 
     target_project: str, 
-    action: str = "update_registry", 
-    key_value_pairs: dict = None,
-    overwrite: bool = False,
+    action: str = "update_status", 
+    task_id: str = None,
+    new_status: str = None,
     isolate: bool = False
 ) -> tuple[dict, list]:
     """
     [CORE] Administra el registro central de proyectos y variables de estado.
     """
     return registry_logic.execute_registry_update(
-        target_project, agent, action, key_value_pairs, overwrite
+        target_project, agent, action, task_id, new_status
     )

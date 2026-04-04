@@ -96,7 +96,7 @@ def architecture_decision_records(
     Basado en: https://skills.sh/wshobson/agents/architecture-decision-records
     """
     return adr_logic.execute_adr(
-        target_project, action, title, context, decision, consequences, target_id, overwrite
+        target_project, agent, action, title, context, decision, consequences, target_id, overwrite
     )
 
 @mcp.tool(name="api-contract-generator")

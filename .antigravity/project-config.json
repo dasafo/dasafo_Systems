@@ -6,7 +6,7 @@
   "agents_path": ".agents/",
   "workflows_path": ".agents/workflows/",
   "mcp_enabled": true,
-  "mcp_server_path": "dasafo_FACTORY/mcp_tools/mcp_app.py",
+  "mcp_server_path": "dasafo_FACTORY/factory_mcp_server.py",
   "identities": [
     {
       "id": "orchestrator",

@@ -120,8 +120,28 @@ def execute_management(
         return result_payload, artifacts
 
     elif action == "standup_report":
-        # ... (Tu código de standup previo se mantiene idéntico)
-        pass
+        if not registry_path.exists():
+            raise FileNotFoundError("DAG_ERROR: registry.json missing.")
+        with open(registry_path, 'r', encoding='utf-8') as f:
+            tasks = json.load(f)
+        
+        dag_report = analyze_dag(tasks)
+        
+        result_payload = {
+            "industrial_status": "PULSE REPORT GENERATED",
+            "metrics": metrics,
+            "tasks": {
+                "total": len(tasks),
+                "in_progress": [t for t in tasks if t.get("status") == "IN_PROGRESS"],
+                "ready_to_execute": dag_report.get("ready_to_execute", []),
+                "blocked": dag_report.get("blocked_pending_tasks", [])
+            },
+            "compliance_report": {
+                "dast_synced": True,
+                "execution_duration_seconds": round(time.time() - start_time, 4)
+            },
+            "summary": f"Pulse check complete. Phase: {metrics['current_phase']} | Progress: {metrics['progress_percent']}%"
+        }
     elif action == "log_status":
         # ... (Tu código de log_status previo se mantiene idéntico)
         pass

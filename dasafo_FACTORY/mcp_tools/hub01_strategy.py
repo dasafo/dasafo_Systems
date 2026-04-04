@@ -34,7 +34,7 @@ def startup_metrics_framework(
     target_audience: str = "General", 
     estimated_execution_s: float = 1.5,
     isolate: bool = False
-) -> tuple[dict, list]:
+):
     """
     [FASE M1] Traduce métricas de ejecución técnica (s, B) en KPIs de negocio SaaS (CAC, LTV, ROI).
     Indispensable para definir los criterios de éxito financiero en el PRP_MASTER.
@@ -54,7 +54,7 @@ def prp_generator(
     spec_data: dict = None, 
     overwrite: bool = False, 
     isolate: bool = False
-) -> tuple[dict, list]:
+):
     """
     [FASE M1] Genera contratos industriales PRP_MASTER y especificaciones SPEC_LITE atómicas.
     """
@@ -72,7 +72,7 @@ def project_management(
     report_data: dict = None, 
     overwrite: bool = False,
     isolate: bool = False
-) -> tuple[dict, list]:
+):
     """
     [FASE M1] Coordina el estado del proyecto, genera reportes de progreso y registra hitos en disco.
     """
@@ -90,7 +90,7 @@ def apify_trend_analysis(
     input_data: dict = None, 
     overwrite: bool = False, 
     isolate: bool = False
-) -> tuple[dict, list]:
+):
     """
     [FASE M1] Analiza tendencias de mercado y nichos utilizando Apify Actors.
     """
@@ -110,7 +110,7 @@ def social_content_strategy(
     brand_voice: str = "Professional & Provocative", 
     overwrite: bool = False, 
     isolate: bool = False
-) -> tuple[dict, list]:
+):
     """
     [FASE M1/M5] Transforma contenido pilar en activos sociales multi-plataforma.
     Alineado con el mandato SI (segundos, bytes).
