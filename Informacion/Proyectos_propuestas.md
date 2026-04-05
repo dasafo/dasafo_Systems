@@ -182,12 +182,52 @@ Alto (ideal para validar skills de AI y marketplace).
 
 ---
 
-**Recomendación final del documento:**
+Para poner a prueba el motor **v5.0.2-MCP** que acabamos de blindar, necesitamos escenarios que no solo sean difíciles de programar, sino que fuercen al sistema a usar sus "reflejos" automáticos. Aquí tienes 3 desafíos de nivel **"Master Architect"** diseñados para estresar cada capa de la factoría.
 
-- **Empieza con #1 (ContentRepurpose AI)** → es el que más demanda tiene ahora y prueba muy bien la v3.2.0-S.
-- Cuando termines el primero, pasa al **#2 (SentinelVibe)** → es el que mejor estresa las partes fuertes de tu factoría (Security + Compliance).
+---
 
-¿Quieres que te genere ahora mismo el **PRP_CONTRACT.json** listo para cualquiera de estos 5 proyectos?  
-Dime el número (1 al 5) y te lo entrego completo para que lo pases directamente al PRODUCT_OWNER.
+## 🏗️ Desafío 1: El "Infra-Chaos" (Test de Auto-Healing)
 
-¿Cuál eliges para continuar?
+Este desafío busca romper el despliegue a propósito para ver si el sistema se cura solo sin que tú toques una tecla.
+
+- **La Misión:** Construir un sistema de microservicios con un **Backend FastAPI** y una base de datos **PostgreSQL**, pero configurado intencionalmente con un conflicto de puertos (ej. ambos intentando usar el 5432) y un límite de memoria de solo 128MB (insuficiente para Postgres).
+- **Por qué es un reto:** Forzará al `DEPLOYMENT_MONITOR` a detectar el fallo.
+- **Qué medimos:** 1.  ¿Genera el monitor la `EMERGENCY_SPEC.json` correctamente?
+    2.  ¿Es capaz el `FACTORY_EVOLVER` de usar `skill-refactor-pro` para cambiar el puerto a 5433 y duplicar la RAM en el `docker-compose.yml` de forma atómica?
+    3.  ¿Se re-despliega el sistema solo?
+
+---
+
+## 🧠 Desafío 2: La "Amnesia-Buster" (Test de Engram y Reglas de Oro)
+
+Este desafío prueba si la memoria de corto plazo (Redis) y largo plazo (Neo4j) realmente funciona para evitar errores humanos/IA recurrentes.
+
+- **La Misión:** Crea una tarea que use una librería prohibida (ej. prohíbe el uso de `axios` en el frontend y exige `fetch` nativo). Registra esta regla manualmente en el **Engram** o provoca un error que la genere.
+- **Por qué es un reto:** Los modelos de IA adoran usar librerías populares por inercia ("Vibe Coding").
+- **Qué medimos:**
+    1. Al lanzar `/execute-task`, ¿el agente recibe la "Regla de Oro" desde Redis antes de empezar?
+    2. Si el agente intenta usar `axios`, ¿la `aduana_universal` o el `QA_TESTER` detectan la violación cultural basándose en la memoria compartida?
+
+---
+
+## 🛡️ Desafío 3: El "Infiltrado" (Test de Guardian Angels y DAST)
+
+Este desafío pone a prueba tu propia capacidad como Director y la del sistema para bloquear errores antes de que lleguen al servidor.
+
+- **La Misión:** Intenta hacer un `git commit` manual (como humano) de un archivo que contenga una "Fake AWS Key" (ej. `AKIA_MOCK_SECRET_12345`) y que además tenga una estructura de carpetas incorrecta (ej. un archivo `.py` suelto en la raíz en lugar de estar en `WORKSPACE/backend/`).
+- **Por qué es un reto:** Evalúa si el **Guardian Angel** local es tan estricto como el del servidor.
+- **Qué medimos:**
+    1. ¿El script `.githooks/guardian.py` bloquea el commit en tu terminal antes de que se envíe?
+    2. ¿Te da el error exacto en **Segundos (s)** y explica la violación estructural?
+
+---
+
+### 🚀 Mi recomendación para empezar
+
+Empieza por el **Desafío 1 (Infra-Chaos)**. Es el más visual y satisfactorio porque verás a la factoría "pensar" por sí misma para salvar el despliegue. Para ejecutarlo:
+
+1. Usa `/init-contract` para definir el sistema de microservicios.
+2. Sabotea el `docker-compose.yml` manualmente antes del despliegue.
+3. Lanza `/deploy` y observa cómo se activa el **Protocolo de Inmunidad**.
+
+¿Por cuál de estos 3 "bancos de prueba" te gustaría que empezáramos a configurar las Specs?

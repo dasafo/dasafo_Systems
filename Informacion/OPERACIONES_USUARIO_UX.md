@@ -43,7 +43,7 @@ Ya no lanzas comandos de terminal; ahora activas **SOPs (Procedimientos Operativ
 
 ### 🛤️ Paso 1: Ignición y Guardianes (Fase 0)
 
-1. **Enciende el Núcleo (Energía):** Desde la carpeta `INFRA/`, lanza `docker compose up -d` para activar los servicios de persistencia (Neo4j, Redis, Postgres).
+1. **Enciende el Núcleo (Energía):** Desde la carpeta `INFRA/`, lanza `docker compose up -d` (si docker no esta levantado en tu sistema ejecuta: `sudo systemctl start docker`) para activar los servicios de persistencia (Neo4j, Redis, Postgres).
 2. **Crea el Chasis (Nacimiento):** Ejecuta `./init_project.sh NombreProyecto`. Este script es la "madre" que crea la estructura de carpetas, el `.env` con las credenciales del Engram y, muy importante, **genera el archivo de activación de hooks**.
 3. **Entra al Taller:** Muévete a la carpeta recién creada: `cd ../PROJECTS/NombreProyecto`.
 4. **Protección Local (Activación):** Ahora sí, ejecuta `./setup_git_hooks.sh`. Esto vincula tu Git local con el **Guardian Angel** (`.githooks/guardian.py`), bloqueando cualquier commit que contenga secretos o fallos de estructura desde tu propio IDE.
