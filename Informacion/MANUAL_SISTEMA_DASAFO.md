@@ -1,8 +1,8 @@
-# 🏛️ Manual Maestro de Instrucciones: dasafo_Systems v5.0-MCP
+# 🏛️ Manual Maestro de Instrucciones: dasafo_Systems v5.0.2-MCP
 
-> **"Industrializando la Excelencia Evolutiva a través del Model Context Protocol (MCP) y la Soberanía del Disco (DAST)."**
+> **"Industrializando la Excelencia Evolutiva a través del Model Context Protocol (MCP), la Soberanía del Disco (DAST) y la Memoria Estratificada (Engram)."**
 
-**dasafo_Systems** es un ecosistema industrial de IA de alto rendimiento. Opera bajo el estándar **v5.0-MCP "Native Industrial Core"**, que integra el protocolo MCP para eliminar la fricción humana y garantizar que cada acción esté auditada por la **Aduana Universal**.
+**dasafo_Systems** es un ecosistema industrial de IA de alto rendimiento que opera bajo el estándar **v5.0.2-MCP "Engram-Solidified"**. Este sistema elimina la improvisación del "Vibe Coding" mediante una arquitectura de seguridad por diseño, donde cada acción está auditada por la **Aduana Universal** y respaldada por evidencia física en disco.
 
 ---
 
@@ -10,77 +10,72 @@
 
 ### 🧠 A. `dasafo_FACTORY` (El Núcleo Inmutable)
 
-El núcleo se ha modularizado para escalar mediante Hubs especializados:
+El núcleo se modulariza en Hubs especializados para garantizar la separación de responsabilidades:
 
-- **`00_GLOBAL_KNOWLEDGE`**: Constitución Core, Esquemas de Feedback y Conocimiento Global.
-- **`mcp_tools/`**: Directorio raíz del motor industrial.
-  - `mcp_app.py`: Define el singleton `FastMCP` y el decorador `@aduana_universal`.
-  - `core_dast.py`: Herramientas base (Delegación, Kanban Gate, Doctor).
-  - `hub01-05`: Implementación de herramientas por departamento (Estrategia, Arq, Prod, Calidad, Ops).
-- **`factory_mcp_server.py`**: Entrypoint del servidor. Orquesta la carga de hubs y expone las herramientas a Antigravity.
-- **`06_SKILL_LIBRARY`**: Lógica atómica de cada skill, desacoplada del servidor MCP.
+- **`00_GLOBAL_KNOWLEDGE`**: Contiene la Constitución Core, esquemas de feedback y el conocimiento transversal.
+- **`mcp_tools/`**: Motor industrial que define el singleton `FastMCP` y el decorador `@aduana_universal`.
+- **`06_SKILL_LIBRARY`**: Lógica atómica de cada skill, clasificada bajo la taxonomía de **19 Skills de Producción** (DEFINE, PLAN, BUILD, VERIFY, REVIEW, SHIP).
 
 ### ⚡ B. `INFRA` (Power Grid)
 
-Nodo de servicios persistentes (Postgres, Neo4j, Redis). La Aduana inyecta automáticamente las credenciales JIT desde `INFRA/.env`.
+Nodo de servicios persistentes:
 
-### 📦 C. `PROJECTS` (El Taller / Workshop)
-
-Espacio de construcción bajo el protocolo **DAST (Disk-as-Source-of-Truth)**. Solo existe aquello que tiene evidencia física en disco.
+- **Postgres**: Datos operacionales relacionales.
+- **Neo4j (LTP)**: Persistencia a largo plazo de "Reglas de Oro" y lecciones aprendidas.
+- **Redis (Engram)**: Memoria de corto plazo y sistema **Antifatiga** para inyección de reglas JIT (Just-In-Time) y detección de bucles infinitos.
 
 ---
 
-## ⚙️ II. EL MOTOR INDUSTRIAL (Mecanismos v5.0-MCP)
+## ⚙️ II. EL MOTOR INDUSTRIAL (Mecanismos de Solidificación)
 
-### 🛂 1. Aduana Universal y Pre-flight Sync
+### 🛂 1. Aduana Universal y Antifatiga
 
-Cada vez que se invoca una herramienta, el decorador `@aduana_universal` ejecuta:
+El decorador `@aduana_universal` actúa como el primer filtro de seguridad:
 
-- **DAST Sync**: Escanea las carpetas `TASKS/01_PENDING`, `02_IN_PROGRESS`, etc., y reconstruye el `registry.json`. El disco manda sobre la memoria.
-- **Auto-Commit**: Genera un mensaje de éxito atómico que cierra lógicamente la tarea en el payload de respuesta.
+- **Loop Detection**: Utiliza Redis para contar las llamadas por sesión; si un agente excede el `max_retries` configurado para una herramienta, la ejecución se bloquea para proteger tokens.
+- **DAST Sync**: Reconstruye el `registry.json` basándose exclusivamente en los archivos físicos presentes en `TASKS/`.
 
 ### 🛡️ 2. Double-Gating (Autorización por Evidencia)
 
-Un agente solo puede operar si:
+Un agente solo puede operar si existe una **SPEC_LITE.json** física que le asigne la tarea. En caso de fallos críticos de infraestructura, el sistema genera automáticamente una **EMERGENCY_SPEC.json** para activar el protocolo de **Auto-Healing**.
 
-- Está en el roster de **17 agentes autorizados**.
-- Existe una **SPEC_LITE.json** (o `EMERGENCY_SPEC.json`) física en el proyecto que le asigne explícitamente la tarea (`metadata.assigned_agent`).
+### ⚡ 3. Engram Memory (Redis-First)
 
-### 🚦 3. Bypass Protocol
-
-Ciertas herramientas de gestión (`factory-doctor`, `kanban-solidity-gate`, `registry-manager`) tienen pase libre por la aduana para permitir el diagnóstico y avance de fases sin Specs previas.
+Antes de cada tarea, el Orquestador ejecuta un `warm_up_engram`. Esto carga las reglas críticas de Neo4j en Redis, permitiendo que las herramientas MCP inyecten restricciones técnicas en milisegundos sin latencia de base de datos.
 
 ---
 
-## 🚀 III. CICLO DE VIDA (Fases M1-M5)
+## 🚀 III. CICLO DE VIDA Y TAXONOMÍA (Fases M1-M5)
 
-- **🕵️ M1: Discovery:** ROI y visión sellados en el contrato maestro.
-- **📐 M2: Architecture:** Solidificación del Backbone y ADRs técnicos.
-- **⚙️ M3: Production:** Ejecución paralela en **Clean Sessions** (aislamientos atómicos).
-- **🛡️ M4: Compliance:** Auditoría de **Solidity Guard** y escaneo Zero-Trust de secretos.
-- **🚀 M5: Operations:** Uptime garantizado y persistencia LTP en Neo4j.
+El progreso se mide por la transición física entre hitos, categorizando cada skill según su función cognitiva:
+
+- **🕵️ M1: Discovery (DEFINE):** Formulación de ROI y firma del contrato maestro `PRP_MASTER.json`.
+- **📐 M2: Architecture (PLAN):** Solidificación del Backbone y registro de Decisiones Arquitectónicas (ADRs).
+- **⚙️ M3: Production (BUILD):** Ejecución paralela en **Clean Sessions** autorizadas por la Aduana.
+- **🛡️ M4: Compliance (VERIFY/REVIEW):** Auditoría de **Solidity Guard**, escaneo Zero-Trust de secretos y pruebas E2E.
+- **🚀 M5: Operations (SHIP):** Uptime monitorizado, auto-sanación de servicios y persistencia LTP.
 
 ---
 
 ## ⚖️ IV. MANDATOS CONSTITUCIONALES
 
-- **MANDATO MCP**: Prohibido usar `bash` para tareas industriales. Solo invocación directa MCP.
+- **MANDATO MCP**: Prohibido usar `bash` para tareas industriales. Solo invocación directa MCP por nombre.
 - **UNIDADES SI**: Tiempo en **segundos (s)**, Espacio en **bytes (B)**.
-- **HITL OBLIGATORIO**: Ninguna fase avanza a `APPROVED` sin la firma del Director en `APPROVAL_MX.md`.
+- **HITL OBLIGATORIO**: Ninguna fase avanza sin la firma humana en `APPROVAL_MX.md`.
+- **GUARDIAN ANGEL**: El uso del hook pre-commit `.githooks/guardian.py` es obligatorio para desarrolladores humanos para prevenir fugas de secretos y fallos de estructura locales.
 
 ---
 
 ## 🕹️ V. MATRIZ DE CONTROL (SOPs via MCP)
 
-| SOP / Tool | Función Industrial | Responsable Primario |
-| :--- | :--- | :--- |
-| `prp-generator` | Generación del contrato maestro M1. | Product Owner |
-| `factory-orchestrate` | Análisis de topología DAG y despacho paralelo. | Orchestrator |
-| `delegate-clean-session` | Delegación aislada con inyección JIT Neo4j. | Orchestrator |
-| `kanban-solidity-gate` | Control de flujos, avance de fases y dashboard. | Orchestrator |
-| `factory-audit-pro` | Auditoría de lógica y conformidad industrial. | QA Tester |
-| `agentic-thought-secret-scanner` | Escaneo industrial de vulnerabilidades y secretos. | Security Auditor |
-| `sync-memory` | Persistencia de engramas finales en el LTP. | Memory Optimizer |
+| SOP / Tool | Categoría | Función Industrial | Responsable |
+| :--- | :--- | :--- | :--- |
+| `prp-generator` | DEFINE | Generación del contrato maestro y specs. | Product Owner |
+| `warm_up_engram` | PLAN | Sincronización de memoria rápida Redis. | Orchestrator |
+| `factory-orchestrate`| PLAN | Análisis de DAG y despacho prioritario de emergencias. | Orchestrator |
+| `delegate-clean-session`| BUILD | Delegación aislada con inyección de reglas JIT. | Orchestrator |
+| `factory-audit-pro` | REVIEW | Auditoría de solidez y reporte de métricas SI. | QA Tester |
+| `auto-heal` | SHIP | Sanación autónoma de infra y re-despliegue. | Factory Evolver |
 
 ---
-*Ratificado: 2026-04-04 | Dasafo Factory v5.0-MCP | Soberanía Industrial Garantizada.*
+*Ratificado: 2026-04-05 | dasafo_Factory v5.0.2-MCP | Soberanía Industrial Garantizada.*
