@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Nativa)
 agent_authorization: [DOCS_MASTER]
+production_category: SHIP
 source: https://skills.sh/sickn33/antigravity-awesome-skills/api-documentation-generator
 protocol: Documentation-as-Code / DAST
 ---

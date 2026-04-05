@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [DEVOPS_SRE]
+production_category: SHIP
 source: https://skills.sh/hashicorp/agent-skills/terraform-style-guide
 protocol: IaC-First / DAST
 ---

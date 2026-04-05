@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [ORCHESTRATOR]
+production_category: PLAN
 source: internal/skill-creator
 protocol: Registry-Notary / DAST
 ---

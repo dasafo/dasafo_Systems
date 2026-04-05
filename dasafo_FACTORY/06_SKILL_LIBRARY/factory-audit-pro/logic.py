@@ -1,9 +1,18 @@
 import os
 import json
 import time
+import socket
 from pathlib import Path
+import redis # 👈 Nueva dependencia Engram
 
 # Logic based on: https://skills.sh/pbakaus/impeccable/audit
+# Integrad con Engram Memory (v5.0-MCP Fase 2)
+
+redis_client = redis.Redis(
+    host=os.getenv("REDIS_HOST", "localhost"),
+    port=int(os.getenv("REDIS_PORT", 6379)),
+    decode_responses=True
+)
 
 def execute_audit(
     target_path: str,
@@ -18,7 +27,6 @@ def execute_audit(
     
     if dimensions is None:
         dimensions = ["A11y", "Perf", "Theme", "Resp", "AntiPattern"]
-
 
     # 1. Logic: Contract Parity vs Physical Evidence (SDD)
     health_score = 20
@@ -47,8 +55,7 @@ def execute_audit(
                         "recommendation": "SOLIDITY LEAK: PRP_CONTRACT requires Next.js/React UI, but 'WORKSPACE/frontend/' is empty. Must inject M3-005 (Premium UI Scaffold) to fix structural anomaly."
                     })
             
-            # --- NUEVA REGLA: Verificación Física de Servicios Corriendo (M5) ---
-            import socket
+            # --- Regla: Verificación Física de Servicios Corriendo (M5) ---
             def is_port_open(port):
                 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     s.settimeout(0.5)
@@ -86,7 +93,6 @@ def execute_audit(
                             "recommendation": "FULL-STACK LEAK: Contract mandates UI, but no frontend service is reachable. Must dockerize and run the frontend before M5 closure."
                         })
 
-                    
         except Exception as e:
             detailed_findings.append({"severity": "P1", "category": "AuditError", "location": "PRP_CONTRACT.json", "recommendation": str(e)})
 
@@ -110,9 +116,9 @@ def execute_audit(
         "verdict": verdict,
         "executive_summary": f"Audit complete for {project_path.name}. Systems solidified.",
         "detailed_findings": detailed_findings,
-        "industrial_status": "AUDITED - SOLIDITY VERIFIED",
+        "industrial_status": "AUDITED - SOLIDITY VERIFIED" if verdict == "PASS" else "AUDITED - SOLIDITY FAILED",
         "compliance_report": {
-            "solidity_verified": True,
+            "solidity_verified": verdict == "PASS",
             "si_units_applied": True,
             "execution_duration_seconds": round(execution_duration_s, 4)
         }
@@ -137,9 +143,22 @@ def execute_audit(
                         "severity": "high",
                         "error_description": finding.get("recommendation"),
                         "correction": "Industrial refactor required.",
-                        "golden_rule": f"VIOLATION: {finding.get('recommendation')}",
+                        "golden_rule": f"AUDIT VIOLATION: {finding.get('recommendation')}",
                         "categories": ["solidity-guard"]
                     }
                     f.write(f"\n{json.dumps(feedback_entry)}\n")
+                    
+                    # --- FASE 2: ENGRAM SYNC EN TIEMPO REAL ---
+                    # Inyectar el fallo inmediatamente en Redis para proteger a otros agentes
+                    try:
+                        cache_key = "dasafo:engram:rules:M4_COMPLIANCE:global"
+                        cached_rules = redis_client.get(cache_key)
+                        rules_list = json.loads(cached_rules) if cached_rules else []
+                        
+                        if feedback_entry["golden_rule"] not in rules_list:
+                            rules_list.append(feedback_entry["golden_rule"])
+                            redis_client.set(cache_key, json.dumps(rules_list), ex=14400) # TTL 4 horas
+                    except Exception:
+                        pass # Si Redis falla, no rompemos la auditoría principal
 
     return result_payload, [str(report_file)]

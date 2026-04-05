@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Nativa)
 agent_authorization: [ARCHITECT]
+production_category: PLAN
 source: https://skills.sh/jeffallan/claude-skills/api-designer
 protocol: Design-First / DAST
 ---

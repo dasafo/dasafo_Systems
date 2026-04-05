@@ -141,11 +141,99 @@ __pycache__/
 *.pyc
 EOF
 
+# 10. Provisionar Hoja de Firma Humana
+cp "../dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/TEMPLATES/approval.md" "$PROJECT_ROOT/DOCS/USER/APPROVAL_M1.md"
+
+
+# ==============================================================================
+# 🛡️ 11. INYECCIÓN DE GUARDIAN ANGEL HOOKS (FASE 3: DAST LOCAL)
+# ==============================================================================
+echo "[*] Injecting Guardian Angel DAST Hooks into local environment..."
+
+mkdir -p "$PROJECT_ROOT/.githooks"
+
+# Python Guardian Engine
+cat <<'EOF' > "$PROJECT_ROOT/.githooks/guardian.py"
+import os, sys
+from pathlib import Path
+
+# Configurar rutas absolutas al Core de la Factoría
+PROJECT_ROOT = Path(os.getcwd())
+FACTORY_ROOT = PROJECT_ROOT.parent.parent / "dasafo_FACTORY"
+
+if not FACTORY_ROOT.exists():
+    print("⚠️ [GUARDIAN ANGEL] Factory Core no encontrado. Saltando Aduana DAST Local.")
+    sys.exit(0)
+
+# Inyectar las Skills de Seguridad y Backbone al PATH
+sys.path.append(str(FACTORY_ROOT / "06_SKILL_LIBRARY" / "agentic-thought-secret-scanner"))
+sys.path.append(str(FACTORY_ROOT / "06_SKILL_LIBRARY" / "project-backbone-validator"))
+
+print("🛡️ Ejecutando Aduana Universal (Local DAST Mode)...")
+
+# 1. SECRET SCANNER ENFORCEMENT
+try:
+    import logic as secret_logic
+    res, _ = secret_logic.execute_scan(str(PROJECT_ROOT))
+    if res.get("secrets_found", 0) > 0:
+        print("\n🚨 [GUARDIAN FATAL] BLOQUEO DE SEGURIDAD: Secretos detectados.")
+        for f in res.get("findings", []):
+            print(f"   ✖ {f['file']}:{f['line']} -> Expuesto: {f['type']}")
+        print("💡 Acción: Usa .env o un Secret Manager. No satures el Engram con credenciales.\n")
+        sys.exit(1)
+except Exception as e:
+    print(f"⚠️ [GUARDIAN WARNING] Scanner falló: {e}")
+
+# 2. BACKBONE VALIDATOR ENFORCEMENT
+try:
+    import logic as backbone_logic
+    # Autodetectar frameworks en base a carpetas existentes
+    if (PROJECT_ROOT / "WORKSPACE" / "backend").exists() and any((PROJECT_ROOT / "WORKSPACE" / "backend").iterdir()):
+        res, _ = backbone_logic.execute_backbone_validation(str(PROJECT_ROOT), "fastapi")
+        if not res.get("scaffolding_ready", False):
+            print("\n🚨 [GUARDIAN FATAL] BLOQUEO ESTRUCTURAL: Backbone Backend (FastAPI) incompleto.")
+            print(f"   ✖ Faltan: {res.get('missing_bones')}")
+            sys.exit(1)
+            
+    if (PROJECT_ROOT / "WORKSPACE" / "frontend").exists() and any((PROJECT_ROOT / "WORKSPACE" / "frontend").iterdir()):
+        res, _ = backbone_logic.execute_backbone_validation(str(PROJECT_ROOT), "nextjs")
+        if not res.get("scaffolding_ready", False):
+            print("\n🚨 [GUARDIAN FATAL] BLOQUEO ESTRUCTURAL: Backbone Frontend (NextJS) incompleto.")
+            print(f"   ✖ Faltan: {res.get('missing_bones')}")
+            sys.exit(1)
+except Exception as e:
+    print(f"⚠️ [GUARDIAN WARNING] Backbone validator falló: {e}")
+
+print("✅ [GUARDIAN ANGEL] Solidificación aprobada. Commit autorizado.")
+sys.exit(0)
+EOF
+
+# Bash Pre-commit Trigger
+cat <<'EOF' > "$PROJECT_ROOT/.githooks/pre-commit"
+#!/bin/bash
+# Llama al script Python del Guardian Angel
+python3 .githooks/guardian.py
+if [ $? -ne 0 ]; then
+    echo "❌ COMMIT ABORTADO POR LA ADUANA UNIVERSAL."
+    exit 1
+fi
+EOF
+
+# Script de instalación para desarrolladores humanos
+cat <<'EOF' > "$PROJECT_ROOT/setup_git_hooks.sh"
+#!/bin/bash
+git config core.hooksPath .githooks
+echo "✅ Git hooks configurados. El Guardian Angel está activo en tu IDE."
+EOF
+
+chmod +x "$PROJECT_ROOT/.githooks/pre-commit"
+chmod +x "$PROJECT_ROOT/setup_git_hooks.sh"
+
+
+# ==============================================================================
 echo "[+] Directory structure created dynamically at: $PROJECT_ROOT"
 echo "[+] Standardized under 00_CORE_CONSTITUTION.md."
 echo "[+] Master Registry seeded for Clean Sessions."
 echo "[+] Aduana Universal state initialized to v5.0-MCP."
+echo "[+] Guardian Angel Hooks generados en .githooks/"
 echo "[+] SUCCESS: Factory ready for Phase M1 (Discovery)."
-
-# 10. Provisionar Hoja de Firma Humana
-cp "../dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/TEMPLATES/approval.md" "$PROJECT_ROOT/DOCS/USER/APPROVAL_M1.md"

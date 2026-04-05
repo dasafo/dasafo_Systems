@@ -54,7 +54,6 @@ def execute_adr(
     artifacts = []
     
     if action == "init":
-        from .logic import update_index
         update_index(adr_dir)
         res = {"industrial_status": "ADR_INDEX_UPDATED"}
         artifacts.append(str(adr_dir / "README.md"))
@@ -62,7 +61,11 @@ def execute_adr(
     elif action == "finalize_blueprint":
         blueprint_file = project_path / "DOCS" / "ARCH" / "BLUEPRINT.md"
         blueprint_file.parent.mkdir(parents=True, exist_ok=True)
-        # ... (Lógica de escaneo DAST de ADRs del original)
+        blueprint_content = "# System Blueprint (4-Layer)\n\n"
+        if adr_dir.exists():
+            for f in sorted(adr_dir.glob("*.md")):
+                if f.name != "README.md":
+                    blueprint_content += f"- **{f.name}**: {f.read_text().splitlines()[0]}\n"
         blueprint_file.write_text(blueprint_content, encoding="utf-8")
         res = {"industrial_status": "SOLIDIFIED - BLUEPRINT CREATED"}
         artifacts.append(str(blueprint_file))

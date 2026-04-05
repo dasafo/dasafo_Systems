@@ -4,6 +4,7 @@
     "task_id": "Required",
     "parent_prp": "PRP_PATH",
     "assigned_agent": "REQUIRED",
+    "production_category": "REQUIRED (DEFINE | PLAN | BUILD | VERIFY | REVIEW | SHIP)",
     "technology": "global",
     "context_pointers": []
   },

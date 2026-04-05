@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [FACTORY_EVOLVER]
+production_category: BUILD
 source: https://skills.sh/github/awesome-copilot/refactor
 protocol: Surgical-Evolution / DAST
 ---
@@ -27,9 +28,9 @@ Provide surgical code refactoring to improve maintainability and apply "Golden R
 
 ## 🛡️ Industrial Constraints
 
-- **Physical Sandboxing:** Refactored code MUST be output to a new file with `_refactored` suffix. Never overwrite original files directly.
+- **Physical Sandboxing:** Refactored code MUST be output to a new file with `_refactored` suffix.
+- **⚠️ EMERGENCY EXCEPTION:** If `action="emergency_heal"`, the sandboxing constraint is lifted, and the original file is overwritten to allow the factory to self-heal infrastructure.
 - **SI Mandate:** Execution time in **seconds (s)** and metrics in **bytes (B)**.
-- **Test-Driven Policy:** Refactoring is FORBIDDEN on files that lack corresponding physical tests.
 
 ---
 **ORIGIN:** [refactor by awesome-copilot](https://skills.sh/github/awesome-copilot/refactor)

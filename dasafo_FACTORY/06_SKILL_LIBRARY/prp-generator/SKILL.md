@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Nativa)
 agent_authorization: [PRODUCT_OWNER, ORCHESTRATOR]
+production_category: DEFINE
 source: https://skills.sh/daffy0208/ai-dev-standards/prp-generator
 protocol: Contract-Driven / DAST
 ---

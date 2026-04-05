@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [ORCHESTRATOR, PRODUCT_OWNER]
+production_category: PLAN
 source: https://skills.sh/googleworkspace/cli/persona-project-manager
 protocol: Project-Coordination / DAST
 ---

@@ -96,12 +96,15 @@ La transición requiere la **Plantilla de Aprobación** (`approval.md`):
 }
 ```
 
-## XI. AGENTIC WORKSPACE SOVEREIGNTY (v5.0-Solidified)
+---
 
-- **RULE:** All production-grade artifacts (e.g., `src/`, `INFRASTRUCTURE/`, `Dockerfile`, `requirements.txt`, `docker-compose.yml`) MUST be confined to the `${PROJECT_ROOT}/WORKSPACE/` directory.
-- **PROHIBITION:** Agents are strictly forbidden from creating or modifying files at the `${PROJECT_ROOT}/` level, which is reserved exclusively for project documentation (`DOCS/`), task state (`TASKS/`), and the master contract (`PRP_CONTRACT.json`).
-- **RATIONALE:** This ensures that the production environment is isolated from the project management layer, preventing accidental deletions or context spills during multi-agent orchestration.
-- **ENFORCEMENT:** Any output created outside `WORKSPACE/` will be considered a "Deployment Leak" and will be auto-healed (moved) to the correct location by the `DEVOPS_SRE` or `ORCHESTRATOR`.
+## 🏛️ VII. REGLAS DE ORO DE LA FACTORÍA (v5.0-Solidified)
+
+### 1. SOBERANÍA DEL ESPACIO DE TRABAJO (WORKSPACE)
+- **Mando Supremo:** Todo artefacto de código (frontend, backend, infrastructure, mobile) **DEBE** residir exclusivamente dentro del directorio `WORKSPACE/` del proyecto.
+- **Prohibición Directa:** Bajo ninguna circunstancia un agente creará directorios de código como `src/`, `ui/`, `infrastructure/` o `db/` directamente en la raíz del proyecto.
+- **Aislamiento Estricto:** La raíz del proyecto es solo para Metadatos (`TASKS/`, `PROJECT_STATE.json`), Documentación (`DOCS/`) y Contratos (`PRP_CONTRACT.json`).
+- **Consecuencia de Violación:** Cualquier archivo fuera de `WORKSPACE/` será considerado un **SOLIDITY LEAK** y marcará un fallo automático en la auditoría industrial (`/audit`).
 
 ---
 *Manual de Conocimiento Global v5.0-Solidified | Dasafo Factory | Soberanía de Disco Garantizada.*

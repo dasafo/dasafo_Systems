@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [ARCHITECT, DB_MASTER]
+production_category: PLAN
 source: https://skills.sh/sickn33/antigravity-awesome-skills/database-architect
 protocol: Schema-First / DAST
 ---

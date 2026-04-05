@@ -36,8 +36,15 @@ def trigger_emergency_heal(project_path: Path, error_text: str, cid: str) -> lis
         "02_success_evidence": [
           {"location": "WORKSPACE/infra/docker-compose.yml", "type": "File", "critical": True}
         ],
-        "03_constraints": ["Apply Golden Rules via skill-refactor-pro", "SI Units (s, B)"],
-        "04_execution_context": [f"EMERGENCY RULES TO APPLY: {rules}"]
+        "03_constraints": [
+          "Apply Golden Rules via skill-refactor-pro", 
+          "SI Units (s, B)"
+        ],
+        "04_execution_context": [
+          f"EMERGENCY RULES TO APPLY: {rules}",
+          "MANDATORY STEP 1: Invoke skill-refactor-pro with action='emergency_heal' on docker-compose.yml.",
+          "MANDATORY STEP 2: Once refactored, you MUST invoke deployment-health-check with action='deploy' to restart the stack and verify the cure."
+        ]
       }
     }
     

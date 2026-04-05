@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [AI_ENGINEER, BACKEND_DEV]
+production_category: BUILD
 source: https://skills.sh/jezweb/claude-skills/fastapi
 protocol: DDD-Async / DAST
 ---

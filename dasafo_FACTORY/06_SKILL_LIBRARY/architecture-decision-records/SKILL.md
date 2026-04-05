@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Nativa)
 agent_authorization: [ARCHITECT]
+production_category: PLAN
 source: https://skills.sh/wshobson/agents/architecture-decision-records
 protocol: Immutable-Log / DAST
 ---

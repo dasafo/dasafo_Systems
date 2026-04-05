@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [MARKETING_GROWTH, QA_TESTER, SECURITY_AUDITOR]
+production_category: REVIEW
 source: https://skills.sh/pbakaus/impeccable/audit
 protocol: Quality-First / DAST
 ---

@@ -12,103 +12,120 @@
       "id": "orchestrator",
       "name": "Orchestrator",
       "instruction_file": ".agents/orchestrator.md",
-      "icon": "router"
+      "icon": "router",
+      "model_override": "gemini-3.1-pro-preview"
     },
     {
       "id": "marketing_growth",
       "name": "Marketing Growth",
       "instruction_file": ".agents/marketing_growth.md",
-      "icon": "trending_up"
+      "icon": "trending_up",
+      "model_override": "gemini-3-flash-preview"
     },
     {
       "id": "product_owner",
       "name": "Product Owner",
       "instruction_file": ".agents/product_owner.md",
-      "icon": "psychology"
+      "icon": "psychology",
+      "model_override": "gemini-3.1-pro-preview"
     },
     {
       "id": "architect",
       "name": "Architect",
       "instruction_file": ".agents/architect.md",
-      "icon": "architecture"
+      "icon": "architecture",
+      "model_override": "gemini-3.1-pro-preview"
     },
     {
       "id": "research_agent",
       "name": "Research Agent",
       "instruction_file": ".agents/research_agent.md",
-      "icon": "travel_explore"
+      "icon": "travel_explore",
+      "model_override": "gemini-3-flash-preview"
     },
     {
       "id": "ai_engineer",
       "name": "AI Engineer",
       "instruction_file": ".agents/ai_engineer.md",
-      "icon": "smart_toy"
+      "icon": "smart_toy",
+      "model_override": "gemini-3-flash-preview"
     },
     {
       "id": "backend_dev",
       "name": "Backend Developer",
       "instruction_file": ".agents/backend_dev.md",
-      "icon": "dns"
+      "icon": "dns",
+      "model_override": "gemini-3-flash-preview"
     },
     {
       "id": "frontend_dev",
       "name": "Frontend Developer",
       "instruction_file": ".agents/frontend_dev.md",
-      "icon": "brush"
+      "icon": "brush",
+      "model_override": "gemini-3-flash-preview"
     },
     {
       "id": "data_scientist",
       "name": "Data Scientist",
       "instruction_file": ".agents/data_scientist.md",
-      "icon": "insights"
+      "icon": "insights",
+      "model_override": "gemini-3.1-pro-preview"
     },
     {
       "id": "db_master",
       "name": "Database Master",
       "instruction_file": ".agents/db_master.md",
-      "icon": "storage"
+      "icon": "storage",
+      "model_override": "gemini-3-flash-preview"
     },
     {
       "id": "docs_master",
       "name": "Docs Master",
       "instruction_file": ".agents/docs_master.md",
-      "icon": "description"
+      "icon": "description",
+      "model_override": "gemini-3.1-flash-lite-preview"
     },
     {
       "id": "qa_tester",
       "name": "QA Tester",
       "instruction_file": ".agents/qa_tester.md",
-      "icon": "check_circle"
+      "icon": "check_circle",
+      "model_override": "gemini-3-flash-preview"
     },
     {
       "id": "security_auditor",
       "name": "Security Auditor",
       "instruction_file": ".agents/security_auditor.md",
-      "icon": "security"
+      "icon": "security",
+      "model_override": "gemini-3-flash-preview"
     },
     {
       "id": "deployment_monitor",
       "name": "Deployment Monitor",
       "instruction_file": ".agents/deployment_monitor.md",
-      "icon": "monitoring"
+      "icon": "monitoring",
+      "model_override": "gemini-3.1-flash-lite-preview"
     },
     {
       "id": "devops_sre",
       "name": "DevOps SRE",
       "instruction_file": ".agents/devops_sre.md",
-      "icon": "settings_input_component"
+      "icon": "settings_input_component",
+      "model_override": "gemini-3-flash-preview"
     },
     {
       "id": "factory_evolver",
       "name": "Factory Evolver",
       "instruction_file": ".agents/factory_evolver.md",
-      "icon": "auto_awesome"
+      "icon": "auto_awesome",
+      "model_override": "gemini-3.1-pro-preview"
     },
     {
       "id": "memory_optimizer",
       "name": "Memory Optimizer",
       "instruction_file": ".agents/memory_optimizer.md",
-      "icon": "brain"
+      "icon": "brain",
+      "model_override": "gemini-3.1-flash-lite-preview"
     }
   ],
   "capabilities": {

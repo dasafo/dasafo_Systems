@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [MEMORY_OPTIMIZER]
+production_category: REVIEW
 source: https://skills.sh/sickn33/antigravity-awesome-skills/context-optimization
 protocol: Context-Hygiene / DAST
 ---

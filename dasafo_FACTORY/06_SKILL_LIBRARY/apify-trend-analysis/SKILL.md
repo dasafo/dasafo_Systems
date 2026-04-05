@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Nativa)
 agent_authorization: [MARKETING_GROWTH, PRODUCT_OWNER, RESEARCH_AGENT, DATA_SCIENTIST]
+production_category: DEFINE
 source: https://skills.sh/apify/agent-skills/apify-trend-analysis
 protocol: Trend-Intelligence / DAST
 ---

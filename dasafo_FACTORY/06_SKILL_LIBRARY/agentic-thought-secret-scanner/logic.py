@@ -1,10 +1,17 @@
-# dasafo_FACTORY/06_SKILL_LIBRARY/agentic-thought-secret-scanner/logic.py
 import re
 import os
 import json
 import time
 import uuid
 from pathlib import Path
+import redis # 👈 Nueva dependencia Engram
+
+# Inicialización del Cliente Redis (Conexión industrial)
+redis_client = redis.Redis(
+    host=os.getenv("REDIS_HOST", "localhost"),
+    port=int(os.getenv("REDIS_PORT", 6379)),
+    decode_responses=True
+)
 
 def get_patterns() -> dict[str, re.Pattern]:
     """Returns a compiled dictionary of sensitive credential patterns."""
@@ -70,7 +77,7 @@ def scan_project(project_path: Path, gitignore_lines: list[str], network_preflig
     return findings
 
 def execute_scan(target_project: str, network_preflight: bool = False) -> tuple[dict, list]:
-    """Ejecuta el escáner y devuelve (result_payload, artifacts)"""
+    """Ejecuta el escáner, genera reporte DAST y actualiza el Engram si hay fugas."""
     start_time = time.time()
     project_path = Path(target_project).resolve()
     
@@ -84,6 +91,25 @@ def execute_scan(target_project: str, network_preflight: bool = False) -> tuple[
 
     findings = scan_project(project_path, gitignore_lines, network_preflight)
     
+    # --- FASE 2: ENGRAM SYNC (Inyección de Reglas de Seguridad Cero-Trust) ---
+    if findings:
+        try:
+            # Regla de seguridad transversal (afecta a todas las fases y tecnologías)
+            cache_key = "dasafo:engram:rules:global:global"
+            cached_rules = redis_client.get(cache_key)
+            rules_list = json.loads(cached_rules) if cached_rules else []
+            
+            for finding in findings:
+                rule = f"CRITICAL SECURITY MANDATE: Do not hardcode secrets. Found exposed {finding['type']} in {finding['file']}."
+                if rule not in rules_list:
+                    rules_list.append(rule)
+            
+            if rules_list:
+                redis_client.set(cache_key, json.dumps(rules_list), ex=14400) # TTL 4 horas
+        except Exception as e:
+            import logging
+            logging.getLogger("AduanaUniversal_v5.0").warning(f"Engram Sync Failed during security scan: {e}")
+
     secrets_found = len(findings)
     files_count = sum(len(files) for _, _, files in os.walk(project_path))
         

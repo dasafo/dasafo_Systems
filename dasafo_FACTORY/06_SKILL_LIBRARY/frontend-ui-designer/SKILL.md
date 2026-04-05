@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [FRONTEND_DEV]
+production_category: BUILD
 protocol: Aesthetic-Guard / DAST
 ---
 

@@ -23,6 +23,7 @@
 3. **Solidity Gate:** No phase is considered complete without a verified `kanban-solidity-gate` check via MCP and a `SECURITY_AUDITOR` clearance.
 4. **Chesterton's Fence:** No legacy code is deleted without an ADR explaining the "Why".
 5. **Backbone Mandate:** No atomic implementation agent shall be dispatched without prior physical validation of the scaffolding via `project-backbone-validator`.
+6. **Guardian Angel Mandate:** All human engineers MUST operate with the local DAST Pre-Commit Hook active (`.githooks/guardian.py`). Bypassing local security checks to force a commit is a critical Cultural Violation.
 
 ## 📊 IV. Industrial Metrics (SI Standards)
 
@@ -35,6 +36,19 @@
 2. **Execution Isolation:** Source files and temporary artifacts belong to the local `target_project`. Execution is ephemeral, knowledge is permanent.
 3. **Service Discovery:** Skills must first look for the hostname `dasafo-shared-db` for relational operations and `dasafo-shared-kg` for semantics.
 4. **INFRA Metrics:** Monitoring (via Glances/Core) must report latencies in seconds (s) and resource consumption in bytes (B).
+
+## 🧬 VI. The 19-Skill Production Taxonomy (Appendix)
+
+To eradicate "Vibe Coding" and align with Senior Engineering workflows, all MCP skills and delegated tasks MUST fall into one of the following strict execution states:
+
+* **DEFINE:** Strategy, metric baseline, and contract formulation.
+* **PLAN:** Architectural blueprints, database schemas, and DAG mapping.
+* **BUILD:** Atomic implementation of logic, UI, and design tokens.
+* **VERIFY:** Test-Driven validations, E2E tracing, and Guardrail checks.
+* **REVIEW:** Security audits, context pruning, and forensic healing.
+* **SHIP:** Infrastructure provisioning, deployment, and live-telemetry.
+
+Any task that attempts to "BUILD" and "SHIP" in the same atomic `SPEC_LITE.json` violates the separation of concerns and must be rejected by the Orchestrator.
 
 ---
 

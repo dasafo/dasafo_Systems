@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [RESEARCH_AGENT]
+production_category: DEFINE
 source: custom_dasafo_factory
 protocol: Research-Persistence / DAST
 ---

@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
-agent_authorization: [DEPLOYMENT_MONITOR, DEVOPS_SRE]
+agent_authorization: [DEPLOYMENT_MONITOR, DEVOPS_SRE, FACTORY_EVOLVER]
+production_category: SHIP
 protocol: Auto-Heal / DAST
 ---
 

@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [QA_TESTER, FRONTEND_DEV]
+production_category: VERIFY
 protocol: E2E-Validation / DAST
 ---
 

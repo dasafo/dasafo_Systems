@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [DB_MASTER]
+production_category: BUILD
 source: https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices
 protocol: DB-Optimization / DAST
 ---

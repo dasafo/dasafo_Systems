@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [ORCHESTRATOR, ARCHITECT, FACTORY_EVOLVER]
+production_category: REVIEW
 source: internal/factory-doctor
 protocol: Forensic-DAST / Solidification
 ---

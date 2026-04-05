@@ -2,12 +2,22 @@ import os
 import json
 import time
 from pathlib import Path
+import redis # 👈 Nueva dependencia Engram
 
 # Logic based on internal/factory-doctor
 # Standard: Stark-Solidity Forensic Audit (v5.0-MCP)
 
-def execute_healing(
+redis_client = redis.Redis(
+    host=os.getenv("REDIS_HOST", "localhost"),
+    port=int(os.getenv("REDIS_PORT", 6379)),
+    decode_responses=True
+)
+
+def execute_doctor(
     target_project: str,
+    agent: str, # Ajustado para la firma del mcp_app
+    action: str = "diagnose",
+    strict_mode: bool = True,
     sync_neo4j: bool = True
 ) -> tuple[dict, list]:
     """Pure logic for forensic disk audit and project state reconstruction (v5.0-MCP)."""
@@ -64,6 +74,20 @@ def execute_healing(
     }
     with open(state_file, 'w', encoding='utf-8') as f:
         json.dump(new_state, f, indent=2)
+
+    # --- FASE 2: ENGRAM SYNC (Inyección de advertencia post-curación) ---
+    try:
+        cache_key = f"dasafo:engram:rules:{detected_phase}:global"
+        cached_rules = redis_client.get(cache_key)
+        rules_list = json.loads(cached_rules) if cached_rules else []
+        
+        healing_rule = f"CRITICAL CONTEXT ALERT: El estado del proyecto acaba de ser reconstruido por Factory Doctor a la fase {detected_phase}. Confía únicamente en los archivos físicos, no asumas contexto previo."
+        
+        if healing_rule not in rules_list:
+            rules_list.append(healing_rule)
+            redis_client.set(cache_key, json.dumps(rules_list), ex=14400) # TTL 4 horas
+    except Exception:
+        pass
 
     execution_duration_s = time.time() - start_time
     

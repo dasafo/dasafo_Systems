@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [MARKETING_GROWTH, RESEARCH_AGENT, DOCS_MASTER, QA_TESTER, DEPLOYMENT_MONITOR, DEVOPS_SRE, FACTORY_EVOLVER, MEMORY_OPTIMIZER]
+production_category: VERIFY
 source: https://skills.sh/davila7/claude-code-templates/nemo-guardrails
 protocol: Fact-Checking / DAST
 ---

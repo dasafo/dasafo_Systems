@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [BACKEND_DEV]
+production_category: VERIFY
 protocol: Spec-Driven-Validation / DAST
 ---
 

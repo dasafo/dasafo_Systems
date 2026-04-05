@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [ORCHESTRATOR]
+production_category: BUILD
 source: internal/core-orchestration
 protocol: Context-Isolation / DAST
 ---

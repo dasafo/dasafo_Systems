@@ -26,7 +26,7 @@ playwright_logic = _load_skill_logic("playwright-e2e-tester")
 # --- HERRAMIENTAS MCP ---
 
 @mcp.tool(name="playwright-e2e-tester")
-@aduana_universal(skill_name="playwright-e2e-tester")
+@aduana_universal(skill_name="playwright-e2e-tester", max_retries=5)
 def playwright_e2e_tester(
     agent: str, 
     target_project: str, 
@@ -114,7 +114,7 @@ def api_docs_generator(
     )
 
 @mcp.tool(name="agentic-thought-secret-scanner")
-@aduana_universal(skill_name="agentic-thought-secret-scanner")
+@aduana_universal(skill_name="agentic-thought-secret-scanner", max_retries=2)
 def agentic_thought_secret_scanner(
     agent: str, 
     target_project: str, 

@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [PRODUCT_OWNER]
+production_category: DEFINE
 source: internal/financial-engine
 protocol: Financial-Viability / DAST
 ---

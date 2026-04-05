@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [ORCHESTRATOR]
+production_category: PLAN
 source: https://skills.sh/supercent-io/skills-template/vibe-kanban
 protocol: Phase-Gate / DAST
 ---

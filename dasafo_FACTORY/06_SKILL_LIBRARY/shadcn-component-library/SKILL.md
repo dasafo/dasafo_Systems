@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [FRONTEND_DEV]
+production_category: BUILD
 source: https://skills.sh/shadcn/ui/shadcn
 protocol: Component-Composition / DAST
 ---

@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [FACTORY_EVOLVER, MEMORY_OPTIMIZER, DATA_SCIENTIST]
+production_category: REVIEW
 source: https://skills.sh/phuryn/pm-skills/sentiment-analysis
 protocol: LTP-Sync / DAST
 ---

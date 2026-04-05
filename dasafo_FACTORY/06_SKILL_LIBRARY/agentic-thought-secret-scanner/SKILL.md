@@ -1,6 +1,7 @@
 ---
 version: v5.0-MCP (Nativa)
 agent_authorization: [BACKEND_DEV, DATA_SCIENTIST, DB_MASTER, QA_TESTER, SECURITY_AUDITOR, DEVOPS_SRE]
+production_category: VERIFY
 source: https://skills.sh/useai-pro/openclaw-skills-security/credential-scanner
 protocol: Zero-Trust / DAST
 ---

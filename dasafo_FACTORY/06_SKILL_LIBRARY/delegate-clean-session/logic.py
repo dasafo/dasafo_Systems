@@ -3,12 +3,20 @@ import json
 import time
 import shutil
 from pathlib import Path
+import redis # 👈 Nueva dependencia para Engram Cache
 
 # Logic based on dasafo_FACTORY Core v5.0-MCP
-# Integrated with Neo4j for Long-Term Persistence (LTP) rules
+# Integrated with Neo4j (LTP) and Redis (Short-Term Engram)
 
-def fetch_golden_rules(tech_hints: list[str], current_phase: str) -> list[str]:
-    """Queries the Knowledge Graph for historical critical rules by Phase and Tech."""
+# Inicialización del Cliente Redis (Conexión industrial compartida)
+redis_client = redis.Redis(
+    host=os.getenv("REDIS_HOST", "localhost"),
+    port=int(os.getenv("REDIS_PORT", 6379)),
+    decode_responses=True
+)
+
+def fetch_rules_from_neo4j(tech_hints: list[str], current_phase: str) -> list[str]:
+    """Consulta de respaldo al Knowledge Graph (Neo4j) si falla la caché."""
     try:
         from neo4j import GraphDatabase
     except ImportError:
@@ -36,13 +44,35 @@ def fetch_golden_rules(tech_hints: list[str], current_phase: str) -> list[str]:
     
     return rules
 
+def fetch_golden_rules(tech_hints: list[str], current_phase: str) -> list[str]:
+    """Lógica Redis-First para la Memoria Engram (v5.0-MCP)."""
+    all_rules = []
+    techs_to_query_neo4j = []
+
+    # 1. INTENTO DESDE REDIS (Engram Memory)
+    for tech in tech_hints:
+        cache_key = f"dasafo:engram:rules:{current_phase}:{tech.lower()}"
+        cached_rules = redis_client.get(cache_key)
+        
+        if cached_rules:
+            all_rules.extend(json.loads(cached_rules))
+        else:
+            techs_to_query_neo4j.append(tech)
+
+    # 2. FALLBACK A NEO4J (Solo para conocimiento no cacheado)
+    if techs_to_query_neo4j:
+        neo4j_rules = fetch_rules_from_neo4j(techs_to_query_neo4j, current_phase)
+        all_rules.extend(neo4j_rules)
+    
+    return list(set(all_rules)) # Eliminación de redundancias
+
 def execute_delegation(
     target_project: str,
     spec_path: str,
     agent_type: str,
     current_phase: str = "M3"
 ) -> tuple[dict, list]:
-    """Pure logic for context-isolated delegation and DAST auto-start (v5.0-MCP)."""
+    """Lógica pura para delegación aislada y auto-inicio DAST (v5.0-MCP)."""
     start_time = time.time()
     project_path = Path(target_project).resolve()
     
@@ -50,19 +80,19 @@ def execute_delegation(
     pending_path = project_path / "TASKS" / "01_PENDING" / spec_file_name
     in_progress_path = project_path / "TASKS" / "02_IN_PROGRESS" / spec_file_name
     
-    # 1. AUTO-START DAST (Physical Move)
+    # 1. AUTO-START DAST (Movimiento físico del archivo de tarea)
     if pending_path.exists():
         shutil.move(str(pending_path), str(in_progress_path))
         actual_spec_path = in_progress_path
     elif in_progress_path.exists():
         actual_spec_path = in_progress_path
     else:
-        raise FileNotFoundError(f"PHYSICAL_ERROR: Spec {spec_file_name} not found in PENDING/IN_PROGRESS.")
+        raise FileNotFoundError(f"PHYSICAL_ERROR: Spec {spec_file_name} no encontrada.")
 
     with open(actual_spec_path, 'r', encoding='utf-8') as f:
         spec_data = json.load(f)
 
-    # 2. JIT NEO4J INJECTION
+    # 2. JIT ENGRAM INJECTION (Redis + Neo4j)
     tech_hints = ["global"]
     pointers = str(spec_data.get("metadata", {}).get("context_pointers", [])).lower()
     if any(x in pointers for x in ["fastapi", ".py"]): tech_hints.append("fastapi")
@@ -72,7 +102,7 @@ def execute_delegation(
     
     if golden_rules:
         spec_data.setdefault("specification", {}).setdefault("03_constraints", [])
-        spec_data["specification"]["03_constraints"].append("--- NEO4J INJECTED GOLDEN RULES ---")
+        spec_data["specification"]["03_constraints"].append("--- ENGRAM INJECTED GOLDEN RULES ---")
         spec_data["specification"]["03_constraints"].extend(golden_rules)
         
         with open(actual_spec_path, 'w', encoding='utf-8') as f:
@@ -83,9 +113,9 @@ def execute_delegation(
     result = {
         "industrial_status": "DELEGATION_COMPLETE",
         "task_status": "COMPLETED",
-        "summary": f"Delegation successful to {agent_type}. {len(golden_rules)} rules injected.",
+        "summary": f"Delegación exitosa a {agent_type}. {len(golden_rules)} reglas inyectadas.",
         "metrics": {
-            "ltp_rules_injected": len(golden_rules),
+            "engram_rules_injected": len(golden_rules),
             "execution_duration_seconds": round(execution_duration_s, 4)
         }
     }
