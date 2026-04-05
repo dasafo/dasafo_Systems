@@ -85,7 +85,8 @@ cat <<EOF > "$PROJECT_ROOT/TASKS/02_IN_PROGRESS/SPEC_LITE.json"
   "status": "IN_PROGRESS",
   "phase": "M1",
   "metadata": {
-    "assigned_agent": "PRODUCT_OWNER"
+    "assigned_agent": "PRODUCT_OWNER",
+    "production_category": "DEFINE"
   },
   "dependencies": []
 }
@@ -127,10 +128,12 @@ cat <<EOF > "$PROJECT_ROOT/LOGS/FEEDBACK-LOG.md"
 *Memory Status: Pristine.*
 EOF
 
-# 8. Corregir sintaxis del .env
+# 8. Corregir sintaxis del .env e inyectar Infraestructura de Memoria
 echo "DOCKER_NETWORK=dasafo_network" > "$PROJECT_ROOT/.env"
 echo "SUPABASE_PROJECT_URL=https://[PROJECT_ID].supabase.co" >> "$PROJECT_ROOT/.env"
 echo "SUPABASE_SERVICE_ROLE_KEY=[HIDDEN]" >> "$PROJECT_ROOT/.env"
+echo "REDIS_HOST=localhost" >> "$PROJECT_ROOT/.env"
+echo "REDIS_PORT=6379" >> "$PROJECT_ROOT/.env"
 
 # 9. Local Privacy & Solidification
 cat <<EOF > "$PROJECT_ROOT/.gitignore"
