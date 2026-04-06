@@ -4,7 +4,7 @@ import json
 import time
 import uuid
 from pathlib import Path
-import redis # 👈 Nueva dependencia Engram
+import redis
 
 # Inicialización del Cliente Redis (Conexión industrial)
 redis_client = redis.Redis(
@@ -14,18 +14,17 @@ redis_client = redis.Redis(
 )
 
 def get_patterns() -> dict[str, re.Pattern]:
-    """Returns a compiled dictionary of sensitive credential patterns."""
+    """Diccionario de patrones optimizado para archivos .env y código fuente."""
     return {
-        "AWS Access Key": re.compile(r"AKIA[0-9A-Z]{16}"),
+        "AWS Access Key ID": re.compile(r"AKIA[0-9A-Z]{16}"),
+        # 🛡️ NUEVO: Detecta la Secret Key (40 caracteres base64) incluso sin comillas
+        "AWS Secret Access Key": re.compile(r"(?i)aws_secret_access_key\s*[:=]\s*['\"]?([A-Za-z0-9/+=]{40})['\"]?"),
         "OpenAI API Key": re.compile(r"sk-[a-zA-Z0-9]{48}"),
         "Anthropic API Key": re.compile(r"sk-ant-[a-zA-Z0-9-]{80,}"),
         "GitHub Personal Token": re.compile(r"gh[po]_[a-zA-Z0-9]{36}"),
-        "GitLab Personal Token": re.compile(r"glpat-[a-zA-Z0-9-_]{20}"),
-        "Slack Bot Token": re.compile(r"xoxb-[0-9]{10,}-[a-zA-Z0-9]{24}"),
-        "SendGrid API Key": re.compile(r"SG\.[a-zA-Z0-9-_]{22}\.[a-zA-Z0-9-_]{43}"),
-        "Private Key": re.compile(r"-----BEGIN (RSA |EC |DSA |OPENSSH )?PRIVATE KEY-----|-----BEGIN PGP PRIVATE KEY BLOCK-----"),
-        "Database URL with Credentials": re.compile(r"(postgres|mysql|mongodb)://[^\s'\"]+:[^\s'\"]+@"),
-        "Generic Secret": re.compile(r"(?i)(password|secret|token|api_key|apikey)\s*[:=]\s*['\"]([^ \s'\"]{8,})['\"]")
+        "Generic Secret": re.compile(r"(?i)(password|secret|token|api_key|apikey)\s*[:=]\s*['\"]?([A-Za-z0-9\-._~]{8,})['\"]?"), # 🛡️ Comillas opcionales
+        "Private Key": re.compile(r"-----BEGIN (RSA |EC |DSA |OPENSSH )?PRIVATE KEY-----"),
+        "Database URL": re.compile(r"(postgres|mysql|mongodb)://[^\s'\"]+:[^\s'\"]+@")
     }
 
 def mask_secret(value: str) -> str:
@@ -33,8 +32,13 @@ def mask_secret(value: str) -> str:
     return f"{value[:8]}...████████"
 
 def is_ignored(file_path: Path, gitignore_lines: list[str], project_root: Path) -> bool:
+    # 🚨 EXCEPCIÓN CRÍTICA: Los archivos .env NUNCA se ignoran en el escaneo de seguridad
+    if ".env" in file_path.name.lower():
+        return False
+
     try: relative_path = str(file_path.relative_to(project_root))
     except ValueError: return False
+    
     for line in gitignore_lines:
         line = line.strip()
         if not line or line.startswith("#"): continue
@@ -45,16 +49,20 @@ def is_ignored(file_path: Path, gitignore_lines: list[str], project_root: Path) 
 def scan_project(project_path: Path, gitignore_lines: list[str], network_preflight: bool = False) -> list[dict]:
     patterns = get_patterns()
     findings = []
-    skip_dirs = {"node_modules", "vendor", ".git", "dist", "build", "__pycache__"}
-    skip_files = {"package-lock.json", "yarn.lock", "pnpm-lock.yaml"}
-    text_extensions = {".py", ".js", ".ts", ".tsx", ".jsx", ".env", ".yml", ".yaml", ".json", ".md", ".txt", ".log", ".config", ".settings"}
+    # 🚫 Filtro de directorios pesados para optimizar el Guardián
+    skip_dirs = {"node_modules", ".git", "__pycache__", ".venv", "venv", "dist"}
+    text_extensions = {".py", ".js", ".ts", ".tsx", ".env", ".yml", ".yaml", ".json", ".md", ".txt", ".config"}
     
     for root, dirs, files in os.walk(project_path):
         dirs[:] = [d for d in dirs if d not in skip_dirs]
         for file in files:
-            if file in skip_files: continue
             file_path = Path(root) / file
-            if not any(file.lower().endswith(ext) for ext in text_extensions) and not file.startswith(".env"): continue
+            
+            # 🛡️ Aseguramos que los archivos .env siempre entren al escáner
+            is_env = file.lower().startswith(".env")
+            has_valid_ext = any(file.lower().endswith(ext) for ext in text_extensions)
+            
+            if not (is_env or has_valid_ext): continue
 
             try:
                 content = file_path.read_text(encoding="utf-8")
@@ -62,16 +70,16 @@ def scan_project(project_path: Path, gitignore_lines: list[str], network_preflig
                 
                 for p_name, p_regex in patterns.items():
                     for line_num, line_content in enumerate(content.splitlines(), 1):
-                        for m in p_regex.finditer(line_content):
-                            severity = "CRITICAL" if network_preflight or not ignored else "WARNING"
-                            action = "Rotate any exposed keys immediately."
-                            if ".env" in file_path.name: action += " Add .env to .gitignore and move to a secret manager."
-                            elif "src" in str(file_path): action = "Use environment variables or a secret vault instead of hardcoding."
+                        match = p_regex.search(line_content)
+                        if match:
+                            # 🚨 Si es un .env, la severidad es CRITICAL aunque esté en gitignore
+                            severity = "CRITICAL" if (not ignored or is_env) else "WARNING"
                             
                             findings.append({
                                 "file": str(file_path.relative_to(project_path)),
                                 "line": line_num, "type": p_name, "severity": severity,
-                                "value_masked": mask_secret(m.group(0)), "action": action
+                                "value_masked": mask_secret(match.group(0)),
+                                "action": "Add to vault or use environment variables correctly."
                             })
             except Exception: continue
     return findings

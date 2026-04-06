@@ -1,111 +1,85 @@
-# 🌍 Dasafo Factory | GLOBAL KNOWLEDGE (v5.0-MCP Solidificada)
+# 🏛️ Dasafo Factory | GLOBAL KNOWLEDGE (Master Manual Director)
 
-> **Versión Actual:** v5.0-MCP "Native Industrial Core"
-> **Estado Operativo:** Producción / Industrialización Completa
-> **Gobernanza:** Zero-Trust / Spec-Driven Development (SDD) / Human-Gate (HITL)
-
----
-
-## 📜 I. LA CONSTITUCIÓN CORE (v5.0-MCP)
-
-### 1. La Ley de la Spec (SDD)
-
-- **Spec Sobre Todo:** No se inicia ninguna misión sin un `PRP_MASTER.json` (Fase M1) o `SPEC_LITE.json` (Ejecución).
-- **Aislamiento de Fase:** Las transiciones (M1-M5) están bloqueadas físicamente por la presencia de artefactos en disco. Sin evidencia física, no hay avance.
-- **Soberanía del Director (HITL):** Ninguna transición de fase es válida sin un artefacto de aprobación firmado por un humano en `DOCS/USER/APPROVAL_MX.md`. El estatus debe ser explícitamente `Status: APPROVED`.
-
-### 2. Context Isolation (Clean Sessions)
-
-- **Soberanía de Memoria:** Los agentes operan bajo `CLEAN_SESSION=True`. Solo leen los `context_pointers` autorizados por el Orquestador.
-- **Artifact-First:** La comunicación entre agentes se realiza mediante cambios en el sistema de archivos, eliminando hilos conversacionales infinitos.
-- **Política No-Noise:** El `FEEDBACK-LOG` es un sustrato técnico para el `MEMORY_OPTIMIZER`, no un historial de chat.
-
-### 3. El Mandato MCP (Zero-Trust)
-
-- **Prohibición de Terminal:** El uso de comandos de terminal (`bash`, `sh`) o ejecución directa de scripts está estrictamente prohibido para operaciones de la fábrica.
-- **Invocación Directa:** Los agentes DEBEN invocar sus herramientas MCP directamente por nombre (ej. `prp-generator`, `kanban-solidity-gate`) a través del servidor `dasafo_FACTORY_Core_v5.0`.
-- **Mandato Backbone:** Ningún agente de implementación puede ser despachado sin la validación previa física del andamiaje mediante `project-backbone-validator`.
-- **Valla de Chesterton:** Prohibido borrar código legado sin un ADR (Architecture Decision Record) que justifique la acción.
-
-### 4. Métricas Industriales (Estándares SI)
-
-- **Precisión Temporal:** Siempre expresada en **Segundos (s)**.
-- **Precisión de Recursos:** Siempre expresada en **Bytes (B)**.
-
-### 5. Persistencia a Largo Plazo (LTP)
-
-- **Conocimiento Permanente:** Todo aprendizaje, fallo crítico o decisión arquitectónica DEBE registrarse en el Grafo de Conocimiento compartido (Neo4j - `kg-db`).
-- **Descubrimiento de Servicios:** Las habilidades priorizan los hostnames industriales `dasafo-shared-db` (relacional) y `dasafo-shared-kg` (semántico).
+> **Versión:** v5.0-MCP "Industrial Core - Parallel Hub System"
+> **Estatus:** Operacional (Mando Industrial Directo)
+> **Gobernanza:** Zero-Trust / SDD / Human-Gate Sovereignty (HITL)
 
 ---
 
-## 🛠️ II. ARQUITECTURA Y CICLO DE VIDA (M1-M5)
+## 👔 BIENVENIDO, DIRECTOR (HUMAN-GATE)
 
-1. **M1: Discovery & Finance:** Market fit, ROI financiero y firma del Contrato Maestro.
-2. **M2: Architecture & Foundation:** Provisión de infra (IaC), definiciones DTO y validación de Backbone.
-3. **M3: Implementation (Atomic):** Desarrollo basado en Specs con guardarraíles predictivos inyectados vía Neo4j.
-4. **M4: Validation & Quality (QA):** Auditoría industrial y escaneo Zero-Trust de secretos.
-5. **M5: Ops & Auto-Heal:** Despliegue, monitoreo de salud y persistencia de memoria final.
+Usted es la autoridad máxima y el único habilitado para el **Sign-Off** de misión. Esta factoría no es una herramienta de chat; es una infraestructura de ingeniería autónoma operando bajo mandatos neumáticos y protocolos de **Solidez Atómica**.
 
----
-
-## 🚀 III. ESTRATEGIA DE CRECIMIENTO (Go-To-Market)
-
-Basada en el template `growth_strategy.md`:
-
-- **Propuesta de Valor Empírica:** Enfoque en soluciones industrializadas, no herramientas genéricas.
-- **ROI Técnico:** Análisis basado en métricas SI (ROI en s, B).
-- **Estética Industrial:** Voz quirúrgica y directa. Diseño visual basado en dark mode y glassmorphism.
-- **Mandato Ético:** Factoría Vegetariana (prohibidas analogías de explotación animal).
+### 💎 Los 4 Pilares del Mando Industrial
+1. **Solidity (Andamiaje):** Arquitectura en 4 capas (Domain, Application, Infrastructure, UI) con separación absoluta de preocupaciones.
+2. **Vibe (Estética & Velocidad):** Interfaces premium (Glassmorphism, Dark Mode) y velocidad de ejecución medida en segundos (s).
+3. **Zero-Trust (Seguridad):** Los agentes solo invocan herramientas MCP certificadas. Prohibido el uso de scripts manuales o "vibe coding".
+4. **SDD (Desarrollo Guiado por Spec):** No hay código sin contrato (`PRP_MASTER`) ni ejecución sin especificación física (`SPEC_LITE`).
 
 ---
 
-## 📊 IV. TELEMETRÍA DE MISIÓN (Sistema Pulse)
+## 🏗️ I. LA CONSTITUCIÓN NATIVA (v5.0-MCP)
 
-Basada en el template `telemetry.md`. Todo reporte DEBE incluir:
+### 1. El Mandato del Spec
+- **Soberanía del Hito:** Ninguna fase (M1-M5) se considera superada sin evidencia física en `DOCS/` y un artefacto de aprobación firmado por usted en `DOCS/USER/APPROVAL_MX.md`.
+- **Aislamiento de Fase:** Las transiciones de fase están bloqueadas por el **Solidity Gate**. Sin pruebas de disco, no hay despliegue.
 
-- **Consumo de Recursos (B):** Delta de almacenamiento, overhead de red, consumo de tokens.
-- **Rendimiento (s):** Tiempo de ejecución, tasa de éxito, profundidad del grafo DAG.
-- **Salud Sistémica:** Puntuación de Solidez (1-10), Tasa de alucinación (Meta: 0%), Evidencia DAST (Disk IO Truth).
-
----
-
-## ✅ V. PROTOCOLO DE APROBACIÓN (Sign-off)
-
-La transición requiere la **Plantilla de Aprobación** (`approval.md`):
-
-1. **Evidencia Física:** Artefactos probatorios en `DOCS/`.
-2. **Solidity Gate:** Log de ejecución de `kanban-solidity-gate` confirmado.
-3. **Seguridad:** Clearance de `agentic-thought-secret-scanner` (PASSED).
-4. **Firma Humana:** Obligatoria en `DOCS/USER/APPROVAL_MX.md`.
+### 2. Zero-Trust & Memoria
+- **Prohibición de Terminal:** Los agentes tienen prohibido el uso de comandos de terminal directos para operaciones de la factoría. Solo invocamos la **Skill Library** vía FastMCP.
+- **Chesterton's Fence:** No se elimina código legado sin un ADR (Architecture Decision Record) que justifique el "Por Qué".
+- **LTP (Long-Term Persistence):** Cada decisión, fallo o aprendizaje se inyecta en el Grafo de Conocimiento (Neo4j), permitiendo una memoria resiliente entre misiones.
 
 ---
 
-## 📝 VI. ESQUEMA DE FEEDBACK (LTP)
+## 📡 II. EL ÍNDICE DE HUBS INDUSTRIALES
 
-```json
-{
-  "id": "FB-XXXX",
-  "version": "v5.0-MCP",
-  "timestamp": "ISO_8601",
-  "context": { "agent": "ID", "project": "NAME", "phase": "M[1-5]" },
-  "severity": "critical | high | medium | low",
-  "error_description": "Definición técnica precisa",
-  "golden_rule": "Regla derivada para Neo4j",
-  "categories": ["security", "infrastructure", "performance", "solidity-guard"]
-}
-```
+La factoría se organiza en **Hubs de Especialidad** (01-05). Cada departamento tiene sus propios protocolos y herramientas:
+
+*   **[HUB 01 | ESTRATEGIA & MARKETING](file:///home/david/Documents/AI/AGENTES/Informacion/01_STRATEGY_AND_MARKETING.md):** ROI financiero (M1), Contratos PRP y Crecimiento.
+*   **[HUB 02 | ARQUITECTURA & RESEARCH](file:///home/david/Documents/AI/AGENTES/Informacion/02_ARCHITECTURE_AND_RESEARCH.md):** Blueprints, ADRs, Bases de Datos y Viabilidad Técnica (M2).
+*   **[HUB 03 | PRODUCCIÓN ATÓMICA](file:///home/david/Documents/AI/AGENTES/Informacion/03_PRODUCTION.md):** Implementación de Lógica (FastAPI), UI (React/Shadcn) y Tokens (M3).
+*   **[HUB 04 | COMPLIANCE & CALIDAD](file:///home/david/Documents/AI/AGENTES/Informacion/04_COMPLIANCE_AND_QUALITY.md):** Auditorías Dast, Secret Scanner y Guardarraíles de Alucinación (M4).
+*   **[HUB 05 | OPERACIONES & SRE](file:///home/david/Documents/AI/AGENTES/Informacion/05_OPERATIONS.md):** IaC (Terraform/Docker), Despliegue y Autocuración (M5).
 
 ---
 
-## 🏛️ VII. REGLAS DE ORO DE LA FACTORÍA (v5.0-Solidified)
+## 📊 III. TELEMETRÍA DE MISIÓN (Sistema Pulse)
 
-### 1. SOBERANÍA DEL ESPACIO DE TRABAJO (WORKSPACE)
-- **Mando Supremo:** Todo artefacto de código (frontend, backend, infrastructure, mobile) **DEBE** residir exclusivamente dentro del directorio `WORKSPACE/` del proyecto.
-- **Prohibición Directa:** Bajo ninguna circunstancia un agente creará directorios de código como `src/`, `ui/`, `infrastructure/` o `db/` directamente en la raíz del proyecto.
-- **Aislamiento Estricto:** La raíz del proyecto es solo para Metadatos (`TASKS/`, `PROJECT_STATE.json`), Documentación (`DOCS/`) y Contratos (`PRP_CONTRACT.json`).
-- **Consecuencia de Violación:** Cualquier archivo fuera de `WORKSPACE/` será considerado un **SOLIDITY LEAK** y marcará un fallo automático en la auditoría industrial (`/audit`).
+Toda comunicación técnica debe ser quirúrgica y basada en datos SI:
+- **Latencia:** Siempre en **Segundos (s)**.
+- **Carga:** Siempre en **Bytes (B)**.
+- **Salud:** Score de Solidez (1-10) y Evidencia DAST (Disk Truth).
+
+> [!IMPORTANT]
+> **La Regla de Oro del Workspace:** Todo código **DEBE** residir en `WORKSPACE/`. La raíz es exclusivamente para contratos, documentación estratégica y metadatos de misión. Cualquier desviación es un **Solidity Leak**.
 
 ---
-*Manual de Conocimiento Global v5.0-Solidified | Dasafo Factory | Soberanía de Disco Garantizada.*
-*Ratificado: 2026-04-04 | Dasafo Factory v5.0-MCP Industrialized Spanish Edition.*
+
+## ✅ IV. PROTOCOLO DE SIGN-OFF (Human-Gate)
+
+Para autorizar una transición, verifique en `DOCS/`:
+1. **Evidencia Física:** ¿Existen los artefactos prometidos?
+2. **Security Clearance:** ¿Ha pasado el `agentic-thought-secret-scanner`?
+3. **Solidity Gate:** ¿El log de `kanban-solidity-gate` es verde?
+
+Si todo es correcto, firme el archivo de hito en `DOCS/USER/APPROVAL_MX.md`.
+
+---
+
+## 🧬 V. TAXONOMÍA DE PRODUCCIÓN (19-Skills)
+
+Toda tarea delegada caerá en uno de estos estados de ejecución industrial:
+*   **DEFINE:** Estrategia y Contrato M1.
+*   **PLAN:** Arquitectura y Schema M2.
+*   **BUILD:** Implementación de Código M3.
+*   **VERIFY:** Testeo y Guardarraíles M4.
+*   **REVIEW:** Auditoría y Crítica de Diseño.
+*   **SHIP:** Despliegue y Ops M5.
+
+---
+
+*Manual de Conocimiento Global v5.0-Solidified | Dasafo Factory | Native Industrial Spanish Edition.*
+*Ratificado por la IA Orchestrator para el Director Humano | 2026-04-06.*
+
+---
+**Firma del Director:** ___________________ (Sign-Off Autorizado)

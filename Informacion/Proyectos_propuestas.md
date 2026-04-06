@@ -1,6 +1,6 @@
-# 📋 SPEC - Los 5 Mejores Proyectos para Probar dasafo_FACTORY v3.2.0-S
+# 📋 SPEC - Los 5 Mejores Proyectos para Probar dasafo_FACTORY v5.0-MCP
 
-**Versión:** 2026-03-27  
+**Versión:** 2026-04-06  
 **Objetivo:** Elegir el proyecto ideal para validar la nueva versión "Modular Toolbox" desde cero.
 
 Cada proyecto está diseñado para:

@@ -1,76 +1,71 @@
 # 🧰 Biblioteca de SKILLS (Hub 06)
 
 > **Versión:** v5.0-MCP "Industrial Core - Skills Solidified"
-> **Misión:** Catálogo completo de capacidades técnicas modulares autorizadas en Dasafo Factory. Estas habilidades son los únicos "sentidos" de ejecución válidos para los agentes.
-> **Gobernanza:** Zero-Trust / SDD / Unidades SI (s, B) / Non-Terminal Execution.
+> **Misión:** Catálogo maestro de capacidades técnicas modulares autorizadas en Dasafo Factory. Estas habilidades definen los únicos "sentidos" y herramientas de ejecución válidos para los agentes.
+> **Gobernanza:** Zero-Trust / SDD / Unidades SI (s, B) / Ejecución No-Terminal (Nativa MCP)
 
 ---
 
 ## 🏛️ Hub 01: Estrategia, Producto y Orquestación
-
-- **`prp-generator`**: Generación y deconstrucción de contratos `PRP_MASTER` y especificaciones `SPEC_LITE`. Mandato de **Overwrite Override** para invalidar placeholders.
-- **`project-management`**: **[Motor DAG]** Cálculo de la topología de tareas y dependencias para ejecución paralela masiva.
-- **`startup-metrics-framework`**: Modelado financiero (ROI, CAC, LTV) y validación de viabilidad M1.
-- **`social-content-strategy`**: Diseño de flujos de contenido multiplataforma y calibración de marca.
-- **`apify-trend-analysis`**: Extracción y análisis de señales externas para ajuste táctico de producto.
-- **`delegate-clean-session`**: Bucle de delegación limpia con aislamiento total de contexto entre agentes.
-- **`registry-manager`**: Sincronización del `registry.json` y movimiento atómico de tareas en disco.
+*   **`prp-generator`**: Generación industrial del contrato `PRP_MASTER` y especificaciones `SPEC_LITE`. Define el "qué" y el "cómo" atómico de cada misión.
+*   **`project-management`**: **[Motor DAG]** El cerebro administrativo. Calcula dependencias, registra hitos y coordina la ejecución paralela masiva.
+*   **`startup-metrics-framework`**: Traduce la ejecución técnica a KPIs financieros (ROI, CAC, LTV) para validar la viabilidad económica del producto.
+*   **`social-content-strategy`**: Transforma contenido pilar en activos sociales optimizados para múltiples plataformas manteniendo la voz de marca.
+*   **`apify-trend-analysis`**: Extrae inteligencia competitiva y señales de mercado mediante actores de Apify para fundamentar decisiones de producto.
+*   **`delegate-clean-session`**: Núcleo de la multi-agencia. Delega tareas en sesiones aisladas con inyección de "Golden Rules" vía Neo4j.
+*   **`registry-manager`**: Administrador de la verdad única del proyecto. Gestiona el `registry.json` y el movimiento atómico de estados.
 
 ---
 
 ## 📐 Hub 02: Arquitectura, Investigación y Diseño
-
-- **`api-contract-generator`**: Definición de contratos OpenApi/Swagger y esquemas JSON-Schema blindados.
-- **`architecture-decision-records` (ADR)**: Registro formal de decisiones y compensaciones técnicas en `DOCS/ARCH/`.
-- **`research-manager`**: Coordinación de investigaciones seguras con mandato de escritura persistente en disco.
-- **`arxiv-technical-digest`**: Análisis de papers científicos para inyectar innovación verificada.
-- **`atomic-design-tokens`**: **[Estandarización UI]** Generación y sincronización de variables visuales (colores, espaciado) para consistencia multi-agente.
+*   **`api-contract-generator`**: Implementación "Design-First" de contratos OpenAPI 3.1 y esquemas JSON-Schema blindados.
+*   **`architecture-decision-records`**: Registro inmutable de decisiones técnicas críticas en `DOCS/ARCH/` para prevenir amnesia arquitectónica.
+*   **`research-manager`**: Organiza y persiste investigaciones seguras con mandato de escritura persistente en disco (Zero-Guessing).
+*   **`arxiv-technical-digest`**: Análisis y digestión de papers científicos de ArXiv para inyectar innovación verificada en el blueprint.
+*   **`atomic-design-tokens`**: Gestión y sincronización de variables visuales (JSON/CSS) para garantizar coherencia UI multi-agente.
 
 ---
 
 ## ⚙️ Hub 03: Producción e Implementación Técnica
-
-- **`async-fastapi-logic`**: Implementación de backend asíncrono tipado (FastAPI) con patrones de repositorio.
-- **`nodejs-backend-patterns`**: Desarrollo de servicios Node.js/TypeScript basados en DTOs y capas.
-- **`frontend-ui-designer`**: Construcción de interfaces premium (React/Tailwind) con fidelidad de marca.
-- **`shadcn-component-library`**: Integración de componentes atómicos de alta calidad y accesibilidad.
-- **`database-architect-strategic`**: Diseño de esquemas SQL/NoSQL y ejecución de migraciones con Rollback.
-- **`supabase-stack-expert`**: Dominio de infraestructura Postgres, RLS (Row Level Security) y Edge Functions.
-- **`pytest-logic-verifier`**: Validación programática de la lógica de negocio backend.
+*   **`async-fastapi-logic`**: Generación de lógica backend asíncrona tipada siguiendo patrones DDD (repositorios y servicios).
+*   **`nodejs-backend-patterns`**: Aplicación de patrones industriales (DTO, Capa de Servicio) en ecosistemas Node.js/TypeScript.
+*   **`frontend-ui-designer`**: Validación y generación de sistemas de diseño premium basados en Tailwind CSS y Shadcn UI.
+*   **`shadcn-component-library`**: Administración de bibliotecas de componentes UI atómicos de alta fidelidad y accesibilidad.
+*   **`database-architect-strategic`**: Diseño de modelos de datos estratégicos y ejecución de migraciones con estrategia de rollback.
+*   **`supabase-stack-expert`**: Ingeniería avanzada para Supabase/Postgres, optimizando RLS (Row Level Security) y funciones de borde.
+*   **`pytest-logic-verifier`**: Generación y ejecución de pruebas unitarias para verificar la pureza de la lógica de negocio backend.
 
 ---
 
 ## 🛡️ Hub 04: Calidad, Cumplimiento y Aduana
-
-- **`factory-audit-pro`**: **[Linter Cultural]** Auditoría de chasis blindado y cumplimiento de la constitución v5.0-MCP.
-- **`agentic-thought-secret-scanner`**: **[Seguridad Crítica]** Escaneo de secretos, llaves API y análisis de CVEs en dependencias.
-- **`build-test-executor`**: **[Aduana Industrial]** Ejecución de compilaciones y generación mandatoria de `BUILD_REPORT.json`.
-- **`playwright-e2e-tester`**: Validación de flujos de extremo a extremo y generación de evidencias visuales.
-- **`hallucination-guardrail`**: Verificación de alineación lógica contra la fuente de verdad (Spec/Blueprint).
-- **`api-docs-generator`**: Extracción automatizada de documentación técnica a partir de artefactos de producción.
-
----
-
-## 🚀 Hub 05: Operaciones y persistencia (LTP)
-
-- **`docker-stack-provisioner`**: Generación de Dockerfiles multi-stage y orquestación de infra inmutable.
-- **`terraform-iac-builder`**: Definición de infraestructura en la nube como código para despliegues escalables.
-- **`deployment-health-check`**: Monitoreo de salud en tiempo real con métricas de latencia y respuesta en Unidades SI.
-- **`autonomous-feedback-analyzer`**: **[Sincronización Neo4j]** Extracción de lecciones aprendidas y persistencia de "Reglas de Oro" en el grafo.
-- **`skill-refactor-pro`**: Evolución propia de la Skill Library basada en feedback de errores (Auto-Evolución).
-- **`context-pruning-sieve`**: Optimización de la memoria de sesión para eficiencia de tokens y reducción de ruido.
-- **`factory-doctor`**: Diagnósticos sistémicos de integridad de orquestación y estados corruptos.
-- **`kanban-solidity-gate`**: Sincronización de tareas visuales basada en evidencia física de disco (DAST).
-- **`project-backbone-validator`**: Validación de andamiajes físicos antes de autorizar la implementación.
+*   **`factory-audit-pro`**: **[Linter Cultural]** Auditoría profunda de chasis blindado y cumplimiento de la Constitución v5.0-MCP.
+*   **`agentic-thought-secret-scanner`**: **[Seguridad Crítica]** Escaneo Zero-Trust de secretos, llaves API y análisis de CVEs en dependencias.
+*   **`build-test-executor`**: **[Aduana Industrial]** Validación de compilaciones y generación mandatoria del pasaporte `BUILD_REPORT.json`.
+*   **`playwright-e2e-tester`**: Ejecución de pruebas de extremo a extremo automatizadas y generación de evidencias visuales.
+*   **`hallucination-guardrail`**: Verificación de alineación factual para prevenir alucinaciones de IA y asegurar coherencia técnica.
+*   **`api-docs-generator`**: Extracción y transformación de contratos OpenAPI en documentación Markdown profesional para humanos.
 
 ---
 
-## 🛑 Reglas de Ejecución (v5.0-MCP)
-
-1. **Invocación Directa:** Las herramientas se invocan exclusivamente por su nombre MCP. **Prohibido el uso de terminal/bash**.
-2. **Mandato DAST:** Toda ejecución debe dejar evidencia física en disco para ser considerada exitosa.
-3. **Pureza de Unidades:** El rendimiento de las Skills debe reportarse obligatoriamente en **Segundos (s)** y **Bytes (B)**.
-4. **Soberanía de Sandbox:** Cada Skill tiene acceso restringido a su zona de influencia proyectada.
+## 🚀 Hub 05: Operaciones y Evolución (LTP)
+*   **`docker-stack-provisioner`**: Generación de Dockerfiles multi-stage e infraestructura como código (IaC) reproducible.
+*   **`terraform-iac-builder`**: Aprovisionamiento de infraestructura escalable siguiendo los estándares de HashiCorp.
+*   **`deployment-health-check`**: Monitoreo de salud en tiempo real y activación de protocolos de auto-sanado (Auto-Healing).
+*   **`autonomous-feedback-analyzer`**: **[LTP Mandate]** Extracción de engramas industriales y sincronización de "Reglas de Oro" con Neo4j.
+*   **`skill-refactor-pro`**: Refactorización quirúrgica de scripts basada en feedback histórico y estándares de integridad estructural.
+*   **`context-pruning-sieve`**: Optimización de la memoria de sesión para eficiencia de tokens y reducción de ruido cognitivo.
+*   **`factory-doctor`**: Diagnóstico estructural del repositorio para asegurar que la factoría funcione sin fricciones técnicas.
+*   **`kanban-solidity-gate`**: Visualización del estado de tareas basada estrictamente en evidencia física del disco (DAST).
+*   **`project-backbone-validator`**: Verificación de andamiajes físicos antes de autorizar cualquier tarea de implementación.
 
 ---
-*Ratificado: 2026-04-04 | Dasafo Factory v5.0-MCP Central Library | Total Skills: 35.*
+
+## 🛑 Reglas de Ejecución Industrial (v5.0-MCP)
+
+1.  **Invocación Nativa:** Todas las herramientas se invocan directamente por su nombre MCP. **Prohibido el uso de bash o scripts manuales**.
+2.  **Mandato de Evidencia (DAST):** Una Skill se considera ejecutada con éxito solo si existe evidencia física (logs/artefactos) en el disco.
+3.  **Unidades SI:** El rendimiento y consumo de recursos debe reportarse obligatoriamente en **Segundos (s)** y **Bytes (B)**.
+4.  **Aislamiento de Sesión:** Cada ejecución reside en una sesión limpia (`delegate-clean-session`) con inyección de contexto JIT.
+
+---
+*Ratificado: 2026-04-06 | Dasafo Factory v5.0-MCP Central Library | Total Skills: 34.*
