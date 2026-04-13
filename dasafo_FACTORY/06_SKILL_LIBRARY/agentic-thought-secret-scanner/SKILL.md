@@ -6,6 +6,9 @@ source: https://skills.sh/useai-pro/openclaw-skills-security/credential-scanner
 protocol: Zero-Trust / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🔍 Skill | agentic-thought-secret-scanner
 
 ## Objetivo
@@ -30,4 +33,7 @@ Identificar y mitigar la exposición accidental de credenciales sensibles (clave
 - **Unidades SI:** Tiempos reportados estrictamente en **segundos (s)**.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGEN:** [credential-scanner by useai-pro](https://skills.sh/useai-pro/openclaw-skills-security/credential-scanner)

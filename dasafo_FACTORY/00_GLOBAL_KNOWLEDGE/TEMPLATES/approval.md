@@ -1,5 +1,7 @@
 # ✅ Milestone Approval Template
->
+
+> [ ⬆️ Up: [[MOC_TEMPLATES]] | 📂 Index: [[MOC_TEMPLATES]] ]
+
 > **Standard:** v5.0-MCP "SDD Implementation"
 > **Project:** [PROJECT_NAME]
 > **Milestone:** [MILESTONE_ID]

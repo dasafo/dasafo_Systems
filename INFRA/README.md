@@ -1,5 +1,7 @@
 # 🛠️ dasafo_FACTORY | Global Infrastructure Services (v5.0-MCP)
 
+> [ ⬆️ Up: [[MOC_INFRASTRUCTURE]] | 📂 Index: [[MOC_INFRASTRUCTURE]] ]
+
 ## 🌐 Central Node (The Power Grid)
 
 This directory hosts the shared services for the entire factory ecosystem under the **Native Industrial Core** standard.

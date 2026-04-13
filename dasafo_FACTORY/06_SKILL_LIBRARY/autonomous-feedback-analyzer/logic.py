@@ -3,7 +3,8 @@ import json
 import time
 import re
 from pathlib import Path
-import redis # 👈 Nueva dependencia Engram
+import redis 
+from neo4j import GraphDatabase # 👈 Dependencia para Neo4j
 
 # Logic based on: https://skills.sh/phuryn/pm-skills/sentiment-analysis
 
@@ -13,6 +14,28 @@ redis_client = redis.Redis(
     port=int(os.getenv("REDIS_PORT", 6379)),
     decode_responses=True
 )
+
+def persist_to_knowledge_graph(rules, project_name, agent):
+    """Persistencia de largo plazo (LTP) en Neo4j."""
+    uri = os.getenv("NEO4J_URI", "bolt://dasafo-shared-kg:7687")
+    user = os.getenv("NEO4J_USER", "neo4j")
+    pwd = os.getenv("NEO4J_PASSWORD", "freedom85")
+    
+    try:
+        driver = GraphDatabase.driver(uri, auth=(user, pwd))
+        with driver.session() as session:
+            for r in rules:
+                session.run("""
+                    MERGE (t:Technology {name: $tech})
+                    MERGE (p:Phase {name: $phase})
+                    CREATE (r:GoldenRule {content: $rule, source: $project, author: $agent, timestamp: timestamp()})
+                    CREATE (r)-[:ADDRESSES]->(t)
+                    CREATE (r)-[:BELONGS_TO_PHASE]->(p)
+                """, tech=r['tech'], phase=r['phase'], rule=r['rule'], project=project_name, agent=agent)
+        driver.close()
+        return True, f"Sincronizados {len(rules)} engramas."
+    except Exception as e:
+        return False, f"LTP_ERROR: {str(e)}"
 
 def execute_feedback_analysis(
     target_project: str,
@@ -40,19 +63,20 @@ def execute_feedback_analysis(
     golden_rules_extracted = []
     critical_errors = 0
 
-    # Pattern analysis
-    entries = re.findall(r'(\{.*?\})', content, re.DOTALL)
+    # Pattern analysis (Supports one level of nesting for 'context' object)
+    entries = re.findall(r'(\{(?:[^{}]|\{[^{}]*\})*\})', content, re.DOTALL)
     for entry_raw in entries:
         try:
             entry = json.loads(entry_raw)
             if "golden_rule" in entry:
                 # Basic tech deduction
-                tech = "global"
-                f_path = entry.get("context", {}).get("file", "").lower()
-                if "shadcn" in f_path: tech = "shadcn"
-                elif ".py" in f_path: tech = "fastapi"
+                tech = entry.get("tech", "global").lower()
+                f_path = entry.get("context", {}).get("file", "").lower() if isinstance(entry.get("context"), dict) else ""
                 
-                phase = entry.get("context", {}).get("phase", "M3_PRODUCTION")
+                if "shadcn" in f_path or tech == "shadcn": tech = "shadcn"
+                elif ".py" in f_path or tech == "fastapi": tech = "fastapi"
+                
+                phase = entry.get("phase") or entry.get("context", {}).get("phase", "M3_PRODUCTION") if isinstance(entry.get("context"), dict) else entry.get("phase", "M3_PRODUCTION")
                 rule = entry["golden_rule"]
                 
                 golden_rules_extracted.append({
@@ -79,14 +103,9 @@ def execute_feedback_analysis(
         except: continue
 
     # LTP Sync (Neo4j)
-    # Se asume que persist_to_knowledge_graph existe y gestiona el guardado a largo plazo.
-    try:
-        from .logic import persist_to_knowledge_graph
-        sync_success, sync_msg = persist_to_knowledge_graph(
-            golden_rules_extracted, project_path.name, agent
-        )
-    except ImportError:
-        sync_success, sync_msg = False, "persist_to_knowledge_graph logic is missing or decoupled."
+    sync_success, sync_msg = persist_to_knowledge_graph(
+        golden_rules_extracted, project_path.name, agent
+    )
 
     # DAST Persistence
     report_name = f"ANALYSIS_LTP_{int(time.time())}.json"

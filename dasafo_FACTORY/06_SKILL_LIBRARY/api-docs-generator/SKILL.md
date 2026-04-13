@@ -6,6 +6,9 @@ source: https://skills.sh/sickn33/antigravity-awesome-skills/api-documentation-g
 protocol: Documentation-as-Code / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 📚 Skill | api-docs-generator
 
 ## Objetivo
@@ -33,4 +36,7 @@ Transformar contratos API físicos (YAML) en documentación Markdown profesional
 - **Soberanía DAST:** El artefacto resultante debe ser verificable en `DOCS/`.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGEN:** [api-documentation-generator by sickn33](https://skills.sh/sickn33/antigravity-awesome-skills/api-documentation-generator)

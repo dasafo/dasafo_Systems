@@ -5,6 +5,9 @@ production_category: VERIFY
 protocol: Spec-Driven-Validation / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🐍 Skill | pytest-logic-verifier
 
 ## Objective
@@ -31,4 +34,7 @@ Programmatically generate and execute Python logic tests (Pytest) to verify that
 - **Physical Proof:** Every verification MUST persist a `PYTEST_REPORT_*.json` in `LOGS/`.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 *Standard v5.0-MCP | Dasafo Factory Production Hub.*

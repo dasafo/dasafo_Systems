@@ -1,5 +1,7 @@
 # 🛠️ ORCHESTRATOR | Tools & Senses
 
+> [ ⬆️ Up: [[../MOC_STRATEGY]] | 📂 Index: [[MOC_ORCHESTRATOR]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Strategic Delegation, Hub Mapping & Project Recovery.
 

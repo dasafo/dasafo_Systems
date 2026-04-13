@@ -1,5 +1,7 @@
 # 🛠️ STRATEGY_AND_MARKETING | Tools & Senses (v5.0-MCP Solidified)
 
+> [ ⬆️ Up: [[../_dasafo_FACTORY]] | 📂 Index: [[MOC_STRATEGY]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Level 01 Strategy & Marketing tools (Orchestration, Product, Growth).
 

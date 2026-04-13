@@ -1,5 +1,7 @@
 # 🛠️ ARCHITECTURE_AND_RESEARCH | Tools & Senses (v5.0-MCP Solidified)
 
+> [ ⬆️ Up: [[../_dasafo_FACTORY]] | 📂 Index: [[MOC_ARCHITECTURE]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Level 02 Design, Blueprints & Scientific Validation.
 

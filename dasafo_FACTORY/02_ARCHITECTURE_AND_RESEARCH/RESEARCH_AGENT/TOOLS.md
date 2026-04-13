@@ -1,5 +1,7 @@
 # 🛠️ Research Agent (The Scientist Auditor) | Tools & Senses
 
+> [ ⬆️ Up: [[../MOC_ARCHITECTURE]] | 📂 Index: [[MOC_RESEARCH_AGENT]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Scientific investigation and technical feasibility analysis.
 

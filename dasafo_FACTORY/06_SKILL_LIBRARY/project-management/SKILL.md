@@ -6,6 +6,9 @@ source: https://skills.sh/googleworkspace/cli/persona-project-manager
 protocol: Project-Coordination / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 📅 Skill | project-management
 
 ## Objective
@@ -32,4 +35,7 @@ Coordinate industrial projects through task tracking and automated status loggin
 - **Audit Trail:** Every action must leave a physical trace in `DOCS/MANAGEMENT/`.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [persona-project-manager by googleworkspace](https://skills.sh/googleworkspace/cli/persona-project-manager)

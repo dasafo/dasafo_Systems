@@ -5,6 +5,9 @@ source: https://skills.sh/coreyhaines31/marketingskills/social-content
 protocol: Content-Repurposing / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🚀 Skill | social-content-strategy
 
 ## Objective
@@ -34,4 +37,7 @@ Design and execute high-performance social media marketing strategies by transfo
 - **DAST Sovereignty:** Strategy artifacts MUST be saved physically in `DOCS/MARKETING/`.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [social-content by coreyhaines31](https://skills.sh/coreyhaines31/marketingskills/social-content)

@@ -6,6 +6,9 @@ source: https://skills.sh/supercent-io/skills-template/vibe-kanban
 protocol: Phase-Gate / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🛂 Skill | kanban-solidity-gate
 
 ## Objective
@@ -31,4 +34,7 @@ Enforce the "Zero-Pending Rule" for phase transitions and orchestrate the **Vibe
 - **Zero-Ghost Tasks:** The dashboard must exactly reflect the disk state.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [vibe-kanban by supercent-io](https://skills.sh/supercent-io/skills-template/vibe-kanban)

@@ -6,6 +6,9 @@ source: https://skills.sh/sickn33/antigravity-awesome-skills/context-optimizatio
 protocol: Context-Hygiene / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🧠 Skill | context-pruning-sieve
 
 ## Objective
@@ -32,4 +35,7 @@ Extend agent context windows by pruning verbose tool outputs, social fluff, and 
 - **No-Trash Policy:** Automatic removal of social-loop phrases ("thank you", "perfect").
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [context-optimization by sickn33](https://skills.sh/sickn33/antigravity-awesome-skills/context-optimization)

@@ -6,6 +6,9 @@ source: https://skills.sh/jeffallan/claude-skills/api-designer
 protocol: Design-First / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 📡 Skill | api-contract-generator
 
 ## Objetivo
@@ -32,4 +35,7 @@ Diseñar y mantener contratos de API industriales (OpenAPI 3.1) siguiendo la met
 - **Métricas SI:** Tiempos reportados en **segundos (s)**.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGEN:** [api-designer by jeffallan](https://skills.sh/jeffallan/claude-skills/api-designer)

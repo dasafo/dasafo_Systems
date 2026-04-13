@@ -100,3 +100,7 @@ Esta lista detalla qué agentes tienen permiso para invocar cada skill de la `06
 2. **DAST OBLIGATORIO**: Todo cambio de estado requiere evidencia física en el disco.
 3. **UNIDADES SI**: Todas las métricas deben reportarse en **segundos (s)** y **bytes (B)**.
 4. **SESSION ISOLATION**: La delegación debe usar siempre `delegate-clean-session`.
+
+---
+> [!TIP]
+> Volver al [[00_INFO_START|Centro de Información]].

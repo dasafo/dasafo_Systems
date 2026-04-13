@@ -1,5 +1,7 @@
 # 🛠️ COMPLIANCE_AND_QUALITY | Tools & Senses (v5.0-MCP Solidified)
 
+> [ ⬆️ Up: [[MOC_COMPLIANCE]] | 📂 Global: [[../00_GLOBAL_KNOWLEDGE/MOC_GLOBAL]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Level 04 Documentation, QA Testing, Security & Research.
 

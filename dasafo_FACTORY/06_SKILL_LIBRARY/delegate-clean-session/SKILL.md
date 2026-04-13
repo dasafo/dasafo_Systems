@@ -6,6 +6,9 @@ source: internal/core-orchestration
 protocol: Context-Isolation / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🚀 Skill | delegate-clean-session
 
 ## Objective
@@ -31,4 +34,7 @@ Spawn a specialized sub-agent (Peon) in a "Clean Slate" environment. Prevents th
 - **DAST Sovereignty:** No delegation is valid without a physical `SPEC_LITE.json` on disk.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 *Standard v5.0-MCP | Dasafo Factory Core Orchestration.*

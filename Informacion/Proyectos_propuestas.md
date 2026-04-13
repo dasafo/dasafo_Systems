@@ -231,3 +231,7 @@ Empieza por el **Desafío 1 (Infra-Chaos)**. Es el más visual y satisfactorio p
 3. Lanza `/deploy` y observa cómo se activa el **Protocolo de Inmunidad**.
 
 ¿Por cuál de estos 3 "bancos de prueba" te gustaría que empezáramos a configurar las Specs?
+
+---
+> [!TIP]
+> Volver al [[00_INFO_START|Centro de Información]].

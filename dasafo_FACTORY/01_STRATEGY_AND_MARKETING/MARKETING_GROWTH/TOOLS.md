@@ -1,5 +1,7 @@
 # 🛠️ MARKETING_GROWTH | Tools & Senses
 
+> [ ⬆️ Up: [[../MOC_STRATEGY]] | 📂 Index: [[MOC_MARKETING_GROWTH]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Trend analysis, messaging alignment, and content generation.
 

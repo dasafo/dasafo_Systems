@@ -1,5 +1,7 @@
 # 🛠️ AI_ENGINEER | Tools & Senses
 
+> [ ⬆️ Up: [[../MOC_PRODUCTION]] | 📂 Index: [[MOC_AI_ENGINEER]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 
 ## 📡 Senses

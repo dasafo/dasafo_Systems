@@ -1,4 +1,6 @@
-# 🛠️ SECURITY_AUDITOR | Tools & Senses
+# 🛠️ SECURITY_AUDITOR | Tools & Senses (v5.0-MCP)
+
+> [ ⬆️ Up: [[../MOC_COMPLIANCE]] | 📂 Index: [[MOC_SECURITY_AUDITOR]] ]
 
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Static analysis (SAST), secret scanning, and dependency auditing.

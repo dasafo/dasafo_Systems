@@ -6,6 +6,9 @@ source: https://skills.sh/hashicorp/agent-skills/terraform-style-guide
 protocol: IaC-First / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🌍 Skill | terraform-iac-builder
 
 ## Objective
@@ -33,4 +36,7 @@ Generate and maintain industrial-grade Terraform IaC. Enforces HashiCorp's offic
 - **Zero-Secrets:** Credentials must NEVER be hardcoded.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 *Standard v5.0-MCP | Dasafo Factory Operations Hub.*

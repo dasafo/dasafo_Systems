@@ -1,5 +1,7 @@
 # 🛠️ Backend Dev | Tools & Senses (v5.0-MCP)
 
+> [ ⬆️ Up: [[../MOC_PRODUCTION]] | 📂 Index: [[MOC_BACKEND_DEV]] ]
+
 ## 🧰 Authorized Skills (Top 18 Hub)
 
 *(CRITICAL: All skills must be executed **directly by name** (e.g., the tool name matches the skill name)).*

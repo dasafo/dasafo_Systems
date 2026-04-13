@@ -6,6 +6,9 @@ source: https://skills.sh/github/awesome-copilot/refactor
 protocol: Surgical-Evolution / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🧬 Skill | skill-refactor-pro
 
 ## Objective
@@ -33,4 +36,7 @@ Provide surgical code refactoring to improve maintainability and apply "Golden R
 - **SI Mandate:** Execution time in **seconds (s)** and metrics in **bytes (B)**.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [refactor by awesome-copilot](https://skills.sh/github/awesome-copilot/refactor)

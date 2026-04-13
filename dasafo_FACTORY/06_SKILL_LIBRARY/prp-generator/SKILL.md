@@ -6,6 +6,9 @@ source: https://skills.sh/daffy0208/ai-dev-standards/prp-generator
 protocol: Contract-Driven / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 📝 Skill | prp-generator
 
 ## Objetivo
@@ -33,4 +36,7 @@ Generar artefactos de requisitos industriales siguiendo el sistema de doble cont
 - **Sincronización Física:** Los contratos deben persistir físicamente (DAST) en la raíz o en `TASKS/`.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [PRP Generator by daffy0208](https://skills.sh/daffy0208/ai-dev-standards/prp-generator)

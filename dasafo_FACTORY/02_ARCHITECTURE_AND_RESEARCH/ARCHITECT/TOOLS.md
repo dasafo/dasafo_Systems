@@ -1,5 +1,7 @@
 # 🛠️ ARCHITECT | Tools & Senses
 
+> [ ⬆️ Up: [[../MOC_ARCHITECTURE]] | 📂 Index: [[MOC_ARCHITECT]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** High-level blueprinting, ADR synthesis, and structural definition.
 

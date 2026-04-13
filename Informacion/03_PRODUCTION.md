@@ -88,3 +88,7 @@
 
 ---
 *Ratificado por la Dirección de Dasafo Factory | 2026-04-06 | Hub 03 Solidified & Implementation-Ready.*
+
+---
+> [!TIP]
+> Volver al [[00_INFO_START|Centro de Información]].

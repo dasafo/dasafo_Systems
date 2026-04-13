@@ -6,6 +6,9 @@ source: https://skills.sh/jezweb/claude-skills/fastapi
 protocol: DDD-Async / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # ⚡ Skill | async-fastapi-logic
 
 ## Objective
@@ -35,4 +38,7 @@ Design and implement high-performance async microservices using FastAPI, enforci
 - **Secret Zero-Leak:** No hardcoded secrets; use environment variables.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [fastapi by jezweb](https://skills.sh/jezweb/claude-skills/fastapi)

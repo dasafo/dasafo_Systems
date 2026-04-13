@@ -5,6 +5,9 @@ production_category: VERIFY
 protocol: E2E-Validation / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🎭 Skill | playwright-e2e-tester
 
 ## Objective
@@ -31,4 +34,7 @@ Execute End-to-End (E2E) browser testing using Playwright to ensure UI/UX workfl
 - **Contract Parity:** Assertions must map 1:1 to user stories in the project contract.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 *Standard v5.0-MCP | Dasafo Factory Compliance Hub.*

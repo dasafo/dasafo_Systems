@@ -5,6 +5,9 @@ source: https://skills.sh/jezweb/claude-skills/arxiv-digest
 protocol: Fact-First / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 📚 Skill | arxiv-technical-digest
 
 ## Objective
@@ -31,4 +34,7 @@ Ingest and summarize technical papers from ArXiv to validate architectural decis
 - **Auth Gate:** Only Hub 02 and Hub 04 agents are permitted to invoke this sense.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [arxiv-digest by jezweb](https://skills.sh/jezweb/claude-skills/arxiv-digest)

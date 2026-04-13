@@ -1,5 +1,7 @@
 # 📈 Go-To-Market Strategy: [PROJECT_NAME]
->
+
+> [ ⬆️ Up: [[MOC_TEMPLATES]] | 📂 Index: [[MOC_TEMPLATES]] ]
+
 > **Standard:** v5.0-MCP "SDD Implementation"
 > **Target Audience:** [TARGET_NICHE]
 > **Developed by:** MARKETING_GROWTH

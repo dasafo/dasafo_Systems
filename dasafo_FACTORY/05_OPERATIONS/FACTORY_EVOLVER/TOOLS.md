@@ -1,5 +1,7 @@
 # 🛠️ FACTORY_EVOLVER | Tools & Senses (v5.0-MCP)
 
+> [ ⬆️ Up: [[../MOC_OPERATIONS]] | 📂 Index: [[MOC_FACTORY_EVOLVER]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - Continuous Evolution"
 > **Scope:** Optimization of systemic patterns and skill refactoring.
 

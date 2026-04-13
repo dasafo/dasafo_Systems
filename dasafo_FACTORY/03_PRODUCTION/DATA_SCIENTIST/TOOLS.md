@@ -1,5 +1,7 @@
 # 🛠️ DATA_SCIENTIST | Tools & Senses (v5.0-MCP)
 
+> [ ⬆️ Up: [[../MOC_PRODUCTION]] | 📂 Index: [[MOC_DATA_SCIENTIST]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Data analysis, model training, and empirical metric generation.
 

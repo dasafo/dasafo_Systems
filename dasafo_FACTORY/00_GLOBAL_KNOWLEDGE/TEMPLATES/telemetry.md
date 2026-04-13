@@ -1,5 +1,7 @@
 # 📊 MISSION TELEMETRY | [MISSION_NAME]
 
+> [ ⬆️ Up: [[MOC_TEMPLATES]] | 📂 Index: [[MOC_TEMPLATES]] ]
+
 > **Standard:** v5.0-MCP "SDD Implementation"
 > **Project:** [PROJECT_NAME]
 > **Correlation ID:** [CORRELATION_ID]

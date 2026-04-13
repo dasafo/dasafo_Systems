@@ -80,3 +80,7 @@ El Orquestador debe clasificar cada `SPEC_LITE` en estas categorías industriale
 
 ---
 *Ratificado por la Dirección de Dasafo Factory | 2026-04-06 | Hub 01 Solidified & Parallel Enabled.*
+
+---
+> [!TIP]
+> Volver al [[00_INFO_START|Centro de Información]].

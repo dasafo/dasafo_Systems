@@ -72,3 +72,7 @@ Esta guía detalla los **14 procedimientos operativos estándar (SOPs)** autoriz
 
 ---
 *Manual de Workflows v5.0.2-MCP | Dasafo Factory | Soberanía Industrial y Ejecución Paralela Garantizada.*
+
+---
+> [!TIP]
+> Volver al [[00_INFO_START|Centro de Información]].

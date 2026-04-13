@@ -6,6 +6,9 @@ source: https://skills.sh/wshobson/agents/architecture-decision-records
 protocol: Immutable-Log / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 📝 Skill | architecture-decision-records
 
 ## Objetivo
@@ -35,4 +38,7 @@ Capturar y gestionar decisiones técnicas en un registro formal, searchable y pe
 - **Métricas SI:** Cualquier métrica técnica (latencia, almacenamiento) debe expresarse en **segundos (s)** o **bytes (B)**.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGEN:** [architecture-decision-records by wshobson](https://skills.sh/wshobson/agents/architecture-decision-records)

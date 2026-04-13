@@ -6,6 +6,9 @@ source: internal/skill-creator
 protocol: Registry-Notary / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🗂️ Skill | registry-manager
 
 ## Objective
@@ -32,4 +35,7 @@ Act as the industrial notary for the project's Kanban state. Mutates `registry.j
 - **SI Standards:** Timing metrics reported in **Seconds (s)**.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 *Standard v5.0-MCP | Dasafo Factory Core DAST.*

@@ -83,3 +83,7 @@ Toda tarea delegada caerá en uno de estos estados de ejecución industrial:
 
 ---
 **Firma del Director:** ___________________ (Sign-Off Autorizado)
+
+---
+> [!TIP]
+> Volver al [[00_INFO_START|Centro de Información]].

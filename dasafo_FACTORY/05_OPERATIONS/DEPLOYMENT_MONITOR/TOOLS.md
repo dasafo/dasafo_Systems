@@ -1,5 +1,7 @@
 # 🛠️ DEPLOYMENT_MONITOR | Tools & Senses (v5.0-MCP)
 
+> [ ⬆️ Up: [[../MOC_OPERATIONS]] | 📂 Index: [[MOC_DEPLOYMENT_MONITOR]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized".
 
 ## 📡 Senses (Context-Limited)

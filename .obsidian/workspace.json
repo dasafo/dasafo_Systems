@@ -1,0 +1,216 @@
+{
+  "main": {
+    "id": "4e1db4a0abc35e35",
+    "type": "split",
+    "children": [
+      {
+        "id": "96a0a97c84716076",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b861f2d7b2388349",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "71af7cd3d0b7a403",
+    "type": "split",
+    "children": [
+      {
+        "id": "9f80c66a40217943",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "54d957df4062e401",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "5b0ab3b6ae8dbe82",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "be4645ff66c4574e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7a19db6e02a0b940",
+    "type": "split",
+    "children": [
+      {
+        "id": "fc2c8005b8a269b7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9665ef6bd5e333e2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "cca343468a500979",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "b54be9dedeb5f590",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "62f45bed6bee5f5f",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "4c854421d3404a65",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "b861f2d7b2388349",
+  "lastOpenFiles": [
+    "ADR_REGISTRY.md",
+    "dasafo_FACTORY/01_STRATEGY_AND_MARKETING/MOC_STRATEGY.md",
+    "dasafo_FACTORY/05_OPERATIONS/DEVOPS_SRE/MOC_DEVOPS_SRE.md",
+    "dasafo_FACTORY/05_OPERATIONS/MEMORY_OPTIMIZER/MOC_MEMORY_OPTIMIZER.md",
+    "dasafo_FACTORY/05_OPERATIONS/DEPLOYMENT_MONITOR/MOC_DEPLOYMENT_MONITOR.md",
+    "dasafo_FACTORY/05_OPERATIONS/FACTORY_EVOLVER/MOC_FACTORY_EVOLVER.md",
+    "dasafo_FACTORY/04_COMPLIANCE_AND_QUALITY/DOCS_MASTER/MOC_DOCS_MASTER.md",
+    "dasafo_FACTORY/04_COMPLIANCE_AND_QUALITY/QA_TESTER/MOC_QA_TESTER.md",
+    "dasafo_FACTORY/04_COMPLIANCE_AND_QUALITY/SECURITY_AUDITOR/MOC_SECURITY_AUDITOR.md",
+    "dasafo_FACTORY/03_PRODUCTION/AI_ENGINEER/MOC_AI_ENGINEER.md",
+    "dasafo_FACTORY/03_PRODUCTION/DATA_SCIENTIST/MOC_DATA_SCIENTIST.md",
+    "dasafo_FACTORY/03_PRODUCTION/BACKEND_DEV/MOC_BACKEND_DEV.md",
+    "dasafo_FACTORY/03_PRODUCTION/DB_MASTER/MOC_DB_MASTER.md",
+    "dasafo_FACTORY/03_PRODUCTION/FRONTEND_DEV/MOC_FRONTEND_DEV.md",
+    "dasafo_FACTORY/02_ARCHITECTURE_AND_RESEARCH/RESEARCH_AGENT/MOC_RESEARCH_AGENT.md",
+    "dasafo_FACTORY/02_ARCHITECTURE_AND_RESEARCH/ARCHITECT/MOC_ARCHITECT.md",
+    "dasafo_FACTORY/01_STRATEGY_AND_MARKETING/PRODUCT_OWNER/MOC_PRODUCT_OWNER.md",
+    "dasafo_FACTORY/01_STRATEGY_AND_MARKETING/ORCHESTRATOR/MOC_ORCHESTRATOR.md",
+    "dasafo_FACTORY/01_STRATEGY_AND_MARKETING/MARKETING_GROWTH/MOC_MARKETING_GROWTH.md",
+    "dasafo_FACTORY/_dasafo_FACTORY.md",
+    "INFRA/README.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/MOC_GLOBAL.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/TEMPLATES/MOC_TEMPLATES.md",
+    "dasafo_FACTORY/04_COMPLIANCE_AND_QUALITY/MOC_COMPLIANCE.md",
+    "dasafo_FACTORY/MOC_CORE_SCRIPTS.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/00_CORE_CONSTITUTION.md",
+    "dasafo_FACTORY/03_PRODUCTION/AI_ENGINEER/sedoUpjsi",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/TEMPLATES/sedOrdar7",
+    "05_OPERATIONS",
+    "dasafo_FACTORY/LOGS/ANALYSIS_LTP_1776082498.json",
+    "dasafo_FACTORY/LOGS/ANALYSIS_LTP_1776082478.json",
+    "dasafo_FACTORY/LOGS",
+    "LOGS/ANALYSIS_LTP_1776080740.json",
+    "LOGS/ANALYSIS_LTP_1776080718.json"
+  ]
+}

@@ -1,5 +1,7 @@
 # 🛠️ DB_MASTER | Tools & Senses (v5.0-MCP)
 
+> [ ⬆️ Up: [[../MOC_PRODUCTION]] | 📂 Index: [[MOC_DB_MASTER]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Schema execution, SQL generation, and Supabase integration.
 

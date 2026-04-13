@@ -6,6 +6,9 @@ source: https://skills.sh/sickn33/antigravity-awesome-skills/docker-expert
 protocol: IaC-First / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🐳 Skill | docker-stack-provisioner
 
 ## Objective
@@ -32,4 +35,7 @@ Provide advanced Docker containerization strictly within the `WORKSPACE/infra/` 
 - **Rootless Mandate:** All containers must run as non-root users.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [docker-expert by sickn33](https://skills.sh/sickn33/antigravity-awesome-skills/docker-expert)

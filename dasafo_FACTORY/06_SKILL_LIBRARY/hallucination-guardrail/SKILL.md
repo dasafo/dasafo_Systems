@@ -6,6 +6,9 @@ source: https://skills.sh/davila7/claude-code-templates/nemo-guardrails
 protocol: Fact-Checking / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🛡️ Skill | hallucination-guardrail
 
 ## Objective
@@ -32,4 +35,7 @@ Enforce factual integrity and programmable safety for LLM outputs. Ensures all a
 - **SI Standards:** Reporting strictly in **Seconds (s)** and **Bytes (B)**.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [nemo-guardrails by davila7](https://skills.sh/davila7/claude-code-templates/nemo-guardrails)

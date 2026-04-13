@@ -6,6 +6,9 @@ source: internal/factory-doctor
 protocol: Forensic-DAST / Solidification
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🚑 Skill | factory-doctor
 
 ## Objective
@@ -30,4 +33,7 @@ Perform a forensic audit of the file system to heal corrupt project states. Rege
 - **Bypass Mandate:** This tool is authorized to bypass phase locks to perform emergency recovery.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 *Standard v5.0-MCP | Dasafo Factory Core DAST.*

@@ -5,6 +5,9 @@ production_category: SHIP
 protocol: Auto-Heal / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🚀 Skill | deployment-health-check
 
 ## Objective
@@ -31,4 +34,7 @@ Real-time endpoint validation and SI metric reporting. Includes the **Immune Sys
 - **DAST Sovereignty:** Physical JSON report required in `LOGS/deployment/`.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 *Standard v5.0-MCP | Dasafo Factory Operations Hub.*

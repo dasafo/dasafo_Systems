@@ -5,6 +5,9 @@ production_category: BUILD
 protocol: Aesthetic-Guard / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🎨 Skill | frontend-ui-designer
 
 ## Objective
@@ -30,4 +33,7 @@ Enforce modern UI/UX design patterns (Tailwind, Shadcn) by verifying physical sc
 - **Non-Hallucination:** If markers like `components.json` are missing, the status must reflect failure.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 *Standard v5.0-MCP | Dasafo Factory Production Hub.*

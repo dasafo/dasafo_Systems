@@ -6,6 +6,9 @@ source: https://skills.sh/apify/agent-skills/apify-trend-analysis
 protocol: Trend-Intelligence / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 📈 Skill | apify-trend-analysis
 
 ## Objetivo
@@ -32,4 +35,7 @@ Identificar y analizar tendencias de mercado y nichos usando Apify Actors. Basad
 - **Métricas SI:** Tiempos reportados en **segundos (s)**.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [apify-trend-analysis by apify](https://skills.sh/apify/agent-skills/apify-trend-analysis)

@@ -6,6 +6,9 @@ source: https://skills.sh/sickn33/antigravity-awesome-skills/database-architect
 protocol: Schema-First / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🗄️ Skill | database-architect-strategic
 
 ## Objective
@@ -33,4 +36,7 @@ Provide strategic database modeling and architecture. Ensures that all data pers
 - **DAST Sovereignty:** Schemas must be physically persisted in `INFRASTRUCTURE/DATABASE/`.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [database-architect by sickn33](https://skills.sh/sickn33/antigravity-awesome-skills/database-architect)

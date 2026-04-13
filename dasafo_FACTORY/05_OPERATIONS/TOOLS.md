@@ -1,5 +1,7 @@
 # 🛠️ OPERATIONS | Tools & Senses (v5.0-MCP Solidified)
 
+> [ ⬆️ Up: [[MOC_OPERATIONS]] | 📂 Global: [[../00_GLOBAL_KNOWLEDGE/MOC_GLOBAL]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Level 05 Ops tools (Infra, Deploy, Evolution, Memory).
 

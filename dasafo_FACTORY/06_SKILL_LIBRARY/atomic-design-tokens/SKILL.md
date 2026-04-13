@@ -6,6 +6,9 @@ source: https://skills.sh/wshobson/agents/design-system-patterns
 protocol: Atomic-Design / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 💎 Skill | atomic-design-tokens
 
 ## Objective
@@ -34,4 +37,7 @@ Synchronize the UI implementation with a structured three-tier token hierarchy (
 - **DAST Sovereignty:** CSS/JSON artifacts must exist in `ui/styles/`.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [design-system-patterns by wshobson](https://skills.sh/wshobson/agents/design-system-patterns)

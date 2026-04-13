@@ -1,5 +1,7 @@
 # 🛠️ MEMORY_OPTIMIZER | Tools & Senses (v5.0-MCP)
 
+> [ ⬆️ Up: [[../MOC_OPERATIONS]] | 📂 Index: [[MOC_MEMORY_OPTIMIZER]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - LTP Enabled"
 > **Scope:** Context optimization, engram extraction, and Knowledge Graph connectivity.
 

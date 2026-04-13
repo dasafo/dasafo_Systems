@@ -6,6 +6,9 @@ source: https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices
 protocol: DB-Optimization / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🐘 Skill | supabase-stack-expert
 
 ## Objective
@@ -34,4 +37,7 @@ Operate as a high-performance database engineer specialized in the Supabase/Post
 - **DAST Sovereignty:** All migrations and reports MUST be persisted in `INFRASTRUCTURE/DATABASE/`.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [supabase-best-practices by supabase](https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices)

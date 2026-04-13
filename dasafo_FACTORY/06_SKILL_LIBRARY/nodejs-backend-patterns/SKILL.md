@@ -5,6 +5,9 @@ production_category: BUILD
 protocol: Layered-Architecture / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # ⚙️ Skill | nodejs-backend-patterns
 
 ## Objective
@@ -30,4 +33,7 @@ Enforce industrial-grade Node.js/TypeScript design patterns (Repository, DTOs, S
 - **Clean Separation:** Mixing controller logic with repository queries is a **Cultural Violation**.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 *Standard v5.0-MCP | Dasafo Factory Production Hub.*

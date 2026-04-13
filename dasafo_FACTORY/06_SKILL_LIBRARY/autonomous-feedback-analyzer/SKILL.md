@@ -8,6 +8,8 @@ protocol: LTP-Sync / DAST
 
 # 🧠 Skill | autonomous-feedback-analyzer
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Index: [[../../_dasafo_FACTORY]] ]
+
 ## Objective
 
 Extract actionable "Golden Rules" from feedback logs and synchronize agentic learning with the Long-Term Persistence (LTP) graph in Neo4j.

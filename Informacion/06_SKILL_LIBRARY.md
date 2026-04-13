@@ -69,3 +69,7 @@
 
 ---
 *Ratificado: 2026-04-06 | Dasafo Factory v5.0-MCP Central Library | Total Skills: 34.*
+
+---
+> [!TIP]
+> Volver al [[00_INFO_START|Centro de Información]].

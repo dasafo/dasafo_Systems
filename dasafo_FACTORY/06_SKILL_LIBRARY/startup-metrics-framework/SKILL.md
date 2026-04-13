@@ -6,6 +6,9 @@ source: internal/financial-engine
 protocol: Financial-Viability / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 📈 Skill | startup-metrics-framework
 
 ## Objective
@@ -32,4 +35,7 @@ Translate industrial execution metrics (Seconds, Bytes) into SaaS business KPIs 
 - **No Hallucinations:** Use realistic baseline estimates based on factory technical standards.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 *Standard v5.0-MCP | Dasafo Factory Strategy Hub.*

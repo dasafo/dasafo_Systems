@@ -6,6 +6,9 @@ source: custom_dasafo_factory
 protocol: Research-Persistence / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🔬 Skill | research-manager
 
 ## Objective
@@ -32,4 +35,7 @@ Safely manage and persist deep-research artifacts, architectural investigations,
 - **SI Standards:** Size in **Bytes (B)** and time in **Seconds (s)**.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 *Standard v5.0-MCP | Dasafo Factory Research Hub.*

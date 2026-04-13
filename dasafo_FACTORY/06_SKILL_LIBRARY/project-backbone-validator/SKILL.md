@@ -6,6 +6,9 @@ source: internal/backbone-validator
 protocol: Scaffolding-Guard / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🏗️ Skill | project-backbone-validator
 
 ## Objective
@@ -31,4 +34,7 @@ Act as the "Inspector de Obra" for the factory. Ensure that the necessary framew
 - **Gatekeeper Mandate:** If scaffolding is incomplete, this skill blocks the delegation pipeline.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 *Standard v5.0-MCP | Dasafo Factory Core DAST.*

@@ -1,4 +1,6 @@
-# 🛠️ QA_TESTER | Tools & Senses
+# 🛠️ QA_TESTER | Tools & Senses (v5.0-MCP)
+
+> [ ⬆️ Up: [[../MOC_COMPLIANCE]] | 📂 Index: [[MOC_QA_TESTER]] ]
 
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 

@@ -1,5 +1,7 @@
 # 🛠️ DevOps SRE | Tools & Senses (v5.0-MCP)
 
+> [ ⬆️ Up: [[../MOC_OPERATIONS]] | 📂 Index: [[MOC_DEVOPS_SRE]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Infrastructure provisioning, containerization, and CI/CD automation.
 

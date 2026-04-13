@@ -45,3 +45,7 @@ Este catálogo describe no solo la función de cada herramienta, sino su papel e
   * `Kanban Solidity Gate`: Implementa la regla de "Cero Pendientes" y proporciona un dashboard visual del estado de las tareas, manteniendo el flujo de trabajo ágil y transparente.
   * `Project Backbone Validator`: Verifica que el "esqueleto" físico del proyecto exista y cumpla con la estructura de carpetas requerida antes de proceder con el desarrollo.
   * `Registry Manager`: Administra el registro central de proyectos y variables de estado, manteniendo la verdad única sobre qué proyectos están activos y en qué fase se encuentran.
+
+---
+> [!TIP]
+> Volver al [[00_INFO_START|Centro de Información]].

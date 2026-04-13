@@ -1,5 +1,7 @@
 # 🛠️ DOCS_MASTER | Tools & Senses (v5.0-MCP)
 
+> [ ⬆️ Up: [[../MOC_COMPLIANCE]] | 📂 Index: [[MOC_DOCS_MASTER]] ]
+
 > **Standard:** v5.0-MCP "Industrial Core - DAST Optimized"
 > **Scope:** Technical writing, automated docs extraction, and context synthesis.
 

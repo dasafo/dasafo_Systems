@@ -6,6 +6,9 @@ source: https://skills.sh/shadcn/ui/shadcn
 protocol: Component-Composition / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🎨 Skill | shadcn-component-library
 
 ## Objective
@@ -33,4 +36,7 @@ Systematically implement and manage professional UI components using the Shadcn/
 - **DAST Sovereignty:** Components MUST be persisted in `WORKSPACE/frontend/components/ui/`.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [shadcn by shadcn/ui](https://skills.sh/shadcn/ui/shadcn)

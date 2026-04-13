@@ -1,0 +1,11 @@
+{
+  "industrial_status": "SOLIDIFIED - FEEDBACK ANALYZED",
+  "metrics": {
+    "total_rules": 0,
+    "payload_bytes": 4712
+  },
+  "ltp_sync": {
+    "success": false,
+    "message": "persist_to_knowledge_graph logic is missing or decoupled."
+  }
+}

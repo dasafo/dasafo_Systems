@@ -5,6 +5,9 @@ source: internal/skill-creator
 protocol: Build-Verification / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🔨 Skill | build-test-executor
 
 ## Objective
@@ -31,4 +34,7 @@ Execute technical build or test commands and generate the mandatory **BUILD_REPO
 - **SI Standards:** Durations in **seconds (s)** and sizes in **bytes (B)**.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 *Standard v5.0-MCP | Dasafo Factory Compliance Hub.*

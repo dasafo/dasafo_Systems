@@ -79,3 +79,7 @@ El progreso se mide por la transición física entre hitos, categorizando cada s
 
 ---
 *Ratificado: 2026-04-05 | dasafo_Factory v5.0.2-MCP | Soberanía Industrial Garantizada.*
+
+---
+> [!TIP]
+> Volver al [[00_INFO_START|Centro de Información]].

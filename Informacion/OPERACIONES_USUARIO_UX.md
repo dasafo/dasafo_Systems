@@ -74,3 +74,7 @@ Bajo el estándar **v5.0.2-MCP**, actúas como el **Auditor de la Verdad Industr
 
 ---
 *Guía de Experiencia de Usuario v5.0.2-MCP | Director de Operaciones Solidificado.*
+
+---
+> [!TIP]
+> Volver al [[00_INFO_START|Centro de Información]].

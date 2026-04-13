@@ -6,6 +6,9 @@ source: https://skills.sh/pbakaus/impeccable/audit
 protocol: Quality-First / DAST
 ---
 
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
+
 # 🔍 Skill | factory-audit-pro
 
 ## Objective
@@ -32,4 +35,7 @@ Execute a comprehensive quality audit evaluating performance, accessibility, and
 - **Brutal Honesty:** Mandatory reporting of "AI-slop" or low-quality generation.
 
 ---
+
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
+
 **ORIGIN:** [audit by pbakaus](https://skills.sh/pbakaus/impeccable/audit)
