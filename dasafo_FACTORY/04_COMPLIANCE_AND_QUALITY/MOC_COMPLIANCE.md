@@ -11,7 +11,7 @@
 - [[TEST_REPORTS]]: Coverage & trace results.
 
 ## 🤖 Command & Control
-- **Resilience Guardian:** [[QA_TESTERMOC_/IDENTITY]] | [[QA_TESTER/TOOLS]]
-- **Security Sentry:** [[SECURITY_AUDITORMOC_/IDENTITY]] | [[SECURITY_AUDITOR/TOOLS]]
-- **Documentation:** [[DOCS_MASTERMOC_/IDENTITY]] | [[DOCS_MASTER/TOOLS]]
+- **Resilience Guardian:** [[QA_TESTER/MOC_QA_TESTER]] | [[QA_TESTER/TOOLS]]
+- **Security Sentry:** [[SECURITY_AUDITOR/MOC_SECURITY_AUDITOR]] | [[SECURITY_AUDITOR/TOOLS]]
+- **Documentation:** [[DOCS_MASTER/MOC_DOCS_MASTER]] | [[DOCS_MASTER/TOOLS]]
 - **Regional Stack:** [[TOOLS]]

@@ -57,9 +57,9 @@ Any task that attempts to "BUILD" and "SHIP" in the same atomic `SPEC_LITE.json`
 1. **Anti-Orphan Mandate:** No `.md` file shall exist without functional connectivity. Every note must be integrated into the project's semantic graph.
 2. **Navigation Header:** All documentation files MUST start with a standardized navigation header:
    ```markdown
-   [ ⬆️ Up: [[Parent_MOC]] | 🔙 Back: [[Previous_Context]] | 📂 Index: [[MOC_GLOBAL]] ]
+   [ ⬆️ Up: `Parent_MOC` | 🔙 Back: `Previous_Context` | 📂 Index: [[MOC_GLOBAL]] ]
    ```
-3. **Wiki-Link Injection:** When generating documentation or reports, Agents MUST use `[[filename]]` for every internal reference to other project artifacts.
+3. **Wiki-Link Injection:** When generating documentation or reports, Agents MUST use ``filename`` for every internal reference to other project artifacts.
 4. **MOC Protocol:** Every directory MUST contain a `_MOC.md` or `_INDEX.md` file that lists and links all sub-artifacts in that domain.
 5. **Semantic Anchors:** End every major documentation file with a `### 🧬 Related Engrams` section containing at least 3 relevant `[[ ]]` links to sibling notes.
 

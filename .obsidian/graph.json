@@ -15,45 +15,52 @@
       }
     },
     {
-      "query": "path:01_STRATEGY_AND_MARKETING",
+      "query": "path:dasafo_FACTORY/01_STRATEGY_AND_MARKETING  ",
       "color": {
         "a": 1,
         "rgb": 14725458
       }
     },
     {
-      "query": "path:02_ARCHITECTURE_AND_RESEARCH",
+      "query": "path:dasafo_FACTORY/02_ARCHITECTURE_AND_RESEARCH  ",
       "color": {
         "a": 1,
-        "rgb": 11657298
+        "rgb": 10558365
       }
     },
     {
-      "query": "path:03_PRODUCTION\t",
+      "query": "path:dasafo_FACTORY/03_PRODUCTION  ",
       "color": {
         "a": 1,
         "rgb": 5431378
       }
     },
     {
-      "query": "path:04_COMPLIANCE_AND_QUALITY",
+      "query": "path:dasafo_FACTORY/04_COMPLIANCE_AND_QUALITY  ",
       "color": {
         "a": 1,
-        "rgb": 5431473
+        "rgb": 1843924
       }
     },
     {
-      "query": "path:05_OPERATIONS\t",
+      "query": "path:dasafo_FACTORY/05_OPERATIONS  ",
       "color": {
         "a": 1,
-        "rgb": 5419488
+        "rgb": 16711680
       }
     },
     {
-      "query": "path:06_SKILL_LIBRARY\t",
+      "query": "path:dasafo_FACTORY/06_SKILL_LIBRARY  ",
       "color": {
         "a": 1,
         "rgb": 5395168
+      }
+    },
+    {
+      "query": "path:dasafo_FACTORY  ",
+      "color": {
+        "a": 1,
+        "rgb": 0
       }
     }
   ],
@@ -63,10 +70,10 @@
   "nodeSizeMultiplier": 1.01875,
   "lineSizeMultiplier": 1,
   "collapse-forces": false,
-  "centerStrength": 0,
+  "centerStrength": 0.645833333333333,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.200225830078125,
+  "scale": 0.3003387451171875,
   "close": false
 }

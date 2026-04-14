@@ -12,9 +12,9 @@
 
 ## 🤖 Command & Control (Agents & Tools)
 
-- **AI Engineer:** [[AI_ENGINEERMOC_/IDENTITY]] | [[AI_ENGINEER/TOOLS]]
-- **Backend Developer:** [[BACKEND_DEVMOC_/IDENTITY]] | [[BACKEND_DEV/TOOLS]]
-- **Frontend Developer:** [[FRONTEND_DEVMOC_/IDENTITY]] | [[FRONTEND_DEV/TOOLS]]
-- **DB Master:** [[DB_MASTERMOC_/IDENTITY]] | [[DB_MASTER/TOOLS]]
-- **Data Scientist:** [[DATA_SCIENTISTMOC_/IDENTITY]] | [[DATA_SCIENTIST/TOOLS]]
+- **AI Engineer:** [[AI_ENGINEER/MOC_AI_ENGINEER]] | [[AI_ENGINEER/TOOLS]]
+- **Backend Developer:** [[BACKEND_DEV/MOC_BACKEND_DEV]] | [[BACKEND_DEV/TOOLS]]
+- **Frontend Developer:** [[FRONTEND_DEV/MOC_FRONTEND_DEV]] | [[FRONTEND_DEV/TOOLS]]
+- **DB Master:** [[DB_MASTER/MOC_DB_MASTER]] | [[DB_MASTER/TOOLS]]
+- **Data Scientist:** [[DATA_SCIENTIST/MOC_DATA_SCIENTIST]] | [[DATA_SCIENTIST/TOOLS]]
 - **Regional Inventory:** [[TOOLS]]
