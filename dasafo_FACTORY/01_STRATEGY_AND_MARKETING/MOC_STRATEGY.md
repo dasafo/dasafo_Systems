@@ -6,7 +6,6 @@
 
 - [[M1_PRP_CONTRACTS]]: Industrial base for project initiation.
 - [[M1_MARKET_TRENDS]]: Competitive analysis engrams.
-- [[PROJECT_PROPOSALS]]: 5 Core projects for v5.0-MCP validation.
 
 ## 📊 Metrics
 

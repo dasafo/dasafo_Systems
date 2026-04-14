@@ -13,7 +13,7 @@ Este nodo centraliza el acceso a los documentos informativos acumulados en esta 
 
 ## 🛠️ Guías y Mappings
 - [[MANUAL_SISTEMA_DASAFO]]: Manual completo de uso del sistema.
-- [[WORKFLOWS_GUIDE]]: Guía rápida de flujos de trabajo (v4.0 Legacy).
+- [[WORKFLOWS_GUIDE]]: Guía rápida de flujos de trabajo (v5.0-MCP (Referencia)).
 - [[AGENT_SKILL_MAPPING]]: Mapa de relación entre agentes y habilidades.
 - [[SKILL_CATALOG]]: Listado completo de capacidades del sistema.
 - [[OPERACIONES_USUARIO_UX]]: Guía de experiencia de usuario y operaciones.

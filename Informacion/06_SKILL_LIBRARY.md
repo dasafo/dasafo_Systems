@@ -73,3 +73,8 @@
 ---
 > [!TIP]
 > Volver al [[00_INFO_START|Centro de Información]].
+
+
+---
+> [!NOTE]
+> Este documento es **referencia estática**. Para operar en la factoría real, usa [[../dasafo_FACTORY/_dasafo_FACTORY]].

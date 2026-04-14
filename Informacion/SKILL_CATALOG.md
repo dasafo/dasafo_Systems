@@ -49,3 +49,8 @@ Este catálogo describe no solo la función de cada herramienta, sino su papel e
 ---
 > [!TIP]
 > Volver al [[00_INFO_START|Centro de Información]].
+
+
+---
+> [!NOTE]
+> Este documento es **referencia estática**. Para operar en la factoría real, usa [[../dasafo_FACTORY/_dasafo_FACTORY]].
