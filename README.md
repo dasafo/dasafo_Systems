@@ -1,7 +1,7 @@
 # 🏛️ dasafo_Systems | Multi-Agent AI Software Factory (v5.0-MCP)
 
 [![Status](https://img.shields.io/badge/Status-Industrial_Ready-emerald?style=for-the-badge)](#)
-[![Version](https://img.shields.io/badge/Standard-v4.0--MCP_Native_Core-gold?style=for-the-badge)](#)
+[![Version](https://img.shields.io/badge/Standard-v5.0--MCP_Native_Core-gold?style=for-the-badge)](#)
 [![Governance](https://img.shields.io/badge/Governance-Aduana_Universal_MCP-purple?style=for-the-badge)](#)
 [![Security](https://img.shields.io/badge/Security-Zero_Trust_Solidity-red?style=for-the-badge)](#)
 

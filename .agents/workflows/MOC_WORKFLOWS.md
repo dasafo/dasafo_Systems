@@ -1,6 +1,6 @@
 # 📜 MOC | Standard Operating Procedures (Workflows)
 
-> [ ⬆️ Up: [[../MOC_AGENTS]] | 📂 Index: [[MOC_WORKFLOWS]] ]
+> [ ⬆️ Up: [[../../dasafo_FACTORY/MOC_AGENTS]] | 📂 Index: [[MOC_WORKFLOWS]] ]
 
 ## 🚦 Phase Gates & Transitions
 - [[init-contract]]: M1 | Formalize PRP_MASTER.

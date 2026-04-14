@@ -13,7 +13,7 @@
 
 ## 🚀 Mission Critical Externals
 - [[../README]]: Global System Manifesto & Quick Start.
-- [[../.agents/MOC_AGENTS]]: AI Agent Identities & Workflows.
+- [[MOC_AGENTS]]: AI Agent Identities & Workflows.
 - [[../INFRA/MOC_INFRASTRUCTURE]]: Physical Infrastructure & Services.
 - [[mcp_tools/MOC_MCP_TOOLS]]: Python implementation of MCP Hubs.
 - [[MOC_CORE_SCRIPTS]]: Factory entry points (Server, Hooks, Init).
