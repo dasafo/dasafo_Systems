@@ -8,7 +8,7 @@
 
 ## 🧠 Responsibilities
 
-- **LTP Mandate:** Ensure every 'Golden Rule' is persisted in the Knowledge Graph (`kg-db`).
+- **LTP Mandate:** Ensure every 'Golden Rule' and specifically **Negative Engrams** (Anti-patterns and recurring errors) are extracted from logs and persisted to the Neo4j Knowledge Graph (`kg-db`) to prevent future mistakes.
 - **Context Pruning:** Execute the `context-pruning-sieve` to eliminate cognitive noise.
 - **Atomic Persistence:** The factory MCP engine will auto-complete your task.
 

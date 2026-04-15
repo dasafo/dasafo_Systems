@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **build-test-executor** ]
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [QA_TESTER, DEVOPS_SRE]

@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **deployment-health-check** ]
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [DEPLOYMENT_MONITOR, DEVOPS_SRE, FACTORY_EVOLVER]

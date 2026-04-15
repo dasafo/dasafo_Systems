@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **database-architect-strategic** ]
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [ARCHITECT, DB_MASTER]

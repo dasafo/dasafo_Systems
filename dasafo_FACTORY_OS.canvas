@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"node_cmd_center","type":"file","file":"dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/MISSION_CONTROL_CENTER.md","x":0,"y":-400,"width":800,"height":350},
+		{"id":"node_governance","type":"file","file":"dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/MOC_GLOBAL.md","x":0,"y":50,"width":400,"height":500},
+		{"id":"node_ops","type":"file","file":"dasafo_FACTORY/05_OPERATIONS/MOC_OPERATIONS.md","x":-450,"y":50,"width":400,"height":500},
+		{"id":"node_agents","type":"file","file":"dasafo_FACTORY/MOC_AGENTS.md","x":450,"y":50,"width":400,"height":500},
+		{"id":"node_core_scripts","type":"file","file":"dasafo_FACTORY/MOC_CORE_SCRIPTS.md","x":0,"y":650,"width":400,"height":350},
+		{"id":"node_skills","type":"file","file":"dasafo_FACTORY/06_SKILL_LIBRARY/MOC_SKILL_LIBRARY.md","x":520,"y":650,"width":400,"height":500},
+		{"id":"node_infra","type":"file","file":"INFRA/MOC_INFRASTRUCTURE.md","x":-450,"y":620,"width":400,"height":350}
+	],
+	"edges":[
+		{"id":"e_gov_ops","fromNode":"node_governance","fromSide":"left","toNode":"node_ops","toSide":"right"},
+		{"id":"e_gov_agt","fromNode":"node_governance","fromSide":"right","toNode":"node_agents","toSide":"left"},
+		{"id":"e_gov_cmd","fromNode":"node_governance","fromSide":"top","toNode":"node_cmd_center","toSide":"bottom"},
+		{"id":"e_gov_core","fromNode":"node_governance","fromSide":"bottom","toNode":"node_core_scripts","toSide":"top"},
+		{"id":"e_ops_infra","fromNode":"node_ops","fromSide":"bottom","toNode":"node_infra","toSide":"top"},
+		{"id":"e_agt_skills","fromNode":"node_agents","fromSide":"bottom","toNode":"node_skills","toSide":"top"}
+	]
+}

@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **autonomous-feedback-analyzer** ]
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [FACTORY_EVOLVER, MEMORY_OPTIMIZER, DATA_SCIENTIST]

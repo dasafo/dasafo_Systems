@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **frontend-ui-designer** ]
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [FRONTEND_DEV]

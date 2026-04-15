@@ -16,8 +16,40 @@
               "icon": "lucide-git-fork",
               "title": "Graph view"
             }
+          },
+          {
+            "id": "d7f789809fa38a22",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "dasafo_FACTORY_OS.canvas",
+                "viewState": {
+                  "x": -114.39146071010776,
+                  "y": 207.670174364151,
+                  "zoom": 0.29489652775399655
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "dasafo_FACTORY_OS"
+            }
+          },
+          {
+            "id": "9f744fcb48ab3165",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/MISSION_CONTROL_CENTER.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "MISSION_CONTROL_CENTER"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -176,43 +208,44 @@
       "bases:Create new base": false
     }
   },
-  "active": "b861f2d7b2388349",
+  "active": "d7f789809fa38a22",
   "lastOpenFiles": [
-    "dasafo_FACTORY/01_STRATEGY_AND_MARKETING/PROJECT_PROPOSALS.md",
-    "Informacion/WORKFLOWS_GUIDE.md",
-    "Informacion/SKILL_CATALOG.md",
-    "Informacion/Proyectos_propuestas.md",
-    "Informacion/MANUAL_SISTEMA_DASAFO.md",
-    "Informacion/OPERACIONES_USUARIO_UX.md",
-    "Informacion/AGENT_SKILL_MAPPING.md",
-    "Informacion/06_SKILL_LIBRARY.md",
-    "Informacion/05_OPERATIONS.md",
-    "Informacion/04_COMPLIANCE_AND_QUALITY.md",
-    "Informacion/03_PRODUCTION.md",
-    "Informacion/02_ARCHITECTURE_AND_RESEARCH.md",
-    "Informacion/01_STRATEGY_AND_MARKETING.md",
-    "Informacion/00_INFO_START.md",
-    "Informacion/00_GLOBAL_KNOWLEDGE.md",
+    "INFRA/test_jit_neo4j.py",
+    "dasafo_FACTORY_OS.canvas",
+    "Proyecto_Prueba.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/MISSION_CONTROL_CENTER.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/MOC_GLOBAL.md",
+    "<% tp.file.title %>.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/TEMPLATES/Plantilla_Mision.md",
+    "dasafo_FACTORY/TEMPLATES/Plantilla_Mision.md",
+    "dasafo_FACTORY/TEMPLATES",
+    "INFRA/health_check.py",
+    "dasafo_FACTORY/MOC_AGENTS.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/validate-backbone.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/sync-memory.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/scan.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/provision.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/MOC_WORKFLOWS.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/kanban-board.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/init-contract.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/health-check.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/factory-status.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/factory-orchestrate.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/execute-task.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/deploy.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/auto-heal.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/audit.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS/arch-diagram.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/WORKFLOWS",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/AGENT_PROTOCOL/workflows/validate-backbone.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/AGENT_PROTOCOL/workflows/sync-memory.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/AGENT_PROTOCOL/workflows/scan.md",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/AGENT_PROTOCOL/workflows",
+    "dasafo_FACTORY/00_GLOBAL_KNOWLEDGE/AGENT_PROTOCOL",
+    "kanban-solidity-gate",
     "Informacion",
     "fix_agents.py",
-    "dasafo_FACTORY/MOC_AGENTS.md",
-    "dasafo_FACTORY/WORKFLOWS/validate-backbone.md",
-    "dasafo_FACTORY/WORKFLOWS/sync-memory.md",
-    "dasafo_FACTORY/WORKFLOWS/scan.md",
-    "dasafo_FACTORY/WORKFLOWS/provision.md",
-    "dasafo_FACTORY/WORKFLOWS/kanban-board.md",
-    "dasafo_FACTORY/WORKFLOWS/init-contract.md",
-    "dasafo_FACTORY/WORKFLOWS/health-check.md",
-    "dasafo_FACTORY/WORKFLOWS/factory-status.md",
-    "dasafo_FACTORY/WORKFLOWS/factory-orchestrate.md",
-    "dasafo_FACTORY/WORKFLOWS/execute-task.md",
     "dasafo_FACTORY/WORKFLOWS",
-    "dasafo_agency.xml",
-    "repomix-output.xml",
-    "ANTIGRAVITY/project-config.json",
-    "ANTIGRAVITY",
-    "AGENTS/workflows",
-    "AGENTS",
-    "DEVOPS_SREMOC_"
+    "dasafo_agency.xml"
   ]
 }

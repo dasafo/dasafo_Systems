@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **pytest-logic-verifier** ]
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [BACKEND_DEV]

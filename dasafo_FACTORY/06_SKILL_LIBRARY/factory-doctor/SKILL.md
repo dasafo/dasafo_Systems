@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **factory-doctor** ]
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [ORCHESTRATOR, ARCHITECT, FACTORY_EVOLVER]

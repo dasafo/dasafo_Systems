@@ -2,13 +2,12 @@
 
 > [ ⬆️ Up: [[../_dasafo_FACTORY]] | 📂 Index: [[MOC_OPERATIONS]] ]
 
-## 🚀 Deployment
-- [[DOCKER_IA_CONFIG]]: Containerization standards.
-- [[TERRAFORM_IAC]]: Cloud provisioning engrams.
+## 🚀 Deployment & IaC
+- [[../06_SKILL_LIBRARY/docker-stack-provisioner/SKILL|docker-stack-provisioner]]: Containerization and Docker IaC.
+- [[../06_SKILL_LIBRARY/terraform-iac-builder/SKILL|terraform-iac-builder]]: Cloud infrastructure provisioning.
 
-## 🌀 Maintenance
-- [[AUTO_HEALING_LOGS]]: Forensic recovery records.
-- [[HEALTH_CHECK_METRICS]]: Runtime observability.
+## 🌀 Maintenance & Observability
+- [[../06_SKILL_LIBRARY/deployment-health-check/SKILL|deployment-health-check]]: Real-time metrics and auto-healing triggers.
 - [[Neo4j_LTP_Sync]]: Memory persistence protocol.
 
 ## 🤖 Command & Control

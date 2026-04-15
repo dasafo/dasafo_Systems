@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **agentic-thought-secret-scanner** ]
 ---
 version: v5.0-MCP (Nativa)
 agent_authorization: [BACKEND_DEV, DATA_SCIENTIST, DB_MASTER, QA_TESTER, SECURITY_AUDITOR, DEVOPS_SRE]

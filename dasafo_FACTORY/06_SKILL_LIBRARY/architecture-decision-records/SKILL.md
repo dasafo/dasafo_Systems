@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **architecture-decision-records** ]
 ---
 version: v5.0-MCP (Nativa)
 agent_authorization: [ARCHITECT]

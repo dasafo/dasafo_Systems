@@ -26,6 +26,7 @@
 4. **Chesterton's Fence:** No legacy code is deleted without an ADR explaining the "Why".
 5. **Backbone Mandate:** No atomic implementation agent shall be dispatched without prior physical validation of the scaffolding via `project-backbone-validator`.
 6. **Guardian Angel Mandate:** All human engineers MUST operate with the local DAST Pre-Commit Hook active (`.githooks/guardian.py`). Bypassing local security checks to force a commit is a critical Cultural Violation.
+7. **AgentShield Protocol:** Any direct terminal capability (e.g. bash commands) requested by an agent must be actively audited and logged. Destructive commands must trigger the `hallucination-guardrail` MCP tool or await explicit Human Approval before physical execution.
 
 ## 📊 IV. Industrial Metrics (SI Standards)
 

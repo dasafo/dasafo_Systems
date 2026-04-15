@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **apify-trend-analysis** ]
 ---
 version: v5.0-MCP (Nativa)
 agent_authorization: [MARKETING_GROWTH, PRODUCT_OWNER, RESEARCH_AGENT, DATA_SCIENTIST]

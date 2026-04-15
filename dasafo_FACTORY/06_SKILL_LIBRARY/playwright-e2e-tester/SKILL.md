@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **playwright-e2e-tester** ]
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [QA_TESTER, FRONTEND_DEV]

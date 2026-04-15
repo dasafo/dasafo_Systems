@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **hallucination-guardrail** ]
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [MARKETING_GROWTH, RESEARCH_AGENT, DOCS_MASTER, QA_TESTER, DEPLOYMENT_MONITOR, DEVOPS_SRE, FACTORY_EVOLVER, MEMORY_OPTIMIZER]

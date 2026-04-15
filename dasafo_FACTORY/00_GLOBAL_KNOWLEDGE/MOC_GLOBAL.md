@@ -6,6 +6,9 @@
 - [[00_CORE_CONSTITUTION]]: The source of truth for the Dasafo v5.0-MCP framework.
 - [[00_PROJECT_SCHEMA]]: Technical blueprint of the factory layers.
 
+## 🎛️ Command Center
+- [[MISSION_CONTROL_CENTER]]: Dataview Dashboard and Active Missions.
+
 ## 📜 Standards & Templates
 - [[NATIVE_MCP_PROTOCOL]]: Mandate for tool communication.
 - [[SOLIDITY_GATES]]: QA and validation standards.

@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **supabase-stack-expert** ]
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [DB_MASTER]

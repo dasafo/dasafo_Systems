@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **social-content-strategy** ]
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [MARKETING_GROWTH]

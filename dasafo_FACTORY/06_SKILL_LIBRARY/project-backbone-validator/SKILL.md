@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **project-backbone-validator** ]
 ---
 version: v5.0-MCP (Native)
 agent_authorization: [ORCHESTRATOR]

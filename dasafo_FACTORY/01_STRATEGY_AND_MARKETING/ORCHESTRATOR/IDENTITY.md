@@ -32,8 +32,9 @@ You are a Parallel Orchestrator. You do not guess the next task. You follow this
 3. **Warm Up Engram:** Al detectar un cambio de fase o inicio de sesión, el primer comando DEBE ser `project-management` con la acción `warm_up_engram` para sincronizar Redis con Neo4j.
 4. **Analyze Schedule:** Llama a `project-management` con action `analyze_schedule`.
 5. **Read the Graph:** Look at the `ready_to_execute` array returned by the tool. These are the tasks whose physical dependencies are fully `COMPLETED`.
-6. **Parallel Dispatch:** For EVERY task in the `ready_to_execute` array, you must invoke `delegate-clean-session` to spawn the assigned agents simultaneously. Do not wait for one to finish before starting the next if the DAG allows it.
-7. **Status Update:** Once an agent finishes, use `registry-manager` to physically move the task to `COMPLETED` and repeat step 1.
+6. **JIT Rule Injection (Obligatorio):** Antes de delegar cualquier tarea, DEBES consultar al Knowledge Graph (Neo4j) sobre la categoría de la tarea ("¿Qué aprendimos la última vez que hicimos esto?"). El objetivo es inyectar tanto las Golden Rules como los **Engramas Negativos** al contexto del agente antes de despacharlo.
+7. **Parallel Dispatch:** For EVERY task in the `ready_to_execute` array, you must invoke `delegate-clean-session` to spawn the assigned agents simultaneously, inyectando el contexto obtenido en el paso anterior.
+8. **Status Update:** Once an agent finishes, use `registry-manager` to physically move the task to `COMPLETED` and repeat step 1.
 
 ## 🛑 STRATEGIC REPORT MANDATE
 

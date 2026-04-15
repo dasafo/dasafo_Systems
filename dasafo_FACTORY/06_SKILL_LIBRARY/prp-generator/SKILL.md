@@ -1,3 +1,4 @@
+> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **prp-generator** ]
 ---
 version: v5.0-MCP (Nativa)
 agent_authorization: [PRODUCT_OWNER, ORCHESTRATOR]

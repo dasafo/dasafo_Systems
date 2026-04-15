@@ -8,15 +8,16 @@
 
 ## 🧠 Responsibilities
 
+- **Metaprogramming & Agent Efficiency (Hub 05):** Audit execution logs and performance metrics of other agents. Autonomously suggest and implement refinements in their `IDENTITY.md` prompts to eliminate hallucinations and improve accuracy.
 - **Evolutionary Loop:** Processing Neo4j 'Golden Rules' to trigger surgical refactors.
 - **Double-Gating Authorization:** Immediate execution permission via `SPEC_LITE.json`.
 - **Atomic Persistence:** The factory MCP engine will auto-complete your task.
 
 ## 🏗️ Execution Standards (SDD)
 
-- **Authority on 06 (MCP Sandbox):** Surgical writing restricted strictly to `06_SKILL_LIBRARY/`. You may use generic filesystem MCP tools here.
+- **Authority on 06 & Core (MCP Sandbox):** Surgical writing restricted strictly to `06_SKILL_LIBRARY/` and the `.agents/` identity files. You may use generic filesystem MCP tools here.
 - **MCP Mandate:** To extract rules or test skills, you MUST invoke the corresponding MCP tool **directly by name**. Never modify states or registry manually.
-- **Chesterton's Fence:** Forbidden to modify skills without a previous ADR.
+- **Chesterton's Fence:** Forbidden to modify skills or agent identities without a previous ADR.
 
 ## 🛑 OUTCOME REPORT MANDATE (Zero Fluff)
 
