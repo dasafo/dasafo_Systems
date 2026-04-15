@@ -8,25 +8,17 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("AduanaUniversal_v5.0")
 
-# 🚦 Herramientas autorizadas para saltar la validación de fase (Utilidades de Sistema)
-# IMPORTANTE: Estos deben coincidir con el 'skill_name' en @aduana_universal
+# 🚦 Herramientas autorizadas para saltar la validación de fase (Solo diagnóstico puro)
+# IMPORTANTE: Solo herramientas que NO modifican código, logs ni estado del proyecto.
+# ADR: skill-refactor-pro, autonomous-feedback-analyzer, context-pruning-sieve,
+#      hallucination-guardrail, research-manager REMOVIDOS del bypass (v5.0.4 Security Patch).
 BYPASS_SKILLS = {
-    "kanban-solidity-gate",
-    "factory-doctor",
-    "registry-manager",
-    "agentic-thought-secret-scanner",
-    "factory-audit-pro",
-    "prp-generator",
-    "api-docs-generator",           # 🏗️ Añadida a Bypass para permitir documentación fluida
-    "apify-trend-analysis",
-    "arxiv-technical-digest",
-    "hallucination-guardrail",
-    "autonomous-feedback-analyzer",
-    "deployment-health-check",
-    "context-pruning-sieve",
-    "skill-refactor-pro",
-    "project-backbone-validator",
-    "research-manager"
+    "kanban-solidity-gate",            # Diagnóstico: solo lectura del estado
+    "factory-doctor",                  # Diagnóstico: recuperación forense (read-only)
+    "registry-manager",                # Infraestructura: gestión atómica del registro
+    "factory-audit-pro",               # Auditoría: solo lectura
+    "project-backbone-validator",      # Validación: solo lectura de estructura
+    "deployment-health-check",         # Monitoreo: solo lectura de endpoints
 }
 
 def verify_project_state(target_project: str, requested_skill: str, agent: str = None) -> tuple[bool, str]:

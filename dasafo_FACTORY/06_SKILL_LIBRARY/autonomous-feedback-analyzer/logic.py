@@ -3,124 +3,143 @@ import json
 import time
 import re
 from pathlib import Path
-import redis 
-from neo4j import GraphDatabase # 👈 Dependencia para Neo4j
+from datetime import datetime
+from neo4j import GraphDatabase
 
-# Logic based on: https://skills.sh/phuryn/pm-skills/sentiment-analysis
+# autonomous-feedback-analyzer | LTP Persister v5.1-MCP (Solidified)
+# ==============================================================================
 
-# Inicialización del Cliente Redis (Conexión industrial)
-redis_client = redis.Redis(
-    host=os.getenv("REDIS_HOST", "localhost"),
-    port=int(os.getenv("REDIS_PORT", 6379)),
-    decode_responses=True
-)
-
-def persist_to_knowledge_graph(rules, project_name, agent):
-    """Persistencia de largo plazo (LTP) en Neo4j."""
+def get_neo4j_driver():
+    """Conectividad con Zero-Trust y Hostname Fallback."""
     uri = os.getenv("NEO4J_URI", "bolt://dasafo-shared-kg:7687")
     user = os.getenv("NEO4J_USER", "neo4j")
-    pwd = os.getenv("NEO4J_PASSWORD", "freedom85")
+    pwd = os.getenv("NEO4J_PASSWORD")
+    if not pwd:
+        raise PermissionError("ZERO-TRUST: NEO4J_PASSWORD no configurado en entorno.")
+
+    # Intentar Docker name -> Localhost
+    uris_to_try = [uri]
+    if "dasafo-shared-kg" in uri:
+        uris_to_try.append(uri.replace("dasafo-shared-kg", "localhost"))
     
+    for attempt_uri in uris_to_try:
+        try:
+            driver = GraphDatabase.driver(attempt_uri, auth=(user, pwd))
+            driver.verify_connectivity()
+            return driver
+        except:
+            continue
+    return None
+
+def persist_to_knowledge_graph(target_project, feedback_payload, agent):
+    """
+    Persistencia de largo plazo (LTP) v5.1.
+    Sincroniza Golden Rules, Negative Engrams y Lessons Learned.
+    """
+    start_time = time.time()
+    project_name = Path(target_project).name
+    driver = get_neo4j_driver()
+    if not driver:
+        return {"success": False, "message": "LTP_ERROR: No connection to Neo4j."}, 0
+
+    engrams_synced = 0
     try:
-        driver = GraphDatabase.driver(uri, auth=(user, pwd))
         with driver.session() as session:
-            for r in rules:
+            # 1. GOLDEN RULES (Positivas)
+            for rule in feedback_payload.get("golden_rules", []):
                 session.run("""
                     MERGE (t:Technology {name: $tech})
-                    MERGE (p:Phase {name: $phase})
-                    CREATE (r:GoldenRule {content: $rule, source: $project, author: $agent, timestamp: timestamp()})
-                    CREATE (r)-[:ADDRESSES]->(t)
-                    CREATE (r)-[:BELONGS_TO_PHASE]->(p)
-                """, tech=r['tech'], phase=r['phase'], rule=r['rule'], project=project_name, agent=agent)
-        driver.close()
-        return True, f"Sincronizados {len(rules)} engramas."
+                    MERGE (ph:Phase {name: $phase})
+                    MERGE (cv:CulturalViolation {name: 'PATTERN_RECURRENCE'})
+                    MERGE (cv)-[:CAUSED_BY]->(t)
+                    CREATE (r:GoldenRule {
+                        rule_id: $rule_id, content: $text, agent: $agent,
+                        project: $project, timestamp: datetime($ts), skill: $skill
+                    })
+                    CREATE (r)-[:ADDRESSES]->(cv)
+                    CREATE (r)-[:BELONGS_TO_PHASE]->(ph)
+                """, {
+                    "tech": rule.get("tech", "global"),
+                    "phase": rule.get("phase", "GLOBAL"),
+                    "text": rule.get("text"),
+                    "rule_id": f"GR-{int(time.time()*1000)}",
+                    "agent": agent,
+                    "project": project_name,
+                    "skill": rule.get("skill", "unknown"),
+                    "ts": datetime.now().isoformat()
+                })
+                engrams_synced += 1
+
+            # 2. NEGATIVE ENGRAMS (Errores a evitar)
+            for engram in feedback_payload.get("negative_engrams", []):
+                session.run("""
+                    MERGE (n:NegativeEngram {engram_id: $id})
+                    SET n.description = $desc, n.agent = $agent, n.ts = datetime($ts)
+                """, {"id": f"NE-{int(time.time()*1000)}", "desc": engram.get("description"), "agent": agent, "ts": datetime.now().isoformat()})
+                engrams_synced += 1
+
+        return {"success": True, "message": f"Sincronizados {engrams_synced} engramas."}, engrams_synced
     except Exception as e:
-        return False, f"LTP_ERROR: {str(e)}"
+        return {"success": False, "message": str(e)}, 0
+    finally:
+        driver.close()
 
 def execute_feedback_analysis(
     target_project: str,
     agent: str,
     action: str = "analyze_file",
     file_path: str = "LOGS/FEEDBACK-LOG.md",
-    raw_text: str = None,
-    overwrite: bool = False
+    raw_text: str = None
 ) -> tuple[dict, list]:
-    """Pure logic for autonomous feedback analysis and LTP/Engram sync (v5.0-MCP)."""
+    """Punto de entrada industrial."""
     start_time = time.time()
     project_path = Path(target_project).resolve()
-    logs_dir = project_path / "LOGS"
     
-    # Context pointers resolution
     if action == "analyze_file":
         input_file = project_path / file_path
         if not input_file.exists():
-            raise FileNotFoundError(f"Feedback log not found at {input_file}")
+            return {"industrial_status": "ERROR"}, []
         content = input_file.read_text(encoding="utf-8")
-    else:
-        content = raw_text or ""
+    else: content = raw_text or ""
 
-    total_bytes_processed = len(content.encode("utf-8"))
-    golden_rules_extracted = []
-    critical_errors = 0
-
-    # Pattern analysis (Supports one level of nesting for 'context' object)
+    # --- Motor de Extracción ---
+    golden_rules = []
+    negative_engrams = []
+    
     entries = re.findall(r'(\{(?:[^{}]|\{[^{}]*\})*\})', content, re.DOTALL)
     for entry_raw in entries:
         try:
             entry = json.loads(entry_raw)
             if "golden_rule" in entry:
-                # Basic tech deduction
-                tech = entry.get("tech", "global").lower()
-                f_path = entry.get("context", {}).get("file", "").lower() if isinstance(entry.get("context"), dict) else ""
-                
-                if "shadcn" in f_path or tech == "shadcn": tech = "shadcn"
-                elif ".py" in f_path or tech == "fastapi": tech = "fastapi"
-                
-                phase = entry.get("phase") or entry.get("context", {}).get("phase", "M3_PRODUCTION") if isinstance(entry.get("context"), dict) else entry.get("phase", "M3_PRODUCTION")
-                rule = entry["golden_rule"]
-                
-                golden_rules_extracted.append({
-                    "rule": rule,
-                    "tech": tech,
-                    "phase": phase
+                golden_rules.append({
+                    "text": entry["golden_rule"],
+                    "tech": entry.get("tech", "global").lower(),
+                    "phase": entry.get("phase", "M3_PRODUCTION"),
+                    "skill": entry.get("skill")
                 })
-
-                # --- FASE 2: ENGRAM INJECTION EN TIEMPO REAL ---
-                # Aceleramos la disponibilidad de la regla poniéndola en Caché
-                try:
-                    cache_key = f"dasafo:engram:rules:{phase}:{tech}"
-                    cached_rules = redis_client.get(cache_key)
-                    rules_list = json.loads(cached_rules) if cached_rules else []
-                    
-                    if rule not in rules_list:
-                        rules_list.append(rule)
-                        redis_client.set(cache_key, json.dumps(rules_list), ex=14400) # TTL 4 horas
-                except Exception:
-                    pass # Caer silenciosamente si Redis falla, Neo4j es el primario
-
             if entry.get("severity") in ["critical", "high"]:
-                critical_errors += 1
+                negative_engrams.append({"description": entry.get("reason", "Unknown violation")})
         except: continue
 
-    # LTP Sync (Neo4j)
-    sync_success, sync_msg = persist_to_knowledge_graph(
-        golden_rules_extracted, project_path.name, agent
-    )
+    # === BLOQUE LTP v5.1 (TU INTEGRACIÓN) ===
+    feedback_payload = {
+        "golden_rules": golden_rules,
+        "negative_engrams": negative_engrams,
+        "lessons_learned": [] # Placeholder para Fase 2
+    }
 
-    # DAST Persistence
-    report_name = f"ANALYSIS_LTP_{int(time.time())}.json"
-    report_path = logs_dir / report_name
-    
-    analysis_data = {
-        "industrial_status": "SOLIDIFIED - FEEDBACK ANALYZED",
-        "metrics": {
-            "total_rules": len(golden_rules_extracted),
-            "payload_bytes": total_bytes_processed
-        },
-        "ltp_sync": {"success": sync_success, "message": sync_msg}
+    ltp_result, synced_count = persist_to_knowledge_graph(target_project, feedback_payload, agent)
+
+    # --- Reporte Final ---
+    execution_duration_s = round(time.time() - start_time, 4)
+    result_payload = {
+        "industrial_status": "LTP_SOLIDIFIED",
+        "metrics": {"engrams_synced": synced_count, "execution_s": execution_duration_s},
+        "ltp_sync": ltp_result
     }
     
-    with open(report_path, 'w', encoding='utf-8') as f:
-        json.dump(analysis_data, f, indent=2)
+    report_file = project_path / "LOGS" / f"LTP_SYNC_{int(time.time())}.json"
+    with open(report_file, 'w', encoding='utf-8') as f:
+        json.dump(result_payload, f, indent=2)
 
-    return analysis_data, [str(report_path)]
+    return result_payload, [str(report_file)]

@@ -1,57 +1,43 @@
-# 🧬 MOC | 34-Skill Library Hub 
+# 🧬 MOC | 17 Outcome-Driven Skill Library Hub 
 
 > [ ⬆️ Up: [[../_dasafo_FACTORY]] | 📂 Global: [[../00_GLOBAL_KNOWLEDGE/MOC_GLOBAL]] ]
 
 ## 🧠 Strategic & Discovery
-- [[prp-generator/SKILL|prp-generator]]: PRP_MASTER contract generator.
-- [[startup-metrics-framework/SKILL|startup-metrics-framework]]: KPI and financial baseline engine.
+- [[project-contract-outcome/SKILL|project-contract-outcome]]: Generates the PRP_MASTER contract and calculates business KPIs simultaneously.
 - [[apify-trend-analysis/SKILL|apify-trend-analysis]]: Market and trend analysis via Apify.
 
 ## 🏗️ Architecture & Research
-- [[architecture-decision-records/SKILL|architecture-decision-records]]: Immutable ADR manager.
-- [[research-manager/SKILL|research-manager]]: Technical research persistence.
-- [[arxiv-technical-digest/SKILL|arxiv-technical-digest]]: Academic paper synthesis.
-- [[project-backbone-validator/SKILL|project-backbone-validator]]: Physical scaffolding auditor.
+- [[tech-research-outcome/SKILL|tech-research-outcome]]: Consolidated manager for ADR generation, paper synthesis and tech research.
+- [[backbone-validation-outcome/SKILL|backbone-validation-outcome]]: Physical scaffolding auditor and project initializer.
 
 ## 💻 Production: Backend & Logic
-- [[async-fastapi-logic/SKILL|async-fastapi-logic]]: Async FastAPI implementation (DDD).
-- [[nodejs-backend-patterns/SKILL|nodejs-backend-patterns]]: Node.js industrial pattern enforcement.
-- [[api-contract-generator/SKILL|api-contract-generator]]: OpenAPI 3.1 Design-First generator.
-- [[api-docs-generator/SKILL|api-docs-generator]]: Markdown documentation from OAI.
+- [[api-design-outcome/SKILL|api-design-outcome]]: Generates both the OpenAPI 3.1 specification and its MarkDown documentation.
+- [[backend-logic-outcome/SKILL|backend-logic-outcome]]: Applies DDD and Node/FastAPI industrial patterns to business logic.
 
 ## 🗄️ Production: Database
-- [[database-architect-strategic/SKILL|database-architect-strategic]]: Strategic data modeling.
-- [[supabase-stack-expert/SKILL|supabase-stack-expert]]: Supabase/Postgre SQL & RLS expert.
+- [[database-outcome-generator/SKILL|database-outcome-generator]]: Macro-skill for strategic modeling, Supabase orchestration, and physical script generation.
 
 ## 🎨 Production: Frontend & UI
-- [[frontend-ui-designer/SKILL|frontend-ui-designer]]: Tailwind/Shadcn design validator.
-- [[atomic-design-tokens/SKILL|atomic-design-tokens]]: Atomic design system synchronizer.
-- [[shadcn-component-library/SKILL|shadcn-component-library]]: Industrial Shadcn/UI component management.
+- [[frontend-vibe-outcome/SKILL|frontend-vibe-outcome]]: End-to-end component injection supporting Tailwind, Shadcn, and Atomic Design tokens.
 
 ## 🛡️ Compliance, Security & QA
-- [[agentic-thought-secret-scanner/SKILL|agentic-thought-secret-scanner]]: Zero-trust secret scanner.
-- [[factory-audit-pro/SKILL|factory-audit-pro]]: Industrial-grade quality audit.
-- [[build-test-executor/SKILL|build-test-executor]]: Build and test execution engine.
-- [[playwright-e2e-tester/SKILL|playwright-e2e-tester]]: Browser-based E2E validation.
-- [[pytest-logic-verifier/SKILL|pytest-logic-verifier]]: Python business logic verification.
+- [[security-audit-outcome/SKILL|security-audit-outcome]]: Scans the project for structural defects and exposed Zero-Trust secrets.
+- [[e2e-verification-outcome/SKILL|e2e-verification-outcome]]: Manages builds, playwright executions, and pytest unit validations atomically.
+- [[skill-validation-outcome/SKILL|skill-validation-outcome]]: Automated regression testing against Golden Datasets.
 
 ## ⚙️ Operations & SRE
-- [[docker-stack-provisioner/SKILL|docker-stack-provisioner]]: Industrial Docker IaC provisioner.
-- [[terraform-iac-builder/SKILL|terraform-iac-builder]]: Multi-provider Terraform builder.
+- [[iac-provisioning-outcome/SKILL|iac-provisioning-outcome]]: Multi-provider IaC engine that orchestrates Docker stacks and Terraform files.
+- [[ephemeral-code-execution/SKILL|ephemeral-code-execution]]: Secure sandboxed arbitrary code execution (Python/Bash).
 - [[deployment-health-check/SKILL|deployment-health-check]]: Real-time endpoint health sentry.
 
 ## 🌀 Evolution & Memory
 - [[autonomous-feedback-analyzer/SKILL|autonomous-feedback-analyzer]]: Golden Rule extractor (Neo4j).
-- [[skill-refactor-pro/SKILL|skill-refactor-pro]]: Surgical code refactoring engine.
-- [[context-pruning-sieve/SKILL|context-pruning-sieve]]: Token usage and cache optimization.
-- [[factory-doctor/SKILL|factory-doctor]]: Structural health diagnostics.
-- [[hallucination-guardrail/SKILL|hallucination-guardrail]]: Factual integrity enforcement.
+- [[factory-evolution-outcome/SKILL|factory-evolution-outcome]]: Structural health, token usage pruning, and surgically specific architectural refactoring.
+- [[hallucination-guardrail/SKILL|hallucination-guardrail]]: Transversal factual integrity enforcement.
 
 ## 🤖 Orchestration & Management
-- [[project-management/SKILL|project-management]]: Milestone and progress coordinator.
-- [[registry-manager/SKILL|registry-manager]]: Central project registry manager.
+- [[project-management-outcome/SKILL|project-management-outcome]]: Synchronizes registries, milestone progression and Visual Kanban dashboard gates.
 - [[delegate-clean-session/SKILL|delegate-clean-session]]: Isolated sub-agent delegation.
-- [[kanban-solidity-gate/SKILL|kanban-solidity-gate]]: Vibe Kanban & Solidity gate.
 - [[social-content-strategy/SKILL|social-content-strategy]]: Multi-platform content transformer.
 
 ---

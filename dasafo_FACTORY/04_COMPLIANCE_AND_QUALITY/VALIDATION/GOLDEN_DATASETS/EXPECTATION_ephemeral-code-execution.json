@@ -1,0 +1,10 @@
+{
+  "test_input": {
+    "language": "python",
+    "code_payload": "print('hello world')"
+  },
+  "expected_output": {
+    "stdout": "hello world",
+    "exit_status": "Completed with exit code 0 (Docker Sandbox)"
+  }
+}

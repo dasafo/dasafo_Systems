@@ -1,0 +1,27 @@
+# dasafo_FACTORY/INFRA/Dockerfile.agent
+# Imagen base industrial para agentes efímeros (v5.1-MCP)
+
+FROM python:3.11-slim-bookworm
+
+# Evitar prompts interactivos durante la instalación
+ENV DEBIAN_FRONTEND=noninteractive
+
+WORKDIR /app
+
+# Instalación de dependencias de sistema mínimas
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copiar manifiesto de dependencias core
+# Se asume que existe un requirements.txt en el contexto de construcción
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Inyectar el conector MCP para que el agente pueda hablar con la factoría
+# COPY mcp_agent_connector.py .
+
+# El contenedor es una cáscara vacía que espera instrucciones del Orchestrator
+# Se sobreescribirá el CMD en tiempo de ejecución por executor.py
+CMD ["python", "-m", "mcp_agent_connector"]

@@ -6,6 +6,9 @@ production_category: DEFINE
 source: https://skills.sh/apify/agent-skills/apify-trend-analysis
 protocol: Trend-Intelligence / DAST
 ---
+<!-- LEVEL_1_END -->
+
+
 
 > [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
 
@@ -29,7 +32,7 @@ Identificar y analizar tendencias de mercado y nichos usando Apify Actors. Basad
 - `overwrite` (boolean): (Opcional) Saltar el Redundancy Lock.
 - `isolate` (boolean): (Opcional) Ejecución en Clean Session.
 
-## 🛡️ Restricciones Industriales
+## Internal Mechanics
 
 - **Autenticidad Live:** Prohibido inventar tendencias; requiere ejecución real con `APIFY_API_TOKEN`.
 - **Soberanía DAST:** Los datos deben persistir en `LOCAL_KNOWLEDGE/trends/`.

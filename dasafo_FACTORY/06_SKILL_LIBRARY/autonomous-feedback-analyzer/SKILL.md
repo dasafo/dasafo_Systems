@@ -6,6 +6,9 @@ production_category: REVIEW
 source: https://skills.sh/phuryn/pm-skills/sentiment-analysis
 protocol: LTP-Sync / DAST
 ---
+<!-- LEVEL_1_END -->
+
+
 
 # 🧠 Skill | autonomous-feedback-analyzer
 
@@ -28,7 +31,7 @@ Extract actionable "Golden Rules" from feedback logs and synchronize agentic lea
 - `raw_text` (string): Direct text to analyze if using `analyze_text`.
 - `isolate` (boolean): Execution in Clean Session.
 
-## 🛡️ Industrial Constraints
+## Internal Mechanics
 
 - **SI Standards:** Report processed data in **Bytes (B)** and execution in **Seconds (s)**.
 - **DAST Sovereignty:** Analysis MUST be persisted in `LOGS/` as a JSON artifact.

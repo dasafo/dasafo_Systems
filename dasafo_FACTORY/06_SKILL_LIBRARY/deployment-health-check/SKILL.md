@@ -5,6 +5,9 @@ agent_authorization: [DEPLOYMENT_MONITOR, DEVOPS_SRE, FACTORY_EVOLVER]
 production_category: SHIP
 protocol: Auto-Heal / DAST
 ---
+<!-- LEVEL_1_END -->
+
+
 
 > [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
 
@@ -28,7 +31,7 @@ Real-time endpoint validation and SI metric reporting. Includes the **Immune Sys
 - `timeout_seconds` (integer): Max wait time (default: 5).
 - `isolate` (boolean): Execution in Clean Session.
 
-## 🛡️ Industrial Constraints
+## Internal Mechanics
 
 - **Immune Response:** If `deploy` fails, the skill MUST generate a physical `EMERGENCY_SPEC.json` in `TASKS/01_PENDING/`.
 - **SI Standards:** Latency in **Seconds (s)** and payload in **Bytes (B)**.

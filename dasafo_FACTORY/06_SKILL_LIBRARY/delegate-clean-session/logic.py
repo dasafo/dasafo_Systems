@@ -16,7 +16,7 @@ redis_client = redis.Redis(
 )
 
 def fetch_rules_from_neo4j(tech_hints: list[str], current_phase: str) -> list[str]:
-    """Consulta de respaldo al Knowledge Graph (Neo4j) si falla la caché."""
+    """Consulta de respaldo al Knowledge Graph (Neo4j) con hostname fallback."""
     try:
         from neo4j import GraphDatabase
     except ImportError:
@@ -24,23 +24,43 @@ def fetch_rules_from_neo4j(tech_hints: list[str], current_phase: str) -> list[st
 
     uri = os.getenv("NEO4J_URI", "bolt://dasafo-shared-kg:7687")
     user = os.getenv("NEO4J_USER", "neo4j")
-    pwd = os.getenv("NEO4J_PASSWORD", "freedom85")
+    pwd = os.getenv("NEO4J_PASSWORD")
+    if not pwd:
+        raise PermissionError("ZERO-TRUST: NEO4J_PASSWORD no configurado en entorno.")
+    
+    # Intelligent hostname resolution: Try Docker name, fallback to localhost
+    uris_to_try = [uri]
+    if "dasafo-shared-kg" in uri:
+        uris_to_try.append(uri.replace("dasafo-shared-kg", "localhost"))
+    
+    driver = None
+    for attempt_uri in uris_to_try:
+        try:
+            driver = GraphDatabase.driver(attempt_uri, auth=(user, pwd))
+            driver.verify_connectivity()
+            break
+        except Exception:
+            driver = None
+            continue
+    
+    if driver is None:
+        return ["LTP Warning: Failed to connect to Neo4j at any URI."]
     
     rules = []
     try:
-        driver = GraphDatabase.driver(uri, auth=(user, pwd))
         with driver.session() as session:
             result = session.run("""
-                MATCH (r:GoldenRule)-[:ADDRESSES]->(cv:CulturalViolation)-[:CAUSED_BY]->(t:Technology)
+                MATCH (r:GoldenRule)-[:ADDRESSES]->(t:Technology)
                 MATCH (r)-[:BELONGS_TO_PHASE]->(ph:Phase)
                 WHERE toLower(t.name) IN $techs 
                   AND (ph.name = $phase OR ph.name = 'GLOBAL')
                 RETURN r.content AS rule
             """, techs=[t.lower() for t in tech_hints], phase=current_phase)
             rules = [record["rule"] for record in result]
-        driver.close()
     except Exception as e:
         return [f"LTP Warning: Failed to query Neo4j - {str(e)}"]
+    finally:
+        driver.close()
     
     return rules
 
@@ -95,8 +115,22 @@ def execute_delegation(
     # 2. JIT ENGRAM INJECTION (Redis + Neo4j)
     tech_hints = ["global"]
     pointers = str(spec_data.get("metadata", {}).get("context_pointers", [])).lower()
-    if any(x in pointers for x in ["fastapi", ".py"]): tech_hints.append("fastapi")
-    if any(x in pointers for x in ["next", ".tsx"]): tech_hints.append("nextjs")
+    
+    # Comprehensive stack detection via file extensions AND dependency manifests
+    tech_map = {
+        "fastapi": [".py", "fastapi", "uvicorn", "requirements.txt", "pyproject.toml"],
+        "django": ["django", "manage.py", "wsgi.py"],
+        "flask": ["flask"],
+        "nextjs": [".tsx", ".jsx", "next.config", "next/"],
+        "react": ["react", ".tsx", ".jsx"],
+        "vue": [".vue", "nuxt", "vite.config"],
+        "nodejs": ["package.json", ".ts", ".js", "nestjs", "express"],
+        "golang": [".go", "go.mod", "go.sum"],
+        "postgres": ["sqlalchemy", "prisma", "supabase", ".sql"],
+    }
+    for tech, markers in tech_map.items():
+        if any(m in pointers for m in markers) and tech not in tech_hints:
+            tech_hints.append(tech)
     
     golden_rules = fetch_golden_rules(tech_hints, current_phase)
     

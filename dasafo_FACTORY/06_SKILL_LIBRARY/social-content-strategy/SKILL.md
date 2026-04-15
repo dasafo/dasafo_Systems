@@ -5,6 +5,9 @@ agent_authorization: [MARKETING_GROWTH]
 source: https://skills.sh/coreyhaines31/marketingskills/social-content
 protocol: Content-Repurposing / DAST
 ---
+<!-- LEVEL_1_END -->
+
+
 
 > [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
 
@@ -30,7 +33,7 @@ Design and execute high-performance social media marketing strategies by transfo
 - `overwrite` (boolean): Bypass Redundancy Lock.
 - `isolate` (boolean): Execution in Clean Session.
 
-## 🛡️ Industrial Constraints
+## Internal Mechanics
 
 - **Hook Alignment:** Every social post must be traceable back to the source pillar content. No hallucinations.
 - **Batching Mandate:** Strategies must target an efficiency of < 10,800s per week.

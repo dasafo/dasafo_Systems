@@ -6,6 +6,9 @@ production_category: VERIFY
 source: https://skills.sh/davila7/claude-code-templates/nemo-guardrails
 protocol: Fact-Checking / DAST
 ---
+<!-- LEVEL_1_END -->
+
+
 
 > [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
 
@@ -29,7 +32,7 @@ Enforce factual integrity and programmable safety for LLM outputs. Ensures all a
 - `strictness` (float): (Optional) 0.0 to 1.0 (default: 0.8).
 - `isolate` (boolean): Execution in Clean Session.
 
-## 🛡️ Industrial Constraints
+## Internal Mechanics
 
 - **Grounding Mandate:** Fact-checking MUST be performed against physical disk artifacts. No file = Failure.
 - **Fail-Safe:** Any risk score > 0.5 blocks the output from the workspace.

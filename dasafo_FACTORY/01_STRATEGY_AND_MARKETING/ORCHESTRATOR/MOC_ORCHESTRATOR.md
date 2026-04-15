@@ -3,8 +3,12 @@
 > [ ⬆️ Up: [[../MOC_STRATEGY]] | 📂 Index: [[MOC_ORCHESTRATOR]] ]
 
 ## 📑 Core Documentation
-- [[IDENTITY]]: Role definition, industrial protocols and mandates.
-- [[TOOLS]]: Catalog of authorized MCP skills and senses.
+- [[SKILL]]: Unified role definition, PEV loop protocols, and Macro-Skill authority (Anthropic Standard).
+
+## ⚙️ Execution Engine (v5.1-MCP)
+- `engine/pev_graph_engine.py`: The State Machine controller for the Plan-Execute-Verify loop.
+- `engine/pev_state.py`: Typed state definitions for the graph.
+- `engine/pev_nodes.py`: Implementation of specialized nodes (Architect, Author, Reviewer, Security).
 
 ---
 ### 🧬 Related Engrams

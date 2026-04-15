@@ -1,41 +1,22 @@
-> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Skill: **delegate-clean-session** ]
 ---
-version: v5.0-MCP (Native)
-agent_authorization: [ORCHESTRATOR]
-production_category: BUILD
-source: internal/core-orchestration
-protocol: Context-Isolation / DAST
+name: delegate-clean-session
+description: Spawn a specialized sub-agent (Peon) in a "Clean Slate" environment. Prevents context pollution.
+version: v5.1-MCP
 ---
+# 🚀 Skill | delegate-clean-session (Nivel 1)
+Orchestrates context-isolated delegation to specialized sub-agents.
+<!-- LEVEL_1_END -->
 
-> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
-
-
-# 🚀 Skill | delegate-clean-session
-
-## Objective
-
-Spawn a specialized sub-agent (Peon) in a "Clean Slate" environment. Prevents the high-level Orchestrator context from being polluted by implementation noise.
-
-## 🛠️ Interface (v5.0-MCP Native)
-
-**MANDATORY:** Use typed parameters. `params_json` is **DEPRECATED**.
-
-### Typed Parameters
-
-- `agent` (string): Your ID (must be 'ORCHESTRATOR').
+## 🛠️ Interface (Nivel 2)
+### Parameters
+- `agent` (string): Your assigned role.
 - `target_project` (string): Path to project root.
-- `spec_path` (string): Relative path to task spec (e.g., `TASKS/01_PENDING/M3-001.json`).
-- `agent_type` (string): Target specialized agent (e.g., 'BACKEND_DEV').
-- `isolate` (boolean): Always `true` for this skill.
+- `spec_path` (string): Path to task spec.
+- `agent_type` (string): Target persona (e.g., 'BACKEND_DEV').
+- `isolate` (boolean): Default `true`.
+<!-- LEVEL_2_END -->
 
-## 🛡️ Industrial Constraints
-
-- **Auto-Start Mandate:** The task file MUST be moved physically to `02_IN_PROGRESS`.
-- **Immunization:** Skill MUST query Neo4j for JIT "Golden Rules" injection.
-- **DAST Sovereignty:** No delegation is valid without a physical `SPEC_LITE.json` on disk.
-
----
-
-> [ ⬆️ Up: [[../MOC_SKILL_LIBRARY]] | 📂 Global: [[../../_dasafo_FACTORY]] ]
-
-*Standard v5.0-MCP | Dasafo Factory Core Orchestration.*
+## Internal Mechanics (Nivel 3)
+- **Auto-Start Mandate:** Physically moves task to `02_IN_PROGRESS`.
+- **Immunization:** Queries Neo4j for JIT "Golden Rules".
+- **DAST Sovereignty:** Requires physical `SPEC_LITE.json`.

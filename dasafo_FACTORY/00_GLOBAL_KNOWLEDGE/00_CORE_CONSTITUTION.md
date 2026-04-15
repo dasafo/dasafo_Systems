@@ -66,4 +66,4 @@ Any task that attempts to "BUILD" and "SHIP" in the same atomic `SPEC_LITE.json`
 
 ---
 
-*Ratified: 2026-04-13 | Dasafo Factory v5.0.3-MCP (Connectivity Patch).*
+*Ratified: 2026-04-15 | Dasafo Factory v5.0.4-MCP (Security + Coherence Patch).*
